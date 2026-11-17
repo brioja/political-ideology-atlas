@@ -5,6 +5,7 @@ export const meta = {
   phases: [
     { title: 'Books', detail: 'people runs: fetch public-domain books for the next 3x people, list the rest in ~/work/books-wanted.md, refit triage on books on disk' },
     { title: 'Audit', detail: 'one fresh agent per person or ideology: audit, commit, build, test, push' },
+    { title: 'Triage', detail: 'refit the people triage on the new results (people runs)' },
     { title: 'Signal', detail: 'promote candidates with signal on the real lines, demote active statements without it' },
   ],
 }
@@ -99,10 +100,9 @@ Touch no other file. Reply in one line: promoted ids, demoted ids, deployed or n
 
 // Before a people run: the next people in triage order get their public-domain books into the local corpora, and
 // their other works go into the maintainer's books-wanted document (audits with own books pass more often).
-// People are queued by triage (scripts/triage.js), refitted at most once a day, after the books step (Brandon,
-// 2026-11-16). CPU only (cached Wikidata).
-const TRIAGE_PROMPT = `Working directory: ${ROOT}. Run \`node scripts/triage.js\` (a few minutes at most if new catalog people
-need Wikidata). If it says it already refitted today, reply with that line and stop. If it fails, reply with the error and stop. Otherwise \`git add audits/people-triage.json\`, commit as "Triage: refit on
+// People are queued by triage (scripts/triage.js): refit it on this run's results. CPU only (cached Wikidata).
+const TRIAGE_PROMPT = `Working directory: ${ROOT}. Run \`node scripts/triage.js\` (a few minutes at most if new catalog people need
+Wikidata). If it fails, reply with the error and stop. Otherwise \`git add audits/people-triage.json\`, commit as "Triage: refit on
 the latest people audits" (no Co-Authored-By or other attribution line), \`git fetch origin\`, \`git rebase origin/main\` and
 \`git push origin HEAD:main\`. Touch no other file. Reply in one line: the AUC line it printed, pushed or not.`
 // Window three times the run: books are fetched first, then triage is refitted counting books on disk (Brandon,
@@ -114,7 +114,7 @@ const reports = []
 if (opts.kind === 'people') {
   phase('Books')
   reports.push(`books: ${await agent(BOOKS_PROMPT, { label: 'books', phase: 'Books', effort: 'low' })}`)
-  reports.push(`triage: ${await agent(TRIAGE_PROMPT, { label: 'triage', phase: 'Books', effort: 'low' })}`)
+  reports.push(`triage before: ${await agent(TRIAGE_PROMPT, { label: 'triage-before', phase: 'Books', effort: 'low' })}`)
 }
 let ended = `limit of ${LIMIT} reached`
 for (let i = 0; i < LIMIT; i++) {
@@ -130,6 +130,11 @@ for (let i = 0; i < LIMIT; i++) {
     if (typeof setTimeout === 'function') await new Promise((res) => setTimeout(res, ms))
     else await agent(`Wait ${opts.pauseMinutes} minutes, then reply "ok". Use the Monitor tool (load it with ToolSearch) with an until-loop that ends once ${opts.pauseMinutes * 60} seconds have passed since you started. Do nothing else.`, { label: `pause-${i + 1}`, phase: 'Audit', model: 'haiku', effort: 'low' })
   }
+}
+
+if (opts.kind !== 'ideologies') {
+  phase('Triage')
+  reports.push(`triage: ${await agent(TRIAGE_PROMPT, { label: 'triage', phase: 'Triage', effort: 'low' })}`)
 }
 
 // Statement signal depends on ideology audits only, so a people-only run skips it.

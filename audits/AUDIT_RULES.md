@@ -1,141 +1,259 @@
 # Audit rules (ideologies and people)
 
 These rules apply to every audit: ideologies (`audits/PROMPT.md`) and people (`audits/PROMPT_PEOPLE.md`).
-Those prompts add only what is specific to their subject and never loosen a rule here. "The subject" is the
-ideology or person being audited. Write `"rules": 7` in the audit file.
+Those prompts add only what is specific to their subject and never loosen a rule here. A change to
+how evidence is judged goes in this file, so both kinds of audit get it.
+
+"The subject" below is the ideology or the person being audited. Write `"rules": 7` in the audit
+file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
+rules 4 tags every source as actions or words; rules 5 accounts for every one of a person's own books
+in the local library; rules 6 accounts for every text known to exist by a person and lists every source
+not found, with two places tried; rules 7: a 0 is a split within actions or within words, never words against actions.)
 
 ## 1. Standard
 
 Follow a Wikipedia-style standard: describe the subject's documented positions neutrally, however
-controversial. Don't editorialize, soften or omit positions because they are objectionable; attribute
-them to sources. Write the summary and rationales in your own words; don't paste long passages.
+controversial they are. Don't editorialize, soften or omit positions because they are
+objectionable; attribute them to sources instead. Write the summary and rationales in your own
+words; don't paste long passages.
 
 ## 2. Sources
 
-- Cite only pages you opened in this session, by the URL you visited. Never cite from memory or construct
-  a URL.
-- Use at least 3 of the subject's defining sources: its own texts (founding documents, programmes, speeches,
-  books, its record) where it has them, and the scholarship and reference works that define it.
-- Scholarly reference works (Stanford and Internet Encyclopedias of Philosophy, Britannica, Oxford or
-  Routledge) are evidence. Wikipedia, OnTheIssues and similar compilations only help find evidence: follow
-  their citations to the original and cite that. An answer whose only source is Wikipedia has no evidence,
-  and Wikipedia doesn't decide a subject's scope or what it holds. Read Wikipedia and Wikidata with
-  `node scripts/wiki.js`, YouTube with `node scripts/yt.js`, Project Gutenberg with `node scripts/gutenberg.js`.
-- Prefer a publisher's, author's, library's or archive's own copy. When it can't be opened, a Wayback copy,
-  mirror or third-party copy of the same text is fine; say in the source title which copy it is. A
-  publisher's or bookseller's preview is citable for the pages it shows; say so in the title.
-- Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed or out of
-  context. If the original is blocked, look for it elsewhere (Wayback, archive.org, a mirror, the official
-  record) before giving up.
-- Download pages with `node scripts/get.js <id> <url>` (it saves into the source library and tries each
-  download agent). If no agent gets a page, name it in your report.
-- Song lyrics are the subject's own words only if the subject wrote or co-wrote them; check and cite the
-  songwriting credit.
-- Political-quiz sites (12axes, 8values, Political Compass, IDRlabs, the polcompball wiki and similar) are
-  not sources.
-- Research theme by theme (each statement has a `theme`). After a first look, count known positions per
-  theme and search specifically for the thin ones; government and world are the themes most often left thin.
-- Where the subject's own texts exist as full text, download them and search them for each theme's topics
-  rather than reading summaries. Keep downloads in `scratchpad/sources/<id>/` with an entry in its
-  `index.json`; check it first, so later passes reuse it.
-- Bulk public records are in `~/.cache/political-ideology-atlas/corpora/` (its README.md lists them and their
-  tools): roll calls, floor speeches, hearings, Hansard, Knesset votes and bills, interview transcripts and
-  more. Check them before searching the web for votes, speeches or interviews. Before giving up on a blocked
-  source, search GitHub for a mirror or dataset. Cite a dataset by its publisher's page and version, a
-  transcript by its original page (or a Wayback copy; or the dataset's page with the transcript's id in the
-  title, keeping the dead address in `original`). Machine transcripts without speaker labels count only where
-  the speaker is unambiguous and the passage reads coherently.
-- A text the maintainer supplied is a primary source like any other. Cite it as the published work, with a
-  publisher or library catalog page you opened, never a file path; name the chapter in each rationale that
-  rests on it, and paraphrase rather than quote more than a short phrase.
+- Use web search and fetch tools and cite only pages you opened in this session, by the URL you
+  visited. Never cite from memory or construct a URL.
+- Use at least 3 of the subject's defining sources, whatever their kind: its own texts (founding
+  documents, programmes, speeches, books, its record) where it has them, and the scholarship and
+  reference works that define it. One rule for every subject (Brandon, 2026-11-08).
+- Scholarly reference works (the Stanford and Internet Encyclopedias of Philosophy, Britannica,
+  Oxford or Routledge reference works) are scholarship, and count as evidence. Wikipedia,
+  OnTheIssues and similar compilations are only a way to find evidence: follow their citations to
+  the original and cite that. An answer whose only source is Wikipedia has no evidence. Wikipedia
+  doesn't decide a subject's scope or what it holds either: it serves for notability (the
+  catalog), the reader's `wikipedia` link and finding leads, and what it says about scope or
+  membership counts only through the scholarship or data it cites. Read Wikipedia and Wikidata only with
+  `node scripts/wiki.js "<title or URL>"` (cached; `--search`, `--wikidata Q123`), never by fetching them
+  directly: their rate limits stop runs (a project hook blocks direct fetches). The same goes for YouTube
+  (`node scripts/yt.js`, captions and search, paced) and Project Gutenberg (`node scripts/gutenberg.js`, its
+  mirror, as its robot policy requires).
+- Prefer a publisher's, author's, library's or archive's own copy (university repositories, publisher
+  open-access pages, archive.org scans). When that copy can't be opened, an archived copy (Wayback), a
+  mirror or a third-party copy of the same text is fine to read and cite (Brandon, 2026-11-12: there is
+  no reason to think the text there is wrong); say in the source title which copy it is.
+- A publisher's or bookseller's book preview (a sample PDF, preview pages) is fine to read and cite for the
+  pages it shows: front matter, preface, introduction, a sample chapter (Brandon, 2026-11-14). Say in the source
+  title that it is the preview, and cite only what it shows.
+- Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed
+  or out of context. If the original is blocked or offline, look for it elsewhere (a Wayback or archive.org
+  copy, a mirror, another site hosting the same text, the official record) before giving up; a copy
+  elsewhere is fine to use even when the original refuses scripted access.
+- Download pages and documents with `node scripts/get.js <id> <url>`: it saves into the source library and
+  tries each download agent in turn (curl, wget, wget2, aria2c, lynx, w3m, headless Firefox, headless Chrome),
+  moving on after any refusal (a 403, a 429, a bot check; Brandon, 2026-11-14), and records which one got it.
+  Each agent uses its own name; never set a browser's User-Agent on a script (a hook blocks it), reuse cookies
+  or solve a captcha. A robots.txt block aimed only at crawlers, such as `User-agent: ClaudeBot`, doesn't stop
+  an audit: it fetches pages, it doesn't crawl. If no agent gets the page, name it in your report; the
+  maintainer can open it by hand (`backlog/blocked-sources.md` tracks audits held back this way).
+- Song lyrics are the subject's own words only if the subject wrote or co-wrote them. Lyrics
+  written by someone else and only performed by the subject are not evidence of the subject's views.
+  Check the songwriting credit (the album notes or a rights database such as ASCAP, BMI or PRS) and
+  cite it with the lyrics.
+- Do not use political-quiz sites (12axes, 8values, Political Compass, IDRlabs, the polcompball
+  wiki and similar) as sources: a site's guess at where someone stands isn't evidence.
+- Research theme by theme. Each statement has a `theme` (economy, government, society, world,
+  liberty, culture, ecology, technology, means, globalism); an overview covers only a few statements
+  per theme. After a first pass, count your known positions per theme and search specifically for
+  the thin ones. Government (elections, courts, executive power, federalism) and world (wars,
+  alliances, aid, the UN) are the themes most often left thin.
+- When the subject's own texts are available as full text (a book, manifesto, programme or speech
+  collection), download them and search them for each theme's topics rather than reading
+  summaries. Keep downloads in the local source library, `scratchpad/sources/<id>/` (never
+  committed), so later passes reuse them: check its `index.json` first, and list each file you add
+  there with its title, url and download date.
+- Bulk public records are kept locally in `~/.cache/political-ideology-atlas/corpora/` (never
+  committed; its README.md indexes them and their lookup tools): US Congress roll calls since 1789, US Congress floor speeches since 1873 and committee hearing
+  transcripts (each member's own turns, with the citation), UK House of Commons Hansard since 1919
+  (debates, Westminster Hall, written answers; each MP's own words),
+  European Parliament roll calls since 2019, Knesset (Israel) plenum roll calls since 2003 and bills, interview and show transcripts. Check them before
+  searching the web for a subject's votes, speeches or interviews. Before giving up on a blocked
+  source, search GitHub (`gh search repos`, `gh search code`) for a mirror or dataset of it. Cite a
+  dataset by its publisher's page and version, a transcript by its original broadcast or page (if that page no longer opens, link a Wayback
+  Machine copy; if there is none, link the dataset's page and name the transcript's id in the title,
+  e.g. "via the MediaSum corpus, transcript CNN-18377", keeping the dead address in `original`), and a
+  mirror as a mirror of the original. Machine transcripts without speaker labels count only where
+  the speaker is unambiguous and the passage reads coherently in context.
+- The runner may hand you a text the maintainer supplied (a book you couldn't fetch yourself).
+  Treat it as a primary source and search it the same way. Cite it as the published work, with the
+  url of a publisher or library catalog page for it that you opened (e.g. openlibrary.org/isbn/…),
+  never a file path or download site. Name the chapter in each rationale that rests on it, and
+  paraphrase rather than quote more than a short phrase. A text's claims about its own results are
+  claims; answer from the positions it states.
 
 ## 3. Answers
 
-Answer every statement with -2 (strongly disagree) to +2 (strongly agree), or `null` (no known position).
-Read each statement literally: "Free trade benefits everyone in the long run" is about free trade, not
-markets in general.
+Answer every statement with -2 (strongly disagree) to +2 (strongly agree), or `null` (no known
+position). Read each statement literally: "Free trade benefits everyone in the long run" is about
+free trade, not about markets in general.
 
-- **No data, no position.** If the sources record nothing on a statement, answer `null` at `low`, with a
-  rationale saying so. Silence is not neutrality (never 0), and absence of evidence is never a negative answer.
-- **Evidence for one part is not evidence for the whole.** Where a statement covers several things (a list,
-  or a general word such as "security forces"), answer only on evidence covering the whole claim; otherwise
-  `null`.
-- **0 is a documented middle:** the subject's own sources genuinely point both ways, or the subject
-  deliberately takes no side (laïcité refuses to rule on religious doctrine). Mixed evidence is `low`. Don't
-  use 0 to avoid a hard call. A 0 cites the evidence for each side, of the same kind: actions against actions
-  or words against words. Words against actions is not a split; answer from the actions. Adherents disagreeing
-  while the sources take no side is `null`.
+- **No data, no position.** If the sources record nothing on a statement, answer `null`, at `low`
+  confidence, with a rationale saying so. Silence is not neutrality, so never record it as 0, and
+  absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
+  on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
+  disagreement.
+- **Evidence for one part is not evidence for the whole** (Brandon, 2026-11-11). Where a statement covers
+  several things (a list, or a general word such as "security forces" for police and military), agree or
+  disagree only on evidence that covers the whole claim. Support for one part, with the sources silent on the
+  rest, never implies the rest: that silence is not a position. Answer `null` unless the sources speak to the
+  whole claim.
+- **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
+  record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
+  doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call. A 0 cites the evidence for each
+  side, which one source may hold, of the same kind: actions against actions or words against words.
+  Words against actions is not a split, even inside one source; answer from the actions (`validate.js`
+  checks the cited sources' tags and the rationale's wording). Adherents
+  disagreeing among themselves while the sources take no side is silence: `null`.
 - **±2** only when the position is central or stated explicitly and forcefully.
-- **Every answer is stated or null; there are no inferences.** An answer is stated when the subject's own
-  stated position settles the statement: says the same, says the opposite, or could not be true without
-  contradicting it (a doctrine that authority belongs to experts by competence rejects rule by inheritance).
-  If the statement could be true without contradicting anything the subject states, the answer is `null`,
-  however likely an answer seems.
-- **A premise is not a position.** A view a source assumes in order to argue something else isn't the
-  subject's position: answer only from what the source presents as the subject's own.
-- **A general value doesn't answer a specific statement.** Liberty, equality, democracy or "equal rights for
-  all" say nothing about apostasy laws or returning to foraging: `null`.
-- **No guessed outcomes.** An answer that needs a guess about what the subject's method would produce, a
-  contemporary consensus, or what adherents would probably think is `null`.
-- **Evidence answers only the statement it settles.** A vote, act or statement answers a statement only if
-  the statement couldn't be true (or false) without contradicting it. Evidence that fits either answer is
-  `null`: voting against sanctioning the International Criminal Court doesn't settle "leaders should be tried
-  before international criminal courts"; cannabis legalisation doesn't settle all drugs.
-- **No coatracks.** Another subject's sources don't answer for this one, in either direction: a broader,
-  narrower or related ideology's (secularism's not for Jewish secularism), a member movement's, a party's for
-  one of its members, a relative's or employer's for a person, a government's for a head of state who only
-  signed its measures on advice, or organisations' platforms for an ideology they share. An organisation's or
-  thinker's own account of the ideology's tenets is a defining source; its platform or campaigns are not. Where
-  the subject's own sources take opposite positions, it is a split (0, `low`).
-- **Sources count by what they are.** Anyone's account of what the subject thinks is a way to find evidence,
-  not evidence. A quotation counts only once checked in the primary source with its context; a full
-  transcript is primary, an excerpt is not. A report that the subject did something counts as a report of the
-  record. Interest-group ratings aren't evidence.
-- **Record over words.** Where the subject has a record on a statement (acts), answer from the record alone
-  and leave their words on it out, whether they agree or not. Words answer only where there is no record. A
-  record pointing both ways is 0 at `low`. Tag each source as actions or words; a source holding both is
-  listed twice, once per kind.
-- **Over time.** Answer the mature position: held longest and set out most fully. A later position replaces it
-  only when the change was explicit and sustained for years; a late remark or one-off reversal makes the
-  answer mixed at most. Later words never override a record; only a later record does. Say in the rationale
-  when a position changed.
-- **Fix the answer, not the wording.** When the validator rejects an answer, change the answer; never
-  rephrase a rationale to slip past a check.
+- **Every answer is stated or null; there are no inferences.** An answer is stated when the
+  subject's own stated position settles the statement: the statement says the same on the same
+  question, says the opposite, or could not be true without contradicting that position. Then the
+  answer is as strong as the subject holds the position: a doctrine that authority belongs to
+  experts by competence rejects rule by inheritance, by clergy or by a sacred ruler, and a movement
+  that campaigns for gay rights has a position on criminalising homosexuality. If the statement
+  could be true without contradicting anything the subject states, the answer is `null`, however
+  likely an answer seems.
+- **A premise is not a position.** A view the source assumes in order to argue something else (a
+  moral judgment it expects every reader to share, a premise used to refute a rival theory) isn't a
+  position the source presents as part of the subject. Regan's "there would be nothing wrong with
+  apartheid ... if few white South Africans were upset" refutes contractarianism; it doesn't state animal
+  rights' position on segregation laws, so that statement is `null`. Answer only from what the source
+  presents as the subject's own position (Brandon, 2026-11-05).
+- **A general value doesn't answer a specific statement.** Humanism, liberty, equality, democracy,
+  "freedom of religion" or "equal rights for all" say nothing about returning to foraging, apostasy
+  laws or blasphemy: `null`.
+- **No guessed outcomes.** An answer that needs a guess about what the subject's method would
+  produce (what experts would conclude, what a planner would choose), a contemporary consensus, or
+  what adherents would probably think is `null`: a technocracy whose experts decided against sex
+  education would still be a technocracy.
+- **Evidence answers only the statement it settles.** A vote, act or statement answers a statement only
+  if the statement couldn't be true (or couldn't be false) without contradicting it. Evidence that
+  fits either answer supports neither agree nor disagree: `null`, however related the topic. Voting
+  against sanctioning the International Criminal Court fits both believing leaders should be tried
+  there and opposing the bill for other reasons, so it doesn't settle "leaders should be tried before
+  international criminal courts"; cannabis legalisation doesn't settle all drugs, and a crackdown on
+  unauthorized migration doesn't settle immigration levels. A source counts by what it settles, not by
+  its type: the subject's own votes, laws, acts, speeches, writings, interviews and posts answer only
+  the statements they settle.
+- **No coatracks.** (Checked by `scripts/coatrack-check.js`, run by validate.js.) A coatrack hangs another subject's positions on this one: another movement,
+  organisation, party or person (a relative, an employer), or a broader, narrower or related ideology,
+  used as if its sources were the subject's. Sources about a related subject don't answer for the
+  subject, in either direction: secularism's not for Jewish secularism, nor a member movement's for
+  the name it belongs to (the Iron Guard's programme not for national mysticism), nor American Jewish
+  secularism's for Jewish secularism as a whole; a party's not for one of its members, nor a
+  government's for the monarch or head of state who only signed or proclaimed its measures on advice
+  (their position is what they drove or said themselves), nor one
+  organisation's or several organisations' platform for an ideology they share (organisations can agree
+  on something that isn't part of the ideology; Brandon, 2026-11-06). An organisation's or thinker's own
+  account of what the ideology is, its tenets as they define them, is one of the ideology's defining
+  sources (Brandon, 2026-11-08: the DSA's account of democratic socialism counts; the DSA's platform
+  doesn't). A passage counts when its author presents it as a tenet or requirement of the ideology; a
+  proposed measure, a current campaign or an organisational choice doesn't become one by appearing in a
+  declaration or an article about what the ideology is. Only the subject's own sources
+  answer (for an ideology, its defining sources and the texts they tie to it), and without them the
+  answer is `null`. Where the subject's own sources take opposite positions on the same question, it
+  is a split (0, `low`).
+- **Sources count by what they are, not by who publishes them.** Anyone's account of what the subject
+  thinks is a way to find evidence, not evidence. A quotation of the subject, whoever publishes it,
+  counts only once checked in the primary source with its context (section 2); a full transcript is a
+  primary source, an excerpt is not. A report that the subject did something counts as a report of
+  the record. Interest-group ratings (a lobby's scorecard grade) aren't evidence of a position.
+- **Record over words.** Where the subject has a record on a statement (acts, not words), answer
+  from the record alone and leave their words on it out entirely, whether they agree with it or not
+  (elections rigged or cancelled while praising pluralism; deficits signed into law while condemning
+  them). Words answer a statement only where there is no record on it. A record that itself points
+  both ways is 0 at `low`. Each prompt says what counts as the subject's own record.
+  Words never set aside an action. Tag each source as the subject's actions or words; a source
+  holding both (a biography with a speech and a law, a day of the Congressional Record with a speech
+  and a roll call) is listed twice, once per kind. `validate.js` enforces how they combine.
+- **Over time.** Answer the subject's mature position: the one held longest and set out most fully
+  (main works, time in office, core programmes). A later position replaces it only when the change
+  was explicit and sustained (kept for years, in words and, where they held power, in acts); a late
+  remark, a one-off reversal or a final act against a long record makes the answer mixed at most.
+  Later words never override a record, not even an explicit repudiation (speeches praising peace or
+  tolerance after a campaign of conquest or repression change nothing); only a later record does.
+  Say in the rationale when a position changed.
+- **Fix the answer, not the wording.** When the validator rejects an answer, change the answer: if it
+  says contested evidence must be `low`, lower the confidence; never rephrase a rationale to slip
+  past a check. A rationale states the evidence; it doesn't say that an answer isn't an inference.
 
-Each rationale is one or two plain sentences that explain the answer and cite at least one source id.
+Each rationale is one or two plain sentences that explain the answer, not restate it, and cites at
+least one source id from your `sources` list.
 
 ## 4. Confidence
 
-- `high`: stated directly on this statement in a primary source or shown by the record, or (for an ideology)
-  settled in the scholarship. A stock phrase or a position the sources never discuss is at most `medium`.
-- `medium`: clearly implied by what the subject said or did on this topic, or reported by a secondary or
-  scholarly source.
-- `low`: mixed or contested. If the rationale has to say the evidence is split, the answer is `low`.
+- `high`: stated directly on this statement in a primary source or shown by the record, cited from
+  that source, or (for an ideology) settled in the scholarship. The rationale says what the source
+  states about this statement; a stock phrase ("Nationalism rejected.") or a position the sources
+  never discuss is at most `medium`.
+- `medium`: clearly implied by what the subject said or did on this statement's topic, or reported
+  by a secondary or scholarly source.
+- `low`: mixed or contested. If the rationale has to say that the evidence is split, the answer is
+  `low`.
 
-## 5. Uncertainty
+## 5. Uncertainty: placed on every dividing line
 
-The validator measures how precisely the subject's known positions place it on each of the test's dividing
-lines; a subject whose record leaves some line too loose is not shown. Every answer resting on evidence counts;
-`null` doesn't. Don't pad answers to pass: an honest rejection is the correct outcome.
+A political ideology or figure takes positions across all of the test's dividing lines; a record
+that speaks to only some of them holds opinions, not a full politics. The validator measures, on
+each line, the error bar the subject's known positions leave (±1 standard deviation of their place,
+from those positions alone, in line units), and the subject is shown only if no line's bar is wider
+than ±4 (`MAX_BAR` in `pca.js`) and the bars average at most ±2 over the lines (`MAX_MEAN_BAR`), so a
+record precise on some lines but loose on several others is not shown. A line no known position
+reaches has an infinite bar and always fails.
+The same rule applies to
+ideologies, people and AI models. Every answer resting on evidence counts,
+whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred:") that audits under
+rules 2 still hold. A failure names the lines whose bars are too wide. Don't pad answers to pass: an honest
+rejection is the correct outcome.
 
 ## 6. Research to the end, and later passes
 
-**An audit goes as deep as the record allows.** There is no limit on sources and no later pass fills gaps:
-never stop early. If the draft fails the uncertainty rule, keep researching: the lines the validator names,
-then the statements still null, in new sources (the local corpora too). Stop when they are covered or the
-record has nothing more, and say in `notes` which themes you searched. Never raise a confidence to pass.
+**An audit goes as deep as the record allows** (Brandon, 2026-11-05 and 11-07). There is no limit on
+sources, and no later pass will fill gaps: never stop early. If your draft fails the uncertainty rule,
+keep researching before you finish: the lines the validator names, then the statements still null, in
+new sources (the local corpora too). Stop when they are covered or when the record really has nothing
+more, and say in `notes` which themes you searched. Never raise a confidence to pass.
 
-**Texts known to exist** (people): every text by the person the validator knows of (Project Gutenberg, Miller
-Center speeches, Voteview roll calls) is read and cited, or declined in `booksNotUsed` with a reason.
+**Texts known to exist** (people, Brandon 2026-11-12). Every text by the person that the validator knows
+of is read and cited, or declined in `booksNotUsed` with a reason: Project Gutenberg's whole catalog
+(`node scripts/gutenberg.js --search "<name>"`, then `node scripts/gutenberg.js <id>` fetches it), their
+Miller Center speeches, and their Voteview roll calls if they sat in Congress. `validate.js` names each one
+missing.
 
-**Not found means tried twice:** a source you looked for and couldn't get goes in `notFound` with at least two
-attempts in different places.
+**Not found means tried twice** (Brandon, 2026-11-12). A source you looked for and couldn't get goes in
+`notFound`: `[{ "work": "Senate speeches, 1827-1836", "tried": [{ "where": "local corpora", "how":
+"crec.js and voteview.js by name" }, { "where": "Library of Congress, A Century of Lawmaking", "how":
+"Register of Debates index" }] }]`, with at least two attempts in different places (a local corpus, a
+library or archive site, a web search, a scholarly edition). Notes that call a source unavailable without
+a `notFound` entry for it fail validation.
 
-A later pass builds on the existing audit rather than starting over:
+A later pass on a finished audit has one of three reasons: new sources became available (a new corpus, a
+book the maintainer supplies), the audit predates the shared rules (no `"rules"` field) and is brought
+up to them, or it applied a rule the maintainer has since found misapplied (`audits/reaudit-queue.json`
+says which rule). Build on the existing audit rather than starting over:
 - Read its sources and answers. Research the lines the validator names, then the thinnest themes.
-- To change an earlier answer, write the new answer with its reason and add the old one, signed, to the
-  statement's `reviewHistory`. Words never overturn an action.
-- Change an answer or raise its confidence only on evidence you found and cite. Every "Inferred:" answer an
-  older pass left becomes stated (cite the source that settles it) or `null`.
-- Add your model id to `auditor` and list every pass in `passes`; set `"rules": 7` and bring the whole file up
-  to it.
+- Keep the subject: no coatracks. Not a broader ideology's (secularism's for
+  Jewish secularism, or for a person who holds it), a related one's (secular humanism's for
+  secularism), a party's for one of its members, a relative's or employer's for a person.
+- To change an earlier answer (null it, change it or revert it), write the new answer with its reason
+  as the rationale and add it, signed, to the statement's `reviewHistory`, the talk page that keeps
+  every version (`validate.js` says how). Words never overturn an action.
+- Change an answer or raise its confidence only on evidence you found and cite. Check every answer
+  you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
+  stated (cite the source of the position that settles it) or `null`. One deduced from a general
+  value is `null`.
+- A later pass comes at least half the project's age (days since its first commit, 2026-10-14) after the previous one, so the gap grows over time (`validate.js` enforces it).
+- Add your model id to `auditor` if it isn't there yet (a list, the
+  first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
+  "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
+  the date of your pass. Set `"rules": 7` and bring the whole file up to it, older answers
+  and sources included (`validate.js` says what is missing).
+- If the record really has nothing more, failing the uncertainty rule is the correct outcome. Say in `notes`
+  which themes you searched.

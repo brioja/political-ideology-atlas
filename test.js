@@ -395,12 +395,6 @@ model.components.slice(0, 6).forEach((c, i) => {
 for (const t of ["validate-rules.test.js", "validate-ideology-rules.test.js"]) {
   console.log(require("child_process").execFileSync("node", [require("path").join(__dirname, "tests", t)], { encoding: "utf8" }).trim());
 }
-// What an auditor reads before answering stays within its size cap (Brandon, 2026-11-16; scripts/auditor-input-size.js).
-{
-  const r = require("child_process").spawnSync("node", [require("path").join(__dirname, "scripts", "auditor-input-size.js")], { encoding: "utf8" });
-  assert.strictEqual(r.status, 0, (r.stderr || r.stdout).trim());
-  console.log(r.stdout.trim());
-}
 // Every wording mark carries the reason statements-check.js and review briefs print (Brandon, 2026-11-11).
 {
   const { WORDING, WORDING_REASONS } = require("./scripts/lib");

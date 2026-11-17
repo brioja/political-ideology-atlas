@@ -540,7 +540,7 @@ function validate(id) {
     if (typeof m.rationale !== "string" || m.rationale.trim().length < 20) errors.push(`missingStatements[${i}]: rationale missing or too short`);
     if (!Array.isArray(m.sources) || !m.sources.length) errors.push(`missingStatements[${i}]: needs at least one source`);
     else for (const sid of m.sources) if (!sourceIds.has(sid)) errors.push(`missingStatements[${i}]: unknown source '${sid}'`);
-    // Rule of two (audits/PROMPT.md section 4): at least two verbatim passages from separate places.
+    // Rule of two (audits/PROMPT.md section 5): at least two verbatim passages from separate places.
     // Entries written before the rule have no "quotes" field: a warning, so old audits still validate.
     const quotes = Array.isArray(m.quotes) ? m.quotes.filter((q) => q && typeof q.text === "string" && q.text.trim()).length : null;
     if (!m.addedAs && !m.declined) {
