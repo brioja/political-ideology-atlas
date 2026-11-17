@@ -1,7 +1,7 @@
 {
   "id": "anarcho-syndicalism",
   "name": "Anarcho-Syndicalism",
-  "auditedAt": "2026-10-15",
+  "auditedAt": "2026-11-17",
   "auditor": "claude-sonnet-5-5",
   "summary": "Anarcho-syndicalism is the anarchist wing of revolutionary trade unionism. It holds that unions, organised from below and federated, should wage the class struggle by direct action and the general strike, then take over production themselves and replace both capitalism and the state. It rejects parliaments, political parties and any dictatorship, and is internationalist and anti-militarist.",
   "scope": "The classical movement as theorised by Rudolf Rocker (Anarcho-Syndicalism, 1938) and practised by Spain's CNT, using its 1936 Zaragoza resolution on libertarian communism as the programme. It excludes plain syndicalism without the anarchist goal of abolishing the state, and Marxist-influenced union strategies.",
@@ -37,26 +37,38 @@
     {
       "id": "s1",
       "kind": "reference",
+      "evidence": "words",
       "title": "Anarcho-syndicalism",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Anarcho-syndicalism",
-      "usedFor": "Overview of aims, unions, direct action, federal structure, distribution, and the CNT and CGT."
+      "usedFor": "Finding evidence only; no answer rests on it."
     },
     {
       "id": "s2",
       "kind": "primary",
+      "evidence": "words",
       "title": "Anarcho-Syndicalism: Theory and Practice",
       "author": "Rudolf Rocker",
       "url": "https://theanarchistlibrary.org/library/rudolf-rocker-anarchosyndicalism",
-      "usedFor": "State, parties and parliament, direct action, general strike, labour councils, federalism, nationalism, militarism, Bolshevism."
+      "usedFor": "State, parties, direct action, labour councils, federalism, nationalism, militarism, Bolshevism."
     },
     {
       "id": "s3",
       "kind": "program",
+      "evidence": "words",
       "title": "The Confederal Concept of Libertarian Communism (CNT Zaragoza congress, 1936)",
       "author": "Confederacion Nacional del Trabajo",
       "url": "https://libcom.org/article/confederal-concept-libertarian-communism",
-      "usedFor": "Production cards, distribution by need, communes, armed population, religion, family, education, rejection of prisons."
+      "usedFor": "Armed people, distribution by need, communes, religion, family, education, prisons."
+    },
+    {
+      "id": "s4",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Syndicalism",
+      "author": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/syndicalism",
+      "usedFor": "Overview of anarcho-syndicalism as the anarchist strand of syndicalism."
     }
   ],
   "answers": {
@@ -83,9 +95,31 @@
     "public-ownership": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Industry is to be collectivised under workers' control by unions, not owned by the state, so public ownership in the usual sense is rejected.",
+      "rationale": "Rocker holds that the state is to be abolished and production run by workers' federations, not owned by the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Industry is to be collectivised under workers' control by unions, not owned by the state, so public ownership in the usual sense is rejected.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Rocker holds that the state is to be abolished and production run by workers' federations, not owned by the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "tax-the-wealthy": {
@@ -97,9 +131,31 @@
     "unions-good": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Unions are the vehicle of class struggle and the embryo of the new society.",
+      "rationale": "Rocker has the anarcho-syndicalists centre their activity on \"the utilisation of their economic and social power\" through the unions.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Unions are the vehicle of class struggle and the embryo of the new society.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Rocker has the anarcho-syndicalists centre their activity on \"the utilisation of their economic and social power\" through the unions.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "property-fundamental": {
@@ -125,9 +181,31 @@
     "worker-ownership": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Workers' control of production and distribution is the central economic aim.",
+      "rationale": "Rocker sets out the labour-council system in which workers' associations run production, and endorses Bakunin's collective ownership of the means of production.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Workers' control of production and distribution is the central economic aim.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Rocker sets out the labour-council system in which workers' associations run production, and endorses Bakunin's collective ownership of the means of production.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "surveillance-ok": {
@@ -159,9 +237,31 @@
     "state-harmful": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Abolition of the state alongside capitalism is the stated goal.",
+      "rationale": "Rocker writes \"Culture and the state ... are antagonists\" and calls the state the defender of mass exploitation and social privileges.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Abolition of the state alongside capitalism is the stated goal.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Rocker writes \"Culture and the state ... are antagonists\" and calls the state the defender of mass exploitation and social privileges.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "limit-guns": {
@@ -335,11 +435,33 @@
       "sources": []
     },
     "tech-solves-problems": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Favours industrial production under workers' control but Rocker also notes machines reduced workers to mechanism parts.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Favours industrial production under workers' control but Rocker also notes machines reduced workers to mechanism parts.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "expand-nuclear": {
@@ -385,11 +507,33 @@
       "sources": []
     },
     "tax-inheritance": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Inheritance goes with private property to be abolished, but taxing it presupposes a state; adherents split.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Inheritance goes with private property to be abolished, but taxing it presupposes a state; adherents split.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "basic-income": {
@@ -615,11 +759,33 @@
       "sources": []
     },
     "industrial-civilization-disaster": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Anarcho-syndicalism favours industrialisation, unlike primitivist currents.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Anarcho-syndicalism favours industrialisation, unlike primitivist currents.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "accelerate-technology": {
@@ -665,9 +831,31 @@
     "direct-action": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Strikes, boycotts and sabotage are used instead of legal channels and parliament.",
+      "rationale": "Rocker writes that for the anarcho-syndicalists \"their method is that of direct action in both the economic and the political struggles of the time.\"",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Strikes, boycotts and sabotage are used instead of legal channels and parliament.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Rocker writes that for the anarcho-syndicalists \"their method is that of direct action in both the economic and the political struggles of the time.\"",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "means-match-ends": {
@@ -679,11 +867,33 @@
       ]
     },
     "return-to-foraging": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Favours industrial production under workers' control.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Favours industrial production under workers' control.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "abolish-division-of-labor": {
@@ -819,11 +1029,33 @@
       ]
     },
     "national-rebirth": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rocker opposes nationalism and fascism's drive to bring all life under the state, implying rejection of national rebirth, which he does not discuss as such.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker opposes nationalism and fascism's drive to bring all life under the state, implying rejection of national rebirth, which he does not discuss as such.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "territorial-expansion": {
@@ -835,11 +1067,33 @@
       ]
     },
     "personal-loyalty-rule": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rejecting every form of political power and privilege excludes feudal loyalty, though Rocker does not discuss oaths of fealty.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rejecting every form of political power and privilege excludes feudal loyalty, though Rocker does not discuss oaths of fealty.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "bound-labor": {
@@ -903,11 +1157,33 @@
       "sources": []
     },
     "avoid-deficit-stimulus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "State fiscal policy is outside their programme; adherents split.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "State fiscal policy is outside their programme; adherents split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "economic-freedom": {
@@ -960,10 +1236,32 @@
     },
     "class-collaboration": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "Class struggle through unions is the method; collaboration is rejected.",
+      "confidence": "medium",
+      "rationale": "Rocker praises the unions that stood \"neither for pure trade unionism, nor for collaboration of the workers with the political reformers\".",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Class struggle through unions is the method; collaboration is rejected.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker praises the unions that stood \"neither for pure trade unionism, nor for collaboration of the workers with the political reformers\".",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "sacrifice-heritage": {
@@ -1045,11 +1343,33 @@
       "sources": []
     },
     "national-mission": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rocker condemns socialists who backed annexations in the World War and opposes national states, implying rejection of any national mission abroad.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker condemns socialists who backed annexations in the World War and opposes national states, implying rejection of any national mission abroad.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "patriarchy-structural": {
@@ -1085,9 +1405,31 @@
     "night-watchman-state": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Rocker calls the state 'capable only of protecting old privileges and creating new ones' and 'the defender of mass exploitation and social privileges', so a state that protects property is what he rejects.",
+      "rationale": "Rocker calls the state \"the defender of mass exploitation and social privileges\" and calls for its abolition.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Rocker calls the state 'capable only of protecting old privileges and creating new ones' and 'the defender of mass exploitation and social privileges', so a state that protects property is what he rejects.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Rocker calls the state \"the defender of mass exploitation and social privileges\" and calls for its abolition.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "discourage-race-mixing": {
@@ -1117,19 +1459,63 @@
       "sources": []
     },
     "uniform-civil-code": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The state is rejected; equality before the law is not the question for them.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The state is rejected; equality before the law is not the question for them.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "restrict-conversion": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Religion is for individual conscience, which excludes coercion.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Religion is for individual conscience, which excludes coercion.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "ban-cattle-slaughter": {
@@ -1221,9 +1607,31 @@
     "restrict-strikes-picketing": {
       "value": -2,
       "confidence": "high",
-      "rationale": "The strike and the general strike are the central weapons.",
+      "rationale": "Rocker presents the organised refusal to work, the general strike, as the workers' means of liberation.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The strike and the general strike are the central weapons.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Rocker presents the organised refusal to work, the general strike, as the workers' means of liberation.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "population-causes-poverty": {
@@ -1261,11 +1669,33 @@
       "sources": []
     },
     "party-controls-media": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rocker condemns Bolshevik rule as 'the dictatorship of a small clique', implying opposition to party control of information, though he does not discuss the press.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker condemns Bolshevik rule as 'the dictatorship of a small clique', implying opposition to party control of information, though he does not discuss the press.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "party-commands-army": {
@@ -1293,11 +1723,33 @@
       ]
     },
     "representatives-worker-pay": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Wikipedia notes delegates serve single terms and are paid the same as the workers they represent.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Wikipedia notes delegates serve single terms and are paid the same as the workers they represent.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "party-discipline-binding": {
@@ -1313,12 +1765,34 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The movement rejects the state and standing armies in favor of an armed population, so a head of state commanding the military is opposed.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s2",
-        "s3"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The movement rejects the state and standing armies in favor of an armed population, so a head of state commanding the military is opposed.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "church-by-bishops": {
@@ -1340,12 +1814,34 @@
       ]
     },
     "defeat-own-government-war": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Rocker opposed militarism, but revolutionary defeatism is a Leninist line; in 1914 the French CGT backed the war while the IWW opposed it, and the CNT joined the Republican war effort in 1936, so the movement is split.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Rocker opposed militarism, but revolutionary defeatism is a Leninist line; in 1914 the French CGT backed the war while the IWW opposed it, and the CNT joined the Republican war effort in 1936, so the movement is split.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "censor-art-for-virtue": {
@@ -1361,12 +1857,34 @@
       "sources": []
     },
     "recall-officials": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Delegates are mandated and revocable by the bodies that send them in the federal union structure.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Delegates are mandated and revocable by the bodies that send them in the federal union structure.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "end-foreign-alliances": {
@@ -1404,12 +1922,34 @@
       ]
     },
     "educated-out-of-touch": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The movement distrusts intellectual leaders but the 1936 program stresses universal education; adherents are split.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s2",
-        "s3"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The movement distrusts intellectual leaders but the 1936 program stresses universal education; adherents are split.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "cultures-equal-different": {
@@ -1488,11 +2028,33 @@
       ]
     },
     "constituent-assembly": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Rocker rejects parliaments and the state and favours federated labour councils, so a state constituent assembly is not their route.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Rocker rejects parliaments and the state and favours federated labour councils, so a state constituent assembly is not their route.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "restrict-freedoms-for-growth": {
@@ -1516,11 +2078,33 @@
       "sources": []
     },
     "direct-election-head-of-state": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rocker rejects the state, parliament and parties, so a president elected by the people has no place.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker rejects the state, parliament and parties, so a president elected by the people has no place.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "central-bank-independence": {
@@ -1652,11 +2236,33 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The CNT programme addresses family and education but not custody rules; no clear position.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The CNT programme addresses family and education but not custody rules; no clear position.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "class-struggle-under-socialism": {
@@ -1688,11 +2294,33 @@
       ]
     },
     "apostasy-punishable": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The movement was secular and strongly anticlerical.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The movement was secular and strongly anticlerical.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "women-must-cover": {
@@ -1908,11 +2536,33 @@
       "sources": []
     },
     "animal-use-humane": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents split between vegetarian abolitionists and those who accept humane use; the sources are silent.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents split between vegetarian abolitionists and those who accept humane use; the sources are silent.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "noblesse-oblige": {
@@ -2064,11 +2714,33 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Delegates serve a single term, are paid as workers and can be recalled, which matches mandated delegation.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Delegates serve a single term, are paid as workers and can be recalled, which matches mandated delegation.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -2198,21 +2870,65 @@
       ]
     },
     "non-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Anarcho-syndicalists oppose states, but supported international solidarity as in the Spanish Civil War; adherents would split.",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Anarcho-syndicalists oppose states, but supported international solidarity as in the Spanish Civil War; adherents would split.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "industrial-unions": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Anarcho-syndicalism organises workers in industrial federations of unions, as the CNT did, rather than by craft.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Anarcho-syndicalism organises workers in industrial federations of unions, as the CNT did, rather than by craft.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "minority-conspiracy": {
@@ -2244,12 +2960,34 @@
       ]
     },
     "informal-organisation": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Anarcho-syndicalism relies on permanent federated unions, not informal groups.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Anarcho-syndicalism relies on permanent federated unions, not informal groups.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "national-law-over-international": {
@@ -2259,12 +2997,34 @@
       "sources": []
     },
     "religious-nation": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The CNT programme rejects religion and Rocker rejects nationalism, so a nation defined by religion contradicts it.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s2",
-        "s3"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The CNT programme rejects religion and Rocker rejects nationalism, so a nation defined by religion contradicts it.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "deference-to-leading-power": {
@@ -2360,11 +3120,33 @@
       ]
     },
     "historical-land-claim": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Anarchists are internationalist and reject nations and states as the bearers of rights, so a people's tie to land does not outrank the claims of those living there now.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Anarchists are internationalist and reject nations and states as the bearers of rights, so a people's tie to land does not outrank the claims of those living there now.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "holocaust-denial": {
@@ -2374,11 +3156,33 @@
       "sources": []
     },
     "criminalize-homosexuality": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rejecting state coercion over personal life and the criminal law as an instrument of authority, adherents oppose criminalising consensual relations.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rejecting state coercion over personal life and the criminal law as an instrument of authority, adherents oppose criminalising consensual relations.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "suppress-opposition": {
@@ -2390,19 +3194,63 @@
       ]
     },
     "punish-blasphemy": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Adherents are anti-clerical and oppose any state enforcing religion; punishing blasphemy would be authority at its worst.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Adherents are anti-clerical and oppose any state enforcing religion; punishing blasphemy would be authority at its worst.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "colonies-serve-metropole": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Anti-imperialism and internationalism follow from rejecting exploitation and the state; colonial rule for the ruler's benefit is exploitation.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Anti-imperialism and internationalism follow from rejecting exploitation and the state; colonial rule for the ruler's benefit is exploitation.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "defensive-jihad-duty": {
@@ -2444,11 +3292,33 @@
       "sources": []
     },
     "left-right-obsolete": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The ideology sits firmly on the revolutionary left and sees capitalists and workers as opposed classes whose best ideas cannot be merged.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The ideology sits firmly on the revolutionary left and sees capitalists and workers as opposed classes whose best ideas cannot be merged.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "alienated-labor": {
@@ -2510,11 +3380,33 @@
       ]
     },
     "stay-neutral-between-blocs": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Anti-militarism and rejection of rival states point to refusing alignment with great-power blocs, though adherents would prefer no state armies at all.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Anti-militarism and rejection of rival states point to refusing alignment with great-power blocs, though adherents would prefer no state armies at all.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "dynastic-succession": {
@@ -2538,11 +3430,33 @@
       "sources": []
     },
     "property-franchise": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rocker rejects parliamentary politics and class privilege, so a property qualification on voting is opposed on both counts.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker rejects parliamentary politics and class privilege, so a property qualification on voting is opposed on both counts.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "domination-women-nature": {
@@ -2618,11 +3532,33 @@
       "sources": []
     },
     "wealth-concentration-endangers-liberty": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Anarcho-syndicalists see capitalist ownership as the root of class domination and want productive wealth held by the unions and communes, so concentrated wealth is a threat to liberty.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Anarcho-syndicalists see capitalist ownership as the root of class domination and want productive wealth held by the unions and communes, so concentrated wealth is a threat to liberty.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "open-lgbt-military-service": {
@@ -2632,11 +3568,33 @@
       "sources": []
     },
     "state-promotes-atheism": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The movement wants the state abolished, so a state programme of promoting atheism conflicts with its principles, even though the CNT and many members were anticlerical.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The movement wants the state abolished, so a state programme of promoting atheism conflicts with its principles, even though the CNT and many members were anticlerical.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "abolish-police-prisons": {
@@ -2658,11 +3616,33 @@
       "sources": []
     },
     "term-limits": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Wikipedia notes that delegates serve single terms and are paid the same as the workers they represent, which is rotation of office.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Wikipedia notes that delegates serve single terms and are paid the same as the workers they represent, which is rotation of office.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "vote-delegation": {
@@ -2966,11 +3946,33 @@
       ]
     },
     "language-defines-nation": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Rocker argues the nation is the result of the state rather than its cause, and the movement is internationalist, so a nation defined by language and history is rejected.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Rocker argues the nation is the result of the state rather than its cause, and the movement is internationalist, so a nation defined by language and history is rejected.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "communal-electorates": {
@@ -3038,30 +4040,96 @@
       "sources": []
     },
     "state-arms-monopoly": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Anarcho-syndicalists reject the state, and the CNT organised armed workers' militias in 1936.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Anarcho-syndicalists reject the state, and the CNT organised armed workers' militias in 1936.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "soldiers-refuse-war": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Rocker's anti-militarism calls for refusing war service and for general strikes against war.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Rocker's anti-militarism calls for refusing war service and for general strikes against war.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "collective-bargaining": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Unions are the core of the movement, though they pursue direct action and abolition of wage labour rather than negotiated contracts as the end.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Unions are the core of the movement, though they pursue direct action and abolition of wage labour rather than negotiated contracts as the end.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "in-work-tax-credits": {
@@ -3308,11 +4376,33 @@
       "sources": []
     },
     "defend-planned-state": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rocker rejects state socialism and any dictatorship, so a bureaucratic planned state is not to be defended.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker rejects state socialism and any dictatorship, so a bureaucratic planned state is not to be defended.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "indirect-election": {
@@ -3360,20 +4450,64 @@
       "sources": []
     },
     "equal-conscription": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Anti-militarism is a core commitment, so the movement rejects conscription for everyone.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Anti-militarism is a core commitment, so the movement rejects conscription for everyone.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "homeland-spiritual-bond": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rocker treats nationalism as a political religion serving rulers and the movement is internationalist.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s2",
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker treats nationalism as a political religion serving rulers and the movement is internationalist.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "extrajudicial-killing": {
@@ -3424,12 +4558,34 @@
       "sources": []
     },
     "bypass-parties-groups": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Anarcho-syndicalists reject party leaders but rely on federated unions and labour councils, so bypassing organised groups is opposed.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s2",
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Anarcho-syndicalists reject party leaders but rely on federated unions and labour councils, so bypassing organised groups is opposed.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "no-business-privileges": {
@@ -3526,12 +4682,34 @@
       "sources": []
     },
     "market-under-party-rule": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Rocker rejects party leadership and the state, and the CNT programme abolishes the market and money, so a party-led market economy contradicts it.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
       "sources": [
-        "s2",
-        "s3"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Rocker rejects party leadership and the state, and the CNT programme abolishes the market and money, so a party-led market economy contradicts it.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-17): the cited text states no position on this statement; the earlier answer rested on a Wikipedia summary or on reasoning from the abolition of the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "former-empire-equal-treatment": {
@@ -3542,6 +4720,666 @@
         "s2"
       ],
       "auditor": "claude-sonnet-5-5"
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     }
   },
   "missingStatements": [
@@ -3574,7 +5412,7 @@
       "addedAs": "representatives-worker-pay"
     }
   ],
-  "notes": "The CNT joined the Republican government in 1936, which was controversial within the anarcho-syndicalist international. Distribution is disputed: some supporters keep contribution-based pay in a transition, others stress need. Ecology, religion and money are thinly covered by the sources read.",
+  "notes": "The CNT joined the Republican government in 1936, which was controversial within the anarcho-syndicalist international. Distribution is disputed: some supporters keep contribution-based pay in a transition, others stress need. This pass nulled answers resting on a Wikipedia summary or reasoning from abolishing the state; answers stand where Rocker or the CNT program states the position.",
   "reviews": [
     {
       "kind": "silence",
@@ -3599,6 +5437,44 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-17",
+      "nulled": 45
+    }
+  ],
+  "rules": 7,
+  "aliases": [],
+  "authors": [],
+  "reviewHistory": [],
+  "notFound": [
+    {
+      "work": "Anarchist FAQ (full text)",
+      "tried": [
+        {
+          "where": "theanarchistlibrary.org",
+          "how": "scripts/get.js on the full-text page; no usable copy returned"
+        },
+        {
+          "where": "anarchistfaq.org",
+          "how": "scripts/get.js on the index page; no usable copy returned"
+        }
+      ]
+    },
+    {
+      "work": "International Workers' Association principles and statutes",
+      "tried": [
+        {
+          "where": "iwa-ait.org",
+          "how": "scripts/get.js on the principles page; no usable copy returned"
+        },
+        {
+          "where": "theanarchistlibrary.org",
+          "how": "scripts/get.js on the IWA principles text; no usable copy returned"
+        }
+      ]
     }
   ]
 }
