@@ -321,7 +321,11 @@ console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind 
   const activeAt = (k) => { while (k > 0 && !ids.includes(fileSlots[k])) k--; return k; };
   for (const [k, a] of [[0, -2], [11, 2], [12, 0], [200, 1], [fileSlots.length - 1, -1]]) sparse[ids.indexOf(fileSlots[activeAt(k)])] = a;
   const s4 = encodeShare(sparse, ids, fileSlots);
-  assert(/^4\.[A-Za-z0-9_-]+$/.test(s4) && s4.length < 15, `sparse v4 link is short and URL-safe: ${s4}`);
+  // Short = one character per answer plus the skips: a gap of g slots needs at most floor(g / 96) + 3 skip
+  // characters (skips of 96, 48, 24, 12). The gap to the last slot grows as slots are appended, so no fixed length.
+  const answered = fileSlots.map((id, k) => (sparse[ids.indexOf(id)] != null ? k : -1)).filter((k) => k >= 0);
+  const maxLength = 2 + answered.reduce((n, k, j) => n + 1 + Math.floor((k - (j ? answered[j - 1] + 1 : 0)) / 96) + 3, 0);
+  assert(/^4\.[A-Za-z0-9_-]+$/.test(s4) && s4.length <= maxLength, `sparse v4 link is short and URL-safe: ${s4} (at most ${maxLength})`);
   assert.deepStrictEqual(decodeShare(s4, ids, fileSlots), sparse, "sparse v4 round-trip (gaps of 0, 10, 0, 187, and to the last slot)");
   assert.strictEqual(encodeShare(ids.map(() => null), ids, fileSlots), "4.", "an empty result");
   assert(encodeShare(given, ids, fileSlots).length <= fileSlots.length + 2, "a v4 link is never longer than one character per slot");
