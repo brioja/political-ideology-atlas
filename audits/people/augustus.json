@@ -1,7 +1,7 @@
 {
   "id": "augustus",
   "name": "Augustus",
-  "auditedAt": "2026-10-23",
+  "auditedAt": "2026-11-17",
   "auditor": "claude-sonnet-5-5",
   "living": false,
   "role": "First Roman emperor (27 BC–AD 14)",
@@ -14,7 +14,8 @@
       "title": "Res Gestae Divi Augusti, part I (chapters 1-7)",
       "author": "Augustus (Loeb translation, Bill Thayer's LacusCurtius)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/1*.html",
-      "usedFor": "His own account of his rise, wars, refusal of dictatorship and unusual offices"
+      "usedFor": "His own account of his rise, wars, refusal of dictatorship and unusual offices",
+      "evidence": "action"
     },
     {
       "id": "s2",
@@ -22,7 +23,8 @@
       "title": "Res Gestae Divi Augusti, part II (chapters 8-14)",
       "author": "Augustus (Loeb translation, LacusCurtius)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/2*.html",
-      "usedFor": "Restoration of ancestral customs by law, priesthoods, honours, sacred person"
+      "usedFor": "Restoration of ancestral customs by law, priesthoods, honours, sacred person",
+      "evidence": "action"
     },
     {
       "id": "s3",
@@ -30,7 +32,8 @@
       "title": "Res Gestae Divi Augusti, part III (chapters 15-18)",
       "author": "Augustus (Loeb translation, LacusCurtius)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/3*.html",
-      "usedFor": "Grain and cash distributions, veterans' land purchases, military treasury"
+      "usedFor": "Grain and cash distributions, veterans' land purchases, military treasury",
+      "evidence": "action"
     },
     {
       "id": "s4",
@@ -38,7 +41,8 @@
       "title": "Res Gestae Divi Augusti, part IV (chapters 19-25)",
       "author": "Augustus (Loeb translation, LacusCurtius)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/4*.html",
-      "usedFor": "Temple building and restoration, aqueducts, public spectacles, removal of his statues"
+      "usedFor": "Temple building and restoration, aqueducts, public spectacles, removal of his statues",
+      "evidence": "action"
     },
     {
       "id": "s5",
@@ -46,7 +50,8 @@
       "title": "Res Gestae Divi Augusti, part V (chapters 25-31)",
       "author": "Augustus (Loeb translation, LacusCurtius)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/5*.html",
-      "usedFor": "Conquests, oaths of allegiance, client kings, colonies"
+      "usedFor": "Conquests, oaths of allegiance, client kings, colonies",
+      "evidence": "action"
     },
     {
       "id": "s6",
@@ -54,7 +59,8 @@
       "title": "Res Gestae Divi Augusti, part VI (chapters 32-35)",
       "author": "Augustus (Loeb translation, LacusCurtius)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/6*.html",
-      "usedFor": "Foreign kings as suppliants, the settlement of 27 BC, title Augustus, Father of the Country"
+      "usedFor": "Foreign kings as suppliants, the settlement of 27 BC, title Augustus, Father of the Country",
+      "evidence": "action"
     },
     {
       "id": "s7",
@@ -62,7 +68,8 @@
       "title": "Life of Augustus (Lives of the Twelve Caesars)",
       "author": "Suetonius (Loeb translation, LacusCurtius)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Augustus*.html",
-      "usedFor": "Secondhand: laws on marriage and morals, religion, proscriptions, citizenship, quoted letters and edicts"
+      "usedFor": "Secondhand: laws on marriage and morals, religion, proscriptions, citizenship, quoted letters and edicts",
+      "evidence": "action"
     },
     {
       "id": "s8",
@@ -70,7 +77,8 @@
       "title": "Annals, Book 1 (Tiberius's accession; Augustus's breviarium)",
       "author": "Tacitus (LacusCurtius)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/1A*.html",
-      "usedFor": "Secondhand: Augustus's final written advice to keep the empire within its frontiers"
+      "usedFor": "Secondhand: Augustus's final written advice to keep the empire within its frontiers",
+      "evidence": "words"
     },
     {
       "id": "s9",
@@ -78,7 +86,17 @@
       "title": "Augustus",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Augustus",
-      "usedFor": "Standing army, praetorians, vigiles, marriage laws, proscriptions, imperial cult"
+      "usedFor": "Standing army, praetorians, vigiles, marriage laws, proscriptions, imperial cult",
+      "evidence": "words"
+    },
+    {
+      "id": "s10",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Cassius Dio, Roman History, Book 56 (Loeb translation; the Varian levy of AD 9)",
+      "author": "Cassius Dio",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/56*.html",
+      "usedFor": "Dio's report of Augustus's compulsory levy by lot after the Varian disaster"
     }
   ],
   "answers": {
@@ -178,10 +196,34 @@
     "state-harmful": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He built up state institutions on a large scale (army, guard, fire and police services, treasury, road network) and ruled as their head.",
+      "rationale": "The Res Gestae lists the aqueducts, roads, temples, grain and cash distributions and the military treasury he built or paid for, so his record is of building up the state he headed, not of abolishing government.",
       "sources": [
-        "s9",
+        "s3",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He built up state institutions on a large scale (army, guard, fire and police services, treasury, road network) and ruled as their head.",
+          "sources": [
+            "s9",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The Res Gestae lists the aqueducts, roads, temples, grain and cash distributions and the military treasury he built or paid for, so his record is of building up the state he headed, not of abolishing government.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "limit-guns": {
@@ -219,11 +261,33 @@
     },
     "traditional-family": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "He personally drove the marriage and morality legislation (the Julian marriage law and the later Papia Poppaea law, with penalties for the unmarried and childless and rewards for parents, and the law against adultery) to strengthen marriage and family life.",
+      "confidence": "medium",
+      "rationale": "Suetonius reports that he revised and enacted laws on adultery and chastity and on the encouragement of marriage among the classes, and pressed the marriage law against open resistance until he softened part of it.",
       "sources": [
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He personally drove the marriage and morality legislation (the Julian marriage law and the later Papia Poppaea law, with penalties for the unmarried and childless and rewards for parents, and the law against adultery) to strengthen marriage and family life.",
+          "sources": [
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that he revised and enacted laws on adultery and chastity and on the encouragement of marriage among the classes, and pressed the marriage law against open resistance until he softened part of it.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "same-sex-marriage": {
@@ -552,10 +616,32 @@
     "duties-before-rights": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "His marriage and morals laws imposed duties on citizens to marry and have children, with penalties for evasion, placing the community's needs ahead of individual choice.",
+      "rationale": "Suetonius reports that his marriage laws obliged citizens to marry and rear children under penalties, and that he pressed them against resistance, placing the community's aim ahead of individual choice.",
       "sources": [
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "His marriage and morals laws imposed duties on citizens to marry and have children, with penalties for evasion, placing the community's needs ahead of individual choice.",
+          "sources": [
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that his marriage laws obliged citizens to marry and rear children under penalties, and that he pressed them against resistance, placing the community's aim ahead of individual choice.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "nature-intrinsic-value": {
@@ -567,10 +653,32 @@
     "limit-population": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "His marriage laws aimed to raise the number of citizen births, with rewards for children and penalties for the childless, the opposite of limiting population.",
+      "rationale": "Suetonius reports that his marriage laws rewarded parents of children and penalised the unmarried and childless, aiming to raise citizen births, the opposite of limiting population.",
       "sources": [
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "His marriage laws aimed to raise the number of citizen births, with rewards for children and penalties for the childless, the opposite of limiting population.",
+          "sources": [
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that his marriage laws rewarded parents of children and penalised the unmarried and childless, aiming to raise citizen births, the opposite of limiting population.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "industrial-civilization-disaster": {
@@ -687,11 +795,33 @@
     },
     "harm-principle": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "He legislated private morals and conduct for adults through laws on extravagance, adultery and chastity, and marriage, and regulated dress and seating, which goes beyond preventing harm to others.",
+      "confidence": "medium",
+      "rationale": "Suetonius reports that he enacted laws on extravagance, adultery and chastity, and regulated dress and seating, restricting adult conduct that harmed no one else.",
       "sources": [
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He legislated private morals and conduct for adults through laws on extravagance, adultery and chastity, and marriage, and regulated dress and seating, which goes beyond preventing harm to others.",
+          "sources": [
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that he enacted laws on extravagance, adultery and chastity, and regulated dress and seating, restricting adult conduct that harmed no one else.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "individual-rights-only": {
@@ -701,10 +831,13 @@
       "sources": []
     },
     "conscription": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Dio reports that after the Varian disaster, when no men of military age enrolled, he made them draw lots, stripped every fifth man under thirty-five and every tenth older man of property and civil rights, and put some who still refused to death; Suetonius adds that he sold a knight who maimed his sons to avoid service.",
+      "sources": [
+        "s10",
+        "s7"
+      ]
     },
     "exit-over-voice": {
       "value": null,
@@ -755,12 +888,34 @@
       "sources": []
     },
     "territorial-expansion": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The Res Gestae records that he extended the frontiers of all provinces bordering unconquered peoples and added Egypt, Pannonia and others; Tacitus reports that his last written advice recommended keeping the empire within its present limits, so late evidence points the other way.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "In the Res Gestae (ch. 26-27) he lists extending the boundaries of the provinces bordering unsubdued peoples, the addition of Egypt, Pannonia and others, and campaigns reaching the Elbe, the Danube and Arabia.",
       "sources": [
-        "s5",
-        "s8"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Res Gestae records that he extended the frontiers of all provinces bordering unconquered peoples and added Egypt, Pannonia and others; Tacitus reports that his last written advice recommended keeping the empire within its present limits, so late evidence points the other way.",
+          "sources": [
+            "s5",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "In the Res Gestae (ch. 26-27) he lists extending the boundaries of the provinces bordering unsubdued peoples, the addition of Egypt, Pannonia and others, and campaigns reaching the Elbe, the Danube and Arabia.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "personal-loyalty-rule": {
@@ -836,12 +991,34 @@
       "sources": []
     },
     "rule-by-example": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "He set up statues of Rome's great men so that rulers would measure up to them and says he set precedents for posterity, but he also legislated heavily on morals with penalties; the evidence points both ways.",
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Suetonius reports that he enacted penal laws on extravagance, adultery and marriage and enforced them even against his own daughter, so he relied on legal enforcement more than on the rulers' example.",
       "sources": [
-        "s2",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He set up statues of Rome's great men so that rulers would measure up to them and says he set precedents for posterity, but he also legislated heavily on morals with penalties; the evidence points both ways.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that he enacted penal laws on extravagance, adultery and marriage and enforced them even against his own daughter, so he relied on legal enforcement more than on the rulers' example.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "national-self-determination": {
@@ -1070,10 +1247,12 @@
       "sources": []
     },
     "initiating-force-wrong": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Res Gestae (ch. 26-30) lists the wars he began or directed against peoples on the frontiers (Alpine tribes, Pannonians, Dacians, Germans, Arabia) as achievements.",
+      "sources": [
+        "s5"
+      ]
     },
     "competition-drives-progress": {
       "value": null,
@@ -1144,10 +1323,32 @@
     "emergency-suspend-protections": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "As a triumvir he pressed the 43 BC proscriptions, which outlawed hundreds of senators and knights without trial; Suetonius says he was more insistent than his colleagues that no one be spared.",
+      "rationale": "Suetonius reports that as triumvir he pressed the 43 BC proscriptions, which outlawed hundreds of senators and knights without trial, and was more insistent than his colleagues that no one be spared.",
       "sources": [
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "As a triumvir he pressed the 43 BC proscriptions, which outlawed hundreds of senators and knights without trial; Suetonius says he was more insistent than his colleagues that no one be spared.",
+          "sources": [
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that as triumvir he pressed the 43 BC proscriptions, which outlawed hundreds of senators and knights without trial, and was more insistent than his colleagues that no one be spared.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "price-controls-essentials": {
@@ -1194,11 +1395,33 @@
     },
     "head-commands-forces": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "The armies swore their oath to him, he commanded the legions through his own deputies (legati) and set up the Praetorian Guard, and he appointed the prefects and provincial governors who ran the imperial provinces.",
+      "confidence": "medium",
+      "rationale": "Suetonius reports that he assigned legions and auxiliaries to the provinces, stationed fleets at Misenum and Ravenna, kept the guard around his own person and fixed soldiers' pay and service terms, so command of the forces rested with him.",
       "sources": [
-        "s5",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The armies swore their oath to him, he commanded the legions through his own deputies (legati) and set up the Praetorian Guard, and he appointed the prefects and provincial governors who ran the imperial provinces.",
+          "sources": [
+            "s5",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that he assigned legions and auxiliaries to the provinces, stationed fleets at Misenum and Ravenna, kept the guard around his own person and fixed soldiers' pay and service terms, so command of the forces rested with him.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "church-by-bishops": {
@@ -1255,10 +1478,32 @@
     "people-in-arms": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He replaced the citizen levies and warlords' private armies of the civil wars with a professional standing army with fixed terms of service and a military treasury to pay veterans.",
+      "rationale": "In the Res Gestae (ch. 17) he lists his payments into the military treasury for rewards to soldiers on completing their service, which funded a professional standing army in place of citizen levies.",
       "sources": [
-        "s3",
-        "s9"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He replaced the citizen levies and warlords' private armies of the civil wars with a professional standing army with fixed terms of service and a military treasury to pay veterans.",
+          "sources": [
+            "s3",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "In the Res Gestae (ch. 17) he lists his payments into the military treasury for rewards to soldiers on completing their service, which funded a professional standing army in place of citizen levies.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "rural-life-healthier": {
@@ -1288,10 +1533,32 @@
     "death-penalty": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "He carried the 43 BC proscriptions through with notable severity and his regime executed conspirators, while in ordinary trials he is described as lenient; he did not renounce capital punishment.",
+      "rationale": "Suetonius reports that he carried the 43 BC proscriptions through with notable severity and had conspirators put to death, while in ordinary trials he was often lenient; he never renounced capital punishment.",
       "sources": [
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He carried the 43 BC proscriptions through with notable severity and his regime executed conspirators, while in ordinary trials he is described as lenient; he did not renounce capital punishment.",
+          "sources": [
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that he carried the 43 BC proscriptions through with notable severity and had conspirators put to death, while in ordinary trials he was often lenient; he never renounced capital punishment.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "sex-ed-in-schools": {
@@ -1451,11 +1718,35 @@
     "sacred-ruler": {
       "value": 1,
       "confidence": "low",
-      "rationale": "He took the title 'son of the deified' Julius and was named Augustus; a law made his person sacred and his name was put in the Salian hymn, but he refused to be called lord, refused temples in Rome and accepted provincial worship only jointly with Rome.",
+      "rationale": "He took the title son of the deified and the name Augustus, and Suetonius reports that his person was made sacred by law, but he refused to be called lord and accepted worship only jointly with Rome.",
       "sources": [
         "s2",
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "He took the title 'son of the deified' Julius and was named Augustus; a law made his person sacred and his name was put in the Salian hymn, but he refused to be called lord, refused temples in Rome and accepted provincial worship only jointly with Rome.",
+          "sources": [
+            "s2",
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "He took the title son of the deified and the name Augustus, and Suetonius reports that his person was made sacred by law, but he refused to be called lord and accepted worship only jointly with Rome.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "flat-income-tax": {
@@ -1727,10 +2018,32 @@
     "parliament-supreme": {
       "value": 0,
       "confidence": "low",
-      "rationale": "In the Res Gestae he says he transferred the republic to the Senate and people and held no more power than his colleagues, yet he held tribunician power and wide imperium and personally drove major legislation; the evidence points both ways.",
+      "rationale": "The Res Gestae (ch. 34) records that in 27 BC he handed the republic to the Senate and people, yet he went on holding tribunician power every year and imperium in the provinces, and drove major legislation himself, so his record points both ways.",
       "sources": [
-        "s6",
-        "s9"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "In the Res Gestae he says he transferred the republic to the Senate and people and held no more power than his colleagues, yet he held tribunician power and wide imperium and personally drove major legislation; the evidence points both ways.",
+          "sources": [
+            "s6",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Res Gestae (ch. 34) records that in 27 BC he handed the republic to the Senate and people, yet he went on holding tribunician power every year and imperium in the provinces, and drove major legislation himself, so his record points both ways.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "animal-suffering-matters": {
@@ -1895,12 +2208,34 @@
       "sources": []
     },
     "individual-pension-accounts": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "He founded a state military treasury, funded by his own money and by taxes on inheritance and sales, to pay gratuities to veterans, a pay-as-you-go style state scheme for soldiers, not a statement on pensions generally.",
+      "rationale": "The only matching act, the state military treasury for soldiers' rewards (Res Gestae 17), does not settle whether workers' pensions should be privately managed individual accounts.",
       "sources": [
-        "s3",
-        "s9"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "He founded a state military treasury, funded by his own money and by taxes on inheritance and sales, to pay gratuities to veterans, a pay-as-you-go style state scheme for soldiers, not a statement on pensions generally.",
+          "sources": [
+            "s3",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The only matching act, the state military treasury for soldiers' rewards (Res Gestae 17), does not settle whether workers' pensions should be privately managed individual accounts.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "land-use-tenure": {
@@ -1967,11 +2302,33 @@
     },
     "pronatalist-incentives": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "His marriage legislation gave privileges and rewards to married citizens with children and penalised celibacy; Suetonius records him raising the rewards when the knights resisted, and he displayed Germanicus's children as an example.",
+      "confidence": "medium",
+      "rationale": "Suetonius reports that his marriage legislation gave privileges and rewards to married citizens with children and penalised celibacy, and that he raised the rewards when the knights resisted.",
       "sources": [
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His marriage legislation gave privileges and rewards to married citizens with children and penalised celibacy; Suetonius records him raising the rewards when the knights resisted, and he displayed Germanicus's children as an example.",
+          "sources": [
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Suetonius reports that his marriage legislation gave privileges and rewards to married citizens with children and penalised celibacy, and that he raised the rewards when the knights resisted.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "residents-only-property": {
@@ -2020,10 +2377,12 @@
       "sources": []
     },
     "abolish-legal-marriage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Suetonius reports that he enacted and enforced laws on marriage with legal penalties and privileges, which made legal marriage a central instrument of his policy.",
+      "sources": [
+        "s7"
+      ]
     },
     "public-access-to-information": {
       "value": -1,
@@ -2263,10 +2622,32 @@
     "abolish-armed-forces": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He instead built a permanent army of 28 legions, with auxiliaries and a military treasury, and kept it for the whole of his rule.",
+      "rationale": "The Res Gestae (ch. 17) records his funding of a military treasury to pay soldiers' rewards, which sustained the permanent legions he kept for his whole rule.",
       "sources": [
-        "s3",
-        "s9"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He instead built a permanent army of 28 legions, with auxiliaries and a military treasury, and kept it for the whole of his rule.",
+          "sources": [
+            "s3",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The Res Gestae (ch. 17) records his funding of a military treasury to pay soldiers' rewards, which sustained the permanent legions he kept for his whole rule.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "rich-first": {
@@ -2718,11 +3099,33 @@
     },
     "arms-reduction": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "After the civil wars he cut the army from about 60 legions to 28 and settled over 300,000 soldiers in colonies or towns; the reduction was to a standing force he judged adequate, not to disarmament.",
+      "confidence": "low",
+      "rationale": "After the civil wars he discharged and settled several hundred thousand soldiers (Res Gestae 3) but kept a permanent army; whether that was only the minimum needed for safety is not settled by the record.",
       "sources": [
-        "s1",
-        "s9"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "After the civil wars he cut the army from about 60 legions to 28 and settled over 300,000 soldiers in colonies or towns; the reduction was to a standing force he judged adequate, not to disarmament.",
+          "sources": [
+            "s1",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "After the civil wars he discharged and settled several hundred thousand soldiers (Res Gestae 3) but kept a permanent army; whether that was only the minimum needed for safety is not settled by the record.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "open-diplomacy": {
@@ -2915,11 +3318,33 @@
     },
     "premarital-sex": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "His law on adultery and chastity criminalised adultery and illicit sex with women of citizen status, and he banished his daughter Julia and later his granddaughter Julia for misconduct.",
+      "confidence": "medium",
+      "rationale": "Suetonius reports his law on adultery and chastity and that he banished his daughter Julia and later his granddaughter Julia for misconduct.",
       "sources": [
-        "s7",
-        "s9"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "His law on adultery and chastity criminalised adultery and illicit sex with women of citizen status, and he banished his daughter Julia and later his granddaughter Julia for misconduct.",
+          "sources": [
+            "s7",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Suetonius reports his law on adultery and chastity and that he banished his daughter Julia and later his granddaughter Julia for misconduct.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "internet-shutdowns": {
@@ -3191,15 +3616,694 @@
         "s7"
       ],
       "auditor": "claude-opus-5-5"
+    },
+    "state-supports-good-ways-of-life": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Suetonius reports that his laws rewarded married parents, penalised celibacy, and revived and funded old rites and priesthoods, so the state backed the ways of life he judged good.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "His own Res Gestae presents his rule as a restored republic; the Suetonius and Tacitus reports are secondhand. The Tacitus report of his advice to keep the empire within its frontiers is the only evidence against expansion and Tacitus himself hedges on its motive.",
+  "notes": "Later pass (rules 7) on the 2026-10-23 audit. Answers rest on the Res Gestae (his own record of his acts, tagged as actions), Suetonius, Tacitus and Cassius Dio, read in full from the local copies; answers that cited Wikipedia were rewritten from Suetonius or the Res Gestae, and one (individual pension accounts) was nulled because the military treasury does not settle it. Added: conscription (Dio, Suetonius), starting wars, abolishing legal marriage, state support for good ways of life. Themes searched in the texts and left null where nothing settles them: economy and taxation (the 5 percent inheritance tax and grain dole do not settle heavy inheritance tax or welfare cuts), money and banking, courts and juries, federalism, immigration and citizenship (Suetonius on stinginess with citizenship does not settle citizenship by descent), religion and conversion, speech and censorship (his libel measures do not settle hate-speech law), international arbitration and alliances. Cassius Dio book 52 (the Agrippa and Maecenas debate) is Dio's own composition and was not used. His own written advice to keep the empire within its limits (Tacitus, Annals 1.11) is words and does not outweigh the record of conquest.",
   "reviews": [
     {
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-17",
+      "nulled": 1
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-17"
     }
   ]
 }
