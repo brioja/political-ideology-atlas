@@ -1,8 +1,10 @@
 {
   "id": "xi-jinping-thought",
   "name": "Xi Jinping Thought",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-17",
+  "auditor": [
+    "claude-sonnet-5-5"
+  ],
   "summary": "Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era is the Chinese Communist Party's official guiding ideology since 2017. It makes Party leadership over all work the defining feature of socialism, pursues the national rejuvenation of the Chinese nation, keeps a socialist market economy with strong state-owned firms and a supported private sector, and rejects Western constitutional democracy and universal values.",
   "scope": "The official doctrine as set out in Xi's 2022 report to the 20th Party Congress and the Party's Document 9 line on ideology, covering the Fourteen Commitments and related slogans such as common prosperity and whole-process people's democracy. It excludes dissenting Chinese Marxist or liberal currents. Many statements the thought never addresses are inferred with low confidence.",
   "wikipedia": "https://en.wikipedia.org/wiki/Xi_Jinping_Thought",
@@ -41,7 +43,8 @@
       "title": "Full text of the report to the 20th National Congress of the Communist Party of China",
       "author": "Xi Jinping / Xinhua via China Daily",
       "url": "https://global.chinadaily.com.cn/a/202210/25/WS6357e484a310fd2b29e7e7de.html",
-      "usedFor": "Party leadership, market role, common prosperity, Taiwan, military, foreign policy, ecology, religion, rule of law."
+      "usedFor": "Party leadership, market role, common prosperity, Taiwan, military, foreign policy, ecology, religion, rule of law.",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -49,7 +52,20 @@
       "title": "Communique on the Current State of the Ideological Sphere (Document No. 9)",
       "author": "CCP General Office (translation via DigiChina, Stanford)",
       "url": "https://digichina.stanford.edu/?p=443",
-      "usedFor": "Rejection of constitutional democracy, universal values, neoliberalism and Western press views; Party control of ideology."
+      "usedFor": "Rejection of constitutional democracy, universal values, neoliberalism and Western press views; Party control of ideology.",
+      "evidence": "words",
+      "titles": [
+        {
+          "title": "Document No. 9",
+          "source": "s6",
+          "quote": "Document No. 9"
+        },
+        {
+          "title": "State of the ideological sphere",
+          "source": "s6",
+          "quote": "State of the ideological sphere"
+        }
+      ]
     },
     {
       "id": "s3",
@@ -57,7 +73,8 @@
       "title": "Xi Jinping Thought",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Xi_Jinping_Thought",
-      "usedFor": "Structure and components of the thought: commitments, subtopics, related concepts."
+      "usedFor": "Structure and components of the thought: commitments, subtopics, related concepts.",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -65,7 +82,42 @@
       "title": "Ideology Without Unity: The Logic of Xi Jinping Thought (lecture announcement)",
       "author": "Chris Mittelstaedt, University of Oxford CCSP",
       "url": "https://www.ccsp.ox.ac.uk/node/4806731",
-      "usedFor": "Scholarly characterisation of the thought as modular and fragmented, with coherence produced by compulsory Party participation."
+      "usedFor": "Scholarly characterisation of the thought as modular and fragmented, with coherence produced by compulsory Party participation.",
+      "evidence": "words"
+    },
+    {
+      "id": "s5",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Governance of China (Foreign Languages Press, 2014; maintainer-supplied copy)",
+      "author": "Xi Jinping",
+      "url": "https://openlibrary.org/isbn/9787119090573",
+      "usedFor": "Xi's own speeches on the primary stage of socialism, communist ideals, cyberspace governance and Party leadership.",
+      "titles": [
+        {
+          "title": "The Governance of China",
+          "source": "s6",
+          "quote": "The Governance of China"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Ideology Without Unity: The Rhizomatic Logic of Xi Jinping Thought (The China Quarterly 266)",
+      "author": "Jean Christopher Mittelstaedt",
+      "url": "https://www.cambridge.org/core/product/CDA61C248B44330517F345712ECDB210/core-reader",
+      "usedFor": "Scholarly account of what Xi Thought comprises (the Governance of China volumes, 115 publications by 2024), its themes and its link to Document No. 9."
+    },
+    {
+      "id": "s7",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Is Xi Jinping a Marxist? (review essay)",
+      "author": "Jude Blanchette",
+      "url": "https://www.thewirechina.com/?p=52827",
+      "usedFor": "Scholarly review of Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era and of two books analysing it."
     }
   ],
   "answers": {
@@ -668,11 +720,33 @@
       "sources": []
     },
     "algorithmic-government": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "State-backed AI and digital governance are promoted.",
+      "rationale": "Nulled (2026-11-17): the original answer rested only on Wikipedia, which is not evidence, and the report to the 20th Congress, Document 9 and The Governance of China state no position on this statement.",
       "sources": [
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "State-backed AI and digital governance are promoted.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (2026-11-17): the original answer rested only on Wikipedia, which is not evidence, and the report to the 20th Congress, Document 9 and The Governance of China state no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "unbreakable-encryption": {
@@ -2300,11 +2374,33 @@
       "sources": []
     },
     "industrial-unions": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The official union federation is organised by industry; the thought does not address the question directly.",
+      "rationale": "Nulled (2026-11-17): the original answer rested only on Wikipedia, which is not evidence, and the report to the 20th Congress, Document 9 and The Governance of China state no position on this statement.",
       "sources": [
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The official union federation is organised by industry; the thought does not address the question directly.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (2026-11-17): the original answer rested only on Wikipedia, which is not evidence, and the report to the 20th Congress, Document 9 and The Governance of China state no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "minority-conspiracy": {
@@ -2737,11 +2833,33 @@
       "sources": []
     },
     "term-limits": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Xi's term limit on the presidency was abolished in 2018, and the thought treats continuity of core leadership as essential.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (2026-11-17): the original answer rested only on Wikipedia, which is not evidence, and the report to the 20th Congress, Document 9 and The Governance of China state no position on this statement.",
       "sources": [
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Xi's term limit on the presidency was abolished in 2018, and the thought treats continuity of core leadership as essential.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (2026-11-17): the original answer rested only on Wikipedia, which is not evidence, and the report to the 20th Congress, Document 9 and The Governance of China state no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-17"
+        }
       ]
     },
     "vote-delegation": {
@@ -3630,6 +3748,681 @@
         "s1"
       ],
       "auditor": "claude-opus-5-5"
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The report and Xi's speeches hold that China is in the primary stage of socialism, a long transitional stage on the way to communism, which a no-transition claim contradicts.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The 20th Congress report defines the state as under working-class leadership 'based on an alliance of workers and farmers', a stated constitutional principle.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Document 9 treats Western constitutionalist democracy as a means of denying Party leadership and the socialist system, so it rejects a parliamentary road.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Xi calls for supervising cyberspace 'in accordance with the law' and for laws and regulations on managing Internet information, and the report calls for comprehensive cyberspace management.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The report opposes interference in other countries' internal affairs, and Document 9 rejects Western constitutionalist democracy and 'universal values', so promoting liberal democracy abroad contradicts the stated line.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The report makes Party leadership over economic work central and has the state steer the economy, so rule of the economy by trade unions contradicts it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
+      "sources": []
     }
   },
   "missingStatements": [
@@ -3653,7 +4446,7 @@
       "addedAs": "party-commands-army"
     }
   ],
-  "notes": "Official line only. Many answers on social and rights issues are inferred and low confidence. Sources s1 and s2 were read via translated copies; s4 is a lecture abstract.",
+  "notes": "Official line only. Many answers on social and rights issues are inferred and low confidence. Sources s1 and s2 were read via translated copies; s4 is a lecture abstract. Pass of 2026-11-17 added answers to the 12 statements and the candidate statements left unanswered; most are null because the sources (report, Document 9, The Governance of China vol. 1) are silent. Themes searched: democracy promotion, rural land, trade unions, price stability, environmental disclosure, jury trial, tax, dual citizenship, arbitration, official rotation.",
   "reviews": [
     {
       "kind": "silence",
@@ -3684,6 +4477,35 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-17",
+      "nulled": 3
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-15"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-17"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "Xi Thought",
+      "source": "s4",
+      "quote": "Xi Jinping Thought on Socialism with Chinese Characteristics (‘Xi Thought’)"
+    },
+    {
+      "name": "Thought on Socialism with Chinese Characteristics for a New Era",
+      "source": "s7",
+      "quote": "Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era"
     }
   ]
 }
