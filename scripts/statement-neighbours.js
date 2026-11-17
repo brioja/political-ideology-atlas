@@ -1,12 +1,15 @@
 #!/usr/bin/env node
-// Statement neighbours, computed once (Brandon, 2026-11-16) from every audit at rules 7, people and ideologies: within
-// one audit, two statements are together when a single source is cited for both (nulls ignored). Score = audits
-// together / sqrt(audits citing each); pairs together in fewer than 5 audits are dropped. next_question.js asks next
-// for the closest unanswered neighbour of the last cited answer, so one source answers many statements in a row.
+// The order statements are asked in, computed once (Brandon, 2026-11-16) from every audit at rules 7, people and
+// ideologies, so one source answers many statements in a row. Within one audit, two statements are neighbours when a
+// single source is cited for both (nulls ignored). Score = audits together / sqrt(audits citing each); no cut-off, the
+// closest neighbour wins (ties: more audits together, then bank order). The order is one chain: start at the most
+// cited statement, go to its closest neighbour not yet placed; when none is left, jump to the most cited statement not
+// yet placed (never cited: bank order). next_question.js asks the first unanswered statement in it.
 //   node scripts/statement-neighbours.js   writes audits/statement-neighbours.json
 "use strict";
 const fs = require("fs"), path = require("path");
-const ROOT = path.join(__dirname, ".."), RULES = 7, MIN = 5;
+const ROOT = path.join(__dirname, ".."), RULES = 7;
+const bank = require("./lib").allStatements().map((x) => x.id), pos = Object.fromEntries(bank.map((id, i) => [id, i]));
 const cited = {}, pairs = {};
 let audits = 0;
 for (const dir of ["profiles", "people"]) {
@@ -31,13 +34,20 @@ for (const dir of ["profiles", "people"]) {
 }
 const near = {};
 for (const [k, n] of Object.entries(pairs)) {
-  if (n < MIN) continue;
   const [a, b] = k.split("|"), score = n / Math.sqrt(cited[a] * cited[b]);
-  (near[a] = near[a] || []).push([b, score]); (near[b] = near[b] || []).push([a, score]);
+  (near[a] = near[a] || []).push([b, score, n]); (near[b] = near[b] || []).push([a, score, n]);
 }
-const out = {};
-for (const k of Object.keys(near).sort()) out[k] = near[k].sort((x, y) => y[1] - x[1] || (x[0] < y[0] ? -1 : 1)).map((x) => x[0]);
-const lines = Object.entries(out).map(([k, v]) => `  ${JSON.stringify(k)}: ${JSON.stringify(v)}`);
+const closer = (x, y) => y[1] - x[1] || y[2] - x[2] || (pos[x[0]] ?? 1e9) - (pos[y[0]] ?? 1e9);
+for (const k in near) near[k].sort(closer);
+const placed = new Set(), order = [];
+const byCited = [...bank].sort((a, b) => (cited[b] || 0) - (cited[a] || 0) || pos[a] - pos[b]);
+let cur = null;
+while (order.length < bank.length) {
+  const nxt = cur && (near[cur] || []).find((x) => pos[x[0]] !== undefined && !placed.has(x[0]));
+  cur = nxt ? nxt[0] : byCited.find((id) => !placed.has(id));
+  placed.add(cur); order.push(cur);
+}
+const jumps = order.filter((id, i) => i && !(near[order[i - 1]] || []).some((x) => x[0] === id)).length;
 fs.writeFileSync(path.join(ROOT, "audits", "statement-neighbours.json"),
-  `{"rules": ${RULES}, "audits": ${audits}, "minTogether": ${MIN}, "near": {\n${lines.join(",\n")}\n}}\n`);
-console.log(`${audits} audits at rules ${RULES}: ${Object.keys(out).length} statements with neighbours`);
+  `{"rules": ${RULES}, "audits": ${audits}, "order": [\n${order.map((id) => `  ${JSON.stringify(id)}`).join(",\n")}\n]}\n`);
+console.log(`${audits} audits at rules ${RULES}: ${order.length} statements in order, ${jumps} jumps to a non-neighbour`);

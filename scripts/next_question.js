@@ -5,18 +5,15 @@
 // How it works (for maintainers; auditors read only the lines above):
 // One statement at a time for a person audit (Brandon, 2026-11-16): the agent never faces the whole bank at once.
 //   node scripts/next_question.js <id>
-// Prints the next unanswered statement (text, agree/disagree meanings), the library passages that share the most
-// words with it, and progress. Order (Brandon, 2026-11-16: the auditor answers many statements from the source it just
-// read): the closest unanswered neighbour of the latest position that cited a source, where neighbours are statements
-// that one source settled together in the rules-7 audits (audits/statement-neighbours.json); the library is not read
-// for it, the output names the files that answer cited; else statements that
-// match a passage in the files that position cited, best match first; then the rest by their best library match;
-// those with no match come last. Records the statement in scratchpad/search-log/current-<id>.json, so searches made now (scripts/search.js) are
-// logged against it. Answer with scripts/answer.js, which prints the next question. Nothing left: says so.
+// Prints the next unanswered statement (text, agree/disagree meanings) and progress. The order is fixed and computed
+// once (scripts/statement-neighbours.js -> audits/statement-neighbours.json): statements one source settled together
+// in the rules-7 audits follow each other. No library is read. Statements added to the bank since go last, in bank
+// order. Names the files the latest position cited, to check first. Records the statement in
+// scratchpad/search-log/current-<id>.json, so searches made now (scripts/search.js) are logged against it. Answer with
+// scripts/answer.js, which prints the next question. Nothing left: says so.
 // The draft is scratchpad/lane-out/qa/<id>.json, created on first use.
 const fs = require("fs"), path = require("path");
 const lib = require("./lib");
-const { words } = require("./search");
 
 const ROOT = path.join(__dirname, "..");
 const LOGS = path.join(ROOT, "scratchpad", "search-log");
@@ -36,43 +33,14 @@ function loadDraft(id, dir) {
   return d;
 }
 
-// Library passages, split like search.js does, with their words.
-function libraryPassages(id) {
-  const dir = path.join(ROOT, "scratchpad", "sources", id);
-  let files = []; try { files = fs.readdirSync(dir).filter((f) => f.endsWith(".txt")); } catch { return []; }
-  const out = [];
-  for (const f of files) {
-    const text = fs.readFileSync(path.join(dir, f), "utf8");
-    for (const para of text.split(/\n\s*\n/)) {
-      for (const p of para.length > 1500 ? para.match(/[\s\S]{1,1200}(\s|$)/g) : [para]) {
-        const t = p.trim(); if (t.length < 80) continue;
-        out.push({ file: f, text: t, words: new Set(words(t)) });
-      }
-    }
-  }
-  return out;
-}
-const statementWords = (s) => words(`${s.text} ${s.agree || ""} ${s.disagree || ""}`).filter((w) => w.length >= 4);
-function best(s, passages, recent) {
-  const sw = statementWords(s);
-  return passages.map((p) => ({ p, score: sw.filter((w) => p.words.has(w)).length, recent: recent.has(p.file) }))
-    .filter((x) => x.score >= 3).sort((a, b) => b.recent - a.recent || b.score - a.score).slice(0, 3);
-}
-// Neighbours: computed once from the rules-7 audits by scripts/statement-neighbours.js (audits/statement-neighbours.json).
-const NEAR = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, "audits", "statement-neighbours.json"), "utf8")).near; } catch { return {}; } })();
-// The latest position that cited a source.
-function lastCited(d) {
-  for (const k of Object.keys(d.answers).reverse()) if (((d.answers[k] && d.answers[k].sources) || []).length) return k;
-  return null;
-}
+const ORDER = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, "audits", "statement-neighbours.json"), "utf8")).order; } catch { return []; } })();
 // The library files cited by the most recently recorded position (nulls cite nothing and are passed over).
 function recentFiles(d) {
   for (const k of Object.keys(d.answers).reverse()) {
     const ids = (d.answers[k] && d.answers[k].sources) || [];
-    if (!ids.length) continue;
-    return new Set(ids.map((sid) => (d.sources.find((x) => x.id === sid) || {}).library).filter(Boolean));
+    if (ids.length) return ids.map((sid) => (d.sources.find((x) => x.id === sid) || {}).library).filter(Boolean);
   }
-  return new Set();
+  return [];
 }
 
 // Done: the corpora that hold no record of the person (search.js's check by name) are declined in booksNotUsed, so
@@ -96,35 +64,21 @@ function next(id, dir) {
   const statements = lib.allStatements();
   const left = statements.filter((s) => !d.answers[s.id]);
   if (!left.length) { declineCorpora(id, dir, d); return { done: true, d, total: statements.length }; }
-  const recent = recentFiles(d), last = lastCited(d);
-  const nearId = last ? (NEAR[last] || []).find((x) => left.some((s) => s.id === x)) : null;
-  let q, near = null;
-  if (nearId) { near = nearId; q = { s: left.find((s) => s.id === nearId), hits: [] }; } // no library read
-  else {
-    const passages = libraryPassages(id);
-    const top = (x) => (x.hits[0] ? x.hits[0].score : 0), fromRecent = (x) => (x.hits[0] && x.hits[0].recent ? 1 : 0);
-    q = left.map((s, i) => ({ s, hits: best(s, passages, recent), i }))
-      .sort((a, b) => fromRecent(b) - fromRecent(a) || top(b) - top(a) || a.i - b.i)[0];
-  }
+  const rank = Object.fromEntries(ORDER.map((sid, i) => [sid, i]));
+  const s = left.map((x, i) => [x, rank[x.id] ?? ORDER.length + i]).sort((x, y) => x[1] - y[1])[0][0];
   fs.mkdirSync(LOGS, { recursive: true });
-  fs.writeFileSync(path.join(LOGS, `current-${id}.json`), JSON.stringify({ id, statement: q.s.id, neighbourOf: near ? last : null, libraryMatches: q.hits.length, at: new Date().toISOString() }));
-  return { done: false, d, q, left: left.length, total: statements.length, after: near ? last : null, recent: [...recent] };
+  fs.writeFileSync(path.join(LOGS, `current-${id}.json`), JSON.stringify({ id, statement: s.id, at: new Date().toISOString() }));
+  return { done: false, d, s, left: left.length, total: statements.length, recent: recentFiles(d) };
 }
 
 function print(r, id) {
   if (r.done) { console.log(`All ${r.total} statements answered for ${id}. Last step: node scripts/answer.js ${id} about --role "..." --summary "..." [--notes "..."]`); return; }
-  const { s, hits } = r.q;
+  const { s } = r;
   console.log(`Statement ${r.total - r.left + 1} of ${r.total} (${r.left} left): ${s.id}${s.status === "candidate" ? " (candidate)" : ""}, theme ${s.theme}`);
   console.log(`  "${s.text}"`);
   if (s.agree) console.log(`  agree: ${s.agree}`);
   if (s.disagree) console.log(`  disagree: ${s.disagree}`);
-  if (r.after && r.recent.length) console.log(`\nOften settled by the same source as ${r.after}: ${r.recent.map((f) => `[${f}]`).join(", ")}. Check it with search.js`);
-  if (r.after) { /* the source to check is named above */ }
-  else if (!hits.length) console.log("\nNo library passage shares its words. If the person likely spoke to it, search the corpora or the web.");
-  else {
-    console.log(`\nLibrary passages sharing its words:`);
-    for (const h of hits) console.log(`\n[${h.p.file}] (${h.score} shared words${h.recent ? "; cited in your last answer" : ""})\n${h.p.text.slice(0, 900)}`);
-  }
+  if (r.recent.length) console.log(`\nYour last answer cited ${r.recent.map((f) => `[${f}]`).join(", ")}.`);
   console.log(`\nSearch: node scripts/search.js "<terms>"   Answer: node scripts/answer.js ${id} ${s.id} ...`);
 }
 
