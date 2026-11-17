@@ -113,8 +113,8 @@ const BOOKS_PROMPT = `Working directory: ${ROOT}. Run \`node scripts/prefetch-bo
 const reports = []
 if (opts.kind === 'people') {
   phase('Books')
-  reports.push(`books: ${await agent(BOOKS_PROMPT, { label: 'books', phase: 'Books', effort: 'low' })}`)
-  reports.push(`triage before: ${await agent(TRIAGE_PROMPT, { label: 'triage-before', phase: 'Books', effort: 'low' })}`)
+  reports.push(`books: ${await agent(BOOKS_PROMPT, { label: 'books', phase: 'Books', model: 'haiku', effort: 'low' })}`)
+  reports.push(`triage before: ${await agent(TRIAGE_PROMPT, { label: 'triage-before', phase: 'Books', model: 'haiku', effort: 'low' })}`)
 }
 let ended = `limit of ${LIMIT} reached`
 for (let i = 0; i < LIMIT; i++) {
@@ -134,13 +134,13 @@ for (let i = 0; i < LIMIT; i++) {
 
 if (opts.kind !== 'ideologies') {
   phase('Triage')
-  reports.push(`triage: ${await agent(TRIAGE_PROMPT, { label: 'triage', phase: 'Triage', effort: 'low' })}`)
+  reports.push(`triage: ${await agent(TRIAGE_PROMPT, { label: 'triage', phase: 'Triage', model: 'haiku', effort: 'low' })}`)
 }
 
 // Statement signal depends on ideology audits only, so a people-only run skips it.
 if (opts.kind !== 'people') {
 phase('Signal')
-reports.push(`signal: ${await agent(SIGNAL_PROMPT, { label: 'signal', phase: 'Signal', effort: 'low' })}`)
+reports.push(`signal: ${await agent(SIGNAL_PROMPT, { label: 'signal', phase: 'Signal', model: 'haiku', effort: 'low' })}`)
 }
 
 return { reports, ended }
