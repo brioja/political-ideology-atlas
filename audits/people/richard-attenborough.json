@@ -1,8 +1,10 @@
 {
  "id": "richard-attenborough",
  "name": "Richard Attenborough",
- "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditedAt": "2026-11-17",
+ "auditor": [
+  "claude-sonnet-5-5"
+ ],
  "living": false,
  "role": "English actor, film director and producer; Labour life peer (Baron Attenborough, 1993-2014)",
  "summary": "Attenborough was known chiefly as an actor and director, with a left-of-centre outlook: he sat on the Labour benches in the Lords and campaigned for arts access and against apartheid. His stated political record found here is thin, so most positions are unrecorded.",
@@ -14,7 +16,8 @@
    "title": "Richard Attenborough - Wikipedia",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Richard_Attenborough",
-   "usedFor": "Death date (24 Aug 2014), Lords career, Labour benches, anti-apartheid education advocacy"
+   "usedFor": "Death date (24 Aug 2014), Lords career, Labour benches, anti-apartheid education advocacy",
+   "evidence": "words"
   },
   {
    "id": "s2",
@@ -22,7 +25,8 @@
    "title": "Richard Attenborough's 'The arts are not a luxury' speech",
    "author": "Richard Attenborough (maiden speech, House of Lords, 22 Nov 1994), BFI",
    "url": "https://www.bfi.org.uk/features/richard-attenboroughs-arts-are-not-luxury-speech",
-   "usedFor": "His own words on the arts being for everyone; no statement matches a test statement"
+   "usedFor": "His own words on the arts being for everyone; no statement matches a test statement",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +34,8 @@
    "title": "Richard Attenborough, actor, director and activist, dies aged 90",
    "author": "New Statesman",
    "url": "https://www.newstatesman.com/culture/film/2014/08/richard-attenborough-actor-director-and-activist-dies-aged-90",
-   "usedFor": "Checked for stated positions; found none in his own words"
+   "usedFor": "Checked for stated positions; found none in his own words",
+   "evidence": "words"
   },
   {
    "id": "s4",
@@ -38,7 +43,8 @@
    "title": "Address in Reply to Her Majesty's Most Gracious Speech (Lord Attenborough's maiden speech)",
    "author": "UK Parliament, historic Hansard, 22 Nov 1994",
    "url": "https://api.parliament.uk/historic-hansard/lords/1994/nov/22/address-in-reply-to-her-majestys-most",
-   "usedFor": "His own words on arts, film policy, arts training grants and disability; no test statement matches"
+   "usedFor": "His own words on arts, film policy, arts training grants and disability; no test statement matches",
+   "evidence": "words"
   },
   {
    "id": "s5",
@@ -46,7 +52,17 @@
    "title": "Fighting apartheid any way you can - even with film",
    "author": "Christian Science Monitor, 6 Nov 1987",
    "url": "https://www.csmonitor.com/1987/1106/anov.html",
-   "usedFor": "Only quote from him is calling Cry Freedom 'propaganda'; no statement on sanctions or violence"
+   "usedFor": "Only quote from him is calling Cry Freedom 'propaganda'; no statement on sanctions or violence",
+   "evidence": "words"
+  },
+  {
+   "id": "s6",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Still Labour, despite Iraq",
+   "author": "Richard Attenborough, The Guardian, 26 Apr 2005",
+   "url": "https://www.theguardian.com/politics/2005/apr/26/election2005.labour",
+   "usedFor": "His own op-ed: disagreed strongly with the Iraq war, wished the UN had backed a second occasion; Labour's Africa and third-world-debt work as part of one human family"
   }
  ],
  "answers": {
@@ -759,10 +775,12 @@
    "sources": []
   },
   "force-without-un": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Writing in 2005 he said he wished the government had gone back to the UN for a second resolution to gain its support, which fits the statement's opposite; he did not state it as a general rule.",
+   "sources": [
+    "s6"
+   ]
   },
   "reason-over-faith": {
    "value": null,
@@ -897,11 +915,33 @@
    "sources": []
   },
   "equal-moral-worth": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Wikipedia reports he was a longtime advocate of education that does not judge people by colour, race, creed or religion, and his support for the multiracial Waterford Kamhlaba school inspired Cry Freedom; this is reported, not quoted from him.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled: the only support was Wikipedia's report of his school advocacy, which is not evidence; his own 2005 words (s6) on equal opportunity do not address equal rights before the law.",
    "sources": [
-    "s1"
+    "s6"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Wikipedia reports he was a longtime advocate of education that does not judge people by colour, race, creed or religion, and his support for the multiracial Waterford Kamhlaba school inspired Cry Freedom; this is reported, not quoted from him.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled: the only support was Wikipedia's report of his school advocacy, which is not evidence; his own 2005 words (s6) on equal opportunity do not address equal rights before the law.",
+     "sources": [
+      "s6"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-17"
+    }
    ]
   },
   "socialism-one-country": {
@@ -1241,10 +1281,12 @@
    "sources": []
   },
   "rich-countries-aid-poor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In his 2005 op-ed he welcomed the Africa and third-world-debt work of Blair and Brown and said all humanity is one family and the whole world our home; he did not state a duty in so many words.",
+   "sources": [
+    "s6"
+   ]
   },
   "independent-nuclear-deterrent": {
    "value": null,
@@ -2991,7 +3033,721 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "technology-never-politically-neutral": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "conquest-no-lawful-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "decent-living-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
   }
  },
- "notes": "Gap-fill pass done. Historic Hansard lists only one contribution (the 1994 maiden speech); it covers arts, film policy, training grants and disability but nothing matching a test statement. No own words found on sanctions, Iraq, Gandhi/non-violence or the 2001 Anti-terrorism bill; his Lords vote page returned 403. Film content is not treated as his view."
+ "notes": "Thin political record, as expected for an actor and director. Searched: Wikipedia and its citations, Lords maiden speech (1994), Guardian op-ed 2005, obituaries, MediaSum interviews (apartheid, Labour, war, Iraq, Gandhi), Project Gutenberg, the maintainer library (no books by him). Themes searched: economy, government, society, world, liberty. Film roles and films he directed are not treated as his views. The capital punishment quotation could not be verified in its original and is not used.",
+ "rules": 7,
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-17"
+  }
+ ],
+ "booksNotUsed": [],
+ "notFound": [
+  {
+   "work": "Original source of the reported 'passionately opposed to capital punishment' quotation",
+   "tried": [
+    {
+     "where": "web search",
+     "how": "exact-phrase search; only a People's World obituary repeats it, with no date or original"
+    },
+    {
+     "where": "local corpora",
+     "how": "mediasum search for Attenborough with keywords apartheid, Labour, war, Iraq, Mandela, Gandhi found only film-clip and tribute lines"
+    }
+   ]
+  },
+  {
+   "work": "His Lords votes and later speeches",
+   "tried": [
+    {
+     "where": "historic Hansard people page",
+     "how": "scripts/get.js, blocked by bot check on every agent"
+    },
+    {
+     "where": "historic Hansard debates",
+     "how": "earlier pass found only the 1994 maiden speech"
+    }
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-sonnet-5-5",
+   "reviewedAt": "2026-11-17",
+   "nulled": 1
+  }
+ ]
 }
