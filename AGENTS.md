@@ -20,18 +20,11 @@ agents too. This file adds what matters when running the audit workflows in
   pushes, and tells lanes which subjects to take.
 - **Give each agent its own scratchpad folder** (`scratchpad/<id>/`). Agents sharing one folder
   overwrite each other's helper scripts.
-- **Rate-limited sites go through cached tools:** Wikipedia/Wikidata `node scripts/wiki.js`, YouTube
-  `node scripts/yt.js` (captions and search, 20 s apart, stops an hour after a 429 or captcha), Project
-  Gutenberg `node scripts/gutenberg.js` (official catalog + mirror). A PreToolUse hook
-  (`.claude/hooks/no-direct-fetch.js`) denies direct fetches of those hosts and direct yt-dlp; scripts use
-  `lib.cachedJson`. A second hook (`.claude/hooks/local-corpus-hint.js`) adds a note, without blocking, when a web
-  search or fetch names a source a local corpus holds (CNN/NPR, Congress, Hansard, marxists.org, Miller Center, Knesset, UN
-  debates, Davos, Lex Fridman, French laws via LEGI): search the corpus first. A third hook
-  (`.claude/hooks/no-browser-agent.js`) denies a fetch, in a command or a written script, whose User-Agent poses
-  as a browser. Other sites go through `node scripts/get.js <id> <url>`, which tries each download agent (curl,
-  wget, wget2, aria2c, lynx, w3m, headless Firefox and Chrome) under its own name and keeps the first good copy.
-- **Launch prompts should hold only the task.** Workflow agents may echo the launching message and
-  act on unrelated instructions in it.
+- **Fetching goes through cached tools:** pages `node scripts/get.js <id> <url>`, Wikipedia `scripts/wiki.js`,
+  YouTube `scripts/yt.js`, Gutenberg `scripts/gutenberg.js`. Hooks refuse the rest.
+- **Local corpora first:** a hook adds a note when a web search or fetch names a source a local corpus holds
+  (CNN/NPR, Congress, Hansard, marxists.org, Miller Center, Knesset, UN debates, Davos, Lex Fridman, French laws
+  via LEGI): search the corpus instead.
 
 ## Audit rules
 
@@ -40,9 +33,6 @@ agents too. This file adds what matters when running the audit workflows in
   only what is specific to their subject. Put a new evidence rule in AUDIT_RULES.md so both get it.
 
 ## New statements
-
-- **The bank is frozen** (Brandon, 2026-11-04): audit runs never edit `statements.json`; they only record
-  missing statements (`missingStatements`), reviewed later with the statement-pass process below.
 
 - **Statement wording review:** a reviewer session follows `audits/PROMPT_STATEMENT_REVIEW.md`, taking the
   statements that fail the wording check in quiz order (`node scripts/statement-review.js next`) and writing
@@ -54,16 +44,10 @@ agents too. This file adds what matters when running the audit workflows in
   `statements.json` as candidates without asking the maintainer. Check wording with
   `node scripts/statements-check.js --wording <files>`.
 
-## Backlog
+## People
 
-- Discussed-but-not-started ideology work, and ideas ruled out, live in `backlog/`, one file per
-  topic. Add new ideas there, and check `backlog/decided-against.md` before proposing something.
-
-## People and AI models
-
-- A change that only touches people or AI models needs `node scripts/build.js --people` and
+- A change that only touches people needs `node scripts/build.js --people` and
   `node test.js --people` (seconds): they never feed back into the ideology model in data.js.
-- AI models take the quiz themselves by following `audits/PROMPT_MODEL.md`.
 
 ## After each run
 
@@ -72,8 +56,6 @@ agents too. This file adds what matters when running the audit workflows in
 - Check the report for audits that weren't produced, failed tests and new `notAnIdeology` records.
   Judgment calls go to the maintainer rather than being fixed silently. Who the uncertainty rule
   includes or excludes is not one: it follows from the data, so shifts are never flagged.
-- Don't pad rationales by script. `validate.js` rejects high-confidence answers that share a
-  rationale; a stock phrase is at most medium confidence.
 - Promote a candidate once it carries signal on the real lines (test 2 in
   `audits/statements/STANDARD.md`; `node scripts/statements-check.js` lists them as Ready), and
   demote an active statement that loses it (`node scripts/statement-signal.js`). Brandon, 2026-11-05.
