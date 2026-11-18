@@ -98,11 +98,15 @@ const personPath = (id) => path.join(PEOPLE_DIR, `${id}.json`);
 // Every file is WebP, at most 330 px (the site draws them at 220 px or less), which keeps logos' transparency.
 const thumbPath = (kind, id, url) => `img/${kind}/${id}-${require("crypto").createHash("sha1").update(url).digest("hex").slice(0, 8)}.webp`;
 // The image object build.js ships: the local copy plus the Commons credit, or null when there's no copy yet.
+// Until a replacement image's copy has downloaded, the copy of the image it replaced ("previousImage",
+// scripts/images.js), so a photo renamed or deleted on Commons never leaves an entry without one.
 const shippedImage = (kind, entry) => {
-  const im = entry.image;
-  if (!im || !im.url) return null;
-  const local = thumbPath(kind, entry.id, im.url);
-  return fs.existsSync(path.join(ROOT, local)) ? { url: local, artist: im.artist, license: im.license, source: im.source } : null;
+  for (const im of [entry.image, entry.previousImage]) {
+    if (!im || !im.url) continue;
+    const local = thumbPath(kind, entry.id, im.url);
+    if (fs.existsSync(path.join(ROOT, local))) return { url: local, artist: im.artist, license: im.license, source: im.source };
+  }
+  return null;
 };
 // Negative controls: apolitical celebrities audited the same way, expected to fail the uncertainty rule.
 const CONTROLS_DIR = path.join(ROOT, "audits", "controls");

@@ -104,7 +104,7 @@ async function main() {
     const id = prev ? prev.id : slug(titleOf(p.wikipedia));
     if (seen.has(id)) continue;
     seen.add(id);
-    people.push({ id, ...p, ...(prev && prev.image ? { image: prev.image } : {}) });
+    people.push({ id, ...p, ...(prev && prev.image ? { image: prev.image } : {}), ...(prev && prev.previousImage ? { previousImage: prev.previousImage } : {}) });
   }
   await nationalityFromDescription(people);
   // Keep everyone already audited, including people added without a Wikidata label (Destiny, xQc)

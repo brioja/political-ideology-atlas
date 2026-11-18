@@ -100,6 +100,8 @@ async function checkPhotos(data) {
     const r = await api({ action: "query", redirects: "1", titles: `File:${p.image.file}`, prop: "imageinfo", iiprop: "url", iiurlwidth: "330" }, COMMONS);
     const pg = (r.query.pages || [])[0];
     const info = pg && !pg.missing && pg.imageinfo && pg.imageinfo[0];
+    // The old image stays as "previousImage" (shown from its local copy) until the new one has downloaded.
+    if (!p.previousImage) p.previousImage = { ...p.image };
     if (info && info.thumburl) {
       const file = pg.title.replace(/^File:/, "").replace(/ /g, "_");
       Object.assign(p.image, { url: info.thumburl.split("?")[0], file, source: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}` });
@@ -142,7 +144,8 @@ async function main() {
       // No lead image reported: keep the stored one. The page-image API drops lead images
       // intermittently (Hitler, Reagan, Modi and others went missing at once), and a stored image
       // was already checked as freely licensed. Never looked up before: record that there is none.
-      else if (p.image === undefined) p.image = null;
+      // A photo deleted on Commons keeps its previous image and stays unrecorded, so the next run looks again.
+      else if (p.image === undefined && !p.previousImage) p.image = null;
     }
     // 2. Author and license for attribution.
     if (files.length) {
@@ -183,24 +186,35 @@ async function saveThumbs() {
   for (const [kind, entries, audited] of [["people", peopleCatalog(), personPath], ["ideologies", catalog(), profilePath]]) {
     const dir = path.join(ROOT, "img", kind);
     fs.mkdirSync(dir, { recursive: true });
-    const wanted = new Set(), failed = [];
+    const wanted = new Set(), failed = [], replaced = new Set();
     let saved = 0;
-    for (const e of entries.filter((x) => x.image && x.image.url && fs.existsSync(audited(x.id)))) {
+    for (const e of entries.filter((x) => fs.existsSync(audited(x.id)))) {
+      // A replaced image's copy stays until the new one is saved (lib.shippedImage shows it meanwhile).
+      const prev = e.previousImage && e.previousImage.url ? thumbPath(kind, e.id, e.previousImage.url) : null;
+      const keepPrev = () => { if (prev) wanted.add(path.basename(prev)); };
+      if (!(e.image && e.image.url)) { keepPrev(); continue; }
       const rel = thumbPath(kind, e.id, e.image.url), file = path.join(ROOT, rel);
       wanted.add(path.basename(rel));
-      if (fs.existsSync(file)) continue;
+      if (fs.existsSync(file)) { if (e.previousImage) replaced.add(e.id); continue; }
       let res;
       try { res = await politeFetch(e.image.url); } catch { res = null; }
-      if (!res || !res.ok) { failed.push(`${e.id} (${res ? res.status : "network"})`); continue; }
+      if (!res || !res.ok) { failed.push(`${e.id} (${res ? res.status : "network"})`); keepPrev(); continue; }
       // Re-encoded with ImageMagick: some stored URLs are full-size originals or large PNG thumbnails.
       try { fs.writeFileSync(file, toWebp(Buffer.from(await res.arrayBuffer()))); }
-      catch (err) { failed.push(`${e.id} (convert: ${err.message.split("\n")[0]})`); continue; }
+      catch (err) { failed.push(`${e.id} (convert: ${err.message.split("\n")[0]})`); keepPrev(); continue; }
       saved++;
+      if (e.previousImage) replaced.add(e.id);
+    }
+    // The new copies are saved: the images they replaced are no longer needed.
+    if (replaced.size) {
+      const catFile = path.join(ROOT, "audits", kind === "people" ? "people-catalog.json" : "catalog.json"), cat = readJson(catFile);
+      for (const e of cat[kind === "people" ? "people" : "ideologies"]) if (replaced.has(e.id)) delete e.previousImage;
+      fs.writeFileSync(catFile, JSON.stringify(cat, null, 1) + "\n");
     }
     const stale = fs.readdirSync(dir).filter((f) => !wanted.has(f));
     for (const f of stale) fs.unlinkSync(path.join(dir, f));
     console.log(`Thumbnails (${kind}): ${saved} downloaded, ${stale.length} unused deleted, ${wanted.size} in img/${kind}/.`);
-    if (failed.length) console.warn(`Could not download: ${failed.join(", ")} (shown without a picture until the next run)`);
+    if (failed.length) console.warn(`Could not download: ${failed.join(", ")} (shown with the image they replaced, if any, or without one, until a later run downloads them)`);
   }
 }
 
