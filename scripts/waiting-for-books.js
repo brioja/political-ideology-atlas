@@ -10,6 +10,9 @@
 // Every id given to add or sought is also kept in audits/books-sought.json, which never drops anyone (Brandon,
 // 2026-11-18: "keep track of people who I tried to get as well so it isn't a large search going forward"). Holds end;
 // that record doesn't, so a later search for books to look for can leave these people out.
+// Books first (Brandon, 2026-11-18: "it's cheap to try, so error on the side of looking for books first"): a list of
+// books to look for includes everyone with political books of their own, commentators too, even when columns or
+// transcripts exist; order it by how much the books matter, never prune it.
 const fs = require("fs");
 const path = require("path");
 const lib = require("./lib");
