@@ -337,14 +337,16 @@ function validate(id) {
   //   interviews, books, posts, programmes, a summary of their views). A source holding both (a day of the
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
-  // - A null found nothing and cites nothing ("sources": []). An audit never overturns its own answers: if its own
-  //   evidence doesn't answer a statement, it doesn't cite it there. Only a nulling by a later pass (with a
-  //   reviewHistory) cites the source behind its reason.
+  // - A null cites nothing ("sources": []): it is no known position, and a source next to it would read as evidence
+  //   of silence (Brandon, 2026-11-18). An audit never overturns its own answers: if its own evidence doesn't
+  //   answer a statement, it doesn't cite it there. A nulling by a later pass cites the source behind its reason
+  //   in its reviewHistory entry, so it can be reviewed; the current answer repeats that entry without the sources.
   // - "reviewHistory" is a statement's talk page (WP:BRD): every version of the answer, oldest first, each signed
   //   { "value", "confidence", "rationale", "sources", "author", "date" }. The first entry is the first sourced
   //   version; each later entry is a reply that changed it (bold or revert), signed by the pass that wrote it.
   //   An unsourced version, or a null before the first answer (nothing found), has nothing to review and is left out; a statement with fewer than 2 sourced versions
-  //   has no history (the field is absent). The last entry is the current answer (what people see), word for word.
+  //   has no history (the field is absent). The last entry is the current answer (what people see), word for word,
+  //   except that a current null leaves out the entry's sources.
   // - Words never overturn an action: an answer resting on an action can be nulled only on an action (e.g. the
   //   vote itself shows it was on another question), and a nulled answer that rested on an action comes back
   //   only on an action.
@@ -365,13 +367,13 @@ function validate(id) {
         if (action.length && words.length) errors.push(`${st.id}: cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
         continue;
       }
-      // A null found nothing: it cites nothing. Only a nulling (a later pass, with a reviewHistory) cites the
-      // source behind its reason.
+      // A null cites nothing. A nulling (a later pass, with a reviewHistory) cites the source behind its reason in
+      // its reviewHistory entry only.
       if (x.reviewHistory === undefined) {
         const action = kinds(cited, "action");
         if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
         else if (cited.length) errors.push(`${st.id}: a null found nothing, so it cites nothing ("sources": []); evidence that doesn't answer the statement isn't cited here`);
-      } else if (!cited.length) errors.push(`${st.id}: a nulling cites the source behind its reason in "sources"`);
+      } else if (cited.length) errors.push(`${st.id}: a null cites nothing ("sources": []); a nulling's sources go in its reviewHistory entry only`);
     }
   }
   const nullings = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "nulling");
@@ -381,6 +383,8 @@ function validate(id) {
   let nulledCount = 0;
   const historyIds = [];
   const sameAnswer = (p, q) => JSON.stringify([p.value, p.confidence, p.rationale, p.sources || []]) === JSON.stringify([q.value, q.confidence, q.rationale, q.sources || []]);
+  // The current answer is the last entry word for word, except that a null leaves out the entry's sources.
+  const isCurrent = (e, x) => (x.value === null ? sameAnswer({ ...e, sources: [] }, x) : sameAnswer(e, x));
   for (const st of statements) {
     const x = answers[st.id], h = x && x.reviewHistory;
     if (h === undefined) continue;
@@ -399,7 +403,7 @@ function validate(id) {
     }
     if (!ok) continue;
     if (h[0].value === null) errors.push(`${st.id}: reviewHistory starts at the first answer: a null before it found nothing and has nothing to review, so leave it out`);
-    if (!sameAnswer(h[h.length - 1], x)) errors.push(`${st.id}: the last reviewHistory entry is the current answer, word for word`);
+    if (!isCurrent(h[h.length - 1], x)) errors.push(`${st.id}: the last reviewHistory entry is the current answer, word for word (a null leaves out its sources)`);
     // Walk the versions in order and check each change.
     let lastNulled = null;
     for (let i = 1; i < h.length; i++) {

@@ -1976,8 +1976,8 @@ function positionsList(profile, audit, auditUrl = null, key = null) {
   return `<ul class="positions">${known.map(item).join("")}</ul>${mild}${more}`;
 }
 
-// Sources behind a current position first; the rest (cited only by a null, which records what was checked, or
-// by an earlier version in reviewHistory) folded below, so a reader doesn't take them for evidence of a position.
+// Sources behind a current position first; the rest (cited only by earlier versions in reviewHistory) folded
+// below, so a reader doesn't take them for evidence of a position.
 function sourcesList(audit) {
   if (!audit || !audit.sources || !audit.sources.length) return "";
   const behind = new Set();

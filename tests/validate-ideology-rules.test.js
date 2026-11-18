@@ -127,6 +127,7 @@ try {
       const now = stated ? { value: 1, confidence: "medium", rationale: "Still answered from the unrelated old text.", sources: ["s4"] }
         : { value: null, confidence: "low", rationale: "Nulled: the old text is not a source of this ideology.", sources: ["s4"] };
       a.answers[B] = { ...now, reviewHistory: [was, { ...now, author: "claude-opus-5-5", date: "2026-11-07" }] };
+      if (!stated) a.answers[B].sources = []; // a current null cites nothing; its history entry keeps the source
       if (!stated) a.reviews = [{ kind: "nulling", reviewer: "claude-opus-5-5", reviewedAt: "2026-11-07", nulled: 1 }];
     });
     ok("source cited only on a talk page and as a nulling's reason", withOld(false));

@@ -106,11 +106,14 @@ function nulled(reasonSources) {
   const a = laterPass(base(), 1);
   const was = version(a.answers[A], "claude-sonnet-5-5", "2026-11-01");
   a.answers[A] = { value: null, confidence: "low", rationale: "The vote was on a different question than this statement.", sources: reasonSources };
-  return withHistory(a, A, [was]);
+  const r = withHistory(a, A, [was]);
+  r.answers[A].sources = []; // the reason's sources stay in the history entry only
+  return r;
 }
 ok("action nulled on an action (the vote itself)", nulled(["s1"]));
 fails("action nulled on words", nulled(["s2"]), /words \(s2\) can't null an action \(s1\)/);
-fails("nulling without a reason source", nulled([]), /signed, sourced version|a nulling cites the source behind its reason/);
+fails("nulling without a reason source", nulled([]), /signed, sourced version/);
+{ const a = nulled(["s1"]); a.answers[A].sources = ["s1"]; fails("current null citing a source", a, /a null cites nothing/); }
 { const a = nulled(["s1"]); delete a.reviews; fails("nulling without a nulling review", a, /"reviews" count 0 nulled answer\(s\) but "reviewHistory" holds 1/); }
 { const a = nulled(["s1"]); a.reviews[0].nulled = 2; fails("nulling count mismatch", a, /"reviews" count 2 nulled answer\(s\) but "reviewHistory" holds 1/); }
 
