@@ -564,15 +564,6 @@
         "s10"
       ]
     },
-    "cut-welfare": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Rejected welfare-state transfers as confiscation and told Donahue that aid to the disabled should be only private charity, not tax-funded; her dependency rationale was not the one she gave.",
-      "sources": [
-        "s1",
-        "s10"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -618,12 +609,6 @@
       ]
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -2346,12 +2331,6 @@
       ]
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -4111,6 +4090,17 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 3
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ]
 }

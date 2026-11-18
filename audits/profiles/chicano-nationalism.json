@@ -156,14 +156,6 @@
         "s6"
       ]
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Plan insists institutions serve people by \"restitution, not handouts\"; this rejects dependency arguments, and cutting social programs would be seen as further denial of what is owed.",
-      "sources": [
-        "s1"
-      ]
-    },
     "worker-ownership": {
       "value": 1,
       "confidence": "medium",
@@ -211,34 +203,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The Plan names police and armed forces as \"occupying forces of the oppressors\" and calls for self-defence against them.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1945,12 +1909,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "freedom-to-discriminate": {
       "value": -2,
       "confidence": "high",
@@ -3045,14 +3003,6 @@
         "s1"
       ]
     },
-    "faster-drug-approval": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Drug regulation is not a movement topic.",
-      "sources": [
-        "s1"
-      ]
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -3400,12 +3350,6 @@
         "s4",
         "s6"
       ]
-    },
-    "ban-fgm": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
     },
     "women-property-inheritance": {
       "value": null,
@@ -3787,15 +3731,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Plan names police and armed forces as \"occupying forces of the oppressors\" and calls for self-defence against them. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 2,
       "confidence": "medium",
@@ -3902,6 +3837,20 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

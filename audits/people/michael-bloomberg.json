@@ -614,16 +614,6 @@
     "s8"
    ]
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "His 2020 plans expand the Earned Income Tax Credit, guarantee housing vouchers for households below 30% of area median income and widen aid, the opposite of cutting. As mayor he took pride in a falling welfare caseload (2013 State of the City), which the 2020 platform does not repeat.",
-   "sources": [
-    "s20",
-    "s22",
-    "n7"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -676,38 +666,6 @@
     "s8",
     "u11",
     "n3"
-   ]
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 0,
-     "confidence": "low",
-     "rationale": "Mixed: as mayor in 2013 he defended NYPD stops and intelligence gathering against oversight and credited police tools for crime cuts; his 2020 plan raises use-of-force standards, adds independent oversight and calls for reducing incarceration.",
-     "sources": [
-      "n9",
-      "n4",
-      "s9"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-28"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-     "sources": [
-      "n9",
-      "n4",
-      "s9"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
    ]
   },
   "legalize-sex-work": {
@@ -2173,12 +2131,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No position of his own on this statement turned up in his debate answers, 2020 platform, speeches, columns or mayoral record.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No position of his own on this statement turned up in his debate answers, 2020 platform, speeches, columns or mayoral record.",
@@ -3723,17 +3675,6 @@
    "rationale": "No position of his own on this statement turned up in his debate answers, 2020 platform, speeches, columns or mayoral record.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Mixed: as mayor in 2013 he defended NYPD stops and intelligence gathering against oversight and credited police tools for crime cuts; his 2020 plan raises use-of-force standards, adds independent oversight and calls for reducing incarceration. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "n9",
-    "n4",
-    "s9"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -4430,6 +4371,18 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
    "nulled": 1
   }
  ],

@@ -597,17 +597,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Described the social safety net as a moral imperative and expanded SNAP outreach, though his book also urged earlier welfare reform; evidence leans against cutting welfare.",
-   "sources": [
-    "s31",
-    "s2",
-    "b4"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -667,46 +656,6 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
-   "sources": [],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ],
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "high",
-     "rationale": "2025 platform: 5,000 more NYPD officers, retention bonuses, more subway presence; said cutting police raises crime. As governor he also ordered police reform plans.",
-     "sources": [
-      "s6",
-      "s14",
-      "b7",
-      "b3",
-      "c7"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
-     "sources": [
-      "s6",
-      "s14",
-      "b7",
-      "b3",
-      "c7"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
    ]
   },
   "legalize-sex-work": {
@@ -2219,12 +2168,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3874,6 +3817,17 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
    "nulled": 1
   }
  ]

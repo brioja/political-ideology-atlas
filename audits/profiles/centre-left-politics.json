@@ -9173,136 +9173,6 @@
       "confidence": "low",
       "rationale": "The defining sources record no position on this, and no stated principle bears on it.",
       "sources": []
-    },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "medium",
-      "sources": [
-        "s5"
-      ],
-      "rationale": "The Blair-Schroeder declaration says: 'Our aim is to modernise the welfare state, not dismantle it'.",
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "The welfare state is a core commitment; reforms aim to move people into work rather than cut it.",
-          "sources": [
-            "s1",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "sources": [
-            "s5"
-          ],
-          "rationale": "The Blair-Schroeder declaration says: 'Our aim is to modernise the welfare state, not dismantle it'.",
-          "author": "claude-opus-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Third Way variants stress tough law and order while others emphasise rehabilitation; split.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
-    },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "sources": [],
-      "rationale": "Nulled (2026-11-14): the earlier 0 said only that the issue is not a centre-left defining one and that voices within it differ, which is silence, not a documented middle; no defining source states a position on drug-approval speed.",
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Not a centre-left defining issue; market-friendly Third Way voices favour speed while social democrats stress public-health caution.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "sources": [
-            "s2"
-          ],
-          "rationale": "Nulled (2026-11-14): the earlier 0 said only that the issue is not a centre-left defining one and that voices within it differ, which is silence, not a documented middle; no defining source states a position on drug-approval speed.",
-          "author": "claude-opus-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
-    "ban-fgm": {
-      "value": null,
-      "confidence": "low",
-      "sources": [],
-      "rationale": "Nulled (2026-11-14): it rested only on the PES 2024 manifesto's pledge to combat violence against women. That is a party's policy commitment, not a passage presenting a tenet of the centre-left, and the manifesto is not tied to the subject by the defining sources (coatrack check).",
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "The PES programme commits to equality and combating violence against women, which covers banning female genital mutilation.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "sources": [
-            "s3"
-          ],
-          "rationale": "Nulled (2026-11-14): it rested only on the PES 2024 manifesto's pledge to combat violence against women. That is a party's policy commitment, not a passage presenting a tenet of the centre-left, and the manifesto is not tied to the subject by the defining sources (coatrack check).",
-          "author": "claude-opus-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
-    "police-more-powers": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Third Way variants stress tough law and order while others emphasise rehabilitation; split. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s4"
-      ],
-      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -9401,6 +9271,20 @@
       "reviewer": "claude-sonnet-5-5",
       "reviewedAt": "2026-11-14",
       "nulled": 208
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
+      "nulled": 3
     }
   ],
   "rules": 7,

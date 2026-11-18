@@ -320,12 +320,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -390,16 +384,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Personally enlarged the royal fleet and dockyards and ordered sustained military enforcement after rebellion.",
-   "sources": [
-    "b10",
-    "b8"
-   ],
-   "auditor": "gpt-6.1-sol"
   },
   "legalize-sex-work": {
    "value": null,
@@ -2229,12 +2213,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -4161,16 +4139,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Personally enlarged the royal fleet and dockyards and ordered sustained military enforcement after rebellion. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "b10",
-    "b8"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "race-based-immigration-restrictions": {
    "value": null,
    "confidence": "low",
@@ -4883,6 +4851,18 @@
    "reviewer": "claude-sonnet-5-5",
    "reviewedAt": "2026-11-13",
    "nulled": 3
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7,

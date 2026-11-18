@@ -171,14 +171,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Adherents oppose state welfare as an institution but not help for the poor; they hold that common property and mutual aid, not cutting support, are the remedy, so they would not endorse the dependency claim.",
-      "sources": [
-        "s3"
-      ]
-    },
     "worker-ownership": {
       "value": 1,
       "confidence": "medium",
@@ -231,34 +223,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Malatesta argues police and judges mainly protect privilege, and anarchists reject standing professional force.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -2118,14 +2082,6 @@
         "s5"
       ]
     },
-    "former-empire-influence": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Anarchists reject state power projection.",
-      "sources": [
-        "s5"
-      ]
-    },
     "delink-world-market": {
       "value": 0,
       "confidence": "low",
@@ -3292,12 +3248,6 @@
         "s5"
       ]
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -3596,14 +3546,6 @@
       "rationale": "Malatesta and de Cleyre reject political parties and parliaments in favor of direct organization; workers should organize in unions and groups instead.",
       "sources": [
         "s3",
-        "s5"
-      ]
-    },
-    "ban-fgm": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Anarchists oppose bodily coercion but also law-making by the state; the strand never addressed the question, so adherents would split between condemning it and rejecting legal prohibition.",
-      "sources": [
         "s5"
       ]
     },
@@ -3991,15 +3933,6 @@
         "s3"
       ]
     },
-    "police-more-powers": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Malatesta argues police and judges mainly protect privilege, and anarchists reject standing professional force. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s3"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 1,
       "confidence": "medium",
@@ -4104,6 +4037,20 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

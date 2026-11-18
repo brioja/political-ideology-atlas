@@ -83,12 +83,6 @@
    "rationale": "No stated political position found in the sources opened; the record concerns alleged crime, not political positions.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated political position found in the sources opened; the record concerns alleged crime, not political positions.",
-   "sources": []
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -126,12 +120,6 @@
    "sources": []
   },
   "limit-guns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated political position found in the sources opened; the record concerns alleged crime, not political positions.",
-   "sources": []
-  },
-  "empower-police-military": {
    "value": null,
    "confidence": "low",
    "rationale": "No stated political position found in the sources opened; the record concerns alleged crime, not political positions.",
@@ -1506,12 +1494,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated political position found in the sources opened; the record concerns alleged crime, not political positions.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No stated political position found in the sources opened; the record concerns alleged crime, not political positions.",
@@ -3119,12 +3101,6 @@
    "rationale": "No stated political position found in the sources opened; the record concerns alleged crime, not political positions.",
    "sources": []
   },
-  "avoid-permanent-military-alliances": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated political position found in the sources opened; the record concerns alleged crime, not political positions.",
-   "sources": []
-  },
   "freedom-is-self-government-of-desire": {
    "value": null,
    "confidence": "low",
@@ -3588,5 +3564,19 @@
    "sources": []
   }
  },
- "notes": "Stopped early (PROMPT_PEOPLE.md): no political record. Searched his political views and interviews, UN 1267 listing coverage and scholarly analysis; found only third-party claims about him. The UN narrative summary page did not load. All statements null; failing the uncertainty rule is the correct result."
+ "notes": "Stopped early (PROMPT_PEOPLE.md): no political record. Searched his political views and interviews, UN 1267 listing coverage and scholarly analysis; found only third-party claims about him. The UN narrative summary page did not load. All statements null; failing the uncertainty rule is the correct result.",
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "avoid-permanent-military-alliances"
+   ],
+   "nulled": 0
+  }
+ ]
 }

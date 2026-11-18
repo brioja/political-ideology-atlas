@@ -226,19 +226,6 @@
       "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Argued for a stronger safety net (a cushion, portable healthcare, affordable childcare) and a new social contract in the tradition of the New Deal and Great Society, the opposite of cutting welfare; he did not discuss welfare dependency directly.",
-      "sources": [
-        "s1",
-        "b2"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -286,12 +273,6 @@
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
       "sources": []
     },
     "legalize-sex-work": {
@@ -1798,12 +1779,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3991,6 +3966,17 @@
       "reviewer": "claude-sonnet-5-5",
       "reviewedAt": "2026-11-16",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ],
   "rules": 7

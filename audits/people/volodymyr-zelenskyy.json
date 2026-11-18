@@ -622,21 +622,6 @@
         "gpt-6.1-sol"
       ]
     },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Inaugural address promised soldiers 'worthy and, most importantly, stable financial support' and to create NATO standards; as wartime president has pressed for more funding and arms. He did not speak of police or of more legal authority.",
-      "sources": [
-        "s1",
-        "s3",
-        "b4",
-        "b14"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "political-elite-corrupt": {
       "value": 2,
       "confidence": "medium",
@@ -1048,15 +1033,6 @@
       "sources": [
         "b6",
         "b4"
-      ],
-      "auditor": "gpt-6.1-sol"
-    },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He defends continuing pension indexation and necessary social payments during war.",
-      "sources": [
-        "b16"
       ],
       "auditor": "gpt-6.1-sol"
     },
@@ -2380,12 +2356,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3770,18 +3740,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Inaugural address promised soldiers 'worthy and, most importantly, stable financial support' and to create NATO standards; as wartime president has pressed for more funding and arms. He did not speak of police or of more legal authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1",
-        "s3",
-        "b4",
-        "b14"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 1,
       "confidence": "medium",
@@ -3821,6 +3779,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "empower-police-military",
+        "cut-welfare",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

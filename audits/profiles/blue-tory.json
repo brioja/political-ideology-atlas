@@ -161,15 +161,6 @@
         "s4"
       ]
     },
-    "cut-welfare": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Wikipedia article notes Harris-era cuts to welfare and the declaration says individuals must provide for themselves, though it accepts help for those in need.",
-      "sources": [
-        "s1",
-        "s2"
-      ]
-    },
     "worker-ownership": {
       "value": -2,
       "confidence": "medium",
@@ -226,34 +217,6 @@
       "rationale": "The declaration recognises the legitimacy of private firearm ownership and promises to resist pressure to the contrary, favouring targeting criminals rather than strict limits.",
       "sources": [
         "s1"
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "high",
-          "rationale": "The declaration backs a well-armed military and tougher enforcement, mandatory minimums and more officers on the streets.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
       ]
     },
     "legalize-sex-work": {
@@ -2068,12 +2031,6 @@
         "s3"
       ]
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": -2,
       "confidence": "medium",
@@ -3159,12 +3116,6 @@
         "s1"
       ]
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -3409,12 +3360,6 @@
       "sources": []
     },
     "workers-own-party": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "ban-fgm": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -3811,15 +3756,6 @@
         "s2"
       ]
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The declaration backs a well-armed military and tougher enforcement, mandatory minimums and more officers on the streets. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": -1,
       "confidence": "medium",
@@ -3906,6 +3842,20 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

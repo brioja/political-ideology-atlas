@@ -125,12 +125,6 @@
       "rationale": "No recorded position found in the sources consulted.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -168,12 +162,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources consulted.",
@@ -1561,12 +1549,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources consulted.",
@@ -3174,12 +3156,6 @@
       "rationale": "No recorded position found in the sources consulted.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3643,5 +3619,19 @@
       "sources": []
     }
   },
-  "notes": "Thin audit: the pre-1919 parliamentary record is not in the local corpora, so Hansard speeches were read selectively (Corn Laws 1846, Jewish disabilities 1847, Reform 1867, Royal Titles 1876, Berlin 1878, trade 1879) plus a DNB reference entry and the 1872 Crystal Palace speech excerpt. Themes searched: economy (protection, income tax), franchise, religion and church-state, empire, Eastern question, labour law. Disraeli's 1847 speech for Jewish admission to Parliament and his 1867 franchise record fit no statement exactly, so they are not forced onto one. Government, liberty, society, technology and means themes remain unanswered."
+  "notes": "Thin audit: the pre-1919 parliamentary record is not in the local corpora, so Hansard speeches were read selectively (Corn Laws 1846, Jewish disabilities 1847, Reform 1867, Royal Titles 1876, Berlin 1878, trade 1879) plus a DNB reference entry and the 1872 Crystal Palace speech excerpt. Themes searched: economy (protection, income tax), franchise, religion and church-state, empire, Eastern question, labour law. Disraeli's 1847 speech for Jewish admission to Parliament and his 1867 franchise record fit no statement exactly, so they are not forced onto one. Government, liberty, society, technology and means themes remain unanswered.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

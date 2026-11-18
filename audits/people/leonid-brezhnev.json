@@ -214,15 +214,6 @@
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He sought better pensions, medical care and benefits.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "worker-ownership": {
    "value": 1,
    "confidence": "medium",
@@ -267,15 +258,6 @@
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "He says the country's defence capability must be raised to the highest possible level and that the Party sees to it the army has everything necessary.",
-   "sources": [
-    "b1"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -1826,12 +1808,6 @@
     "b5"
    ],
    "auditor": "claude-sonnet-5-5"
-  },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
   },
   "delink-world-market": {
    "value": null,
@@ -3447,6 +3423,17 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-12",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ]
 }

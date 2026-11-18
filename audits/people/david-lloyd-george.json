@@ -208,16 +208,6 @@
       "rationale": "No recorded position found in the sources.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He carried old age pensions and national insurance and defended them against City criticism; the sources show no case that welfare breeds dependency.",
-      "sources": [
-        "s1",
-        "s2",
-        "s14"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -260,12 +250,6 @@
       ]
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources.",
@@ -1681,12 +1665,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources.",
@@ -3305,15 +3283,6 @@
       "rationale": "No recorded position found in the sources.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He regretted the lost Franco-Russian alliance and pressed for an alliance with Russia and France against Germany.",
-      "sources": [
-        "s8",
-        "s6"
-      ]
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3788,5 +3757,19 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Answers rest on Lloyd George's own Commons speeches (1909-1942) and one biographical reference. Hansard records from the local TheyWorkForYou corpus were searched for Ireland, Russia, tariffs, land, agriculture, unemployment, India, Spain, Munich, conscription, pensions and taxation; the 1909 Budget and 1911 Insurance speeches were read in full. Themes with no answer (religion and family, identity, ecology, technology, civil liberties, criminal justice, policing, race and gender, colonial policy, immigration) were searched without finding a stated position in the sources opened. Positions varied over time (free trade at the start, interwar interest in protection of agriculture); the mature stated position was used where clear."
+  "notes": "Answers rest on Lloyd George's own Commons speeches (1909-1942) and one biographical reference. Hansard records from the local TheyWorkForYou corpus were searched for Ireland, Russia, tariffs, land, agriculture, unemployment, India, Spain, Munich, conscription, pensions and taxation; the 1909 Budget and 1911 Insurance speeches were read in full. Themes with no answer (religion and family, identity, ecology, technology, civil liberties, criminal justice, policing, race and gender, colonial policy, immigration) were searched without finding a stated position in the sources opened. Positions varied over time (free trade at the start, interwar interest in protection of agriculture); the mature stated position was used where clear.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

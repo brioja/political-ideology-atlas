@@ -405,15 +405,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Condemns Republican cuts to SNAP and Medicaid ('weaponize hunger') and describes Social Security, Medicaid, nutrition aid and the ACA as the strong floor government should provide.",
-      "sources": [
-        "s17",
-        "s10"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -467,36 +458,6 @@
         "s22",
         "s1",
         "s25"
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Mixed: opposes defunding police and cuts to law-enforcement grants, while pushing federal police reform and restraints on ICE.",
-          "sources": [
-            "s12",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-24"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s12",
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
       ]
     },
     "legalize-sex-work": {
@@ -1952,12 +1913,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3496,16 +3451,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Mixed: opposes defunding police and cuts to law-enforcement grants, while pushing federal police reform and restraints on ICE. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s12",
-        "s2"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 2,
       "confidence": "medium",
@@ -3535,6 +3480,18 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

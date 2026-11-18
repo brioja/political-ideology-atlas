@@ -313,15 +313,6 @@
     "gpt-6.1-sol"
    ]
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Heller criticises the welfare state as bureaucratic, centralist and paternalist, and wants it de-paternalised step by step, but says monetarist cuts cannot cure its ills and that its institutions securing a minimum of security should be kept.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "consumerism-harmful": {
    "value": 1,
    "confidence": "medium",
@@ -920,12 +911,6 @@
    "sources": []
   },
   "limit-guns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The school's sources record no position on this statement, and no stated principle settles it.",
-   "sources": []
-  },
-  "empower-police-military": {
    "value": null,
    "confidence": "low",
    "rationale": "The school's sources record no position on this statement, and no stated principle settles it.",
@@ -2181,12 +2166,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The school's sources record no position on this statement, and no stated principle settles it.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "The school's sources record no position on this statement, and no stated principle settles it.",
@@ -3610,5 +3589,18 @@
    "declined": "Too abstract to answer flatly."
   }
  ],
- "notes": "Members diverged: Márkus kept more of a Marxist economic critique (market within a socialist economy, labour theory of value rejected) and opposed US military adventurism, while Heller supported the US invasions of Afghanistan and Iraq and was more optimistic about progress, per Grumley (s7). Statements on markets and the labour theory therefore rest on Márkus's strand and are low confidence. Themes searched without a stated position: ecology, immigration, religion in public life, gender, criminal justice, foreign policy outside the Cold War, monetary and tax policy. Full texts of Dictatorship over Needs, Eastern Left, Western Left, Beyond Justice and the Márkus books are borrow-only or unavailable, so Fehér's and Vajda's own positions are thinly covered. Source texts used: Heller 1982 (Spanish), A Theory of Modernity, Grumley, Beilharz.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 25 answers taken from it, 21 agreed, 4 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Independent re-audit using old sources only as leads. Full primary interview and joint essay were downloaded; the scanned essay was OCR-read, with its layout checked on a rendered page. The Theory of Need excerpt and scholarly study supplied the needs and economic themes. The thin world theme was researched through the authors’ own discussion of Soviet intervention and national independence; later Fehér–Heller nuclear-deterrence work was located but not imposed on the school’s earlier common scope. Searches of government, culture, society, liberty, means, ecology and technology found no basis for generic policy answers on religion, ethnicity, drugs, energy or digital technology. General anti-nationalism does not become six unrelated firm answers. Later Heller positions on welfare, indigenous claims or abortion are not automatically a shared Budapest School platform."
+ "notes": "Members diverged: Márkus kept more of a Marxist economic critique (market within a socialist economy, labour theory of value rejected) and opposed US military adventurism, while Heller supported the US invasions of Afghanistan and Iraq and was more optimistic about progress, per Grumley (s7). Statements on markets and the labour theory therefore rest on Márkus's strand and are low confidence. Themes searched without a stated position: ecology, immigration, religion in public life, gender, criminal justice, foreign policy outside the Cold War, monetary and tax policy. Full texts of Dictatorship over Needs, Eastern Left, Western Left, Beyond Justice and the Márkus books are borrow-only or unavailable, so Fehér's and Vajda's own positions are thinly covered. Source texts used: Heller 1982 (Spanish), A Theory of Modernity, Grumley, Beilharz.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 25 answers taken from it, 21 agreed, 4 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Independent re-audit using old sources only as leads. Full primary interview and joint essay were downloaded; the scanned essay was OCR-read, with its layout checked on a rendered page. The Theory of Need excerpt and scholarly study supplied the needs and economic themes. The thin world theme was researched through the authors’ own discussion of Soviet intervention and national independence; later Fehér–Heller nuclear-deterrence work was located but not imposed on the school’s earlier common scope. Searches of government, culture, society, liberty, means, ecology and technology found no basis for generic policy answers on religion, ethnicity, drugs, energy or digital technology. General anti-nationalism does not become six unrelated firm answers. Later Heller positions on welfare, indigenous claims or abortion are not automatically a shared Budapest School platform.",
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
+  }
+ ]
 }

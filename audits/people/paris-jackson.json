@@ -83,12 +83,6 @@
       "rationale": "No stated position found on this statement in the sources opened (her public remarks are limited to a 2017 VMAs speech against white supremacists and a 2017 Grammys NoDAPL remark).",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found on this statement in the sources opened (her public remarks are limited to a 2017 VMAs speech against white supremacists and a 2017 Grammys NoDAPL remark).",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -126,12 +120,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found on this statement in the sources opened (her public remarks are limited to a 2017 VMAs speech against white supremacists and a 2017 Grammys NoDAPL remark).",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found on this statement in the sources opened (her public remarks are limited to a 2017 VMAs speech against white supremacists and a 2017 Grammys NoDAPL remark).",
@@ -1506,12 +1494,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found on this statement in the sources opened (her public remarks are limited to a 2017 VMAs speech against white supremacists and a 2017 Grammys NoDAPL remark).",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found on this statement in the sources opened (her public remarks are limited to a 2017 VMAs speech against white supremacists and a 2017 Grammys NoDAPL remark).",
@@ -3119,12 +3101,6 @@
       "rationale": "No stated position found on this statement in the sources opened (her public remarks are limited to a 2017 VMAs speech against white supremacists and a 2017 Grammys NoDAPL remark).",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found on this statement in the sources opened (her public remarks are limited to a 2017 VMAs speech against white supremacists and a 2017 Grammys NoDAPL remark).",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3588,5 +3564,19 @@
       "sources": []
     }
   },
-  "notes": "Entertainer without a political record: stopped early per PROMPT_PEOPLE. Searched her politics, Trump, abortion, gun control, immigration and Palestine. A single entertainment-news item reports a sarcastic July 2022 post about the Roe reversal; not opened in a primary form, so abortion stays null. Failing the uncertainty rule is the expected result."
+  "notes": "Entertainer without a political record: stopped early per PROMPT_PEOPLE. Searched her politics, Trump, abortion, gun control, immigration and Palestine. A single entertainment-news item reports a sarcastic July 2022 post about the Roe reversal; not opened in a primary form, so abortion stays null. Failing the uncertainty rule is the expected result.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

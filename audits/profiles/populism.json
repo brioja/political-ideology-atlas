@@ -250,12 +250,6 @@
         }
       ]
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -344,34 +338,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Right-wing populism often favors law and order and authority.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -3127,15 +3093,6 @@
         }
       ]
     },
-    "former-empire-influence": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Populism takes its answer from its host ideology; right-wing forms often favour it, left forms do not.",
-      "sources": [
-        "s2",
-        "s4"
-      ]
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -4920,14 +4877,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "faster-drug-approval": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Thin-centred; no stated position, and anti-elite attitudes cut both ways here.",
-      "sources": [
-        "s2"
-      ]
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -5649,12 +5598,6 @@
       "sources": []
     },
     "workers-own-party": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "ban-fgm": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -6401,15 +6344,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Right-wing populism often favors law and order and authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s4"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "former-empire-equal-treatment": {
       "value": null,
       "confidence": "low",
@@ -7150,6 +7084,20 @@
       "reviewer": "claude-sonnet-5-5",
       "reviewedAt": "2026-11-13",
       "nulled": 127
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

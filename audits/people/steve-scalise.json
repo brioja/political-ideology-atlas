@@ -388,15 +388,6 @@
     "claude-sonnet-5-5"
    ]
   },
-  "cut-welfare": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "He argues benefits for able-bodied nonworkers encourage idleness and should be withdrawn.",
-   "sources": [
-    "s3"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -451,20 +442,6 @@
     "b3",
     "b4",
     "b2"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
-  "empower-police-military": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "He demands greater defense funding and replenishment of advanced military equipment.",
-   "sources": [
-    "s5",
-    "b13",
-    "b6"
    ],
    "auditor": [
     "gpt-6.1-sol",
@@ -1942,12 +1919,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3500,5 +3471,18 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
+  }
+ ]
 }

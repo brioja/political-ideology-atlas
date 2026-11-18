@@ -412,36 +412,6 @@
         }
       ]
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The opened sources record no position on cutting welfare.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Her record runs the opposite way: bills to expand SNAP by 30 percent and to send monthly payments during the pandemic, the expanded child tax credit, and her LIFT tax credit; she has not argued that welfare breeds dependency.",
-          "sources": [
-            "s5",
-            "s14"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "The opened sources record no position on cutting welfare.",
-          "sources": [
-            "s5",
-            "s14"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -539,38 +509,6 @@
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-18"
-        }
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Points both ways: 'strongest, most lethal fighting force' and more border agents, but also wants police reform, body cameras and independent investigations, and said in 2020 that LAPD budgets deserved re-examination.",
-          "sources": [
-            "s1",
-            "s11",
-            "s14"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s1",
-            "s11",
-            "s14"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
         }
       ]
     },
@@ -2374,12 +2312,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -4190,41 +4122,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Points both ways in words: 'strongest, most lethal fighting force' and more border agents, but also police reform, body cameras and independent investigations.",
-      "sources": [
-        "s1",
-        "s11"
-      ],
-      "auditor": "claude-opus-5-5",
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Points both ways: 'strongest, most lethal fighting force' and more border agents, but also wants police reform, body cameras and independent investigations, and said in 2020 that LAPD budgets deserved re-examination. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-          "sources": [
-            "s1",
-            "s11",
-            "s14"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Points both ways in words: 'strongest, most lethal fighting force' and more border agents, but also police reform, body cameras and independent investigations.",
-          "sources": [
-            "s1",
-            "s11"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "decent-living-guarantee": {
       "value": null,
       "confidence": "low",
@@ -4935,6 +4832,18 @@
       "reviewer": "claude-sonnet-5-5",
       "reviewedAt": "2026-11-18",
       "nulled": 13
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 2
     }
   ],
   "rules": 7,

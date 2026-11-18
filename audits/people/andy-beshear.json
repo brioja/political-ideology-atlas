@@ -264,15 +264,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Vetoed HB 7 (2022) over new barriers to SNAP and Medicaid, and in 2026 proposed $50 million for food banks and full Medicaid funding against federal SNAP and Medicaid cuts.",
-   "sources": [
-    "s13",
-    "s1"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -316,36 +307,6 @@
    "sources": [
     "s21",
     "s9"
-   ]
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "His budgets raised State Police pay, added troopers and funded local police training; no statement on added authority.",
-     "sources": [
-      "s1",
-      "s3"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-28"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-     "sources": [
-      "s1",
-      "s3"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
    ]
   },
   "legalize-sex-work": {
@@ -1750,12 +1711,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3239,16 +3194,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His budgets raised State Police pay, added troopers and funded local police training; no statement on added authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s1",
-    "s3"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 2,
    "confidence": "medium",
@@ -3266,6 +3211,18 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
    "nulled": 1
   }
  ]

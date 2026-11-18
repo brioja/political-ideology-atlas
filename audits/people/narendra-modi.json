@@ -345,20 +345,6 @@
         "gpt-6.1-sol"
       ]
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "His speeches stress expanding social security cover from 25 crore people before 2014 to 100 crore and free health cover to the elderly, and he calls it saturation of welfare delivery; he voices no dependency argument against it.",
-      "sources": [
-        "s5",
-        "s6",
-        "b1"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "cut-consumption-tax": {
       "value": 1,
       "confidence": "high",
@@ -572,15 +558,6 @@
       "confidence": "low",
       "rationale": "No recorded position found in the sources searched.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "He calls for developing advanced defence capabilities and celebrates the security campaign against Maoist insurgency.",
-      "sources": [
-        "b1"
-      ],
-      "auditor": "gpt-6.1-sol"
     },
     "legalize-sex-work": {
       "value": null,
@@ -1876,12 +1853,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources searched.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources searched.",
@@ -3371,6 +3342,17 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ]
 }

@@ -396,38 +396,6 @@
         }
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The health-care page reports that he used a House procedural point of order to stop legislation removing people from Medicaid coverage.",
-      "sources": [
-        "s3a"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Platform pledges to protect SNAP and WIC and oppose cuts to Medicare, Social Security and Medicaid; he told Rogan he has never met anyone who wants a handout, but did not endorse cutting programs.",
-          "sources": [
-            "s5",
-            "s3",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-22"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The health-care page reports that he used a House procedural point of order to stop legislation removing people from Medicaid coverage.",
-          "sources": [
-            "s3a"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-11-08"
-        }
-      ]
-    },
     "state-harmful": {
       "value": null,
       "confidence": "low",
@@ -2242,12 +2210,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "legalize-sex-work": {
       "value": null,
       "confidence": "low",
@@ -3407,12 +3369,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -4854,14 +4810,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "At CNN he calls for strengthening NATO allies to resist Russian aggression.",
-      "sources": [
-        "s16"
-      ]
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -5349,6 +5297,18 @@
       "reviewer": "gpt-6.1-sol",
       "reviewedAt": "2026-11-08",
       "nulled": 32
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
     }
   ],
   "rules": 5,

@@ -360,15 +360,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "cut-welfare": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Said the two-child benefit cap should be kept ('I don't want to pay for' large families on benefits); does not make the dependency argument.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "rich-countries-aid-poor": {
    "value": null,
    "rationale": "Says the country's job 'is not to help Afghanistan' but to protect British people first.",
@@ -479,12 +470,6 @@
    "sources": []
   },
   "limit-guns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "empower-police-military": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -1735,12 +1720,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3247,6 +3226,17 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 3

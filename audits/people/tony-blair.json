@@ -249,15 +249,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Mixed: his 2002 speech calls for ending a 'culture of benefits and entitlements' and welfare reform, but he also expanded tax credits, child benefit and pensioner support and rejected an 'ungenerous benefit system'.",
-   "sources": [
-    "s8",
-    "s1"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -306,38 +297,6 @@
    "sources": [
     "s1",
     "s3"
-   ]
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "His governments raised police numbers to record levels and added new powers (anti-social behaviour orders, 2005 anti-extremism measures); 2005 manifesto promises more police and forces 'the most flexible and effective in the world'.",
-     "sources": [
-      "s2",
-      "s3",
-      "s8"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-     "sources": [
-      "s2",
-      "s3",
-      "s8"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
    ]
   },
   "legalize-sex-work": {
@@ -1836,12 +1795,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3393,17 +3346,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His governments raised police numbers to record levels and added new powers (anti-social behaviour orders, 2005 anti-extremism measures); 2005 manifesto promises more police and forces 'the most flexible and effective in the world'. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s2",
-    "s3",
-    "s8"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 0,
    "confidence": "low",
@@ -3433,6 +3375,18 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
    "nulled": 1
   }
  ]

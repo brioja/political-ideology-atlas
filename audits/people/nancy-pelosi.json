@@ -587,19 +587,6 @@
     "gpt-6.1-sol"
    ]
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Opposed the welfare overhauls proposed by President Bush and those passed under President Clinton.",
-   "sources": [
-    "s2",
-    "b1"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -659,12 +646,6 @@
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
    ]
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
-   "sources": []
   },
   "legalize-sex-work": {
    "value": null,
@@ -2341,12 +2322,6 @@
     "b1"
    ],
    "auditor": "gpt-6.1-sol"
-  },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
   },
   "delink-world-market": {
    "value": null,
@@ -4767,6 +4742,17 @@
    "reviewer": "claude-sonnet-5-5",
    "reviewedAt": "2026-11-14",
    "nulled": 2
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7

@@ -247,6 +247,11 @@ function validate(id) {
   const answers = a.answers || {};
   const statements = allStatements();
   const active = statements.filter((s) => !isCandidate(s));
+  // Answers only to statements in the bank: a dropped or renamed statement's answers are removed
+  // (scripts/drop-answers.js), with a "dropped" review recording it (Brandon, 2026-11-18).
+  const inBank = new Set(statements.map((s) => s.id));
+  const strays = Object.keys(answers).filter((k) => !inBank.has(k));
+  if (strays.length) errors.push(`answers to statements not in the bank: ${strays.join(", ")}; remove them with node scripts/drop-answers.js`);
   for (const st of statements) {
     const ans = answers[st.id];
     // Every statement in the bank gets an answer, candidate or active: promotion only decides what the
@@ -352,6 +357,8 @@ function validate(id) {
   // - The history is append-only (checked against the committed file).
   // - Each review that nulls adds { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews"; their
   //   counts add up to the nullings in the history. A first audit (one pass, no nulling review) has no history.
+  // - Removing the answers to statements dropped from the bank adds { "kind": "dropped", "reviewer", "reviewedAt",
+  //   "statements": [ids], "nulled": N }: N nullings went with them, so the nulling reviews may count N more.
   const ev = new Map(sources.map((s) => [s.id, s.evidence]));
   const kinds = (ids, k) => (Array.isArray(ids) ? ids : []).filter((sid) => ev.get(sid) === k);
   if (a.rules >= 4) {
@@ -419,15 +426,13 @@ function validate(id) {
       }
     }
   }
-  // Answers to a statement since removed from the bank keep their history. A nulling review recorded
-  // before the removal counted those nullings; one recorded after it (ban-fgm, 2026-11-10) did not, so
-  // the reviews may count any number of them.
-  const current = new Set(statements.map((s) => s.id));
-  let removedNulled = 0;
-  for (const [id, x] of Object.entries(answers)) {
-    const h = !current.has(id) && x && x.reviewHistory;
-    if (Array.isArray(h)) for (let i = 1; i < h.length; i++) if (h[i - 1] && h[i] && h[i - 1].value !== null && h[i].value === null) removedNulled++;
+  // Nullings removed with dropped statements' answers: a nulling review recorded before the drop counted them; one
+  // recorded after it (ban-fgm, 2026-11-10) did not, so the reviews may count up to that many more.
+  const drops = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "dropped");
+  for (const r of drops) if (!isId(r.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(r.reviewedAt || "") || !(Array.isArray(r.statements) && r.statements.length) || !(Number.isInteger(r.nulled) && r.nulled >= 0)) {
+    errors.push('a "dropped" review is { "kind": "dropped", "reviewer", "reviewedAt": "YYYY-MM-DD", "statements": [the ids removed], "nulled": nullings removed with them }');
   }
+  const removedNulled = drops.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
   const reviewed = nullings.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
   // A first audit (one pass, no nulling review) is the original text: it has no review history.
   const firstAudit = !(Array.isArray(a.passes) && a.passes.length > 1) && !nullings.length;
@@ -436,7 +441,10 @@ function validate(id) {
   // Append-only: the committed history must still be there, unchanged, at the start of each list.
   const before = committedVersion(id, p);
   if (before && before.answers) {
+    // A dropped statement's answer may go, once a "dropped" review lists it (checked against the bank above).
+    const droppedIds = new Set(drops.flatMap((r) => (Array.isArray(r.statements) ? r.statements : [])));
     for (const [sid, old] of Object.entries(before.answers)) {
+      if (!answers[sid] && droppedIds.has(sid) && !inBank.has(sid)) continue;
       const prev = old && Array.isArray(old.reviewHistory) ? old.reviewHistory : [];
       if (!prev.length) continue;
       const cur = answers[sid] && Array.isArray(answers[sid].reviewHistory) ? answers[sid].reviewHistory : [];
@@ -446,6 +454,7 @@ function validate(id) {
     // must be in that statement's reviewHistory, word for word (an unsourced one has nothing to review).
     const same = (p, q) => JSON.stringify([p.value, p.confidence, p.rationale, p.sources || []]) === JSON.stringify([q.value, q.confidence, q.rationale, q.sources || []]);
     for (const [sid, old] of Object.entries(before.answers)) {
+      if (!answers[sid] && droppedIds.has(sid) && !inBank.has(sid)) continue;
       if (!old || !Array.isArray(old.sources) || !old.sources.length) continue;
       // An original null (nothing found) has nothing to review either: a later pass replaces it freely.
       if (old.value === null && !(Array.isArray(old.reviewHistory) && old.reviewHistory.length)) continue;
@@ -454,8 +463,9 @@ function validate(id) {
       if (!cur) { errors.push(`${sid}: a sourced answer was removed; change it instead, keeping the old version in its "reviewHistory"`); continue; }
       if (!(Array.isArray(cur.reviewHistory) && cur.reviewHistory.some((e) => e && same(e, old)))) errors.push(`${sid}: a sourced answer was changed without a talk-page record: add the committed version, word for word, to its "reviewHistory"`);
     }
-    const prevReviews = (before.reviews || []).filter((r) => r && r.kind === "nulling");
-    if (prevReviews.some((r) => !nullings.some((n) => JSON.stringify(n) === JSON.stringify(r)))) errors.push('a committed "nulling" review was changed or dropped; reviews are append-only');
+    const prevReviews = (before.reviews || []).filter((r) => r && (r.kind === "nulling" || r.kind === "dropped"));
+    const kept = [...nullings, ...drops].map((r) => JSON.stringify(r));
+    if (prevReviews.some((r) => !kept.includes(JSON.stringify(r)))) errors.push('a committed "nulling" or "dropped" review was changed or removed; reviews are append-only');
   }
   // Rules 5, people: every one of the person's own books in the local library is read and cited (a source with
   // "library": its file name) or declined in "booksNotUsed": [{ "file", "reason" }] (e.g. a critic's book that

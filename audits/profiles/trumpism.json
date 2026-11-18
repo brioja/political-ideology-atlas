@@ -232,14 +232,6 @@
         "s3"
       ]
     },
-    "cut-welfare": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The platform promises no cuts to Social Security and Medicare, yet opposes benefits for illegal immigrants and favours work requirements; adherents are split.",
-      "sources": [
-        "s3"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -328,14 +320,6 @@
       "value": -2,
       "confidence": "high",
       "rationale": "The platform defends the right to keep and bear arms as a core constitutional freedom.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "empower-police-military": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "The platform promises to rebuild police departments, protect officers and build the most powerful military in the world.",
       "sources": [
         "s3"
       ]
@@ -3797,12 +3781,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -5608,14 +5586,6 @@
         }
       ]
     },
-    "faster-drug-approval": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The platform promises to cut regulation and speed approvals of new therapies.",
-      "sources": [
-        "s3"
-      ]
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -6127,12 +6097,6 @@
       "sources": []
     },
     "workers-own-party": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "ban-fgm": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -6860,15 +6824,6 @@
           "date": "2026-11-13"
         }
       ]
-    },
-    "police-more-powers": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The platform promises to rebuild police departments, protect officers and build the most powerful military in the world. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s3"
-      ],
-      "auditor": "claude-opus-5-5"
     },
     "decent-living-guarantee": {
       "value": null,
@@ -7637,6 +7592,20 @@
       "reviewer": "claude-sonnet-5-5",
       "reviewedAt": "2026-11-13",
       "nulled": 162
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ],
   "passes": [

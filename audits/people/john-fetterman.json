@@ -681,22 +681,6 @@
         "gpt-6.1-sol"
       ]
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Called Republican SNAP cuts 'cruel', vowed to protect and expand SNAP and listed himself as 'pro-SNAP' in 2026.",
-      "sources": [
-        "s29",
-        "s34",
-        "s2",
-        "b8",
-        "b4"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -745,21 +729,6 @@
         "s49",
         "s1",
         "b17"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
-    "empower-police-military": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Calls himself pro-policing and opposes defunding police, but no recorded call for more police funding or authority; supports national defense bills.",
-      "sources": [
-        "s1",
-        "s15",
-        "b17",
-        "b13"
       ],
       "auditor": [
         "claude-sonnet-5-5",
@@ -2369,12 +2338,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -3960,18 +3923,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Calls himself pro-policing and opposes defunding police, but no recorded call for more police funding or authority; supports national defense bills. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1",
-        "s15",
-        "b17",
-        "b13"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 2,
       "confidence": "medium",
@@ -4673,6 +4624,18 @@
       "reviewer": "claude-sonnet-5-5",
       "reviewedAt": "2026-11-18",
       "nulled": 5
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ],
   "rules": 7,

@@ -488,12 +488,6 @@
     "s2"
    ]
   },
-  "cut-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -541,16 +535,6 @@
     "s9",
     "s18",
     "s49",
-    "s2"
-   ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Cosponsored resolutions backing police, authored the D.C. CRIMES Act and voted for DoD and DHS appropriations (2024-331, 2024-333, 2025-212), but voted No on the FY2022 and FY2023 defense authorization bills (2021-293, 2022-350) and the final 2023 NDAA (2023-723).",
-   "sources": [
-    "s3",
-    "s32",
     "s2"
    ]
   },
@@ -2010,12 +1994,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3554,6 +3532,17 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 2
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ],
  "passes": [

@@ -63,7 +63,7 @@ the wording and a source for an ideology's stance. New statements start as candi
 audits only need to answer them. A rewording that only makes a
 statement clearer, keeping the claim the audits answered, keeps its id and answers (update its text in
 `audits/statements/texts.json` too). A rewording that changes the meaning needs a new id, because the
-audits answered the old claim. The `agree`, `disagree` and `note` explanations can be edited freely.
+audits answered the old claim (`node scripts/drop-answers.js` then removes the old id's answers). The `agree`, `disagree` and `note` explanations can be edited freely.
 
 ## Before opening a pull request
 

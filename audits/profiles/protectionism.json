@@ -190,12 +190,6 @@
       "rationale": "The defining sources and the protectionist texts they name record no position on this.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining sources and the protectionist texts they name record no position on this.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -233,12 +227,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining sources and the protectionist texts they name record no position on this.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "The defining sources and the protectionist texts they name record no position on this.",
@@ -1636,12 +1624,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining sources and the protectionist texts they name record no position on this.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "The defining sources and the protectionist texts they name record no position on this.",
@@ -3805,5 +3787,18 @@
       ]
     }
   ],
-  "notes": "Protectionism is an economic doctrine about trade and industry. Its defining sources and the texts they name (Hamilton, List, Carey, Patten) were searched for every theme: economy (wages, taxation, ownership, regulation, agriculture, infrastructure, monopolies, patents), world (immigration, colonies, peace and war, international bodies, foreign capital), government, liberty, society, culture, ecology (Patten on soil exhaustion) and technology. They take positions only on trade, industry and the world economy; they are silent on government, liberty, society, culture, religion and most ecology statements, so those are null and the audit is expected to fail the uncertainty rule honestly. The platforms of protectionist parties (the US tariff party's views on immigration, wages and education, British tariff reform) are reported in the 1911 Britannica as history and not used as tenets. Mercantilism has its own profile. Liberty Fund's Online Library of Liberty refused scripted access (403), so List was read in an archive.org copy of the Lloyd translation."
+  "notes": "Protectionism is an economic doctrine about trade and industry. Its defining sources and the texts they name (Hamilton, List, Carey, Patten) were searched for every theme: economy (wages, taxation, ownership, regulation, agriculture, infrastructure, monopolies, patents), world (immigration, colonies, peace and war, international bodies, foreign capital), government, liberty, society, culture, ecology (Patten on soil exhaustion) and technology. They take positions only on trade, industry and the world economy; they are silent on government, liberty, society, culture, religion and most ecology statements, so those are null and the audit is expected to fail the uncertainty rule honestly. The platforms of protectionist parties (the US tariff party's views on immigration, wages and education, British tariff reform) are reported in the 1911 Britannica as history and not used as tenets. Mercantilism has its own profile. Liberty Fund's Online Library of Liberty refused scripted access (403), so List was read in an archive.org copy of the Lloyd translation.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
+    }
+  ]
 }

@@ -82,12 +82,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -125,12 +119,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -1505,12 +1493,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -2975,5 +2957,18 @@
       "sources": []
     }
   },
-  "notes": "Checked the Wikipedia article and three targeted searches (politics views, political issues interview, Inherit the Viper opioid remarks). The only political-adjacent items found were his 2012 endorsement of Barack Obama's campaign, a 2007 environmental campaign appearance, a 2011 USAID humanitarian ad, and his remarks on the opioid-themed film Inherit the Viper, which describe the film's subject rather than a policy position. None of these is an answer to a statement, so every answer is null. The Vice interview on Inherit the Viper could not be opened in this session, so its full text was not checked."
+  "notes": "Checked the Wikipedia article and three targeted searches (politics views, political issues interview, Inherit the Viper opioid remarks). The only political-adjacent items found were his 2012 endorsement of Barack Obama's campaign, a 2007 environmental campaign appearance, a 2011 USAID humanitarian ad, and his remarks on the opioid-themed film Inherit the Viper, which describe the film's subject rather than a policy position. None of these is an answer to a statement, so every answer is null. The Vice interview on Inherit the Viper could not be opened in this session, so its full text was not checked.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
+    }
+  ]
 }

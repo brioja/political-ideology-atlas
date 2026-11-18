@@ -93,14 +93,6 @@
       "rationale": "No recorded position found in the sources.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "De Officiis approves Octavius's moderate public grain distribution as beneficial to people and state, and condemns only Gracchus's as excessive; it also advises aid to the deserving poor, thriftily.",
-      "sources": [
-        "s2"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -138,12 +130,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources.",
@@ -1543,12 +1529,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources.",
@@ -3172,12 +3152,6 @@
       "rationale": "No recorded position found in the sources.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3650,5 +3624,19 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Read from local Gutenberg copies and a library copy of De Officiis, searched by theme: constitution, democracy, monarchy and tyranny, natural law, property and debt, agrarian laws, welfare/grain, war and empire, religion and auspices, succession of kings, family, duties, civic participation, tyrannicide. De Officiis dialogue positions are the speakers' (Scipio, Laelius) as presented by Cicero; the Republic survives in fragments. The IEP does not treat property, slavery or empire. De Legibus is not in the local corpus. Most modern statements (welfare state, gender, drugs, technology, international organisations) concern matters Cicero never addressed and are null."
+  "notes": "Read from local Gutenberg copies and a library copy of De Officiis, searched by theme: constitution, democracy, monarchy and tyranny, natural law, property and debt, agrarian laws, welfare/grain, war and empire, religion and auspices, succession of kings, family, duties, civic participation, tyrannicide. De Officiis dialogue positions are the speakers' (Scipio, Laelius) as presented by Cicero; the Republic survives in fragments. The IEP does not treat property, slavery or empire. De Legibus is not in the local corpus. Most modern statements (welfare state, gender, drugs, technology, international organisations) concern matters Cicero never addressed and are null.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

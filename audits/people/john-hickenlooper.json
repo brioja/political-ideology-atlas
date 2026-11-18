@@ -508,21 +508,6 @@
     "claude-sonnet-5-5"
    ]
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He opposes Medicaid and food-assistance cuts and seeks restored funding.",
-   "sources": [
-    "s1",
-    "s3",
-    "b14",
-    "b31"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -573,16 +558,6 @@
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
    ]
-  },
-  "empower-police-military": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He seeks military readiness funding but opposes excessive immigration-enforcement funding and demands police accountability.",
-   "sources": [
-    "s6",
-    "s8"
-   ],
-   "auditor": "gpt-6.1-sol"
   },
   "legalize-sex-work": {
    "value": 1,
@@ -2119,12 +2094,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
@@ -3686,16 +3655,6 @@
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He seeks military readiness funding but opposes excessive immigration-enforcement funding and demands police accountability. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s6",
-    "s8"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -3727,6 +3686,18 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ]
 }

@@ -216,14 +216,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Told the Reichstag in 1884 that the state has a duty to care for helpless citizens, rejected leaving it to private companies, and created sickness, accident and old-age insurance.",
-      "sources": [
-        "s2"
-      ]
-    },
     "worker-ownership": {
       "value": 1,
       "confidence": "low",
@@ -273,16 +265,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Asked the Reichstag in 1888 to make Germany as strong as possible militarily, defended Prussian army reform against the liberals in 1862, and drove the Anti-Socialist Law that expanded police powers.",
-      "sources": [
-        "s7",
-        "s1",
-        "s13"
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1776,12 +1758,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3293,17 +3269,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Asked the Reichstag in 1888 to make Germany as strong as possible militarily, defended Prussian army reform against the liberals in 1862, and drove the Anti-Socialist Law that expanded police powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s7",
-        "s1",
-        "s13"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 2,
       "confidence": "medium",
@@ -3327,6 +3292,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

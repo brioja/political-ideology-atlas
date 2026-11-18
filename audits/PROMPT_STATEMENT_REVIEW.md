@@ -97,8 +97,9 @@ and audits keep changing.
 - **Splitting a claim** joined by "and": the id keeps the part with the most evidence, the other part becomes a
   new candidate only if it fills a real gap. Check first that it doesn't correlate with an existing statement,
   and that the moved answers aren't copies of one joint rationale.
-- **Dropping a statement:** remove it from `statements.json` only (answers stay in the audits) and record it in
-  `backlog/decided-against.md`.
+- **Dropping a statement:** remove it from `statements.json`, run `node scripts/drop-answers.js` (it removes
+  its answers from every audit and records that in their `reviews`; validate.js requires it), and record it in
+  `backlog/decided-against.md`. A new id does the same for the old one once its answers have moved.
 - **Sending a review back** with guidance: write `scratchpad/statement-review/<id>-maintainer.md` and move the
   `<id>-results.md` aside. The note goes into the next brief and queues the statement even if it passes the
   check. Moving the results file aside alone requeues it.

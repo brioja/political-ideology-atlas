@@ -140,14 +140,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "He directed pension increases of at least 15%, protecting vulnerable recipients.",
-      "sources": [
-        "s2"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -191,14 +183,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "He ordered higher military and police salaries and improved service conditions.",
-      "sources": [
-        "s2"
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1604,12 +1588,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3120,6 +3098,17 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ]
 }

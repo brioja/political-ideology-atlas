@@ -373,15 +373,6 @@
    ],
    "auditor": "gpt-6.1-sol"
   },
-  "cut-welfare": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Advocates expanding food and income assistance rather than cutting it.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -435,16 +426,6 @@
    "confidence": "medium",
    "rationale": "Reports supporting assault-weapons restrictions, universal background checks, buybacks and ghost-gun controls.",
    "sources": [
-    "s4"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Supports more officers, training and crime-fighting resources while demanding reform; this concerns policing, not military expansion.",
-   "sources": [
-    "s2",
     "s4"
    ],
    "auditor": "gpt-6.1-sol"
@@ -1908,12 +1889,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
@@ -3487,6 +3462,17 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ]
 }

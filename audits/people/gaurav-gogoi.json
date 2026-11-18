@@ -230,15 +230,6 @@
    ],
    "auditor": "gpt-6.1-sol"
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The campaign he leads proposes expanded women’s transfers and pensions for older people.",
-   "sources": [
-    "s6"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -282,12 +273,6 @@
    "sources": []
   },
   "limit-guns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "empower-police-military": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -1717,12 +1702,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3249,5 +3228,18 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
+  }
+ ]
 }

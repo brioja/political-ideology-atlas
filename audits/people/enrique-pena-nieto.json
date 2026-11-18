@@ -208,14 +208,6 @@
         "pact"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "Promoted universal insurance and expanded social protection.",
-      "sources": [
-        "chatham"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -261,34 +253,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Defended military support for policing and sought a legal framework for it, subject to civilian command and review.",
-          "sources": [
-            "security"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
-          "sources": [
-            "security"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1744,12 +1708,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3270,6 +3228,17 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
       "nulled": 1
     }
   ]

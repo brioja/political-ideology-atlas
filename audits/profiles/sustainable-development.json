@@ -147,14 +147,6 @@
         "s4"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Target 1.3 calls for nationally appropriate social protection systems and floors for all, which runs against cutting welfare.",
-      "sources": [
-        "s4"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -192,12 +184,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position on this statement, and no stated principle bears on it.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "The sources record no position on this statement, and no stated principle bears on it.",
@@ -1636,12 +1622,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position on this statement, and no stated principle bears on it.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "The sources record no position on this statement, and no stated principle bears on it.",
@@ -3295,12 +3275,6 @@
       "rationale": "The sources record no position on this statement, and no stated principle bears on it.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position on this statement, and no stated principle bears on it.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3827,5 +3801,19 @@
       "declined": "Read literally, accepted almost everywhere."
     }
   ],
-  "notes": "Themes searched in the four texts: economy and trade, taxes and finance, work and unions, gender, indigenous peoples, migration, health, energy and nuclear, population, climate, arms and peace, governance and participation, culture, technology. The texts say little on regime type, courts, religion, family, drugs, policing, monetary policy or ideology of the state, so those stay null. Answers mostly rest on the UN documents as primary statements of the doctrine. Beckerman's critique is cited for scope only."
+  "notes": "Themes searched in the four texts: economy and trade, taxes and finance, work and unions, gender, indigenous peoples, migration, health, energy and nuclear, population, climate, arms and peace, governance and participation, culture, technology. The texts say little on regime type, courts, religion, family, drugs, policing, monetary policy or ideology of the state, so those stay null. Answers mostly rest on the UN documents as primary statements of the doctrine. Beckerman's critique is cited for scope only.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

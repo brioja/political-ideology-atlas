@@ -83,12 +83,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -126,12 +120,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -1511,12 +1499,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3124,12 +3106,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3593,5 +3569,19 @@
       "sources": []
     }
   },
-  "notes": "Searched: the Wikipedia article (as a lead finder), MediaSum and Lex Fridman local corpora (only acting credits and a 2006 First 5 dispute), obituary-period profiles, a PBS Firing Line page (no transcript), and a search for gun, health care and billionaire statements (only low-quality aggregators, none opened as evidence). Themes with no opened primary source: economy, government, world, ecology, technology, means. The uncertainty rule is expected to fail; nothing was raised to pass it."
+  "notes": "Searched: the Wikipedia article (as a lead finder), MediaSum and Lex Fridman local corpora (only acting credits and a 2006 First 5 dispute), obituary-period profiles, a PBS Firing Line page (no transcript), and a search for gun, health care and billionaire statements (only low-quality aggregators, none opened as evidence). Themes with no opened primary source: economy, government, world, ecology, technology, means. The uncertainty rule is expected to fail; nothing was raised to pass it.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

@@ -345,12 +345,6 @@
     "s6"
    ]
   },
-  "cut-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -397,16 +391,6 @@
    "rationale": "Told the NRA in 2018 that the right to keep and bear arms 'will not be infringed', calling it one of the most important freedoms, and urged states to let school staff carry concealed weapons.",
    "sources": [
     "s16"
-   ]
-  },
-  "empower-police-military": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Pushed a dramatic defense spending increase as vice president, vowed to reverse a defense spending cut, and opposed defunding police.",
-   "sources": [
-    "s3",
-    "s4",
-    "s6"
    ]
   },
   "legalize-sex-work": {
@@ -1852,12 +1836,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3377,5 +3355,18 @@
    "auditedAt": "2026-11-01"
   }
  ],
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
+  }
+ ]
 }

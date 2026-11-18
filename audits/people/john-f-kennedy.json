@@ -390,12 +390,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "cut-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -440,15 +434,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Called his defense build-up the most far-reaching in peacetime history and raised military spending.",
-   "sources": [
-    "s9"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -2023,12 +2008,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -4324,6 +4303,17 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 11
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7,

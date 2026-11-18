@@ -117,12 +117,6 @@
         "s3"
       ]
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -166,15 +160,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Mixed over time: in 1941 he urged going 'all out' for rearmament and arming 'to the teeth', but in 1947-50 he opposed Cold War military budgets on economic grounds.",
-      "sources": [
-        "s4",
-        "s6"
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1568,12 +1553,6 @@
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
       "sources": []
     },
     "delink-world-market": {
@@ -3050,6 +3029,17 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 7
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ]
 }

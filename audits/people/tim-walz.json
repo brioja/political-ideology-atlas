@@ -341,20 +341,6 @@
     "gpt-6.1-sol"
    ]
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He defends Medicaid, free school meals and the child tax credit and says fraud should be answered by stopping criminals rather than cutting funding, though his 2025 budget slowed growth in human-services spending.",
-   "sources": [
-    "s5",
-    "s2",
-    "b4"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -408,40 +394,6 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
-   "sources": [],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ],
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "His 2023 budget proposed more than half a billion dollars in public safety funding so police and first responders have 'every resource they need', alongside gun restrictions.",
-     "sources": [
-      "s2",
-      "b5"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-29"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
-     "sources": [
-      "s2",
-      "b5"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
    ]
   },
   "legalize-sex-work": {
@@ -1964,12 +1916,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3580,6 +3526,17 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
    "nulled": 1
   }
  ]

@@ -279,35 +279,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-   "sources": [],
-   "auditor": "claude-sonnet-5-5",
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "The SNS programmes ask for more police, better police pay and a properly equipped army, though not wider powers.",
-     "sources": [
-      "s4"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-30"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-     "sources": [
-      "s4"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
-   ]
-  },
   "reduce-immigration": {
    "value": 2,
    "confidence": "medium",
@@ -581,12 +552,6 @@
    "sources": []
   },
   "regulate-corporations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The opened sources (Slovene founding documents, SNS programmes, scholarship) state no position on this, and no stated principle settles it.",
-   "sources": []
-  },
-  "cut-welfare": {
    "value": null,
    "confidence": "low",
    "rationale": "The opened sources (Slovene founding documents, SNS programmes, scholarship) state no position on this, and no stated principle settles it.",
@@ -1927,12 +1892,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The opened sources (Slovene founding documents, SNS programmes, scholarship) state no position on this, and no stated principle settles it.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "The opened sources (Slovene founding documents, SNS programmes, scholarship) state no position on this, and no stated principle settles it.",
@@ -3329,15 +3288,6 @@
    "confidence": "low",
    "rationale": "The opened sources (Slovene founding documents, SNS programmes, scholarship) state no position on this, and no stated principle settles it.",
    "sources": []
-  },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The SNS programmes ask for more police, better police pay and a properly equipped army, though not wider powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s4"
-   ],
-   "auditor": "claude-opus-5-5"
   }
  },
  "missingStatements": [
@@ -3379,6 +3329,18 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "empower-police-military",
+    "cut-welfare",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
    "nulled": 1
   }
  ]

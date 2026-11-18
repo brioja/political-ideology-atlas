@@ -321,20 +321,6 @@
     }
    ]
   },
-  "cut-welfare": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Called for more spending on welfare and childcare and attacked Reagan-era cuts to benefits.",
-   "sources": [
-    "s1",
-    "s2",
-    "b2"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "priority-to-poor": {
    "value": 2,
    "confidence": "high",
@@ -474,16 +460,6 @@
    "rationale": "At the 1984 debate said 'I favor gun control' for urban America while accepting rural hunting guns.",
    "sources": [
     "s4"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
-  "empower-police-military": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Proposed cutting the military budget by as much as fifteen percent and criticized the doubling of military spending.",
-   "sources": [
-    "s2",
-    "s9"
    ],
    "auditor": "claude-sonnet-5-5"
   },
@@ -2129,12 +2105,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -4248,6 +4218,17 @@
    "reviewer": "claude-sonnet-5-5",
    "reviewedAt": "2026-11-14",
    "nulled": 2
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7,

@@ -272,12 +272,6 @@
         "s20"
       ]
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -324,16 +318,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He told troops 'I have your backs', ordered Mindanao martial law and signed the Anti-Terrorism Act expanding security-force powers.",
-      "sources": [
-        "s20",
-        "s7",
-        "s8"
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1728,12 +1712,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3367,15 +3345,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He said in September 2016 'We are not cutting our alliances', and he kept the US security arrangements, restoring the Visiting Forces Agreement in 2021.",
-      "sources": [
-        "s26",
-        "s17"
-      ]
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3839,5 +3808,19 @@
       "sources": []
     }
   },
-  "notes": "Researched theme by theme: security and drugs, rule of law and courts, press, economy and labour, social issues, foreign policy, federalism and term limits, environment and mining. Official Gazette, Inquirer, Rappler, Reuters and the ICC site were blocked or unavailable, and the UN General Assembly speeches in the local UNGDC corpus (2016-2018) were delivered by foreign secretaries, not Duterte, so they were not used. Statements he is reported to have changed his mind on (same-sex marriage, Paris Agreement, mining) were answered only from sources opened; a later position is not assumed. Where he has a record (martial law, laws signed, ICC withdrawal, VFA) the record answers and his words are left out."
+  "notes": "Researched theme by theme: security and drugs, rule of law and courts, press, economy and labour, social issues, foreign policy, federalism and term limits, environment and mining. Official Gazette, Inquirer, Rappler, Reuters and the ICC site were blocked or unavailable, and the UN General Assembly speeches in the local UNGDC corpus (2016-2018) were delivered by foreign secretaries, not Duterte, so they were not used. Statements he is reported to have changed his mind on (same-sex marriage, Paris Agreement, mining) were answered only from sources opened; a later position is not assumed. Where he has a record (martial law, laws signed, ICC withdrawal, VFA) the record answers and his words are left out.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

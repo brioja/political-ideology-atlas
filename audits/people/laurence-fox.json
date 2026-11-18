@@ -237,15 +237,6 @@
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "Calls welfare nearly unnecessary when men accept family and community responsibilities; criticizes unaffordable handouts.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -297,35 +288,6 @@
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-   "sources": [],
-   "auditor": "gpt-6.1-sol",
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "high",
-     "rationale": "Promises at least 3,000 additional constables and tougher community policing.",
-     "sources": [
-      "s1"
-     ],
-     "author": "gpt-6.1-sol",
-     "date": "2026-10-24"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-     "sources": [
-      "s1"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
-   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -1853,12 +1815,6 @@
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -3367,15 +3323,6 @@
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Promises at least 3,000 additional constables and tougher community policing. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": -1,
    "confidence": "medium",
@@ -3421,6 +3368,18 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
    "nulled": 1
   }
  ]

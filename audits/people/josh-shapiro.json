@@ -599,16 +599,6 @@
     "claude-sonnet-5-5"
    ]
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Proposed raising the minimum monthly SNAP benefit by 50 percent in his 2023 budget and in 2026 attacked federal cuts to SNAP and Medicaid; he does not describe welfare as creating dependency.",
-   "sources": [
-    "c1",
-    "c4"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -664,22 +654,6 @@
     "c2",
     "c15",
     "c16"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5+gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Funded additional State Police cadet classes, a dedicated police funding source and recruitment incentives; no stated position on more authority or on the military.",
-   "sources": [
-    "s2",
-    "s3",
-    "b2",
-    "c5",
-    "c11"
    ],
    "auditor": [
     "claude-sonnet-5-5+gpt-6.1-sol",
@@ -2221,12 +2195,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -3749,19 +3717,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Funded additional State Police cadet classes, a dedicated police funding source and recruitment incentives; no stated position on more authority or on the military. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s2",
-    "s3",
-    "b2",
-    "c5",
-    "c11"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -3798,6 +3753,18 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 5
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 3

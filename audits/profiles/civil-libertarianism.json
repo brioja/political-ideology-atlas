@@ -148,12 +148,6 @@
         "s4"
       ]
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -209,36 +203,6 @@
       "rationale": "The ACLU opposes a national gun registry yet accepts some gun regulation, and other civil libertarians defend gun rights, so adherents are split.",
       "sources": [
         "s5"
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The ACLU's focus on policing abuses, prisoners' rights and post-9/11 security overreach leads adherents to resist expanding coercive powers.",
-          "sources": [
-            "s3",
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s3",
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
       ]
     },
     "legalize-sex-work": {
@@ -1785,12 +1749,6 @@
         "s4"
       ]
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -2847,14 +2805,6 @@
         "s4"
       ]
     },
-    "faster-drug-approval": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Economic and regulatory question outside the civil-liberties focus; adherents split.",
-      "sources": [
-        "s4"
-      ]
-    },
     "ageing-research-funding": {
       "value": 0,
       "confidence": "low",
@@ -3142,12 +3092,6 @@
       ]
     },
     "workers-own-party": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "ban-fgm": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -3533,16 +3477,6 @@
         "s1",
         "s3"
       ]
-    },
-    "police-more-powers": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The ACLU's focus on policing abuses, prisoners' rights and post-9/11 security overreach leads adherents to resist expanding coercive powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s3",
-        "s5"
-      ],
-      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -3612,6 +3546,20 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

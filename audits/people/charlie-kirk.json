@@ -846,16 +846,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "cut-welfare": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Argued the welfare and nanny state helped erode the nuclear family, said parents, churches and communities rather than government should feed children, and opposed free school lunch for all.",
-   "sources": [
-    "b11",
-    "b12"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -926,17 +916,6 @@
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
    ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Mixed but leaning yes: called for more police on the streets, tougher enforcement and marching troops into crime-ridden cities, but in September 2025 said defense spending should be cut.",
-   "sources": [
-    "b22",
-    "b15",
-    "b13"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": -2,
@@ -2704,12 +2683,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -4331,17 +4304,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Mixed but leaning yes: called for more police on the streets, tougher enforcement and marching troops into crime-ridden cities, but in September 2025 said defense spending should be cut. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "b22",
-    "b15",
-    "b13"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": -1,
    "confidence": "medium",
@@ -4445,6 +4407,18 @@
    "reviewer": "claude-sonnet-5-5",
    "reviewedAt": "2026-11-13",
    "nulled": 2
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7,

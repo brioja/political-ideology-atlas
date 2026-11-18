@@ -318,15 +318,6 @@
         "s22"
       ]
     },
-    "cut-welfare": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Moved roughly 600,000 people off New York City welfare through workfare, and his campaign material described welfare dependency as a problem to be replaced by work; also proposed a 10% cut in non-military federal spending.",
-      "sources": [
-        "s14",
-        "s22"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -373,36 +364,6 @@
       "sources": [
         "s17",
         "s2"
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "high",
-          "rationale": "Wrote that the Army needs at least ten new combat brigades and that the 'peace dividend' left the military too small; as mayor built up the NYPD, defended police after the Diallo verdict and backed aggressive enforcement.",
-          "sources": [
-            "s1",
-            "s18"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s1",
-            "s18"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
       ]
     },
     "legalize-sex-work": {
@@ -1868,12 +1829,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No statement or record from Giuliani that addresses this was found in the sources reviewed.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No statement or record from Giuliani that addresses this was found in the sources reviewed.",
@@ -3396,16 +3351,6 @@
       "rationale": "No statement or record from Giuliani that addresses this was found in the sources reviewed.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Wrote that the Army needs at least ten new combat brigades and that the 'peace dividend' left the military too small; as mayor built up the NYPD, defended police after the Diallo verdict and backed aggressive enforcement. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1",
-        "s18"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": -1,
       "confidence": "medium",
@@ -3429,6 +3374,18 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

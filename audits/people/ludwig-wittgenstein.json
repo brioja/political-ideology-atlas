@@ -95,12 +95,6 @@
       "rationale": "No recorded position found in the sources opened.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources opened.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -138,12 +132,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources opened.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources opened.",
@@ -1518,12 +1506,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources opened.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources opened.",
@@ -3131,12 +3113,6 @@
       "rationale": "No recorded position found in the sources opened.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources opened.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3600,5 +3576,19 @@
       "sources": []
     }
   },
-  "notes": "Stopped early under PROMPT_PEOPLE section 1 (no political record): searched Wikipedia, two web searches on his politics and the Soviet Union, the SEP entry and Moran 1972. The philarchive article on Wittgenstein and Marxism returned 403 and was not used. No primary text with a political statement was opened, so no answer rests on his own words. Giving away his fortune and enlisting in 1914 are acts, but neither settles a statement on taxing inheritance, conscription or redistribution. Failing the uncertainty rule is the expected result. The Tractatus and Pollen essay were read for political statements; Pollen reports only a secondhand remark (a Marxist in his heart) and letters about Russia, which settle no statement."
+  "notes": "Stopped early under PROMPT_PEOPLE section 1 (no political record): searched Wikipedia, two web searches on his politics and the Soviet Union, the SEP entry and Moran 1972. The philarchive article on Wittgenstein and Marxism returned 403 and was not used. No primary text with a political statement was opened, so no answer rests on his own words. Giving away his fortune and enlisting in 1914 are acts, but neither settles a statement on taxing inheritance, conscription or redistribution. Failing the uncertainty rule is the expected result. The Tractatus and Pollen essay were read for political statements; Pollen reports only a secondhand remark (a Marxist in his heart) and letters about Russia, which settle no statement.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

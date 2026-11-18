@@ -455,16 +455,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Criticizes federal cuts to Medicaid and healthcare and ordered a task force to protect eligible access to Medicaid and SNAP; no statement on welfare causing dependency.",
-   "sources": [
-    "s1",
-    "s8"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -519,17 +509,6 @@
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
    ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Opposes defunding the police and pledges investment in police recruitment, retention and training; no statement on expanding police authority or military funding.",
-   "sources": [
-    "s1",
-    "s2",
-    "s18"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -2043,12 +2022,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3623,17 +3596,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Opposes defunding the police and pledges investment in police recruitment, retention and training; no statement on expanding police authority or military funding. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s1",
-    "s2",
-    "s18"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -3673,6 +3635,18 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ]
 }

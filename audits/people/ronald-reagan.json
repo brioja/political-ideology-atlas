@@ -432,17 +432,6 @@
     "s11"
    ]
   },
-  "cut-welfare": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "Said programs should aim to reduce dependency, pressed to curb food stamps and AFDC growth, and spoke of breaking the 'bondage of dependency', while insisting the safety net for the truly needy stay intact.",
-   "sources": [
-    "s3",
-    "s8",
-    "s10",
-    "s11"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -493,38 +482,6 @@
     "s25",
     "s27",
     "s28"
-   ]
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 2,
-     "confidence": "high",
-     "rationale": "Built up the military and said defense is government's prime responsibility; pushed crime legislation, tougher sentences, and said the legal system overprotected criminals.",
-     "sources": [
-      "s12",
-      "s8",
-      "s10"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-22"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-     "sources": [
-      "s12",
-      "s8",
-      "s10"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
    ]
   },
   "legalize-sex-work": {
@@ -2053,12 +2010,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3642,17 +3593,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Built up the military and said defense is government's prime responsibility; pushed crime legislation, tougher sentences, and said the legal system overprotected criminals. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s12",
-    "s8",
-    "s10"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": -1,
    "confidence": "medium",
@@ -4346,6 +4286,18 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
    "nulled": 1
   }
  ],

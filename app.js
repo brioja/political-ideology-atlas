@@ -1981,7 +1981,7 @@ function positionsList(profile, audit, auditUrl = null, key = null) {
 function sourcesList(audit) {
   if (!audit || !audit.sources || !audit.sources.length) return "";
   const behind = new Set();
-  // Only positions the page shows: answers to dropped statements stay in the file but aren't positions here.
+  // Only positions the page shows (active statements), not the audit's candidate answers.
   for (const q of QUESTIONS) { const a = (audit.answers || {})[q.id]; if (a && a.value != null) for (const sid of a.sources || []) behind.add(sid); }
   const li = (s) => `
     <li id="src-${esc(s.id)}"><span class="mono small">${esc(s.id)}</span>

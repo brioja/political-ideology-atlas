@@ -262,16 +262,6 @@
         "gpt-6.1-sol"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "Called the welfare state necessary for social cohesion and insisted austerity protect social rights.",
-      "sources": [
-        "b2",
-        "b3"
-      ],
-      "auditor": "gpt-6.1-sol"
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -324,16 +314,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Asked for more citizen security and, on taking the Crown, pledged to see that the armed forces have the efficiency and power the nation needs.",
-      "sources": [
-        "s1",
-        "s9"
-      ],
-      "auditor": "claude-sonnet-5-5"
     },
     "legalize-sex-work": {
       "value": null,
@@ -1887,17 +1867,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "former-empire-influence": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Called Spain the origin of a great family of sister peoples and urged strengthening shared interests, exchange and cooperation, later stressing Ibero-American ties.",
-      "sources": [
-        "s9",
-        "s4",
-        "s11"
-      ],
-      "auditor": "claude-sonnet-5-5"
     },
     "delink-world-market": {
       "value": null,
@@ -3455,6 +3424,17 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ]
 }

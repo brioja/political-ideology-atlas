@@ -165,14 +165,6 @@
         "s1"
       ]
     },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Gentile's definition includes a police apparatus repressing dissent and a militarization of politics, and Payne lists military virtues as defining.",
-      "sources": [
-        "s1"
-      ]
-    },
     "individual-rights-only": {
       "value": -2,
       "confidence": "high",
@@ -784,12 +776,6 @@
       "sources": []
     },
     "property-fundamental": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining scholarship (Payne, Paxton, Griffin, Eco) records no position on this statement.",
-      "sources": []
-    },
-    "cut-welfare": {
       "value": null,
       "confidence": "low",
       "rationale": "The defining scholarship (Payne, Paxton, Griffin, Eco) records no position on this statement.",
@@ -1870,12 +1856,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining scholarship (Payne, Paxton, Griffin, Eco) records no position on this statement.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "The defining scholarship (Payne, Paxton, Griffin, Eco) records no position on this statement.",
@@ -3212,17 +3192,22 @@
       "confidence": "low",
       "rationale": "The defining scholarship (Payne, Paxton, Griffin, Eco) records no position on this statement.",
       "sources": []
-    },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Gentile's definition includes a police apparatus repressing dissent and a militarization of politics, and Payne lists military virtues as defining. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1"
-      ],
-      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [],
-  "notes": "Searched all ten themes in Payne, Paxton, Griffin and Eco. Britannica was blocked (403) and Griffin's The Nature of Fascism is lending-only, so Griffin is cited through his open chapter. Eco is an essay and used at medium at most."
+  "notes": "Searched all ten themes in Payne, Paxton, Griffin and Eco. Britannica was blocked (403) and Griffin's The Nature of Fascism is lending-only, so Griffin is cited through his open chapter. Eco is an essay and used at medium at most.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "empower-police-military",
+        "cut-welfare",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
+    }
+  ]
 }

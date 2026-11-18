@@ -171,14 +171,6 @@
         "s4"
       ]
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The program commits to expanding social missions and 'greater social security'; welfare cuts are the opposite of its stated aim.",
-      "sources": [
-        "s4"
-      ]
-    },
     "worker-ownership": {
       "value": 1,
       "confidence": "medium",
@@ -229,15 +221,6 @@
       "confidence": "medium",
       "rationale": "The program lists arms and ammunition control and disarmament among its public security measures, and the government monopolizes arms apart from its own militias.",
       "sources": [
-        "s4"
-      ]
-    },
-    "empower-police-military": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The armed forces hold key economic posts and the program aims to expand military power and the 'civic-military union'; security operations such as OLP expanded police powers.",
-      "sources": [
-        "s1",
         "s4"
       ]
     },
@@ -1980,14 +1963,6 @@
         "s4"
       ]
     },
-    "former-empire-influence": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The program condemns imperial domination; Venezuela has no empire-related claims except Latin American integration.",
-      "sources": [
-        "s4"
-      ]
-    },
     "delink-world-market": {
       "value": 0,
       "confidence": "medium",
@@ -3063,12 +3038,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -3346,12 +3315,6 @@
       "sources": [
         "s4"
       ]
-    },
-    "ban-fgm": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
     },
     "women-property-inheritance": {
       "value": null,
@@ -3733,16 +3696,6 @@
         "s3"
       ]
     },
-    "police-more-powers": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The armed forces hold key economic posts and the program aims to expand military power and the 'civic-military union'; security operations such as OLP expanded police powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1",
-        "s4"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 2,
       "confidence": "medium",
@@ -3821,6 +3774,20 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

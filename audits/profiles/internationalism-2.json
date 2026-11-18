@@ -641,12 +641,6 @@
    "rationale": "The internationalist sources searched (Kant, Cobden, Hobson, Angell, Mazzini, Wilson, the Covenant, the Charter, the Internationals' texts and the scholarship) record no stated position on this question.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The internationalist sources searched (Kant, Cobden, Hobson, Angell, Mazzini, Wilson, the Covenant, the Charter, the Internationals' texts and the scholarship) record no stated position on this question.",
-   "sources": []
-  },
   "surveillance-ok": {
    "value": null,
    "confidence": "low",
@@ -678,12 +672,6 @@
    "sources": []
   },
   "limit-guns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The internationalist sources searched (Kant, Cobden, Hobson, Angell, Mazzini, Wilson, the Covenant, the Charter, the Internationals' texts and the scholarship) record no stated position on this question.",
-   "sources": []
-  },
-  "empower-police-military": {
    "value": null,
    "confidence": "low",
    "rationale": "The internationalist sources searched (Kant, Cobden, Hobson, Angell, Mazzini, Wilson, the Covenant, the Charter, the Internationals' texts and the scholarship) record no stated position on this question.",
@@ -1908,12 +1896,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The internationalist sources searched (Kant, Cobden, Hobson, Angell, Mazzini, Wilson, the Covenant, the Charter, the Internationals' texts and the scholarship) record no stated position on this question.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "The internationalist sources searched (Kant, Cobden, Hobson, Angell, Mazzini, Wilson, the Covenant, the Charter, the Internationals' texts and the scholarship) record no stated position on this question.",
@@ -3325,5 +3307,18 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "notes": "Searched all themes. Thin by nature: internationalism is a doctrine about relations among states and peoples, so economy, society, culture, ecology and technology are mostly null. The old audit's low-confidence deductions on domestic questions (health, wages, markets, family, religion, technology) were dropped as inferences. Liberal and proletarian strands split on free trade, capitalism and war, intervention, sovereignty pooling and tutelage over colonies. Human-rights answers rest on the UN's own Universal Declaration, adopted under Charter Article 55, and are kept at medium."
+ "notes": "Searched all themes. Thin by nature: internationalism is a doctrine about relations among states and peoples, so economy, society, culture, ecology and technology are mostly null. The old audit's low-confidence deductions on domestic questions (health, wages, markets, family, religion, technology) were dropped as inferences. Liberal and proletarian strands split on free trade, capitalism and war, intervention, sovereignty pooling and tutelage over colonies. Human-rights answers rest on the UN's own Universal Declaration, adopted under Charter Article 55, and are kept at medium.",
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
+  }
+ ]
 }

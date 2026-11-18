@@ -184,14 +184,6 @@
         "s2"
       ]
     },
-    "cut-welfare": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He calls welfare spending excessive, rejects dependency as a way of life and advocates getting recipients into work.",
-      "sources": [
-        "s3"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -233,34 +225,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "high",
-          "rationale": "He personally advocates expanded police authority to prevent disruptive protest offences.",
-          "sources": [
-            "s12"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s12"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1670,12 +1634,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3159,15 +3117,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He personally advocates expanded police authority to prevent disruptive protest offences. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s12"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": -2,
       "confidence": "medium",
@@ -3184,6 +3133,18 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

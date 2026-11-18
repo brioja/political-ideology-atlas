@@ -185,14 +185,6 @@
    "rationale": "No stated position found.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Smer defended the 13th pension and welfare for citizens while denouncing only perceived abuse by some Roma, so nationalists reject general welfare cuts.",
-   "sources": [
-    "s4"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -237,34 +229,6 @@
    "confidence": "low",
    "rationale": "No stated position found.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "Smer backed tougher policing in Romani settlements and nationalists stress order and national defence.",
-     "sources": [
-      "s4"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-21"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-     "sources": [
-      "s4"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
-   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -2016,14 +1980,6 @@
    "rationale": "No stated position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Slovakia never ruled an empire, and its nationalists focus on defending their own nation rather than regaining influence abroad.",
-   "sources": [
-    "s1"
-   ]
-  },
   "delink-world-market": {
    "value": -1,
    "confidence": "low",
@@ -3108,12 +3064,6 @@
     "s7"
    ]
   },
-  "faster-drug-approval": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
   "ageing-research-funding": {
    "value": null,
    "confidence": "low",
@@ -3411,12 +3361,6 @@
    "sources": [
     "s1"
    ]
-  },
-  "ban-fgm": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
   },
   "women-property-inheritance": {
    "value": 1,
@@ -3777,15 +3721,6 @@
    "rationale": "No stated position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Smer backed tougher policing in Romani settlements and nationalists stress order and national defence. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s4"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -3851,6 +3786,20 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "faster-drug-approval",
+    "ban-fgm",
+    "police-more-powers"
+   ],
    "nulled": 1
   }
  ]

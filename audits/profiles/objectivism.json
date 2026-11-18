@@ -565,15 +565,6 @@
         "s2"
       ]
     },
-    "cut-welfare": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "State welfare is enforced redistribution that Rand rejected, leaving the needy to voluntary charity; the dependency framing is secondary.",
-      "sources": [
-        "s1",
-        "s3"
-      ]
-    },
     "worker-ownership": {
       "value": -2,
       "confidence": "medium",
@@ -640,36 +631,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Police and army are proper government functions and Objectivists favor a firm defense, but authority is confined to rights protection.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-14"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -2905,12 +2866,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": -2,
       "confidence": "medium",
@@ -4131,12 +4086,6 @@
         "s5"
       ]
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -4466,15 +4415,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "ban-fgm": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Cutting a girl's body without consent is a violation of individual rights, which the state exists to prohibit; custom is no defence.",
-      "sources": [
-        "s1",
-        "s10"
-      ]
     },
     "women-property-inheritance": {
       "value": 2,
@@ -5075,16 +5015,6 @@
         "s3",
         "s10"
       ]
-    },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Police and army are proper government functions and Objectivists favor a firm defense, but authority is confined to rights protection. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1",
-        "s2"
-      ],
-      "auditor": "claude-opus-5-5"
     },
     "decent-living-guarantee": {
       "value": -2,
@@ -5886,6 +5816,20 @@
       "reviewer": "claude-sonnet-5-5",
       "reviewedAt": "2026-11-13",
       "nulled": 25
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

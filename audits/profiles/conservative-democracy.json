@@ -306,36 +306,6 @@
       "rationale": "The defining sources (the AKP programme, its 2012 Political Vision and the scholarship on conservative democracy by Çağlıyan-İçener, Kaddorah and Aslan) record no position that settles this.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The Vision reports that AKP governments raised social spending sixteen-fold since 2002 and social assistance nearly ten-fold, and pledges to keep strictly to the principles of a social state.",
-      "sources": [
-        "s6"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The programme explicitly adopts a social-state concept with unified assistance and special programs for the poor, so cutting welfare is not its line.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The Vision reports that AKP governments raised social spending sixteen-fold since 2002 and social assistance nearly ten-fold, and pledges to keep strictly to the principles of a social state.",
-          "sources": [
-            "s6"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-08"
-        }
-      ]
-    },
     "worker-ownership": {
       "value": -1,
       "confidence": "medium",
@@ -451,36 +421,6 @@
       "confidence": "low",
       "rationale": "The defining sources (the AKP programme, its 2012 Political Vision and the scholarship on conservative democracy by Çağlıyan-İçener, Kaddorah and Aslan) record no position that settles this.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The record points both ways: the Vision reports a much expanded national defence industry, but also that AKP governments abolished emergency rule and State Security Courts and cut the military's political authority.",
-      "sources": [
-        "s6"
-      ],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "medium",
-          "rationale": "It calls security the state's crucial function yet also demands prosecuting torture, NGO oversight of law enforcement and restructuring the National Security Council to EU standards.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "The record points both ways: the Vision reports a much expanded national defence industry, but also that AKP governments abolished emergency rule and State Security Courts and cut the military's political authority.",
-          "sources": [
-            "s6"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-08"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -4202,36 +4142,6 @@
           "rationale": "Nulled: the first pass answered from s1; the programme (s1) states nothing that settles this statement, and the first pass's reading of it was an inference. The defining sources (the AKP programme, its 2012 Political Vision and the scholarship on conservative democracy by Çağlıyan-İçener, Kaddorah and Aslan) record no position that settles this.",
           "sources": [
             "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-08"
-        }
-      ]
-    },
-    "former-empire-influence": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Vision builds ties from the Balkans to Central Asia by making 'use of our historical heritage' and calls Turkey a centre that is 'making peace with its own history and geography'.",
-      "sources": [
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The neo-Ottoman foreign policy documented in the article cultivates influence in former Ottoman lands.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The Vision builds ties from the Balkans to Central Asia by making 'use of our historical heritage' and calls Turkey a centre that is 'making peace with its own history and geography'.",
-          "sources": [
-            "s5"
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-08"
@@ -8009,14 +7919,6 @@
       "rationale": "The defining sources (the AKP programme, its 2012 Political Vision and the scholarship on conservative democracy by Çağlıyan-İçener, Kaddorah and Aslan) record no position that settles this.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The programme commits to Turkey's continued role inside NATO, a permanent alliance.",
-      "sources": [
-        "s1"
-      ]
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -8579,6 +8481,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-10",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
     }
   ]
 }

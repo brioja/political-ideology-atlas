@@ -492,15 +492,6 @@
     "claude-sonnet-5-5"
    ]
   },
-  "cut-welfare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He defended a targeted safety net and Alaska health funding while requiring work and tighter benefit administration. This is selective reform, not wholesale rejection.",
-   "sources": [
-    "s10"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -556,20 +547,6 @@
     "s5",
     "b16",
     "b35"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
-  "empower-police-military": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "He promoted major military and Coast Guard expansion alongside greater support for law enforcement.",
-   "sources": [
-    "s2",
-    "b3",
-    "b32"
    ],
    "auditor": [
     "gpt-6.1-sol",
@@ -2089,12 +2066,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -3605,17 +3576,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "He promoted major military and Coast Guard expansion alongside greater support for law enforcement. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s2",
-    "b3",
-    "b32"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 0,
    "confidence": "low",
@@ -3637,5 +3597,19 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
+  }
+ ]
 }

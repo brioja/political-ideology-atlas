@@ -942,21 +942,6 @@
     }
    ]
   },
-  "empower-police-military": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Expanded the army into the core of government and set up the State Research Bureau and the Public Safety Unit as security forces.",
-   "sources": [
-    "s1",
-    "s6",
-    "b4",
-    "b6"
-   ],
-   "auditor": [
-    "claude-haiku-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "party-controls-media": {
    "value": 2,
    "confidence": "medium",
@@ -1348,12 +1333,6 @@
    "sources": []
   },
   "regulate-corporations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "cut-welfare": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3056,12 +3035,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": -1,
    "confidence": "medium",
@@ -4729,18 +4702,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Expanded the army into the core of government and set up the State Research Bureau and the Public Safety Unit as security forces. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s1",
-    "s6",
-    "b4",
-    "b6"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "remove-other-ethnic-groups-from-country": {
    "value": 2,
    "confidence": "medium",
@@ -5456,6 +5417,18 @@
    "reviewer": "claude-sonnet-5-5",
    "reviewedAt": "2026-11-12",
    "nulled": 16
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "empower-police-military",
+    "cut-welfare",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 5

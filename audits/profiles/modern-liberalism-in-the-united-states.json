@@ -429,36 +429,6 @@
         }
       ]
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, 2026-11-12): the answer was inferred from the ideology's general character or from a party platform; the defining sources read in this pass (Stanford Encyclopedia, the Gale encyclopedia entry, Dewey, Wilson, Roosevelt) do not state a position that settles this statement, so it is null (AUDIT_RULES.md section 3: a general value does not answer a specific statement).",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Liberals seek to expand the safety net, not cut it.",
-          "sources": [
-            "s4",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, 2026-11-12): the answer was inferred from the ideology's general character or from a party platform; the defining sources read in this pass (Stanford Encyclopedia, the Gale encyclopedia entry, Dewey, Wilson, Roosevelt) do not state a position that settles this statement, so it is null (AUDIT_RULES.md section 3: a general value does not answer a specific statement).",
-          "sources": [
-            "s4",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -602,34 +572,6 @@
           "value": 1,
           "confidence": "high",
           "rationale": "The platform pledges an assault weapons ban, universal background checks, safe storage and red flag laws.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, 2026-11-12): this answer rested only on a party platform or on Wikipedia, which are not defining sources of the ideology (AUDIT_RULES.md sections 2 and 3: a party's platform is a coatrack, Wikipedia is a way to find evidence); the defining sources (Stanford Encyclopedia, the Gale encyclopedia entry, Dewey, Wilson, Roosevelt) were searched and state no position on this statement.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, 2026-11-12): this answer rested only on a party platform or on Wikipedia, which are not defining sources of the ideology (AUDIT_RULES.md sections 2 and 3: a party's platform is a coatrack, Wikipedia is a way to find evidence); the defining sources (Stanford Encyclopedia, the Gale encyclopedia entry, Dewey, Wilson, Roosevelt) were searched and state no position on this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "medium",
-          "rationale": "The platform funds more officers and a strong military while also restricting police practices and pushing reform.",
           "sources": [
             "s2"
           ],
@@ -5596,12 +5538,6 @@
         }
       ]
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -8512,12 +8448,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -9079,36 +9009,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "ban-fgm": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, 2026-11-12): this answer rested only on a party platform or on Wikipedia, which are not defining sources of the ideology (AUDIT_RULES.md sections 2 and 3: a party's platform is a coatrack, Wikipedia is a way to find evidence); the defining sources (Stanford Encyclopedia, the Gale encyclopedia entry, Dewey, Wilson, Roosevelt) were searched and state no position on this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Liberalism's commitment to women's equality and bodily integrity supports a legal ban, as federal law has done since 1996.",
-          "sources": [
-            "s2",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, 2026-11-12): this answer rested only on a party platform or on Wikipedia, which are not defining sources of the ideology (AUDIT_RULES.md sections 2 and 3: a party's platform is a coatrack, Wikipedia is a way to find evidence); the defining sources (Stanford Encyclopedia, the Gale encyclopedia entry, Dewey, Wilson, Roosevelt) were searched and state no position on this statement.",
-          "sources": [
-            "s2",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
     },
     "women-property-inheritance": {
       "value": null,
@@ -10911,6 +10811,19 @@
       "reviewer": "claude-sonnet-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 271
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm"
+      ],
+      "nulled": 3
     }
   ],
   "rules": 7,

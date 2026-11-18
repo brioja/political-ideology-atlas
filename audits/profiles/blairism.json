@@ -175,15 +175,6 @@
         "s2"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Welfare reform meant welfare-to-work and conditionality, not cuts; the manifesto funded programmes from a levy on utilities.",
-      "sources": [
-        "s2",
-        "s6"
-      ]
-    },
     "worker-ownership": {
       "value": -2,
       "confidence": "medium",
@@ -233,36 +224,6 @@
       "rationale": "The 1997 manifesto says Labour 'led the call for an outright ban on all handguns in general civilian use' and that 'only the strictest firearms laws can provide maximum safety'.",
       "sources": [
         "s2"
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Blairism pairs tough-on-crime policing powers with a favoured interventionist military role.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
       ]
     },
     "legalize-sex-work": {
@@ -2006,12 +1967,6 @@
         "s1"
       ]
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": -2,
       "confidence": "medium",
@@ -3077,12 +3032,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -3402,12 +3351,6 @@
       "sources": [
         "s3"
       ]
-    },
-    "ban-fgm": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
     },
     "women-property-inheritance": {
       "value": null,
@@ -3757,16 +3700,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Blairism pairs tough-on-crime policing powers with a favoured interventionist military role. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1",
-        "s2"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 1,
       "confidence": "medium",
@@ -3859,6 +3792,20 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

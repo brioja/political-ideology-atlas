@@ -328,15 +328,6 @@
       ],
       "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He explicitly supports a social fallback system and continued Medicare, Medicaid and veterans’ benefits.",
-      "sources": [
-        "c3"
-      ],
-      "auditor": "gpt-6.1-sol"
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -389,21 +380,6 @@
         "b2",
         "b3",
         "c2"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5+claude-haiku-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Platform: fully support law enforcement, fight efforts to defund the police, retain and modernise a highly skilled military; in 2022 he wanted federal law enforcement money to fully fund sheriffs.",
-      "sources": [
-        "s1",
-        "s5",
-        "b3",
-        "c3"
       ],
       "auditor": [
         "claude-sonnet-5-5+claude-haiku-5-5",
@@ -1950,12 +1926,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources consulted.",
@@ -3515,18 +3485,6 @@
       "rationale": "No recorded position found in the sources consulted.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Platform: fully support law enforcement, fight efforts to defund the police, retain and modernise a highly skilled military; in 2022 he wanted federal law enforcement money to fully fund sheriffs. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1",
-        "s5",
-        "b3",
-        "c3"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 1,
       "confidence": "medium",
@@ -3544,6 +3502,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

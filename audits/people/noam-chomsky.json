@@ -683,17 +683,6 @@
         "claude-haiku-5-5"
       ]
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Repeatedly condemns welfare cutbacks as a deliberate transfer to the rich and defends social programs (health insurance, Social Security, school lunches) as things the public wants and needs.",
-      "sources": [
-        "s9",
-        "s1",
-        "s8"
-      ],
-      "auditor": "claude-sonnet-5-5"
-    },
     "worker-ownership": {
       "value": 2,
       "confidence": "high",
@@ -768,16 +757,6 @@
       "rationale": "Calls opposition to gun control 'sadly misguided': guns in citizens' hands will not tame the government, only make the country 'more brutal, ruthless and destructive'.",
       "sources": [
         "s8"
-      ],
-      "auditor": "claude-sonnet-5-5"
-    },
-    "empower-police-military": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Criticizes the Clinton crime bill's 100,000 more police and heavier punishments as pandering to fear and controlling a 'useless population' by force; condemns US military dominance and arms spending.",
-      "sources": [
-        "s8",
-        "s17"
       ],
       "auditor": "claude-sonnet-5-5"
     },
@@ -2521,12 +2500,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -4168,16 +4141,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Criticizes the Clinton crime bill's 100,000 more police and heavier punishments as pandering to fear and controlling a 'useless population' by force; condemns US military dominance and arms spending. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s8",
-        "s17"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 2,
       "confidence": "medium",
@@ -4203,6 +4166,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-10",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

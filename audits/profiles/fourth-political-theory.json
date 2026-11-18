@@ -315,12 +315,6 @@
         }
       ]
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -430,12 +424,6 @@
       ]
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -5450,36 +5438,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Great Awakening manifesto calls for Russia's Imperial Renaissance as an Orthodox Empire.",
-      "sources": [
-        "s10"
-      ],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "high",
-          "rationale": "He calls for Russia to rebuild influence in lands of the Soviet and imperial space and for a Eurasian empire.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The Great Awakening manifesto calls for Russia's Imperial Renaissance as an Orthodox Empire.",
-          "sources": [
-            "s10"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -10090,12 +10048,6 @@
       "rationale": "No stated position found in Dugin's The Fourth Political Theory, his later 4PT texts or the scholarship on the theory.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found in Dugin's The Fourth Political Theory, his later 4PT texts or the scholarship on the theory.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -10661,6 +10613,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
     }
   ]
 }

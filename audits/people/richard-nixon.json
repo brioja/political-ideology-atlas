@@ -474,20 +474,6 @@
     }
    ]
   },
-  "cut-welfare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Said the welfare system perpetuates dependency and called it a colossal failure, but proposed replacing it with a broader federal benefit (including the working poor) rather than cutting it.",
-   "sources": [
-    "s4",
-    "s11",
-    "b7"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "basic-income": {
    "value": -2,
    "confidence": "high",
@@ -649,21 +635,6 @@
     "s22",
     "s23",
     "b12"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "Declared a war on crime, doubled federal funding for local law enforcement, and said increased defence expenditure would be needed in 1974.",
-   "sources": [
-    "s12",
-    "s11",
-    "b12",
-    "b11"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -2550,12 +2521,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -4023,18 +3988,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Declared a war on crime, doubled federal funding for local law enforcement, and said increased defence expenditure would be needed in 1974. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s12",
-    "s11",
-    "b12",
-    "b11"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "low",
@@ -4759,6 +4712,18 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-12",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7,

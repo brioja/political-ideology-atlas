@@ -124,14 +124,6 @@
         "s2"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Article 34 says impoverished persons and abandoned children shall be taken care of by the State and that it shall develop a social security system for all the people.",
-      "sources": [
-        "s2"
-      ]
-    },
     "class-collaboration": {
       "value": 1,
       "confidence": "medium",
@@ -457,14 +449,6 @@
         "s3"
       ]
     },
-    "avoid-permanent-military-alliances": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The official Pancasila book sets out non-adherence to multilateral military pacts as an aim of the non-aligned policy it presents.",
-      "sources": [
-        "s3"
-      ]
-    },
     "defensive-wars-only": {
       "value": 1,
       "confidence": "medium",
@@ -629,12 +613,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position of Pancasila on this statement, and no stated principle settles it.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "The sources record no position of Pancasila on this statement, and no stated principle settles it.",
@@ -1855,12 +1833,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position of Pancasila on this statement, and no stated principle settles it.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "The sources record no position of Pancasila on this statement, and no stated principle settles it.",
@@ -3791,5 +3763,19 @@
     }
   },
   "missingStatements": [],
-  "notes": "Searched all themes in the five sources: religion, humanity and equal rights, unity, deliberation and consensus, social justice and property, colonialism and foreign policy. The principles are short, so most economic, ecological, technological and criminal-justice statements stay null; the 1945 Constitution is used only where it states the principles (Preamble, Arts 1, 29) or their economic and social expression (Arts 33-34). Where regimes that ran on Pancasila as doctrine diverged from it (New Order repression), the political-freedom answers are mixed. Wikipedia was used only for leads."
+  "notes": "Searched all themes in the five sources: religion, humanity and equal rights, unity, deliberation and consensus, social justice and property, colonialism and foreign policy. The principles are short, so most economic, ecological, technological and criminal-justice statements stay null; the 1945 Constitution is used only where it states the principles (Preamble, Arts 1, 29) or their economic and social expression (Arts 33-34). Where regimes that ran on Pancasila as doctrine diverged from it (New Order repression), the political-freedom answers are mixed. Wikipedia was used only for leads.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "avoid-permanent-military-alliances",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
+    }
+  ]
 }

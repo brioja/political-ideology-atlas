@@ -146,12 +146,6 @@
         "s3"
       ]
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -192,14 +186,6 @@
       "value": -2,
       "confidence": "high",
       "rationale": "She opposes gun buybacks, a national gun registry and restrictions on ordinary firearm transfers.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "empower-police-military": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "She supports funding police and equipping armed forces to carry out their missions.",
       "sources": [
         "s2"
       ]
@@ -1641,12 +1627,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources reviewed.",
@@ -3125,15 +3105,6 @@
       "confidence": "low",
       "rationale": "No recorded position found in the sources reviewed.",
       "sources": []
-    },
-    "police-more-powers": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "She supports funding police and equipping armed forces to carry out their missions. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s2"
-      ],
-      "auditor": "claude-opus-5-5"
     }
   },
   "notes": "Official policy pages were downloaded directly when web rendering returned errors. All themes and remaining nulls reviewed. Statements from her own pages are attributed positions, not verification of the factual claims used to justify them. No extrapolation from party membership, religious identity or endorsements. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.",
@@ -3143,6 +3114,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

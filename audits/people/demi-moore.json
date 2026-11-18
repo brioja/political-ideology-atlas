@@ -83,12 +83,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -126,12 +120,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -1506,12 +1494,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3119,12 +3101,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3588,5 +3564,19 @@
       "sources": []
     }
   },
-  "notes": "Entertainer without a political record: stopped early per PROMPT_PEOPLE. Searched Wikipedia, party affiliation/endorsements and Thorn/trafficking advocacy. Candidate backing and charity work state no position on any statement (an anti-trafficking cause is not a view on sex-work legalisation; PETA bullhook support in 2011 was not checked in an original source). All answers null."
+  "notes": "Entertainer without a political record: stopped early per PROMPT_PEOPLE. Searched Wikipedia, party affiliation/endorsements and Thorn/trafficking advocacy. Candidate backing and charity work state no position on any statement (an anti-trafficking cause is not a view on sex-work legalisation; PETA bullhook support in 2011 was not checked in an original source). All answers null.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

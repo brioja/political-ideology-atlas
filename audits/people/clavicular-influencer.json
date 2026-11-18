@@ -83,12 +83,6 @@
       "rationale": "No stated position on this topic found; he calls political activism a cope and his few political remarks (s1, s2) do not address it.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position on this topic found; he calls political activism a cope and his few political remarks (s1, s2) do not address it.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -126,12 +120,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position on this topic found; he calls political activism a cope and his few political remarks (s1, s2) do not address it.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position on this topic found; he calls political activism a cope and his few political remarks (s1, s2) do not address it.",
@@ -1506,12 +1494,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position on this topic found; he calls political activism a cope and his few political remarks (s1, s2) do not address it.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position on this topic found; he calls political activism a cope and his few political remarks (s1, s2) do not address it.",
@@ -3119,12 +3101,6 @@
       "rationale": "No stated position on this topic found; he calls political activism a cope and his few political remarks (s1, s2) do not address it.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position on this topic found; he calls political activism a cope and his few political remarks (s1, s2) do not address it.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3588,5 +3564,19 @@
       "sources": []
     }
   },
-  "notes": "Stopped early (PROMPT_PEOPLE.md: no political record). Searched his politics, Trump/Vance/Newsom remarks and the Wikipedia article's cited political items; The Atlantic, NYT and Miami New Times pages were blocked, so only IBTimes, Isis and the Knowles interview captions (yt-dlp, 1 request) were opened. No primary source with a policy position was found. Failing the uncertainty rule is the expected result."
+  "notes": "Stopped early (PROMPT_PEOPLE.md: no political record). Searched his politics, Trump/Vance/Newsom remarks and the Wikipedia article's cited political items; The Atlantic, NYT and Miami New Times pages were blocked, so only IBTimes, Isis and the Knowles interview captions (yt-dlp, 1 request) were opened. No primary source with a policy position was found. Failing the uncertainty rule is the expected result.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

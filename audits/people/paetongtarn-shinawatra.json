@@ -158,14 +158,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Commits to expanded welfare and living-cost support.",
-      "sources": [
-        "s1"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -205,12 +197,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -1623,12 +1609,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3119,5 +3099,18 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "No inferred answers. All 490 statements and remaining nulls reviewed. The full English policy PDF was opened through the web reader; its direct download returned an access page. The full Thai transcription was downloaded as an additional searchable text. Political-rights evidence is mixed: opposition prosecutions continued, but independent military and judicial decisions are not automatically treated as her personal instructions. Unused public-land distribution is not confiscation of private estates. LGBT family rights do not alone establish legal gender-marker recognition. Nuclear cooperation is preparatory. Her election after her father does not establish hereditary succession as a principle. No position is imputed from relatives or party membership."
+  "notes": "No inferred answers. All 490 statements and remaining nulls reviewed. The full English policy PDF was opened through the web reader; its direct download returned an access page. The full Thai transcription was downloaded as an additional searchable text. Political-rights evidence is mixed: opposition prosecutions continued, but independent military and judicial decisions are not automatically treated as her personal instructions. Unused public-land distribution is not confiscation of private estates. LGBT family rights do not alone establish legal gender-marker recognition. Nuclear cooperation is preparatory. Her election after her father does not establish hereditary succession as a principle. No position is imputed from relatives or party membership.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
+    }
+  ]
 }

@@ -148,14 +148,6 @@
         "s4"
       ]
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Socialist states built social provision as a core duty, so cutting welfare for dependency reasons is rejected.",
-      "sources": [
-        "s4"
-      ]
-    },
     "worker-ownership": {
       "value": 1,
       "confidence": "medium",
@@ -205,34 +197,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "Defence of the socialist fatherland is central, and these states put heavy emphasis on the army and security organs.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1990,14 +1954,6 @@
         "s2"
       ]
     },
-    "former-empire-influence": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The article notes Russian overtones in Soviet patriotism, but adherents otherwise reject chauvinism.",
-      "sources": [
-        "s1"
-      ]
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -3120,12 +3076,6 @@
         "s4"
       ]
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -3464,14 +3414,6 @@
       "value": 2,
       "confidence": "medium",
       "rationale": "Marxist-Leninism rests on the independent party of the working class.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "ban-fgm": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Socialist states promote women's equality but sources are silent.",
       "sources": [
         "s4"
       ]
@@ -3969,6 +3911,19 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm"
+      ],
       "nulled": 1
     }
   ]

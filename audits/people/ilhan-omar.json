@@ -509,20 +509,6 @@
     "gpt-6.1-sol"
    ]
   },
-  "cut-welfare": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Voted no on the 2025 budget law cutting Medicaid and nutrition aid and filed farm bill amendments against the SNAP cut; supports expanding, not cutting, safety-net programs. Her statements do not address the dependency claim itself.",
-   "sources": [
-    "s21",
-    "s4",
-    "b3"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "worker-ownership": {
    "value": 1,
    "confidence": "medium",
@@ -570,24 +556,6 @@
     "b9"
    ],
    "auditor": "gpt-6.1-sol"
-  },
-  "empower-police-military": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Voted no on the NDAA, co-chairs the Defense Spending Reduction Caucus, filed an amendment cutting $150 billion from defense; after George Floyd's killing she backed dismantling the Minneapolis police department, and she pushes police accountability bills.",
-   "sources": [
-    "s7",
-    "s8",
-    "s20",
-    "s11",
-    "s28",
-    "b1",
-    "b2"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -2098,12 +2066,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -4446,6 +4408,17 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 2
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7

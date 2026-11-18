@@ -348,15 +348,6 @@
     "gpt-6.1-sol"
    ]
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "She calls for preserving and strengthening Social Security, Medicare and Medicaid.",
-   "sources": [
-    "b11"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -446,17 +437,6 @@
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
    ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Criticised 'defund the police' as demonizing law enforcement and, in her 2022 party-exit statement, accused Democrats of demonizing police; in 2019 she opposed cutting the military budget. Neither is an explicit call for more funding and authority.",
-   "sources": [
-    "s3",
-    "s6",
-    "s9"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -2030,12 +2010,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3745,17 +3719,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Criticised 'defund the police' as demonizing law enforcement and, in her 2022 party-exit statement, accused Democrats of demonizing police; in 2019 she opposed cutting the military budget. Neither is an explicit call for more funding and authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s3",
-    "s6",
-    "s9"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -4465,6 +4428,18 @@
    "reviewer": "claude-sonnet-5-5",
    "reviewedAt": "2026-11-14",
    "nulled": 6
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7,

@@ -284,19 +284,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Insists that social spending and subsidies remain necessary while expanding employment.",
-   "sources": [
-    "s4",
-    "b4"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -346,16 +333,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "She welcomes the larger home-affairs budget, asks the government to approve the police-modernisation scheme to 2020 and demands restored benefits for soldiers' children; she asks for funding, not new powers.",
-   "sources": [
-    "b7",
-    "b12"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -1809,12 +1786,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3359,16 +3330,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "She welcomes the larger home-affairs budget, asks the government to approve the police-modernisation scheme to 2020 and demands restored benefits for soldiers' children; she asks for funding, not new powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "b7",
-    "b12"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -3391,5 +3352,19 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
+  }
+ ]
 }

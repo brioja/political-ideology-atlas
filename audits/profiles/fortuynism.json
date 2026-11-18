@@ -94,22 +94,6 @@
         "s1"
       ]
     },
-    "cut-welfare": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The programme stops inflow into the WAO disability scheme by limiting it to work-related illness and abolishes income-dependent subsidies that create the poverty trap.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The programme puts more police on the street, expands cell capacity and gives the Marechaussee police powers and strengthens customs, while keeping the army at strength but trimming its missions.",
-      "sources": [
-        "s1"
-      ]
-    },
     "decide-locally": {
       "value": 1,
       "confidence": "high",
@@ -514,14 +498,6 @@
       "value": 1,
       "confidence": "medium",
       "rationale": "The programme proposes examining service for boys and girls alike.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "avoid-permanent-military-alliances": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The programme accepts the Netherlands' role as a NATO partner.",
       "sources": [
         "s1"
       ]
@@ -1988,12 +1964,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position on this and no stated principle bears on it.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "The sources record no position on this and no stated principle bears on it.",
@@ -3877,15 +3847,6 @@
       "rationale": "The sources record no position on this and no stated principle bears on it.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The programme puts more police on the street, expands cell capacity and gives the Marechaussee police powers and strengthens customs, while keeping the army at strength but trimming its missions. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s1"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": -1,
       "confidence": "medium",
@@ -3941,6 +3902,19 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "avoid-permanent-military-alliances",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

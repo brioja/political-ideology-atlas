@@ -194,12 +194,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": 1,
       "confidence": "low",
@@ -263,21 +257,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Gave top priority to national defence and a large army and security apparatus (about 200 prisons).",
-      "sources": [
-        "s1",
-        "s4",
-        "b2",
-        "b1"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
     },
     "legalize-sex-work": {
       "value": -2,
@@ -2417,12 +2396,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": 1,
       "confidence": "medium",
@@ -4325,6 +4298,17 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ]
 }

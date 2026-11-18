@@ -241,20 +241,6 @@
         "gpt-6.1-sol"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Programme expands welfare: doubles family allowance and childcare benefits, keeps 13th/14th month pensions, sets a HUF 120,000 minimum pension.",
-      "sources": [
-        "s2",
-        "s3",
-        "b4"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "no-business-privileges": {
       "value": 1,
       "confidence": "medium",
@@ -492,16 +478,6 @@
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
       ]
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "Programme raises police pay and defence spending to the NATO-expected 5% of GDP by 2035.",
-      "sources": [
-        "s2",
-        "s3"
-      ],
-      "auditor": "claude-sonnet-5-5"
     },
     "conscription": {
       "value": -1,
@@ -2003,12 +1979,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -4139,6 +4109,19 @@
     {
       "corpus": "voteview",
       "reason": "Not a US Congress member."
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ]
 }

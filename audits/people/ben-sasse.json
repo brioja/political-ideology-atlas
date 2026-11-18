@@ -325,14 +325,6 @@
         "s5"
       ]
     },
-    "cut-welfare": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "2014 platform opposed 'spawning dependency' and called for repealing unaffordable new entitlements while reforming existing ones; also voted for a 2020 COVID relief package that included SNAP money.",
-      "sources": [
-        "s2"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -383,36 +375,6 @@
       "sources": [
         "s2",
         "s12"
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Platform calls for spending to keep 'the greatest fighting force' and he backed funding to prosecute gun crimes; no position found on police authority.",
-          "sources": [
-            "s2",
-            "s12"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s2",
-            "s12"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
       ]
     },
     "legalize-sex-work": {
@@ -1895,12 +1857,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3420,16 +3376,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Platform calls for spending to keep 'the greatest fighting force' and he backed funding to prosecute gun crimes; no position found on police authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s2",
-        "s12"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": -1,
       "confidence": "medium",
@@ -3446,6 +3392,18 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

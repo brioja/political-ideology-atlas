@@ -91,12 +91,6 @@
       "rationale": "No recorded position found in the sources opened.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources opened.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -134,12 +128,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources opened.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources opened.",
@@ -1521,12 +1509,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources opened.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources opened.",
@@ -3136,12 +3118,6 @@
       "rationale": "No recorded position found in the sources opened.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources opened.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -3605,5 +3581,19 @@
       "sources": []
     }
   },
-  "notes": "Searched abortion, religion, race, Trump, Democrats, vaccines, police, prisons/13th Amendment, welfare, guns, death penalty, Israel, Holocaust. Many secondhand reports (TMZ 2018, Oval Office 2018, Forbes 2020) could not be opened in original or gave no stated policy; the 2022 Infowars appearance is an unlabeled machine transcript with no clear Holocaust position attributable to him, so left null. Death penalty, welfare and gun positions appear only in Wikipedia summaries and were left null. Failing the uncertainty rule is the honest result."
+  "notes": "Searched abortion, religion, race, Trump, Democrats, vaccines, police, prisons/13th Amendment, welfare, guns, death penalty, Israel, Holocaust. Many secondhand reports (TMZ 2018, Oval Office 2018, Forbes 2020) could not be opened in original or gave no stated policy; the 2022 Infowars appearance is an unlabeled machine transcript with no clear Holocaust position attributable to him, so left null. Death penalty, welfare and gun positions appear only in Wikipedia summaries and were left null. Failing the uncertainty rule is the honest result.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
+      "nulled": 0
+    }
+  ]
 }

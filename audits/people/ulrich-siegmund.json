@@ -303,19 +303,6 @@
    ],
    "auditor": "gpt-6.1-sol"
   },
-  "cut-welfare": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Would cut incentives for nonwork while retaining aid for involuntary need.",
-   "sources": [
-    "s4",
-    "b5"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -357,15 +344,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Supports strengthening equipment for police, armed forces and deportation enforcement.",
-   "sources": [
-    "s6"
-   ],
-   "auditor": "gpt-6.1-sol"
   },
   "legalize-sex-work": {
    "value": null,
@@ -1876,12 +1854,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -3410,15 +3382,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Supports strengthening equipment for police, armed forces and deportation enforcement. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s6"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": -1,
    "confidence": "medium",
@@ -3441,5 +3404,19 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
+  }
+ ]
 }

@@ -426,19 +426,6 @@
     "claude-sonnet-5-5"
    ]
   },
-  "cut-welfare": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "She condemns welfare cuts as part of austerity and promises to address their consequences.",
-   "sources": [
-    "s4",
-    "b17"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -491,15 +478,6 @@
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "She explicitly promises proper police funding and thousands of additional frontline officers; this evidence concerns policing, not military expansion.",
-   "sources": [
-    "s4"
-   ],
-   "auditor": "gpt-6.1-sol"
   },
   "legalize-sex-work": {
    "value": null,
@@ -1974,12 +1952,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
@@ -3543,5 +3515,18 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
+  }
+ ]
 }

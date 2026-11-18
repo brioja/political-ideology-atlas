@@ -402,36 +402,6 @@
         }
       ]
     },
-    "cut-welfare": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Gale sets out both sides inside liberal democracy: Tocqueville's heirs fear government taking over what people do for themselves, while the liberal left sees administrative state power as necessary for social justice.",
-      "sources": [
-        "s6"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "Mainstream adherents accept the welfare state in some form (UDHR Art. 22) while disputing its size; cutting it broadly is a minority view.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Gale sets out both sides inside liberal democracy: Tocqueville's heirs fear government taking over what people do for themselves, while the liberal left sees administrative state power as necessary for social justice.",
-          "sources": [
-            "s6"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-10"
-        }
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -600,34 +570,6 @@
           "value": 0,
           "confidence": "low",
           "rationale": "Gun policy varies widely between liberal democracies and is split among adherents.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s1 (Wikipedia, which is not evidence). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-10"
-        }
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s1 (Wikipedia, which is not evidence). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "A partisan question; the system itself calls for law-bound, accountable security forces rather than more or less funding.",
           "sources": [
             "s1"
           ],
@@ -6219,34 +6161,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s1 (Wikipedia, which is not evidence). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Not a requirement of the system; adherents differ on influence in a predecessor empire's former lands.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s1 (Wikipedia, which is not evidence). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-10"
-        }
-      ]
     },
     "delink-world-market": {
       "value": null,
@@ -12196,44 +12110,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "faster-drug-approval": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Regulatory policy is left open; adherents split between caution and speed.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "ban-fgm": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s3 (the Universal Declaration of Human Rights, which no defining source makes a text of liberal democracy, so a coatrack), s1 (Wikipedia, which is not evidence). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The UDHR protects bodily integrity and equal rights for women, which liberal democracies generally apply by banning harmful practices whatever the custom.",
-          "sources": [
-            "s3",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s3 (the Universal Declaration of Human Rights, which no defining source makes a text of liberal democracy, so a coatrack), s1 (Wikipedia, which is not evidence). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-          "sources": [
-            "s3",
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-10"
-        }
-      ]
-    },
     "decent-living-guarantee": {
       "value": 0,
       "confidence": "low",
@@ -12263,6 +12139,19 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-10",
       "nulled": 297
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm"
+      ],
+      "nulled": 3
     }
   ]
 }

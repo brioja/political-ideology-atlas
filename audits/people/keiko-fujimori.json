@@ -310,21 +310,6 @@
     "gpt-6.1-sol"
    ]
   },
-  "cut-welfare": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Plan doubles Pension 65, Contigo and Juntos transfers, raises the ONP minimum pension and restores Prona; in interviews she says working social programs must be expanded.",
-   "sources": [
-    "s1",
-    "s4",
-    "s5",
-    "b1"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -377,21 +362,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Core of her platform: military and police patrols, armed forces on borders and in prisons, 1,000 new patrol cars, modernised police; says police and soldiers are persecuted.",
-   "sources": [
-    "s1",
-    "s2",
-    "s5",
-    "b2"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -1997,12 +1967,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -3524,18 +3488,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Core of her platform: military and police patrols, armed forces on borders and in prisons, 1,000 new patrol cars, modernised police; says police and soldiers are persecuted. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s1",
-    "s2",
-    "s5",
-    "b2"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 2,
    "confidence": "medium",
@@ -3572,6 +3524,18 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-12",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ]
 }

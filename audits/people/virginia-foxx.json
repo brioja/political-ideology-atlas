@@ -699,17 +699,6 @@
     "claude-sonnet-5-5"
    ]
   },
-  "cut-welfare": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "She says expanded anti-poverty programs \"put more people in dependency\" and that the CSBG has become a welfare program that keeps people in poverty, and she voted for the 2013 SNAP cuts and work rules; she also says a safety net for those truly in need should stay.",
-   "sources": [
-    "b13",
-    "b14",
-    "b15"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -759,17 +748,6 @@
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
    ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "She introduced the Qualified Immunity Act to codify protection for police and criticised cuts to the defense authorization topline; she rejects calls to defund police.",
-   "sources": [
-    "b42",
-    "b43",
-    "b44"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -2261,12 +2239,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in sources reviewed.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found in sources reviewed.",
@@ -3837,5 +3809,18 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
+  }
+ ]
 }

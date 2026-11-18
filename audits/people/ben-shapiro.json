@@ -611,16 +611,6 @@
         "s9"
       ]
     },
-    "cut-welfare": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Calls entitlement reform the most important thing government could do, sees welfare states as sustainable only in small homogeneous countries, and says people able to work should not expect support.",
-      "sources": [
-        "s10",
-        "s11",
-        "s5"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -679,15 +669,6 @@
         "s27",
         "s28",
         "s18"
-      ]
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Opposes defunding police and says non-enforcement of crime fails the public; no explicit call for more military funding or authority.",
-      "sources": [
-        "s29",
-        "s30"
       ]
     },
     "legalize-sex-work": {
@@ -2221,12 +2202,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -3755,16 +3730,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Opposes defunding police and says non-enforcement of crime fails the public; no explicit call for more military funding or authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s29",
-        "s30"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": -1,
       "confidence": "medium",
@@ -3777,5 +3742,19 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Mostly mature positions from 2017-2026. Some answers rest on a March 2020 political-compass quiz he read aloud, which may predate later shifts. On same-sex marriage he opposed court-imposed recognition and wanted the state out of marriage (2013), and said in 2019 that his moral view should not shape policy; scored 0 as contested. Early columns (2007) were written as a teenager and were used only where later material agrees."
+  "notes": "Mostly mature positions from 2017-2026. Some answers rest on a March 2020 political-compass quiz he read aloud, which may predate later shifts. On same-sex marriage he opposed court-imposed recognition and wanted the state out of marriage (2013), and said in 2019 that his moral view should not shape policy; scored 0 as contested. Early columns (2007) were written as a teenager and were used only where later material agrees.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
+    }
+  ]
 }

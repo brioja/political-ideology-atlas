@@ -603,34 +603,6 @@
         "s5"
       ]
     },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "CONAIE asks that the armed forces and police be held to their specific missions, under civilian justice and social control, rather than given more authority.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-05"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
-    },
     "military-guardian-role": {
       "value": -1,
       "confidence": "medium",
@@ -801,14 +773,6 @@
       "value": 2,
       "confidence": "high",
       "rationale": "CONAIE bans private monopolies and oligopolies, demands sanction of abuse of economic power and tighter control of finance.",
-      "sources": [
-        "s5"
-      ]
-    },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "CONAIE demands a universal state social security system, and a bonus for new mothers, and treats social services as rights not commodities.",
       "sources": [
         "s5"
       ]
@@ -2212,12 +2176,6 @@
       "rationale": "The sources record no position on this, and no stated principle of plurinationalism bears on it.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position on this, and no stated principle of plurinationalism bears on it.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -3598,12 +3556,6 @@
       "rationale": "The sources record no position on this, and no stated principle of plurinationalism bears on it.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position on this, and no stated principle of plurinationalism bears on it.",
-      "sources": []
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -4006,15 +3958,6 @@
       "rationale": "The sources record no position on this, and no stated principle of plurinationalism bears on it.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "CONAIE asks that the armed forces and police be held to their specific missions, under civilian justice and social control, rather than given more authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s5"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 2,
       "confidence": "medium",
@@ -4084,6 +4027,19 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "empower-police-military",
+        "cut-welfare",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

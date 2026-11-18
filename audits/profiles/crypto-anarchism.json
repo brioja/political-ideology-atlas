@@ -147,14 +147,6 @@
         "s2"
       ]
     },
-    "cut-welfare": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "May lists welfare policy among state overreach and warns of unfunded welfare liabilities; adherents lean toward cutting it, though the texts do not argue the dependency claim.",
-      "sources": [
-        "s4"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -212,34 +204,6 @@
       "sources": [
         "s4",
         "s1"
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Adherents seek to shrink state coercive capacity; more police and military authority runs against the aim of ungovernable private exchange.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
       ]
     },
     "legalize-sex-work": {
@@ -1971,14 +1935,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "State influence projection is not a movement aim.",
-      "sources": [
-        "s4"
-      ]
-    },
     "delink-world-market": {
       "value": -2,
       "confidence": "medium",
@@ -3085,12 +3041,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -3326,14 +3276,6 @@
       "rationale": "Crypto-anarchism seeks to bypass politics and the state rather than to form parties.",
       "sources": [
         "s3",
-        "s4"
-      ]
-    },
-    "ban-fgm": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Adherents are split between opposing all state criminal law and opposing violation of persons.",
-      "sources": [
         "s4"
       ]
     },
@@ -3709,15 +3651,6 @@
         "s4"
       ]
     },
-    "police-more-powers": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Adherents seek to shrink state coercive capacity; more police and military authority runs against the aim of ungovernable private exchange. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s4"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": -1,
       "confidence": "medium",
@@ -3804,6 +3737,20 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

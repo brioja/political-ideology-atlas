@@ -346,12 +346,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "cut-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -402,44 +396,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-   "sources": [],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ],
-   "reviewHistory": [
-    {
-     "value": 2,
-     "confidence": "medium",
-     "rationale": "Pushed ICE budget increases, Guard deployments to cities and a large immigration enforcement force.",
-     "sources": [
-      "s2",
-      "s4",
-      "s1",
-      "b8"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-     "sources": [
-      "s2",
-      "s4",
-      "s1",
-      "b8"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-11"
-    }
-   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -2059,12 +2015,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -3584,18 +3534,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Pushed ICE budget increases, Guard deployments to cities and a large immigration enforcement force. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s2",
-    "s4",
-    "s1",
-    "b8"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "replace-appointed-officials": {
    "value": null,
    "confidence": "low",
@@ -4289,6 +4227,18 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
    "nulled": 1
   }
  ],

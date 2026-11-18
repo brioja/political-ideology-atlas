@@ -273,19 +273,6 @@
     "gpt-6.1-sol"
    ]
   },
-  "cut-welfare": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Told the LSE in 2018 that welfare changes had released millions trapped in poverty into work and that the welfare state had been holding people back; no explicit call for cuts found.",
-   "sources": [
-    "s4",
-    "b2"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "unions-good": {
    "value": -1,
    "confidence": "medium",
@@ -343,15 +330,6 @@
    "rationale": "Voted with the government for the Investigatory Powers Bill in November 2016 and for the Covert Human Intelligence Sources Bill third reading in 2020.",
    "sources": [
     "s6"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "As Foreign Secretary in June 2022 said it is right that the UK is increasing defence spending in a more insecure world.",
-   "sources": [
-    "s14"
    ],
    "auditor": "claude-sonnet-5-5"
   },
@@ -2064,12 +2042,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -3520,6 +3492,17 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-12",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ]
 }

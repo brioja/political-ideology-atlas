@@ -327,21 +327,6 @@
         "gpt-6.1-sol"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He cut premiums for low-income households and widened benefits to part-timers while seeking balanced burdens, not a retrenchment of welfare as dependency-forming.",
-      "sources": [
-        "s5",
-        "s8",
-        "b4",
-        "b5"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "decide-locally": {
       "value": 1,
       "confidence": "medium",
@@ -448,22 +433,6 @@
         "s14"
       ],
       "auditor": "claude-sonnet-5-5"
-    },
-    "empower-police-military": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He fundamentally reinforced defence capabilities, passed the security legislation and strengthened cybersecurity and counter-terrorism policing.",
-      "sources": [
-        "s13",
-        "s8",
-        "s10",
-        "b2",
-        "b5"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
     },
     "collective-defense": {
       "value": 1,
@@ -2007,12 +1976,6 @@
       "rationale": "No recorded position found in the sources searched.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources searched.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -3456,19 +3419,6 @@
       "rationale": "No recorded position found in the sources searched.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He fundamentally reinforced defence capabilities, passed the security legislation and strengthened cybersecurity and counter-terrorism policing. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s13",
-        "s8",
-        "s10",
-        "b2",
-        "b5"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 1,
       "confidence": "medium",
@@ -3499,6 +3449,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

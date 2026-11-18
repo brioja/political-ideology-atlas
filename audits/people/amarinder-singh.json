@@ -245,20 +245,6 @@
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Defended subsidised essentials and his own public healthcare and housing support for poor households.",
-   "sources": [
-    "s1",
-    "s9",
-    "b1"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -309,21 +295,6 @@
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Demanded better weapons and anti-drone capability for border forces and stronger enforcement against drug trafficking.",
-   "sources": [
-    "s1",
-    "s3",
-    "b1",
-    "b3"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -1751,12 +1722,6 @@
    "sources": []
   },
   "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
-  },
-  "former-empire-influence": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
@@ -3263,18 +3228,6 @@
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Demanded better weapons and anti-drone capability for border forces and stronger enforcement against drug trafficking. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s1",
-    "s3",
-    "b1",
-    "b3"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -3298,5 +3251,19 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
+  }
+ ]
 }

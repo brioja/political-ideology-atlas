@@ -430,16 +430,6 @@
     "s2"
    ]
   },
-  "cut-welfare": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He rejected ending relief as 'purging the rolls by starvation' and signed Social Security, while preferring work relief to the dole; he did not accept that aid should be cut.",
-   "sources": [
-    "s1",
-    "s23",
-    "s11"
-   ]
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -487,15 +477,6 @@
    "confidence": "low",
    "rationale": "No recorded position found in the speeches, messages and record reviewed.",
    "sources": []
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He called for 'all-inclusive national defense' and a swift and driving increase in armament production; he made no comparable statement about police.",
-   "sources": [
-    "s6",
-    "s15"
-   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -2106,12 +2087,6 @@
    "sources": [
     "s8"
    ]
-  },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the speeches, messages and record reviewed.",
-   "sources": []
   },
   "delink-world-market": {
    "value": null,
@@ -4396,6 +4371,17 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 2
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7,

@@ -169,17 +169,6 @@
         "s6"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The NSM, the NPD, Der III. Weg and the NRM all keep or expand welfare and pensions for their own people, tied to a duty to work, so none calls for cutting it as such.",
-      "sources": [
-        "s2",
-        "s3",
-        "s4",
-        "s5"
-      ]
-    },
     "basic-income": {
       "value": -2,
       "confidence": "medium",
@@ -592,16 +581,6 @@
         "s5",
         "s3",
         "s4"
-      ]
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The NPD wants better-equipped forces and a visible police, the NRM expands the armed forces, and Golden Dawn would raise police and military funding and powers.",
-      "sources": [
-        "s3",
-        "s5",
-        "s6"
       ]
     },
     "abolish-police-prisons": {
@@ -2580,12 +2559,6 @@
       "rationale": "None of the programmes read (National Alliance, NSM, NPD, Der III. Weg, NRM, Golden Dawn via Triantafillou) states a position on this.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "None of the programmes read (National Alliance, NSM, NPD, Der III. Weg, NRM, Golden Dawn via Triantafillou) states a position on this.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -3714,17 +3687,6 @@
       "rationale": "None of the programmes read (National Alliance, NSM, NPD, Der III. Weg, NRM, Golden Dawn via Triantafillou) states a position on this.",
       "sources": []
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The NPD wants better-equipped forces and a visible police, the NRM expands the armed forces, and Golden Dawn would raise police and military funding and powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s3",
-        "s5",
-        "s6"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 1,
       "confidence": "medium",
@@ -3757,6 +3719,18 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "police-more-powers"
+      ],
+      "nulled": 0
     }
   ]
 }

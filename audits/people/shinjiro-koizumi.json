@@ -279,12 +279,6 @@
       ],
       "auditor": "gpt-6.1-sol"
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -326,22 +320,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He advocates stronger Japanese defense capabilities, defense production and improved treatment of Self-Defense Forces personnel; the evidence concerns the military.",
-      "sources": [
-        "s1",
-        "s9",
-        "b2",
-        "b7",
-        "b12"
-      ],
-      "auditor": [
-        "gpt-6.1-sol",
-        "claude-sonnet-5-5"
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1765,12 +1743,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3298,6 +3270,17 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ]
 }

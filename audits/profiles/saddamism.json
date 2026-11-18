@@ -578,37 +578,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The regime paid generous benefits to war widows and martyrs' families, pensions and social security, though in 1987 it cut subsidies to deal with war debt (Library of Congress study).",
-      "sources": [
-        "s9"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Free hospitals, education and state employment were the regime's showpiece achievements, so cutting welfare runs against its populism.",
-          "sources": [
-            "s2",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "The regime paid generous benefits to war widows and martyrs' families, pensions and social security, though in 1987 it cut subsidies to deal with war debt (Library of Congress study).",
-          "sources": [
-            "s9"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -748,36 +717,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s2, Wikipedia, only a way to find evidence; s1, Saddam's 2000 address, does not state a position on this. Neither the regime's record (s8-s18) nor Saddam's own texts and the Ninth Congress report read in this pass (s19-s40) settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "high",
-          "rationale": "Iraq was highly militarised and the regime framed politics in terms of battles; its speeches glorify the armed forces.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s2, Wikipedia, only a way to find evidence; s1, Saddam's 2000 address, does not state a position on this. Neither the regime's record (s8-s18) nor Saddam's own texts and the Ninth Congress report read in this pass (s19-s40) settle it.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": -2,
@@ -5855,12 +5794,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "former-empire-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "delink-world-market": {
       "value": null,
       "confidence": "low",
@@ -9698,14 +9631,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "avoid-permanent-military-alliances": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Saddam's stated aim of a nonaligned Iraq that joins no great-power camp sets it against permanent alliances with them.",
-      "sources": [
-        "s28"
-      ]
-    },
     "freedom-is-self-government-of-desire": {
       "value": null,
       "confidence": "low",
@@ -10280,6 +10205,18 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "avoid-permanent-military-alliances"
+      ],
       "nulled": 1
     }
   ]

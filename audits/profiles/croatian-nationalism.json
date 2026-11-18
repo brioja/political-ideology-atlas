@@ -158,14 +158,6 @@
         "s2"
       ]
     },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "HDZ rule has kept pensions and veterans' benefits generous, and Catholic-conservative adherents favour family support, so cuts are not a core aim.",
-      "sources": [
-        "s2"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -215,34 +207,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Tuđman-era policy built up the armed forces and security services around the independence war, and nationalists treat the Homeland War army as a founding institution.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-11"
-        }
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -1948,14 +1912,6 @@
         "s2"
       ]
     },
-    "former-empire-influence": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Tuđman sought influence among Bosnian Croats, yet no general doctrine.",
-      "sources": [
-        "s3"
-      ]
-    },
     "delink-world-market": {
       "value": -2,
       "confidence": "medium",
@@ -3093,12 +3049,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "faster-drug-approval": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "ageing-research-funding": {
       "value": null,
       "confidence": "low",
@@ -3380,12 +3330,6 @@
       "sources": []
     },
     "workers-own-party": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "ban-fgm": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -3777,15 +3721,6 @@
         "s4"
       ]
     },
-    "police-more-powers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Tuđman-era policy built up the armed forces and security services around the independence war, and nationalists treat the Homeland War army as a founding institution. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-      "sources": [
-        "s3"
-      ],
-      "auditor": "claude-opus-5-5"
-    },
     "decent-living-guarantee": {
       "value": 1,
       "confidence": "low",
@@ -3883,6 +3818,20 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence",
+        "faster-drug-approval",
+        "ban-fgm",
+        "police-more-powers"
+      ],
       "nulled": 1
     }
   ]

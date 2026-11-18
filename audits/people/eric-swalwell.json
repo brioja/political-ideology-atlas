@@ -334,15 +334,6 @@
    ],
    "auditor": "gpt-6.1-sol"
   },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He pledges to protect and expand Medi-Cal and income supports, but also criticises homelessness spending that does not measure results; he does not address the dependency claim, so -1.",
-   "sources": [
-    "b2"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "worker-ownership": {
    "value": null,
    "confidence": "low",
@@ -435,15 +426,6 @@
      "date": "2026-11-14"
     }
    ]
-  },
-  "empower-police-military": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Mixed record: favored more resources for state and local law enforcement (2019) but also said he would slash the defense budget.",
-   "sources": [
-    "s6"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -2135,12 +2117,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "former-empire-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "delink-world-market": {
    "value": null,
    "confidence": "low",
@@ -3688,15 +3664,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "police-more-powers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Mixed record: favored more resources for state and local law enforcement (2019) but also said he would slash the defense budget. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
-   "sources": [
-    "s6"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "decent-living-guarantee": {
    "value": 1,
    "confidence": "medium",
@@ -4394,6 +4361,18 @@
    "reviewer": "claude-sonnet-5-5",
    "reviewedAt": "2026-11-14",
    "nulled": 5
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-18",
+   "statements": [
+    "cut-welfare",
+    "empower-police-military",
+    "former-empire-influence",
+    "police-more-powers"
+   ],
+   "nulled": 0
   }
  ],
  "notFound": [

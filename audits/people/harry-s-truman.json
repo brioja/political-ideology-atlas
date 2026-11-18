@@ -525,19 +525,6 @@
         "gpt-6.1-sol"
       ]
     },
-    "cut-welfare": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Asked for expanded social security, health insurance, housing and school aid and said poverty is as wasteful as preventable disease.",
-      "sources": [
-        "s11",
-        "b10"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -579,20 +566,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "After Korea asked for a major arms buildup, selective service extension and taxes to pay for defense.",
-      "sources": [
-        "s13",
-        "s25",
-        "b9"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -2296,12 +2269,6 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "former-empire-influence": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -4688,6 +4655,17 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-18",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "former-empire-influence"
+      ],
+      "nulled": 0
     }
   ],
   "rules": 7,
