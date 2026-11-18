@@ -69,7 +69,36 @@ These came out of the reviews on 2026-11-10 and are what the maintainer accepted
   are out; name the groups compared ("roughly as many women as men").
 - **Check the sources' own terms** before choosing a word ("struggling against", not "fought"; "sacred", not a
   softer word that would also fit ordinary patriotism).
+- **A symmetric subject** where the claim is about a relation ("the classes should cooperate", not "workers
+  should cooperate with employers"), and **drop a near-universal half** that nearly everyone agrees with
+  ("equal rights before the law" kept, "equal moral worth" dropped).
+- **One-place claims are fine** (Brandon, 2026-11-12): a statement about one country or event
+  (`slavery-not-civil-war-cause`, `holocaust-denial`) stays; generality is not a reason to retire it.
+- **Prefer keeping the id**, also on high-traffic statements: when you'd propose a new id, offer an in-place
+  wording that keeps it too.
 
 ## Reporting
 
 When you stop, reply with one line per statement reviewed: the id, your verdict, and your proposed text.
+
+## Applying reviews (integrator)
+
+For the session that applies the proposals, not the reviewer. Only the statement text goes to the maintainer;
+the agree, disagree and note texts are the integrator's call. Don't spend long making it perfect: statements
+and audits keep changing.
+
+- **Apply in place** (Brandon, 2026-11-10): the reviewer's wording, with the id kept, in `statements.json` and
+  `audits/statements/texts.json`; keep each file's indent and line style. Null the clear conflicts, each with a
+  new nulling review appended to its history; rows marked "evidence follow-up" are needs evidence and stay.
+  When the answer's evidence fits another statement that has no answer from that subject yet, move it there
+  instead of nulling.
+- **Stop and ask the maintainer** when a review proposes a new id, changes the claim's meaning or subject, adds
+  a loaded word ("imposed"), or reverses an earlier decision of his.
+- **Splitting a claim** joined by "and": the id keeps the part with the most evidence, the other part becomes a
+  new candidate only if it fills a real gap. Check first that it doesn't correlate with an existing statement,
+  and that the moved answers aren't copies of one joint rationale.
+- **Dropping a statement:** remove it from `statements.json` only (answers stay in the audits) and record it in
+  `backlog/decided-against.md`.
+- **Sending a review back** with guidance: write `scratchpad/statement-review/<id>-maintainer.md` and move the
+  `<id>-results.md` aside. The note goes into the next brief and queues the statement even if it passes the
+  check. Moving the results file aside alone requeues it.
