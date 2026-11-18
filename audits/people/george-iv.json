@@ -1,8 +1,11 @@
 {
   "id": "george-iv",
   "name": "George IV of the United Kingdom",
-  "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditedAt": "2026-11-18",
+  "auditor": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+  ],
   "living": false,
   "role": "King of the United Kingdom and Hanover (1820–1830); Prince Regent (1811–1820)",
   "summary": "George IV's political record is mostly ministers' policy delivered in his name. His clearest stated position was opposition to Catholic emancipation, grounded in his coronation oath to uphold the Protestant faith, which he assented to in 1829 only under ministerial pressure. He also pressed the Pains and Penalties Bill to dissolve his marriage to Queen Caroline and asked ministers to prosecute radical publications in 1821.",
@@ -14,7 +17,8 @@
       "title": "Memoirs of the Court of George IV, 1820-1830 (1859), including letters from the King",
       "author": "Duke of Buckingham and Chandos (ed.)",
       "url": "https://gutenberg.org/cache/epub/22553/pg22553-images.html",
-      "usedFor": "Letter from the King to Lord Eldon, Brighton, 9 January 1821, on prosecuting treasonable and libellous publications"
+      "usedFor": "Letter from the King to Lord Eldon, Brighton, 9 January 1821, on prosecuting treasonable and libellous publications",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,7 +26,8 @@
       "title": "George IV of the United Kingdom (Wikipedia)",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/George_IV_of_the_United_Kingdom",
-      "usedFor": "Coronation oath and opposition to Catholic emancipation, 1813-1828; 1829 assent under pressure; Regency and Whig ties; Pitt regency scheme quotation; Caroline affair"
+      "usedFor": "Coronation oath and opposition to Catholic emancipation, 1813-1828; 1829 assent under pressure; Regency and Whig ties; Pitt regency scheme quotation; Caroline affair",
+      "evidence": "action"
     },
     {
       "id": "s3",
@@ -30,7 +35,8 @@
       "title": "Roman Catholic Relief Act 1829 (Wikipedia)",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Roman_Catholic_Relief_Act_1829",
-      "usedFor": "King's opposition, cabinet resignation of March 1829, Wellington's threat to resign, royal assent"
+      "usedFor": "King's opposition, cabinet resignation of March 1829, Wellington's threat to resign, royal assent",
+      "evidence": "action"
     },
     {
       "id": "s4",
@@ -38,7 +44,8 @@
       "title": "Catholic emancipation 190 years ago",
       "author": "Alistair Lexden",
       "url": "https://www.alistairlexden.org.uk/news/catholic-emancipation-190-years-ago",
-      "usedFor": "King's continued hostility to emancipation and reluctant submission to Wellington in 1829"
+      "usedFor": "King's continued hostility to emancipation and reluctant submission to Wellington in 1829",
+      "evidence": "action"
     },
     {
       "id": "s5",
@@ -46,7 +53,8 @@
       "title": "George IV (Royal Household)",
       "author": "Royal Household of the United Kingdom",
       "url": "https://www.royal.uk/george-iv",
-      "usedFor": "Forced agreement to Catholic emancipation against his will; coronation oath; reign context"
+      "usedFor": "Forced agreement to Catholic emancipation against his will; coronation oath; reign context",
+      "evidence": "action"
     },
     {
       "id": "s6",
@@ -54,7 +62,8 @@
       "title": "Bill of Pains and Penalties (Wikipedia)",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Bill_of_Pains_and_Penalties",
-      "usedFor": "Pains and Penalties Bill 1820 sought to dissolve the marriage to Queen Caroline on grounds of alleged adultery"
+      "usedFor": "Pains and Penalties Bill 1820 sought to dissolve the marriage to Queen Caroline on grounds of alleged adultery",
+      "evidence": "action"
     },
     {
       "id": "s7",
@@ -62,7 +71,8 @@
       "title": "Roman Catholic Relief Act 1829 (10 Geo. 4 c. 7)",
       "author": "Parliament of the United Kingdom",
       "url": "https://www.legislation.gov.uk/ukpga/Geo4/10/7/enacted",
-      "usedFor": "Record of the Act to which the King gave assent in 1829 (title and citation only)"
+      "usedFor": "Record of the Act to which the King gave assent in 1829 (title and citation only)",
+      "evidence": "action"
     }
   ],
   "answers": {
@@ -918,10 +928,34 @@
     "equal-moral-worth": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "He opposed removing the civil disabilities of Roman Catholics until forced in 1829, so he did not accept equal legal rights for that religious group; this concerns Catholic emancipation specifically.",
+      "rationale": "He opposed removing the civil disabilities of Roman Catholics until forced in 1829 (Lexden, citing his stance; the Act he assented to), so he did not accept equal legal rights for that religious group; this concerns Catholic emancipation specifically.",
       "sources": [
-        "s2",
-        "s3"
+        "s4",
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He opposed removing the civil disabilities of Roman Catholics until forced in 1829, so he did not accept equal legal rights for that religious group; this concerns Catholic emancipation specifically.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He opposed removing the civil disabilities of Roman Catholics until forced in 1829 (Lexden, citing his stance; the Act he assented to), so he did not accept equal legal rights for that religious group; this concerns Catholic emancipation specifically.",
+          "sources": [
+            "s4",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "socialism-one-country": {
@@ -3035,9 +3069,675 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "Most of the record is ministers' policy; answers are limited to positions he stated or acts he personally drove. Catholic emancipation: he privately canvassed against the 1813 bill and publicly declared in 1827 that his sentiments were those of George III (opposed), but a 1797 proposal for an Irish Catholic emancipation bill is attributed to him (Wikipedia), so the later and sustained opposition is taken as his mature position. The Aspinall edition of his correspondence (Prince of Wales, to 1812) was not reachable as full text (Internet Archive returned 401), so the Regency-era letters were checked only through the 1859 Buckingham memoirs. Wellington's and Gurwood's records of the 1829 debates and Fraser's The King and the Catholics were not opened.",
+  "notes": "Most of the record is ministers' policy; answers are limited to positions he stated or acts he personally drove. Catholic emancipation: he privately canvassed against the 1813 bill and publicly declared in 1827 that his sentiments were those of George III (opposed), but a 1797 proposal for an Irish Catholic emancipation bill is attributed to him (Wikipedia), so the later and sustained opposition is taken as his mature position. The Aspinall edition of his correspondence (Prince of Wales, to 1812) was not reachable as full text (Internet Archive returned 401), so the Regency-era letters were checked only through the 1859 Buckingham memoirs. Wellington's and Gurwood's records of the 1829 debates and Fraser's The King and the Catholics were not opened. Later pass (2026-11-18): all 111 statements added since the first pass answered null (no stated position or personal act found in the sources held); sources tagged by evidence kind; the Gutenberg catalog has no text written by him.",
   "reviews": [
     {
       "kind": "inference",
@@ -3050,6 +3750,38 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-18"
+    }
+  ],
+  "booksNotUsed": [
+    {
+      "corpus": "hansard",
+      "reason": "He was never an MP or peer and did not speak in Parliament; the Commons record holds only ministers' statements."
+    }
+  ],
+  "notFound": [
+    {
+      "work": "Correspondence of George, Prince of Wales (Aspinall edition)",
+      "tried": [
+        {
+          "where": "Internet Archive",
+          "how": "full-text copy, returned 401 in the earlier pass"
+        },
+        {
+          "where": "local corpora and Project Gutenberg",
+          "how": "gutenberg.js --search for George IV and Prince of Wales; no work by him in the catalog"
+        }
+      ]
     }
   ]
 }
