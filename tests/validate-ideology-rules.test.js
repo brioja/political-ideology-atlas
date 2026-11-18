@@ -40,7 +40,7 @@ const st = lib.activeStatements().map((s) => s.id);
 const [A] = st;
 function base() {
   const answers = {};
-  for (const id of st) answers[id] = { value: null, confidence: "low", rationale: "The sources record no position on this.", sources: [] };
+  for (const { id } of lib.allStatements()) answers[id] = { value: null, confidence: "low", rationale: "The sources record no position on this.", sources: [] };
   answers[A] = { value: 1, confidence: "medium", rationale: "The manifesto states this position in its first section.", sources: ["s2"] };
   return {
     id: subject.id, name: N, auditedAt: "2026-11-07", auditor: "claude-sonnet-5-5", rules: 4,

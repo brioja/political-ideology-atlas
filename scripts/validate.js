@@ -247,11 +247,10 @@ function validate(id) {
   const answers = a.answers || {};
   const statements = allStatements();
   const active = statements.filter((s) => !isCandidate(s));
-  const notYet = [];
   for (const st of statements) {
     const ans = answers[st.id];
-    // A new (candidate) statement only needs answering; the rest of the audit stays valid.
-    if (!ans && isCandidate(st)) { notYet.push(st.id); continue; }
+    // Every statement in the bank gets an answer, candidate or active: promotion only decides what the
+    // matching uses, never whether an audit is complete (Brandon, 2026-11-18).
     if (!ans) { errors.push(`no answer for '${st.id}'`); continue; }
     // "No known position" (null) needs a reason; for an ideology, that its sources record none
     // (audits/PROMPT.md), at low confidence.
@@ -266,7 +265,6 @@ function validate(id) {
     if (!Array.isArray(ans.sources) || ans.sources.length === 0) errors.push(`${st.id}: cite at least one source`);
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
   }
-  if (notYet.length) warnings.push(`no answers yet for candidate statements (its next completing pass answers them): ${notYet.join(", ")}`);
   // A high-confidence answer rests on what a source says about that statement, so its rationale
   // can't be one stock phrase shared with other high answers (lower the confidence instead).
   const highs = new Map();

@@ -24,7 +24,7 @@ const [A, B, C, D] = st; // A: answered from an action, B: answered from words, 
 
 function base() {
   const answers = {};
-  for (const id of st) answers[id] = { value: null, confidence: "low", rationale: "No recorded position found.", sources: [] };
+  for (const { id } of lib.allStatements()) answers[id] = { value: null, confidence: "low", rationale: "No recorded position found.", sources: [] };
   answers[A] = { value: 1, confidence: "medium", rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
   answers[B] = { value: -1, confidence: "medium", rationale: "Said in a 2020 interview that this statement is wrong.", sources: ["s2"] };
   return {
@@ -172,6 +172,8 @@ fails("no scholarly or reference source", E(base(), (a) => { a.sources[4].kind =
 fails("only Wikipedia sources", E(base(), (a) => { a.sources.forEach((x, i) => { x.kind = "reference"; x.url = `https://en.wikipedia.org/wiki/Page_${i}`; }); }), /Wikipedia cannot be the only kind of source/);
 // Answers.
 fails("active statement unanswered", E(base(), (a) => { delete a.answers[D]; }), new RegExp(`no answer for '${D}'`));
+{ const C = lib.allStatements().find(lib.isCandidate)?.id; // a candidate is answered too: promotion never decides that
+  if (C) fails("candidate statement unanswered", E(base(), (a) => { delete a.answers[C]; }), new RegExp(`no answer for '${C}'`)); }
 fails("null without a rationale", E(base(), (a) => { a.answers[C].rationale = ""; }), new RegExp(`${C}: say why there is no known position`));
 fails("value out of range", E(base(), (a) => { a.answers[A].value = 3; }), /value must be an integer from -2 to 2 or null/);
 fails("confidence not in the list", E(base(), (a) => { a.answers[A].confidence = "certain"; }), /confidence must be high, medium or low/);
