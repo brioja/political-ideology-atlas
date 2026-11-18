@@ -1,7 +1,7 @@
 {
   "id": "john-adams",
   "name": "John Adams",
-  "auditedAt": "2026-10-23",
+  "auditedAt": "2026-11-18",
   "auditor": "claude-sonnet-5-5",
   "living": false,
   "role": "Second president of the United States (1797-1801), Revolutionary leader and author of the Massachusetts Constitution of 1780",
@@ -14,7 +14,8 @@
       "title": "The Works of John Adams, vol. 4 (Thoughts on Government, Novanglus, 1779 draft Massachusetts Constitution, Defence vol. 1)",
       "author": "John Adams (ed. C. F. Adams)",
       "url": "https://archive.org/download/worksofjohnadams04adam/worksofjohnadams04adam_djvu.txt",
-      "usedFor": "Separation of powers, mixed government, second chamber, Declaration of Rights draft (religion, arms, military, property, franchise), frugality"
+      "usedFor": "Separation of powers, mixed government, second chamber, Declaration of Rights draft (religion, arms, military, property, franchise), frugality",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,7 +23,8 @@
       "title": "The Works of John Adams, vol. 6 (Defence vol. 3, Discourses on Davila, letters to John Taylor)",
       "author": "John Adams (ed. C. F. Adams)",
       "url": "https://archive.org/download/worksofjohnadams06adam/worksofjohnadams06adam_djvu.txt",
-      "usedFor": "Property, balance of interests, democracy, natural aristocracy, leveling"
+      "usedFor": "Property, balance of interests, democracy, natural aristocracy, leveling",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -30,7 +32,8 @@
       "title": "The Works of John Adams, vol. 9 (letters and official papers 1776-1800, incl. letters to Sullivan 1776 and Rush 1811)",
       "author": "John Adams (ed. C. F. Adams)",
       "url": "https://archive.org/download/worksofjohnadams09adam/worksofjohnadams09adam_djvu.txt",
-      "usedFor": "Property franchise and small landholding, religion and morals, banks, alliances, 1798 address"
+      "usedFor": "Property franchise and small landholding, religion and morals, banks, alliances, 1798 address",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -38,7 +41,8 @@
       "title": "The Works of John Adams, vol. 10 (later letters to Jefferson, Rush, Niles and others)",
       "author": "John Adams (ed. C. F. Adams)",
       "url": "https://archive.org/download/worksofjohnadams10adam/worksofjohnadams10adam_djvu.txt",
-      "usedFor": "Alien and Sedition laws, Christianity, slavery, neutrality, price regulation, the Revolution"
+      "usedFor": "Alien and Sedition laws, Christianity, slavery, neutrality, price regulation, the Revolution",
+      "evidence": "words"
     },
     {
       "id": "s5",
@@ -46,7 +50,8 @@
       "title": "Inaugural Address of John Adams, 1797 (in A Compilation of the Messages and Papers of the Presidents, vol. 1 part 2)",
       "author": "John Adams",
       "url": "https://www.gutenberg.org/cache/epub/10894/pg10894.txt",
-      "usedFor": "Elective government, neutrality, suffrage and education"
+      "usedFor": "Elective government, neutrality, suffrage and education",
+      "evidence": "words"
     },
     {
       "id": "s6",
@@ -54,23 +59,36 @@
       "title": "Familiar Letters of John Adams and His Wife Abigail Adams During the Revolution",
       "author": "John Adams, Abigail Adams",
       "url": "https://www.gutenberg.org/cache/epub/34123/pg34123.txt",
-      "usedFor": "April 1776 reply to Abigail on women and laws"
+      "usedFor": "April 1776 reply to Abigail on women and laws",
+      "evidence": "words",
+      "library": "34123 Adams - Familiar Letters of John Adams and His Wife Abigail Adams Du.txt"
     },
     {
       "id": "s7",
-      "kind": "reference",
-      "title": "John Adams (Wikipedia)",
-      "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/John_Adams",
-      "usedFor": "Biography, Alien and Sedition Acts, monarchism debate, slavery, religion"
+      "kind": "primary",
+      "evidence": "action",
+      "title": "An Act Respecting Alien Enemies (1798), signed by President Adams (Avalon Project)",
+      "author": "Fifth Congress of the United States",
+      "url": "https://avalon.law.yale.edu/18th_century/alien.asp",
+      "usedFor": "Detention and removal of enemy aliens in time of declared war, without trial"
     },
     {
       "id": "s8",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "An Act for the Punishment of Certain Crimes (Sedition Act, 1798), signed by President Adams (Avalon Project)",
+      "author": "Fifth Congress of the United States",
+      "url": "https://avalon.law.yale.edu/18th_century/sedact.asp",
+      "usedFor": "Punishment of writings and speech against the government, signed into law July 1798"
+    },
+    {
+      "id": "s9",
       "kind": "reference",
-      "title": "Alien and Sedition Acts (Wikipedia)",
-      "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Alien_and_Sedition_Acts",
-      "usedFor": "Dates and content of the 1798 acts signed by Adams"
+      "title": "John Adams: Domestic Affairs, Foreign Affairs and Impact and Legacy (Miller Center, University of Virginia)",
+      "author": "Miller Center",
+      "url": "https://millercenter.org/president/adams/domestic-affairs",
+      "usedFor": "Context for the 1798 Alien and Sedition Acts and the Naturalization Act (dates, content, enforcement); no answer rests on it.",
+      "evidence": "action"
     }
   ],
   "answers": {
@@ -410,10 +428,34 @@
     "monarchy-legitimate": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Praised the English limited monarchy as the most stupendous fabric of human invention, yet called himself a mortal and irreconcilable enemy to monarchy and no friend to hereditary limited monarchy in America; Wikipedia describes his views as shifting.",
+      "rationale": "Praised the English limited monarchy as the most stupendous fabric of human invention, yet wrote in 1811 that he was a mortal and irreconcilable enemy to monarchy and no friend to hereditary limited monarchy in America; both are his own words, so the answer is a split within words.",
       "sources": [
         "s1",
-        "s7"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Praised the English limited monarchy as the most stupendous fabric of human invention, yet called himself a mortal and irreconcilable enemy to monarchy and no friend to hereditary limited monarchy in America; Wikipedia describes his views as shifting.",
+          "sources": [
+            "s1",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Praised the English limited monarchy as the most stupendous fabric of human invention, yet wrote in 1811 that he was a mortal and irreconcilable enemy to monarchy and no friend to hereditary limited monarchy in America; both are his own words, so the answer is a split within words.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "democracy-best": {
@@ -1115,13 +1157,37 @@
       "sources": []
     },
     "emergency-suspend-protections": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Signed and later defended the Alien and Sedition laws as war measures he believed constitutional and salutary, but his draft Declaration also bars suspension of laws except by the legislature.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "As president he signed the Alien Enemies Act of 1798, which let the government detain and remove aliens in time of war without trial, and the Sedition Act punishing speech against the government. His own draft Declaration of Rights barred suspension of laws except by the legislature, but that is words and the record of signing decides.",
       "sources": [
-        "s4",
-        "s1",
+        "s7",
         "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Signed and later defended the Alien and Sedition laws as war measures he believed constitutional and salutary, but his draft Declaration also bars suspension of laws except by the legislature.",
+          "sources": [
+            "s4",
+            "s1",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "As president he signed the Alien Enemies Act of 1798, which let the government detain and remove aliens in time of war without trial, and the Sedition Act punishing speech against the government. His own draft Declaration of Rights barred suspension of laws except by the legislature, but that is words and the record of signing decides.",
+          "sources": [
+            "s7",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "price-controls-essentials": {
@@ -2341,10 +2407,32 @@
     "wealth-concentration-endangers-liberty": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Feared an oligarchy of the wealthy and held that the power of the rich had to be channelled by separate institutions; wrote that an aristocracy of land-jobbers and stock-jobbers was entailed on the country.",
+      "rationale": "Feared an oligarchy of the wealthy and held that the power of the rich had to be channelled by separate institutions.",
       "sources": [
-        "s2",
-        "s7"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Feared an oligarchy of the wealthy and held that the power of the rich had to be channelled by separate institutions; wrote that an aristocracy of land-jobbers and stock-jobbers was entailed on the country.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Feared an oligarchy of the wealthy and held that the power of the rich had to be channelled by separate institutions.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "open-lgbt-military-service": {
@@ -3151,15 +3239,158 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His draft Declaration of Rights for Massachusetts says that in all controversies concerning property the parties have a right to trial by jury, that this method of procedure shall be held sacred, and (art. XII) that every criminal accused has a right to a speedy and public trial by an impartial jury.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-supports-good-ways-of-life": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His draft Declaration of Rights let the legislature require towns to support public teachers of religion, morals and piety, and he held that education and public worship were proper objects of state support.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "Historical figure: answers come from his own writings and drafts, not inference, except where a rationale begins \"Inferred:\". Wikipedia says he signed the Alien and Sedition Acts at the urging of his wife and cabinet without having promoted them; he later wrote that he believed the alien and sedition laws constitutional and salutary. His views on monarchy and hereditary institutions are described as shifting. His draft of the Massachusetts constitution was altered by the convention on points such as the religion article.",
+  "notes": "Historical figure: answers come from his own writings and drafts, not inference, except where a rationale begins \"Inferred:\". He signed the Alien and Sedition Acts at the urging of his wife and cabinet without having promoted them; he later wrote that he believed the alien and sedition laws constitutional and salutary. His views on monarchy and hereditary institutions are described as shifting. His draft of the Massachusetts constitution was altered by the convention on points such as the religion article. Later pass 2026-11-18 (rules 7): words and action tagged; themes searched again in vols 1, 2, 4, 5, 6, 9, 10 and the 1798 Acts: jury and fair trial, arms, press, religion and public worship, franchise, monarchy, banks and debt, alliances, naturalization and immigration, emergency powers. The Wikipedia sources were dropped; the three answers that cited them were re-sourced to his own writings or to the Acts he signed.",
   "reviews": [
     {
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-18"
+    }
+  ],
+  "booksNotUsed": [
+    {
+      "urls": [
+        "https://millercenter.org/the-presidency/presidential-speeches/march-4-1797-inaugural-address",
+        "https://millercenter.org/the-presidency/presidential-speeches/may-16-1797-special-session-message-congress-xyz-affair",
+        "https://millercenter.org/the-presidency/presidential-speeches/november-22-1797-first-annual-message",
+        "https://millercenter.org/the-presidency/presidential-speeches/march-23-1798-proclamation-day-fasting-humiliation-and-prayer",
+        "https://millercenter.org/the-presidency/presidential-speeches/december-8-1798-second-annual-message",
+        "https://millercenter.org/the-presidency/presidential-speeches/december-3-1799-third-annual-message",
+        "https://millercenter.org/the-presidency/presidential-speeches/december-19-1799-death-george-washington",
+        "https://millercenter.org/the-presidency/presidential-speeches/may-21-1800-proclamation-pardons-those-engaged-fries-rebellion",
+        "https://millercenter.org/the-presidency/presidential-speeches/november-22-1800-fourth-annual-message"
+      ],
+      "reason": "His nine Miller Center messages and proclamations were searched by keyword (monarchy, religion, alien, sedition, debt, neutrality, suffrage); the inaugural is cited through the Gutenberg compilation (s5) and the rest state no position that settles a statement beyond what the cited writings already show."
+    },
+    {
+      "reason": "The State of the Union Addresses text repeats the annual messages already searched in the Miller Center corpus; it adds nothing new for the statements.",
+      "file": "5011 Adams - State of the Union Addresses.txt"
+    },
+    {
+      "reason": "Novanglus is reprinted in the Works of John Adams vol. 4, which is read and cited (s1); this stand-alone copy is not read separately.",
+      "file": "45205 Adams - Novanglus, and Massachusettensis or, Political Essays, Publi.txt"
+    },
+    {
+      "reason": "A collection of 1782 diplomatic state papers on the acknowledgement of American independence; no answer here depends on it and it was not read in this pass.",
+      "file": "30872 Adams - A Collection of State-papers, Relative to the First Acknowle.txt"
+    }
+  ],
+  "notFound": [
+    {
+      "work": "The Works of John Adams, vols. 3, 7 and 8",
+      "tried": [
+        {
+          "where": "archive.org download",
+          "how": "returned 403/401, no open full text"
+        },
+        {
+          "where": "Wayback Machine copy",
+          "how": "returned a junk page, not the text"
+        }
+      ]
+    },
+    {
+      "work": "Naturalization Act of 1798 and Alien Friends Act as official texts",
+      "tried": [
+        {
+          "where": "senate.gov history page",
+          "how": "returned a 404 page"
+        },
+        {
+          "where": "loc.gov and fr1800 pages",
+          "how": "fetch failed"
+        }
+      ]
     }
   ]
 }
