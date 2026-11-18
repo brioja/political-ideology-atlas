@@ -1,10 +1,12 @@
 {
   "id": "platonism",
   "name": "Platonism",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-18",
+  "auditor": [
+    "claude-sonnet-5-5"
+  ],
   "summary": "Platonism holds that reality's true objects are unchanging Forms, crowned by the Form of the Good, knowable by reason rather than the senses. Its political implications, as scholars draw them from the Republic and Laws, are that justice means each part of the city and soul doing its proper task, that those who know the good should rule, and that education and law should aim at the virtue of citizens. It is hostile to democracy as rule by the unlearned and favours regulation of wealth and culture.",
-  "scope": "Platonism as a philosophy, with political implications drawn from Plato's Republic and Laws as presented by the Stanford Encyclopedia of Philosophy. Neoplatonism, modern Platonism about abstract objects, and Plato's other dialogues are not the basis. Many answers on modern policy questions are inferences and marked low confidence.",
+  "scope": "Platonism as a political philosophy, drawn from Plato's Republic and Laws and the Stanford Encyclopedia of Philosophy's accounts of them. Neoplatonism, modern Platonism about abstract objects and Plato's other dialogues are not the basis. The Republic and Laws differ (the Laws drops guardian communism and philosopher rule for law and a mixed constitution); where they differ on a statement the answer is a split.",
   "wikipedia": "https://en.wikipedia.org/wiki/Platonism",
   "furtherReading": [
     {
@@ -41,7 +43,8 @@
       "title": "Platonism",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Platonism",
-      "usedFor": "Core doctrines: Forms, the Good, knowledge by reason, the tripartite soul and justice."
+      "usedFor": "Finding leads on the name and its doctrines (reference only; no answer rests on it alone).",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -49,7 +52,8 @@
       "title": "Plato's Ethics and Politics in The Republic",
       "author": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/plato-ethics-politics/",
-      "usedFor": "Philosopher rulers, classes, guardians' property and family, women guardians, education, censorship, noble lie, rule of law."
+      "usedFor": "Philosopher rulers, classes, guardians' property and family, women guardians, education, censorship, noble lie, rule of law.",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -57,7 +61,8 @@
       "title": "The Republic",
       "author": "Plato (tr. Benjamin Jowett)",
       "url": "https://www.gutenberg.org/cache/epub/1497/pg1497.txt",
-      "usedFor": "Philosophers as kings (Book V), censorship of poets and tales (Books II-III), the origin of war from luxury (Book II), state use of falsehood."
+      "usedFor": "Philosophers as kings (Book V), censorship of poets and tales (Books II-III), the origin of war from luxury (Book II), state use of falsehood.",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -65,7 +70,35 @@
       "title": "Plato's Laws",
       "author": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/plato-laws/",
-      "usedFor": "Mixed constitution, land allotments and wealth limits, penalties aimed at reform, impiety laws, persuasive preludes, exclusion of crafts."
+      "usedFor": "Mixed constitution, land allotments and wealth limits, penalties aimed at reform, impiety laws, persuasive preludes, exclusion of crafts.",
+      "evidence": "words"
+    },
+    {
+      "id": "s5",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Laws (Project Gutenberg, tr. Benjamin Jowett)",
+      "author": "Plato",
+      "url": "https://www.gutenberg.org/cache/epub/1750/pg1750.txt",
+      "usedFor": "Land allotments, wealth classes, office, education, religion, penalties, trade and foreigners in the second-best city."
+    },
+    {
+      "id": "s6",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Plato (Stanford Encyclopedia of Philosophy)",
+      "author": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/plato/",
+      "usedFor": "Overview of Plato and Platonism and the political dialogues."
+    },
+    {
+      "id": "s7",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Plato (Internet Encyclopedia of Philosophy)",
+      "author": "Internet Encyclopedia of Philosophy",
+      "url": "https://iep.utm.edu/plato/",
+      "usedFor": "Overview of Plato and Platonism and the political dialogues."
     }
   ],
   "answers": {
@@ -106,12 +139,36 @@
       "sources": []
     },
     "property-fundamental": {
-      "value": -1,
+      "value": -2,
       "confidence": "medium",
-      "rationale": "Guardians hold no private property and the Laws moderate wealth and keep land in fixed allotments, so property is subordinate to the city's good.",
+      "rationale": "Laws XI says the legislator regards citizens and their possessions as belonging to the family and, still more, to the state, and Republic III-IV has guardians own no property.",
       "sources": [
-        "s2",
-        "s4"
+        "s3",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Guardians hold no private property and the Laws moderate wealth and keep land in fixed allotments, so property is subordinate to the city's good.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Laws XI says the legislator regards citizens and their possessions as belonging to the family and, still more, to the state, and Republic III-IV has guardians own no property.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "regulate-corporations": {
@@ -197,12 +254,36 @@
       ]
     },
     "traditional-family": {
-      "value": -1,
+      "value": 0,
       "confidence": "low",
-      "rationale": "The Republic abolishes private families among guardians, though the Laws keeps households, so adherents are not defenders of the traditional family as society's foundation.",
+      "rationale": "The Republic (Book V) abolishes private families among the guardians, while the Laws (Books V and VI) keep households as the unit of the 5040 lots and regulate marriage; its words point both ways.",
       "sources": [
-        "s2",
-        "s4"
+        "s3",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The Republic abolishes private families among guardians, though the Laws keeps households, so adherents are not defenders of the traditional family as society's foundation.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Republic (Book V) abolishes private families among the guardians, while the Laws (Books V and VI) keep households as the unit of the 5040 lots and regulate marriage; its words point both ways.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "same-sex-marriage": {
@@ -233,11 +314,33 @@
       "sources": []
     },
     "gender-social-construct": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic argues that the difference between the sexes is irrelevant to ruling, which treats role differences as largely a matter of training.",
+      "rationale": "Nulled (later pass): Republic V argues the natures of men and women differ only in degree for the purpose of ruling; it never says gender is a social construct.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Republic argues that the difference between the sexes is irrelevant to ruling, which treats role differences as largely a matter of training.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Republic V argues the natures of men and women differ only in degree for the purpose of ruling; it never says gender is a social construct.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "preserve-national-culture": {
@@ -247,11 +350,35 @@
       "sources": []
     },
     "gradual-change": {
-      "value": 1,
+      "value": 0,
       "confidence": "low",
-      "rationale": "The Laws forbids varying children's games so as not to breed a taste for institutional change, though the Republic itself proposes a radical founding.",
+      "rationale": "Laws VII warns that changing even children's games breeds a taste for new institutions and calls for permanence, while the Republic (Book V) holds that cities have no rest from evil until philosophers rule, a thorough remaking.",
       "sources": [
-        "s4"
+        "s3",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Laws forbids varying children's games so as not to breed a taste for institutional change, though the Republic itself proposes a radical founding.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Laws VII warns that changing even children's games breeds a taste for new institutions and calls for permanence, while the Republic (Book V) holds that cities have no rest from evil until philosophers rule, a thorough remaking.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "reduce-immigration": {
@@ -467,20 +594,64 @@
       ]
     },
     "separate-church-state": {
-      "value": -1,
+      "value": -2,
       "confidence": "medium",
-      "rationale": "The Laws puts religion under law, with impiety a crime, and the Republic supervises stories about the gods.",
+      "rationale": "Laws X and XII put impiety under the city's law and place cult, shrines and priests under state officers, so the state is not separate from religion.",
       "sources": [
-        "s3",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Laws puts religion under law, with impiety a crime, and the Republic supervises stories about the gods.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Laws X and XII put impiety under the city's law and place cult, shrines and priests under state officers, so the state is not separate from religion.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "laws-from-scripture": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Platonism has no scripture; laws are to rest on reason and the lawgiver's knowledge, with religion as support.",
+      "rationale": "Nulled (later pass): Plato has no scripture; the Laws traces its code to reason and to oracles such as Delphi, so the statement about scripture is not one he answers.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Platonism has no scripture; laws are to rest on reason and the lawgiver's knowledge, with religion as support.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Plato has no scripture; the Laws traces its code to reason and to oracles such as Delphi, so the statement about scripture is not one he answers.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "private-courts-defense": {
@@ -504,11 +675,33 @@
       "sources": []
     },
     "class-struggle-history": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The city's three classes are meant to live in harmony, and decline comes from appetite's corruption, not class conflict.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Republic VIII-IX derives regimes from the characters of men and the decline of the ruling class, and nowhere states class conflict as the main driver of history.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The city's three classes are meant to live in harmony, and decline comes from appetite's corruption, not class conflict.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Republic VIII-IX derives regimes from the characters of men and the decline of the ruling class, and nowhere states class conflict as the main driver of history.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "equal-outcomes": {
@@ -538,11 +731,33 @@
       "sources": []
     },
     "self-interest-moral": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Republic answers Thrasymachus by arguing that justice, not self-advantage, is the real good, and rulers gain nothing for themselves.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Republic I-IV argues that justice benefits its holder, which does not settle whether pursuing self-interest is morally good.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Republic answers Thrasymachus by arguing that justice, not self-advantage, is the real good, and rulers gain nothing for themselves.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Republic I-IV argues that justice benefits its holder, which does not settle whether pursuing self-interest is morally good.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "duties-before-rights": {
@@ -596,11 +811,33 @@
       "sources": []
     },
     "restore-past-order": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic narrates decline from an ideal but does not call for restoration of a past order.",
+      "rationale": "Nulled (later pass): The Republic and Laws recount a decline from an ideal but neither puts restoration of a lost order above progress.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Republic narrates decline from an ideal but does not call for restoration of a past order.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic and Laws recount a decline from an ideal but neither puts restoration of a lost order above progress.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "results-over-ideology": {
@@ -616,20 +853,64 @@
       "sources": []
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mixed: justice in the soul and city are parallel, yet the Republic allows a state 'noble lie'.",
+      "rationale": "Nulled (later pass): The Republic parallels justice in city and soul but never states that the means of reform must mirror the goal.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Mixed: justice in the soul and city are parallel, yet the Republic allows a state 'noble lie'.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic parallels justice in city and soul but never states that the means of reform must mirror the goal.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "return-to-foraging": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic's simple city is an agricultural community of specialists, not foragers.",
+      "rationale": "Nulled (later pass): The Republic describes an agricultural simple city, not foraging, and never discusses a return to hunting and gathering.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The Republic's simple city is an agricultural community of specialists, not foragers.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic describes an agricultural simple city, not foraging, and never discusses a return to hunting and gathering.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "abolish-division-of-labor": {
@@ -647,11 +928,33 @@
       "sources": []
     },
     "production-for-use": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Split between the simple city that produces for needs and the luxurious city that the Republic criticizes without banning.",
+      "rationale": "Nulled (later pass): The Republic derives the city from needs yet leaves producers their private earnings; it does not state that need should replace profit as the purpose of production.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Split between the simple city that produces for needs and the luxurious city that the Republic criticizes without banning.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic derives the city from needs yet leaves producers their private earnings; it does not state that need should replace profit as the purpose of production.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "profit-exploitation": {
@@ -712,11 +1015,33 @@
       ]
     },
     "exit-over-voice": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Neither exit nor voting are checks Platonists favour; the check is the rulers' knowledge and law.",
+      "rationale": "Nulled (later pass): Neither work states a view on whether leaving a country is a check on government.",
       "sources": [
-        "s2"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Neither exit nor voting are checks Platonists favour; the check is the rulers' knowledge and law.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Neither work states a view on whether leaving a country is a check on government.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "state-as-business": {
@@ -732,11 +1057,33 @@
       "sources": []
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "A factual claim about modern institutions; Platonists stress educators' influence but no stance is documented.",
+      "rationale": "Nulled (later pass): A factual claim about modern institutions that the Republic and Laws do not address.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "A factual claim about modern institutions; Platonists stress educators' influence but no stance is documented.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): A factual claim about modern institutions that the Republic and Laws do not address.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "hereditarian-race": {
@@ -792,18 +1139,66 @@
     "no-neutral-knowledge": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Platonism holds that knowledge of unchanging Forms is real and reached through reason, not power.",
+      "rationale": "Republic I refutes Thrasymachus' claim that justice is what suits the stronger, and Republic V-VII holds that knowledge of the Forms is reached by reason, not fixed by who rules.",
       "sources": [
-        "s1"
+        "s3",
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Platonism holds that knowledge of unchanging Forms is real and reached through reason, not power.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Republic I refutes Thrasymachus' claim that justice is what suits the stronger, and Republic V-VII holds that knowledge of the Forms is reached by reason, not fixed by who rules.",
+          "sources": [
+            "s3",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "universal-morality": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Central: the Form of the Good and the virtues are objective and known by reason.",
+      "rationale": "Republic VI-VII makes the Form of the Good the standard for all virtue, known by reason and the same everywhere.",
       "sources": [
-        "s1",
+        "s3",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Central: the Form of the Good and the virtues are objective and known by reason.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Republic VI-VII makes the Form of the Good the standard for all virtue, known by reason and the same everywhere.",
+          "sources": [
+            "s3",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "single-common-good": {
@@ -840,12 +1235,34 @@
       "sources": []
     },
     "school-vouchers": {
-      "value": -1,
+      "value": -2,
       "confidence": "medium",
-      "rationale": "Education is a core state function in both the Republic and the Laws, so parental choice of school is not favoured.",
+      "rationale": "Laws VII makes education compulsory whether parents please or not and says pupils belong to the state rather than their parents, so parents choosing among schools is rejected.",
       "sources": [
-        "s3",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Education is a core state function in both the Republic and the Laws, so parental choice of school is not favoured.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Laws VII makes education compulsory whether parents please or not and says pupils belong to the state rather than their parents, so parents choosing among schools is rejected.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "avoid-deficit-stimulus": {
@@ -910,12 +1327,34 @@
       ]
     },
     "sacrifice-heritage": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Plato distrusts novelty and prizes education, though he also censors inherited poetry.",
+      "rationale": "Nulled (later pass): The Republic censors the poets but never calls for destroying inherited culture.",
       "sources": [
-        "s3",
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Plato distrusts novelty and prizes education, though he also censors inherited poetry.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic censors the poets but never calls for destroying inherited culture.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "dominated-front": {
@@ -939,19 +1378,63 @@
       ]
     },
     "ban-interest": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The Laws is commonly said to forbid lending at interest; this audit did not open the passage.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Laws V says no one shall lend money upon interest and the borrower owes neither capital nor interest, and that gold, silver and moneylending have no place in the city.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Laws is commonly said to forbid lending at interest; this audit did not open the passage.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Laws V says no one shall lend money upon interest and the borrower owes neither capital nor interest, and that gold, silver and moneylending have no place in the city.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "racial-segregation-law": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "No racial classification in the political works; the city is divided by natural fitness.",
+      "rationale": "Nulled (later pass): Neither the Republic nor the Laws classifies people by race, so they state nothing on segregation law.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "No racial classification in the political works; the city is divided by natural fitness.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Neither the Republic nor the Laws classifies people by race, so they state nothing on segregation law.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "state-class-instrument": {
@@ -975,11 +1458,33 @@
       "sources": []
     },
     "elite-replacement": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "A modern conspiracy claim with no basis in the sources.",
+      "rationale": "Nulled (later pass): A modern conspiracy claim on which the Republic and Laws state nothing.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "A modern conspiracy claim with no basis in the sources.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): A modern conspiracy claim on which the Republic and Laws state nothing.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "proportional-representation": {
@@ -1060,11 +1565,33 @@
       "sources": []
     },
     "equal-moral-worth": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The city is divided into classes by natural aptitude, though women can qualify equally for guardianship.",
+      "rationale": "Nulled (later pass): Laws V sets honours by proportion to worth rather than equally, but the work states nothing on equal legal rights as such.",
       "sources": [
-        "s2"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The city is divided into classes by natural aptitude, though women can qualify equally for guardianship.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Laws V sets honours by proportion to worth rather than equally, but the work states nothing on equal legal rights as such.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "socialism-one-country": {
@@ -1113,12 +1640,36 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Authority rests on knowledge, though the Laws uses persuasion through preludes.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Laws III calls the rule of the wise a rule of law over willing subjects, not compulsion, but the Republic has rulers govern the many by their own knowledge and by a founding falsehood; its words point both ways.",
       "sources": [
-        "s2",
-        "s4"
+        "s3",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Authority rests on knowledge, though the Laws uses persuasion through preludes.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Laws III calls the rule of the wise a rule of law over willing subjects, not compulsion, but the Republic has rulers govern the many by their own knowledge and by a founding falsehood; its words point both ways.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "trade-surplus": {
@@ -1148,11 +1699,33 @@
       "sources": []
     },
     "initiating-force-wrong": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The city uses coercion in law and punishment, so the principle is rejected.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Laws sets state punishment and war but nowhere addresses the first use of force as such.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The city uses coercion in law and punishment, so the principle is rejected.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws sets state punishment and war but nowhere addresses the first use of force as such.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "freedom-as-non-domination": {
@@ -1206,12 +1779,34 @@
       "sources": []
     },
     "offices-by-lottery": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Split: the Republic dismisses democratic selection, while the Laws fills some offices by lot.",
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Laws VI fills offices by election with scrutiny and uses the lot only inside that process, so lotteries do not replace elections.",
       "sources": [
-        "s3",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Split: the Republic dismisses democratic selection, while the Laws fills some offices by lot.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Laws VI fills offices by election with scrutiny and uses the lot only inside that process, so lotteries do not replace elections.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "emergency-suspend-protections": {
@@ -1245,11 +1840,33 @@
       "sources": []
     },
     "representatives-worker-pay": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Guardians own nothing and rulers gain nothing for themselves, so office is service.",
+      "rationale": "Nulled (later pass): The Republic has guardians own nothing, but it concerns appointed guardians, not paid elected representatives.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Guardians own nothing and rulers gain nothing for themselves, so office is service.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic has guardians own nothing, but it concerns appointed guardians, not paid elected representatives.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "party-discipline-binding": {
@@ -1343,12 +1960,34 @@
       "sources": []
     },
     "educated-out-of-touch": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Philosophers who know the good are the proper rulers, so adherents reject the idea that the educated are out of touch.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Republic reports the popular charge that philosophers are useless, but only to answer it; it states no view on the educated in general.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Philosophers who know the good are the proper rulers, so adherents reject the idea that the educated are out of touch.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic reports the popular charge that philosophers are useless, but only to answer it; it states no view on the educated in general.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "cultures-equal-different": {
@@ -1376,12 +2015,34 @@
       "sources": []
     },
     "restrict-pornography": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Republic subjects poetry, tales and art to state censorship to protect moral character, so restricting pornography follows.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Republic censors poetry and tales; neither it nor the Laws names pornography.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Republic subjects poetry, tales and art to state censorship to protect moral character, so restricting pornography follows.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic censors poetry and tales; neither it nor the Laws names pornography.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "citizenship-by-descent": {
@@ -1450,11 +2111,33 @@
       "sources": []
     },
     "direct-election-head-of-state": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Plato is hostile to rule by the unlearned masses and would rather the knowers rule, so popular election of the leader is disfavoured.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Neither the Republic nor the Laws has an elected head of state.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Plato is hostile to rule by the unlearned masses and would rather the knowers rule, so popular election of the leader is disfavoured.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Neither the Republic nor the Laws has an elected head of state.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "central-bank-independence": {
@@ -1547,12 +2230,36 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Laws calls rulers servants of the law and says a city whose law is subject to a ruler is near ruin, though the Republic lets philosopher-rulers act on knowledge.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Laws IV calls rulers servants of the law, but the Republic leaves philosopher-rulers free to act on knowledge and says good rulers will find the laws themselves; its words point both ways.",
       "sources": [
-        "s4",
-        "s3"
+        "s3",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Laws calls rulers servants of the law and says a city whose law is subject to a ruler is near ruin, though the Republic lets philosopher-rulers act on knowledge.",
+          "sources": [
+            "s4",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Laws IV calls rulers servants of the law, but the Republic leaves philosopher-rulers free to act on knowledge and says good rulers will find the laws themselves; its words point both ways.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "space-expansion": {
@@ -1589,11 +2296,33 @@
       "sources": []
     },
     "land-redistribution": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Laws allots equal land lots to citizens and limits wealth to keep the city united.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Laws allots equal lots in a new foundation; it does not call for taking existing estates from owners.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Laws allots equal land lots to citizens and limits wealth to keep the city united.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws allots equal lots in a new foundation; it does not call for taking existing estates from owners.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "refugee-return": {
@@ -1633,11 +2362,33 @@
       "sources": []
     },
     "national-cultural-autonomy": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic puts education under state control to shape all citizens alike, leaving little room for separate minority schools.",
+      "rationale": "Nulled (later pass): The Republic and Laws say nothing about national minorities.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The Republic puts education under state control to shape all citizens alike, leaving little room for separate minority schools.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic and Laws say nothing about national minorities.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "rights-where-you-live": {
@@ -1647,11 +2398,33 @@
       "sources": []
     },
     "material-conditions-drive-history": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Republic holds that knowledge of the Good and the rule of reason, not material arrangements, should order the city.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Republic VIII ties regimes partly to wealth and partly to the characters of men and breeding, so it does not settle economic structure as the main cause of change.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The Republic holds that knowledge of the Good and the rule of reason, not material arrangements, should order the city.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Republic VIII ties regimes partly to wealth and partly to the characters of men and breeding, so it does not settle economic structure as the main cause of change.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "ban-cartels": {
@@ -1681,11 +2454,33 @@
       "sources": []
     },
     "economic-self-sufficiency": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Laws place the city away from the sea and restrict trade and foreign contact to keep it self-sufficient.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Laws seeks a self-sufficient city but says nothing on a colonial empire.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Laws place the city away from the sea and restrict trade and foreign contact to keep it self-sufficient.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws seeks a self-sufficient city but says nothing on a colonial empire.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "trade-labor-env-standards": {
@@ -1695,11 +2490,33 @@
       "sources": []
     },
     "moral-incentives": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The Republic has guardians own no property and be spurred by honour and the love of the good rather than reward.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Republic motivates guardians by honour, but producers work for their own gain; it does not make duty the main motive for work generally.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The Republic has guardians own no property and be spurred by honour and the love of the good rather than reward.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic motivates guardians by honour, but producers work for their own gain; it does not make duty the main motive for work generally.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "armed-group-creates-revolution": {
@@ -1723,11 +2540,33 @@
       "sources": []
     },
     "civilizing-tutelage": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic has those who know the good rule the less wise for their benefit, which supports tutelage in principle, though the passage concerns classes in a city, not peoples.",
+      "rationale": "Nulled (later pass): The Republic concerns rule inside a city, not rule of one society over another.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Republic has those who know the good rule the less wise for their benefit, which supports tutelage in principle, though the passage concerns classes in a city, not peoples.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic concerns rule inside a city, not rule of one society over another.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "patriotic-education": {
@@ -1794,12 +2633,34 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "In the Republic rulers are chosen by education and proven wisdom, not by popular election, and election by the many is condemned; the Laws does use elections for some offices.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Neither the Republic nor the Laws has a single elected head of state.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "In the Republic rulers are chosen by education and proven wisdom, not by popular election, and election by the many is condemned; the Laws does use elections for some offices.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Neither the Republic nor the Laws has a single elected head of state.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "minority-veto": {
@@ -1818,12 +2679,34 @@
       "sources": []
     },
     "parliament-supreme": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Republic distrusts mass assemblies and the Laws prefers a mixed constitution with a nocturnal council, so legislative supremacy of an assembly is not endorsed.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Neither work has a parliament with supreme lawmaking power, and the Laws makes law, not an assembly, supreme.",
       "sources": [
-        "s2",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Republic distrusts mass assemblies and the Laws prefers a mixed constitution with a nocturnal council, so legislative supremacy of an assembly is not endorsed.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Neither work has a parliament with supreme lawmaking power, and the Laws makes law, not an assembly, supreme.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "animal-suffering-matters": {
@@ -1845,20 +2728,64 @@
       "sources": []
     },
     "withdraw-from-politics": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The philosopher prefers contemplation but is obliged in the ideal city to return and rule, though he stands aside in corrupt cities.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Republic VII holds the philosopher's contemplative life is best yet obliges him to return and rule in the ideal city, and VI has him stand aside in corrupt ones; its words point both ways.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The philosopher prefers contemplation but is obliged in the ideal city to return and rule, though he stands aside in corrupt cities.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Republic VII holds the philosopher's contemplative life is best yet obliges him to return and rule in the ideal city, and VI has him stand aside in corrupt ones; its words point both ways.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "mass-culture-pacifies": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic censors poetry and music and the Laws attacks theatrocracy because culture shapes citizens' character; Plato wants it to uphold the city's order.",
+      "rationale": "Nulled (later pass): The Republic and Laws regulate culture to shape character but do not state that mass entertainment pacifies people.",
       "sources": [
-        "s3",
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Republic censors poetry and music and the Laws attacks theatrocracy because culture shapes citizens' character; Plato wants it to uphold the city's order.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic and Laws regulate culture to shape character but do not state that mass entertainment pacifies people.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "ruling-class-consent": {
@@ -1880,11 +2807,33 @@
       "sources": []
     },
     "party-own-road": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Communist parties are outside Plato's world; no inference is possible.",
+      "rationale": "Nulled (later pass): Communist party strategy lies outside the Republic and Laws.",
       "sources": [
-        "s1"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Communist parties are outside Plato's world; no inference is possible.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Communist party strategy lies outside the Republic and Laws.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "self-reliance-over-aid": {
@@ -1990,12 +2939,34 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Plato argues that rule belongs to those who know the good, not to instruction by the ruled, and criticises democracy as rule by the unlearned.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Neither work has elected delegates or a recall; officials answer to scrutineers, not voters.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Plato argues that rule belongs to those who know the good, not to instruction by the ruled, and criticises democracy as rule by the unlearned.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Neither work has elected delegates or a recall; officials answer to scrutineers, not voters.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -2050,11 +3021,33 @@
       "sources": []
     },
     "foreign-land-ownership": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Laws restrict foreigners' property and settlement, keeping the allotments in citizens' hands as a condition of the city's stability.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Laws VIII lets resident foreigners register property for up to twenty years but does not say whether they may own land.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Laws restrict foreigners' property and settlement, keeping the allotments in citizens' hands as a condition of the city's stability.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Laws VIII lets resident foreigners register property for up to twenty years but does not say whether they may own land.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "disparate-impact-discrimination": {
@@ -2115,21 +3108,65 @@
       "sources": []
     },
     "democratic-peace": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Republic treats democracy as rule by the unlearned and a degenerate regime, so spreading it is not a route to a good order.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Republic judges democracy a defective regime but never discusses spreading it or its effect on peace.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Republic treats democracy as rule by the unlearned and a degenerate regime, so spreading it is not a route to a good order.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic judges democracy a defective regime but never discusses spreading it or its effect on peace.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "no-duty-to-obey": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Laws stresses citizens' obedience to law as a condition of the good city.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Laws demands obedience to law but also says some constitutions are not true ones; it does not state whether legal status alone binds.",
       "sources": [
-        "s4",
-        "s2"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Laws stresses citizens' obedience to law as a condition of the good city.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws demands obedience to law but also says some constitutions are not true ones; it does not state whether legal status alone binds.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "non-intervention": {
@@ -2151,21 +3188,65 @@
       "sources": []
     },
     "abolish-legal-marriage": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic abolishes private family for guardians but under strict state control, and the Laws regulates marriage by law, so marriage is a public institution, not a private one.",
+      "rationale": "Nulled (later pass): The Republic replaces guardian families with state-arranged unions, which is not abolition of legal recognition of marriage.",
       "sources": [
-        "s3",
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The Republic abolishes private family for guardians but under strict state control, and the Laws regulates marriage by law, so marriage is a public institution, not a private one.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic replaces guardian families with state-arranged unions, which is not abolition of legal recognition of marriage.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "public-access-to-information": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Republic has rulers censor stories and use a 'noble lie', so unrestricted public access to information is not endorsed.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Republic has rulers use a founding falsehood but states nothing on a right of access to government information.",
       "sources": [
-        "s3",
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Republic has rulers censor stories and use a 'noble lie', so unrestricted public access to information is not endorsed.",
+          "sources": [
+            "s3",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic has rulers use a founding falsehood but states nothing on a right of access to government information.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "local-production": {
@@ -2187,11 +3268,33 @@
       "sources": []
     },
     "religious-nation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Laws establishes state cults and punishes impiety, but the Republic's community rests on shared virtue and education.",
+      "rationale": "Nulled (later pass): The Laws sets a state cult but does not define the national community by shared religion.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Laws establishes state cults and punishes impiety, but the Republic's community rests on shared virtue and education.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws sets a state cult but does not define the national community by shared religion.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "deference-to-leading-power": {
@@ -2241,19 +3344,63 @@
       "sources": []
     },
     "women-equality-needs-economic-change": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Republic admits women to the guardian class with equal education and ties this to abolishing the guardians' private households and property.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Republic V ties women guardians to communal living, but it does not say women's equality requires a changed economic system.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Republic admits women to the guardian class with equal education and ties this to abolishing the guardians' private households and property.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Republic V ties women guardians to communal living, but it does not say women's equality requires a changed economic system.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "socialized-care": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Republic has the guardians' children raised communally by the state, removing childrearing from private families.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Republic has the state rear guardians' children, which covers only part of domestic work.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Republic has the guardians' children raised communally by the state, removing childrearing from private families.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic has the state rear guardians' children, which covers only part of domestic work.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "purge-loanwords": {
@@ -2269,11 +3416,33 @@
       "sources": []
     },
     "cooperative-communities": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Guardians live communally, but the Republic puts power in philosopher-rulers, not self-governing communities, so this is split.",
+      "rationale": "Nulled (later pass): The Republic gives power to philosopher-rulers and states nothing on small self-governing cooperative communities.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Guardians live communally, but the Republic puts power in philosopher-rulers, not self-governing communities, so this is split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic gives power to philosopher-rulers and states nothing on small self-governing cooperative communities.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "majority-settlement": {
@@ -2417,12 +3586,34 @@
       ]
     },
     "rich-first": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Laws caps wealth relative to land allotments and the Republic warns against extremes of wealth and poverty, so letting some grow rich first is disfavoured.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Neither work addresses regional development policy.",
       "sources": [
-        "s2",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Laws caps wealth relative to land allotments and the Republic warns against extremes of wealth and poverty, so letting some grow rich first is disfavoured.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Neither work addresses regional development policy.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "stay-neutral-between-blocs": {
@@ -2453,21 +3644,65 @@
       "sources": []
     },
     "property-franchise": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Republic ranks rule by knowledge above rule by wealth and treats oligarchy as a flawed regime, though the Laws do use property classes for some offices.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Laws VI gives every citizen a lot, so it does not reserve the vote for owners as a principle; the Republic does not address a property franchise.",
       "sources": [
-        "s2",
-        "s3",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Republic ranks rule by knowledge above rule by wealth and treats oligarchy as a flawed regime, though the Laws do use property classes for some offices.",
+          "sources": [
+            "s2",
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Laws VI gives every citizen a lot, so it does not reserve the vote for owners as a principle; the Republic does not address a property franchise.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "domination-women-nature": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic admits women to guardianship, but the link to domination of nature is a modern claim Platonism does not address; left neutral.",
+      "rationale": "Nulled (later pass): A modern claim the Republic and Laws do not address.",
       "sources": [
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Republic admits women to guardianship, but the link to domination of nature is a modern claim Platonism does not address; left neutral.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): A modern claim the Republic and Laws do not address.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "reification": {
@@ -2477,12 +3712,34 @@
       "sources": []
     },
     "press-owned-by-wealth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Platonism distrusts wealth's political influence and wants culture regulated by the state, but it does not value press freedom, so adherents would not endorse this framing.",
+      "rationale": "Nulled (later pass): The Republic and Laws have no press, so they state nothing on press ownership.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Platonism distrusts wealth's political influence and wants culture regulated by the state, but it does not value press freedom, so adherents would not endorse this framing.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic and Laws have no press, so they state nothing on press ownership.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "promulgated-standing-laws": {
@@ -2512,11 +3769,33 @@
       "sources": []
     },
     "interfaith-marriage-restriction": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Laws regulate marriage and establish a state religion, but nothing addresses mixed-religion marriage; left neutral as an inference.",
+      "rationale": "Nulled (later pass): The Laws regulates marriage and state religion but never mentions marriage between members of different religions.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Laws regulate marriage and establish a state religion, but nothing addresses mixed-religion marriage; left neutral as an inference.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws regulates marriage and state religion but never mentions marriage between members of different religions.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "boycott-minority-shops": {
@@ -2526,12 +3805,34 @@
       "sources": []
     },
     "citizens-assembly": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Plato holds that those who know the good should rule, and he mocks the Athenian practice of filling offices by lot; the Laws mixes election and lot only as a cautious concession, so deliberation by lot-chosen amateurs is at odds with his core view.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Laws VI mixes election and lot for the council, but neither work proposes lot-chosen assemblies deliberating on public questions.",
       "sources": [
-        "s2",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Plato holds that those who know the good should rule, and he mocks the Athenian practice of filling offices by lot; the Laws mixes election and lot only as a cautious concession, so deliberation by lot-chosen amateurs is at odds with his core view.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Laws VI mixes election and lot for the council, but neither work proposes lot-chosen assemblies deliberating on public questions.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "reinterpret-religion": {
@@ -2685,10 +3986,32 @@
     },
     "never-kill-self-defence": {
       "value": -2,
-      "confidence": "low",
-      "rationale": "The Republic accepts war and defence by the guardian class, so absolute non-violence is rejected.",
+      "confidence": "high",
+      "rationale": "Laws IX declares a person who kills in self-defence free from guilt, as with killing an enemy, so killing in self-defence is not wrong.",
       "sources": [
-        "s3"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "The Republic accepts war and defence by the guardian class, so absolute non-violence is rejected.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Laws IX declares a person who kills in self-defence free from guilt, as with killing an enemy, so killing in self-defence is not wrong.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "unbroken-national-continuity": {
@@ -2698,11 +4021,33 @@
       "sources": []
     },
     "sex-socially-constructed": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Republic V treats the difference between the sexes as irrelevant to ruling, but does not address social construction of sex.",
+      "rationale": "Nulled (later pass): Republic V treats the difference between the sexes as irrelevant to ruling but never states that sex is socially constructed.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Republic V treats the difference between the sexes as irrelevant to ruling, but does not address social construction of sex.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Republic V treats the difference between the sexes as irrelevant to ruling but never states that sex is socially constructed.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "no-fixed-category-of-women": {
@@ -2762,11 +4107,33 @@
       "sources": []
     },
     "independent-unions": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic wants a unified city in which each class keeps to its task, so independent power bases like unions are an inference against it.",
+      "rationale": "Nulled (later pass): Neither work has trade unions.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The Republic wants a unified city in which each class keeps to its task, so independent power bases like unions are an inference against it.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Neither work has trade unions.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "socialism-needs-workers-power": {
@@ -2778,19 +4145,63 @@
       ]
     },
     "local-essentials-public": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic puts basic goods of the city under guardian care for the common good; local public services are an inference.",
+      "rationale": "Nulled (later pass): The Republic and Laws do not address public ownership of local services.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Republic puts basic goods of the city under guardian care for the common good; local public services are an inference.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic and Laws do not address public ownership of local services.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "second-chamber": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Laws mixes monarchic and democratic elements and has a Nocturnal Council as a further check, so a second body is an inference.",
+      "rationale": "Nulled (later pass): The Laws has a council and a Nocturnal Council, but neither is described as a second chamber beside a directly elected parliament.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Laws mixes monarchic and democratic elements and has a Nocturnal Council as a further check, so a second body is an inference.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws has a council and a Nocturnal Council, but neither is described as a second chamber beside a directly elected parliament.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "municipal-property": {
@@ -2820,19 +4231,63 @@
       "sources": []
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Plato accepts limits on medical effort for the unfit, so adherents would not clearly support life extension.",
+      "rationale": "Nulled (later pass): The Republic limits medical care for the chronically ill, which does not settle funding research on slowing ageing.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Plato accepts limits on medical effort for the unfit, so adherents would not clearly support life extension.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic limits medical care for the chronically ill, which does not settle funding research on slowing ageing.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "anonymous-payments": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Laws tightly regulates money and trade for the good of the city, so money beyond state control is an inference against it.",
+      "rationale": "Nulled (later pass): The Laws bars private holdings of gold and silver, but it states nothing on payments untraceable to the government.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The Laws tightly regulates money and trade for the good of the city, so money beyond state control is an inference against it.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws bars private holdings of gold and silver, but it states nothing on payments untraceable to the government.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "online-anonymity": {
@@ -2858,11 +4313,33 @@
       ]
     },
     "regional-powers-revocable": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Laws sets one constitution under one legislator and city, so a region's powers resting on central law are an inference.",
+      "rationale": "Nulled (later pass): The Laws has one city under one lawgiver, with no regions holding delegated powers.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Laws sets one constitution under one legislator and city, so a region's powers resting on central law are an inference.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws has one city under one lawgiver, with no regions holding delegated powers.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "gm-crops": {
@@ -3059,12 +4536,34 @@
       "sources": []
     },
     "shared-human-nature": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Plato's tripartite soul and the Forms give all humans a common nature to be ordered by reason, which grounds justice and education.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The tripartite soul is shared, but neither work grounds human rights in it.",
       "sources": [
-        "s1",
-        "s2"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Plato's tripartite soul and the Forms give all humans a common nature to be ordered by reason, which grounds justice and education.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The tripartite soul is shared, but neither work grounds human rights in it.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "public-service-media": {
@@ -3092,12 +4591,34 @@
       "sources": []
     },
     "workers-own-party": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Platonic rule belongs to those who know the good, not to a class acting for its own interest, and the Republic treats class faction as a threat to the city's unity.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Republic has no political parties, so it states nothing on a workers' party.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Platonic rule belongs to those who know the good, not to a class acting for its own interest, and the Republic treats class faction as a threat to the city's unity.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic has no political parties, so it states nothing on a workers' party.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "ban-fgm": {
@@ -3137,11 +4658,33 @@
       "sources": []
     },
     "mandatory-sentences": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Laws say penalties should aim at reforming the offender, which calls for judges fitting the sentence to the person rather than a fixed penalty.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Laws fixes penalties in its code for some offences and lets judges assess others, so it does not settle mandatory minimums for repeat offenders.",
       "sources": [
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Laws say penalties should aim at reforming the offender, which calls for judges fitting the sentence to the person rather than a fixed penalty.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Laws fixes penalties in its code for some offences and lets judges assess others, so it does not settle mandatory minimums for repeat offenders.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "immigrants-learn-language": {
@@ -3169,12 +4712,34 @@
       "sources": []
     },
     "democracy-is-procedure": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Plato holds that rule should belong to those who know the good, and criticises democracy as rule by the unlearned; elections alone confer no legitimacy.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): The Republic criticises democracy as a regime but does not address whether fair elections alone make a government democratic.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Plato holds that rule should belong to those who know the good, and criticises democracy as rule by the unlearned; elections alone confer no legitimacy.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic criticises democracy as a regime but does not address whether fair elections alone make a government democratic.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "premarital-sex": {
@@ -3396,12 +4961,34 @@
       "sources": []
     },
     "distribution-by-process": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Republic and Laws judge distribution by its effect on the city's justice and unity, with guardians holding no private wealth and the Laws capping wealth, so process-only legitimacy is rejected.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass): Laws V judges wealth by proportion to worth and by the city's unity, which is neither a process test nor an equality test.",
       "sources": [
-        "s2",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The Republic and Laws judge distribution by its effect on the city's justice and unity, with guardians holding no private wealth and the Laws capping wealth, so process-only legitimacy is rejected.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): Laws V judges wealth by proportion to worth and by the city's unity, which is neither a process test nor an equality test.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "financial-transactions-tax": {
@@ -3441,12 +5028,34 @@
       "sources": []
     },
     "patriotism-serves-workers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Republic binds citizens to the city through education and a founding myth, but ranks workers lowest in a hierarchy of classes rather than centring them, so the joining of patriotism and worker politics is not a Platonic position.",
+      "rationale": "Nulled (later pass): The Republic ranks producers lowest and says nothing on joining patriotism to workers' interests.",
       "sources": [
-        "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Republic binds citizens to the city through education and a founding myth, but ranks workers lowest in a hierarchy of classes rather than centring them, so the joining of patriotism and worker politics is not a Platonic position.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass): The Republic ranks producers lowest and says nothing on joining patriotism to workers' interests.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-18"
+        }
       ]
     },
     "material-over-identity": {
@@ -3459,6 +5068,687 @@
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Laws IV says the legislator aims to persuade citizens to virtue as readily as possible, and Republic II-III has the city's education and censorship build the way of life it judges good.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "all-land-state-owned": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Laws V makes the 5040 citizens owners of the land and protectors of their lots, and says tilling land in common goes beyond what its citizens can bear, though the lots are inalienable and the earth sacred to the gods.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Republic IV calls a man master of himself when reason rules his lower desires, slave of himself when badly educated, and Republic IX calls the soul ruled by desire enslaved.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "students-direct-own-learning": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Laws VII makes the curriculum and attendance compulsory, set by law, and the Republic prescribes the education of the guardians, so students do not decide what they learn.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "human-decline-since-golden-age": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Laws IV reports as a true tradition a blessed age under Cronos, ruled by demigods, and says present cities must imitate it as far as they can.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "small-step-social-reform": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Laws VII calls for permanence and warns against innovation even in children's games, while Republic V says cities will not rest from evils until philosophers rule, a thorough remaking.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Republic and Laws record no position on this statement.",
       "sources": []
     }
   },
@@ -3474,7 +5764,7 @@
       "addedAs": "censor-art-for-virtue"
     }
   ],
-  "notes": "The Republic and Laws differ: the Laws drops guardian communism and philosopher rule in favour of law and a mixed constitution. This profile follows the Republic for rule and the Laws where it describes the practical city.",
+  "notes": "Later pass (2026-11-18) under rules 7: read the Republic and Laws in full text (Project Gutenberg, Jowett) and cited them by book, bringing every answer to what they state; about 58 older answers resting on general inference or on a source not opened were nulled with their history kept, and new statements were answered where the texts speak. Themes searched in the full texts: property and wealth, education, religion and impiety, offices and election, law and punishment, war, women, trade and foreigners, family and marriage, class. The Republic and Laws record nothing on most modern statements (money, migration, technology, parties, sex and gender policy), which stay null.",
   "reviews": [
     {
       "kind": "silence",
@@ -3511,6 +5801,24 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-18",
+      "nulled": 58
     }
-  ]
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-15"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-18"
+    }
+  ],
+  "aliases": []
 }
