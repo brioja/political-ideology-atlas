@@ -29,8 +29,18 @@ function nextSubject() {
     const id = f.endsWith(".json") ? f.slice(0, -5) : null;
     if (id && !done.has(id) && (KIND === "people") === people.has(id)) return id;
   }
-  const j = JSON.parse(execFileSync("node", [path.join(__dirname, "next.js"), `--${KIND}`, "--lane"], { cwd: ROOT, maxBuffer: 1 << 26 }).toString() || "null");
-  return j && j.id;
+  // The serial run (AGENTS.md) works on next.js's first subject and leaves no lane draft, so the lane passes over that
+  // subject and any audit with uncommitted changes (the serial run's subject once its agent has started writing).
+  // Greta Thunberg and Annie Besant were audited twice on 2026-11-18 before this.
+  const next = (skip) => {
+    const args = [path.join(__dirname, "next.js"), `--${KIND}`, "--lane", ...(skip.length ? ["--skip", skip.join(",")] : [])];
+    const j = JSON.parse(execFileSync("node", args, { cwd: ROOT, maxBuffer: 1 << 26 }).toString() || "null");
+    return j && j.id;
+  };
+  const dirty = execFileSync("git", ["status", "--porcelain", "--", "audits/people", "audits/profiles"], { cwd: ROOT }).toString()
+    .split("\n").map((l) => (l.slice(3).match(/([^/]+)\.json$/) || [])[1]).filter(Boolean);
+  const serial = next(dirty);
+  return serial ? next([...dirty, serial]) : null;
 }
 
 const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag} --dir scratchpad/lane-out/${LANE} ${id}\` and fix every error the uncertainty rule aside. Then add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.`;
