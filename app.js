@@ -1976,12 +1976,20 @@ function positionsList(profile, audit, auditUrl = null, key = null) {
   return `<ul class="positions">${known.map(item).join("")}</ul>${mild}${more}`;
 }
 
+// Sources behind a current position first; the rest (cited only by a null, which records what was checked, or
+// by an earlier version in reviewHistory) folded below, so a reader doesn't take them for evidence of a position.
 function sourcesList(audit) {
   if (!audit || !audit.sources || !audit.sources.length) return "";
-  return `<section class="stack"><h2>Sources</h2><ol class="sources">${audit.sources.map((s) => `
+  const behind = new Set();
+  for (const a of Object.values(audit.answers || {})) if (a && a.value != null) for (const sid of a.sources || []) behind.add(sid);
+  const li = (s) => `
     <li id="src-${esc(s.id)}"><span class="mono small">${esc(s.id)}</span>
       <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${s.author ? ` <span class="muted small">· ${esc(s.author)}</span>` : ""}
-      <span class="muted small">· ${esc(s.kind)}</span></li>`).join("")}</ol></section>`;
+      <span class="muted small">· ${esc(s.kind)}</span></li>`;
+  const main = audit.sources.filter((s) => behind.has(s.id)), other = audit.sources.filter((s) => !behind.has(s.id));
+  const rest = other.length ? `<details class="milder"><summary>${other.length} source${other.length === 1 ? "" : "s"} checked but not used for any position</summary>
+    <ol class="sources">${other.map(li).join("")}</ol></details>` : "";
+  return `<section class="stack"><h2>Sources</h2>${main.length ? `<ol class="sources">${main.map(li).join("")}</ol>` : ""}${rest}</section>`;
 }
 
 // The audit JSON is published next to the site; fetch it for reasoning and sources. It carries the same deploy
