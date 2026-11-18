@@ -13,7 +13,8 @@ them; they take precedence over this file.
 
 Audit the ids the integrator gives you, people or ideologies. With no list, take the next one with
 
-    node scripts/next.js --skip <id>,<id>,...   (the ids the integrator and other lanes have taken)
+    node scripts/next.js --lane --skip <id>,<id>,...   (--lane passes over every draft in scratchpad/lane-out/;
+                                                     --skip names any other ids the integrator has taken)
 
 (add `--people` or `--ideologies` if the integrator assigned you a kind) and tell the integrator
 which id you took, so the two sessions never work on the same subject.
