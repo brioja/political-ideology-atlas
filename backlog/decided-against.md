@@ -103,3 +103,9 @@ section on the results, Compare, ideology and person pages, each with its statem
   other names come from Wikipedia redirects filed as other names (`scripts/people-aliases.js`), and an
   ideology's aliases need a source quote (669f810bf). Wikidata labels stay as catalog triage only, and
   photo lookups (`scripts/images.js`) still find the Commons file through it.
+
+## Re-checking old audits after a rule change (2026-11-18)
+
+After the record-over-words and mature-position rules (2026-11-02), a scan of existing audits for answers the
+new rules would change was parked, then dropped: re-audits already follow the current rules and take audits
+written under the oldest rules first, so old answers are brought up to date without a separate scan.
