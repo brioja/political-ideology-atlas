@@ -144,3 +144,9 @@ every Across/Up pair (the map caption gives only the chosen pair's share), and f
 little: its bars are numbered 1, 2, 3… with no names or percentages. The lines are sorted by size, so lines 1-2
 always cover the most. Options offered: each line's % in the Across/Up dropdowns; the % on each About chart bar
 with the drawn lines named; both. Decide on a second report or when the results page is next reworked.
+
+## Compare page follow-ups (Compare shipped 2026-10-22)
+
+`#/compare/<a>/<b>` compares any two of an ideology, a person and your own answers. Left out of v1: each side's
+rationale next to a statement, and a shareable "You" side (it reads only answers saved in the browser). Decide
+if a quiz taker asks for either.
