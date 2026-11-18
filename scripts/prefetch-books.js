@@ -103,12 +103,16 @@ async function main() {
     "Written by `scripts/prefetch-books.js` before each people run (political_ideology_test). People are in triage order (most likely to pass first).",
     "Public-domain books on Gutenberg are fetched automatically; the books below are the person's own works that are not in the local corpora.",
     "Put any you find in `~/Documents/ideology reference/<Name>/`. A person leaves this list once audited.", ""];
-  for (const [, s] of order) {
+  const sought = require("./waiting-for-books").sought();
+  for (const [id, s] of order) {
     md.push(`## ${s.name} (triage ${s.triage})`);
     const have = [s.gutenberg.length ? `${s.gutenberg.length} on Gutenberg (local)` : null, s.marxists ? "Marxists Internet Archive section (local)" : null,
       s.reference.length ? `${s.reference.length} in the reference library` : null].filter(Boolean);
     md.push(`- Local: ${have.length ? have.join("; ") : "nothing"}`);
-    if (s.wanted.length) { md.push("- Wanted:"); for (const w of s.wanted) md.push(`  - ${w.title}${w.year ? ` (${w.year})` : ""}`); }
+    // People whose books the maintainer already looked for (audits/books-sought.json) aren't asked about again.
+    const asked = sought[id];
+    if (asked) md.push(`- Wanted: already looked for (${asked.join(", ")})`);
+    else if (s.wanted.length) { md.push("- Wanted:"); for (const w of s.wanted) md.push(`  - ${w.title}${w.year ? ` (${w.year})` : ""}`); }
     else md.push("- Wanted: no other works listed on Wikidata");
     md.push("");
   }
