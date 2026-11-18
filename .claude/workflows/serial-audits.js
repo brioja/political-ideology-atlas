@@ -14,7 +14,8 @@ const opts = args || {}
 // Two serial runs may run at once only if they split the kinds (kind: people / ideologies) and each has its
 // own checkout (root), e.g. a git worktree for the ideology run (Brandon, 2026-11-06).
 const ROOT = opts.root || '/home/brioja/work/political_ideology_test'
-const KIND = (opts.kind === 'people' ? ' --people' : opts.kind === 'ideologies' ? ' --ideologies' : '')
+// --lane: subjects a lane (audits/PROMPT_LANE.md) has a draft of in scratchpad/lane-out/ are taken.
+const KIND = ' --lane' + (opts.kind === 'people' ? ' --people' : opts.kind === 'ideologies' ? ' --ideologies' : '')
   + (opts.skip && opts.skip.length ? ` --skip ${opts.skip.join(',')}` : '')
 const LIMIT = opts.limit || 10
 const model = opts.model ? { model: opts.model } : {}
