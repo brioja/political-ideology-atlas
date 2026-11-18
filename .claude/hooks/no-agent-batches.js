@@ -3,7 +3,7 @@
 // task (batch N, chunk, part N of M, "the first/next 25 statements"). Each slice re-reads the same rules and sources, and
 // small slices invited rushed work. A long task goes to one agent that saves as it goes; if it stops, resume that same
 // agent (SendMessage) instead of starting another. Also denied while another agent this session started is running.
-// The harness writes <session>/subagents/agent-<id>.meta.json at launch and adds "finished": true when the agent ends;
+// The harness writes <session>/subagents/agent-<id>.meta.json at launch and adds "finished": true when the agent ends ("stoppedByUser": true when stopped);
 // one without it whose transcript was written in the last 30 minutes counts as running. Workflow agents don't count.
 const fs = require("fs");
 const path = require("path");
@@ -25,7 +25,7 @@ process.stdin.on("data", (d) => (input += d)).on("end", () => {
     for (const f of fs.readdirSync(dir)) {
       if (!f.endsWith(".meta.json")) continue;
       const meta = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
-      if (meta.finished) continue;
+      if (meta.finished || meta.stoppedByUser) continue;
       const log = path.join(dir, f.replace(/\.meta\.json$/, ".jsonl"));
       if (Date.now() - (fs.existsSync(log) ? fs.statSync(log).mtimeMs : 0) < 30 * 60 * 1000) running.push(meta.description || f);
     }
