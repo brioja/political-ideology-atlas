@@ -3,7 +3,9 @@
 // (availableBooks in prefetch-books.js: full-length books in the local corpora), whichever comes first.
 // Read by pending.js --people (so next.js and prefetch-books.js pass them over) and next.js's later-pass turns.
 //   node scripts/waiting-for-books.js add <id> [<id> ...]   (whoever queues the download adds the entry)
-//   node scripts/waiting-for-books.js sought <id> [<id> ...] (only records the search: nothing found to download)
+//   node scripts/waiting-for-books.js sought <id> [<id> ...] (only records the search: nothing found to download; ends any hold)
+//   node scripts/waiting-for-books.js hold <id> [<id> ...]   (holds people the maintainer is about to look for; not recorded
+//                                                              as sought: Brandon, 2026-11-18, so the queue doesn't reach them first)
 //   node scripts/waiting-for-books.js                        (lists each entry and whether it still holds)
 // Every id given to add or sought is also kept in audits/books-sought.json, which never drops anyone (Brandon,
 // 2026-11-18: "keep track of people who I tried to get as well so it isn't a large search going forward"). Holds end;
@@ -47,13 +49,14 @@ module.exports = { held, status, sought };
 
 if (require.main === module) {
   const [cmd, ...ids] = process.argv.slice(2);
-  if (cmd === "add" || cmd === "sought") {
+  if (cmd === "add" || cmd === "sought" || cmd === "hold") {
     const catalog = new Map(lib.peopleCatalog().map((p) => [p.id, p]));
     const bad = ids.filter((id) => !catalog.has(id));
     if (!ids.length || bad.length) { console.error(`usage: add|sought <person id> ...${bad.length ? ` (not in the people catalog: ${bad.join(", ")})` : ""}`); process.exit(1); }
-    recordSought(ids);
+    if (cmd !== "hold") recordSought(ids);
   }
-  if (cmd === "add") {
+  if (cmd === "sought") write({ people: read().people.filter((e) => !ids.includes(e.id)) });
+  if (cmd === "add" || cmd === "hold") {
     const catalog = new Map(lib.peopleCatalog().map((p) => [p.id, p]));
     // Entries that no longer hold are dropped as new ones are added.
     const keep = status().filter((s) => s.held && !ids.includes(s.id)).map(({ id, since, booksAtStart }) => ({ id, since, booksAtStart }));
