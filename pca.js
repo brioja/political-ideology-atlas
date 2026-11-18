@@ -363,6 +363,28 @@ function placementProgress(model, answers, done = DONE) {
   return (scale(gap(lineStats(ctx, known).map((l) => l.variance))) + scale(gap(barVariances(ctx, known)))) / 2;
 }
 
+// How many statements the quiz asks before Done for a taker who answers every one (the front page's
+// "N statements"). The bars depend only on which statements are answered, not on the answers, so one
+// run gives the number for everyone who answers all; "No opinion" answers add statements.
+// scripts/build.js ships it in data.js as DONE_STATEMENTS; test.js checks it is current.
+function statementsToDone(model, done = DONE) {
+  const n = model.mean.length; // one entry per statement
+  const answers = new Array(n).fill(null), asked = new Set();
+  for (let i = 1; i <= n; i++) {
+    const next = nextQuestion(model, answers, asked, done);
+    if (!next) return i - 1;
+    asked.add(next.q);
+    answers[next.q] = 1;
+    if (placementProgress(model, answers, done) >= 1) return i;
+  }
+  return n;
+}
+// The quiz's length in minutes for that many statements, as the front page states it: 10 to 15 seconds a
+// statement (the rate behind its first "48 statements (8–12 minutes)", 2026-11-03).
+function quizMinutes(statements) {
+  return `${Math.round(statements * 10 / 60)}–${Math.round(statements * 15 / 60)}`;
+}
+
 // The placement context answers are placed with: shipped (modelFromParts), or worked out from a
 // model built here (buildModel), which has every component.
 function placementOf(model) {
@@ -689,5 +711,5 @@ function decodeShare(s, ids, slots) {
 function distinctiveness(mean, profile, j) { return Math.abs(profile[j] - mean[j]); }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, describeAxis, distinctiveness };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, statementsToDone, quizMinutes, describeAxis, distinctiveness };
 }

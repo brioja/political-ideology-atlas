@@ -1,7 +1,7 @@
 // Sanity checks: node test.js
 //   node test.js --people   skips the ideology simulation, for builds that only changed people.js
 const assert = require("assert");
-const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, MODEL, PLACEMENT } = require("./data.js");
+const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, DONE_STATEMENTS, MODEL, PLACEMENT } = require("./data.js");
 const PEOPLE_ONLY = process.argv.includes("--people");
 const { symmetricEigen, buildModel, modelFromParts, match, matchPeople, topMatch, place, locate, fitTo, fitScale, placementProgress, nextQuestion, meaningfulAxes, describeAxis } = require("./pca.js");
 
@@ -226,6 +226,8 @@ if (!PEOPLE_ONLY) {
       answers[next.q] = truth[next.q];
       if (placementProgress(shipped, answers) >= 1) break;
     }
+    // Every taker here answers every statement, so each reaches Done after the front page's number.
+    assert.strictEqual(asked.size, DONE_STATEMENTS, `a taker who answers everything reached Done after ${asked.size} statements, but data.js's DONE_STATEMENTS (the front page's count) is ${DONE_STATEMENTS}: run a full build`);
     takers++; totalAsked += asked.size;
     const { ranked } = match(shipped, answers);
     const own = ranked.find((r) => r.id === ideo.id).distance;

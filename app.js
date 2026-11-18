@@ -1764,6 +1764,12 @@ else $("people-map").closest("figure").hidden = true;
 for (const el of document.querySelectorAll(".ideology-count")) {
   if (el.textContent !== `${model.ideologies.length}`) el.textContent = `${model.ideologies.length}`;
 }
+// The front page's quiz length, the same way (DONE_STATEMENTS: worked out by scripts/build.js).
+if (typeof DONE_STATEMENTS !== "undefined") {
+  const fill = (cls, text) => { for (const el of document.querySelectorAll(cls)) if (el.textContent !== text) el.textContent = text; };
+  fill(".done-count", `${DONE_STATEMENTS}`);
+  fill(".done-minutes", quizMinutes(DONE_STATEMENTS));
+}
 
 // Be upfront while the site still runs on hand-written profiles instead of researched audits.
 const auditedCount = model.ideologies.filter((i) => i.audited).length;

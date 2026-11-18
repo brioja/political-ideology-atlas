@@ -6,7 +6,7 @@
 // scripts. Browsers hide that HTML and the app takes over (app.js moves the address to its "#/" route).
 //
 //   node scripts/pages.js            write the pages and sitemap.xml
-//   node scripts/pages.js --stamp    also write the ideology count into index.html (deploy only; the
+//   node scripts/pages.js --stamp    also write the ideology count and quiz length into index.html (deploy only; the
 //                                    app fills it in anyway, but text it changes after load is when
 //                                    Lighthouse says the page finished painting)
 //   node scripts/pages.js --clean    remove them again (handy after a local preview)
@@ -139,6 +139,11 @@ if (process.argv.includes("--stamp")) {
   const count = /<span class="ideology-count">[^<]*<\/span>/g;
   if (!count.test(template)) throw new Error("index.html no longer has an ideology-count span");
   template = template.replace(count, `<span class="ideology-count">${model.ideologies.length}</span>`);
+  for (const [cls, text] of [["done-count", `${ctx.DONE_STATEMENTS}`], ["done-minutes", ctx.quizMinutes(ctx.DONE_STATEMENTS)]]) {
+    const span = new RegExp(`<span class="${cls}">[^<]*</span>`, "g");
+    if (!span.test(template)) throw new Error(`index.html no longer has a ${cls} span`);
+    template = template.replace(span, `<span class="${cls}">${text}</span>`);
+  }
   fs.writeFileSync(path.join(ROOT, "index.html"), template);
 }
 function swap(html, pattern, replacement) {
