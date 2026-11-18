@@ -1981,7 +1981,8 @@ function positionsList(profile, audit, auditUrl = null, key = null) {
 function sourcesList(audit) {
   if (!audit || !audit.sources || !audit.sources.length) return "";
   const behind = new Set();
-  for (const a of Object.values(audit.answers || {})) if (a && a.value != null) for (const sid of a.sources || []) behind.add(sid);
+  // Only positions the page shows: answers to dropped statements stay in the file but aren't positions here.
+  for (const q of QUESTIONS) { const a = (audit.answers || {})[q.id]; if (a && a.value != null) for (const sid of a.sources || []) behind.add(sid); }
   const li = (s) => `
     <li id="src-${esc(s.id)}"><span class="mono small">${esc(s.id)}</span>
       <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${s.author ? ` <span class="muted small">· ${esc(s.author)}</span>` : ""}
