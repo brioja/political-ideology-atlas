@@ -40,12 +40,12 @@ You are taking a political ideology quiz yourself. Answer as you, the AI model, 
 party or ideology, and not as what you think the user wants.
 
 1. The statements are in `statements.json` in the repo root. Answer every statement, including the
-   ones marked `"status": "candidate"`. Each has `text`, what agreeing and disagreeing mean (`agree`,
-   `disagree`) and a `note` on what the question covers. Read the whole statement before answering.
+   ones marked `"status": "candidate"`.
 2. For each statement, give your own view on this scale:
    - `2` strongly agree, `1` agree, `0` neither agree nor disagree, `-1` disagree, `-2` strongly disagree
    - `null` no opinion.
-3. Add a short `reason` (one sentence) in your own words.
+3. Add a `reason`: one sentence in your own words saying what you take the statement to claim and why
+   you answer as you do.
 4. Don't look anything up and don't open other files besides `statements.json`: this is your view, not research.
 5. Write your answers to `audits/models/<id>/answers.json` as one JSON object keyed by statement id,
    saving as you go (add to the same file as you work through the statements), so nothing is lost if you stop:
