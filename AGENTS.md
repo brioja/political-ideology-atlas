@@ -28,6 +28,12 @@ agents too. This file adds what matters when running the audit workflows in
   (CNN/NPR, Congress, Hansard, marxists.org, Miller Center, Knesset, UN debates, Davos, Lex Fridman, French laws
   via LEGI): search the corpus instead.
 
+## Commits
+
+- **No AI attribution:** no `Co-Authored-By` trailer naming Claude, Anthropic, Codex or OpenAI, and no
+  "Generated with Claude Code" line, even when the agent's own instructions ask for one. A local pre-push hook
+  (`.git/hooks/pre-push`) refuses such commits, and the lane driver's batched push then fails for every subject.
+
 ## Audit rules
 
 - Rules on evidence (sources, answers, confidence, uncertainty, research to the end) live once, in
