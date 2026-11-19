@@ -212,14 +212,16 @@ const awaitingReaudit = () => {
 // (fine with "should"; a claim of fact about the reader's country has unstated context; Brandon, 2026-11-11).
 // Hedges are errors too: "sometimes"/"at times"/"occasionally"/"in some cases" (almost anyone agrees; a warning from
 // 2026-11-12, an error since 2026-11-19, Brandon: Sonnet's quiz retake showed a model misreading "sometimes necessary"),
-// and "tend to"/"tends to" (nearly anyone grants a tendency; 2026-11-19). "some" is a warning (2026-11-19): often the
+// and "tend to"/"tends to" (nearly anyone grants a tendency; 2026-11-19), and "never" (2026-11-19, Brandon: Sonnet's
+// quiz retake read "never justified" as "rarely justified" and answered 0 or agree on revolution-justified,
+// political-violence-never and defensive-wars-only). "some" is a warning (2026-11-19): often the
 // claim itself ("some moral truths hold across all cultures"), but it can be a hedge that makes agreeing trivial.
 // Comparatives that, with no later "than", mean "than now" ("Taxes on the wealthy should be significantly higher").
 const COMPARATIVES = ["more", "less", "fewer", "higher", "larger", "greater", "bigger", "smaller", "stronger", "weaker",
   "tighter", "looser", "stricter", "tougher", "harsher", "wider", "narrower", "broader"];
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or",
-    "sometimes", "at times", "occasionally", "in some cases", "tend to", "tends to"],
+    "sometimes", "at times", "occasionally", "in some cases", "tend to", "tends to", "never"],
   warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country", "some",
     "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
@@ -253,7 +255,8 @@ const WORDING_REASONS = {
     .map((w) => [w, "a change from today's level, which differs by country and era; state the level (a literal use is fine)"])),
   ...Object.fromEntries(COMPARATIVES.map((w) => [w, "with no \"than\" it means \"than now\", which differs by country and era; state the level"])),
   ...Object.fromEntries(["sometimes", "at times", "occasionally", "in some cases"]
-    .map((w) => [w, "a hedge: almost anyone agrees, and disagreeing means \"never\", which audits misread as preferring something else (revolution-justified, humanitarian-intervention, 2026-11-12); state it as \"never\" or as the general claim"])),
+    .map((w) => [w, "a hedge: almost anyone agrees, and disagreeing means \"never\", which audits misread as preferring something else (revolution-justified, humanitarian-intervention, 2026-11-12); state the general claim"])),
+  never: "an absolute: someone who thinks it's rare answers as if agreeing (Sonnet on revolution-justified and political-violence-never, 2026-11-19), and disagreeing means only \"at least once\"; state the general claim",
   ...Object.fromEntries(["tend to", "tends to"]
     .map((w) => [w, "a hedge: nearly anyone grants a tendency, so agreeing says little; state the claim itself"])),
   some: "may be a hedge that makes agreeing trivial (\"some X are bad\"); fine where \"some\" is the claim (\"some moral truths hold across all cultures\": disagreeing says none do)",
