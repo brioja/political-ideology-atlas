@@ -211,14 +211,16 @@ const awaitingReaudit = () => {
 // "instead" ("A instead of B" is "rather than" in other words: hard to negate; Brandon, 2026-11-11), and "my country"
 // (fine with "should"; a claim of fact about the reader's country has unstated context; Brandon, 2026-11-11).
 // Hedges are errors too: "sometimes"/"at times"/"occasionally"/"in some cases" (almost anyone agrees; a warning from
-// 2026-11-12, an error since 2026-11-19, Brandon: Sonnet's quiz retake showed a model misreading "sometimes necessary").
+// 2026-11-12, an error since 2026-11-19, Brandon: Sonnet's quiz retake showed a model misreading "sometimes necessary"),
+// and "tend to"/"tends to" (nearly anyone grants a tendency; 2026-11-19). "some" is a warning (2026-11-19): often the
+// claim itself ("some moral truths hold across all cultures"), but it can be a hedge that makes agreeing trivial.
 // Comparatives that, with no later "than", mean "than now" ("Taxes on the wealthy should be significantly higher").
 const COMPARATIVES = ["more", "less", "fewer", "higher", "larger", "greater", "bigger", "smaller", "stronger", "weaker",
   "tighter", "looser", "stricter", "tougher", "harsher", "wider", "narrower", "broader"];
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or",
-    "sometimes", "at times", "occasionally", "in some cases"],
-  warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country",
+    "sometimes", "at times", "occasionally", "in some cases", "tend to", "tends to"],
+  warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country", "some",
     "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
 // Why each mark matters, printed by statements-check.js and in review briefs (Brandon, 2026-11-11).
@@ -252,6 +254,9 @@ const WORDING_REASONS = {
   ...Object.fromEntries(COMPARATIVES.map((w) => [w, "with no \"than\" it means \"than now\", which differs by country and era; state the level"])),
   ...Object.fromEntries(["sometimes", "at times", "occasionally", "in some cases"]
     .map((w) => [w, "a hedge: almost anyone agrees, and disagreeing means \"never\", which audits misread as preferring something else (revolution-justified, humanitarian-intervention, 2026-11-12); state it as \"never\" or as the general claim"])),
+  ...Object.fromEntries(["tend to", "tends to"]
+    .map((w) => [w, "a hedge: nearly anyone grants a tendency, so agreeing says little; state the claim itself"])),
+  some: "may be a hedge that makes agreeing trivial (\"some X are bad\"); fine where \"some\" is the claim (\"some moral truths hold across all cultures\": disagreeing says none do)",
   "second sentence": "a second sentence usually adds a second claim",
 };
 const wordingReason = (w) => WORDING_REASONS[w.toLowerCase()] || "";

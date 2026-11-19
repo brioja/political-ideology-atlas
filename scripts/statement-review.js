@@ -1,4 +1,4 @@
-// Statement review loop (Brandon, 2026-11-10): audits answered some statements differently from the claim
+// Statement review loop (Brandon, 2026-11-10; candidates too since 2026-11-19, so none is promoted with an error word): audits answered some statements differently from the claim
 // intended, mostly where the wording joins two claims ("and"), contrasts two ("rather than") or leans on a
 // condition or jargon. This walks the active statements in quiz order (the order the next-question selector
 // asks them, the same for every respondent) and writes a review brief for the first one that fails the wording
@@ -39,8 +39,14 @@ function queue() {
   // Errors first, then warnings, each in quiz order (Brandon, 2026-11-11); a review fixes both. A statement the
   // maintainer sent for review (a <id>-maintainer.md note) is queued with the errors even when its wording passes.
   const sent = (s) => fs.existsSync(maintainerFile(s.id));
-  const all = quizOrder().map((id, i) => ({ step: i + 1, s: byId.get(id) })).filter((x) => x.s && (fails(x.s) || sent(x.s)));
-  return [...all.filter((x) => hasError(x.s) || sent(x.s)), ...all.filter((x) => !hasError(x.s) && !sent(x.s))];
+  // Candidates aren't asked in the quiz: they follow the active statements, as step "candidate".
+  const order = quizOrder(), inQuiz = new Set(order);
+  const all = [...order.map((id, i) => ({ step: i + 1, s: byId.get(id) })),
+    ...statements.filter((s) => !inQuiz.has(s.id) && s.status === "candidate").map((s) => ({ step: "candidate", s }))]
+    .filter((x) => x.s && (fails(x.s) || sent(x.s)));
+  const active = all.filter((x) => x.step !== "candidate"), cand = all.filter((x) => x.step === "candidate");
+  const errorsFirst = (xs) => [...xs.filter((x) => hasError(x.s) || sent(x.s)), ...xs.filter((x) => !hasError(x.s) && !sent(x.s))];
+  return [...errorsFirst(active), ...errorsFirst(cand)];
 }
 
 // Samples per value, rationales that weigh two things against each other first: those are where a statement that
@@ -153,7 +159,7 @@ if (ONE) {
 } else if (mode === "list") {
   const q = queue();
   const state = (id) => (reviewed(id) ? "reviewed" : fs.existsSync(resultsFile(id)) ? "redo    " : "pending ");
-  for (const { step, s } of q) console.log(`${String(step).padStart(3)} ${state(s.id)} ${s.id}: ${s.text}`);
+  for (const { step, s } of q) console.log(`${String(step).padStart(9)} ${state(s.id)} ${s.id}: ${s.text}`);
   console.log(`\n${q.length} statements fail the check (${q.filter((x) => hasError(x.s)).length} with errors, the rest warnings only); ${q.filter((x) => reviewed(x.s.id)).length} reviewed.`);
 } else if (mode === "next") {
   const next = queue().find((x) => !reviewed(x.s.id));

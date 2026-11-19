@@ -43,11 +43,13 @@ These came out of the reviews on 2026-11-10 and are what the maintainer accepted
 - **"Keep as is" is a fine verdict.** Some statements fail the check without a real problem; `sacred-nation`
   kept its wording because its two halves are one idea in every source.
 - **Errors are absolute** (Brandon, 2026-11-10): the statement text never keeps an error word ("and",
-  "can", "may", "rather", "so", "because", "as well as", "not only", "or", a semicolon), whatever the explanation;
+  "can", "may", "rather", "so", "because", "as well as", "not only", "or", a semicolon, hedges such as
+  "sometimes" or "tend to"), whatever the explanation;
   `statements-check.js` no longer accepts one. Fold a list into a general word, use a colon or a single phrase
   ("kindred peoples"), put the list in the agree text, or say a permission or ability another way ("able
   to"). Fix the warnings in the same review: reword each away, or say why test 3 confirms it. The queue
-  takes statements with errors first, then those with only warnings, each in quiz order.
+  takes statements with errors first, then those with only warnings, each in quiz order, active statements
+  before candidates (2026-11-19).
 - **One claim, no hidden second one.** Fold a list into one general word ("major industries", not "energy,
   rail and utilities"); move examples to the agree text. Where two halves can come apart, check the rationales
   for which half decided the answers; related statements may already measure the other half.
