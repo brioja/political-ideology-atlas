@@ -2,7 +2,10 @@
   "id": "anne-queen-of-great-britain",
   "name": "Anne, Queen of Great Britain",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+  ],
   "living": false,
   "role": "Queen of England, Scotland and Ireland, then Great Britain (1702-1714)",
   "summary": "Anne was a committed member of the Church of England who spoke of keeping the established Church as part of the government and pledged to preserve the Act of Toleration. She backed the war against France in alliance with the Allies, pushed the 1706-07 negotiations for union with Scotland, and gave the revenue from first-fruits and tenths to poor clergy. Her ministers, and her own choices among them, shifted between Tory and Whig governments during her reign.",
@@ -14,7 +17,8 @@
       "title": "The first parliament of Queen Anne: Queen Anne's speeches to both Houses, 11 March and 25 May 1702 (British History Online)",
       "author": "Queen Anne",
       "url": "https://www.british-history.ac.uk/node/30760",
-      "usedFor": "her opening speech (11 March 1702) on the Allies, France, union with Scotland and her own words; her closing speech (25 May 1702) on the established Church, the Act of Toleration and the war"
+      "usedFor": "her opening speech (11 March 1702) on the Allies, France, union with Scotland and her own words; her closing speech (25 May 1702) on the established Church, the Act of Toleration and the war",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,7 +26,8 @@
       "title": "Queen Anne, Her Majesty's Most Gracious Speech to Both Houses of Parliament, on Eleventh of March 1702 (1702)",
       "author": "Queen Anne",
       "url": "https://stuarts-online.com/?p=216",
-      "usedFor": "text of her 11 March 1702 speech, including the Church 'as by Law established' wording and the Allies passage"
+      "usedFor": "text of her 11 March 1702 speech, including the Church 'as by Law established' wording and the Allies passage",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -30,7 +35,8 @@
       "title": "Queen Anne's 1704 statement on first-fruits and tenths for poor clergy (Miscellaneous Documents, 1704), Wellcome Collection record",
       "author": "Queen Anne",
       "url": "https://wellcomecollection.org/works/caxfbp2h",
-      "usedFor": "her declared intention to grant first-fruits and tenths for poor clergy, 'true Objects of Our Royal Compassion'"
+      "usedFor": "her declared intention to grant first-fruits and tenths for poor clergy, 'true Objects of Our Royal Compassion'",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -38,7 +44,8 @@
       "title": "The second parliament of Queen Anne: material relating to the Act of Union, 1706 (British History Online)",
       "author": "Queen Anne",
       "url": "https://www.british-history.ac.uk/node/30769",
-      "usedFor": "her speeches to the Union commissioners (9 May and 26 June 1706) pressing for the union with Scotland"
+      "usedFor": "her speeches to the Union commissioners (9 May and 26 June 1706) pressing for the union with Scotland",
+      "evidence": "words"
     },
     {
       "id": "s5",
@@ -46,7 +53,8 @@
       "title": "Anne, Queen of Great Britain",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Anne,_Queen_of_Great_Britain",
-      "usedFor": "her Tory favour, the 1710 dismissal of the Whig ministers, her support for the union, and the account of the 1708 Scottish Militia Bill veto"
+      "usedFor": "her Tory favour, the 1710 dismissal of the Whig ministers, her support for the union, and the account of the 1708 Scottish Militia Bill veto",
+      "evidence": "words"
     },
     {
       "id": "s7",
@@ -54,7 +62,17 @@
       "title": "Politics in the Age of Anne, lecture 5 (University of Warwick, HI254)",
       "author": "University of Warwick, Department of History",
       "url": "https://warwick.ac.uk/fac/arts/history/students/modules/archive/hi254/lectures/lecture5",
-      "usedFor": "her reliance on ministerial managers (Godolphin, Marlborough, then Harley); no personal view on occasional conformity recorded"
+      "usedFor": "her reliance on ministerial managers (Godolphin, Marlborough, then Harley); no personal view on occasional conformity recorded",
+      "evidence": "words"
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Her Majesty’s letter to the Arch-bishop of Canterbury, and his grace’s letter to the bishops of his province (1711), Internet Archive scan",
+      "author": "Queen Anne",
+      "url": "https://archive.org/details/bim_eighteenth-century_her-majestys-letter-to-t_anne-queen-of-great-bri_1711",
+      "usedFor": "her 20 August 1711 royal letter ordering the archbishop to enforce church laws, check profaneness and promote piety and charity schools"
     }
   ],
   "answers": {
@@ -186,10 +204,32 @@
     },
     "more-religion-public": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "She framed government as being 'in Church and State' and asked for religious peace among her servants, but she did not say religion should play a larger role in public life beyond the established Church.",
+      "confidence": "medium",
+      "rationale": "By her 1711 royal letter she charged the archbishop to enforce ecclesiastical law, check infidelity and profaneness, and encourage charity schools, using royal authority to give religion a larger place in public life. The letter does not say religion should shape laws beyond the established Church.",
       "sources": [
-        "s1"
+        "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "She framed government as being 'in Church and State' and asked for religious peace among her servants, but she did not say religion should play a larger role in public life beyond the established Church.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "By her 1711 royal letter she charged the archbishop to enforce ecclesiastical law, check infidelity and profaneness, and encourage charity schools, using royal authority to give religion a larger place in public life. The letter does not say religion should shape laws beyond the established Church.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "correct-racial-injustice": {
@@ -3017,9 +3057,675 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources reached.",
+      "sources": []
     }
   },
-  "notes": "Her own recorded words are few: the 1702 opening and closing speeches, the 1704 statement on first-fruits and tenths, and the 1706 speeches to the Union commissioners. Ministers' policies are not counted as hers. The 1708 Scottish Militia Bill veto is recorded in the sources as taken on ministers' advice, so it is not used as her position. Her backing of the 1702 Occasional Conformity bill is reported only secondhand (Wikipedia, citing her husband's vote at her request), and the statement list has no statement on dissenters holding office, so it is not answered. Her driving of the 1706-07 union negotiations and the Act of Union is not answered either, because no statement in the list covers Scotland or the union. Her stance on the Treaty of Utrecht is not recorded in her own words in the sources reached.",
+  "notes": "Her own recorded words are few: the 1702 opening and closing speeches, the 1704 statement on first-fruits and tenths, and the 1706 speeches to the Union commissioners. Ministers' policies are not counted as hers. The 1708 Scottish Militia Bill veto is recorded in the sources as taken on ministers' advice, so it is not used as her position. Her backing of the 1702 Occasional Conformity bill is reported only secondhand (Wikipedia, citing her husband's vote at her request), and the statement list has no statement on dissenters holding office, so it is not answered. Her driving of the 1706-07 union negotiations and the Act of Union is not answered either, because no statement in the list covers Scotland or the union. Her stance on the Treaty of Utrecht is not recorded in her own words in the sources reached. Pass 2 (2026-11-19): added the 1711 royal letter to the Archbishop of Canterbury as a record, and the remaining statements as null. Themes searched: religion, war and alliances, union, government; Anne’s ministers’ policies (e.g. the Scottish Militia Bill veto, taken on advice) are not counted as hers.",
   "reviews": [
     {
       "kind": "inference",
@@ -3043,6 +3749,44 @@
         "former-empire-influence"
       ],
       "nulled": 0
+    }
+  ],
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-19"
+    }
+  ],
+  "rules": 7,
+  "booksNotUsed": [
+    {
+      "gutenberg": [
+        "13103"
+      ],
+      "reason": "Keeling, Great Britain and Her Queen: a 19th-century book about Victoria, not Anne."
+    },
+    {
+      "file": "lettersdiplomati00anne",
+      "reason": "The Letters and Diplomatic Instructions of Queen Anne (ed. Brown): the Internet Archive full-text page opened as a stub only; individual letters were not readable."
+    }
+  ],
+  "notFound": [
+    {
+      "work": "Queen Anne, Letters and Diplomatic Instructions (ed. B. C. Brown, 1935), full text",
+      "tried": [
+        {
+          "where": "Internet Archive",
+          "how": "advancedsearch for creator, then the stream/djvu text of lettersdiplomati00anne via scripts/get.js: a page shell only"
+        },
+        {
+          "where": "Project Gutenberg",
+          "how": "gutenberg.js --search for Queen Anne and Marlborough: no work by Anne"
+        }
+      ]
     }
   ]
 }
