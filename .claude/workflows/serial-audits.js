@@ -43,8 +43,7 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    If "kind" is "person": audit that person yourself following audits/AUDIT_RULES.md and audits/PROMPT_PEOPLE.md exactly
    (answer every statement, candidates included; no source limit; research to the end within the audit, since no later pass fills gaps; local corpora first; save every
    source in scratchpad/sources/<id>/; YouTube at most 5 requests). Write audits/people/<id>.json, run
-   \`node scripts/validate.js --people <id>\` and fix every error except the uncertainty rule (never raise a confidence to pass
-   it). \`git add\` only that file and commit as "Audit <name>" (no Co-Authored-By or other attribution line), then
+   \`node scripts/validate.js --people <id>\` and fix every error. \`git add\` only that file and commit as "Audit <name>" (no Co-Authored-By or other attribution line), then
    DEPLOY (below) with \`node scripts/images.js && node scripts/build.js --people\` and \`node test.js --people\` (images.js
    looks up the photo of anyone added since its last run), committing people.js, img/ and audits/people-catalog.json as
    "Rebuild people data". Then skip to the end (steps 2-5 are for ideologies).
@@ -60,8 +59,7 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    index.json (create both if missing), so later passes read local files instead of fetching again:
    a plain-text extract (.txt, the copy you search and read) plus the original, gzipped if it is HTML (.html.gz). Extract a PDF
    with pdftotext (it keeps page breaks for page citations) and keep the PDF only if it yields no text (a scan). List both files in index.json.
-   Wikipedia-style neutral standard. Write audits/profiles/<id>.json and run \`node scripts/validate.js <id>\`; fix every error
-   except the uncertainty rule.
+   Wikipedia-style neutral standard. Write audits/profiles/<id>.json and run \`node scripts/validate.js <id>\`; fix every error.
    If it fails the uncertainty rule (exit code 2), keep researching before you commit: search the lines and themes the
    validator names, and the statements still null, in new sources. Stop when they are covered or when the record really has
    nothing more, and say in "notes" which themes you searched. Exit code 2 after that is an honest result: never raise a

@@ -9,7 +9,7 @@ Inputs (filled in by the runner):
 - Statements: `statements.json` in the repo root. Answer every statement, including the ones marked `"status": "candidate"`.
 
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
-run the validator command the runner gives and fix every error except the uncertainty rule.
+run the validator command the runner gives and fix every error.
 
 Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, uncertainty, research to the end)
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what

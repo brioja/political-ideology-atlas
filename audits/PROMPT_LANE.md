@@ -36,8 +36,7 @@ which id you took, so the two sessions never work on the same subject.
 
        node scripts/validate.js [--people] --dir scratchpad/lane-out/<lane> <id>
 
-   and fix every error except the uncertainty rule. Never add or strengthen an answer to pass it;
-   failing it is an acceptable outcome.
+   and fix every error.
 5. Edit no other file. Do not build, test, commit or push.
 
 After each subject, tell the integrator one line: id, kind, known answers, and whether the
