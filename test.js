@@ -297,7 +297,8 @@ console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind 
   const { SHARE_SLOTS } = require("./data.js");
   const fileSlots = lib.readJson(require("path").join(__dirname, "audits", "share-slots.json")).slots;
   assert.deepStrictEqual(SHARE_SLOTS, fileSlots, "data.js share slots differ from audits/share-slots.json; run a full build");
-  assert.strictEqual(new Set(fileSlots).size, fileSlots.length, "audits/share-slots.json has a duplicate");
+  const named = fileSlots.filter((id) => id !== null); // a retired statement's slot is null (scripts/drop-answers.js)
+  assert.strictEqual(new Set(named).size, named.length, "audits/share-slots.json has a duplicate");
   const ids = QUESTIONS.map((q) => q.id);
   const noSlot = ids.filter((id) => !fileSlots.includes(id));
   assert(!noSlot.length, `statements without a share slot (run a full build): ${noSlot.join(", ")}`);

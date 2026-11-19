@@ -83,9 +83,10 @@ const redirectAliases = (id) => { duplicateOf("_"); return catalog().filter((e) 
 // fails if one changes, so a rewording that keeps the meaning (a reader fix) is a deliberate
 // in-place edit: change the text in both files and keep the id and answers (Brandon, 2026-11-09).
 const TEXTS = path.join(ROOT, "audits", "statements", "texts.json");
-// Statements no longer in the bank (dropped, or renamed to a new id): texts.json keeps their text, audits keep
-// no trace of them (Brandon, 2026-11-19: the review history guards current answers against improper nulling;
-// an old statement's history guards nothing). retiredRe matches any of their ids as a whole word.
+// Statements just dropped from the bank (or renamed to a new id) are in texts.json until drop-answers.js has
+// cleared their answers; then it removes them there too, and nothing keeps a retired id (Brandon, 2026-11-19: the
+// review history guards current answers against improper nulling; an old statement's history guards nothing).
+// retiredRe matches any of those ids as a whole word.
 let retiredCache;
 const retiredIds = () => {
   if (!retiredCache) { const bank = new Set(allStatements().map((s) => s.id)); retiredCache = Object.keys(readJson(TEXTS)).filter((k) => !bank.has(k)); }
@@ -223,14 +224,16 @@ const awaitingReaudit = () => {
 // 2026-11-12, an error since 2026-11-19, Brandon: Sonnet's quiz retake showed a model misreading "sometimes necessary"),
 // and "tend to"/"tends to" (nearly anyone grants a tendency; 2026-11-19), and "never" (2026-11-19, Brandon: Sonnet's
 // quiz retake read "never justified" as "rarely justified" and answered 0 or agree on revolution-justified,
-// political-violence-never and defensive-wars-only). "some" is a warning (2026-11-19): often the
+// political-violence-never and defensive-wars-only), and "always" and "whatever" (2026-11-19, Brandon: the same misread in
+// the check of all of Sonnet's reasons: "exceptions exist" answered 0 or agree on initiating-force-wrong, non-intervention
+// and disparate-impact-discrimination). "some" is a warning (2026-11-19): often the
 // claim itself ("some moral truths hold across all cultures"), but it can be a hedge that makes agreeing trivial.
 // Comparatives that, with no later "than", mean "than now" ("Taxes on the wealthy should be significantly higher").
 const COMPARATIVES = ["more", "less", "fewer", "higher", "larger", "greater", "bigger", "smaller", "stronger", "weaker",
   "tighter", "looser", "stricter", "tougher", "harsher", "wider", "narrower", "broader"];
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or",
-    "sometimes", "at times", "occasionally", "in some cases", "tend to", "tends to", "never"],
+    "sometimes", "at times", "occasionally", "in some cases", "tend to", "tends to", "never", "always", "whatever"],
   warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country", "some",
     "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
@@ -266,6 +269,8 @@ const WORDING_REASONS = {
   ...Object.fromEntries(["sometimes", "at times", "occasionally", "in some cases"]
     .map((w) => [w, "a hedge: almost anyone agrees, and disagreeing means \"never\", which audits misread as preferring something else (revolution-justified, humanitarian-intervention, 2026-11-12); state the general claim"])),
   never: "an absolute: someone who thinks it's rare answers as if agreeing (Sonnet on revolution-justified and political-violence-never, 2026-11-19), and disagreeing means only \"at least once\"; state the general claim",
+  always: "an absolute: someone who holds it with exceptions answers as if agreeing (Sonnet on initiating-force-wrong, 2026-11-19), and disagreeing means only \"not in every case\"; state the general claim",
+  whatever: "an absolute (\"whatever the reason\"): someone who holds the claim with exceptions answers 0 or agree (Sonnet on non-intervention and disparate-impact-discrimination, 2026-11-19); state the general claim",
   ...Object.fromEntries(["tend to", "tends to"]
     .map((w) => [w, "a hedge: nearly anyone grants a tendency, so agreeing says little; state the claim itself"])),
   some: "may be a hedge that makes agreeing trivial (\"some X are bad\"); fine where \"some\" is the claim (\"some moral truths hold across all cultures\": disagreeing says none do)",

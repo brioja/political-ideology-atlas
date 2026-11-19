@@ -4,12 +4,14 @@
 // (validate.js). Run it after dropping or renaming a statement. Nothing reads these answers: the matching, quiz
 // and pages use only the bank, and git keeps the old versions (Brandon, 2026-11-18). An audit keeps no trace of a
 // dropped statement (2026-11-19): the script then lists every remaining mention (notes, rationales, sources'
-// usedFor, missing statements), to remove by hand; validate.js fails while any is left.
+// usedFor, missing statements), to remove by hand where it names the statement, and removes the retired ids from
+// texts.json and share-slots.json. So run it once the statement is out of statements.json, clear the mentions,
+// and validate before committing: once the id is gone, validate.js no longer knows it.
 //
 //   node scripts/drop-answers.js [--dry-run]
 const fs = require("fs");
 const path = require("path");
-const { ROOT, allStatements, retiredRe } = require("./lib");
+const { ROOT, allStatements, retiredRe, retiredIds, TEXTS } = require("./lib");
 
 const arg = (name, dflt) => { const i = process.argv.indexOf(name); return i > 0 ? process.argv[i + 1] : dflt; };
 const dry = process.argv.includes("--dry-run");
@@ -87,14 +89,44 @@ for (const d of fs.readdirSync(modelsDir).sort()) {
   answers += gone.length;
   if (!dry) fs.writeFileSync(file, format(a));
 }
+// And the batch-<k>.json files of runs before 2026-11-19, which model-merge.js still reads: one answer per line, so
+// the lines go (Brandon, 2026-11-19: a retired statement's answers are cleared everywhere).
+for (const d of fs.readdirSync(modelsDir).sort()) {
+  const dir = path.join(modelsDir, d);
+  if (!fs.statSync(dir).isDirectory()) continue;
+  for (const f of fs.readdirSync(dir).filter((f) => /^batch-\d+\.json$/.test(f)).sort()) {
+    const file = path.join(dir, f), text = fs.readFileSync(file, "utf8"), a = JSON.parse(text);
+    const gone = Object.keys(a).filter((k) => !bank.has(k));
+    if (!gone.length) continue;
+    const lines = text.split("\n").filter((l) => !gone.some((k) => l.trimStart().startsWith(JSON.stringify(k) + ":")));
+    let out = lines.join("\n").replace(/,(\s*\n\})/, "$1");
+    const want = { ...a }; for (const k of gone) delete want[k];
+    let ok = false; try { ok = JSON.stringify(JSON.parse(out)) === JSON.stringify(want); } catch {}
+    if (!ok) { skipped.push(`models/${d}/${f}`); continue; }
+    answers += gone.length;
+    if (!dry) fs.writeFileSync(file, out);
+  }
+}
 console.log(`${dry ? "would remove" : "removed"} ${answers} answers to statements not in the bank from ${files} audits and ${models} AI models`);
 if (skipped.length) console.log(`not rewritten (formatting doesn't round-trip; fix by hand): ${skipped.join(", ")}`);
-// What's left to remove by hand.
-const re = retiredRe();
+// What's left to remove by hand: the ids where they name the statement (addedAs, usedFor, a review's list, a note
+// on the answer). An id that is also an ordinary word ("non-intervention") stays in prose and quotes.
+const re = retiredRe(), retired = retiredIds();
 if (re) for (const dir of ["profiles", "people", "controls", "models"]) {
   const d = path.join(ROOT, "audits", dir);
   for (const f of fs.readdirSync(d).filter((f) => f.endsWith(".json")).sort()) {
     const text = fs.readFileSync(path.join(d, f), "utf8"), ids = [...new Set(text.match(re) || [])];
     if (ids.length) console.log(`still names ${ids.join(", ")}: audits/${dir}/${f}`);
   }
+}
+// Last, the ids themselves go (Brandon, 2026-11-19: nothing keeps a retired id). texts.json drops their text, and
+// their share-link slots become null: a slot's position is what old links decode, so it stays, unnamed.
+if (retired.length && !dry) {
+  const texts = JSON.parse(fs.readFileSync(TEXTS, "utf8"));
+  for (const id of retired) delete texts[id];
+  fs.writeFileSync(TEXTS, JSON.stringify(texts, null, 1) + "\n");
+  const slotsFile = path.join(ROOT, "audits", "share-slots.json"), slots = JSON.parse(fs.readFileSync(slotsFile, "utf8"));
+  slots.slots = slots.slots.map((id) => (retired.includes(id) ? null : id));
+  fs.writeFileSync(slotsFile, JSON.stringify(slots, null, 1) + "\n");
+  console.log(`retired ids removed from texts.json and share-slots.json: ${retired.join(", ")}`);
 }
