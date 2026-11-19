@@ -210,8 +210,7 @@ reaches has an infinite bar and always fails.
 The same rule applies to
 ideologies, people and AI models. Every answer resting on evidence counts,
 whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred:") that audits under
-rules 2 still hold. A failure names the lines whose bars are too wide. Don't pad answers to pass: an honest
-rejection is the correct outcome.
+rules 2 still hold. A failure names the lines whose bars are too wide.
 
 ## 6. Research to the end, and later passes
 
@@ -256,5 +255,5 @@ says which rule). Build on the existing audit rather than starting over:
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
   the date of your pass. Set `"rules": 7` and bring the whole file up to it, older answers
   and sources included (`validate.js` says what is missing).
-- If the record really has nothing more, failing the uncertainty rule is the correct outcome. Say in `notes`
-  which themes you searched.
+- Research until the record is covered or really has nothing more, and say in `notes` which themes
+  you searched.

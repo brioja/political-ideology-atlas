@@ -21,8 +21,7 @@ is specific to people.
   led, official statements) and their record (votes, laws signed, policies enacted). Prefer what the
   person said or did over what others say about them.
 - For a thin theme, search "<name> on <topic>", their votes, platform sections and interviews. A
-  prominent politician usually needs 8-12 sources; someone with a thin public record needs fewer,
-  and many nulls are then the honest result.
+  prominent politician usually needs 8-12 sources; someone with a thin public record needs fewer.
 - Spread matters as much as count. Each theme feeds different dividing lines, and a person is placed
   only as precisely as their thinnest themes allow: forty answers bunched in economy and society
   with one in government leave several lines guessed, and then they get matched with test-takers
@@ -37,10 +36,9 @@ is specific to people.
   passage only when context makes clear the person themselves is speaking, not a guest or a bit.
 - A maintainer-supplied text (AUDIT_RULES.md, section 2) has a date: check later positions on the
   web.
-- Stop early for someone without a political record (an artist, athlete or entertainer known for
-  other things): if the Wikipedia article and two or three targeted searches ("<name> politics",
-  "<name> views on …") turn up no stated political positions, record the few you found, answer the
-  rest null, and finish. Failing the uncertainty rule is then the correct outcome, and a long search is wasted.
+- For someone without a political record (an artist, athlete or entertainer known for other
+  things), the Wikipedia article and two or three targeted searches ("<name> politics", "<name>
+  views on …") cover it: record the positions they turn up, answer the rest null, and finish.
 - A quiz site's placement of someone is another's account of their views, not evidence. The person
   answering a quiz themselves, answers read aloud on camera as some streamers and pundits have done
   (search "<name> political test" or "<name> political quiz"), is their own words: it answers our

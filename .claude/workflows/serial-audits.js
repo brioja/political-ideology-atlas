@@ -62,8 +62,7 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    Wikipedia-style neutral standard. Write audits/profiles/<id>.json and run \`node scripts/validate.js <id>\`; fix every error.
    If it fails the uncertainty rule (exit code 2), keep researching before you commit: search the lines and themes the
    validator names, and the statements still null, in new sources. Stop when they are covered or when the record really has
-   nothing more, and say in "notes" which themes you searched. Exit code 2 after that is an honest result: never raise a
-   confidence to pass it.
+   nothing more, and say in "notes" which themes you searched.
    Then add an entry for the ideology to audits/ideology-colors.json if it has none, following CONTRIBUTING.md
    "Ideology colors": a documented color tradition where one exists (cite it in "source"), otherwise a best guess from its
    imagery with "basis": "guess", a note starting "guess: " and "verified": false; never only grey, black or white. Copy the
