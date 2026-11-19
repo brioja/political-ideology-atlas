@@ -2070,14 +2070,6 @@
         "s2"
       ]
     },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The Nazis used SA street violence and terror to gain and keep power.",
-      "sources": [
-        "s2"
-      ]
-    },
     "population-transfer": {
       "value": 2,
       "confidence": "high",
@@ -2210,14 +2202,6 @@
       "value": 0,
       "confidence": "low",
       "rationale": "Not relevant to German; völkisch thought valued the national language, but no revival claim.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Nazis called their takeover a national revolution and used a putsch, though they claimed legality after 1925.",
       "sources": [
         "s2"
       ]
@@ -3366,15 +3350,6 @@
         "s5"
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Mein Kampf demands living space in the East won by war, and the program demands colonies and a Greater Germany.",
-      "sources": [
-        "s5",
-        "s1"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "low",
@@ -4119,6 +4094,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "political-violence-never",
+        "revolution-justified",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

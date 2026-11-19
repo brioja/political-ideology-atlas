@@ -642,15 +642,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Revolution is held to be natural and necessary to replace capitalism; Stalin quotes Marx that force is the midwife of every old society.",
-      "sources": [
-        "s3",
-        "s2"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -826,14 +817,6 @@
       "sources": [
         "s3",
         "s4"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Revolutionary force is held to be necessary for social transformation.",
-      "sources": [
-        "s3"
       ]
     },
     "war-builds-character": {
@@ -3868,15 +3851,6 @@
         "s7"
       ]
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "medium",
-      "rationale": "The 1977 Constitution declares the USSR's foreign policy aimed at peace and defence, yet Lenin supported revolutionary and liberation wars, so adherents did not limit force to defence.",
-      "sources": [
-        "s6",
-        "s16"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -5410,6 +5384,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

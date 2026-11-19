@@ -334,20 +334,6 @@
     "gpt-6.1-sol"
    ]
   },
-  "defensive-wars-only": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The doctrine is a programme of wars of conquest: Mein Kampf says land must be won by the sword, and Hitler told his commanders in 1937 that Germany's problem could be solved only by force.",
-   "sources": [
-    "s1",
-    "s3",
-    "b1"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "abolish-armed-forces": {
    "value": -2,
    "confidence": "high",
@@ -842,12 +828,6 @@
    "rationale": "The doctrine's own texts record no position on this.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The doctrine's own texts record no position on this.",
-   "sources": []
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -967,20 +947,6 @@
    "confidence": "low",
    "rationale": "The doctrine's own texts record no position on this.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Conquest and violent displacement are central instruments of the eastern settlement project, not prohibited political means.",
-   "sources": [
-    "b1",
-    "b2",
-    "b4"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
   },
   "separate-church-state": {
    "value": null,
@@ -3399,6 +3365,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "defensive-wars-only",
+    "revolution-justified",
+    "political-violence-never"
    ],
    "nulled": 0
   }

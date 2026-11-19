@@ -362,34 +362,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Maeztu condemned revolutionary slogans and the French Revolution, though Bolivar-era unity projects arose from independence wars.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -550,14 +522,6 @@
       "rationale": "Maeztu spoke of natural and blood aristocracies as the bulwark of societies and defended hierarchy against levelling.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Maeztu's circle plotted a coup and Francoism rose by civil war, though the cultural movement itself is not violent.",
-      "sources": [
-        "s4"
       ]
     },
     "war-builds-character": {
@@ -3123,12 +3087,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": 2,
       "confidence": "medium",
@@ -3873,6 +3831,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

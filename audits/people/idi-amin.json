@@ -424,69 +424,6 @@
     }
    ]
   },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Took power in the 25 January 1971 military coup against President Obote; the ICJ report also records killings and disappearances by units answerable to him, including his bodyguard unit.",
-   "sources": [
-    "n1"
-   ],
-   "reviewHistory": [
-    {
-     "value": -2,
-     "confidence": "medium",
-     "rationale": "Came to power in a 1971 military coup and ruled through the State Research Bureau, whose torture and killings of suspected opponents were central to his rule.",
-     "sources": [
-      "s1",
-      "s6",
-      "b6",
-      "b7"
-     ],
-     "author": "gpt-6.1-sol",
-     "date": "2026-10-26"
-    },
-    {
-     "value": -2,
-     "confidence": "medium",
-     "rationale": "Took power in the 25 January 1971 military coup against President Obote; the ICJ report also records killings and disappearances by units answerable to him, including his bodyguard unit.",
-     "sources": [
-      "n1"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-12"
-    }
-   ]
-  },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (later pass, 2026-11-12): an army coup against an elected government (ICJ report) is not a revolution, so the earlier answer from Wikipedia does not settle this statement.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": -1,
-     "confidence": "low",
-     "rationale": "Took power by a military coup and presented it as ending corruption under the previous government. An army seizure of power is not a revolution, so the answer is low.",
-     "sources": [
-      "s1",
-      "s3",
-      "b1"
-     ],
-     "author": "gpt-6.1-sol",
-     "date": "2026-10-26"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (later pass, 2026-11-12): an army coup against an elected government (ICJ report) is not a revolution, so the earlier answer from Wikipedia does not settle this statement.",
-     "sources": [
-      "n1"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-12"
-    }
-   ]
-  },
   "suppress-opposition": {
    "value": 2,
    "confidence": "medium",
@@ -1265,37 +1202,6 @@
      "rationale": "In August 1972 he told soldiers he wanted the economy in the hands of Ugandan citizens, especially black Ugandans, and decreed the expulsion of Asians (academic study).",
      "sources": [
       "b4"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-12"
-    }
-   ]
-  },
-  "defensive-wars-only": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Began the October 1978 invasion of Tanzania and occupation of the Kagera Salient, an attack and not a defence (New Vision account).",
-   "sources": [
-    "n3"
-   ],
-   "reviewHistory": [
-    {
-     "value": -2,
-     "confidence": "medium",
-     "rationale": "Launched the 1978 invasion of Tanzania and the annexation of the Kagera Salient, which was a war of aggression rather than defence against attack.",
-     "sources": [
-      "s5",
-      "b7"
-     ],
-     "author": "gpt-6.1-sol",
-     "date": "2026-10-26"
-    },
-    {
-     "value": -2,
-     "confidence": "medium",
-     "rationale": "Began the October 1978 invasion of Tanzania and occupation of the Kagera Salient, an attack and not a defence (New Vision account).",
-     "sources": [
-      "n3"
      ],
      "author": "claude-sonnet-5-5",
      "date": "2026-11-12"
@@ -5438,6 +5344,17 @@
     "restrict-pornography"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "political-violence-never",
+    "revolution-justified",
+    "defensive-wars-only"
+   ],
+   "nulled": 1
   }
  ],
  "rules": 5

@@ -407,34 +407,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The speech says the goal is to change not destroy, working within the Constitution; despite the 1970s roots of its militants the governing project was institutional.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "low",
@@ -589,15 +561,6 @@
       "rationale": "The speech speaks of ordinary men and women and equality of opportunity, rejecting natural rulers.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The speech stresses the Constitution and memory without rancor, though the movement honours 1970s militants, so the answer is a qualified yes.",
-      "sources": [
-        "s1",
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -3166,12 +3129,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3911,6 +3868,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

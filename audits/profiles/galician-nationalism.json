@@ -411,34 +411,6 @@
         "s5"
       ]
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "The BNG pursues sovereignty by democratic means and pledges to combat all forms of violence, including political violence.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "medium",
@@ -611,14 +583,6 @@
       "value": -2,
       "confidence": "medium",
       "rationale": "The BNG's democratic and egalitarian charter rejects the idea of born rulers.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The charter commits to combating all forms of violence, including political violence.",
       "sources": [
         "s3"
       ]
@@ -3263,15 +3227,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The BNG is pacifist and rejects imperialist aggression.",
-      "sources": [
-        "s3",
-        "s5"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "medium",
@@ -3991,6 +3946,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

@@ -1114,37 +1114,6 @@
         }
       ]
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Gale presents the Glorious and American Revolutions, justified by rule without the consent of the governed, as the founding milestones of liberal democracy.",
-      "sources": [
-        "s6"
-      ],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Within a democracy change comes through elections, yet the UDHR preamble and the Lockean tradition accept rebellion against tyranny as a last resort, so the answer is split.",
-          "sources": [
-            "s1",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Gale presents the Glorious and American Revolutions, justified by rule without the consent of the governed, as the founding milestones of liberal democracy.",
-          "sources": [
-            "s6"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-10"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1589,36 +1558,6 @@
           "rationale": "The Gale entry grounds liberal democracy in Locke's premise that people are by nature political equals and that no one is good enough to rule another without consent.",
           "sources": [
             "s6"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-10"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s1 (Wikipedia, which is not evidence), s3 (the Universal Declaration of Human Rights, which no defining source makes a text of liberal democracy, so a coatrack). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "Liberal democracy relies on peaceful procedure, but it allows state force and self-defence, and the UDHR preamble accepts rebellion against tyranny as a last resort; the view on never is contested.",
-          "sources": [
-            "s1",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s1 (Wikipedia, which is not evidence), s3 (the Universal Declaration of Human Rights, which no defining source makes a text of liberal democracy, so a coatrack). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-          "sources": [
-            "s1",
-            "s3"
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-10"
@@ -9738,36 +9677,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s1 (Wikipedia, which is not evidence), s5 (Wikipedia, which is not evidence). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Adherents are split between defensive-only views and support for humanitarian or allied intervention.",
-          "sources": [
-            "s1",
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s1 (Wikipedia, which is not evidence), s5 (Wikipedia, which is not evidence). The defining accounts read in this pass (the Gale encyclopedia entry, Zakaria, Plattner, Fukuyama and the V-Dem codebook) do not settle it.",
-          "sources": [
-            "s1",
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-10"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -12161,6 +12070,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ]
 }

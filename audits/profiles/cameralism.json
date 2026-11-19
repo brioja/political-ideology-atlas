@@ -362,36 +362,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "high",
-          "rationale": "Cameralism is the administrative doctrine of the absolute monarch and treats subjects' duty of obedience as basic; Justi sought reform from above.",
-          "sources": [
-            "s2",
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2",
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 2,
       "confidence": "high",
@@ -569,14 +539,6 @@
       "rationale": "Cameralists assumed rule by the prince and his educated officials, and the gentry were to be educated in estate management; birth and training qualified rulers.",
       "sources": [
         "s1",
-        "s2"
-      ]
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Cameralist authors treated state force as legitimate for security and war while rejecting rebellion, so the statement's blanket form splits them.",
-      "sources": [
         "s2"
       ]
     },
@@ -3056,12 +3018,6 @@
         "s2"
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3697,6 +3653,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

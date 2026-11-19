@@ -426,34 +426,6 @@
         }
       ]
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Kemalism calls itself reformist, yet it arose from a war of independence and revolutionary change; mainstream nationalists reject leftist revolution.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -596,14 +568,6 @@
       "rationale": "Gokalp thought leadership through cultural elites, but no stated doctrine of natural rulers.",
       "sources": [
         "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Nationalist movements, including the Ulkucu Grey Wolves, have used violence, and the founding saw war and revolution as legitimate; mainstream rhetoric is mixed.",
-      "sources": [
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -3119,14 +3083,6 @@
         "s2"
       ]
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Ataturk's peace-at-home tradition favours defence, while pan-Turkist Ulkucu strands accept wider aims; adherents are split.",
-      "sources": [
-        "s6"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "medium",
@@ -3821,6 +3777,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

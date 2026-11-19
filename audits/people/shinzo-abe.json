@@ -529,21 +529,6 @@
         "gpt-6.1-sol"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He widened the Self-Defense Forces' role to limited collective self-defence and peace operations, but his government kept Japan's exclusively defence-oriented policy; widening what counts as defence is not fighting non-defensive wars.",
-      "sources": [
-        "s14",
-        "s8",
-        "s17",
-        "b5"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "territorial-expansion": {
       "value": -1,
       "confidence": "medium",
@@ -786,12 +771,6 @@
       ],
       "auditor": "gpt-6.1-sol"
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources searched.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -892,12 +871,6 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources searched.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources searched.",
@@ -3468,6 +3441,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "defensive-wars-only",
+        "revolution-justified",
+        "political-violence-never"
       ],
       "nulled": 0
     }

@@ -353,34 +353,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "It grew within liberal reform politics and sought union through monarchs and diplomacy rather than revolution, though 1848 liberal upheaval surrounded it.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -504,12 +476,6 @@
       ]
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -2790,15 +2756,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Contested: the political wing sought a defensive alliance against Russia and Prussia, but the National Liberals pushed the Eider policy and Scandinavist volunteers fought in 1848 and 1864.",
-      "sources": [
-        "s2",
-        "s7"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "medium",
@@ -3394,6 +3351,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

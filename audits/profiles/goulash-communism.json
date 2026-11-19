@@ -387,34 +387,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Kádár came to power crushing a revolution, but the party still honored the socialist revolution; he opposed counter-revolution.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -556,14 +528,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The regime executed about 350 to 400 people after 1956 and used force to uphold power, so it did not hold violence was never justified.",
-      "sources": [
-        "s3"
-      ]
     },
     "war-builds-character": {
       "value": -2,
@@ -3143,15 +3107,6 @@
         "s5"
       ]
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Kádár stressed defence of socialism yet backed Soviet intervention in 1956 and joined the 1968 invasion of Czechoslovakia, so adherents' position is split.",
-      "sources": [
-        "s1",
-        "s5"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3775,6 +3730,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

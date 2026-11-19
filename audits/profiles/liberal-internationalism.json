@@ -783,12 +783,6 @@
         }
       ]
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining sources record no position on this and no stated principle settles it.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1235,34 +1229,6 @@
           "value": -2,
           "confidence": "medium",
           "rationale": "Doctrine rests on liberal equality and consent, contradicting natural rulers.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "None of the defining sources (Ikenberry's own account, Deudney and Ikenberry, Jahn, the founding documents) takes a position on this question; the earlier answer rested on what adherents tend to think.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "None of the defining sources (Ikenberry's own account, Deudney and Ikenberry, Jahn, the founding documents) takes a position on this question; the earlier answer rested on what adherents tend to think.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Accepts limited force for humanitarian ends and war, but opposes political terror; adherents split on the absolute claim.",
           "sources": [
             "s1"
           ],
@@ -7088,36 +7054,6 @@
       "rationale": "The defining sources record no position on this and no stated principle settles it.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Jahn counts humanitarian intervention, and the liberal commitment to stop genocide behind it, among liberal internationalism's policies, and that uses force for reasons other than defence against attack.",
-      "sources": [
-        "s7"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Liberal internationalism accepts collective-security action and limited authorised intervention beyond defence, such as under UN authority.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Jahn counts humanitarian intervention, and the liberal commitment to stop genocide behind it, among liberal internationalism's policies, and that uses force for reasons other than defence against attack.",
-          "sources": [
-            "s7"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9004,6 +8940,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

@@ -830,34 +830,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, 2026-11-14): the only support was a Wikipedia summary, which is a way to find evidence and not evidence; Stalin's works, Britannica and the Library of Congress study record no position on this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Marxism-Leninism holds revolution necessary; the USSR itself came from one.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, 2026-11-14): the only support was a Wikipedia summary, which is a way to find evidence and not evidence; Stalin's works, Britannica and the Library of Congress study record no position on this statement.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1203,12 +1175,6 @@
       ]
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -6972,36 +6938,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Soviet forces seized eastern Poland in 1939 and invaded Finland in November 1939 (s10).",
-      "sources": [
-        "s10"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "Stalin held wars among capitalist states to be inevitable and the USSR pursued territorial expansion in 1939-1945; adherents nonetheless call Soviet policy a peace policy.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Soviet forces seized eastern Poland in 1939 and invaded Finland in November 1939 (s10).",
-          "sources": [
-            "s10"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9005,6 +8941,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

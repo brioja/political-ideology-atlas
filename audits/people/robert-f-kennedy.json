@@ -248,44 +248,6 @@
     "s4"
    ]
   },
-  "political-violence-never": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Said \"what has violence ever accomplished?\", that no wrongs are righted by riots and that violence breeds violence; he did not say it is never justified.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "Endorsed Lincoln's line that there is no successful appeal from ballot to bullet and said the US is committed to \"peaceful and nonviolent change\"; used \"revolutionary world\" only descriptively.",
-     "sources": [
-      "s1",
-      "s2"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-     "sources": [
-      "s1",
-      "s2"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-12"
-    }
-   ]
-  },
   "limit-guns": {
    "value": 2,
    "confidence": "medium",
@@ -2875,14 +2837,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "In Thirteen Days he recalled telling the ExComm that a surprise attack by a very large nation against a very small one could not be undertaken by the United States if it was to keep its moral position at home and around the globe, and that the struggle against communism was more than physical survival.",
-   "sources": [
-    "td"
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -4106,6 +4060,17 @@
     "restrict-pornography"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "political-violence-never",
+    "revolution-justified",
+    "defensive-wars-only"
+   ],
+   "nulled": 1
   }
  ],
  "rules": 7,

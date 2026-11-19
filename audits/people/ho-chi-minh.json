@@ -463,24 +463,6 @@
     }
    ]
   },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Called revolution the only road to survival and urged everyone to fight the French with whatever weapons they had.",
-   "sources": [
-    "s2",
-    "s5"
-   ]
-  },
-  "revolution-justified": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Wrote that revolution was the only road to survival for the Vietnamese and led armed revolution and war.",
-   "sources": [
-    "s2",
-    "s5"
-   ]
-  },
   "dictatorship-of-proletariat": {
    "value": 1,
    "confidence": "medium",
@@ -1158,35 +1140,6 @@
      "rationale": "He denounced the United States for turning South Vietnam into an American military base and demanded that all American troops be withdrawn so that the Vietnamese settle their own problems.",
      "sources": [
       "letter67"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-12"
-    }
-   ]
-  },
-  "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The evidence for his government's role in the war in the South was Wikipedia, which is no evidence; his own cited text describes the resistance as defensive but does not state a position on wars in general.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 0,
-     "confidence": "low",
-     "rationale": "Described his wars as defensive resistance, but his government also backed an insurgency in the south.",
-     "sources": [
-      "s5",
-      "s25"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-24"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "The evidence for his government's role in the war in the South was Wikipedia, which is no evidence; his own cited text describes the resistance as defensive but does not state a position on wars in general.",
-     "sources": [
-      "s25"
      ],
      "author": "claude-sonnet-5-5",
      "date": "2026-11-12"
@@ -4379,6 +4332,17 @@
     "restrict-pornography"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "political-violence-never",
+    "revolution-justified",
+    "defensive-wars-only"
+   ],
+   "nulled": 1
   }
  ],
  "rules": 7,

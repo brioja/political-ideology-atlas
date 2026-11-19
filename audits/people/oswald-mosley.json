@@ -426,36 +426,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Said power would be sought by legal and constitutional means, and pledged against imprisonment without trial; yet he spoke of a Fascist revolution and a revolution in government machinery.",
-          "sources": [
-            "s3",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-09"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s3",
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 2,
       "confidence": "high",
@@ -633,37 +603,6 @@
       "rationale": "Held that men differ in capacity, that the leader is selected by nature through ability to attract a following, and that statesmen should be trained for politics.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "His BUF stewards, organised in military fashion, fought opponents at meetings, which he described as breaking the 'Red terror' by force.",
-      "sources": [
-        "s9"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Said Blackshirts 'shall certainly meet force with force' against opponents' violence, and that he was ready for the 'politics of passion' if forced.",
-          "sources": [
-            "s4",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "His BUF stewards, organised in military fashion, fought opponents at meetings, which he described as breaking the 'Red terror' by force.",
-          "sources": [
-            "s9"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
       ]
     },
     "war-builds-character": {
@@ -3394,14 +3333,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "In 1936 said Britons fight only to defend the Empire.",
-      "sources": [
-        "s3"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4792,6 +4723,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

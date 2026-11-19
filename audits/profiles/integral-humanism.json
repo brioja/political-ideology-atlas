@@ -345,34 +345,6 @@
    "rationale": "No stated position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "The doctrine rejects conflict as the basis of social change in favour of harmony and evolution, though it called for a break with the status quo.",
-     "sources": [
-      "s1"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-20"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-     "sources": [
-      "s1"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-12"
-    }
-   ]
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -509,14 +481,6 @@
    "value": 0,
    "confidence": "low",
    "rationale": "The ruler must be a protector of dharma, but the lectures give no theory of natural rulers.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "political-violence-never": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "No pacifist doctrine; the lectures accept war to defend dharma and the nation.",
    "sources": [
     "s1"
    ]
@@ -3031,14 +2995,6 @@
     "s1"
    ]
   },
-  "defensive-wars-only": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The lectures defend the nation but do not limit force to defence.",
-   "sources": [
-    "s1"
-   ]
-  },
   "language-defines-nation": {
    "value": -1,
    "confidence": "medium",
@@ -3663,6 +3619,17 @@
     "restrict-pornography"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
+   ],
+   "nulled": 1
   }
  ]
 }

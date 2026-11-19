@@ -398,36 +398,6 @@
         "s2"
       ]
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "UDHR preamble prefers rule of law so people need not rebel; liberals accept resistance to tyranny only as a last resort.",
-          "sources": [
-            "s2",
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2",
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "low",
@@ -573,14 +543,6 @@
       "rationale": "UDHR Art. 1 and 2 give everyone equal dignity and rights without distinction, rejecting natural hierarchy.",
       "sources": [
         "s5"
-      ]
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Split: liberals reject political violence as a method but accept resistance to tyranny.",
-      "sources": [
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -3261,12 +3223,6 @@
         "s5"
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "low",
@@ -4067,6 +4023,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

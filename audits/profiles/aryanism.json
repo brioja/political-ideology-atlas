@@ -361,14 +361,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Nazism and its successors sought a radical racial revolution, though through legal seizure of power in Germany.",
-      "sources": [
-        "s2"
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -503,14 +495,6 @@
       "rationale": "Core claim: the Aryan race is a superior group entitled to rule other peoples.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Hitler presents struggle as natural law and rejects pacifism; Nazism used violence at scale.",
-      "sources": [
-        "s3"
       ]
     },
     "war-builds-character": {
@@ -3035,15 +3019,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Mein Kampf calls for territorial expansion and conquest to secure living space for the race.",
-      "sources": [
-        "s3",
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "medium",
@@ -3723,6 +3698,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

@@ -991,35 +991,6 @@
    "rationale": "No stated position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled in the rules-7 pass: the only evidence was an earlier Wikipedia page, which is a lead and not evidence (AUDIT_RULES.md section 2), and the primary texts and Britannica entries now read (the Doctrine, Rocco, Gentile, Mussolini's speeches, the 1926-34 labour laws, the Lateran Treaty) do not settle this statement.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": -1,
-     "confidence": "medium",
-     "rationale": "Fascism took power through squadrist violence and the March on Rome and called itself a revolution.",
-     "sources": [
-      "s2",
-      "s5"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-21"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled in the rules-7 pass: the only evidence was an earlier Wikipedia page, which is a lead and not evidence (AUDIT_RULES.md section 2), and the primary texts and Britannica entries now read (the Doctrine, Rocco, Gentile, Mussolini's speeches, the 1926-34 labour laws, the Lateran Treaty) do not settle this statement.",
-     "sources": [
-      "s10"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-15"
-    }
-   ]
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -1433,37 +1404,6 @@
      "rationale": "The Doctrine (section 6) affirms 'the fertilising, beneficent and unassailable inequality of men' and a people realised in the will of the few or one.",
      "sources": [
       "s6"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-15"
-    }
-   ]
-  },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Fascist squads used systematic violence against unions, party offices, newspapers and councils from 1919 to 1922 and Mussolini took office after the armed March on Rome.",
-   "sources": [
-    "s10"
-   ],
-   "reviewHistory": [
-    {
-     "value": -2,
-     "confidence": "high",
-     "rationale": "Blackshirt paramilitary violence brought the movement to power and OVRA terror sustained it.",
-     "sources": [
-      "s2",
-      "s5"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-21"
-    },
-    {
-     "value": -2,
-     "confidence": "high",
-     "rationale": "Fascist squads used systematic violence against unions, party offices, newspapers and councils from 1919 to 1922 and Mussolini took office after the armed March on Rome.",
-     "sources": [
-      "s10"
      ],
      "author": "claude-sonnet-5-5",
      "date": "2026-11-15"
@@ -7588,14 +7528,6 @@
     }
    ]
   },
-  "defensive-wars-only": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The Doctrine rejects pacifism and says empire growth is a sign of vitality.",
-   "sources": [
-    "s1"
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -9664,6 +9596,17 @@
     "restrict-pornography"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
+   ],
+   "nulled": 1
   }
  ],
  "rules": 7,

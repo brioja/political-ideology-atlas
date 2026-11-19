@@ -340,34 +340,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "The movement works through referenda, parliament and elections and stresses the rule of law.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -500,14 +472,6 @@
       "value": -1,
       "confidence": "low",
       "rationale": "The manifesto rests on equality before the law and democratic accountability.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The movement is electoral and the manifesto stresses rule of law, though no pacifist statement appears.",
       "sources": [
         "s1"
       ]
@@ -3034,12 +2998,6 @@
         "s2"
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3655,6 +3613,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

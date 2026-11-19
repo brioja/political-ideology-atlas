@@ -126,45 +126,6 @@
     }
    ]
   },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "He led the Pottawatomie killings (1856) and the Harpers Ferry raid (1859), and his last note said the crimes of the land would never be purged away 'but with blood'. He held armed force to be justified against slavery.",
-   "sources": [
-    "b5",
-    "b4"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ],
-   "reviewHistory": [
-    {
-     "value": -2,
-     "confidence": "high",
-     "rationale": "He led the Pottawatomie killings (1856) and the Harpers Ferry raid (1859), and his last note said the crimes of the land would never be purged away 'but with blood'. He held armed force to be justified against slavery.",
-     "sources": [
-      "s3",
-      "b5",
-      "b4",
-      "b2"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": -2,
-     "confidence": "high",
-     "rationale": "He led the Pottawatomie killings (1856) and the Harpers Ferry raid (1859), and his last note said the crimes of the land would never be purged away 'but with blood'. He held armed force to be justified against slavery.",
-     "sources": [
-      "b5",
-      "b4"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-17"
-    }
-   ]
-  },
   "initiating-force-wrong": {
    "value": -2,
    "confidence": "medium",
@@ -189,42 +150,6 @@
      "value": -2,
      "confidence": "medium",
      "rationale": "He led the armed seizure of the federal armory at Harpers Ferry and took hostages, beginning the fighting himself in order to free the enslaved.",
-     "sources": [
-      "b5"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-17"
-    }
-   ]
-  },
-  "revolution-justified": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He led an armed attempt, with a provisional army, to end slavery by force at Harpers Ferry, which the National Park Service describes as his war against slavery.",
-   "sources": [
-    "b5"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ],
-   "reviewHistory": [
-    {
-     "value": -1,
-     "confidence": "low",
-     "rationale": "He set up a provisional government and army to end slavery by force, but Article XLVI says the Constitution is not meant to overthrow any State or the general government and looks only to 'Amendment and Repeal'. The evidence points both ways.",
-     "sources": [
-      "s1",
-      "s3",
-      "b5"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": -1,
-     "confidence": "medium",
-     "rationale": "He led an armed attempt, with a provisional army, to end slavery by force at Harpers Ferry, which the National Park Service describes as his war against slavery.",
      "sources": [
       "b5"
      ],
@@ -394,38 +319,6 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
-  },
-  "defensive-wars-only": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He started the armed seizure of the armory, though he described slavery as an existing war on the enslaved, so he framed his action as defensive. Contested.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-sonnet-5-5",
-   "reviewHistory": [
-    {
-     "value": -1,
-     "confidence": "low",
-     "rationale": "He started the armed seizure of the armory, though he described slavery as an existing war on the enslaved, so he framed his action as defensive. Contested.",
-     "sources": [
-      "s1",
-      "s3"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": -1,
-     "confidence": "low",
-     "rationale": "He started the armed seizure of the armory, though he described slavery as an existing war on the enslaved, so he framed his action as defensive. Contested.",
-     "sources": [
-      "s1"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-17"
-    }
    ]
   },
   "more-religion-public": {
@@ -4228,6 +4121,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "political-violence-never",
+    "revolution-justified",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

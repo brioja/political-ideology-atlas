@@ -354,14 +354,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Stalin presents the 1917 revolution and the 1918 war against interventionists as the foundation of the Soviet state under Lenin's banner.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "low",
@@ -494,14 +486,6 @@
       "rationale": "Rule belonged to the party as vanguard, justified by ideology and not by innate merit.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Stalin presents war, discipline and tribunals as justified by the revolution and defense of the homeland.",
-      "sources": [
-        "s3"
       ]
     },
     "war-builds-character": {
@@ -3091,15 +3075,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Official doctrine called Soviet policy peaceful and the war defensive (1941 broadcast), but the state also expanded in 1939-40; split.",
-      "sources": [
-        "s1",
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3746,6 +3721,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

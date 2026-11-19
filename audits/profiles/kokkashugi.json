@@ -358,15 +358,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Kita urged a military coup and the Shōwa Restoration movements justified violent action to restore direct imperial rule.",
-      "sources": [
-        "s1",
-        "s2"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "low",
@@ -518,15 +509,6 @@
       "sources": [
         "s1",
         "s4"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Coups and assassinations by officers were justified in the name of the emperor.",
-      "sources": [
-        "s1",
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -3036,14 +3018,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "It favoured military strength and Japanese leadership of Asia, so armed forces were meant for expansion as well as defence.",
-      "sources": [
-        "s1"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3681,6 +3655,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

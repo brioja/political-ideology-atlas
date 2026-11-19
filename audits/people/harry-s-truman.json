@@ -754,12 +754,6 @@
       ],
       "auditor": "gpt-6.1-sol"
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -896,12 +890,6 @@
         "b3"
       ],
       "auditor": "gpt-6.1-sol"
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
     },
     "war-builds-character": {
       "value": null,
@@ -3376,20 +3364,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Used force in Korea to defend South Korea, a state under attack, though the US itself had not been attacked; also used atomic bombs in a war begun by Japan.",
-      "sources": [
-        "s9",
-        "s3",
-        "b15"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4673,6 +4647,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

@@ -352,14 +352,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "They were veterans of the American Revolution and Patrick Henry's tradition of resistance to distant authority; they otherwise sought change through amendments and conventions.",
-      "sources": [
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": -2,
       "confidence": "medium",
@@ -496,14 +488,6 @@
       "rationale": "They feared government by aristocratic elites and wanted representatives from the middling sort.",
       "sources": [
         "s6"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Revolutionary-era veterans who defended armed resistance to tyranny; they did not hold a pacifist stance.",
-      "sources": [
-        "s1"
       ]
     },
     "war-builds-character": {
@@ -2876,12 +2860,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": 0,
       "confidence": "low",
@@ -3501,6 +3479,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

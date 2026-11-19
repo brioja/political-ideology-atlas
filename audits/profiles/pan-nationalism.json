@@ -364,14 +364,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Aflaq called for a revolution spreading from country to country to produce Arab unity, and Nkrumah linked unity to completing anti-colonial struggle; other strands were more moderate (Palacky's autonomy within Habsburg lands).",
-      "sources": [
-        "s7"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -504,14 +496,6 @@
       "rationale": "Pan-German racial thought believed in hierarchy, but other strands do not; split.",
       "sources": [
         "s4"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Unity was pursued through revolution, war and conquest in several strands (Pan-German expansion, Ba'athist coups, the Arab struggle with Israel).",
-      "sources": [
-        "s3"
       ]
     },
     "war-builds-character": {
@@ -2927,15 +2911,6 @@
         "s5"
       ]
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Anti-colonial strands emphasise defence, while Pan-German and Pan-Slav strands accepted expansion, so adherents are split.",
-      "sources": [
-        "s2",
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": 2,
       "confidence": "medium",
@@ -3618,6 +3593,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

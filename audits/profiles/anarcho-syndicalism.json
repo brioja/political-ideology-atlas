@@ -532,14 +532,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Rocker holds social transformation cannot come without violent revolutionary convulsions.",
-      "sources": [
-        "s2"
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "medium",
@@ -775,12 +767,6 @@
       ]
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -4798,35 +4784,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (coatrack, 2026-11-17): the position came from s3, the CNT's 1936 Zaragoza resolution, which fails the source-tie check (only an anonymous libcom pamphlet calls it anarcho-syndicalist; Ealham, Living Anarchism 4.4, calls it Puente's agrarian blueprint for an anarchist society). Rocker (s2) doesn't address this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The movement is anti-militarist and opposes wars of states, while the Zaragoza programme keeps an armed population to defend the revolution.",
-          "sources": [
-            "s2",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (coatrack, 2026-11-17): the position came from s3, the CNT's 1936 Zaragoza resolution, which fails the source-tie check (only an anonymous libcom pamphlet calls it anarcho-syndicalist; Ealham, Living Anarchism 4.4, calls it Puente's agrarian blueprint for an anarchist society). Rocker (s2) doesn't address this statement.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -6559,6 +6516,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

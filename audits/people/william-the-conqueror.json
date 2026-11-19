@@ -365,12 +365,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -506,35 +500,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: his use of war and ravaging, including the 1069-70 devastation of the north that Stenton reports, was state force by a ruler holding power, not violence outside lawful authority, and the sources record no statement or act on political violence as such.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "He used war and ravaging to win and hold power, including the winter 1069-70 campaign that laid waste the northern shires; his record shows he held political violence justified.",
-          "sources": [
-            "s3",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: his use of war and ravaging, including the 1069-70 devastation of the north that Stenton reports, was state force by a ruler holding power, not violence outside lawful authority, and the sources record no statement or act on political violence as such.",
-          "sources": [
-            "s8"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-16"
-        }
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -2783,39 +2748,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Chronicle reports he won Maine by war in 1073 and in 1087 made war on his own lord Philip and burned Mantes, and Stenton reports his 1072 invasion of Scotland.",
-      "sources": [
-        "s2",
-        "s8"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "He started wars of conquest: the 1066 invasion of England, the conquest of Maine, the Breton campaign and the 1087 raid into the French Vexin in which Mantes was burned.",
-          "sources": [
-            "s3",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "The Chronicle reports he won Maine by war in 1073 and in 1087 made war on his own lord Philip and burned Mantes, and Stenton reports his 1072 invasion of Scotland.",
-          "sources": [
-            "s2",
-            "s8"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-16"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4020,6 +3952,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

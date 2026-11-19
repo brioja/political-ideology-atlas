@@ -362,34 +362,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "high",
-          "rationale": "Violent revolution is rejected; Garrison called the spirit of Jacobinism one of retaliation and murder.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -526,14 +498,6 @@
       "value": -2,
       "confidence": "high",
       "rationale": "They hold God alone as authority and favour servant leadership and horizontal relations.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Most are pacifists who reject violence even in response to violence and hold that ends never justify means.",
       "sources": [
         "s1"
       ]
@@ -2972,14 +2936,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Tolstoy's non-resistance rejects all military service and violence, including war in defence of the country.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": -2,
       "confidence": "medium",
@@ -3648,6 +3604,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

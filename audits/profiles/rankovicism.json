@@ -318,14 +318,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "A Partisan leader who founded the revolutionary security service, but his later stance was defending the established order, so only a moderate yes.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -453,14 +445,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He created the Partisan-era security service OZNA, ran purges after 1948, and policed Kosovo with force.",
-      "sources": [
-        "s3"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -2913,14 +2897,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Yugoslavia's declared doctrine was defensive.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "low",
@@ -3581,6 +3557,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

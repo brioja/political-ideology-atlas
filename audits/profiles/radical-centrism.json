@@ -586,34 +586,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, 2026-11-12): the manifesto only says the radical middle does not aspire to overthrow corporate capitalism or representative democracy; it does not say whether revolution is ever justified elsewhere.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "The manifesto says the radical middle does not seek to overthrow corporate capitalism or representative democracy, and reform proceeds through institutional change.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, 2026-11-12): the manifesto only says the radical middle does not aspire to overthrow corporate capitalism or representative democracy; it does not say whether revolution is ever justified elsewhere.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -969,12 +941,6 @@
           "date": "2026-11-12"
         }
       ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
     },
     "war-builds-character": {
       "value": null,
@@ -4472,12 +4438,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -5850,6 +5810,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

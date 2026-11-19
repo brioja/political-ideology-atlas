@@ -372,34 +372,6 @@
         "s3"
       ]
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Erdogan-ism claims democratic legitimacy via elections and condemns the 2016 coup attempt, treating coups and revolutions as illegitimate.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "medium",
@@ -553,14 +525,6 @@
       "rationale": "Charismatic leadership is celebrated but not framed as natural rule by a class.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Erdogan portrays Turkey's military operations and counter-terror as justified, but condemns political violence by opponents.",
-      "sources": [
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -3292,14 +3256,6 @@
         "s1"
       ]
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The assertive Ottoman-influenced foreign policy involves interventions abroad, as s2 describes.",
-      "sources": [
-        "s1"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4032,6 +3988,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

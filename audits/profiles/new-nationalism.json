@@ -386,34 +386,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "Roosevelt condemned lawless mob violence as strongly as corporate greed and framed progressivism as reform within constitutional order.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "medium",
@@ -573,14 +545,6 @@
       "sources": [
         "s3",
         "s5"
-      ]
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Roosevelt condemned mob violence and labor violence but defended force in war and law enforcement, so it is split.",
-      "sources": [
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -3090,15 +3054,6 @@
         "s4"
       ]
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The 1912 platform called for a large navy and Roosevelt defended using force abroad, so armed forces were not limited to defence.",
-      "sources": [
-        "s3",
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3740,6 +3695,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

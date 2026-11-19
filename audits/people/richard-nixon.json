@@ -1062,39 +1062,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "defensive-wars-only": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Secretly ordered bombing in Cambodia and (1971) backed the Lam Son 719 offensive into Laos and Cambodia, beyond defence of US territory.",
-   "sources": [
-    "b8"
-   ],
-   "auditor": "claude-sonnet-5-5",
-   "reviewHistory": [
-    {
-     "value": -1,
-     "confidence": "low",
-     "rationale": "Ordered operations in Cambodia and bombing and mining of North Vietnam beyond defence of US territory, which he justified as protecting US troops and allies; contested.",
-     "sources": [
-      "s17",
-      "s21",
-      "b8"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": -1,
-     "confidence": "medium",
-     "rationale": "Secretly ordered bombing in Cambodia and (1971) backed the Lam Son 719 offensive into Laos and Cambodia, beyond defence of US territory.",
-     "sources": [
-      "b8"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-14"
-    }
-   ]
-  },
   "force-without-un": {
    "value": 1,
    "confidence": "medium",
@@ -1270,15 +1237,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "His bicentennial remarks celebrate the American Revolution and urge renewed commitment to its founding principles.",
-   "sources": [
-    "b5"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -1418,15 +1376,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "His authorization of CIA efforts to block Allende by any means supported a coup project outside Chile’s constitutional authority.",
-   "sources": [
-    "b8"
-   ],
-   "auditor": "gpt-6.1-sol"
   },
   "war-builds-character": {
    "value": null,
@@ -4731,6 +4680,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "defensive-wars-only",
+    "revolution-justified",
+    "political-violence-never"
    ],
    "nulled": 0
   }

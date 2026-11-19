@@ -759,14 +759,6 @@
       "rationale": "Marx and Engels' own texts saved for this audit, and the SEP and Marxists Internet Archive accounts of Marxism, state no position that settles this statement.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The proletariat's overthrow of the bourgeoisie is central to the Manifesto.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1137,14 +1129,6 @@
           "author": "claude-sonnet-5-5",
           "date": "2026-11-13"
         }
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Manifesto envisages the working class sweeping away old conditions by force.",
-      "sources": [
-        "s4"
       ]
     },
     "war-builds-character": {
@@ -6091,34 +6075,6 @@
       "rationale": "Marx and Engels' own texts saved for this audit, and the SEP and Marxists Internet Archive accounts of Marxism, state no position that settles this statement.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled in the rules-7 pass: the earlier answer rested on later Marxists and strands disagreeing, which isn't a position in Marx and Engels' own texts; the texts saved for this audit (Manifesto, Principles of Communism, Gotha critique, Civil War in France, the International's instructions) and the SEP state nothing that settles this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Marx supported some wars (revolutionary or national-liberation) and opposed others; there is no pacifist rule.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled in the rules-7 pass: the earlier answer rested on later Marxists and strands disagreeing, which isn't a position in Marx and Engels' own texts; the texts saved for this audit (Manifesto, Principles of Communism, Gotha critique, Civil War in France, the International's instructions) and the SEP state nothing that settles this statement.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-13"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -7982,6 +7938,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

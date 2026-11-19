@@ -928,56 +928,6 @@
       ],
       "auditor": "claude-sonnet-5-5"
     },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Said violence against the government is justified only in extreme cases; ordinary resistance is unlawful, and he used force against nullification (the Force Bill).",
-      "sources": [
-        "s2",
-        "s4",
-        "b6"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Said violence against the government is justified only in extreme cases; ordinary resistance is unlawful, and he used force against nullification (the Force Bill).",
-          "sources": [
-            "s2",
-            "s4",
-            "s7",
-            "b6"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Said violence against the government is justified only in extreme cases; ordinary resistance is unlawful, and he used force against nullification (the Force Bill).",
-          "sources": [
-            "s2",
-            "s4",
-            "b6"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-19"
-        }
-      ]
-    },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Farewell allowed an appeal to arms only against settled usurpation and oppression.",
-      "sources": [
-        "s2",
-        "b6"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
-    },
     "right-to-secede": {
       "value": -2,
       "confidence": "high",
@@ -3605,12 +3555,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4802,6 +4746,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "political-violence-never",
+        "revolution-justified",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

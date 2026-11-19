@@ -356,14 +356,6 @@
         "s1"
       ]
     },
-    "revolution-justified": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Some movements (Iran, Taliban) came to power through revolution while others work through electoral politics.",
-      "sources": [
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -494,14 +486,6 @@
       "value": 0,
       "confidence": "low",
       "rationale": "Religious authority claims differ between movements; split.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Some movements (Hamas, Taliban) use violence while mainstream parties do not; most adherents do not accept an absolute ban.",
       "sources": [
         "s1"
       ]
@@ -2885,14 +2869,6 @@
         "s1"
       ]
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "No common doctrine on use of force; movements differ.",
-      "sources": [
-        "s1"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "medium",
@@ -3561,6 +3537,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

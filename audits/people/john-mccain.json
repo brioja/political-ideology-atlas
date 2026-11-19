@@ -472,15 +472,6 @@
         "s1"
       ]
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Backed uprisings against Mubarak, Gaddafi and Yanukovych and urged arming Syrian rebels, but never addressed revolution as a general principle.",
-      "sources": [
-        "s1",
-        "s2"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -606,15 +597,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Supported armed resistance by Contras, Libyan rebels and the Free Syrian Army and favoured rogue-state rollback by arming opposition forces.",
-      "sources": [
-        "s1",
-        "s2"
-      ]
     },
     "war-builds-character": {
       "value": -2,
@@ -2887,15 +2869,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Backed first-use of force in Iraq 2003, Kosovo, Libya and rogue-state rollback.",
-      "sources": [
-        "s1",
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3470,6 +3443,17 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-19",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 0
     }
   ]
 }

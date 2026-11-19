@@ -339,36 +339,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "high",
-          "rationale": "The program rejects collectivist revolution and Biétry turned against Marxism and the general strike; workers should enter the factory as partners, not burn it.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -514,15 +484,6 @@
       "confidence": "low",
       "rationale": "No documented view; the movement appealed to workers yet endorsed a strong state.",
       "sources": [
-        "s2"
-      ]
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The movement rejected revolutionary violence yet was belligerently nationalist; no clear pacifist principle.",
-      "sources": [
-        "s1",
         "s2"
       ]
     },
@@ -2990,14 +2951,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Patriotic and anti-internationalist but no stated doctrine on wars of aggression.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3655,6 +3608,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

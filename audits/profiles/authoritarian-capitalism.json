@@ -402,34 +402,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "Deng treats challenges to the Party's leadership as threats to stability to be dealt with sternly; the model is counter-revolutionary toward its own order.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -572,14 +544,6 @@
       "rationale": "Lee argued for governing by an able elite chosen by merit and paid well; this is meritocratic rather than hereditary.",
       "sources": [
         "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Deng's dictatorship over the enemy and Lee's detention without trial treat state coercion as legitimate, though violence by opponents is condemned; adherents lean disagree.",
-      "sources": [
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -3155,15 +3119,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "These regimes use force for national aims, e.g. the Anti-Secession Law authorising non-peaceful means against Taiwan.",
-      "sources": [
-        "s8",
-        "s7"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "low",
@@ -3868,6 +3823,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

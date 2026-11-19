@@ -643,35 +643,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Rerum novarum 20 and 38 tell workers to avoid violence and disorder, but neither text addresses political revolution against a government.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "Leo XIII tells workers to avoid violence and agitators, and corporatism was counter-revolutionary in origin.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Rerum novarum 20 and 38 tell workers to avoid violence and disorder, but neither text addresses political revolution against a government.",
-          "sources": [
-            "s2",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1035,35 +1006,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Quadragesimo anno and Rerum novarum, read in full this pass, state no position that settles this statement; the earlier answer rested on inference or on Wikipedia summaries.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Leo XIII urges workers to avoid violence, yet the Austrian regime used force in February 1934 and Catholic just-war thinking allows it.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Quadragesimo anno and Rerum novarum, read in full this pass, state no position that settles this statement; the earlier answer rested on inference or on Wikipedia summaries.",
-          "sources": [
-            "s2",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -6218,12 +6160,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -8249,6 +8185,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ],
   "rules": 7,

@@ -337,34 +337,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Guénon names the Revolution as a result of usurpation and 'subversion' is Evola's word for modern change, though Evola grants the differentiated man the right to oppose a decadent state.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -511,14 +483,6 @@
       "rationale": "Guénon defines caste as individual nature predisposing each man to a function and blames the denial of these differences for the social chaos.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Evola gives war and combat a spiritual value and says danger reawakens the spirit, so he would not hold violence never justified; Guénon is quietist but does not renounce force.",
-      "sources": [
-        "s4"
       ]
     },
     "war-builds-character": {
@@ -2973,14 +2937,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Evola gives war spiritual value beyond defence, and heroism justifies it.",
-      "sources": [
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "low",
@@ -3659,6 +3615,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

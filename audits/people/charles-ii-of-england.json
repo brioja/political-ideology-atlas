@@ -319,14 +319,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The 1681 declaration, as defended by Dryden, treats armed rising against a sovereign as rebellion even when feared harm is possible.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -461,12 +453,6 @@
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
-      "sources": []
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
       "sources": []
     },
     "war-builds-character": {
@@ -2830,37 +2816,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Hume reports that he declared war on the Dutch in 1672 on reasons the historian calls false and frivolous, and began the earlier war in 1665, so he started wars.",
-      "sources": [
-        "s10"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "He began the Third Anglo-Dutch War in 1672. The Treaty of Dover committed him to back a French invasion of the Dutch Republic, and the Second Dutch War began with English attempts on Dutch possessions.",
-          "sources": [
-            "s4",
-            "s6"
-          ],
-          "author": "claude-haiku-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Hume reports that he declared war on the Dutch in 1672 on reasons the historian calls false and frivolous, and began the earlier war in 1665, so he started wars.",
-          "sources": [
-            "s10"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4072,6 +4027,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

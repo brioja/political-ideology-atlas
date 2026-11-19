@@ -494,12 +494,6 @@
     "s16"
    ]
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -621,34 +615,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "points to evidence but is not evidence: The only source was Wikipedia, which is not evidence; no statement of his on political violence generally was found in the Commons record read.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 2,
-     "confidence": "medium",
-     "rationale": "Said after the attempt on Trump that political violence in any form has no place in societies; condemns rioters and Hamas terrorism.",
-     "sources": [
-      "s16"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-22"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "points to evidence but is not evidence: The only source was Wikipedia, which is not evidence; no statement of his on political violence generally was found in the Commons record read.",
-     "sources": [
-      "s16"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-13"
-    }
-   ]
   },
   "war-builds-character": {
    "value": null,
@@ -2947,12 +2913,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -4243,6 +4203,17 @@
     "restrict-pornography"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
+   ],
+   "nulled": 1
   }
  ],
  "rules": 7,

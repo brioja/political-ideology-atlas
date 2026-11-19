@@ -1570,39 +1570,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Invaded Iran in 1980 (Library of Congress study) and occupied Kuwait in 1990-91 (Human Rights Watch).",
-      "sources": [
-        "s15",
-        "s21"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Planned and ordered the 1980 invasion of Iran and told the FBI he devised the 1990 invasion of Kuwait.",
-          "sources": [
-            "s7",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Invaded Iran in 1980 (Library of Congress study) and occupied Kuwait in 1990-91 (Human Rights Watch).",
-          "sources": [
-            "s15",
-            "s21"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "force-without-un": {
       "value": 2,
       "confidence": "medium",
@@ -1907,68 +1874,6 @@
           "rationale": "Told the FBI that Israel's control of Arab lands is the root of the region's problems and that Kuwaitis 'were asking' Iraq to invade; he did not address annexation without consent as such, so the evidence points both ways.",
           "sources": [
             "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Library of Congress study covers the 1968 Baathist seizure of power and his rise through it, and he took the presidency in 1979 on the revolution's course.",
-      "sources": [
-        "s15"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Took part in the 1959 assassination attempt, the 1963 and 1968 Ba'ath coups, and called the 1968 revolution the foundation of the state.",
-          "sources": [
-            "s7",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "The Library of Congress study covers the 1968 Baathist seizure of power and his rise through it, and he took the presidency in 1979 on the revolution's course.",
-          "sources": [
-            "s15"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Library of Congress study reports he ran a party and state that tried and executed party rivals in 1979 and he ordered the 1980 executions of Baqir as-Sadr and his sister.",
-      "sources": [
-        "s15"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Personally led political violence and executions including the 1968 removals and the 1979 purge.",
-          "sources": [
-            "s7",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "The Library of Congress study reports he ran a party and state that tried and executed party rivals in 1979 and he ordered the 1980 executions of Baqir as-Sadr and his sister.",
-          "sources": [
-            "s15"
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-12"
@@ -5127,6 +5032,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "defensive-wars-only",
+        "revolution-justified",
+        "political-violence-never"
       ],
       "nulled": 0
     }

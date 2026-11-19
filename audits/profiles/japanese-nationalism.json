@@ -365,38 +365,6 @@
       "rationale": "The sources searched (Kokutai no Hongi, Rescript on Education, Meiji Constitution, Nippon Kaigi's programme) record no position on this, and no stated principle settles it.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "The Kokutai no Hongi says revolution cannot coexist with the national polity, and the Meiji Imperial Oath binds the emperor to maintain the ancient form of government and amend only by the Constitution's procedure; Nippon Kaigi works through public campaigns and the Diet.",
-          "sources": [
-            "s1",
-            "s3",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-30"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1",
-            "s3",
-            "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -513,12 +481,6 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources searched (Kokutai no Hongi, Rescript on Education, Meiji Constitution, Nippon Kaigi's programme) record no position on this, and no stated principle settles it.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "The sources searched (Kokutai no Hongi, Rescript on Education, Meiji Constitution, Nippon Kaigi's programme) record no position on this, and no stated principle settles it.",
@@ -2699,15 +2661,6 @@
         "s6"
       ]
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Split: the Kokutai no Hongi presents the Silla expedition, the annexation of Korea and Manchukuo as the emperor's will, while Nippon Kaigi frames its military aims as defence and peacekeeping.",
-      "sources": [
-        "s1",
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3285,6 +3238,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

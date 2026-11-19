@@ -958,37 +958,6 @@
       "rationale": "The defining sources (Thompson, the Encyclopedia of European Social History, Olneck, Dorsey) and the Americanism texts they tie to it (Roosevelt's 1894 and 1915 statements, the Legion preamble and Legion Magazine account, Rand's Textbook, Read's speech) record no position that settles this statement.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Thompson calls the Declaration of Independence both a heroic action and the founding statement of Americanism's revolutionary idea of individual rights.",
-      "sources": [
-        "s6"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "The founding is a justified revolution for liberty, but the creed otherwise stresses law and constitutional order, so only mild agreement.",
-          "sources": [
-            "s1",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Thompson calls the Declaration of Independence both a heroic action and the founding statement of Americanism's revolutionary idea of individual rights.",
-          "sources": [
-            "s6"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-08"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1461,36 +1430,6 @@
           "rationale": "Nulled: the first pass answered from s1, s4, but Wikipedia is not evidence under the shared rules; the Gettysburg Address is not tied to Americanism by its defining sources. Neither the defining sources nor the Americanism texts they tie to it settle this statement.",
           "sources": [
             "s1",
-            "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-08"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s3, s4, but the Gettysburg Address is not tied to Americanism by its defining sources; the cited Roosevelt or Legion text does not itself state a position on this statement. Neither the defining sources nor the Americanism texts they tie to it settle this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "The creed honours the Revolution and wartime sacrifice but maintains law and order, so absolute pacifism is rejected.",
-          "sources": [
-            "s3",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s3, s4, but the Gettysburg Address is not tied to Americanism by its defining sources; the cited Roosevelt or Legion text does not itself state a position on this statement. Neither the defining sources nor the Americanism texts they tie to it settle this statement.",
-          "sources": [
-            "s3",
             "s4"
           ],
           "author": "claude-opus-5-5",
@@ -7914,12 +7853,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining sources (Thompson, the Encyclopedia of European Social History, Olneck, Dorsey) and the Americanism texts they tie to it (Roosevelt's 1894 and 1915 statements, the Legion preamble and Legion Magazine account, Rand's Textbook, Read's speech) record no position that settles this statement.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9904,6 +9837,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

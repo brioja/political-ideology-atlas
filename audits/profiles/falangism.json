@@ -253,15 +253,6 @@
         "s1"
       ]
     },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Payne lists violence among the Falange's means of regenerating Spain, and point 26 calls its method direct, bold and combative.",
-      "sources": [
-        "s1",
-        "s2"
-      ]
-    },
     "initiating-force-wrong": {
       "value": -2,
       "confidence": "medium",
@@ -269,14 +260,6 @@
       "sources": [
         "s1",
         "s2"
-      ]
-    },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Point 26 calls for a revolution to impose the new order against resistance.",
-      "sources": [
-        "s1"
       ]
     },
     "direct-action": {
@@ -2717,12 +2700,6 @@
       "rationale": "The Twenty-Six Points and Payne's account record no position on this, and no stated principle settles it.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The Twenty-Six Points and Payne's account record no position on this, and no stated principle settles it.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3240,6 +3217,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "political-violence-never",
+        "revolution-justified",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

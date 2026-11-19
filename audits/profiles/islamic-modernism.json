@@ -361,34 +361,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Abduh favoured educational reform over revolution though he backed the Urabi revolt; mainstream modernists preferred gradual constitutional change.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1437,14 +1409,6 @@
       "value": -1,
       "confidence": "low",
       "rationale": "Constitutionalism and popular sovereignty cut against a natural-rulers claim.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Modernists treated jihad as defensive, not pacifist; they backed some resistance such as the Urabi revolt.",
       "sources": [
         "s2"
       ]
@@ -2996,14 +2960,6 @@
         "s2"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Modernists such as Khan and Abduh read jihad as chiefly defensive; recalled from background knowledge, not from these sources, so low.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "medium",
@@ -3675,6 +3631,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

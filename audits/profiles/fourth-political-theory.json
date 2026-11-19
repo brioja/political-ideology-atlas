@@ -932,38 +932,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Dugin calls for a global revolution against Western political modernity, and the book describes the theory as a revolt against the modern world.",
-      "sources": [
-        "s9",
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "He calls for a conservative revolution against the liberal order, though against modernity rather than as class revolution.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Dugin calls for a global revolution against Western political modernity, and the book describes the theory as a revolt against the modern world.",
-          "sources": [
-            "s9",
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "medium",
@@ -1324,36 +1292,6 @@
           "rationale": "The Great Awakening programme divides people by the structure of their soul into rare philosophers and warrior-leaders and the majority, and calls for an elite education for the first two.",
           "sources": [
             "s9"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Chapter 14 says the American Empire should be destroyed and that those who deprive Russia of freedom will meet a reaction.",
-      "sources": [
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "He frames his struggle as a sacred war for God and traditional values and supports war against the West.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Chapter 14 says the American Empire should be destroyed and that those who deprive Russia of freedom will meet a reaction.",
-          "sources": [
-            "s5"
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
@@ -8552,34 +8490,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s3, but the Dugin interview s3 states no position on this statement. Neither The Fourth Political Theory (s5) nor Dugin's later 4PT texts settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "He supports war in Ukraine as civilizational, expansion of influence and conquest.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s3, but the Dugin interview s3 states no position on this statement. Neither The Fourth Political Theory (s5) nor Dugin's later 4PT texts settle it.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -10634,6 +10544,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

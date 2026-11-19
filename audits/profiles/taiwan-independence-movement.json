@@ -326,14 +326,6 @@
       "rationale": "Stated only in the DPP platform's general programme (democratic order, defence, culture), not in the movement's texts as part of the national cause; left null as borrowing under the scope rule.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The 1964 Declaration sets self-defence as the principle for the armed forces and rejects the offensive 'reconquer the mainland' war as impossible.",
-      "sources": [
-        "s4"
-      ]
-    },
     "democracy-best": {
       "value": 2,
       "confidence": "medium",
@@ -523,21 +515,6 @@
         "s1",
         "s2"
       ]
-    },
-    "revolution-justified": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Split: the 1964 Declaration called for overthrowing the KMT regime, while the DPP platform says no political dispute should be settled by revolutionary means.",
-      "sources": [
-        "s4",
-        "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The platform rules out violent means but keeps a right of resistance and self-defence, and the 1964 Declaration called for overthrowing the regime; neither settles 'never'.",
-      "sources": []
     },
     "restrict-hate-speech": {
       "value": 1,
@@ -3325,6 +3302,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "defensive-wars-only",
+        "revolution-justified",
+        "political-violence-never"
       ],
       "nulled": 0
     }

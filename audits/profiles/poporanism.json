@@ -320,36 +320,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Unlike the Narodniks, Stere did not think revolution was needed in Romania and favoured parliamentary reform; he warned forced collectivisation could breed Bolshevism.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "low",
@@ -474,14 +444,6 @@
       "value": -1,
       "confidence": "medium",
       "rationale": "Poporanism was directed against aristocratic control of the peasantry and sought universal suffrage, so innate fitness to rule is rejected.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "No doctrine of absolute pacifism; Stere was anti-revolutionary but not pacifist.",
       "sources": [
         "s2"
       ]
@@ -2877,14 +2839,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Stere's pro-Central Powers stance aimed to regain Bessarabia, an aim not clearly defensive, so adherents are not clearly committed either way.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "medium",
@@ -3525,6 +3479,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

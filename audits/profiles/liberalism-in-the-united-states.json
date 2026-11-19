@@ -1170,36 +1170,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Declaration asserts a right of the people to alter or abolish destructive government, though it counsels that long-established governments should not be changed for light causes.",
-      "sources": [
-        "s2"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The Declaration of Independence asserts the people's right to alter or abolish a government that destroys their rights, a founding text of the tradition.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-10-22"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The Declaration asserts a right of the people to alter or abolish destructive government, though it counsels that long-established governments should not be changed for light causes.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-13"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1644,36 +1614,6 @@
           "rationale": "The Declaration states that all men are created equal and that just government rests on consent, which leaves no class of people born to rule.",
           "sources": [
             "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-13"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled on this later pass: the sources first used for it (Wikipedia, the general SEP entry) do not state this position for American liberalism, and the primary record read this pass (Roosevelt, Truman, Kennedy and Johnson speeches) is silent on it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "The tradition honors the revolution against Britain yet rejects violence inside a working democracy, so it does not hold that violence is never justified.",
-          "sources": [
-            "s2",
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-10-22"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled on this later pass: the sources first used for it (Wikipedia, the general SEP entry) do not state this position for American liberalism, and the primary record read this pass (Roosevelt, Truman, Kennedy and Johnson speeches) is silent on it.",
-          "sources": [
-            "s3",
-            "s4"
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-13"
@@ -7791,12 +7731,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9460,6 +9394,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

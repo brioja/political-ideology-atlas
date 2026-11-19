@@ -398,14 +398,6 @@
         "s4"
       ]
     },
-    "revolution-justified": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The 1848 revolution and 1956 uprising are national symbols, but adherents today stress order; split.",
-      "sources": [
-        "s2"
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "medium",
@@ -548,14 +540,6 @@
       "value": 0,
       "confidence": "low",
       "rationale": "The nobility's historic leadership role is part of the national tradition, but modern adherents appeal to popular mandate.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "1848 and 1956 are celebrated armed struggles, yet current nationalists operate by parliamentary means.",
       "sources": [
         "s2"
       ]
@@ -3321,14 +3305,6 @@
         "s4"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Hungary's modern posture and Orbán's peace line on Ukraine support defensive use.",
-      "sources": [
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "medium",
@@ -4033,6 +4009,17 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-19",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 0
     }
   ]
 }

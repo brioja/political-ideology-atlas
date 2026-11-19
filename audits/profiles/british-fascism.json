@@ -354,14 +354,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The BUF aimed to take power via the existing political order while using paramilitary mobilisation; Mosley said voters could still remove governments, so adherents are split on revolution.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -505,14 +497,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Blackshirt stewards fought opponents, and the movement saw force as necessary: \"We have the Power, but Fascism alone has the Will.\"",
-      "sources": [
-        "s3"
-      ]
     },
     "war-builds-character": {
       "value": 1,
@@ -3122,15 +3106,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The BUF opposed wars except in defence of Britain or the Empire and opposed the guarantee to Poland.",
-      "sources": [
-        "s2",
-        "s3"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3796,6 +3771,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

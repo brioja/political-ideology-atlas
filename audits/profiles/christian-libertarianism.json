@@ -389,34 +389,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Sandlin says Christian libertarianism furnishes no warrant for insurrection or revolution; some other adherents allow resistance to tyranny.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -554,14 +526,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "medium",
-      "rationale": "Sandlin rejects insurrection, but the Genesis 9:6 mandate allows state force to punish aggression; so not absolute.",
-      "sources": [
-        "s3"
-      ]
     },
     "war-builds-character": {
       "value": -2,
@@ -3087,14 +3051,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Paul rejects aggression and Christianity as justification; defence and bringing attackers to justice accepted.",
-      "sources": [
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": 0,
       "confidence": "low",
@@ -3768,6 +3724,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

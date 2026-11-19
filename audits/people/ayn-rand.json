@@ -763,14 +763,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Held force to overthrow a political system is justified only against tyranny, citing the American Revolution.",
-      "sources": [
-        "s27"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -922,15 +914,6 @@
       "sources": [
         "s18",
         "s12"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Held that force is proper in retaliation against those who initiate force and that revolution against tyranny is justified.",
-      "sources": [
-        "s37",
-        "s27"
       ]
     },
     "war-builds-character": {
@@ -3468,15 +3451,6 @@
         "s19"
       ]
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Contested: held force is justified only in retaliation and the draft only for unjust wars, yet said any free country may invade a dictatorship.",
-      "sources": [
-        "s37",
-        "s23"
-      ]
-    },
     "language-defines-nation": {
       "value": -2,
       "confidence": "medium",
@@ -4108,6 +4082,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

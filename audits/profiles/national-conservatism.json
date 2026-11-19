@@ -854,48 +854,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Statement says necessary change must take place through the law, which is how national traditions and the nation itself are preserved.",
-      "sources": [
-        "s1"
-      ],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The statement insists on the rule of law and constitutional change; conservatism distrusts revolution.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        },
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The Statement says necessary change must take place through the law, which is how national traditions and the nation itself are preserved.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1301,12 +1259,6 @@
       ]
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -6670,34 +6622,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (rules 7 pass): the sources checked in this pass (the Statement of Principles and Hazony's own words) do not settle this statement; the earlier answer rested on s1 and adherents' general views.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "It supports a strong military used for national interest and rejects liberal wars; no stated ban on pre-emptive action, so low.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (rules 7 pass): the sources checked in this pass (the Statement of Principles and Hazony's own words) do not settle this statement; the earlier answer rested on s1 and adherents' general views.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -8601,6 +8525,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ],
   "rules": 7,

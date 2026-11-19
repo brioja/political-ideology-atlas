@@ -989,39 +989,6 @@
       "rationale": "The sources record no position on this.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Manifesto calls the movement 'the Revolution on the march' and Salgado accepts the use of force when authority can no longer uphold the law.",
-      "sources": [
-        "s5",
-        "s10"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The AIB described its aim as an 'Internal Revolution', launched a coup attempt in 1938, and initially sought to 'implant' the Integral State.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The Manifesto calls the movement 'the Revolution on the march' and Salgado accepts the use of force when authority can no longer uphold the law.",
-          "sources": [
-            "s5",
-            "s10"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -1443,36 +1410,6 @@
           "sources": [
             "s5",
             "s8"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Salgado condemns sedition and conspiracy in principle but says Integralists have the duty to use force if constituted authority collapses, to prevent communism or anarchy.",
-      "sources": [
-        "s10"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The AIB had a militia, street brawls against communists and a 1938 putsch attempt.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Salgado condemns sedition and conspiracy in principle but says Integralists have the duty to use force if constituted authority collapses, to prevent communism or anarchy.",
-          "sources": [
-            "s10"
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
@@ -7495,12 +7432,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no position on this.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9255,6 +9186,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

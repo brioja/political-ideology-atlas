@@ -331,34 +331,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "The Fatherland Front crushed the 1934 uprising and Nazi putsch; postwar patriotism is constitutional.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -491,14 +463,6 @@
       "value": 0,
       "confidence": "low",
       "rationale": "Authoritarian strand held elite leadership, postwar patriots do not; split.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Interwar strand used force against left and Nazis, postwar patriots reject violence; split.",
       "sources": [
         "s4"
       ]
@@ -2925,14 +2889,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Neutrality law aims at independence and inviolability of territory.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": -2,
       "confidence": "high",
@@ -3562,6 +3518,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

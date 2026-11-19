@@ -747,12 +747,6 @@
    ],
    "auditor": "claude-opus-5-5"
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "experts-over-public": {
    "value": 1,
    "confidence": "low",
@@ -900,15 +894,6 @@
    "sources": [
     "s4",
     "s18"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
-  "political-violence-never": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Condemned the killing of the UnitedHealthcare CEO: if people kill whoever they have a problem with 'everybody is going to be killing each other' (2024); his calls for violence concern state force.",
-   "sources": [
-    "s7"
    ],
    "auditor": "claude-opus-5-5"
   },
@@ -3291,17 +3276,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Strongly disagreed that no cause justifies starting a war (2026) and backed starting the Iran war (2025-26).",
-   "sources": [
-    "s3",
-    "s22",
-    "s37"
-   ],
-   "auditor": "claude-opus-5-5"
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3898,6 +3872,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

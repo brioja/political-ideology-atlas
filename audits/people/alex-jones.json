@@ -487,15 +487,6 @@
     "s14"
    ]
   },
-  "revolution-justified": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He invokes a renewed American Revolution if the government attempts to confiscate firearms.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -619,16 +610,6 @@
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": -1,
-   "confidence": "high",
-   "rationale": "He presents armed resistance to disarmament and tyranny as justified; his position is conditional rather than a rejection of all political violence.",
-   "sources": [
-    "s2",
-    "b1"
-   ],
-   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "war-builds-character": {
    "value": null,
@@ -2832,15 +2813,6 @@
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Welcomes a new order with 'not launching offensive wars' and 'strength through peace' (20260308_Sun 00:38:44) and opposes the 2026 Iran war.",
-   "sources": [
-    "c1"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3409,6 +3381,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

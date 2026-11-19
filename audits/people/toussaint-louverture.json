@@ -303,24 +303,6 @@
         "s2"
       ]
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He joined the 1791 slave insurrection as its 'general doctor', helping plan the defence of its camp against the slaveowners' forces.",
-      "sources": [
-        "s6"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He took part in the 1791 insurrection and arrested the French commissioner Roume and forced out Sonthonax and Hedouville to keep control of the colony.",
-      "sources": [
-        "s6",
-        "s5",
-        "s8"
-      ]
-    },
     "initiating-force-wrong": {
       "value": -2,
       "confidence": "medium",
@@ -2734,12 +2716,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3847,6 +3823,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

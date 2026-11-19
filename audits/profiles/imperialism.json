@@ -562,12 +562,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -763,34 +757,6 @@
       "sources": [
         "s5",
         "s9"
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled in the rules-7 pass: the cited sources do not state a position that settles this statement, so the earlier answer was an inference or rested on Wikipedia or on a general remark.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Conquest by force was the normal means of acquiring and holding empire.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled in the rules-7 pass: the cited sources do not state a position that settles this statement, so the earlier answer was an inference or rested on Wikipedia or on a general remark.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
       ]
     },
     "war-builds-character": {
@@ -4071,36 +4037,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Chamberlain admits that extending British rule meant bloodshed and argues that the gains to civilisation outweigh it, an explicit defence of wars of expansion.",
-      "sources": [
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Chamberlain admits that extending British rule meant bloodshed and lost lives and argues that the gains to civilisation outweigh them, an explicit defence of wars of expansion.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Chamberlain admits that extending British rule meant bloodshed and argues that the gains to civilisation outweigh it, an explicit defence of wars of expansion.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -5580,6 +5516,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

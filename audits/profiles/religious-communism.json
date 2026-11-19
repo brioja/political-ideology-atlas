@@ -343,36 +343,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Winstanley and Hutterites renounce armed force, though Müntzer in the Peasants' War is a violent counter-example, so the mainstream is against.",
-          "sources": [
-            "s3",
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s3",
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "medium",
@@ -511,15 +481,6 @@
       "rationale": "Winstanley stated all are equals in creation and none was ordained to rule another.",
       "sources": [
         "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Winstanley abhorred arms and Hutterites hold nonresistance, though Müntzer's strand was violent.",
-      "sources": [
-        "s3",
-        "s4"
       ]
     },
     "war-builds-character": {
@@ -3032,14 +2993,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Hutterites and Diggers renounce force, and the sources contrast Müntzer's armed variant as exceptional.",
-      "sources": [
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3679,6 +3632,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

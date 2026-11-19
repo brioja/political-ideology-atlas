@@ -421,15 +421,6 @@
       "rationale": "The Pan-Arabist texts (the Ba'th constitution, Aflaq, Nasser, the League Pact) state no position on this, and its national doctrine does not settle it.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The Ba'th constitution declares the party revolutionary, and the Charter (ch. 2) says revolution is the only way for the Arab nation to free itself and to overcome underdevelopment.",
-      "sources": [
-        "s1",
-        "s13"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -567,16 +558,6 @@
       "confidence": "low",
       "rationale": "The Pan-Arabist texts (the Ba'th constitution, Aflaq, Nasser, the League Pact) state no position on this, and its national doctrine does not settle it.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Aflaq says unity must be a fighting unity with the people armed, and Nasser calls revolution the only course for the Arab nation and says freedom was won by force, even of arms.",
-      "sources": [
-        "s2",
-        "s13",
-        "s12"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -2849,12 +2830,6 @@
       "rationale": "The Pan-Arabist texts (the Ba'th constitution, Aflaq, Nasser, the League Pact) state no position on this, and its national doctrine does not settle it.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The Pan-Arabist texts (the Ba'th constitution, Aflaq, Nasser, the League Pact) state no position on this, and its national doctrine does not settle it.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": 2,
       "confidence": "high",
@@ -3416,6 +3391,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

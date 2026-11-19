@@ -883,46 +883,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Modelo describes its aim as a revolution in peace, done within the law, and wants violence replaced by ideas in political struggle.",
-      "sources": [
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Perón wanted national unity not struggle, though Revolutionary Peronism took a different line, so adherents are mostly against revolution.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        },
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The Modelo describes its aim as a revolution in peace, done within the law, and wants violence replaced by ideas in political struggle.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1356,36 +1316,6 @@
           "rationale": "Nulled (later pass, 2026-11-14): the earlier answer rested on Wikipedia pages and a short reading of the Twenty Truths, and the Peronist sources read in this pass do not settle the statement.",
           "sources": [
             "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Modelo says everything must be done within the law and that in political struggle violence must be replaced by ideas.",
-      "sources": [
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "The movement is divided: Perón's mainstream sought electoral and union power while Revolutionary Peronism and armed factions embraced violence.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The Modelo says everything must be done within the law and that in political struggle violence must be replaced by ideas.",
-          "sources": [
-            "s5"
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-14"
@@ -7647,12 +7577,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9581,6 +9505,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

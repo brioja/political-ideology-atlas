@@ -425,36 +425,6 @@
       "rationale": "No recorded position found in the sources reviewed.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "CRS reports that in February 1992 he led an unsuccessful military attempt to overthrow the elected president Carlos Andrés Pérez.",
-      "sources": [
-        "crs"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "He attempted an armed uprising in 1992 before pursuing a revolutionary programme through elections.",
-          "sources": [
-            "reference"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-10-22"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "CRS reports that in February 1992 he led an unsuccessful military attempt to overthrow the elected president Carlos Andrés Pérez.",
-          "sources": [
-            "crs"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-15"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -600,36 +570,6 @@
       "confidence": "low",
       "rationale": "No recorded position found in the sources reviewed.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "CRS reports that in February 1992 he led an unsuccessful military coup attempt against the elected president, a record of armed political action.",
-      "sources": [
-        "crs"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "His role in the 1992 attempted coup demonstrates acceptance of armed political change.",
-          "sources": [
-            "reference"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-10-22"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "CRS reports that in February 1992 he led an unsuccessful military coup attempt against the elected president, a record of armed political action.",
-          "sources": [
-            "crs"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-15"
-        }
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -2779,12 +2719,6 @@
       "rationale": "No recorded position found in the sources reviewed.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4024,6 +3958,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

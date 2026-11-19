@@ -820,14 +820,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The Hunan report holds that a revolution is an act of violence by which one class overthrows another, a core Maoist thesis.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": -2,
       "confidence": "medium",
@@ -1160,14 +1152,6 @@
           "author": "claude-sonnet-5-5",
           "date": "2026-11-13"
         }
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Mao says a revolution is an insurrection, an act of violence by which one class overthrows another, and that it is not a dinner party.",
-      "sources": [
-        "s3"
       ]
     },
     "war-builds-character": {
@@ -7863,34 +7847,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (rules 7 pass, 2026-11-13): the earlier answer was inferred from Mao's general line; the cited text does not state a position that settles this statement, and an inference is not an answer.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Problems of War and Strategy defends revolutionary war and people's war to seize power, and Maoism backs wars of liberation, so defence only is not its line.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (rules 7 pass, 2026-11-13): the earlier answer was inferred from Mao's general line; the cited text does not state a position that settles this statement, and an inference is not an answer.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-13"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9928,6 +9884,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

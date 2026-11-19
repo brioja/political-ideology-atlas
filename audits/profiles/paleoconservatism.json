@@ -951,34 +951,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "Kirk's prudence and continuity principles counsel against upheaval.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1233,34 +1205,6 @@
           "value": 1,
           "confidence": "low",
           "rationale": "Kirk valued orders and classes reflecting natural distinctions.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the defining sources state no position on this; the earlier answer was inferred from general principles or from a source that does not discuss it.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the defining sources state no position on this; the earlier answer was inferred from general principles or from a source that does not discuss it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Prudence counsels against it but no categorical position is stated.",
           "sources": [
             "s2"
           ],
@@ -6445,36 +6389,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Independent Review reports the paleoconservative call for national defense to be \"a defense of the nation, as opposed to endless military interventionism\".",
-      "sources": [
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Buchanan's A Republic, Not an Empire argues against foreign entanglements and for using force only for vital national interests.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The Independent Review reports the paleoconservative call for national defense to be \"a defense of the nation, as opposed to endless military interventionism\".",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -8194,6 +8108,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ],
   "rules": 7,

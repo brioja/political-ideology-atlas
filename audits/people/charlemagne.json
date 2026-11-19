@@ -579,12 +579,6 @@
       "rationale": "No recorded position found in the sources consulted.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -747,12 +741,6 @@
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
-      "sources": []
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
       "sources": []
     },
     "war-builds-character": {
@@ -3768,37 +3756,6 @@
       "rationale": "No recorded position found in the sources consulted.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The annals record offensive expeditions into Saxony and an invasion of Avar territory following a border dispute.",
-      "sources": [
-        "annals"
-      ],
-      "auditor": "gpt-6.2-sol",
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "His Saxon campaigns and the 774 invasion of the Lombard kingdom were wars he began, and Wikipedia records more than thirty years of Saxon war.",
-          "sources": [
-            "s6"
-          ],
-          "author": "claude-haiku-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The annals record offensive expeditions into Saxony and an invasion of Avar territory following a border dispute.",
-          "sources": [
-            "annals"
-          ],
-          "author": "gpt-6.2-sol",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -5104,6 +5061,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

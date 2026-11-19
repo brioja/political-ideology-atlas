@@ -351,34 +351,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "high",
-          "rationale": "Bismarck defends the crown against parliamentary pressure and Prussian conservatives defended the monarch; Prussianism is counter-revolutionary and loyal to the dynasty.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -533,14 +505,6 @@
       "rationale": "Prussianism rests on the conservative military caste of Junkers, whose aristocratic leadership of state and army the crown made indispensable.",
       "sources": [
         "s2"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Bismarck's line that great questions are decided by iron and blood rejects the claim that political violence is never justified.",
-      "sources": [
-        "s5"
       ]
     },
     "war-builds-character": {
@@ -3023,14 +2987,6 @@
         "s6"
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Frederick's testament plans acquisitions of Saxony, Polish Prussia and Swedish Pomerania; wars were not only defensive.",
-      "sources": [
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "medium",
@@ -3718,6 +3674,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

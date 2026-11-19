@@ -309,16 +309,6 @@
     "claude-sonnet-5-5"
    ]
   },
-  "revolution-justified": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He honoured young revolutionaries who staked everything to free the country and himself helped the underground as a young man, but in 1971 told graduates that glorifying revolution is not enough and that hatred and violence cannot be its last word.",
-   "sources": [
-    "b1",
-    "b3"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "experts-over-public": {
    "value": 1,
    "confidence": "medium",
@@ -444,20 +434,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "Explicitly advocates nonviolence against opponents.",
-   "sources": [
-    "s1",
-    "b2",
-    "b3"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
   },
   "war-builds-character": {
    "value": -1,
@@ -2654,12 +2630,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "language-defines-nation": {
    "value": -1,
    "confidence": "medium",
@@ -3209,6 +3179,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

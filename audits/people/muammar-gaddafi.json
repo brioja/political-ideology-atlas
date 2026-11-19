@@ -691,37 +691,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He led the 1969 coup and the 1973 popular revolution.",
-      "sources": [
-        "s13"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Took power in the 1969 coup and the Green Book says peoples have the right to destroy parliaments through popular revolution (though revolution under the new system is said to be unnecessary).",
-          "sources": [
-            "s9",
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "He led the 1969 coup and the 1973 popular revolution.",
-          "sources": [
-            "s13"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -2,
       "confidence": "medium",
@@ -895,39 +864,6 @@
       "rationale": "The Green Book rejects rule by any individual, class, party or tribe and says authority must be in the hands of all the people.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He took power by an armed coup and his regime financed armed movements abroad.",
-      "sources": [
-        "s13",
-        "s19"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Backed revolution and armed groups abroad (IRA, PLO, ANC) and the Charter urges peoples to fight imperialism, while forbidding violence at home.",
-          "sources": [
-            "s9",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "He took power by an armed coup and his regime financed armed movements abroad.",
-          "sources": [
-            "s13",
-            "s19"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
       ]
     },
     "war-builds-character": {
@@ -4327,35 +4263,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled in the 2026-11-12 pass: the earlier answer rested on Wikipedia or on a record the audit's sources do not document, and no cited source states a position on this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "The Charter seeks to banish aggression and war, yet Libya intervened in Chad and backed armed groups.",
-          "sources": [
-            "s4",
-            "s9"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled in the 2026-11-12 pass: the earlier answer rested on Wikipedia or on a record the audit's sources do not document, and no cited source states a position on this statement.",
-          "sources": [
-            "s9"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -5807,6 +5714,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 5,

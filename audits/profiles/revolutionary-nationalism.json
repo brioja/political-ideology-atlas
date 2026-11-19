@@ -344,15 +344,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Revolution against the existing order is the defining feature of the label, and Cabral calls armed struggle the normal path of national liberation.",
-      "sources": [
-        "s2",
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "low",
@@ -490,15 +481,6 @@
       "rationale": "Denies colonial and class claims to rule; the people regain their own history and power.",
       "sources": [
         "s2"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Armed struggle is central and Cabral deems it the normal route to liberation.",
-      "sources": [
-        "s2",
-        "s1"
       ]
     },
     "war-builds-character": {
@@ -2924,14 +2906,6 @@
         "s4"
       ]
     },
-    "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Armed struggle is central, but adherents frame it as defence against colonial violence, so a literal reading splits them.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3556,6 +3530,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

@@ -590,34 +590,6 @@
         }
       ]
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled in the rules-7 pass: the answer rested only on Wikipedia, which is a way to find evidence; the defining sources saved for this audit (SEP, Manifesto, Gotha critique, Newman, Sears) state no position on this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Revolutionary socialists consider social revolution necessary, and the Manifesto calls for overthrow of bourgeois rule, though reformists dissent.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled in the rules-7 pass: the answer rested only on Wikipedia, which is a way to find evidence; the defining sources saved for this audit (SEP, Manifesto, Gotha critique, Newman, Sears) state no position on this statement.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-13"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -865,34 +837,6 @@
       "rationale": "The Manifesto and egalitarian doctrine reject innate ruling classes, attributing class rule to property relations.",
       "sources": [
         "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled in the rules-7 pass: the answer rested only on Wikipedia, which is a way to find evidence; the defining sources saved for this audit (SEP, Manifesto, Gotha critique, Newman, Sears) state no position on this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Revolutionary currents accept violence and the Manifesto calls for forcible overthrow, while reformists reject it, so a flat never is a minority view.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled in the rules-7 pass: the answer rested only on Wikipedia, which is a way to find evidence; the defining sources saved for this audit (SEP, Manifesto, Gotha critique, Newman, Sears) state no position on this statement.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-13"
-        }
       ]
     },
     "war-builds-character": {
@@ -5563,12 +5507,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -7082,6 +7020,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ],
   "rules": 7,

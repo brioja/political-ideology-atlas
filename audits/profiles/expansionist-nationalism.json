@@ -392,14 +392,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The ideology claims that borders may be redrawn by force, and fascist movements took power by revolutionary means; adherents split on domestic uprising versus expansion.",
-      "sources": [
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -531,14 +523,6 @@
       "sources": [
         "s1",
         "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Bernhardi calls war a biological necessity and a statesman's duty to bring about, so violence for political ends is justified.",
-      "sources": [
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -2964,14 +2948,6 @@
         "s1"
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Bernhardi argues it is the statesman's duty to bring about war and rejects the limit to defence.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "medium",
@@ -3613,6 +3589,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

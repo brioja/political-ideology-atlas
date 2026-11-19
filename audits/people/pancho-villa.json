@@ -357,14 +357,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Villa led armed revolutionary forces first against Huerta and later against Carranza in an effort to change Mexico’s government.",
-      "sources": [
-        "convention"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -480,14 +472,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "After Washington recognized Carranza, Villa led an armed cross-border attack on Columbus while heading an insurgency outside the recognized Mexican government.",
-      "sources": [
-        "columbus"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -2630,14 +2614,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Villa led an armed raid on Columbus, New Mexico after the United States recognized Carranza, before U.S. troops crossed into Mexico in pursuit.",
-      "sources": [
-        "columbus"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3843,6 +3819,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

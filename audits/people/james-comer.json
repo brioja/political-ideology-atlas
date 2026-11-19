@@ -693,12 +693,6 @@
     "claude-sonnet-5-5"
    ]
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -823,15 +817,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "After the 2024 attempt on Trump's life he urged Americans of all stripes to unite against extremism and political violence.",
-   "sources": [
-    "b7"
-   ],
-   "auditor": "claude-sonnet-5-5"
   },
   "war-builds-character": {
    "value": null,
@@ -2992,15 +2977,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "His support for striking Syrian chemical-weapons facilities extends beyond defending the United States against attack.",
-   "sources": [
-    "s13"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3577,6 +3553,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

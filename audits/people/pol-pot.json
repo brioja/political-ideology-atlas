@@ -897,37 +897,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "As party secretary Pol Pot led an armed revolution that overthrew the Khmer Republic.",
-      "sources": [
-        "c"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Speech justifies 'revolutionary violence' and armed struggle as the highest form of struggle.",
-          "sources": [
-            "s1",
-            "b2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "As party secretary Pol Pot led an armed revolution that overthrew the Khmer Republic.",
-          "sources": [
-            "c"
-          ],
-          "author": "gpt-6.2-sol",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1304,38 +1273,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Pol Pot led the party's armed insurgency to overthrow the existing Cambodian government before taking power.",
-      "sources": [
-        "c"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Speech endorses revolutionary armed violence; he ordered killings of political enemies.",
-          "sources": [
-            "s1",
-            "s2",
-            "b2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Pol Pot led the party's armed insurgency to overthrow the existing Cambodian government before taking power.",
-          "sources": [
-            "c"
-          ],
-          "author": "gpt-6.2-sol",
-          "date": "2026-11-18"
-        }
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -6645,39 +6582,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Pol Pot ordered the September 1977 military attack into Vietnam, including operations against settlements across the frontier.",
-      "sources": [
-        "j"
-      ],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Said Democratic Kampuchea would never aggress against anyone, yet launched border attacks on Vietnam in 1977-78.",
-          "sources": [
-            "s1",
-            "s2",
-            "b2",
-            "b1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Pol Pot ordered the September 1977 military attack into Vietnam, including operations against settlements across the frontier.",
-          "sources": [
-            "j"
-          ],
-          "author": "gpt-6.2-sol",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -8442,6 +8346,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

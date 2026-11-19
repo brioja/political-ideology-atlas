@@ -363,14 +363,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Communist parties took power through revolution or insurgency (Tito's partisans); once in power regimes oppose further revolt against themselves.",
-      "sources": [
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -514,14 +506,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "National communists came to power through armed struggle and ran repressive police states.",
-      "sources": [
-        "s1"
-      ]
     },
     "war-builds-character": {
       "value": -1,
@@ -3116,15 +3100,6 @@
         "s4"
       ]
     },
-    "defensive-wars-only": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The 1964 declaration and Ceausescu's condemnation of the 1968 invasion stress sovereignty and non-intervention, and these regimes did not wage wars of aggression.",
-      "sources": [
-        "s5",
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3761,6 +3736,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

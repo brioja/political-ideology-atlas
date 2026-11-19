@@ -390,35 +390,6 @@
         "claude-sonnet-5-5"
       ]
     },
-    "political-violence-never": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "His 1968 and 1972 fast statements call for nonviolence as the movement's only acceptable weapon, but he does not state an absolute rule for every case.",
-      "sources": [
-        "s3",
-        "b5",
-        "b7"
-      ],
-      "auditor": [
-        "claude-haiku-5-5",
-        "claude-sonnet-5-5"
-      ]
-    },
-    "revolution-justified": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Mixed: called for a social revolution (Plan of Delano, 1969 statements) but meant a nonviolent one won through boycotts, fasts and elections, and rejected violent change.",
-      "sources": [
-        "s3",
-        "s4",
-        "b4",
-        "b7"
-      ],
-      "auditor": [
-        "claude-haiku-5-5",
-        "claude-sonnet-5-5"
-      ]
-    },
     "direct-action": {
       "value": null,
       "confidence": "low",
@@ -2933,12 +2904,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4096,6 +4061,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "political-violence-never",
+        "revolution-justified",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

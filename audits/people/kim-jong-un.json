@@ -603,41 +603,6 @@
     "s5"
    ]
   },
-  "defensive-wars-only": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "His 2022 nuclear law allows pre-emptive and automatic nuclear strikes, and in 2024 he sent troops to fight alongside Russia in its war.",
-   "sources": [
-    "s6",
-    "s7"
-   ],
-   "auditor": "claude-sonnet-5-5",
-   "reviewHistory": [
-    {
-     "value": 0,
-     "confidence": "low",
-     "rationale": "Says the DPRK will never unilaterally unleash a war, but the 2022 law allows nuclear preemptive and automatic strikes and he has sent troops abroad.",
-     "sources": [
-      "s5",
-      "s6",
-      "s7"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": -1,
-     "confidence": "medium",
-     "rationale": "His 2022 nuclear law allows pre-emptive and automatic nuclear strikes, and in 2024 he sent troops to fight alongside Russia in its war.",
-     "sources": [
-      "s6",
-      "s7"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-14"
-    }
-   ]
-  },
   "arms-reduction": {
    "value": -2,
    "confidence": "high",
@@ -860,14 +825,6 @@
    "sources": [
     "s1",
     "s2"
-   ]
-  },
-  "revolution-justified": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Calls the 'victory of the revolution inevitable' and frames the Party as the leader of the Korean revolution.",
-   "sources": [
-    "s3"
    ]
   },
   "results-over-ideology": {
@@ -1135,12 +1092,6 @@
    "sources": []
   },
   "natural-rulers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
-  "political-violence-never": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found.",
@@ -4095,6 +4046,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "defensive-wars-only",
+    "revolution-justified",
+    "political-violence-never"
    ],
    "nulled": 0
   }

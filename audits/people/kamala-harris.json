@@ -778,12 +778,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -952,15 +946,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Said 'we are never going to condone violence' while backing peaceful protest, and called the January 6 attack on the Capitol an incitement to violence against democracy.",
-      "sources": [
-        "s11",
-        "s2"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -3507,36 +3492,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Her Senate votes to end unauthorised US involvement in Yemen and Iran do not settle whether force may be used only for defence, and her words point to no single position.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Wants Congress to rewrite the war authorisation and ended 'endless wars', but would act on an 'imminent threat' and backed arming Ukraine; the evidence points both ways.",
-          "sources": [
-            "s14",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Her Senate votes to end unauthorised US involvement in Yemen and Iran do not settle whether force may be used only for defence, and her words point to no single position.",
-          "sources": [
-            "s14",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4853,6 +4808,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

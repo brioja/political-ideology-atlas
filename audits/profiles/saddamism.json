@@ -1184,36 +1184,6 @@
         }
       ]
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: s3 describes Ba'thism in general, not Saddamism; s5, an analysis of one 1998 speech, cannot be checked (no saved copy) and does not settle it. Neither the regime's record (s8-s18) nor Saddam's own texts and the Ninth Congress report read in this pass (s19-s40) settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The Ba'ath took power by coup and calls its 1968 revolution a new model, though once in power the regime treated revolt as treason.",
-          "sources": [
-            "s3",
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: s3 describes Ba'thism in general, not Saddamism; s5, an analysis of one 1998 speech, cannot be checked (no saved copy) and does not settle it. Neither the regime's record (s8-s18) nor Saddam's own texts and the Ninth Congress report read in this pass (s19-s40) settle it.",
-          "sources": [
-            "s3",
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1697,36 +1667,6 @@
           "sources": [
             "s1",
             "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled: the first pass answered from s2, Wikipedia, only a way to find evidence; s1, Saddam's 2000 address, does not state a position on this. Neither the regime's record (s8-s18) nor Saddam's own texts and the Ninth Congress report read in this pass (s19-s40) settle it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The regime used violence internally and in wars, and the speech glorifies sacrifice and jihad.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled: the first pass answered from s2, Wikipedia, only a way to find evidence; s1, Saddam's 2000 address, does not state a position on this. Neither the regime's record (s8-s18) nor Saddam's own texts and the Ninth Congress report read in this pass (s19-s40) settle it.",
-          "sources": [
-            "s1",
-            "s2"
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
@@ -8191,39 +8131,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The regime started the 1980 war by invading Iran (Library of Congress study) and the 1990 war by invading Kuwait (Human Rights Watch 1999).",
-      "sources": [
-        "s9",
-        "s12"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Saddam invaded Iran in 1980 and Kuwait in 1990, and the 2000 speech glorifies the 'Mother of All Battles'.",
-          "sources": [
-            "s1",
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The regime started the 1980 war by invading Iran (Library of Congress study) and the 1990 war by invading Kuwait (Human Rights Watch 1999).",
-          "sources": [
-            "s9",
-            "s12"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -10227,6 +10134,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ]
 }

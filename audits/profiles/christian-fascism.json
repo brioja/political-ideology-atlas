@@ -357,14 +357,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Legionary rebellion of January 1941 and pre-war paramilitary action show revolution and violence as legitimate tools.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -508,14 +500,6 @@
       "value": 2,
       "confidence": "medium",
       "rationale": "Guard doctrine had a disciplined elite and a chosen leader shaping the peasantry.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Assassinations, pogroms and paramilitary action were core to the Iron Guard.",
       "sources": [
         "s3"
       ]
@@ -3099,12 +3083,6 @@
         "s4"
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3802,6 +3780,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

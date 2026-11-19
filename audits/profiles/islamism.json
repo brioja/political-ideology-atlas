@@ -803,38 +803,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Qutb and Mawdudi insist on the duty of all true Muslims to fight with all their might to establish an Islamic order.",
-      "sources": [
-        "s5",
-        "s9"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "Qutb and Khomeini justified overthrowing un-Islamic rule, while Brotherhood and Mawdudi favored gradualism.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-14"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Qutb and Mawdudi insist on the duty of all true Muslims to fight with all their might to establish an Islamic order.",
-          "sources": [
-            "s5",
-            "s9"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1193,38 +1161,6 @@
           "rationale": "Nulled (later pass 2026-11-14): the earlier answer rested on an inference from the general stance of Islamist writers; the defining sources read in this pass state no position on this statement.",
           "sources": [
             "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Qutb says preaching alone cannot establish God's rule and Mawdudi counts jihad by pen or sword among duties, though Mawdudi and Qutb were reluctant to call for violence against society as a whole.",
-      "sources": [
-        "s8",
-        "s9"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "Jihad is central to Qutb and Salafi jihadists, though moderates reject violence.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-14"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Qutb says preaching alone cannot establish God's rule and Mawdudi counts jihad by pen or sword among duties, though Mawdudi and Qutb were reluctant to call for violence against society as a whole.",
-          "sources": [
-            "s8",
-            "s9"
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-14"
@@ -7116,14 +7052,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Qutb rejects confining jihad to defensive war, saying it also removes political powers that stand between people and Islam.",
-      "sources": [
-        "s9"
-      ]
-    },
     "language-defines-nation": {
       "value": -2,
       "confidence": "medium",
@@ -9142,6 +9070,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

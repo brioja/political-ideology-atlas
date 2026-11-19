@@ -535,12 +535,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -708,14 +702,6 @@
       "sources": [
         "s3",
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "At Posen he said the SS did not hesitate to shoot comrades on 30 June 1934 and would do it again, and he organised mass killing.",
-      "sources": [
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -3311,37 +3297,6 @@
         "s1"
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "At Posen he spoke of pressing \"onwards to the Urals\", dictating German laws to the East and extending the racial borders of the Reich 500 km by colonisation, which is conquest rather than defence.",
-      "sources": [
-        "pz"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "He planned Lebensraum conquest and helped stage the Operation Himmler pretext for invading Poland.",
-          "sources": [
-            "s7",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "At Posen he spoke of pressing \"onwards to the Urals\", dictating German laws to the East and extending the racial borders of the Reich 500 km by colonisation, which is conquest rather than defence.",
-          "sources": [
-            "pz"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-16"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4624,6 +4579,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

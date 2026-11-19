@@ -98,12 +98,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "worker-ownership": {
       "value": null,
       "confidence": "low",
@@ -141,12 +135,6 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "empower-police-military": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -285,12 +273,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -400,12 +382,6 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -544,5 +520,19 @@
       "sources": []
     }
   },
-  "notes": "Most of his political expression is partisan endorsement and reaction to specific events (police shootings, Trump remarks) rather than policy positions, so endorsements were not converted into answers. His 2019 remark that Daryl Morey was \"misinformed\" about Hong Kong and his 2023 Instagram post supporting Israel do not map cleanly onto any statement and were not scored."
+  "notes": "Most of his political expression is partisan endorsement and reaction to specific events (police shootings, Trump remarks) rather than policy positions, so endorsements were not converted into answers. His 2019 remark that Daryl Morey was \"misinformed\" about Hong Kong and his 2023 Instagram post supporting Israel do not map cleanly onto any statement and were not scored.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "cut-welfare",
+        "empower-police-military",
+        "revolution-justified",
+        "political-violence-never"
+      ],
+      "nulled": 0
+    }
+  ]
 }

@@ -839,34 +839,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, rules 7, 2026-11-17): the cited Wikipedia article is a lead to evidence, not evidence; no defining source (Puschner, Maleszka, Tourlamain, Chamberlain, Claß, Lagarde) was found that states a position settling it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "Claß plotted a coup in 1911 and again in 1926 to impose a plebiscitary or authoritarian order, so extra-legal change was acceptable to some adherents.",
-          "sources": [
-            "s6"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, rules 7, 2026-11-17): the cited Wikipedia article is a lead to evidence, not evidence; no defining source (Puschner, Maleszka, Tourlamain, Chamberlain, Claß, Lagarde) was found that states a position settling it.",
-          "sources": [
-            "s6"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1269,34 +1241,6 @@
           "rationale": "Puschner says they imagined an anti-egalitarian society led by a new racial nobility.",
           "sources": [
             "s7"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, rules 7, 2026-11-17): the cited Claß excerpt does not state a position on this statement and was read here as an inference; no defining source (Puschner, Maleszka, Tourlamain, Chamberlain, Claß, Lagarde) was found that states a position settling it.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Claß calls for hard will without sentimentality, mass expulsions of socialist leaders and aggressive war; violence in politics is accepted.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, rules 7, 2026-11-17): the cited Claß excerpt does not state a position on this statement and was read here as an inference; no defining source (Puschner, Maleszka, Tourlamain, Chamberlain, Claß, Lagarde) was found that states a position settling it.",
-          "sources": [
-            "s1"
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-17"
@@ -7806,38 +7750,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The same sources describe conquest of Lebensraum as a goal, which contradicts using force only for defence.",
-      "sources": [
-        "s7",
-        "s10"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Claß and the League demanded annexation of land and aggressive war aims, so force was for pursuing national aims, not only defense.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The same sources describe conquest of Lebensraum as a goal, which contradicts using force only for defence.",
-          "sources": [
-            "s7",
-            "s10"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9523,6 +9435,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ],
   "rules": 7,

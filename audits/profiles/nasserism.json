@@ -368,15 +368,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Nasser came to power through the 1952 coup, which he called a revolution, and described Egypt as in the throes of two revolutions.",
-      "sources": [
-        "s1",
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -541,14 +532,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Nasser backed armed liberation movements, a coup and Yemen intervention, so political violence is sometimes justified.",
-      "sources": [
-        "s3"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -3250,12 +3233,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": 2,
       "confidence": "medium",
@@ -3941,6 +3918,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

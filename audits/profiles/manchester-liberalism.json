@@ -344,34 +344,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Cobden and Bright pursued reform through peaceful agitation and Parliament; Bright disliked violence, though he backed the Union in the American Civil War.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -484,14 +456,6 @@
       "rationale": "Cobden attacked landed-aristocratic privilege and the Corn Laws that served it, rejecting the idea that a class is born to rule.",
       "sources": [
         "s4"
-      ]
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Cobden said resisting injustice does not need arms and pointed to Quaker passive resistance; Bright was a pacifist yet supported the Union, so not absolute.",
-      "sources": [
-        "s3"
       ]
     },
     "war-builds-character": {
@@ -2874,14 +2838,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Cobden's peace speech and the school's opposition to military spending, empire and foreign intervention leave armed force for defence only.",
-      "sources": [
-        "s3"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3528,6 +3484,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

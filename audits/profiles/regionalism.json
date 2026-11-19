@@ -175,42 +175,6 @@
         "s2"
       ]
     },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The EFA conditions its support on peaceful, democratic action and respect for human rights, though adherents in some regions have a violent history.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Mainstream regionalism seeks change through referendums and gradual institutional reform, so revolution is rejected.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "expand-nuclear": {
       "value": -1,
       "confidence": "medium",
@@ -2961,14 +2925,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The EFA manifesto takes a peace position and works by peaceful, democratic means.",
-      "sources": [
-        "s2"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "low",
@@ -3650,6 +3606,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "political-violence-never",
+        "revolution-justified",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

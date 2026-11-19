@@ -741,34 +741,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (rules 7 pass): the Jacobin sources checked in this pass (Robespierre's speeches, the 1793 Constitution and Declaration, the Law of Suspects, Britannica) do not state a position on this statement, and the earlier answer rested on an indirect reading or on Wikipedia, so it is withdrawn.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The Jacobins made the revolution and the 1793 Constitution declared a duty to rebel against oppression.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (rules 7 pass): the Jacobin sources checked in this pass (Robespierre's speeches, the 1793 Constitution and Declaration, the Law of Suspects, Britannica) do not state a position on this statement, and the earlier answer rested on an indirect reading or on Wikipedia, so it is withdrawn.",
-          "sources": [
-            "s8"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1119,36 +1091,6 @@
           "value": null,
           "confidence": "low",
           "rationale": "Nulled (rules 7 pass): the Jacobin sources checked in this pass (Robespierre's speeches, the 1793 Constitution and Declaration, the Law of Suspects, Britannica) do not state a position on this statement, and the earlier answer rested on an indirect reading or on Wikipedia, so it is withdrawn.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Robespierre says that during the Revolution the sources of power are virtue and terror, and that terror is nothing more than swift, severe and indomitable justice.",
-      "sources": [
-        "s2"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Robespierre's 1794 speech calls terror an emanation of virtue and a consequence of democracy, saying that in a revolution virtue without terror is powerless.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "Robespierre says that during the Revolution the sources of power are virtue and terror, and that terror is nothing more than swift, severe and indomitable justice.",
           "sources": [
             "s2"
           ],
@@ -6420,35 +6362,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (rules 7 pass): the Jacobin sources checked in this pass (Robespierre's speeches, the 1793 Constitution and Declaration, the Law of Suspects, Britannica) do not state a position on this statement, and the earlier answer rested on an indirect reading or on Wikipedia, so it is withdrawn.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Contested: the 1793 Constitution rejects conquest, yet the Jacobin republic waged revolutionary war and levée en masse.",
-          "sources": [
-            "s3",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (rules 7 pass): the Jacobin sources checked in this pass (Robespierre's speeches, the 1793 Constitution and Declaration, the Law of Suspects, Britannica) do not state a position on this statement, and the earlier answer rested on an indirect reading or on Wikipedia, so it is withdrawn.",
-          "sources": [
-            "s8"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -8235,6 +8148,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ],
   "rules": 7,

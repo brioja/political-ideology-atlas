@@ -546,15 +546,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The Doctrine calls the Fascist State 'revolutionary' and credits squad violence; he seized power through the March on Rome.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -742,15 +733,6 @@
    "rationale": "Doctrine: it asserts the 'irremediable and fertile and beneficent inequality of men' and the will of the few or one.",
    "sources": [
     "s1"
-   ]
-  },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Doctrine praises 'attitude toward violence, and its value'; his 3 January 1925 speech took responsibility for squadrist violence.",
-   "sources": [
-    "s1",
-    "s5"
    ]
   },
   "war-builds-character": {
@@ -3659,38 +3641,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "His government made war on Ethiopia in 1935; the Italian note of 11 Nov 1935 defends 'the necessity... of providing urgently and with its own means alone for the security of its own colonies' and says Italy had taken over the occupied territories, after the League found Italy had resorted to war.",
-   "sources": [
-    "l7"
-   ],
-   "auditor": "claude-sonnet-5-5",
-   "reviewHistory": [
-    {
-     "value": -2,
-     "confidence": "high",
-     "rationale": "He started wars of aggression (Ethiopia, Albania, Greece).",
-     "sources": [
-      "s5",
-      "s11"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": -2,
-     "confidence": "high",
-     "rationale": "His government made war on Ethiopia in 1935; the Italian note of 11 Nov 1935 defends 'the necessity... of providing urgently and with its own means alone for the security of its own colonies' and says Italy had taken over the occupied territories, after the League found Italy had resorted to war.",
-     "sources": [
-      "l7"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-14"
-    }
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -5127,6 +5077,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

@@ -331,14 +331,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Armed and revolutionary struggle against colonial rule is central, from Lenin's support of national uprisings to Fanon on the Algerian war.",
-      "sources": [
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -497,14 +489,6 @@
       "rationale": "Imperial rule was justified by claims that some peoples are fit to rule others; anti-imperialism rejects that premise.",
       "sources": [
         "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Fanon and Lenin treat anti-colonial violence as legitimate, and the mainstream doesn't renounce armed struggle against occupation.",
-      "sources": [
-        "s2"
       ]
     },
     "war-builds-character": {
@@ -2941,14 +2925,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Bandung principles respect sovereignty and call for refraining from aggression, and allow self-defence; wars of liberation make this less than strong.",
-      "sources": [
-        "s3"
-      ]
-    },
     "language-defines-nation": {
       "value": 0,
       "confidence": "low",
@@ -3641,6 +3617,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

@@ -765,12 +765,6 @@
       "rationale": "The defining sources of secular humanism record no position on this, and no stated principle of it bears directly on it.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining sources of secular humanism record no position on this, and no stated principle of it bears directly on it.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1055,34 +1049,6 @@
           "value": -2,
           "confidence": "medium",
           "rationale": "Manifesto II opposes discrimination and supports equal opportunity and democracy, which exclude innate rulers.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, 2026-11-17): the earlier answer was an inference from general values or from Wikipedia's summary; the defining sources (Humanist Manifesto II, the 1980 Declaration, the Council's definition) state no position on this.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, 2026-11-17): the earlier answer was an inference from general values or from Wikipedia's summary; the defining sources (Humanist Manifesto II, the 1980 Declaration, the Council's definition) state no position on this.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Manifesto II hopes war becomes obsolete and favours peaceful settlement, but no absolute ban on political violence is stated.",
           "sources": [
             "s1"
           ],
@@ -7130,14 +7096,6 @@
         "s1"
       ]
     },
-    "defensive-wars-only": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Manifesto II says the world community 'must renounce the resort to violence and force as a method of solving international disputes' and that 'War is obsolete'; it does not address defence directly, so medium.",
-      "sources": [
-        "s1"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9216,6 +9174,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

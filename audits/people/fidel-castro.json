@@ -496,36 +496,6 @@
       "rationale": "No recorded position found in the sources reviewed.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The constitution's preamble commits Cuba to continuing the revolution launched at Moncada and Granma, led by Fidel Castro.",
-      "sources": [
-        "const76"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "He reaffirmed the reasons for the Moncada attack and the revolutionary overthrow of the old order.",
-          "sources": [
-            "revolution"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-10-22"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The constitution's preamble commits Cuba to continuing the revolution launched at Moncada and Granma, led by Fidel Castro.",
-          "sources": [
-            "const76"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-16"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -683,12 +653,6 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources reviewed.",
@@ -3042,36 +3006,6 @@
       "rationale": "No recorded position found in the sources reviewed.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Cuba committed troops abroad (Angola from 1975, with up to 36,000 later) rather than only defending its own territory.",
-      "sources": [
-        "angola"
-      ],
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "He sent troops into foreign conflicts, including Angola and the Horn of Africa.",
-          "sources": [
-            "reference"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-10-22"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Cuba committed troops abroad (Angola from 1975, with up to 36,000 later) rather than only defending its own territory.",
-          "sources": [
-            "angola"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-16"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4416,6 +4350,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

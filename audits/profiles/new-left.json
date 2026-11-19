@@ -938,34 +938,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Rules-7 pass: the saved defining and primary sources do not state a position on this, so it is null. The earlier answer rested on inference from the movement's general stance, or on Wikipedia, which is not evidence.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Marcuse calls for the Great Refusal and the movement was broadly radical, though mainstream groups favoured nonviolent change, so the answer is mild.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Rules-7 pass: the saved defining and primary sources do not state a position on this, so it is null. The earlier answer rested on inference from the movement's general stance, or on Wikipedia, which is not evidence.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1338,36 +1310,6 @@
           "rationale": "Rules-7 pass: the saved defining and primary sources do not state a position on this, so it is null. The earlier answer rested on inference from the movement's general stance, or on Wikipedia, which is not evidence.",
           "sources": [
             "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Port Huron says 'In social change or interchange, we find violence to be abhorrent because it requires generally the transformation of the target ... into a depersonalized object of hate', and calls for abolishing the means of violence; the wording is 'generally', so it stops short of an absolute.",
-      "sources": [
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Early groups favoured nonviolence, but the movement also included militant and Black Power wings and supported anti-colonial armed struggle, so no absolute ban.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-17"
-        },
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Port Huron says 'In social change or interchange, we find violence to be abhorrent because it requires generally the transformation of the target ... into a depersonalized object of hate', and calls for abolishing the means of violence; the wording is 'generally', so it stops short of an absolute.",
-          "sources": [
-            "s5"
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-17"
@@ -7665,12 +7607,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9635,6 +9571,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

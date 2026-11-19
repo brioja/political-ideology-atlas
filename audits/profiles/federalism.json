@@ -557,46 +557,6 @@
       "rationale": "The sources searched record no position on this statement.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Federalist No. 28 treats resistance, in the last resort armed, to usurping national rulers as a paramount right of the people, so revolution is not ruled out as never justified.",
-      "sources": [
-        "s8"
-      ],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Federalists present divided power as a way to reduce tyranny, rebellion and war; mainstream adherents prefer constitutional means.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Federalist No. 28 treats resistance, in the last resort armed, to usurping national rulers as a paramount right of the people, so revolution is not ruled out as never justified.",
-          "sources": [
-            "s8"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-14"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -856,14 +816,6 @@
       "confidence": "low",
       "rationale": "The sources searched record no position on this statement.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Federalist No. 28 holds that if rulers betray the people, armed self-defense against their usurpations is a paramount right and sets out how the states could organise it.",
-      "sources": [
-        "s8"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -4855,12 +4807,6 @@
       "rationale": "The sources searched record no position on this statement.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources searched record no position on this statement.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -7039,6 +6985,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

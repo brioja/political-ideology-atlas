@@ -334,36 +334,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "low",
-          "rationale": "Kant, the defining modern cosmopolitan, favoured reform and gradual federation over revolution; modern cosmopolitans work through institutions, though Fanon-type figures differ.",
-          "sources": [
-            "s2",
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2",
-            "s3"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -498,16 +468,6 @@
       "rationale": "Moral cosmopolitanism affirms equal moral standing and opposed feudal hierarchy and colonial rank, so natural rulers are rejected.",
       "sources": [
         "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Kant condemns war and aggression, but the SEP gives no pacifist rule and Fanon-type cosmopolitans accept some violence; adherents split.",
-      "sources": [
-        "s1",
-        "s2",
-        "s3"
       ]
     },
     "war-builds-character": {
@@ -2877,14 +2837,6 @@
         "s2"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Kant's Perpetual Peace argues against wars of aggression and standing armies, though modern cosmopolitans debate humanitarian intervention.",
-      "sources": [
-        "s3"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3514,6 +3466,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

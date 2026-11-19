@@ -380,14 +380,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The 1954 proclamation launches armed insurrection and commits to continue \"by all means\" until independence, making revolution the founding act.",
-      "sources": [
-        "s2"
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -531,14 +523,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The proclamation commits the movement to struggle \"by all possible means\" and the war of independence was fought armed.",
-      "sources": [
-        "s2"
-      ]
     },
     "war-builds-character": {
       "value": 0,
@@ -3139,12 +3123,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "medium",
@@ -3896,6 +3874,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

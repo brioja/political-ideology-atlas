@@ -350,36 +350,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "The identity is built on stable institutional democracy since 1948, in contrast to neighbors' coups and wars, so revolution is disowned.",
-          "sources": [
-            "s2",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-21"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2",
-            "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -513,12 +483,6 @@
       "sources": [
         "s1"
       ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
     },
     "war-builds-character": {
       "value": -2,
@@ -2889,15 +2853,6 @@
         "s1"
       ]
     },
-    "defensive-wars-only": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The constitution proscribes a permanent army and allows forces for national defense only.",
-      "sources": [
-        "s3",
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "low",
@@ -3536,6 +3491,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

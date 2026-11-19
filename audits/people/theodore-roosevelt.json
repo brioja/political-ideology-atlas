@@ -935,14 +935,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "His government supported the 1903 Panamanian revolution against Colombia with a naval blockade that kept Colombian troops from landing.",
-      "sources": [
-        "mcfor"
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -1079,14 +1071,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "His government backed the 1903 insurrection that separated Panama from Colombia, blockading Colombian troops.",
-      "sources": [
-        "mcfor"
-      ]
     },
     "war-builds-character": {
       "value": 2,
@@ -3767,15 +3751,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "He called wars with barbarous or semi-barbarous peoples a regrettable but necessary international police duty, and held that peace yields to righteousness when they conflict.",
-      "sources": [
-        "sotu",
-        "s6"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -5025,6 +5000,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

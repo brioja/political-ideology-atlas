@@ -351,15 +351,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Bossuet holds the king's person inviolable and attacking him sacrilege; divine right treats resistance and deposition as contrary to God's will.",
-      "sources": [
-        "s1",
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -523,15 +514,6 @@
       "sources": [
         "s1",
         "s3"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Subjects may not use violence against the king, but the sovereign himself wages war and punishes by force, so the statement is rejected as universal pacifism; split on subjects' side makes it low.",
-      "sources": [
-        "s3",
-        "s4"
       ]
     },
     "war-builds-character": {
@@ -3141,14 +3123,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Absolutist monarchs fought wars of expansion for dynastic glory, such as Louis XIV and Frederick the Great.",
-      "sources": [
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "medium",
@@ -3821,6 +3795,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

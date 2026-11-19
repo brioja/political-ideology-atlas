@@ -363,14 +363,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Mandate of Heaven lets Heaven replace a bad dynasty, so removal of an unvirtuous ruler is justified, though subjects are not licensed to rebel lightly.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -547,14 +539,6 @@
           "author": "claude-opus-5-5",
           "date": "2026-11-19"
         }
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Force was used to defend or expand the system, and the Mandate allows toppling a bad dynasty, so absolute pacifism is rejected.",
-      "sources": [
-        "s1"
       ]
     },
     "war-builds-character": {
@@ -2988,12 +2972,6 @@
         "s1"
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3649,6 +3627,17 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-19",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 0
     }
   ]
 }

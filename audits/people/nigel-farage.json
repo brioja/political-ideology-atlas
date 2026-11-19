@@ -565,12 +565,6 @@
     "s1"
    ]
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "experts-over-public": {
    "value": -1,
    "confidence": "low",
@@ -716,37 +710,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "On 5 August 2024 he said 'I have been totally appalled by the levels of violence seen in the last couple of days. The levels of intimidation and threat to life have no place in a functioning democracy', and said in a video that he did not support street violence; in the same video he added 'What you've seen on the streets of Hartlepool, of London, of Southport is nothing to what could happen over the course of the next few weeks'.",
-   "sources": [
-    "g1"
-   ],
-   "auditor": "claude-sonnet-5-5",
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "Condemned the 2024 riots ('no place in a functioning democracy') and said he did not support violence; condemned milkshake attacks as undermining democracy.",
-     "sources": [
-      "s2"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": 1,
-     "confidence": "low",
-     "rationale": "On 5 August 2024 he said 'I have been totally appalled by the levels of violence seen in the last couple of days. The levels of intimidation and threat to life have no place in a functioning democracy', and said in a video that he did not support street violence; in the same video he added 'What you've seen on the streets of Hartlepool, of London, of Southport is nothing to what could happen over the course of the next few weeks'.",
-     "sources": [
-      "g1"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-14"
-    }
-   ]
   },
   "war-builds-character": {
    "value": null,
@@ -2980,12 +2943,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -4210,6 +4167,17 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-19",
    "nulled": 1
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
+   ],
+   "nulled": 0
   }
  ],
  "rules": 7,

@@ -315,36 +315,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 2,
-     "confidence": "high",
-     "rationale": "Memoirs treat the 1918 revolution as a betrayal and blame Social Democratic leaders; he declared Social Democrats enemies of the Empire.",
-     "sources": [
-      "s1",
-      "s8"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-24"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-     "sources": [
-      "s1",
-      "s8"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-12"
-    }
-   ]
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -464,16 +434,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Ordered 'no quarter' in China, told recruits to shoot even kin if commanded, and wrote of drowning Socialists in a 'blood-bath'; he rejected the idea that political violence is never justified.",
-   "sources": [
-    "s3",
-    "s4",
-    "s8"
-   ]
   },
   "war-builds-character": {
    "value": null,
@@ -2666,16 +2626,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Mixed: repeatedly said forces serve only defence and peace (Strasburg 1908, memoirs) but sent a punitive expedition to China and spoke of a 'place in the sun'.",
-   "sources": [
-    "s2",
-    "s3",
-    "s1"
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3234,6 +3184,17 @@
     "restrict-pornography"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
+   ],
+   "nulled": 1
   }
  ]
 }

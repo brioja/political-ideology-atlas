@@ -326,14 +326,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Doctrine condemns revolution as the poison of the French Revolution, yet the movement took part in armed monarchist uprisings in 1919, so adherents are split in practice.",
-      "sources": [
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -474,14 +466,6 @@
       "value": 2,
       "confidence": "high",
       "rationale": "Pequito Rebelo's founding text names the organic monarchy as the alliance of king and elite, and Ascensão stresses a hereditary chief prepared for rule over an incompetent mass.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The movement took part in the 1919 monarchist rising and called itself a crusade, so it would not accept an absolute ban.",
       "sources": [
         "s1"
       ]
@@ -3108,14 +3092,6 @@
         "s3"
       ]
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Ascensão glorifies conquest, colonisation and military campaigns, and treats expansion of faith and empire as a national mission.",
-      "sources": [
-        "s1"
-      ]
-    },
     "worker-ownership": {
       "value": -2,
       "confidence": "medium",
@@ -3832,6 +3808,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

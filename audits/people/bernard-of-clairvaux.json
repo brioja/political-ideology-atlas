@@ -380,15 +380,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Cites Romans 13 that resisting the higher power resists God's ordinance, and calls the Romans' republican revolt against Pope Eugenius ingratitude and sacrilege.",
-   "sources": [
-    "b2"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -532,15 +523,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Explicitly legitimates killing enemies in properly motivated Christian warfare.",
-   "sources": [
-    "s3"
-   ],
-   "auditor": "gpt-6.1-sol"
   },
   "war-builds-character": {
    "value": null,
@@ -2796,23 +2778,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Frames crusading as protection, but authorizes campaigns abroad to recover sacred territory.",
-   "sources": [
-    "s4",
-    "s8",
-    "b1",
-    "b6",
-    "b3",
-    "b7"
-   ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3378,6 +3343,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

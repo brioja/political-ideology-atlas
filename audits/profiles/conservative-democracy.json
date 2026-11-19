@@ -831,36 +831,6 @@
         "s1"
       ]
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The Vision opposes 'totalitarian revolutionary interventions' at home but praises the Arab peoples' 'brave and revolutionary step' against dictators, asking that such change be peaceful.",
-      "sources": [
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "Conservatism as gradual change and the party's democratic, rule-of-law framing reject revolution.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-20"
-        },
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "The Vision opposes 'totalitarian revolutionary interventions' at home but praises the Arab peoples' 'brave and revolutionary step' against dictators, asking that such change be peaceful.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-08"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -2,
       "confidence": "medium",
@@ -1246,12 +1216,6 @@
       ]
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining sources (the AKP programme, its 2012 Political Vision and the scholarship on conservative democracy by Çağlıyan-İçener, Kaddorah and Aslan) record no position that settles this.",
-      "sources": []
-    },
-    "political-violence-never": {
       "value": null,
       "confidence": "low",
       "rationale": "The defining sources (the AKP programme, its 2012 Political Vision and the scholarship on conservative democracy by Çağlıyan-İçener, Kaddorah and Aslan) record no position that settles this.",
@@ -6786,12 +6750,6 @@
       "rationale": "The defining sources (the AKP programme, its 2012 Political Vision and the scholarship on conservative democracy by Çağlıyan-İçener, Kaddorah and Aslan) record no position that settles this.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The defining sources (the AKP programme, its 2012 Political Vision and the scholarship on conservative democracy by Çağlıyan-İçener, Kaddorah and Aslan) record no position that settles this.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -8528,6 +8486,17 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-19",
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 0
     }
   ]
 }

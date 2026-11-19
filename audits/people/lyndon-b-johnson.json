@@ -763,12 +763,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -907,14 +901,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "After the Detroit riot he said: \"We will not endure violence. It matters not by whom it is done or under what slogan or banner.\"",
-      "sources": [
-        "s43"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -3406,37 +3392,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "He signed the Gulf of Tonkin Resolution authorising force to assist allies in Southeast Asia, not only to defend the United States, though the war began with a reported attack on US ships.",
-      "sources": [
-        "s22"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "Contested: framed Vietnam as aiding a South Vietnamese government under attack, not as defence of US territory, and he escalated the war with bombing and ground forces.",
-          "sources": [
-            "s9",
-            "s14"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "He signed the Gulf of Tonkin Resolution authorising force to assist allies in Southeast Asia, not only to defend the United States, though the war began with a reported attack on US ships.",
-          "sources": [
-            "s22"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-07"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4672,6 +4627,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

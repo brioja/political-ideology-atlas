@@ -609,16 +609,6 @@
       "rationale": "No position of his own found in the sources reviewed.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "He leads what he calls the Lion and Sun national revolution and says the battle is between occupation and liberation, not between reform and revolution.",
-      "sources": [
-        "s1",
-        "s10"
-      ],
-      "auditor": "claude-sonnet-5-5"
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -764,22 +754,6 @@
       "confidence": "low",
       "rationale": "No position of his own found in the sources reviewed.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Mixed: he endorses non-violent civil disobedience for opposition inside Iran but also calls for and welcomed military strikes on the regime's forces and says Iranians were ready to 'fight the fight'.",
-      "sources": [
-        "s1",
-        "s2",
-        "s3",
-        "b3",
-        "b7"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -3064,15 +3038,6 @@
       "rationale": "No position of his own found in the sources reviewed.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The charter he co-signed says the military shall only be responsible for defending Iran's territorial integrity.",
-      "sources": [
-        "s5"
-      ],
-      "auditor": "claude-sonnet-5-5"
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4422,6 +4387,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

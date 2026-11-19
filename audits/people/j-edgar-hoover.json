@@ -264,16 +264,6 @@
       ],
       "auditor": "claude-sonnet-5-5"
     },
-    "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He held that violence, destruction and terrorism cannot be equated with legitimate dissent and called riots and burning crimes 'spawned under the banner of civil disobedience', but never framed a flat rule that political violence is never justified.",
-      "sources": [
-        "s4",
-        "s6"
-      ],
-      "auditor": "claude-sonnet-5-5"
-    },
     "direct-action": {
       "value": -2,
       "confidence": "high",
@@ -618,12 +608,6 @@
       "sources": []
     },
     "expand-nuclear": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources searched.",
-      "sources": []
-    },
-    "revolution-justified": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found in the sources searched.",
@@ -2754,12 +2738,6 @@
       "rationale": "No recorded position found in the sources searched.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources searched.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3289,6 +3267,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "political-violence-never",
+        "revolution-justified",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

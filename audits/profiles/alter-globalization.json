@@ -984,16 +984,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "political-violence-never": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Researchers find most global justice protesters non-violent while small groups used more disruptive forms, and the Charter backs non-violent resistance while opposing only state violence.",
-   "sources": [
-    "s10",
-    "s1"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "direct-action": {
    "value": 0,
    "confidence": "low",
@@ -1467,17 +1457,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "defensive-wars-only": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The Bamako Appeal and Caracas assembly reject preventive war, and the Manifesto allows foreign troops only under a UN mandate.",
-   "sources": [
-    "s4",
-    "s5",
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "free-public-college": {
    "value": 1,
    "confidence": "medium",
@@ -1782,12 +1761,6 @@
    "sources": []
   },
   "tech-solves-problems": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The movement's own texts (the Charter, Porto Alegre Manifesto, Attac platform, Bamako Appeal and Assembly declarations) state no position that settles this.",
-   "sources": []
-  },
-  "revolution-justified": {
    "value": null,
    "confidence": "low",
    "rationale": "The movement's own texts (the Charter, Porto Alegre Manifesto, Attac platform, Bamako Appeal and Assembly declarations) state no position that settles this.",
@@ -3812,6 +3785,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "political-violence-never",
+    "defensive-wars-only",
+    "revolution-justified"
    ],
    "nulled": 0
   }

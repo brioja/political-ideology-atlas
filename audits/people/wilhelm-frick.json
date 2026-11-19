@@ -358,15 +358,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He participated in the 1923 putsch, but in 1933 forbade further revolution after consolidating Nazi power.",
-      "sources": [
-        "s8",
-        "s11"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -528,14 +519,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He assisted political murderers’ escape and participated in the Hitler putsch.",
-      "sources": [
-        "s8"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -2693,12 +2676,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3919,6 +3896,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

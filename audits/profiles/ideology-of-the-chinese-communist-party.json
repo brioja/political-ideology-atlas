@@ -995,38 +995,6 @@
         }
       ]
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The history resolution and constitution celebrate the revolutions the Party led against imperialism and feudalism as justified.",
-      "sources": [
-        "s4",
-        "s5"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "high",
-          "rationale": "The Party came to power by revolution and its constitution celebrates it, though today it opposes revolution against its own rule.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The history resolution and constitution celebrate the revolutions the Party led against imperialism and feudalism as justified.",
-          "sources": [
-            "s4",
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1481,36 +1449,6 @@
           "rationale": "Nulled (rules 7 pass, 2026-11-12): the committed rationale (The Party sees itself as the vanguard that should rule by merit and conviction, but does not claim people are naturally suited to rule) rests on an inference from the Party's wider doctrine or on an absence of a stated position, and no source opened in this pass states a position that settles the statement.",
           "sources": [
             "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The history resolution holds that without revolutionary armed forces the Party could not have defeated armed counter-revolutionaries and won the revolution.",
-      "sources": [
-        "s4"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The Party's founding legitimacy rests on armed revolution, and the state holds that violence is legitimate in the name of the people.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": -2,
-          "confidence": "high",
-          "rationale": "The history resolution holds that without revolutionary armed forces the Party could not have defeated armed counter-revolutionaries and won the revolution.",
-          "sources": [
-            "s4"
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-12"
@@ -8869,36 +8807,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The 20th report says China pursues a defensive national defense policy.",
-      "sources": [
-        "s3"
-      ],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The report says China will never seek hegemony and follows a defensive national defence policy, though it does not renounce force over Taiwan.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-16"
-        },
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The 20th report says China pursues a defensive national defense policy.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -11092,6 +11000,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

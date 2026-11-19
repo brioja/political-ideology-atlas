@@ -819,34 +819,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 2,
-          "confidence": "medium",
-          "rationale": "Conservatism accepts gradual reform but rejects sudden, planned or revolutionary change, as Burke did of 1789.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-14"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1229,36 +1201,6 @@
           "rationale": "Kirk says a healthy society needs honest and able leadership and that natural and institutional differences among people should be preserved.",
           "sources": [
             "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-13"
-        }
-      ]
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Burke holds that the Revolution of 1688 was a just war in the only case in which any war, civil war included, can be just.",
-      "sources": [
-        "s1"
-      ],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "Conservatives reject revolution but accept force by lawful authority, so an absolute ban is not their line.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-14"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "Burke holds that the Revolution of 1688 was a just war in the only case in which any war, civil war included, can be just.",
-          "sources": [
-            "s1"
           ],
           "author": "claude-sonnet-5-5",
           "date": "2026-11-13"
@@ -7251,34 +7193,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass 2026-11-13): the earlier rationale rested on what contemporary adherents or parties hold, on Wikipedia summaries or on a guess, and none of the defining sources (Burke, Kirk, the SEP) states a position that settles this statement.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "low",
-          "rationale": "The modern conservative mainstream stresses strong defense and an assertive posture, so a rule of self-defence alone is not typical.",
-          "sources": [
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-14"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass 2026-11-13): the earlier rationale rested on what contemporary adherents or parties hold, on Wikipedia summaries or on a guess, and none of the defining sources (Burke, Kirk, the SEP) states a position that settles this statement.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-13"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9545,6 +9459,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 2
     }
   ],
   "rules": 7,

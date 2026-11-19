@@ -618,12 +618,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -746,16 +740,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "In 2026 she apologised for taking part in toxic politics and said she has condemned every type of political violence against officials of any party, superseding her 2020 'price of blood' rhetoric.",
-   "sources": [
-    "b2",
-    "b4"
-   ],
-   "auditor": "gpt-6.1-sol"
   },
   "war-builds-character": {
    "value": null,
@@ -2921,16 +2905,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "In 2025 told NBC 'We elected the president to stop sending tax dollars and weapons for the foreign wars', criticised US strikes on Iran ('not our fight'), and in 2026 criticised the Iran war.",
-   "sources": [
-    "s11",
-    "s1"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3487,6 +3461,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

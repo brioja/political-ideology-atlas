@@ -528,14 +528,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "§55 allows militant resistance under sufficiently unjust conditions.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -725,34 +717,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (pass of 2026-11-12): the answer rested on a defence of just war, which is state force; the statement is about violence for political ends outside lawful authority.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": -1,
-          "confidence": "high",
-          "rationale": "He explicitly defends just defensive warfare.",
-          "sources": [
-            "s7"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (pass of 2026-11-12): the answer rested on a defence of just war, which is state force; the statement is about violence for political ends outside lawful authority.",
-          "sources": [
-            "s5"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-12"
-        }
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -3225,14 +3189,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "pp. 8–9 also permit extreme humanitarian interventions.",
-      "sources": [
-        "s5"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -4483,6 +4439,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "passes": [

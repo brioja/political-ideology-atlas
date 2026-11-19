@@ -1101,44 +1101,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "Progressivism seeks reform through democratic government, and Bernstein's reformism rejected revolution.",
-          "sources": [
-            "s1"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-14"
-        },
-        {
-          "value": 1,
-          "confidence": "high",
-          "rationale": "Shalin describes the progressive solution to economic and political crises as reform rather than revolution.",
-          "sources": [
-            "s19"
-          ],
-          "author": "gpt-6.1-sol",
-          "date": "2026-11-08"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s19"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1596,12 +1558,6 @@
           "date": "2026-11-08"
         }
       ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
     },
     "war-builds-character": {
       "value": null,
@@ -7368,14 +7324,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "In Chapter VIII Croly explicitly justifies Bismarck’s deliberately provoked wars for German unification rather than limiting legitimate war to defence against attack.",
-      "sources": [
-        "s24"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -9333,6 +9281,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 5,

@@ -159,15 +159,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "revolution-justified": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "In his December 1860 Senate speech he said that a people whose grievances are without remedy and whose oppression is intolerable have 'the inherent right of revolution', while denying that secession met that test.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "emergency-suspend-protections": {
    "value": 1,
    "confidence": "high",
@@ -674,12 +665,6 @@
    "auditor": "gpt-6.1-sol"
   },
   "natural-rulers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources searched.",
-   "sources": []
-  },
-  "political-violence-never": {
    "value": null,
    "confidence": "low",
    "rationale": "No recorded position found in the sources searched.",
@@ -2762,12 +2747,6 @@
    "rationale": "No recorded position found in the sources searched.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources searched.",
-   "sources": []
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3308,6 +3287,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

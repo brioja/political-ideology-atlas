@@ -354,36 +354,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "They accept nonviolent revolution but reject violent revolution as a route to abolishing the state; de Ligt: \"the more violence, the less revolution.\"",
-          "sources": [
-            "s3",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-          "sources": [
-            "s3",
-            "s4"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-12"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": -1,
       "confidence": "medium",
@@ -519,14 +489,6 @@
       "rationale": "Tolstoy argued that rulers are not the best, but those who love power and seize it; anarchism denies natural rulers.",
       "sources": [
         "s2"
-      ]
-    },
-    "political-violence-never": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Anarcho-pacifism rejects violence as a means of social change; Malatesta's removal of violence from human relations is quoted as its main plank.",
-      "sources": [
-        "s4"
       ]
     },
     "war-builds-character": {
@@ -3064,14 +3026,6 @@
         "s1"
       ]
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Anarcho-pacifists refuse military service altogether, including for defence, so a state army even for defence is not accepted.",
-      "sources": [
-        "s1"
-      ]
-    },
     "language-defines-nation": {
       "value": -2,
       "confidence": "medium",
@@ -3719,6 +3673,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ]
 }

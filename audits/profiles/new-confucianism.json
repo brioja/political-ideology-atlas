@@ -537,36 +537,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Manifesto praises the Confucian honouring of the Tang and Wu revolutions against tyrants and counts the American and French revolutions among Western achievements of universal value, while rejecting communist dictatorship.",
-      "sources": [
-        "s7"
-      ],
-      "reviewHistory": [
-        {
-          "value": 1,
-          "confidence": "medium",
-          "rationale": "The manifesto condemns communist revolution and dictatorship; Confucians favour moral reform.",
-          "sources": [
-            "s2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-19"
-        },
-        {
-          "value": -1,
-          "confidence": "medium",
-          "rationale": "The Manifesto praises the Confucian honouring of the Tang and Wu revolutions against tyrants and counts the American and French revolutions among Western achievements of universal value, while rejecting communist dictatorship.",
-          "sources": [
-            "s7"
-          ],
-          "author": "claude-opus-5-5",
-          "date": "2026-11-09"
-        }
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -867,12 +837,6 @@
           "date": "2026-11-09"
         }
       ]
-    },
-    "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
     },
     "war-builds-character": {
       "value": null,
@@ -5638,14 +5602,6 @@
         }
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Tang held that peace among nation-states requires each to renounce the use of force except for immediate self-defence.",
-      "sources": [
-        "s8"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -7142,6 +7098,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

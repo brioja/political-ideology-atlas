@@ -779,21 +779,6 @@
    ],
    "auditor": "claude-sonnet-5-5"
   },
-  "revolution-justified": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Heller calls the 1956 Hungarian rising the only really socialist revolution in history and backs the East European liberation movements, though she distrusts a total revolution and favours radical democracy.",
-   "sources": [
-    "s2",
-    "s1",
-    "s9",
-    "b1"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "direct-action": {
    "value": -2,
    "confidence": "medium",
@@ -1101,18 +1086,6 @@
    "confidence": "low",
    "rationale": "The school's sources record no position on this statement, and no stated principle settles it.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The joint essay accepts an uprising against tyranny while condemning lynchings. It therefore permits some political violence rather than an absolute prohibition.",
-   "sources": [
-    "b1"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
   },
   "war-builds-character": {
    "value": null,
@@ -3077,12 +3050,6 @@
    "rationale": "The school's sources record no position on this statement, and no stated principle settles it.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The school's sources record no position on this statement, and no stated principle settles it.",
-   "sources": []
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3608,6 +3575,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

@@ -362,34 +362,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-   "sources": [],
-   "reviewHistory": [
-    {
-     "value": 1,
-     "confidence": "medium",
-     "rationale": "Asked whether classless society could come through violence or peaceful methods and chose democratic, peaceful change.",
-     "sources": [
-      "s9"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
-     "sources": [
-      "s9"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-12"
-    }
-   ]
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -522,14 +494,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Non-violence was central to the Gandhian movement he followed, but he accepted armed force for defence and used it over Hyderabad, Kashmir and Goa.",
-   "sources": [
-    "s11"
-   ]
   },
   "war-builds-character": {
    "value": null,
@@ -2709,15 +2673,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Averse to war and called Goa aggression by the Portuguese, but used force over Hyderabad, Kashmir and Goa; mixed.",
-   "sources": [
-    "s11",
-    "s14"
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3261,6 +3216,17 @@
     "restrict-pornography"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
+   ],
+   "nulled": 1
   }
  ]
 }

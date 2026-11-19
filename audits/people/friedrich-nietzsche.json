@@ -462,12 +462,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -593,20 +587,6 @@
     "s1",
     "s4",
     "b1",
-    "b2"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-haiku-5-5"
-   ]
-  },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Praised war and the warrior ('the good war halloweth every cause') and said freedom means readiness to sacrifice men, himself included.",
-   "sources": [
-    "s2",
-    "s3",
     "b2"
    ],
    "auditor": [
@@ -2919,20 +2899,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Wrote that it is 'the good war which halloweth every cause' and looked to a coming struggle for dominion of the world and 'great politics' (Zarathustra; Beyond Good and Evil 208).",
-   "sources": [
-    "s2",
-    "s1",
-    "b2"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-haiku-5-5"
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -4159,6 +4125,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

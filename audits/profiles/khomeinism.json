@@ -534,14 +534,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Khomeini declared overthrowing oppressive regimes a duty of all Muslims.",
-      "sources": [
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "medium",
@@ -884,14 +876,6 @@
       "value": 1,
       "confidence": "medium",
       "rationale": "Khomeini held that those with knowledge of law and justice are fitted to rule.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Khomeini upheld armed overthrow of tyrants and retributive punishment.",
       "sources": [
         "s1"
       ]
@@ -5077,35 +5061,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (later pass, 2026-11-17): the earlier answer rested on inference or mixed evidence, not a position the sources state.",
-      "sources": [],
-      "reviewHistory": [
-        {
-          "value": 0,
-          "confidence": "low",
-          "rationale": "Adherents are split between defence-only provisions in the constitution and the call to support the oppressed and spread the revolution.",
-          "sources": [
-            "s3",
-            "s4"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-10-15"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "Nulled (later pass, 2026-11-17): the earlier answer rested on inference or mixed evidence, not a position the sources state.",
-          "sources": [
-            "s3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-17"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": -1,
       "confidence": "medium",
@@ -6631,6 +6586,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

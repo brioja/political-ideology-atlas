@@ -344,14 +344,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Immortale Dei condemns rebellion against legitimate rulers, though the order is rooted in authority from God rather than the people.",
-      "sources": [
-        "s1"
-      ]
-    },
     "experts-over-public": {
       "value": 1,
       "confidence": "low",
@@ -512,15 +504,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Rebellion against lawful rulers is condemned, but the just-war tradition and state punishment allow force, so an absolute ban is rejected.",
-      "sources": [
-        "s1",
-        "s2"
-      ]
     },
     "war-builds-character": {
       "value": -1,
@@ -2999,12 +2982,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3632,6 +3609,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

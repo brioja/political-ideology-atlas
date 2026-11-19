@@ -835,20 +835,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Wrote that any way of bringing about the revolution was fine and presented the Nazi seizure of power as a revolution.",
-      "sources": [
-        "s7",
-        "s3",
-        "b2"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -1063,41 +1049,6 @@
         "s15"
       ],
       "auditor": "claude-sonnet-5-5"
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The museum's account of Kristallnacht says Goebbels coordinated the press campaign and instigated the nationwide anti-Jewish riot of November 1938, which was violence outside the law.",
-      "sources": [
-        "k3"
-      ],
-      "auditor": "claude-sonnet-5-5",
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "Defended a 'merciless war', 'no penalty too severe' against defeatists and extolled Nazi street fighters.",
-          "sources": [
-            "s1",
-            "s11",
-            "s13",
-            "b2",
-            "b6"
-          ],
-          "author": "claude-haiku-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": -2,
-          "confidence": "medium",
-          "rationale": "The museum's account of Kristallnacht says Goebbels coordinated the press campaign and instigated the nationwide anti-Jewish riot of November 1938, which was violence outside the law.",
-          "sources": [
-            "k3"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
     },
     "war-builds-character": {
       "value": 2,
@@ -4822,35 +4773,6 @@
       ],
       "auditor": "claude-haiku-5-5"
     },
-    "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "He presented his wars as defensive, so the evidence fits either answer.",
-      "sources": [],
-      "auditor": "claude-sonnet-5-5",
-      "reviewHistory": [
-        {
-          "value": -2,
-          "confidence": "low",
-          "rationale": "'Total War' (1943) presents the attack on the Soviet Union as a necessary answer to a threat, and calls for the 'most radical' measures. He does not confine armed forces to defence.",
-          "sources": [
-            "b2"
-          ],
-          "author": "claude-haiku-5-5",
-          "date": "2026-10-23"
-        },
-        {
-          "value": null,
-          "confidence": "low",
-          "rationale": "He presented his wars as defensive, so the evidence fits either answer.",
-          "sources": [
-            "b2"
-          ],
-          "author": "claude-sonnet-5-5",
-          "date": "2026-11-18"
-        }
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -6317,6 +6239,17 @@
         "restrict-pornography"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
+      ],
+      "nulled": 1
     }
   ],
   "rules": 7,

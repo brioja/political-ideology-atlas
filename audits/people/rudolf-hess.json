@@ -391,14 +391,6 @@
    "rationale": "No recorded position on this statement in the sources consulted.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He called the National Socialist seizure of power a revolution and said the revolution must be directed by Hitler, with revolutionary methods possible again if he commands them.",
-   "sources": [
-    "s5"
-   ]
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -522,15 +514,6 @@
    "sources": [
     "s1",
     "s2"
-   ]
-  },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He defended the November 1923 armed attempt as ordained by fate and said the atrocities of the revolution cannot be measured by puritanical standards.",
-   "sources": [
-    "s2",
-    "s8"
    ]
   },
   "war-builds-character": {
@@ -2808,37 +2791,6 @@
     "s1"
    ]
   },
-  "defensive-wars-only": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The tribunal found him guilty of conspiracy and crimes against peace and records that he signed the decrees annexing Austria, the Sudetenland, Danzig and Polish territory.",
-   "sources": [
-    "s7"
-   ],
-   "reviewHistory": [
-    {
-     "value": 0,
-     "confidence": "low",
-     "rationale": "He denied that Germany planned a war of aggression and described its aims as defensive necessities, while also defending the annexations and the war; the record is mixed.",
-     "sources": [
-      "s8",
-      "s7"
-     ],
-     "author": "claude-haiku-5-5",
-     "date": "2026-10-23"
-    },
-    {
-     "value": -2,
-     "confidence": "medium",
-     "rationale": "The tribunal found him guilty of conspiracy and crimes against peace and records that he signed the decrees annexing Austria, the Sudetenland, Danzig and Polish territory.",
-     "sources": [
-      "s7"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-19"
-    }
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -4135,6 +4087,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

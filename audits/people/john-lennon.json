@@ -371,17 +371,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "1970-71: said a revolution 'has to happen' eventually and that 'you can't take power without a struggle'; but his 1980 view is that he wants to see the plan and will not join violence. Mixed record.",
-   "sources": [
-    "s1",
-    "s2",
-    "s3"
-   ],
-   "auditor": "claude-sonnet-5-5"
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -495,21 +484,6 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
-  },
-  "political-violence-never": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His 1980 interview rejects violence for political change and reaffirms peaceful protest ('unless it is with flowers'); the recent clear position wins over his 1971-72 remarks accepting struggle and siding with the IRA over the British army, which keep it from the strongest value.",
-   "sources": [
-    "s1",
-    "s3",
-    "s4",
-    "b1"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
   },
   "war-builds-character": {
    "value": null,
@@ -2669,12 +2643,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -3219,6 +3187,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }

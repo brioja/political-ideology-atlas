@@ -343,16 +343,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He crushed Oldcastle's Lollard rising in January 1414 and executed the Southampton plotters of 1415 who aimed to depose him; he treated rebellion as treason.",
-      "sources": [
-        "s1",
-        "s5"
-      ],
-      "auditor": "claude-sonnet-5-5"
-    },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
@@ -498,16 +488,6 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Record only: he led a war of conquest and oversaw the trials and executions of captured rebels and Lollards after the Oldcastle rising.",
-      "sources": [
-        "b2",
-        "b4"
-      ],
-      "auditor": "claude-haiku-5-5"
     },
     "war-builds-character": {
       "value": null,
@@ -2728,21 +2708,6 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "He declared war on France in July 1415 and invaded, announcing to the London authorities that he would visit the parts beyond sea with a large army.",
-      "sources": [
-        "s1",
-        "s3",
-        "b1",
-        "b2"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
-    },
     "language-defines-nation": {
       "value": null,
       "confidence": "low",
@@ -3279,6 +3244,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

@@ -381,14 +381,6 @@
         }
       ]
     },
-    "revolution-justified": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Turkes took part in the 1960 coup, but the movement defended the existing state order against revolutionaries; split.",
-      "sources": [
-        "s3"
-      ]
-    },
     "experts-over-public": {
       "value": 0,
       "confidence": "low",
@@ -534,14 +526,6 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Grey Wolves fought leftists on the streets in the 1970s, which undermines a rejection of political violence by a typical adherent.",
-      "sources": [
-        "s3"
-      ]
     },
     "war-builds-character": {
       "value": null,
@@ -3191,14 +3175,6 @@
         "s2"
       ]
     },
-    "defensive-wars-only": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Idealists held Pan-Turkic union with Turkic peoples as the final ideal and valued military strength, which is incompatible with a strictly defensive doctrine.",
-      "sources": [
-        "s3"
-      ]
-    },
     "language-defines-nation": {
       "value": 1,
       "confidence": "medium",
@@ -3937,6 +3913,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

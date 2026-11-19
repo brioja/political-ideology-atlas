@@ -396,14 +396,6 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The program defines itself as a revolutionary transition to socialism and honours the rebellions of 1989 and 1992 as saving the nation.",
-      "sources": [
-        "s4"
-      ]
-    },
     "experts-over-public": {
       "value": -2,
       "confidence": "medium",
@@ -540,14 +532,6 @@
       "value": -1,
       "confidence": "medium",
       "rationale": "The program is anti-oligarchic and egalitarian, though the cult around the leader and military elite shows hierarchy in practice.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The program honours armed uprisings as heroic and the government uses militias; adherents do not hold political violence is never justified.",
       "sources": [
         "s4"
       ]
@@ -3108,14 +3092,6 @@
         "s4"
       ]
     },
-    "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The program states a zone of peace and defensive doctrine for the armed forces.",
-      "sources": [
-        "s4"
-      ]
-    },
     "language-defines-nation": {
       "value": 0,
       "confidence": "low",
@@ -3795,6 +3771,17 @@
       "reviewedAt": "2026-11-19",
       "statements": [
         "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "revolution-justified",
+        "political-violence-never",
+        "defensive-wars-only"
       ],
       "nulled": 0
     }

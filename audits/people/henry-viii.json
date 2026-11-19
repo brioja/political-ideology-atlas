@@ -542,38 +542,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "revolution-justified": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "In October 1536 he told the Lincolnshire rebels that subjects are bound by all law to obey and serve their prince with lives, lands and goods and for no worldly cause to withstand him.",
-   "sources": [
-    "b6"
-   ],
-   "reviewHistory": [
-    {
-     "value": 2,
-     "confidence": "medium",
-     "rationale": "Treated the Pilgrimage of Grace as treason and made denying royal supremacy treason.",
-     "sources": [
-      "s4",
-      "s5",
-      "b4"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-26"
-    },
-    {
-     "value": 2,
-     "confidence": "high",
-     "rationale": "In October 1536 he told the Lincolnshire rebels that subjects are bound by all law to obey and serve their prince with lives, lands and goods and for no worldly cause to withstand him.",
-     "sources": [
-      "b6"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-11-13"
-    }
-   ]
-  },
   "experts-over-public": {
    "value": null,
    "confidence": "low",
@@ -722,15 +690,6 @@
    "rationale": "Distinguished the prince and selected nobles’ capacity to rule from commoners’ alleged incapacity; not a biological theory.",
    "sources": [
     "b6"
-   ],
-   "auditor": "gpt-6.1-sol"
-  },
-  "political-violence-never": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Agreed to a plot to kill Cardinal Beaton despite condemning domestic rebellion; his connection to the final murder is less certain.",
-   "sources": [
-    "b14"
    ],
    "auditor": "gpt-6.1-sol"
   },
@@ -3559,20 +3518,6 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "defensive-wars-only": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Began wars with France in 1512 and 1544 and the 'Rough Wooing' of Scotland.",
-   "sources": [
-    "s5",
-    "b11",
-    "b13"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
-   ]
-  },
   "language-defines-nation": {
    "value": null,
    "confidence": "low",
@@ -4870,6 +4815,17 @@
    "reviewedAt": "2026-11-19",
    "statements": [
     "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "revolution-justified",
+    "political-violence-never",
+    "defensive-wars-only"
    ],
    "nulled": 0
   }
