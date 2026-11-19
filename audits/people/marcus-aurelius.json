@@ -2,7 +2,10 @@
   "id": "marcus-aurelius",
   "name": "Marcus Aurelius",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+  ],
   "living": false,
   "role": "Roman emperor (161-180) and Stoic philosopher",
   "summary": "Marcus Aurelius was a Stoic who held that all rational people share one reason and one common good, and who wrote that virtue matters more than wealth, fame or pleasure. As emperor he fought the Marcomannic and Parthian wars, ruled through the Senate and the courts, and passed power to his son Commodus. Most of what is known of his political acts comes from later ancient historians, and his own words survive mainly in the Meditations.",
@@ -11,10 +14,11 @@
     {
       "id": "s1",
       "kind": "primary",
-      "title": "Meditations (George Long translation)",
+      "title": "Meditations (Casaubon translation, Project Gutenberg 2680)",
       "author": "Marcus Aurelius",
       "url": "https://www.gutenberg.org/cache/epub/2680/pg2680.txt",
-      "usedFor": "his own words on common reason, cosmopolis, duty to the common good, wealth and simplicity, Christians, voluntary death and the gods"
+      "usedFor": "his own words on common reason, cosmopolis, duty to the common good, wealth and simplicity, Christians, voluntary death and the gods",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,7 +26,8 @@
       "title": "The Correspondence of Marcus Cornelius Fronto with Marcus Aurelius, vol. 2 (Haines translation, Loeb)",
       "author": "Marcus Aurelius and M. Cornelius Fronto",
       "url": "https://archive.org/stream/correspondenceof0002crha/correspondenceof0002crha_djvu.txt",
-      "usedFor": "his letters on Avidius Cassius (166) and on the appointment of Albinus and Pescennius"
+      "usedFor": "his letters on Avidius Cassius (166) and on the appointment of Albinus and Pescennius",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -30,7 +35,8 @@
       "title": "Roman History, Epitome of Books 71 and 72 (Loeb, Cary)",
       "author": "Cassius Dio",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/72*.html",
-      "usedFor": "Marcomannic wars, Cassius's revolt, Commodus as heir, sale of palace goods rather than new taxes, senators spared, his piety"
+      "usedFor": "Marcomannic wars, Cassius's revolt, Commodus as heir, sale of palace goods rather than new taxes, senators spared, his piety",
+      "evidence": "action"
     },
     {
       "id": "s4",
@@ -38,7 +44,8 @@
       "title": "Historia Augusta, Life of Marcus Aurelius, part 1 (Loeb, Magie)",
       "author": "Aelius Spartianus (attributed)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Marcus_Aurelius/1*.html",
-      "usedFor": "early life, legal and judicial reforms (wards, court days, inheritance-tax laws), kin privileges. Late and unreliable: low confidence"
+      "usedFor": "early life, legal and judicial reforms (wards, court days, inheritance-tax laws), kin privileges. Late and unreliable: low confidence",
+      "evidence": "action"
     },
     {
       "id": "s5",
@@ -46,7 +53,8 @@
       "title": "Historia Augusta, Life of Marcus Aurelius, part 2 (Loeb, Magie)",
       "author": "Aelius Spartianus (attributed)",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Marcus_Aurelius/2*.html",
-      "usedFor": "Marcomannic war, religious revival, sale of palace goods, punishments, treatment of Cassius, the heir. Late and unreliable: low confidence"
+      "usedFor": "Marcomannic war, religious revival, sale of palace goods, punishments, treatment of Cassius, the heir. Late and unreliable: low confidence",
+      "evidence": "action"
     },
     {
       "id": "s6",
@@ -54,7 +62,8 @@
       "title": "Marcus Aurelius",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Marcus_Aurelius",
-      "usedFor": "summary of the record: legal reforms on manumission and guardianship, appointments, Christian persecution and its disputed imperial role, succession to Commodus, currency debasement"
+      "usedFor": "summary of the record: legal reforms on manumission and guardianship, appointments, Christian persecution and its disputed imperial role, succession to Commodus, currency debasement",
+      "evidence": "action"
     }
   ],
   "answers": {
@@ -139,10 +148,32 @@
     "state-harmful": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "He served as emperor and treats membership of a commonwealth as natural to a rational creature (Meditations IV, VI), so the state is for him a necessary part of human life.",
+      "rationale": "He treats membership of a commonwealth as natural to a rational creature (Meditations IV, VI), so the state is for him a necessary part of human life.",
       "sources": [
-        "s1",
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He served as emperor and treats membership of a commonwealth as natural to a rational creature (Meditations IV, VI), so the state is for him a necessary part of human life.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He treats membership of a commonwealth as natural to a rational creature (Meditations IV, VI), so the state is for him a necessary part of human life.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "limit-guns": {
@@ -226,9 +257,31 @@
     "reduce-immigration": {
       "value": 0,
       "confidence": "low",
-      "rationale": "He banished the Germanic settlers from Italy after the Ravenna revolt, but he also settled tribes in the frontier provinces (Wikipedia), so the record points both ways.",
+      "rationale": "Dio (Epitome of Book 72) reports he settled defeated Germanic tribes on land in Dacia, Pannonia, Moesia, Germany and Italy, but after those settled at Ravenna rose and seized the city he brought no more into Italy and banished those already there, so the record points both ways.",
       "sources": [
-        "s6"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He banished the Germanic settlers from Italy after the Ravenna revolt, but he also settled tribes in the frontier provinces (Wikipedia), so the record points both ways.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Dio (Epitome of Book 72) reports he settled defeated Germanic tribes on land in Dacia, Pannonia, Moesia, Germany and Italy, but after those settled at Ravenna rose and seized the city he brought no more into Italy and banished those already there, so the record points both ways.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "empower-international-orgs": {
@@ -260,9 +313,31 @@
     "open-borders": {
       "value": -1,
       "confidence": "low",
-      "rationale": "Wikipedia says he banished the Germanic settlers brought into Italy after a revolt at Ravenna, which runs against open borders.",
+      "rationale": "Dio (Epitome of Book 72) reports that after the Ravenna uprising he admitted no more barbarians into Italy and banished those who had come, which runs against open borders.",
       "sources": [
-        "s6"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Wikipedia says he banished the Germanic settlers brought into Italy after a revolt at Ravenna, which runs against open borders.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Dio (Epitome of Book 72) reports that after the Ravenna uprising he admitted no more barbarians into Italy and banished those who had come, which runs against open borders.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "limit-growth": {
@@ -824,10 +899,32 @@
     "reason-over-faith": {
       "value": 0,
       "confidence": "low",
-      "rationale": "He makes reason the guide to conduct in the Meditations, but he also prays to the gods and accepts providence, so the evidence points both ways.",
+      "rationale": "He makes reason the guide to conduct in the Meditations, but he also prays to the gods and accepts providence, so his own writing points both ways.",
       "sources": [
-        "s1",
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He makes reason the guide to conduct in the Meditations, but he also prays to the gods and accepts providence, so the evidence points both ways.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He makes reason the guide to conduct in the Meditations, but he also prays to the gods and accepts providence, so his own writing points both ways.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "welfare-for-citizens": {
@@ -959,10 +1056,32 @@
     "equal-moral-worth": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Meditations I (section XI) lists as an ideal an equal commonwealth administered by justice and equality; he also held that all share one reason. He kept slavery in place, so the support is partial.",
+      "rationale": "Meditations I (section XI) lists as an ideal an equal commonwealth administered by justice and equality, and he holds that all share one reason.",
       "sources": [
-        "s1",
-        "s6"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Meditations I (section XI) lists as an ideal an equal commonwealth administered by justice and equality; he also held that all share one reason. He kept slavery in place, so the support is partial.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Meditations I (section XI) lists as an ideal an equal commonwealth administered by justice and equality, and he holds that all share one reason.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "socialism-one-country": {
@@ -1028,10 +1147,32 @@
     "initiating-force-wrong": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Meditations XI (section XVI) says people are not born to hurt one, and that is against nature, but he fought wars, so this is mixed with his own record.",
+      "rationale": "Meditations XI (section XVI) says people are not born to hurt one another, and that doing so is against nature.",
       "sources": [
-        "s1",
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Meditations XI (section XVI) says people are not born to hurt one, and that is against nature, but he fought wars, so this is mixed with his own record.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Meditations XI (section XVI) says people are not born to hurt one another, and that doing so is against nature.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "competition-drives-progress": {
@@ -1414,10 +1555,32 @@
     "sovereign-above-law": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Meditations I (section XI) sets out an ideal of an equal commonwealth with equal laws, and HA says he added court days until 230 were set for pleading cases; he is not presented as above the law.",
+      "rationale": "Meditations I (section XI) sets out an ideal of an equal commonwealth administered by justice and equality, and of a kingdom that regards only the welfare of the subjects, which runs against a sovereign above the law.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Meditations I (section XI) sets out an ideal of an equal commonwealth with equal laws, and HA says he added court days until 230 were set for pleading cases; he is not presented as above the law.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Meditations I (section XI) sets out an ideal of an equal commonwealth administered by justice and equality, and of a kingdom that regards only the welfare of the subjects, which runs against a sovereign above the law.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "space-expansion": {
@@ -1682,10 +1845,32 @@
     "withdraw-from-politics": {
       "value": -1,
       "confidence": "low",
-      "rationale": "Meditations IV recommends retiring into oneself, but he also insists on doing public duty (Meditations VI), and he governed the empire in person through its wars.",
+      "rationale": "Meditations IV recommends retiring into oneself, but he also insists on doing public duty (Meditations VI), so his own writing points both ways.",
       "sources": [
-        "s1",
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Meditations IV recommends retiring into oneself, but he also insists on doing public duty (Meditations VI), and he governed the empire in person through its wars.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Meditations IV recommends retiring into oneself, but he also insists on doing public duty (Meditations VI), so his own writing points both ways.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "mass-culture-pacifies": {
@@ -1709,10 +1894,32 @@
     "native-born-offices": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "He gave command to Albinus, a man of African origin (Marcus's letter in Fronto's correspondence), and appointed Titus Varius Clemens, from Pannonia, to head the imperial correspondence (Wikipedia).",
+      "rationale": "He gave command to Albinus, a man of African origin, in a letter preserved in Fronto's correspondence.",
       "sources": [
-        "s2",
-        "s6"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He gave command to Albinus, a man of African origin (Marcus's letter in Fronto's correspondence), and appointed Titus Varius Clemens, from Pannonia, to head the imperial correspondence (Wikipedia).",
+          "sources": [
+            "s2",
+            "s6"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He gave command to Albinus, a man of African origin, in a letter preserved in Fronto's correspondence.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "party-own-road": {
@@ -2962,10 +3169,32 @@
     "simple-living": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Meditations I and XIII prize plainness and a limited life, and Wikipedia says he slept on the ground and dressed in a plain Greek cloak in his youth.",
+      "rationale": "Meditations I and XIII prize plainness and a limited life.",
       "sources": [
-        "s1",
-        "s6"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Meditations I and XIII prize plainness and a limited life, and Wikipedia says he slept on the ground and dressed in a plain Greek cloak in his youth.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Meditations I and XIII prize plainness and a limited life.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "restrict-indigenous-settlement": {
@@ -3123,9 +3352,677 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Meditations VII (section XXX, Casaubon) says all things other than reasonable creatures are ordained for the use of reasonable creatures, as the worse is made for the better, which includes animals; he does not discuss treatment of them.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "Known answers rest on the Meditations and on his letters and record as emperor, reported by Cassius Dio and the Historia Augusta. The Historia Augusta is unreliable and is low confidence where it is the only source. Reports conflict on whether he doubted Commodus (HA) and on his role in the persecution of Christians (disputed). The widow-related legal reform named in the research brief was not found in the sources opened here. Most modern-institution statements are null because the sources do not address their wording.",
+  "notes": "Known answers rest on the Meditations and on his letters and record as emperor, reported by Cassius Dio and the Historia Augusta. The Historia Augusta is unreliable and is low confidence where it is the only source. Reports conflict on whether he doubted Commodus (HA) and on his role in the persecution of Christians (disputed). Most modern-institution statements are null because the sources do not address their wording. Later pass (2026-11-19, claude-sonnet-5-5): added answers for statements added since the first pass (all null but humans-entitled-to-use-animals), corrected the Meditations edition to the Casaubon text at Gutenberg 2680, and re-cited the immigration answers to Dio. Themes searched in the Meditations: economy, government, war, religion, ecology, society; his only surviving own writings are the Meditations and the Fronto letters.",
   "reviews": [
     {
       "kind": "inference",
@@ -3155,6 +4052,33 @@
         "former-empire-influence"
       ],
       "nulled": 0
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-19"
+    }
+  ],
+  "booksNotUsed": [
+    {
+      "gutenberg": [
+        "6920",
+        "15877",
+        "55317"
+      ],
+      "reason": "Other translations or editions of the same Meditations, already read in the Casaubon text (2680)."
+    },
+    {
+      "gutenberg": [
+        "59784"
+      ],
+      "reason": "An index of Project Gutenberg's Marcus Aurelius works, not a text."
     }
   ]
 }
