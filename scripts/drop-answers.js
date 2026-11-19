@@ -74,6 +74,19 @@ for (const f of fs.readdirSync(modelsDir).filter((f) => f.endsWith(".json")).sor
   models++; answers += gone.length;
   if (!dry) fs.writeFileSync(file, format(a));
 }
+// Their raw answers (audits/models/<id>/answers.json, merged by model-merge.js) go too.
+for (const d of fs.readdirSync(modelsDir).sort()) {
+  const file = path.join(modelsDir, d, "answers.json");
+  if (!fs.existsSync(file)) continue;
+  const text = fs.readFileSync(file, "utf8"), a = JSON.parse(text);
+  const gone = Object.keys(a).filter((k) => !bank.has(k));
+  if (!gone.length) continue;
+  const format = formatter(text, a);
+  if (!format) { skipped.push(`models/${d}/answers.json`); continue; }
+  for (const k of gone) delete a[k];
+  answers += gone.length;
+  if (!dry) fs.writeFileSync(file, format(a));
+}
 console.log(`${dry ? "would remove" : "removed"} ${answers} answers to statements not in the bank from ${files} audits and ${models} AI models`);
 if (skipped.length) console.log(`not rewritten (formatting doesn't round-trip; fix by hand): ${skipped.join(", ")}`);
 // What's left to remove by hand.
