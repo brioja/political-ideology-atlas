@@ -34,7 +34,10 @@ const LANES = path.join(ROOT, "scratchpad", "lane-out"), OUT = path.join(LANES, 
 const DONE = path.join(OUT, "DONE.txt"), LOG = path.join(OUT, "driver.log"), LOCK = path.join(LANES, ".integrate.lock");
 fs.mkdirSync(OUT, { recursive: true });
 const log = (m) => { const l = `${new Date().toTimeString().slice(0, 8)} ${m}`; console.log(l); fs.appendFileSync(LOG, l + "\n"); };
-const doneIds = () => new Set((fs.existsSync(DONE) ? fs.readFileSync(DONE, "utf8") : "").split("\n").map((l) => l.split("|")[0].trim()).filter(Boolean));
+// A DONE line's subject is the last word before the first "|": agents copy INTEGRATED.txt's "<date> <line>" format and
+// prefix the date (2026-11-19: undetected, every resume found its line and quit, and finished audits were dropped).
+const lineId = (l) => l.split("|")[0].trim().split(/\s+/).pop();
+const doneIds = () => new Set((fs.existsSync(DONE) ? fs.readFileSync(DONE, "utf8") : "").split("\n").map(lineId).filter(Boolean));
 const run = (cmd, args, opts = {}) => spawnSync(cmd, args, { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 28, ...opts });
 const git = (...a) => run("git", a);
 const draft = (id) => path.join(OUT, `${id}.json`);
@@ -47,7 +50,7 @@ function nextSubject() {
   const people = new Set(lib.peopleCatalog().map((p) => p.id));
   for (const f of fs.readdirSync(OUT)) {
     const id = f.endsWith(".claim") ? f.slice(0, -6) : null;
-    if (id && !done.has(id) && !tried.has(id) && PEOPLE === people.has(id)) return id;
+    if (id && !tried.has(id) && PEOPLE === people.has(id) && (!done.has(id) || fs.existsSync(draft(id)))) return id; // a done claim is still to integrate
   }
   const next = (skip) => {
     const a = [path.join(__dirname, "next.js"), `--${KIND}`, "--lane", ...(skip.length ? ["--skip", skip.join(",")] : [])];
@@ -173,7 +176,7 @@ while (timeLeft()) {
   if (!id) { log("queue empty"); break; }
   fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
   log(`start ${id}`);
-  let thread = session(START(id));
+  let thread = doneIds().has(id) ? null : session(START(id));
   for (let n = 1; !doneIds().has(id) && n <= RESUMES && timeLeft(); n++) {
     if (!thread) { log(`${id}: no session id; starting a new session`); thread = session(START(id)); continue; }
     log(`resume ${id} (${n})`);
@@ -181,10 +184,10 @@ while (timeLeft()) {
   }
   if (!doneIds().has(id) || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id);
-  for (let n = 1; errors && n <= FIX_ROUNDS && thread; n++) { log(`${id}: validator errors, fix round ${n}`); thread = session(FIX(id, errors), thread); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); }
+  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = session(FIX(id, errors), thread); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); }
   if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); continue; }
   // The DONE line moves to INTEGRATED.txt, so a later pass on the same subject starts clean.
-  const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => l.split("|")[0].trim() === id);
+  const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
   const name = integrate(id);
   fs.writeFileSync(DONE, lines.filter((l) => l !== line).join("\n"));
   fs.appendFileSync(path.join(OUT, "INTEGRATED.txt"), `${new Date().toISOString().slice(0, 10)} ${line}\n`);
