@@ -4130,8 +4130,8 @@ const QUESTIONS = [
   "theme": "world",
   "text": "A country should seek closer ties with China than with the United States.",
   "agree": "In building foreign relationships, a country should give its partnership with Beijing priority over its partnership with Washington.",
-  "disagree": "There is no general case for putting ties with Beijing ahead of ties with Washington.",
-  "note": "These ties could be diplomatic, economic or military. The question is which relationship countries should work to make closer. If you think it depends on the country, that means disagreeing.",
+  "disagree": "A country should give its relationship with Washington at least as much priority as its relationship with Beijing.",
+  "note": "These ties could be diplomatic, economic or military. The question is which relationship the country should work to make closer.",
   "icon": "🐉"
  },
  {
