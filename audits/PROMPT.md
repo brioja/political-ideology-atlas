@@ -146,7 +146,7 @@ The results page links each ideology to further reading for curious, non-special
 The statements are chosen by the standard in `audits/statements/STANDARD.md`, and audits are how
 gaps get found. After answering, list in `missingStatements` the positions that **define** this
 ideology (stated in its primary sources or central in the scholarship) but that no statement
-captures, even loosely. Leave it as an empty list if there are none, and don't pad it.
+captures, even loosely. List only those; often there are none, and the list is empty.
 
 - Write each as a candidate statement in the bank's form: one claim, read literally, in neutral
   words that adherents and opponents would both accept as a fair statement of the question. Hold

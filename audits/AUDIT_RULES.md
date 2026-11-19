@@ -106,7 +106,7 @@ free trade, not about markets in general.
   whole claim.
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
-  doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call. A 0 cites the evidence for each
+  doctrine). Mixed evidence is `low`. A 0 cites the evidence for each
   side, which one source may hold, of the same kind: actions against actions or words against words.
   Words against actions is not a split, even inside one source; answer from the actions (`validate.js`
   checks the cited sources' tags and the rationale's wording). Adherents
@@ -180,9 +180,8 @@ free trade, not about markets in general.
   Later words never override a record, not even an explicit repudiation (speeches praising peace or
   tolerance after a campaign of conquest or repression change nothing); only a later record does.
   Say in the rationale when a position changed.
-- **Fix the answer, not the wording.** When the validator rejects an answer, change the answer: if it
-  says contested evidence must be `low`, lower the confidence; never rephrase a rationale to slip
-  past a check. A rationale states the evidence; it doesn't say that an answer isn't an inference.
+- **Fix the answer.** When the validator rejects an answer, change the answer to fit the evidence: if it
+  says contested evidence must be `low`, lower the confidence. A rationale states only the evidence.
 
 Each rationale is one or two plain sentences that explain the answer, not restate it, and cites at
 least one source id from your `sources` list.
@@ -218,7 +217,7 @@ rules 2 still hold. A failure names the lines whose bars are too wide.
 sources. If your draft fails the uncertainty rule,
 keep researching before you finish: the lines the validator names, then the statements still null, in
 new sources (the local corpora too). Stop when they are covered or when the record really has nothing
-more, and say in `notes` which themes you searched. Never raise a confidence to pass.
+more, and say in `notes` which themes you searched. Each confidence stays what its evidence supports (section 4).
 
 **Texts known to exist** (people, Brandon 2026-11-12). Every text by the person that the validator knows
 of is read and cited, or declined in `booksNotUsed` with a reason: Project Gutenberg's whole catalog

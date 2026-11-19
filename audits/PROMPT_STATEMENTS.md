@@ -56,7 +56,7 @@ ideology's local source library and (2) propose the defining statements the bank
     country"), so the ideology's case falls outside it.
 - For each defining position no statement captures, propose a statement only if this ideology answers
   it **-2 or +2 at high confidence** (a direct statement in a source you opened, AUDIT_RULES section 3).
-  Usually 0-3 per ideology. Zero is a fine answer; don't pad.
+  Usually 0-3 per ideology, often none.
 - Write it in the bank's form and hold it to every check in STANDARD.md test 3: plain words, one
   reading, not trivially true, no unstated context, not relative to the status quo, general (other
   ideologies can take a side; never names an ideology), not already in the bank.

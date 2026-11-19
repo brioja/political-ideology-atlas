@@ -406,8 +406,8 @@ for (const t of ["validate-rules.test.js", "validate-ideology-rules.test.js"]) {
   const { WORDING, WORDING_REASONS } = require("./scripts/lib");
   for (const w of [...WORDING.errors, ...WORDING.warnings, ";", "more", "less", "fewer", "second sentence"]) assert.ok(WORDING_REASONS[w], `wording mark "${w}" has no reason in WORDING_REASONS (scripts/lib.js)`);
 }
-// Agent prompts state only the behavior wanted: a sentence excusing a failed check, or saying what no later step will
-// do, plants the opposite and agents follow it (Brandon, 2026-11-19: lanes read "failing the uncertainty rule is an
+// Agent prompts state only the behavior wanted: a sentence excusing a failed check, saying what no later step will do,
+// or forbidding a shortcut past a check plants that idea and agents follow it (Brandon, 2026-11-19: lanes read "failing the uncertainty rule is an
 // acceptable outcome" and stopped researching).
 {
   const path = require("path");
@@ -415,12 +415,14 @@ for (const t of ["validate-rules.test.js", "validate-ideology-rules.test.js"]) {
     ...fs.readdirSync(path.join(__dirname, ".claude", "workflows")).map((f) => path.join(".claude", "workflows", f)), "scripts/lane.js"];
   const EXCUSES = [/(fail\w*|failing) (the |it )?(uncertainty|validat)[^.]{0,40}(acceptable|correct|honest|fine|expected|ok\b)/i,
     /(acceptable|correct|honest) (outcome|result)/i, /except (for )?the uncertainty/i, /uncertainty rule aside/i,
-    /no later (pass|step|run)[^.]{0,20}(fill|cover|fix)/i, /later pass(es)? (will )?(fill|cover)/i, /stop early/i, /search is wasted/i];
+    /no later (pass|step|run)[^.]{0,20}(fill|cover|fix)/i, /later pass(es)? (will )?(fill|cover)/i, /stop early/i, /search is wasted/i,
+    // a prohibition of a shortcut to passing a check names the shortcut: state what the answer or list follows instead
+    /\bpad(ding|ded)?\b/i, /(raise|strengthen|add|inflate)[^.]{0,40} to pass\b/i, /(slip|get|sneak) past/i, /avoid a hard call/i];
   const hits = [];
   for (const f of files) fs.readFileSync(path.join(__dirname, f), "utf8").split("\n").forEach((line, i) => {
     for (const re of EXCUSES) if (re.test(line)) hits.push(`${f}:${i + 1}: ${line.trim().slice(0, 100)}`);
   });
-  assert(!hits.length, `agent prompts excuse a check or name what no later step does; state only the behavior wanted:\n${hits.join("\n")}`);
+  assert(!hits.length, `agent prompts excuse or name a shortcut past a check, or say what no later step does; state only the behavior wanted:\n${hits.join("\n")}`);
 }
 
 console.log("\nAll checks passed.");
