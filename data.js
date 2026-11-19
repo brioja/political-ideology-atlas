@@ -1644,10 +1644,10 @@ const QUESTIONS = [
  {
   "id": "educated-out-of-touch",
   "theme": "society",
-  "text": "University-educated people tend to be out of touch with the realities of ordinary life.",
-  "agree": "People with advanced schooling are cut off from how ordinary people live and work.",
-  "disagree": "University-educated people are not especially out of touch with the realities of ordinary life.",
-  "note": "About whether people with a university education tend to be cut off from how ordinary people live. Disagreeing with their views is not enough.",
+  "text": "University-educated people are out of touch with ordinary life.",
+  "agree": "People with a university education have a poor understanding of how most people live.",
+  "disagree": "University-educated people are not especially out of touch with ordinary life.",
+  "note": "Read this as a general claim about graduates, with room for individual exceptions.",
   "icon": "🎓"
  },
  {
