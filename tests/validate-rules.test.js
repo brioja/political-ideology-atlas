@@ -136,12 +136,13 @@ fails("back on words after an action was nulled", restored(["s3"], "Said in a 20
   const b = JSON.parse(JSON.stringify(committed)); delete b.answers[A].reviewHistory;
   fails("history dropped", b, /"reviewHistory" was changed or shortened/, committed); }
 { const committed = nulled(["s1"]); const a = JSON.parse(JSON.stringify(committed)); a.reviews = [];
-  fails("nulling review dropped", a, /committed "nulling" or "dropped" review was changed or removed/, committed); }
+  fails("nulling review dropped", a, /committed "nulling" review was changed or removed/, committed); }
 { const committed = base(); const a = laterPass(base()); a.answers[B].value = -2; a.answers[B].rationale = "Changed by a later pass with no record kept.";
   fails("sourced answer changed without history", a, /changed without a talk-page record/, committed); }
 { const committed = base(); const a = laterPass(base()); delete a.answers[B];
   fails("sourced answer removed", a, /a sourced answer was removed/, committed); }
-// Answers only to statements in the bank; a dropped statement's answers go with a "dropped" review recording them.
+// Answers only to statements in the bank; a dropped statement's answers go with their history, the nulling
+// reviews lowered by the nullings removed, and no mention of it is left.
 { const X = "statement-no-longer-in-the-bank";
   const a = base(); a.answers[X] = { value: 1, confidence: "medium", rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
   fails("answer to a statement not in the bank", a, /answers to statements not in the bank: statement-no-longer-in-the-bank/);
@@ -150,15 +151,18 @@ fails("back on words after an action was nulled", restored(["s3"], "Said in a 20
   const stated = { value: 1, confidence: "medium", rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"], author: "claude-sonnet-5-5", date: "2026-11-01" };
   committed.answers[X] = { value: null, confidence: "low", rationale: "Nulled: the bill turned out to be about something else.", sources: [],
     reviewHistory: [stated, { value: null, confidence: "low", rationale: "Nulled: the bill turned out to be about something else.", sources: ["s4"], author: "claude-opus-5-5", date: "2026-11-07" }] };
-  const dropped = (nulled) => { const b = JSON.parse(JSON.stringify(committed)); delete b.answers[X];
-    if (nulled !== undefined) b.reviews.push({ kind: "dropped", reviewer: "claude-opus-5-5", reviewedAt: "2026-11-18", statements: [X], nulled }); return b; };
-  ok("dropped statement's answer removed with a dropped review", dropped(1), committed);
-  fails("dropped statement's answer removed without a record", dropped(), /a sourced answer was removed|"reviewHistory" was changed or shortened/, committed);
-  fails("dropped review undercounts the nullings removed", dropped(0), /"reviews" count 1 nulled answer/, committed);
-  const c = dropped(1); c.reviews[1].statements = [];
-  fails("dropped review without its statements", c, /a "dropped" review is/, committed);
-  const d = dropped(1); const e = JSON.parse(JSON.stringify(d)); e.reviews.pop();
-  fails("dropped review removed later", e, /committed "nulling" or "dropped" review was changed or removed/, d); }
+  const dropped = (lowered) => { const b = JSON.parse(JSON.stringify(committed)); delete b.answers[X];
+    if (lowered) b.reviews = b.reviews.filter((r) => r.kind !== "nulling"); return b; };
+  ok("dropped statement's answer removed, its nulling taken off the review", dropped(true), committed);
+  fails("dropped statement's nulling still counted", dropped(false), /"reviews" count 1 nulled answer\(s\) but "reviewHistory" holds 0/, committed);
+  const c = JSON.parse(JSON.stringify(committed)); c.reviews = c.reviews.filter((r) => r.kind !== "nulling");
+  fails("nulling review lowered without a drop", c, /committed "nulling" review was changed or removed/, committed); }
+{ const R = require("../scripts/lib").retiredIds()[0];
+  if (R) {
+    fails("note naming a dropped statement", Object.assign(base(), { notes: `Left ${R} null.` }), new RegExp(`names statements no longer in the bank: ${R}`));
+    const committed = base(); committed.answers[B].rationale += ` (Carried over from ${R}.)`;
+    ok("mention of a dropped statement removed from a sourced answer", laterPass(base()), committed);
+  } }
 { const committed = base(); const a = laterPass(base()); const was = version(a.answers[B], "claude-sonnet-5-5", "2026-11-01");
   a.answers[B] = { value: -2, confidence: "medium", rationale: "Said in a 2021 speech that this statement is badly wrong.", sources: ["s3"] };
   ok("sourced answer changed with its committed version kept", withHistory(a, B, [was]), committed); }

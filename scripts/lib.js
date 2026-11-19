@@ -83,6 +83,15 @@ const redirectAliases = (id) => { duplicateOf("_"); return catalog().filter((e) 
 // fails if one changes, so a rewording that keeps the meaning (a reader fix) is a deliberate
 // in-place edit: change the text in both files and keep the id and answers (Brandon, 2026-11-09).
 const TEXTS = path.join(ROOT, "audits", "statements", "texts.json");
+// Statements no longer in the bank (dropped, or renamed to a new id): texts.json keeps their text, audits keep
+// no trace of them (Brandon, 2026-11-19: the review history guards current answers against improper nulling;
+// an old statement's history guards nothing). retiredRe matches any of their ids as a whole word.
+let retiredCache;
+const retiredIds = () => {
+  if (!retiredCache) { const bank = new Set(allStatements().map((s) => s.id)); retiredCache = Object.keys(readJson(TEXTS)).filter((k) => !bank.has(k)); }
+  return retiredCache;
+};
+const retiredRe = () => (retiredIds().length ? new RegExp(`(?<![\\w-])(${retiredIds().join("|")})(?![\\w-])`, "g") : null);
 const unanswered = (answers, statements = allStatements()) => statements.filter((s) => !(answers && answers[s.id])).map((s) => s.id);
 
 const profilePath = (id) => path.join(PROFILES_DIR, `${id}.json`);
@@ -336,6 +345,6 @@ function answersTo(id) {
   return out;
 }
 
-module.exports = { restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };
