@@ -3,7 +3,9 @@
 AI models appear on the site next to people, but they aren't audited from sources: each model takes
 the quiz itself, and its own answers are the record. This file is the whole procedure, so every
 provider (Claude Code, Codex or anything else) runs it the same way. It's for fun, not research:
-one run per model version, no repeats.
+one run per model version, no repeats. It's also the prerequisite test for running audits on a model
+(Brandon, 2026-11-19): the model reads `statements.json` as audit agents do, and its reasons show
+whether it understands the statements.
 
 ## Setup (whoever runs it)
 
@@ -27,8 +29,8 @@ one run per model version, no repeats.
    ```
 
    With Claude Code, start one subagent on the model being tested. If it stops partway, resume the
-   same session; it picks up at the first set without a file.
-4. `node scripts/model-merge.js <id>` checks every set and writes `audits/models/<id>.json`.
+   same session; it picks up where its answers file ends.
+4. `node scripts/model-merge.js <id>` checks that every statement has an answer and writes `audits/models/<id>.json`.
    Then `node scripts/build.js --people` and `node test.js --people` (a few seconds; the full build
    isn't needed, since models never change the ideologies).
 
@@ -37,19 +39,19 @@ one run per model version, no repeats.
 You are taking a political ideology quiz yourself. Answer as you, the AI model, not as any person,
 party or ideology, and not as what you think the user wants.
 
-1. `node scripts/model-batch.js` prints how many sets of statements there are, and
-   `node scripts/model-batch.js <k>` prints set k (up to 50 statements as JSON, each with `text`,
-   what agreeing and disagreeing mean, and a `note` on what the question covers). Work through the sets in order, starting at 0.
+1. The statements are in `statements.json` in the repo root. Answer every statement, including the
+   ones marked `"status": "candidate"`. Each has `text`, what agreeing and disagreeing mean (`agree`,
+   `disagree`) and a `note` on what the question covers. Read the whole statement before answering.
 2. For each statement, give your own view on this scale:
    - `2` strongly agree, `1` agree, `0` neither agree nor disagree, `-1` disagree, `-2` strongly disagree
    - `null` no opinion.
 3. Add a short `reason` (one sentence) in your own words.
-4. Don't look anything up and don't open other files: this is your view, not research.
-5. When you finish a set, write `audits/models/<id>/batch-<k>.json` as one JSON object keyed by statement id,
-   then go on to the next set:
+4. Don't look anything up and don't open other files besides `statements.json`: this is your view, not research.
+5. Write your answers to `audits/models/<id>/answers.json` as one JSON object keyed by statement id,
+   saving as you go (add to the same file as you work through the statements), so nothing is lost if you stop:
 
    ```json
    { "statement-id": { "value": 1, "reason": "One sentence." } }
    ```
 
-   Every statement in the set needs an entry. Don't edit any other file.
+   Every statement needs an entry. Don't edit any other file.

@@ -1,4 +1,5 @@
-// Merges an AI model's batch answers (audits/models/<id>/batch-<k>.json) into audits/models/<id>.json,
+// Merges an AI model's answers (audits/models/<id>/answers.json; runs before 2026-11-19 left batch-<k>.json
+// files instead) into audits/models/<id>.json,
 // after checking that every statement in the bank (candidates too) has a valid answer (audits/PROMPT_MODEL.md).
 //   node scripts/model-merge.js <id>
 const fs = require("fs");
@@ -9,7 +10,7 @@ const entry = id && readJson(path.join(ROOT, "audits", "models-catalog.json")).m
 if (!entry) { console.error(`'${id}' is not in audits/models-catalog.json.`); process.exit(1); }
 const dir = path.join(ROOT, "audits", "models", id);
 const given = {};
-for (const f of fs.readdirSync(dir).filter((f) => /^batch-\d+\.json$/.test(f))) Object.assign(given, readJson(path.join(dir, f)));
+for (const f of fs.readdirSync(dir).filter((f) => /^(answers|batch-\d+)\.json$/.test(f))) Object.assign(given, readJson(path.join(dir, f)));
 const errors = [];
 const answers = {};
 for (const s of allStatements()) {
