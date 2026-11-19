@@ -12,7 +12,8 @@
 //     "a monarch can be a good ruler"), "rather" ("X rather than Y" asks two things, so a disagree is
 //     ambiguous), "so"/"because" (a reason: the bank asks positions), "as well as"/"not only" (a
 //     comparison slips in a second claim), "and" (two claims joined, or a list a general word would replace),
-//     "or" (options: an audit can't answer it; Brandon, 2026-11-11).
+//     "or" (options: an audit can't answer it; Brandon, 2026-11-11), hedges ("sometimes", "at times", "occasionally",
+//     "in some cases": almost anyone agrees; Brandon, 2026-11-19).
 //     Warnings are often fine: "like", "by"/"through" (a means attached to a goal is hard to
 //     negate; a passive "chosen by voters" is fine), "in" (a vague scope: "in economic life"), "not" (state
 //     the positive position instead, where one exists).

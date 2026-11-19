@@ -209,15 +209,17 @@ const awaitingReaudit = () => {
 // "more"/"less"/"fewer" and the comparatives in COMPARATIVES ("higher", "larger", ...; Brandon, 2026-11-12) without a
 // later "than", a semicolon and a second sentence (marked in wordingMarks), and
 // "instead" ("A instead of B" is "rather than" in other words: hard to negate; Brandon, 2026-11-11), and "my country"
-// (fine with "should"; a claim of fact about the reader's country has unstated context; Brandon, 2026-11-11), and
-// "sometimes"/"at times"/"occasionally"/"in some cases" (a hedge almost anyone agrees with; Brandon, 2026-11-12).
+// (fine with "should"; a claim of fact about the reader's country has unstated context; Brandon, 2026-11-11).
+// Hedges are errors too: "sometimes"/"at times"/"occasionally"/"in some cases" (almost anyone agrees; a warning from
+// 2026-11-12, an error since 2026-11-19, Brandon: Sonnet's quiz retake showed a model misreading "sometimes necessary").
 // Comparatives that, with no later "than", mean "than now" ("Taxes on the wealthy should be significantly higher").
 const COMPARATIVES = ["more", "less", "fewer", "higher", "larger", "greater", "bigger", "smaller", "stronger", "weaker",
   "tighter", "looser", "stricter", "tougher", "harsher", "wider", "narrower", "broader"];
 const WORDING = {
-  errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or"],
+  errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or",
+    "sometimes", "at times", "occasionally", "in some cases"],
   warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country",
-    "sometimes", "at times", "occasionally", "in some cases", "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
+    "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
 // Why each mark matters, printed by statements-check.js and in review briefs (Brandon, 2026-11-11).
 const WORDING_REASONS = {
