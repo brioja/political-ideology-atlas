@@ -1534,13 +1534,11 @@
    "rationale": "No recorded position found in sources reviewed.",
    "sources": []
   },
-  "restrict-pornography": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "As a minister in 2006-07 she said harmful information including obscene materials affects youth, pointed to prefectural ordinances that restrict harmful books and games, and said a national law is hard because of constitutional limits and proof of harm.",
-   "sources": [
-    "k2"
-   ],
+  "restrict-private-adult-pornography-access": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites restrictions on harmful material for young people.",
+   "sources": [],
    "reviewHistory": [
     {
      "value": 1,
@@ -1561,6 +1559,16 @@
      ],
      "author": "claude-sonnet-5-5",
      "date": "2026-11-14"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites restrictions on harmful material for young people.",
+     "sources": [
+      "k2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-19"
     }
    ]
   },
@@ -4239,6 +4247,21 @@
     "former-empire-influence"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "nulled": 1
   }
  ],
  "notFound": [

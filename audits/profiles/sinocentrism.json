@@ -522,11 +522,31 @@
       ]
     },
     "natural-rulers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Confucian doctrine holds that the morally cultivated gentleman or sage is fit to rule and should rule (s3), but that fitness comes from cultivation and learning, not from nature.",
-      "sources": [
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under the reworded statement: it says fitness to rule comes from cultivation and learning, not from nature.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Confucian doctrine holds that the morally cultivated gentleman or sage is fit to rule and should rule (s3), but that fitness comes from cultivation and learning, not from nature.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under the reworded statement: it says fitness to rule comes from cultivation and learning, not from nature.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "political-violence-never": {
@@ -1489,7 +1509,7 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "restrict-pornography": {
+    "restrict-private-adult-pornography-access": {
       "value": 1,
       "confidence": "medium",
       "rationale": "Confucian moral order and guarding moral character point towards restriction.",
@@ -3613,6 +3633,21 @@
         "faster-drug-approval",
         "ban-fgm"
       ],
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
       "nulled": 1
     }
   ]

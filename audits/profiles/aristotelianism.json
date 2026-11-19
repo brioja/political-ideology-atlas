@@ -1577,12 +1577,32 @@
         "s7"
       ]
     },
-    "restrict-pornography": {
-      "value": 1,
+    "restrict-private-adult-pornography-access": {
+      "value": null,
       "confidence": "low",
-      "rationale": "Laws should protect moral character, and he proposed controlling what young people see and hear.",
-      "sources": [
-        "s5"
+      "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites control of what young people see and hear.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Laws should protect moral character, and he proposed controlling what young people see and hear.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites control of what young people see and hear.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "citizenship-by-descent": {
@@ -3767,6 +3787,21 @@
         "faster-drug-approval",
         "ban-fgm"
       ],
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
       "nulled": 1
     }
   ]

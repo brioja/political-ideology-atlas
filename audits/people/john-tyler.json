@@ -1263,7 +1263,7 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "restrict-pornography": {
+    "restrict-private-adult-pornography-access": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -3718,5 +3718,16 @@
       "sources": []
     }
   },
-  "notes": "Searched themes: economy (bank, tariff, land distribution, taxes), government (vetoes, executive power, separation of powers, secession), world (Texas, Hawaii, China, Oregon, slave trade), society (slavery, Indian removal), defence (army, militia, navy). Sources were the Miller Center presidential speeches dataset, Voteview roll calls and Miller Center essays; the Congressional Record before 1873 is not in the local corpora, so his Senate speeches were not read. The record is thin for most statements, so many answers are null and the uncertainty rule is expected to fail."
+  "notes": "Searched themes: economy (bank, tariff, land distribution, taxes), government (vetoes, executive power, separation of powers, secession), world (Texas, Hawaii, China, Oregon, slave trade), society (slavery, Indian removal), defence (army, militia, navy). Sources were the Miller Center presidential speeches dataset, Voteview roll calls and Miller Center essays; the Congressional Record before 1873 is not in the local corpora, so his Senate speeches were not read. The record is thin for most statements, so many answers are null and the uncertainty rule is expected to fail.",
+  "reviews": [
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
+    }
+  ]
 }

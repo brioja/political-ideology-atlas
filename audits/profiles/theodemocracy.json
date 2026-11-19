@@ -439,11 +439,31 @@
    "sources": []
   },
   "natural-rulers": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Prophets and the Council of Fifty were held to be called by God, but the sources present this as divine appointment not natural aptitude.",
-   "sources": [
-    "s2"
+   "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under the reworded statement: it describes divine appointment, not inborn aptitude.",
+   "sources": [],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Prophets and the Council of Fifty were held to be called by God, but the sources present this as divine appointment not natural aptitude.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-19"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under the reworded statement: it describes divine appointment, not inborn aptitude.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-19"
+    }
    ]
   },
   "political-violence-never": {
@@ -1366,7 +1386,7 @@
    "rationale": "No stated position found.",
    "sources": []
   },
-  "restrict-pornography": {
+  "restrict-private-adult-pornography-access": {
    "value": null,
    "confidence": "low",
    "rationale": "No stated position found.",
@@ -3413,6 +3433,21 @@
     "ban-fgm"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "nulled": 1
   }
  ]
 }

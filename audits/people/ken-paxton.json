@@ -1739,12 +1739,32 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "restrict-pornography": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Sued the Pornhub operator under the age-verification law, saying Texas has a right to protect children from pornographic content.",
-   "sources": [
-    "s38"
+  "restrict-private-adult-pornography-access": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites an age-verification law protecting children.",
+   "sources": [],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Sued the Pornhub operator under the age-verification law, saying Texas has a right to protect children from pornographic content.",
+     "sources": [
+      "s38"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-10-31"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites an age-verification law protecting children.",
+     "sources": [
+      "s38"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-19"
+    }
    ]
   },
   "citizenship-by-descent": {
@@ -3616,6 +3636,21 @@
     "former-empire-influence"
    ],
    "nulled": 0
+  },
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "restrict-pornography"
+   ],
+   "nulled": 0
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "nulled": 1
   }
  ]
 }

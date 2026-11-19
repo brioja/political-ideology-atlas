@@ -1399,12 +1399,32 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "restrict-pornography": {
-      "value": 1,
+    "restrict-private-adult-pornography-access": {
+      "value": null,
       "confidence": "low",
-      "rationale": "B6 asks for legal defense of family and social morality in media.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites defence of morality in the media, not private access.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "B6 asks for legal defense of family and social morality in media.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites defence of morality in the media, not private access.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "citizenship-by-descent": {
@@ -3499,6 +3519,21 @@
         "ban-fgm",
         "police-more-powers"
       ],
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
       "nulled": 1
     }
   ]

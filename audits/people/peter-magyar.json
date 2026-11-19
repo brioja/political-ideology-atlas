@@ -622,14 +622,34 @@
       "auditor": "claude-sonnet-5-5"
     },
     "algorithmic-government": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Programme uses AI in public administration and gives citizens AI assistants; it does not say algorithms should take government decisions.",
-      "sources": [
-        "s13",
-        "s3"
-      ],
-      "auditor": "claude-sonnet-5-5"
+      "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under the reworded statement: it says the programme stops short of letting AI take government decisions.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Programme uses AI in public administration and gives citizens AI assistants; it does not say algorithms should take government decisions.",
+          "sources": [
+            "s13",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under the reworded statement: it says the programme stops short of letting AI take government decisions.",
+          "sources": [
+            "s13",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-19"
+        }
+      ]
     },
     "raise-minimum-wage": {
       "value": null,
@@ -1675,7 +1695,7 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "restrict-pornography": {
+    "restrict-private-adult-pornography-access": {
       "value": null,
       "confidence": "low",
       "rationale": "No recorded position found.",
@@ -4122,6 +4142,21 @@
         "former-empire-influence"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "nulled": 1
     }
   ]
 }

@@ -1412,13 +1412,34 @@
       "rationale": "No recorded position found.",
       "sources": []
     },
-    "restrict-pornography": {
-      "value": 1,
+    "restrict-private-adult-pornography-access": {
+      "value": null,
       "confidence": "low",
-      "rationale": "Wants children kept from adult content online until a certain age, and as minister pushed blocking of child pornography sites; no position on adult pornography generally.",
-      "sources": [
-        "s5",
-        "s8"
+      "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it says she has no position on adult pornography generally.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Wants children kept from adult content online until a certain age, and as minister pushed blocking of child pornography sites; no position on adult pornography generally.",
+          "sources": [
+            "s5",
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-01"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it says she has no position on adult pornography generally.",
+          "sources": [
+            "s5",
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "citizenship-by-descent": {
@@ -3391,6 +3412,21 @@
         "former-empire-influence"
       ],
       "nulled": 0
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "nulled": 1
     }
   ]
 }

@@ -1238,7 +1238,7 @@
    "rationale": "Marat's available texts do not state a position on this.",
    "sources": []
   },
-  "restrict-pornography": {
+  "restrict-private-adult-pornography-access": {
    "value": null,
    "confidence": "low",
    "rationale": "Marat's available texts do not state a position on this.",
@@ -3708,5 +3708,16 @@
    "sources": []
   }
  },
- "notes": "Searched across themes in statements.json: governance, force, property, religion, justice. Only Marat's translated newspaper articles, letters and Bax's biography were available, so most modern statements (technology, gender identity, trade, etc.) are null. Plan of Criminal Legislation known only through Bax (secondhand, medium at most)."
+ "notes": "Searched across themes in statements.json: governance, force, property, religion, justice. Only Marat's translated newspaper articles, letters and Bax's biography were available, so most modern statements (technology, gender identity, trade, etc.) are null. Plan of Criminal Legislation known only through Bax (secondhand, medium at most).",
+ "reviews": [
+  {
+   "kind": "dropped",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-19",
+   "statements": [
+    "restrict-pornography"
+   ],
+   "nulled": 0
+  }
+ ]
 }

@@ -1473,7 +1473,7 @@
         "s3"
       ]
     },
-    "restrict-pornography": {
+    "restrict-private-adult-pornography-access": {
       "value": 0,
       "confidence": "low",
       "rationale": "Content restriction was historically a clerical concern, but liberal anti-clericals did not oppose pornography on principle either, leaving adherents split.",
@@ -3584,6 +3584,15 @@
         "ban-fgm"
       ],
       "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
     }
   ]
 }

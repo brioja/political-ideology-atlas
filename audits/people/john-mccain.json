@@ -1470,12 +1470,32 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "restrict-pornography": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Led legislation requiring schools and libraries with federal internet subsidies to filter sexually explicit material from children.",
-      "sources": [
-        "s12"
+    "restrict-private-adult-pornography-access": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites filtering in schools and libraries to protect children.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Led legislation requiring schools and libraries with federal internet subsidies to filter sexually explicit material from children.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-19): its own rationale does not support its value under restrict-private-adult-pornography-access, which replaced restrict-pornography (\"Pornography should be restricted by law.\") and asks about adults' private access: it cites filtering in schools and libraries to protect children.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-19"
+        }
       ]
     },
     "citizenship-by-descent": {
@@ -3434,6 +3454,21 @@
         "former-empire-influence",
         "police-more-powers"
       ],
+      "nulled": 1
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
       "nulled": 1
     }
   ]

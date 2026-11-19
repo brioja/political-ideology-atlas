@@ -3569,7 +3569,7 @@
         }
       ]
     },
-    "restrict-pornography": {
+    "restrict-private-adult-pornography-access": {
       "value": null,
       "confidence": "low",
       "rationale": "Nulled (later pass, 2026-11-17): the earlier answer was an inference from general values or from Wikipedia's summary; the defining sources (Humanist Manifesto II, the 1980 Declaration, the Council's definition) state no position on this.",
@@ -9207,6 +9207,15 @@
         "ban-fgm"
       ],
       "nulled": 2
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
     }
   ],
   "rules": 7,

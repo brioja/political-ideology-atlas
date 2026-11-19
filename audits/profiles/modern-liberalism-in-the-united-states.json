@@ -4449,7 +4449,7 @@
         }
       ]
     },
-    "restrict-pornography": {
+    "restrict-private-adult-pornography-access": {
       "value": null,
       "confidence": "low",
       "rationale": "Nulled (later pass, 2026-11-12): the answer was inferred from the ideology's general character or from a party platform; the defining sources read in this pass (Stanford Encyclopedia, the Gale encyclopedia entry, Dewey, Wilson, Roosevelt) do not state a position that settles this statement, so it is null (AUDIT_RULES.md section 3: a general value does not answer a specific statement).",
@@ -10824,6 +10824,15 @@
         "ban-fgm"
       ],
       "nulled": 3
+    },
+    {
+      "kind": "dropped",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-19",
+      "statements": [
+        "restrict-pornography"
+      ],
+      "nulled": 0
     }
   ],
   "rules": 7,
