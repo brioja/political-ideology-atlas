@@ -41,7 +41,7 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    not there yet) and to "passes", and keep every committed sourced answer you change in that statement's
    "reviewHistory" (scripts/validate.js explains it); validate.js checks this against the committed file.
    If "kind" is "person": audit that person yourself following audits/AUDIT_RULES.md and audits/PROMPT_PEOPLE.md exactly
-   (answer every statement, candidates included; no source limit; research to the end within the audit, since no later pass fills gaps; local corpora first; save every
+   (answer every statement, candidates included; no source limit; research to the end within the audit; local corpora first; save every
    source in scratchpad/sources/<id>/; YouTube at most 5 requests). Write audits/people/<id>.json, run
    \`node scripts/validate.js --people <id>\` and fix every error. \`git add\` only that file and commit as "Audit <name>" (no Co-Authored-By or other attribution line), then
    DEPLOY (below) with \`node scripts/images.js && node scripts/build.js --people\` and \`node test.js --people\` (images.js

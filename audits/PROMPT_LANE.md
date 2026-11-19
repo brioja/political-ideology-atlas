@@ -24,8 +24,7 @@ which id you took, so the two sessions never work on the same subject.
 1. Follow `audits/AUDIT_RULES.md` and `audits/PROMPT.md` (ideology) or `audits/PROMPT_PEOPLE.md`
    (person) exactly, with `{{id}}`, `{{name}}` and the other fields taken from the next.js output
    or the catalog. Answer every statement in statements.json, candidates included, and set `rules`
-   to the current version (`CURRENT_RULES` in scripts/validate.js). Research to the end (section 6):
-   no later pass fills the gaps.
+   to the current version (`CURRENT_RULES` in scripts/validate.js). Research to the end (section 6).
 2. If the subject already has an audit (or next.js gives a "reason"), this is a later pass: start
    from the committed file and follow `audits/AUDIT_RULES.md` section 6 (reviewHistory, `passes`,
    your model in `auditor`), never rewrite it from scratch. `auditor` is your full model id

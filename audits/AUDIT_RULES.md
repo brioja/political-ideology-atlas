@@ -216,7 +216,7 @@ rejection is the correct outcome.
 ## 6. Research to the end, and later passes
 
 **An audit goes as deep as the record allows** (Brandon, 2026-11-05 and 11-07). There is no limit on
-sources, and no later pass will fill gaps: never stop early. If your draft fails the uncertainty rule,
+sources. If your draft fails the uncertainty rule,
 keep researching before you finish: the lines the validator names, then the statements still null, in
 new sources (the local corpora too). Stop when they are covered or when the record really has nothing
 more, and say in `notes` which themes you searched. Never raise a confidence to pass.
