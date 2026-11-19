@@ -82,7 +82,7 @@ async function main() {
     for (const r of books) if (!selected.has(r["Text#"])) { added.push([r["Text#"], r.Authors.replace(/\s+/g, " "), r.Title.replace(/\s+/g, " ").slice(0, 100)]); selected.add(r["Text#"]); }
     const surname = fold(p.name.split(/\s+/).pop());
     const marxists = fs.existsSync(path.join(CORPORA, "marxists", "text", surname)) ? `marxists/text/${surname}` : null;
-    const reference = refFiles.filter((f) => fold(f).includes(surname));
+    const reference = refFiles.filter(nameMatcher(p));
     let works = [];
     try { works = p.wikidata ? await wantedWorks(p.wikidata) : []; } catch (e) { console.warn(`${id}: Wikidata works lookup failed (${e.message})`); }
     const local = (t) => books.some((b) => fold(b.Title).includes(fold(t).slice(0, 25))) || reference.some((f) => fold(f).includes(fold(t).slice(0, 25)));
@@ -143,22 +143,78 @@ function marxistsBooks(dir) {
   walk(dir);
   return single + [...byWork.values()].filter((b) => b >= BOOK_BYTES).length;
 }
+// Whether a reference-library file name names this person (Brandon, 2026-11-19: a bare surname matched Naomi
+// Klein's books for Ezra Klein and "Butler, J" for Smedley Butler, while "King, Martin Luther, Jr." missed MLK).
+// Each of the person's names (catalog name and Wikipedia title, so "Aurobindo Ghosh" and "Sri Aurobindo" both
+// count) matches when the file holds the whole name, or the surname with one of the given names next to it, in
+// either order ("King, Martin Luther" and "Martin Luther King"; at most two words between): a given name counts
+// written out, as a common short form (Bill for William) or as an initial ("Butler, J"). So Gandhi's books need
+// "Mahatma"/"M." beside "Gandhi", and Indira's never count for Sonia. "Jr."/"Sr." are never the surname, and a
+// file naming a generation must name the person's (Obama Sr. doesn't get his son's books, nor MLK III his father's);
+// a particle starts a compound surname ("Fernández de Kirchner": "Fernández" counts as a surname as well); an
+// epithet or numeral ("Peter the Great", "Alexander II of Russia") leaves a single name, which only counts whole.
+const NICKNAMES = [["william", "bill", "billy", "will"], ["robert", "bob", "bobby", "rob"], ["james", "jim", "jimmy"],
+  ["joseph", "joe"], ["richard", "dick", "rick"], ["edward", "ed", "ted", "ned"], ["theodore", "ted", "teddy"],
+  ["thomas", "tom"], ["michael", "mike"], ["christopher", "chris"], ["alexander", "aleksandr", "alexandr", "alex"],
+  ["albert", "al"], ["alfred", "al"], ["ronald", "ron"], ["donald", "don"], ["nicholas", "nick"],
+  ["frederick", "fred", "friedrich"], ["john", "jack"], ["henry", "hank", "harry"], ["elizabeth", "liz", "beth"],
+  ["samuel", "sam"], ["benjamin", "ben"], ["daniel", "dan"], ["david", "dave"], ["stephen", "steven", "steve"],
+  ["anthony", "tony"], ["andrew", "andy"], ["patrick", "pat"], ["charles", "chuck", "charlie"],
+  ["margaret", "maggie", "peggy"], ["katherine", "catherine", "kate"], ["gerald", "jerry"], ["lawrence", "larry"],
+  ["walter", "walt"], ["kenneth", "ken"], ["vladimir", "vlad"]];
+const SUFFIXES = new Set(["jr", "sr"]), PARTICLES = new Set(["de", "del", "la", "le", "van", "von", "der", "den", "da", "di", "du", "bin", "ibn", "al", "el"]);
+const ROMAN = /^[ivxl]+$/, GENERATIONS = new Set(["jr", "sr", "ii", "iii", "iv"]);
+// "Can't" and "Mohammed's" leave no stray "t" or "s" to pass for an initial.
+const words = (s) => fold(s).replace(/['’](s|t|d|ll|re|ve|m)\b/g, "").split(/[^a-z0-9]+/).filter(Boolean);
+function nameMatcher(person) {
+  const title = decodeURIComponent(String(person.wikipedia || "").replace(/^.*\/wiki\//, "")).replace(/_/g, " ").replace(/\s*\([^)]*\)$/, "");
+  // Text after a comma is a title or a suffix, not the name ("Stephen, King of England", "Henry Louis Gates, Jr.").
+  const raws = [...new Map([person.name, title].filter(Boolean).map((n) => [words(n).join(" "), n])).values()];
+  const forms = raws.map((raw) => {
+    const all = words(raw), full = all.join(" ");
+    const gen = all.find((x, i) => i > 1 && GENERATIONS.has(x)) || null;
+    // "Peter the Great", "Alexander II of Russia", "Elizabeth I": the epithet and the numeral are not names.
+    let w = words(raw.split(",")[0]).filter((x) => !SUFFIXES.has(x));
+    const cut = w.findIndex((x, i) => i > 0 && (x === "the" || x === "of"));
+    if (cut > 0) w = w.slice(0, cut);
+    while (w.length > 1 && ROMAN.test(w[w.length - 1])) w.pop();
+    if (w.length < 2) return { full, gen, surnames: new Set(), given: new Set(), initials: new Set() };
+    const p = w.findIndex((x, i) => i > 0 && PARTICLES.has(x));
+    const surnames = new Set([w[w.length - 1], ...(p > 1 ? [w[p - 1]] : [])]);
+    const given = new Set(w.slice(0, p > 1 ? p - 1 : w.length - 1).filter((x) => !PARTICLES.has(x) && x.length > 1));
+    for (const g of [...given]) for (const group of NICKNAMES) if (group.includes(g)) group.forEach((n) => given.add(n));
+    // "A" is the article far more often than an initial ("A Young People's History").
+    return { full, gen, surnames, given, initials: new Set([...given].map((g) => g[0]).filter((c) => c !== "a")) };
+  });
+  return (file) => {
+    const fw = words(file), joined = ` ${fw.join(" ")} `;
+    return forms.some((f) => joined.includes(` ${f.full} `) || (f.given.size > 0 && fw.some((x, i) => {
+      if (!f.surnames.has(x)) return false;
+      const near = fw.slice(Math.max(0, i - 3), i + 4);
+      // Jr. and Sr. are different people: a file's generation must be the person's, and Sr./III need theirs written.
+      const fileGen = near.find((y) => GENERATIONS.has(y)) || null;
+      if (fileGen ? fileGen !== f.gen : f.gen && f.gen !== "jr") return false;
+      return near.some((y) => !f.surnames.has(y) && (f.given.has(y) || (y.length === 1 && f.initials.has(y))));
+    })));
+  };
+}
+
 function availableBooks(people) {
   const catalog = readCsv(path.join(GUT, "raw", "pg_catalog.csv"));
   const gutText = new Map(fs.readdirSync(path.join(GUT, "text")).map((f) => [f.split(" ")[0], path.join(GUT, "text", f)]));
   const refBooks = fs.readFileSync(path.join(CORPORA, "reference", "index.tsv"), "utf8").split("\n")
-    .map((l) => l.split("\t")).filter(([w, f]) => f && Number(w) >= BOOK_WORDS).map(([, f]) => fold(f));
+    .map((l) => l.split("\t")).filter(([w, f]) => f && Number(w) >= BOOK_WORDS).map(([, f]) => f);
   const out = {};
   for (const p of people) {
-    // The catalog name and the Wikipedia title both count ("Aurobindo Ghosh" is "Sri Aurobindo" on Wikipedia).
     const title = decodeURIComponent(String(p.wikipedia || "").replace(/^.*\/wiki\//, "")).replace(/_/g, " ").replace(/\s*\([^)]*\)$/, "");
     const names = [...new Set([p.name, title].filter(Boolean).map(fold))];
-    const surnames = [...new Set(names.map((n) => n.split(/\s+/).pop()))];
+    const surnames = [...new Set(names.map((n) => words(n).filter((x) => !SUFFIXES.has(x)).pop()))];
+    const named = nameMatcher(p);
     out[p.id] = gutenbergBooks(catalog, { ...p, name: names.join(" ") }).filter((b) => gutText.has(b["Text#"]) && fs.statSync(gutText.get(b["Text#"])).size >= BOOK_BYTES).length
-      + refBooks.filter((f) => names.some((n) => f.includes(n)) || surnames.some((sn) => f.includes(sn + ","))).length
+      + refBooks.filter(named).length
       + Math.max(0, ...surnames.map((sn) => marxistsBooks(path.join(CORPORA, "marxists", "text", sn))));
   }
   return out;
 }
-module.exports = { availableBooks };
+module.exports = { availableBooks, nameMatcher };
 if (require.main === module) main().catch((e) => { console.error(e.message); process.exit(1); });
