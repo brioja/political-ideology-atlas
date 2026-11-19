@@ -18,6 +18,8 @@ agents too. This file adds what matters when running the audit workflows in
   only its own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`. The integrator (the
   session running `serial-audits`) reviews each draft, moves it into `audits/`, builds, tests and
   pushes, and tells lanes which subjects to take.
+- **Headless lanes:** `node scripts/lane.js --engine codex|claude --kind people|ideologies` runs one session per
+  subject and integrates each finished audit itself (validate, move into `audits/`, build, test, commit, batched push).
 - **Give each agent its own scratchpad folder** (`scratchpad/<id>/`). Agents sharing one folder
   overwrite each other's helper scripts.
 - **Fetching goes through cached tools:** pages `node scripts/get.js <id> <url>`, Wikipedia `scripts/wiki.js`,

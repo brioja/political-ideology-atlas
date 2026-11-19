@@ -2,7 +2,7 @@
 // "kind" field, so audits can run one at a time in order of Wikipedia popularity. A later pass has a "reason".
 //   node scripts/next.js [--ideologies | --people] [--by-views]   (--ideologies / --people: only that kind, so two serial
 //   runs can split the kinds; default: the kind with fewer live on the site, most viewed first; --skip id,id,...: pass
-//   over those, e.g. people waiting for books; --lane: also pass over every id with a draft in scratchpad/lane-out/*/, so a
+//   over those, e.g. people waiting for books; --lane: also pass over every id with a draft or claim in scratchpad/lane-out/*/, so a
 //   lane takes one subject at a time and calls next.js again for the next). Later passes and new audits alternate (see lastWasNew below).
 const { execFileSync } = require("child_process");
 const path = require("path");
@@ -29,7 +29,7 @@ if (process.argv.includes("--lane")) {
   const fs = require("fs"), out = path.join(__dirname, "..", "scratchpad", "lane-out");
   for (const lane of fs.existsSync(out) ? fs.readdirSync(out) : [])
     for (const f of fs.statSync(path.join(out, lane)).isDirectory() ? fs.readdirSync(path.join(out, lane)) : [])
-      if (f.endsWith(".json")) SKIP.add(f.slice(0, -5));
+      if (/\.(json|claim)$/.test(f)) SKIP.add(f.replace(/\..*$/, "")); // drafts, claims (scripts/lane.js), x.invalid.json
 }
 
 // Later passes (Brandon, 2026-11-12): the re-audit queue first, then older-rules audits, oldest rules first. Search-traffic
