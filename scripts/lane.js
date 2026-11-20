@@ -132,8 +132,12 @@ let lastPush = 0, unpushed = false;
 function push(force) {
   if (!unpushed || (!force && Date.now() - lastPush < PUSH_MINUTES * 60000)) return;
   git("fetch", "-q", "origin");
-  const rb = git("rebase", "-q", "origin/main");
+  // --autostash: someone else's uncommitted edits in this checkout (the integrator recording books, 2026-11-20) are
+  // set aside for the rebase and put back, instead of failing every push. If putting them back conflicts, git keeps
+  // them in the stash list and leaves the tree clean; the log says so.
+  const rb = git("rebase", "-q", "--autostash", "origin/main");
   if (rb.status) { git("rebase", "--abort"); log(`push: rebase failed, left for the next push: ${rb.stderr.trim().split("\n").pop()}`); return; }
+  if (/autostash resulted in conflicts/i.test(rb.stderr + rb.stdout)) log("push: uncommitted edits in the checkout conflicted with the rebase; they are in `git stash list`");
   const p = git("push", "-q", "origin", "HEAD:main");
   if (p.status) { log(`push failed: ${p.stderr.trim().split("\n").pop()}`); return; }
   lastPush = Date.now(); unpushed = false; log("pushed");
