@@ -27,7 +27,9 @@ An entry is in `audits/catalog.json` only if it meets both:
   article links it from its "See also" section or infobox "Ideology" row (or a party, movement or
   organization it links lists it in its own "Ideology" row), and its infobox, if it has one, is a
   movement, ideology, philosophy, religion or school of thought rather than a person, party,
-  organization, state, event or work (`"source": "wikipedia-links"`, Brandon, 2026-11-20); or a
+  organization, state, event or work, it is not a disambiguation page, and the same whole-article
+  pre-check finds it meets the definition (`"source": "wikipedia-links"`, Brandon, 2026-11-20; run by
+  `scripts/ideology-precheck.js`, with Haiku, and no form of the word "ideology" in what is sent); or a
   contributor suggests it. The pre-check's verdicts stand as they are, with no hand-picking in either direction.
 
 Entries that land on the same article are one ideology, with no exceptions: the entry whose own

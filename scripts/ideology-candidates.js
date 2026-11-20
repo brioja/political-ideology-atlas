@@ -7,7 +7,9 @@
 //
 // A second source (Brandon, 2026-11-20, after Incel was missing): the "See also" links and infobox
 // "Ideology" rows of every catalog ideology's own article, and the "Ideology" rows of the parties,
-// movements and organizations those link to (see step 4). Lead links were tried and are mostly noise.
+// movements and organizations those link to (see step 4). Lead links were tried and are mostly noise. See also
+// links are loose (a dry run found 4,700, Lilith and the Human Development Index among them), so each one enters
+// only after a whole-article pre-check against the definition (scripts/ideology-precheck.js, Brandon 2026-11-20).
 //
 // Entries without their own Wikipedia article are dropped.
 // Writes a report of the additions and drops and, with --write, applies them to the catalog.
@@ -90,7 +92,9 @@ async function views(title) {
 // school-of-thought one; a person, party, organization, state, event, book or film is left out.
 const lib = require("./lib");
 const NOT_OWN_TOPIC_LINKED = /^(History|Lists?|Timeline|Outline|Index|Glossary) of | in (the |[A-Z])/;
-const IDEA_BOX = /movement|ideolog|philosoph|religio|school of thought/;
+// Whole infobox types, so "philosopher" or "religious biography" (people) don't pass as a philosophy or religion.
+const IDEA_BOX = /^((political|social|cultural|art|religious) )?(movement|ideology|philosophy|school of thought|religion|religious group|christian denomination)$/;
+const PERSON_BOX = /person|biography|officeholder|royalty|philosopher|clergy|saint/;
 const GROUP_BOX = /party|organi[sz]ation|militant|movement/;
 const wikiLib = require("./wiki");
 async function linkedArticles() {
@@ -118,8 +122,9 @@ async function linkedArticles() {
     for (const t of wikiLib.infoboxRow(html)) hop.push({ title: t, via: g.title });
   }
   await collect(hop);
-  return [...found.values()].filter((f) => !f.disambig && !NOT_OWN_TOPIC_LINKED.test(f.title)
-    && (f.boxes.size === 0 || [...f.boxes].some((b) => IDEA_BOX.test(b))));
+  const boxes = (f) => [...f.boxes].filter(Boolean); // "Template:Infobox" itself names no type
+  return [...found.values()].filter((f) => !f.disambig && !NOT_OWN_TOPIC_LINKED.test(f.title) && !boxes(f).some((b) => PERSON_BOX.test(b))
+    && (boxes(f).length === 0 || boxes(f).some((b) => IDEA_BOX.test(b))));
 }
 
 async function main() {
@@ -127,8 +132,18 @@ async function main() {
   const ideologies = await ideologyItems([...new Set(listed.values())]);
   const found = [...listed].filter(([t, q]) => ideologies.has(q) && !NOT_OWN_TOPIC.test(t)).map(([title, wikidata]) => ({ title, wikidata }));
   const fromList = new Set(found.map((f) => f.title));
-  const linked = await linkedArticles();
-  for (const l of linked) if (!fromList.has(l.title)) found.push({ title: l.title, source: "wikipedia-links", via: [...l.via].slice(0, 3) });
+  // Linked articles enter only once the whole-article pre-check (scripts/ideology-precheck.js) found political
+  // ideas of what society should be; the rest wait for it or stay out.
+  const linked = await linkedArticles(), verdicts = require("./ideology-precheck").verdicts();
+  const linkedNew = linked.filter((l) => !fromList.has(l.title));
+  const precheck = { passed: 0, rejected: 0, pending: 0 };
+  for (const l of linkedNew) {
+    const v = verdicts[l.title];
+    if (!v) { precheck.pending++; continue; }
+    if (v.answer !== "yes") { precheck.rejected++; continue; }
+    precheck.passed++;
+    found.push({ title: l.title, source: "wikipedia-links", via: [...l.via].slice(0, 3) });
+  }
   for (let i = 0; i < found.length; i += CONCURRENCY) {
     await Promise.all(found.slice(i, i + CONCURRENCY).map(async (f) => { f.views12m = await views(f.title); }));
   }
@@ -168,9 +183,9 @@ async function main() {
   });
 
   const report = {
-    rule: `Union of the current catalog and articles linked from en.wikipedia ${LIST} that Wikidata classes as a political ideology (or a subclass), ideology or political philosophy, or as a direct subclass of one; plus (source wikipedia-links) articles linked from a catalog ideology's See also section or infobox Ideology row, or a linked group's Ideology row, whose infobox, if any, is a movement, ideology, philosophy, religion or school of thought; leaving out articles on one place, a history or a list`,
+    rule: `Union of the current catalog and articles linked from en.wikipedia ${LIST} that Wikidata classes as a political ideology (or a subclass), ideology or political philosophy, or as a direct subclass of one; plus (source wikipedia-links) articles linked from a catalog ideology's See also section or infobox Ideology row, or a linked group's Ideology row, whose infobox, if any, is a movement, ideology, philosophy, religion or school of thought and whose whole article passed the pre-check (scripts/ideology-precheck.js); leaving out articles on one place, a history or a list`,
     viewsPeriod: require("./lib").viewsPeriod().label,
-    listed: listed.size, linked: linked.length, found: found.length, alreadyInCatalog: found.length - added.length, added: added.length,
+    listed: listed.size, linked: linked.length, linkedPrecheck: precheck, found: found.length, alreadyInCatalog: found.length - added.length, added: added.length,
     addedList: entries.map((e) => `${e.name} (${e.views12m})`),
     droppedNoArticle: dropped.map((e) => e.name),
   };
@@ -184,4 +199,5 @@ async function main() {
   }
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+module.exports = { linkedArticles };
+if (require.main === module) main().catch((e) => { console.error(e); process.exit(1); });
