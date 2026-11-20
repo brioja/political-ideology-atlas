@@ -7,7 +7,8 @@
 // Record each person once looked for, so the next list leaves them out:
 //   node scripts/waiting-for-books.js add <id>      (downloads queued: also holds them until the books land)
 //   node scripts/waiting-for-books.js sought <id>   (nothing found)
-// Usage: node scripts/books-to-look-for.js [--limit N people listed, default 40] [--doc ~/work/books-to-look-for.md]
+// Everyone listed is held out of the audit queue (waiting-for-books.js hold) until add or sought, so audits wait for the search.
+// Usage: node scripts/books-to-look-for.js [--limit N people listed, default 40] [--doc ~/work/books-to-look-for.md] [--no-hold]
 // Wikipedia's lists are leads for the search, not evidence. Sections of fiction, poetry, children's books,
 // edited or translated works are left out; whether a book is political nonfiction in the person's own words is the
 // maintainer's call when looking.
@@ -62,7 +63,7 @@ function bibliography(html, surname) {
       if (/["“”]/.test(rawBefore)) continue;
       const before = fold(rawBefore.replace(/\b\d{4}\b/g, ""));
       if (/[a-z]/.test(before) && !` ${before} `.includes(` ${surname} `)) continue;
-      const title = text(i[1]).replace(/[.,:;]$/, "");
+      const title = text(i[1]).replace(/\[\d+\]/g, "").replace(/[.,:;]$/, "");
       const year = (text(item[3]).match(/\b(1[6-9]\d\d|20[0-2]\d)\b/) || [])[1];
       if (title.length > 2 && title.length < 160) books.push({ title, year: year ? +year : null });
     }
@@ -81,7 +82,9 @@ async function main() {
   const audited = (id) => fs.existsSync(lib.personPath(id));
   const out = [];
   let checked = 0, none = 0;
-  for (const { id } of pending) {
+  // People held for an earlier list and not yet looked for stay on it, first (pending.js passes held people over).
+  const searching = require("./waiting-for-books").status().filter((e) => e.held && e.searching).map((e) => ({ id: e.id }));
+  for (const { id } of [...searching, ...pending.filter((p) => !searching.some((e) => e.id === p.id))]) {
     if (out.length >= LIMIT) break;
     if (sought[id] || wanted[id]) continue;
     const p = catalog.get(id);
@@ -103,19 +106,19 @@ async function main() {
     const marxists = fs.existsSync(path.join(CORPORA, "marxists", "text", surname));
     out.push({ id, name: p.name, audited: audited(id), marxists, books });
   }
+  // One line per person (Brandon, 2026-11-20: "trim? One line with the name", "maybe a short list of books after the name, too").
   const md = [`# Books to look for (${new Date().toISOString().slice(0, 10)})`, "",
-    "Written by `scripts/books-to-look-for.js` (political_ideology_test). People still to audit, or audited and failing, most likely to pass first;",
-    "the books their Wikipedia article's bibliography lists that aren't on disk. Fiction, poetry and edited works are left out; whether a book is",
-    "political nonfiction in their own words is yours to judge. Books from before about 1930 may be free (Gutenberg, archive.org).",
-    "Put finds in `~/Documents/ideology reference/`. Once you've looked for someone, record it so the next list leaves them out:",
-    "`node scripts/waiting-for-books.js add <id>` (downloading; holds them) or `sought <id>` (nothing found).", ""];
+    "Most likely to pass first. Once looked for: `node scripts/waiting-for-books.js add <id>` (downloading) or `sought <id>` (nothing found).", ""];
+  // A short list: the first SHOWN books as the article lists them, subtitles cut, and how many more it lists.
+  const SHOWN = 3, short = (t) => t.split(/: | \[|\. /)[0].trim();
   for (const o of out) {
-    md.push(`## ${o.name} (\`${o.id}\`${o.audited ? ", audited, fails" : ""})`);
-    if (o.marxists) md.push("- (Marxists Internet Archive section is local, filed by year: some of these may be in it)");
-    for (const b of o.books) md.push(`- ${b.title}${b.year ? ` (${b.year})` : ""}`);
-    md.push("");
+    const more = o.books.length - SHOWN;
+    md.push(`- **${o.name}** (\`${o.id}\`): ${o.books.slice(0, SHOWN).map((b) => short(b.title)).join("; ")}${more > 0 ? `; +${more} more` : ""}${o.marxists ? " (some may be in the local Marxists archive)" : ""}`);
   }
   fs.writeFileSync(DOC, md.join("\n"));
+  // Everyone listed waits for the search, as with the 2026-11-18 list: held until add or sought (at most GRACE_DAYS).
+  if (out.length && !process.argv.includes("--no-hold"))
+    execFileSync("node", [path.join(__dirname, "waiting-for-books.js"), "hold", ...out.map((o) => o.id)], { cwd: lib.ROOT, stdio: "ignore" });
   console.log(`${out.length} people listed in ${DOC} (${checked} checked; ${none} with no bibliography books left to find).`);
 }
 main().catch((e) => { console.error(e.stack || e.message); process.exit(1); });

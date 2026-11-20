@@ -49,10 +49,14 @@ function status() {
     const until = addDays(e.since, GRACE_DAYS), books = counts[e.id] ?? 0;
     const p = catalog.get(e.id), match = p ? prefetch.nameMatcher(p) : () => false;
     const queued = downloads ? downloads.filter((n) => match(n)) : null;
+    // A `hold` (on a books-to-look-for list, not yet looked for) lasts until add or sought, whatever the queue says
+    // (Brandon, 2026-11-20: no audit before they are released or their downloads are queued).
     const why = today() >= until ? "grace period over"
+      : e.searching ? null
       : queued ? (queued.length ? null : `nothing of theirs left downloading (${books} books on disk)`)
       : books > e.booksAtStart ? `books arrived (${e.booksAtStart} -> ${books}; download queue not readable)` : null;
-    const holds = queued && queued.length ? `held until ${until} or their downloads finish (${queued.length} queued)`
+    const holds = e.searching ? `held until ${until} or until looked for (add or sought)`
+      : queued && queued.length ? `held until ${until} or their downloads finish (${queued.length} queued)`
       : `held until ${until} or more books on disk (download queue not readable)`;
     return { ...e, until, books, held: !why, why: why || holds };
   });
@@ -82,9 +86,9 @@ if (require.main === module) {
   if (cmd === "add" || cmd === "hold") {
     const catalog = new Map(lib.peopleCatalog().map((p) => [p.id, p]));
     // Entries that no longer hold are dropped as new ones are added.
-    const keep = status().filter((s) => s.held && !ids.includes(s.id)).map(({ id, since, booksAtStart }) => ({ id, since, booksAtStart }));
+    const keep = status().filter((s) => s.held && !ids.includes(s.id)).map(({ id, since, booksAtStart, searching }) => ({ id, since, booksAtStart, ...(searching ? { searching } : {}) }));
     const counts = require("./prefetch-books").availableBooks(ids.map((id) => catalog.get(id)));
-    write({ people: [...keep, ...ids.map((id) => ({ id, since: today(), booksAtStart: counts[id] || 0 }))] });
+    write({ people: [...keep, ...ids.map((id) => ({ id, since: today(), booksAtStart: counts[id] || 0, ...(cmd === "hold" ? { searching: true } : {}) }))] });
   }
   for (const s of status()) console.log(`${s.id}: since ${s.since}, ${s.books} books on disk (${s.booksAtStart} when added); ${s.why}`);
 }
