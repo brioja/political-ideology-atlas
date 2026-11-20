@@ -18,7 +18,8 @@
 //     session to fix), move the draft into audits/, merge an ideology's color, build, test, commit with no attribution
 //     line. Pushes go out at most every PUSH_MINUTES (bursts cancel Pages deploys) and when the driver stops.
 // Between subjects: for people, prefetch-books.js and triage.js every
-// BOOKS_EVERY people; for ideologies, statement-signal.js --apply every SIGNAL_EVERY ideologies and at the end.
+// BOOKS_EVERY people; for ideologies, statement-signal.js --apply once, when the lane stops (Brandon, 2026-11-20: it takes
+// about 9 minutes inside the integrate lock, so running it every 5 ideologies slowed both lanes by about a fifth).
 // Log: scratchpad/lane-out/<lane>/driver.log, one line per step; integrated subjects in INTEGRATED.txt.
 const { spawn, spawnSync, execFileSync } = require("child_process");
 const fs = require("fs"), path = require("path");
@@ -30,7 +31,7 @@ if (!["codex", "claude"].includes(ENGINE) || !["people", "ideologies"].includes(
   console.error("usage: node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane name] [--until HH:MM] [--resumes 6]");
   process.exit(1);
 }
-const PEOPLE = KIND === "people", PUSH_MINUTES = 10, BOOKS_EVERY = 5, SIGNAL_EVERY = 5, FIX_ROUNDS = 3;
+const PEOPLE = KIND === "people", PUSH_MINUTES = 10, BOOKS_EVERY = 5, FIX_ROUNDS = 3;
 const deadline = UNTIL ? (() => { const d = new Date(); d.setHours(+UNTIL.slice(0, 2), +UNTIL.slice(3), 0, 0); return d.getTime(); })() : Infinity;
 const timeLeft = () => Date.now() < deadline;
 // Graceful stop: touch scratchpad/lane-out/<lane>/STOP (this lane) or scratchpad/lane-out/STOP (every lane). The
@@ -230,10 +231,9 @@ while (timeLeft()) {
   log(`done ${id} (${name}): ${line.split("|").slice(1).join("|").trim()}`);
   count++;
   if (PEOPLE && count % BOOKS_EVERY === 0) books();
-  if (!PEOPLE && count % SIGNAL_EVERY === 0) signal();
   locked(() => push(false));
 }
-if (!PEOPLE && count % SIGNAL_EVERY) signal();
+if (!PEOPLE && count) signal();
 locked(() => push(true));
 log("driver finished");
 process.exit(0);

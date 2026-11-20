@@ -59,4 +59,4 @@ agents too. This file adds what matters when running audits.
   `audits/statements/STANDARD.md`; `node scripts/statements-check.js` lists them as Ready), and
   demote an active statement that loses it (`node scripts/statement-signal.js`). Brandon, 2026-11-05.
   An audit written before a promotion counts that statement as null until its next pass. Lanes run
-  `statement-signal.js --apply` between ideologies and when they stop.
+  `statement-signal.js --apply` once, when they stop.
