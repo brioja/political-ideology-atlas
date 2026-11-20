@@ -73,9 +73,6 @@ function duplicateOf(id) {
   }
   return dupMap.get(id) || null;
 }
-// The names of an entry's duplicates (catalog names that Wikipedia redirects to its article) are its
-// aliases: a redirect has one target, so the link is one to one ("Neoreaction" for Dark Enlightenment).
-const redirectAliases = (id) => { duplicateOf("_"); return catalog().filter((e) => dupMap.get(e.id) === id).map((e) => e.name); };
 
 // Audits go stale per statement, not all at once: a new statement only needs answering, and a
 // removed one is ignored. A rewording that changes the meaning would silently change what was
@@ -359,6 +356,6 @@ function answersTo(id) {
   return out;
 }
 
-module.exports = { slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
+module.exports = { slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

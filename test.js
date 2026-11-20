@@ -25,13 +25,13 @@ for (const s of allStatements()) {
   assert(!(s.id in texts) || texts[s.id] === s.text, `statement '${s.id}' was reworded; a new meaning needs a new id, a reader fix that keeps the meaning updates audits/statements/texts.json too`);
 }
 
-// 1b. Duplicates are decided by data (scripts/lib.js duplicateOf): no audit exists for an entry whose
-// Wikipedia article another entry owns.
+// 1b. One catalog entry per Wikipedia article (scripts/lib.js duplicateOf): an entry whose article another entry
+// owns is removed from the catalog, not kept as a duplicate (Brandon, 2026-11-20: nine were left over from the
+// hand-built list, and their names were aliases by catalog accident).
 {
   const lib = require("./scripts/lib");
-  const dupAudits = lib.catalog().filter((e) => lib.duplicateOf(e.id) && require("fs").existsSync(lib.profilePath(e.id))
-    && !lib.readJson(lib.profilePath(e.id)).notIdeasOfWhatSocietyShouldBe).map((e) => `${e.id} (article owned by ${lib.duplicateOf(e.id)})`);
-  assert(!dupAudits.length, `audits exist for duplicate entries: ${dupAudits.join(", ")}`);
+  const dups = lib.catalog().filter((e) => lib.duplicateOf(e.id)).map((e) => `${e.id} (article owned by ${lib.duplicateOf(e.id)})`);
+  assert(!dups.length, `catalog entries whose Wikipedia article another entry owns (remove them): ${dups.join(", ")}`);
   const nnAudits = lib.catalog().filter((e) => !lib.notable(e.id) && require("fs").existsSync(lib.profilePath(e.id))
     && !lib.readJson(lib.profilePath(e.id)).notIdeasOfWhatSocietyShouldBe).map((e) => e.id);
   assert(!nnAudits.length, `audits exist for entries with no Wikipedia article of their own: ${nnAudits.join(", ")}`);

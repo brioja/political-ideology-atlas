@@ -455,7 +455,7 @@ function searchNames(entry, a) {
   const lib = require("./lib");
   const fold = (x) => String(x).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   const raw = [...(Array.isArray(a.aliases) ? a.aliases : []).map((x) => (typeof x === "string" ? x : x && x.name) || ""),
-    ...lib.redirectAliases(entry.id), ...lib.wikipediaOtherNames(entry.id)];
+    ...lib.wikipediaOtherNames(entry.id)];
   const seen = new Set([fold(entry.name)]), out = [];
   for (const r of raw) {
     const n = String(r).replace(/\s*\([^)]*\)\s*$/, "").replace(/^["'“”]+|["'“”]+$/g, "").trim();

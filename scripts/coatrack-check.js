@@ -241,9 +241,7 @@ function check(id, full, { strict = false } = {}) {
   }
   // Eponymous authors' names count as names of the ideology (as its last name: "Klaus", "Bukharin").
   const eponyms = (Array.isArray(audit.authors) ? audit.authors : []).filter((x) => isEponym(x, audit.name)).map((x) => x.last || x.first);
-  // Catalog names that Wikipedia redirects to this ideology's article are aliases too (one to one).
-  const redirectNames = lib.redirectAliases(id).filter((n) => norm(n) !== norm(audit.name));
-  const aliases = [...list(audit.aliases), ...eponyms, ...redirectNames];
+  const aliases = [...list(audit.aliases), ...eponyms];
   for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, a coined word, or a spelling variant of the name)`);
   // Uniqueness. An ideology's own name is never another's alias. An alias two ideologies claim belongs
   // to the one whose defining sources use it most (the sources decide, Brandon 2026-11-05); the others
