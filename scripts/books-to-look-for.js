@@ -81,26 +81,35 @@ function ideologies() {
   const wfb = require("./waiting-for-books"), sought = wfb.sought("ideologies");
   const { validate, excludedOnly } = require("./validate");
   const doc = arg("--doc", path.join(os.homedir(), "work", "ideology-books-to-look-for.md"));
-  const out = [];
+  // Each book as the author's first and last name (one name for those known by one) and a short title, no commas, so it
+  // can be pasted into a search (Brandon, 2026-11-20); audits/book-searches.json, hand-written. A work not in it yet is
+  // listed as the audit words it, marked "(add to book-searches.json)".
+  const searches = lib.readJson(path.join(lib.ROOT, "audits", "book-searches.json")).works;
+  // Books already on disk are left out (Brandon, 2026-11-20: A Theory of Justice listed after it had landed): a file in the
+  // reference library or Gutenberg texts whose name holds the author's surname and the title's start.
+  const onDisk = [...fs.readdirSync(REF), ...fs.readdirSync(path.join(GUT, "text"))].map(fold);
+  const have = ([a, t]) => { const sur = fold(a).split(" ").pop(), title = fold(t).replace(/^(the|a|an) /, "").slice(0, 25);
+    return onDisk.some((f) => ` ${f} `.includes(` ${sur} `) && f.includes(title)); };
+  const clean = (w) => `${w.replace(/\(full texts?, /gi, "(").replace(/,? ?\(?(in |as openly hosted )?full (texts?|book)\)?/gi, "").trim()} (add to book-searches.json)`;
+  const out = [], landed = [];
   for (const c of lib.catalog()) {
     if (sought[c.id] || !fs.existsSync(lib.profilePath(c.id))) continue;
     const works = wfb.bookWorks(lib.readJson(lib.profilePath(c.id)));
     if (!works.length) continue;
+    const want = works.flatMap((w) => searches[w] ? searches[w].filter((b) => !have(b)).map(([a, t]) => `${a} *${t}*`) : [clean(w)]);
+    if (!want.length) { landed.push(c.id); continue; }
     const { errors } = validate(c.id);
-    out.push({ id: c.id, name: c.name, failing: errors.length > 0 && !excludedOnly(errors), views: c.views12m || 0, works });
+    out.push({ id: c.id, name: c.name, failing: errors.length > 0 && !excludedOnly(errors), views: c.views12m || 0, works: [...new Set(want)] });
   }
   out.sort((a, b) => b.failing - a.failing || b.views - a.views);
   const shown = out.slice(0, LIMIT);
   const md = [`# Ideology books to look for (${new Date().toISOString().slice(0, 10)})`, "",
     "Books the audits tried and couldn't get; failing audits first. Once looked for: `node scripts/waiting-for-books.js add <id>` (downloading: queues a later pass) or `sought <id>` (nothing found).", ""];
-  // Each book as the author's first and last name (one name for those known by one) and a short title, no commas, so it
-  // can be pasted into a search (Brandon, 2026-11-20); audits/book-searches.json, hand-written. A work not in it yet is
-  // listed as the audit words it, marked "(add to book-searches.json)".
-  const searches = lib.readJson(path.join(lib.ROOT, "audits", "book-searches.json")).works;
-  const seen = (o) => { const s = new Set(); return (b) => !s.has(b) && s.add(b); };
-  for (const o of shown) md.push(`- ${o.name} (\`${o.id}\`): ${o.works.flatMap((w) => searches[w] ? searches[w].map(([a, t]) => `${a} *${t}*`) : [`${w.replace(/\(full texts?, /gi, "(").replace(/,? ?\(?(in |as openly hosted )?full (texts?|book)\)?/gi, "").trim()} (add to book-searches.json)`]).filter(seen()).join("; ")}`);
+  for (const o of shown) md.push(`- ${o.name} (\`${o.id}\`): ${o.works.join("; ")}`);
   fs.writeFileSync(doc, md.join("\n") + "\n");
   console.log(`${shown.length} ideologies listed in ${doc} (${out.length} with books to find, ${out.filter((o) => o.failing).length} failing).`);
+  // Every listed book on disk but the search never recorded: `waiting-for-books.js add` queues their later pass.
+  if (landed.length) console.log(`Books all on disk, not yet recorded (add queues a later pass): ${landed.join(" ")}`);
 }
 
 async function main() {
