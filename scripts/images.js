@@ -10,7 +10,7 @@
 // Monthly photo check (Brandon, 2026-11-07): Commons renames files, which breaks the stored URL (Nicholas II's photo,
 // renamed 2026-11-05). Every run for people reads audits/photo-check.json; when its date is 30 or more days old (or
 // with --check) it tests every shown person's photo URL, follows a renamed file to its new name (the same picture),
-// clears a deleted one so this run looks it up again, and writes today's date. Serial people deploys run this script,
+// clears a deleted one so this run looks it up again, and writes today's date. People lanes run this script on every build,
 // so the check runs about once a month on its own.
 const fs = require("fs");
 const path = require("path");

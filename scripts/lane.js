@@ -11,14 +11,13 @@
 //
 // Per subject:
 //  1. Pick: the lane's own unfinished drafts first, then `next.js --lane`, passing over subjects other lanes have
-//     claimed (scratchpad/lane-out/*/<id>.claim, written at once) and the serial-audits run's subject (next.js's first
-//     pick, and any audit with uncommitted changes). Greta Thunberg and Annie Besant were audited twice before this.
+//     claimed (scratchpad/lane-out/*/<id>.claim, written at once) and any audit with uncommitted changes. Greta Thunberg and Annie Besant were audited twice before this.
 //  2. Audit: a new session with START, resumed with RESUME until the subject has its DONE.txt line. The session
 //     ends its turn at natural report points, so the loop lives here.
 //  3. Integrate (under a lock shared by all lanes): validate (errors other than the uncertainty rule go back to the
 //     session to fix), move the draft into audits/, merge an ideology's color, build, test, commit with no attribution
 //     line. Pushes go out at most every PUSH_MINUTES (bursts cancel Pages deploys) and when the driver stops.
-// Between subjects the scripts the serial-audits workflow ran: for people, prefetch-books.js and triage.js every
+// Between subjects: for people, prefetch-books.js and triage.js every
 // BOOKS_EVERY people; for ideologies, statement-signal.js --apply every SIGNAL_EVERY ideologies and at the end.
 // Log: scratchpad/lane-out/<lane>/driver.log, one line per step; integrated subjects in INTEGRATED.txt.
 const { spawn, spawnSync, execFileSync } = require("child_process");
@@ -86,8 +85,7 @@ function nextSubject() {
   const dirty = git("status", "--porcelain", "--", "audits/people", "audits/profiles").stdout
     .split("\n").map((l) => (l.slice(3).match(/([^/]+)\.json$/) || [])[1]).filter(Boolean);
   // next.js --lane passes over every lane's drafts and claims.
-  const serial = next(dirty);
-  return serial ? next([...dirty, serial]) : null;
+  return next(dirty);
 }
 
 // ---- sessions ----
@@ -173,7 +171,7 @@ function integrate(id) {
   });
 }
 
-// ---- between subjects (the serial-audits workflow's other phases) ----
+// ---- between subjects ----
 function books() {
   const r = run("node", ["scripts/prefetch-books.js", "--next", String(BOOKS_EVERY * 3)]);
   log(`books: ${(r.stdout || r.stderr).trim().split("\n").pop()}`);

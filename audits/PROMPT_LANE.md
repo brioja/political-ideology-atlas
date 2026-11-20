@@ -1,7 +1,7 @@
 # Audit lane
 
-For running audits from another session (Codex, or a second Claude session) alongside the
-integrator: the session running the `serial-audits` workflow, which reviews lane files, builds, tests
+For running audits from a session (Codex or Claude) alongside the integrator: `scripts/lane.js`
+for headless lanes, or the session that started this lane, which reviews lane files, builds, tests
 and pushes. A lane only writes audit drafts. Start it with one line:
 
 > Follow audits/PROMPT_LANE.md.

@@ -1,5 +1,5 @@
 // PreToolUse guard (Brandon, 2026-11-06): rate-limited or robot-restricted sites go through the project's cached
-// tools, never a direct fetch. Rate limits are why audit runs are serial; the caches mean each page is read once.
+// tools, never a direct fetch. The caches mean each page is read once.
 //   Wikipedia, Wikidata, Wikimedia -> node scripts/wiki.js       (on-disk cache, waits out 429s)
 //   YouTube                        -> node scripts/yt.js         (captions/search cached, 20 s apart, stops on 429/captcha)
 //   Project Gutenberg              -> node scripts/gutenberg.js  (official catalog + mirror, as its robot policy requires)

@@ -1,7 +1,7 @@
 // Prints the single most-viewed item (person or ideology) still needing an audit, as JSON with a
 // "kind" field, so audits can run one at a time in order of Wikipedia popularity. A later pass has a "reason".
-//   node scripts/next.js [--ideologies | --people] [--by-views]   (--ideologies / --people: only that kind, so two serial
-//   runs can split the kinds; default: the kind with fewer live on the site, most viewed first; --skip id,id,...: pass
+//   node scripts/next.js [--ideologies | --people] [--by-views]   (--ideologies / --people: only that kind, so lanes
+//   can split the kinds; default: the kind with fewer live on the site, most viewed first; --skip id,id,...: pass
 //   over those, e.g. people waiting for books; --lane: also pass over every id with a draft or claim in scratchpad/lane-out/*/, so a
 //   lane takes one subject at a time and calls next.js again for the next). Later passes and new audits alternate (see lastWasNew below).
 const { execFileSync } = require("child_process");

@@ -1,25 +1,16 @@
 # Notes for AI agents
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) and [README.md](README.md) first; the rules there apply to
-agents too. This file adds what matters when running the audit workflows in
-`.claude/workflows/`.
+agents too. This file adds what matters when running audits.
 
-## Running workflows
+## Running audits
 
-- **Launch by script path**, not by name. Launching by name can run a copy cached when the
-  session started, so edits to the workflow file are silently ignored.
-- **Name the audit model:** `{"model": "sonnet"}` in the args. Without it the audit agents inherit the session's
-  model; a PreToolUse hook (`.claude/hooks/serial-audits-model.js`) denies a launch without one, or with Haiku.
-- **One `serial-audits` workflow at a time** (two at once, split by kind in separate checkouts, was tried
-  2026-11-06 and dropped: agents wrote into the wrong checkout). Alternate `{"kind": "people"}` and
-  `{"kind": "ideologies"}` runs instead.
-- **Parallel runs:** more sessions (Codex, or other Claude sessions; web search's hourly ceiling is
-  per session) run as lanes following [audits/PROMPT_LANE.md](audits/PROMPT_LANE.md): each writes
-  only its own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`. The integrator (the
-  session running `serial-audits`) reviews each draft, moves it into `audits/`, builds, tests and
-  pushes, and tells lanes which subjects to take.
-- **Headless lanes:** `node scripts/lane.js --engine codex|claude --kind people|ideologies` runs one session per
-  subject and integrates each finished audit itself (validate, move into `audits/`, build, test, commit, batched push).
+- **Audits run as lanes:** `node scripts/lane.js --engine codex|claude --kind people|ideologies` runs one session per
+  subject following [audits/PROMPT_LANE.md](audits/PROMPT_LANE.md) and integrates each finished audit itself
+  (validate, move into `audits/`, build, test, commit, batched push); between subjects it runs the books, triage and
+  signal steps. Lanes write only their own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`.
+  The serial-audits workflow it replaced was removed 2026-11-20 (Brandon): the lanes did all it did, and the subject
+  lanes left for it went unaudited while it wasn't running.
 - **Give each agent its own scratchpad folder** (`scratchpad/<id>/`). Agents sharing one folder
   overwrite each other's helper scripts.
 - **Fetching goes through cached tools:** pages `node scripts/get.js <id> <url>`, Wikipedia `scripts/wiki.js`,
@@ -67,5 +58,5 @@ agents too. This file adds what matters when running the audit workflows in
 - Promote a candidate once it carries signal on the real lines (test 2 in
   `audits/statements/STANDARD.md`; `node scripts/statements-check.js` lists them as Ready), and
   demote an active statement that loses it (`node scripts/statement-signal.js`). Brandon, 2026-11-05.
-  An audit written before a promotion counts that statement as null until its next pass. Every audit
-  run ends with `statement-signal.js --apply` (the Signal phase).
+  An audit written before a promotion counts that statement as null until its next pass. Lanes run
+  `statement-signal.js --apply` between ideologies and when they stop.

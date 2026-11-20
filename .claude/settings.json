@@ -22,16 +22,6 @@
         ]
       },
       {
-        "matcher": "Workflow",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/serial-audits-model.js\"",
-            "timeout": 10
-          }
-        ]
-      },
-      {
         "matcher": "WebSearch|WebFetch|Bash",
         "hooks": [
           {
