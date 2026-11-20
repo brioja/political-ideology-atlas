@@ -4,6 +4,8 @@
 //   node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane <name>] [--until HH:MM] [--resumes 6] [--dry]
 // --lane defaults to <engine>-<kind>, so one lane per engine and kind runs with no --lane (Brandon, 2026-11-19); --until stops new subjects and resumes after that local time (default: run until
 // the queue is empty or the driver is stopped; a stop mid-subject keeps the draft, which the next start carries on).
+// Graceful stop: `touch scratchpad/lane-out/<lane>/STOP` (or scratchpad/lane-out/STOP for all lanes) ends the run after
+// the current subject, with the final signal step and push; the file needs no cleanup.
 //
 // Per subject:
 //  1. Pick: the lane's own unfinished drafts first, then `next.js --lane`, passing over subjects other lanes have
@@ -30,6 +32,10 @@ if (!["codex", "claude"].includes(ENGINE) || !["people", "ideologies"].includes(
 const PEOPLE = KIND === "people", PUSH_MINUTES = 10, BOOKS_EVERY = 5, SIGNAL_EVERY = 5, FIX_ROUNDS = 3;
 const deadline = UNTIL ? (() => { const d = new Date(); d.setHours(+UNTIL.slice(0, 2), +UNTIL.slice(3), 0, 0); return d.getTime(); })() : Infinity;
 const timeLeft = () => Date.now() < deadline;
+// Graceful stop: touch scratchpad/lane-out/<lane>/STOP (this lane) or scratchpad/lane-out/STOP (every lane). The
+// driver finishes its current subject, runs the end-of-run steps and pushes. Only files touched after it started count.
+const STARTED = Date.now();
+const stopRequested = () => [path.join(OUT, "STOP"), path.join(LANES, "STOP")].some((f) => { try { return fs.statSync(f).mtimeMs >= STARTED; } catch { return false; } });
 const LANES = path.join(ROOT, "scratchpad", "lane-out"), OUT = path.join(LANES, LANE);
 const DONE = path.join(OUT, "DONE.txt"), LOG = path.join(OUT, "driver.log"), LOCK = path.join(LANES, ".integrate.lock");
 fs.mkdirSync(OUT, { recursive: true });
@@ -172,6 +178,7 @@ if (process.argv.includes("--dry")) { console.log(nextSubject()); process.exit(0
 let count = 0;
 if (PEOPLE) books();
 while (timeLeft()) {
+  if (stopRequested()) { log("stop requested"); break; }
   const id = nextSubject();
   if (!id) { log("queue empty"); break; }
   fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
