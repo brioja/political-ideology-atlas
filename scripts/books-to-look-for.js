@@ -7,7 +7,7 @@
 // Record each person once looked for, so the next list leaves them out:
 //   node scripts/waiting-for-books.js add <id>      (downloads queued: also holds them until the books land)
 //   node scripts/waiting-for-books.js sought <id>   (nothing found)
-// Everyone listed is held out of the audit queue (waiting-for-books.js hold) until add or sought, so audits wait for the search.
+// Everyone listed, people or ideologies, is held out of the audit queue (waiting-for-books.js hold) until add or sought, so audits wait for the search.
 // Usage: node scripts/books-to-look-for.js [--ideologies] [--limit N people listed, default 40] [--doc ~/work/books-to-look-for.md] [--no-hold]
 // Wikipedia's lists are leads for the search, not evidence. Sections of fiction, poetry, children's books,
 // edited or translated works are left out; whether a book is political nonfiction in the person's own words is the
@@ -109,6 +109,9 @@ function ideologies() {
   fs.writeFileSync(doc, md.join("\n") + "\n");
   console.log(`${shown.length} ideologies listed in ${doc} (${out.length} with books to find, ${out.filter((o) => o.failing).length} failing).`);
   // Every listed book on disk but the search never recorded: `waiting-for-books.js add` queues their later pass.
+  // Listed ideologies are held out of the audit queue until add or sought, as listed people are.
+  if (shown.length && !process.argv.includes("--no-hold"))
+    execFileSync("node", [path.join(__dirname, "waiting-for-books.js"), "hold", ...shown.map((o) => o.id)], { cwd: lib.ROOT, stdio: "ignore" });
   if (landed.length) console.log(`Books all on disk, not yet recorded (add queues a later pass): ${landed.join(" ")}`);
 }
 

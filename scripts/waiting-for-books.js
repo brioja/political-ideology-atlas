@@ -4,7 +4,7 @@
 // Read by pending.js --people (so next.js and prefetch-books.js pass them over) and next.js's later-pass turns.
 //   node scripts/waiting-for-books.js add <id> [<id> ...]   (whoever queues the download adds the entry)
 //   node scripts/waiting-for-books.js sought <id> [<id> ...] (only records the search: nothing found to download; ends any hold)
-//   node scripts/waiting-for-books.js hold <id> [<id> ...]   (holds people the maintainer is about to look for; not recorded
+//   node scripts/waiting-for-books.js hold <id> [<id> ...]   (holds people or ideologies the maintainer is about to look for; not recorded
 //                                                              as sought: Brandon, 2026-11-18, so the queue doesn't reach them first)
 //   node scripts/waiting-for-books.js                        (lists each entry and whether it still holds)
 // Every id given to add or sought is also kept in audits/books-sought.json, which never drops anyone (Brandon,
@@ -143,6 +143,12 @@ if (require.main === module) {
       for (const id of ideos) if (!g.ids.includes(id)) g.ids.push(id);
       fs.writeFileSync(qf, JSON.stringify(q, null, 1) + "\n");
     }
+  }
+  // `hold` on ideologies (Brandon, 2026-11-20: multiculturalism audited between being listed and the books being
+  // queued): the ideology books list holds what it lists until add or sought, as the people list does.
+  if (cmd === "hold" && ideos.length) {
+    const entries = ideos.map((id) => ({ id, since: today(), works: bookWorks(lib.readJson(lib.profilePath(id))), downloads: [], searching: true }));
+    write({ people: [...read().people.filter((e) => !ideos.includes(e.id)), ...entries] });
   }
   if (cmd === "sought" && ideos.length) write({ people: read().people.filter((e) => !ideos.includes(e.id)) });
   ids.splice(0, ids.length, ...ids.filter((id) => !ideologyIds.has(id)));
