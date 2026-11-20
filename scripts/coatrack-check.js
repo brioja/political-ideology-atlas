@@ -163,21 +163,38 @@ function authorsTaken() {
   return takenAuthors;
 }
 
-// The same name in another form needs no source equating it with the ideology's name: a translation
-// (marked "type": "translation": "laïcité", "New Right"; or "variant": a reordering such as
-// "Jihadi-Salafism"), a spelling variant (at most two letters differ: "Austro-Marxism", "communisation")
-// or an acronym (initials: "TERF").
-const sameName = (al, name, type) => {
-  if (type === "translation" || type === "variant") return true;
-  const a = norm(al).trim().replace(/ /g, ""), n = norm(name).trim().replace(/ /g, "");
-  const initials = norm(name).trim().split(" ").map((x) => x[0]).join("");
-  // A spelling variant is nearly the same string: s/z and spacing aside, at most two letters differ
-  // ("Austromarxismus", "Greater Serbian", "communisation").
-  const lev = (x, y) => { const d = Array.from({ length: x.length + 1 }, (_, i) => [i]); for (let j = 1; j <= y.length; j++) d[0][j] = j;
-    for (let i = 1; i <= x.length; i++) for (let j = 1; j <= y.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (x[i - 1] === y[j - 1] ? 0 : 1));
-    return d[x.length][y.length]; };
-  const zs = (x) => x.replace(/z/g, "s");
-  return lev(zs(a), zs(n)) <= 2 || a === initials || a === initials + "s";
+// Why an alias is another name for the ideology (Brandon, 2026-11-20): every alias gives one "reason", and each is
+// checked here.
+//   REDIRECT     a Wikipedia redirect to the ideology's article (resolve-articles.js otherNames); needs no quote.
+//   SUPPORTED    a source says they are the same: the quote names both the alias and the ideology. Acronyms go here,
+//                found by looking the acronym up ("TERF" in a dictionary): initials alone can mean several things.
+//   TRANSLATION  the name in another language ("laïcité", "Nouvelle Droite" -> "New Right"); the quote uses it.
+//   SPELLING     the same name spelled differently: s/z, case, accents, spacing and hyphens aside, at most two letters
+//                differ and the ending is the same ("Austro-Marxism", "communisation"), or the same words reordered
+//                ("Jihadi-Salafism"). A word form ("Bolshevik", "Gaullist") or another name is a REDIRECT, or SUPPORTED.
+//   EPONYM       the person the "-ism" is named after ("Fortuyn" for Fortuynism).
+const ALIAS_REASONS = ["REDIRECT", "SUPPORTED", "TRANSLATION", "SPELLING", "EPONYM"];
+const lev = (x, y) => { const d = Array.from({ length: x.length + 1 }, (_, i) => [i]); for (let j = 1; j <= y.length; j++) d[0][j] = j;
+  for (let i = 1; i <= x.length; i++) for (let j = 1; j <= y.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (x[i - 1] === y[j - 1] ? 0 : 1));
+  return d[x.length][y.length]; };
+const isSpelling = (al, name) => {
+  const flat = (t) => norm(t).trim().replace(/ /g, "").replace(/z/g, "s");
+  const a = flat(al), n = flat(name);
+  // A word form isn't a spelling ("Bolshevik" for Bolshevism, "gaullista", "Austromarxismus"): the ending stays the same.
+  // Word forms and other names come in as Wikipedia redirects (Brandon, 2026-11-20).
+  if (lev(a, n) <= 2 && a.slice(-3) === n.slice(-3)) return true;
+  // Reordered: the same letters, and the same word starts ("jihadi salafism" / "salafi jihadism").
+  const sorted = (t) => [...t].sort().join(""), starts = (t) => norm(t).trim().split(" ").map((w) => w.slice(0, 4)).sort().join(" ");
+  return sorted(a) === sorted(n) && starts(al) === starts(name);
+};
+// An EPONYM alias is a proper name (its words capitalised, none an "-ism" form: not "Burkean conservatism") that the
+// ideology's one-word name is built from ("Strasser" for Strasserism).
+const isEponymAlias = (al, name) => {
+  const ws = String(al).trim().split(/\s+/);
+  if (norm(al).trim().split(" ").some((w) => /(ism|isme|ismo|ismus|ist|ian)$/.test(w))) return false;
+  if (!ws.every((w) => w.length < 3 || /^\p{Lu}/u.test(w))) return false;
+  const n = norm(al).trim().split(" ");
+  return isEponym({ first: n[0], last: n[n.length - 1] }, name);
 };
 // An eponym: the ideology is named after this author ("Klaus" for Klausism, "Sankara" for Sankarism,
 // "Camilo" for Camilism). Their name counts as the ideology's name.
@@ -225,18 +242,33 @@ function check(id, full, { strict = false } = {}) {
   if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || audit.aliases.some((x) => !entryName(x).trim()))) {
     problems.push('"aliases" must be a list of names (use [] for none)');
   }
-  // An alias's quote names both the alias and the ideology itself, so the source is seen equating them
-  // ("'trans-exclusionary radical feminism', or TERFism") (Brandon, 2026-11-05: traceability).
+  // Each alias gives its "reason" (ALIAS_REASONS above). A SUPPORTED alias's quote names both the alias and the
+  // ideology itself, so the source is seen equating them ("'trans-exclusionary radical feminism', or TERFism")
+  // (Brandon, 2026-11-05: traceability). Audits older than the field are held to that for every alias.
+  // A name Wikipedia redirects to the article is already connected by the redirect (Brandon, 2026-11-20), so a quote
+  // may name the subject by any of those names (a renamed entry's old name among them).
+  const ideologyNames = [audit.name, plainName(audit.name), ...lib.wikipediaOtherNames(id).map(plainName)];
   for (const x of Array.isArray(audit.aliases) ? audit.aliases : []) {
     // Wikidata no longer connects an alias (Brandon, 2026-11-14: a poor source; of the 17 it connected, Wikipedia sent two
     // elsewhere and seven were labeled redirects anyway). Its "wikidata": true marker is refused, so an alias needs a quote.
     if (x && typeof x === "object" && "wikidata" in x) problems.push(`alias "${entryName(x)}": Wikidata no longer connects aliases; give a source and quote`);
-    problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
-    // A name Wikipedia redirects to the article is already connected by the redirect (Brandon, 2026-11-20), so its quote
-    // may name the subject by any of those names (a renamed entry's old name among them).
-    const names = [audit.name, plainName(audit.name), ...lib.wikipediaOtherNames(id)].map(norm);
-    if (typeof x === "object" && x && typeof x.quote === "string" && !sameName(entryName(x), audit.name, x.type) && !mentions(norm(x.quote), names))
-      problems.push(`alias "${entryName(x)}": its quote doesn't name "${audit.name}" too, so it doesn't show the source equating them`);
+    if (!x || typeof x !== "object") { problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))]))); continue; }
+    const al = entryName(x), reason = x.reason;
+    if ("type" in x) problems.push(`alias "${al}": "type" is replaced by "reason" (${ALIAS_REASONS.join(", ")})`);
+    if (reason !== undefined && !ALIAS_REASONS.includes(reason)) { problems.push(`alias "${al}": "reason" must be one of ${ALIAS_REASONS.join(", ")}`); continue; }
+    if (reason === undefined && strict) problems.push(`alias "${al}" needs a "reason": one of ${ALIAS_REASONS.join(", ")}`);
+    if (reason === "REDIRECT") {
+      if (!lib.wikipediaOtherNames(id).some((t) => norm(plainName(t)) === norm(al)))
+        problems.push(`alias "${al}": not a Wikipedia redirect to the ideology's article (scripts/resolve-articles.js otherNames)`);
+      continue;
+    }
+    problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(al)])));
+    if (reason === "SPELLING" && !ideologyNames.some((n) => isSpelling(al, n)))
+      problems.push(`alias "${al}": not a spelling of "${audit.name}" (more than two letters differ); give a source saying they are the same (SUPPORTED)`);
+    if (reason === "EPONYM" && !isEponymAlias(al, plainName(audit.name))) {
+      problems.push(`alias "${al}": "${audit.name}" isn't named after it (EPONYM is for the person an "-ism" is named after)`); }
+    if ((reason === "SUPPORTED" || reason === undefined) && typeof x.quote === "string" && !mentions(norm(x.quote), ideologyNames.map(norm)))
+      problems.push(`alias "${al}": its quote doesn't name "${audit.name}" too, so it doesn't show the source equating them`);
   }
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
     const key = authorKey(x);
@@ -327,4 +359,4 @@ function check(id, full, { strict = false } = {}) {
   return { problems, unchecked };
 }
 
-module.exports = { check, norm, forms, mentions, sourceText, isWikipedia, isName, namesTaken };
+module.exports = { check, norm, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };

@@ -68,9 +68,13 @@ no defining source states.
 **Every source has to discuss the ideology** (the coatrack check, `scripts/coatrack-check.js`, run by validate.js). A
 defining source (`reference` or `scholarly`) must name the ideology, by its name or an alias. A
 `primary` or `program` source must name it too, or be named (by title or author) in a defining source
-that does. List in `aliases` the other names the defining sources use for it, liberally (spelling variants,
-"Salafi jihadism" / "jihadi-Salafism", the eponym of an "-ism" named after a person: "Fortuyn" for
-Fortuynism). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
+that does. List in `aliases` the other names the defining sources use for it, liberally, each with
+its `reason` (Brandon, 2026-11-20; validate.js checks each): `REDIRECT` (a Wikipedia redirect to the article;
+word forms such as "Gaullist" and other names come in this way), `SUPPORTED` (a source says they are the same),
+`TRANSLATION` (the name in another language), `SPELLING` (the same name spelled differently or its words
+reordered: "Salafi jihadism" / "jihadi-Salafism"; at most two letters differ and the ending stays the same) or
+`EPONYM` (the person an "-ism" is named after: "Fortuyn" for Fortuynism). An acronym is `SUPPORTED`, never
+assumed from initials ("ML" can mean several things). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
 for World communism), so an alias may never be another ideology's name or alias. List in `authors`
 the ideology's own thinkers as its defining sources name them (each named at least twice there, and
 no other ideology's defining author): a primary text by one of them is tied to the ideology. List a
@@ -81,8 +85,8 @@ defining source names a primary text differently from its title ("the 1856 Imper
 "Rescript of Reform"), record those names in the source's `titles`. Give each alias, author and title its evidence:
 `{ "name" (an author: "first" and "last", or "organisation"; a title: "title"), "source": "<source id>",
 "quote": "<verbatim passage>" }`, a passage from that
-source's saved copy that uses the name; validate.js checks the quote is there and contains it. An
-alias's quote must name the ideology too, showing the source equating the two ("'trans-exclusionary
+source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT`
+alias needs none). A `SUPPORTED` alias's quote must name the ideology too, showing the source equating the two ("'trans-exclusionary
 radical feminism', or TERFism"). To find that source, look the alias up from its own side
 (a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias ("TERF") usually defines it
 by the ideology's name ("trans-exclusionary radical feminist"). Wikidata never connects an alias (Brandon, 2026-11-14); every
@@ -181,7 +185,7 @@ captures, even loosely. List only those; often there are none, and the list is e
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "notFound": [{ "work": "<a source looked for and not found>", "tried": [{ "where": "<place 1>", "how": "<what you searched>" }, { "where": "<place 2>", "how": "…" }] }],
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
-  "aliases": [{ "name": "Another name for it", "source": "s3", "quote": "verbatim passage from s3 that uses it" }],
+  "aliases": [{ "name": "Another name for it", "reason": "SUPPORTED", "source": "s3", "quote": "verbatim passage from s3 that uses it" }],
   "authors": [{ "first": "Chantal", "last": "Mouffe", "source": "s3", "quote": "verbatim passage from s3 that names them" }],
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
