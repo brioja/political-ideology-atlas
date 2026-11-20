@@ -66,6 +66,21 @@ function olderRules() {
   const { nextPassFrom, CURRENT_RULES } = require("./validate");
   const today = new Date().toISOString().slice(0, 10);
   const due = [];
+  // DOES_NOT_INCLUDE_IDEAS records decided before the first check's test became "what society should be" (it was
+  // "how to run a society", Brandon 2026-11-20) are re-checked as their turn comes, not ahead of others: each
+  // ranks with the rules version the audits of its day were written under. Records carry no "rules" of their own.
+  const OLD_TEST_UNTIL = "2026-11-20";
+  const rulesOn = (() => {
+    const byDate = [];
+    for (const f of fs.readdirSync(lib.PROFILES_DIR)) {
+      const a = readJson(path.join(lib.PROFILES_DIR, f));
+      const last = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop();
+      if (a.rules && last) byDate.push([last.slice(0, 10), a.rules]); // the rules its latest pass was written under
+    }
+    return (d) => Math.max(0, ...byDate.filter(([x]) => x <= d).map(([, r]) => r));
+  })();
+  const oldTest = (a) => a.notIdeasOfWhatSocietyShouldBe && a.notIdeasOfWhatSocietyShouldBe.reason === "DOES_NOT_INCLUDE_IDEAS"
+    && (a.auditedAt || "").slice(0, 10) <= OLD_TEST_UNTIL;
   for (const kind of ["person", "ideology"]) {
     if (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY) continue;
     for (const entry of kind === "person" ? peopleCatalog() : catalog()) {
@@ -73,16 +88,21 @@ function olderRules() {
       const f = kind === "person" ? lib.personPath(entry.id) : lib.profilePath(entry.id);
       if (!fs.existsSync(f)) continue;
       const a = readJson(f);
+      if (kind === "ideology" && oldTest(a)) {
+        if (nextPassFrom(a) <= today) due.push({ kind, entry, rules: rulesOn(a.auditedAt.slice(0, 10)), recheck: true });
+        continue;
+      }
       if (a.notIdeasOfWhatSocietyShouldBe || (a.rules || 0) >= CURRENT_RULES || nextPassFrom(a) > today) continue;
       due.push({ kind, entry, rules: a.rules || 0 });
     }
   }
   due.sort((a, b) => a.rules - b.rules || (b.entry.views12m || 0) - (a.entry.views12m || 0));
   if (!due.length) return null;
-  const { kind, entry, rules } = due[0];
+  const { kind, entry, rules, recheck } = due[0];
   const { id, name, wikipedia, wikipediaMatch, born, living, scopeNote } = entry;
   return { kind, id, name, wikipedia, wikipediaMatch, born, living, scopeNote, views12m: entry.views12m || 0,
-    reason: `audit under rules v${rules}, later pass to current rules` };
+    reason: recheck ? `DOES_NOT_INCLUDE_IDEAS decided under the old first-check test ("how to run a society"); check it again under "what society should be", auditing it in full if it now passes`
+      : `audit under rules v${rules}, later pass to current rules` };
 }
 // Later passes and new audits take turns (Brandon, 2026-11-10: "reaudit then someone new"). Stateless: if the last
 // "Audit <name>" commit added its audit file it was a new audit, so a later pass is next; if it modified one, a new
