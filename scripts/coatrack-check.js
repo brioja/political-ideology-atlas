@@ -228,7 +228,10 @@ function check(id, full, { strict = false } = {}) {
     // elsewhere and seven were labeled redirects anyway). Its "wikidata": true marker is refused, so an alias needs a quote.
     if (x && typeof x === "object" && "wikidata" in x) problems.push(`alias "${entryName(x)}": Wikidata no longer connects aliases; give a source and quote`);
     problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
-    if (typeof x === "object" && x && typeof x.quote === "string" && !sameName(entryName(x), audit.name, x.type) && !mentions(norm(x.quote), [norm(audit.name)]))
+    // A name Wikipedia redirects to the article is already connected by the redirect (Brandon, 2026-11-20), so its quote
+    // may name the subject by any of those names (a renamed entry's old name among them).
+    const names = [audit.name, ...lib.wikipediaOtherNames(id)].map(norm);
+    if (typeof x === "object" && x && typeof x.quote === "string" && !sameName(entryName(x), audit.name, x.type) && !mentions(norm(x.quote), names))
       problems.push(`alias "${entryName(x)}": its quote doesn't name "${audit.name}" too, so it doesn't show the source equating them`);
   }
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {

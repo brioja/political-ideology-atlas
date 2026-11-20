@@ -43,6 +43,9 @@ function grandfathered() {
       grandfatheredIds = new Set(require("child_process").execSync("git ls-tree --name-only 480478e1 audits/profiles/", { cwd: lib.ROOT })
         .toString().split("\n").filter(Boolean).map((f) => f.replace(/^.*\//, "").replace(/\.json$/, "")));
     } catch { grandfatheredIds = new Set(); }
+    // A renamed audit keeps its old id's standing (audits/id-renames.json: new id -> old id).
+    const renames = lib.readJson(require("path").join(lib.ROOT, "audits", "id-renames.json")).renames;
+    for (const [now, was] of Object.entries(renames)) if (grandfatheredIds.has(was)) grandfatheredIds.add(now);
   }
   return grandfatheredIds;
 }
