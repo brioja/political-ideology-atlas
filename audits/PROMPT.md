@@ -26,7 +26,7 @@ full audit if the entry is:
   an organization (`ORGANIZATION`), a state (`STATE`), a government body such as "the Government of
   France" (`GOVERNMENT_BODY`; a form of government such as totalitarianism is a set of ideas), or an event
   such as a war, revolution, election, battle or protest (`EVENT`); or
-- not a set of political ideas for how to run a society (`DOES_NOT_INCLUDE_IDEAS`): its content holds
+- not political ideas of what society should be (`DOES_NOT_INCLUDE_IDEAS`; what it wants society to be is enough, with or without a worked-out "how"): its content holds
   none. Decide this by trying, not by its label: go through the statements and look for an answer in its
   sources, and record `DOES_NOT_INCLUDE_IDEAS` only if fewer than two can be answered (two positions make a
   set of ideas); otherwise audit it in full. Say in the explanation what you looked through (Brandon,
@@ -48,7 +48,7 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id>",
-  "notAnIdeology": { "reason": "PERSON | PARTY | ORGANIZATION | STATE | GOVERNMENT_BODY | EVENT | DOES_NOT_INCLUDE_IDEAS", "explanation": "One or two sentences on why." },
+  "notIdeasOfWhatSocietyShouldBe": { "reason": "PERSON | PARTY | ORGANIZATION | STATE | GOVERNMENT_BODY | EVENT | DOES_NOT_INCLUDE_IDEAS", "explanation": "One or two sentences on why." },
   "sources": [{ "id": "s1", "kind": "reference", "title": "…", "url": "https://… (a page you opened)" }]
 }
 ```

@@ -99,14 +99,14 @@ try {
   fails("missing statement with one quote", E(base(), (a) => { a.missingStatements = [{ ...ms(), quotes: [{ source: "s2", text: `We hold that ${N} is the way forward for all` }] }]; }), /missingStatements\[0\]: 1 quote\(s\); the rule of two/);
   warns("missing statement without quotes", E(base(), (a) => { const m = ms(); delete m.quotes; a.missingStatements = [m]; }), /missingStatements\[0\]: no "quotes"/);
   // "Not an ideology": a reason from the list, a sentence of explanation, a source; the "ideas" test.
-  const nai = (n) => ({ id: subject.id, name: N, auditedAt: "2026-11-07", auditor: "claude-sonnet-5-5", notAnIdeology: n,
+  const nai = (n) => ({ id: subject.id, name: N, auditedAt: "2026-11-07", auditor: "claude-sonnet-5-5", notIdeasOfWhatSocietyShouldBe: n,
     sources: [{ id: "s1", kind: "reference", title: "Article", url: "https://example.org/encyclopedia" }] });
   { const e = result(nai({ reason: "PARTY", explanation: "It is a political party, not a set of political ideas." })).errors;
-    assert(e.length === 1 && /^not an ideology: PARTY/.test(e[0]), `valid notAnIdeology record: got ${e}`); n++; }
-  fails("notAnIdeology reason not in the list", nai({ reason: "CLUB", explanation: "It is a club, not a set of political ideas at all." }), /"notAnIdeology\.reason" must be one of/);
-  fails("notAnIdeology explanation too short", nai({ reason: "PARTY", explanation: "A party." }), /"notAnIdeology\.explanation" needs at least a sentence/);
-  fails("notAnIdeology as free text", nai("It is a political party, not a set of political ideas."), /"notAnIdeology\.reason" must be one of/);
-  fails("notAnIdeology without an http source", E(nai({ reason: "PARTY", explanation: "It is a political party, not a set of political ideas." }), (a) => { a.sources[0].url = "none"; }), /"notAnIdeology" needs at least one source with an http\(s\) url/);
+    assert(e.length === 1 && /^not an ideology: PARTY/.test(e[0]), `valid notIdeasOfWhatSocietyShouldBe record: got ${e}`); n++; }
+  fails("notIdeasOfWhatSocietyShouldBe reason not in the list", nai({ reason: "CLUB", explanation: "It is a club, not a set of political ideas at all." }), /"notIdeasOfWhatSocietyShouldBe\.reason" must be one of/);
+  fails("notIdeasOfWhatSocietyShouldBe explanation too short", nai({ reason: "PARTY", explanation: "A party." }), /"notIdeasOfWhatSocietyShouldBe\.explanation" needs at least a sentence/);
+  fails("notIdeasOfWhatSocietyShouldBe as free text", nai("It is a political party, not a set of political ideas."), /"notIdeasOfWhatSocietyShouldBe\.reason" must be one of/);
+  fails("notIdeasOfWhatSocietyShouldBe without an http source", E(nai({ reason: "PARTY", explanation: "It is a political party, not a set of political ideas." }), (a) => { a.sources[0].url = "none"; }), /"notIdeasOfWhatSocietyShouldBe" needs at least one source with an http\(s\) url/);
   // Source check: defining sources must discuss the ideology; every source needs a saved copy.
   fails("defining source never names the ideology", E(base(), (a) => { a.sources[2].url = "https://example.org/unrelated"; }), /source s3 \(scholarly\) never names/);
   fails("defining source with no saved copy", E(base(), (a) => { a.sources[2].url = "https://example.org/not-saved"; }), /sources: s3 have no saved copy/);

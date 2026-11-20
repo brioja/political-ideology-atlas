@@ -5,6 +5,10 @@
 // older hand-made list the catalog started from, so it only proposes candidates: each audit's first
 // check and the uncertainty rule decide what reaches the test.
 //
+// A second source (Brandon, 2026-11-20, after Incel was missing): the "See also" links and infobox
+// "Ideology" rows of every catalog ideology's own article, and the "Ideology" rows of the parties,
+// movements and organizations those link to (see step 4). Lead links were tried and are mostly noise.
+//
 // Entries without their own Wikipedia article are dropped.
 // Writes a report of the additions and drops and, with --write, applies them to the catalog.
 //   node scripts/ideology-candidates.js [--write]
@@ -80,10 +84,83 @@ async function views(title) {
   return r ? r.items.reduce((s, x) => s + x.views, 0) : 0;
 }
 
+// 4. Wikipedia's own links between ideologies. Every request goes through fetch.js (cached on disk,
+// paced with the audits running alongside). The infobox type sorts out what has ideas but isn't a set
+// of them: an article kept here has no infobox, or a movement, ideology, philosophy, religion or
+// school-of-thought one; a person, party, organization, state, event, book or film is left out.
+const lib = require("./lib");
+const { cachedJson } = require("./fetch");
+const NOT_OWN_TOPIC_LINKED = /^(History|Lists?|Timeline|Outline|Index|Glossary) of | in (the |[A-Z])/;
+const IDEA_BOX = /movement|ideolog|philosoph|religio|school of thought/;
+const GROUP_BOX = /party|organi[sz]ation|militant|movement/;
+const api = (params) => `https://en.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
+const linkTitles = (html) => [...html.matchAll(/href="\/wiki\/([^"#?]+)/g)]
+  .map((m) => decodeURIComponent(m[1]).replace(/_/g, " ")).filter((t) => !/^[A-Za-z ]+:/.test(t));
+function seeAlsoAndIdeology(html) {
+  const sa = html.match(/id="See_also"[\s\S]*?(?=<div class="mw-heading mw-heading2|<h2[ >]|$)/);
+  const rows = [...html.matchAll(/<th[^>]*>(?:\s*<[^>]+>)*\s*Ideolog(?:y|ies)[\s\S]*?<\/th>\s*<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => m[1]).join(" ");
+  return { seeAlso: sa ? linkTitles(sa[0]) : [], ideology: linkTitles(rows) };
+}
+// Canonical title, infobox types and disambiguation of each title, 50 at a time.
+async function pageInfo(titles) {
+  const pages = new Map(), to = new Map();
+  for (let i = 0; i < titles.length; i += 50) {
+    for (let cont = {}; ;) {
+      const j = await cachedJson(api({ action: "query", titles: titles.slice(i, i + 50).join("|"), redirects: "1", prop: "templates|pageprops", tlnamespace: "10", tllimit: "max", ppprop: "disambiguation", ...cont }));
+      const q = j.query || {};
+      for (const r of [...(q.normalized || []), ...(q.redirects || [])]) to.set(r.from, r.to);
+      for (const p of q.pages || []) {
+        if (p.missing || p.invalid) continue;
+        const e = pages.get(p.title) || { title: p.title, boxes: new Set(), disambig: false };
+        for (const t of p.templates || []) if (/^Template:Infobox/i.test(t.title)) e.boxes.add(t.title.replace(/^Template:Infobox ?/i, "").toLowerCase());
+        if (p.pageprops && "disambiguation" in p.pageprops) e.disambig = true;
+        pages.set(p.title, e);
+      }
+      if (!j.continue) break;
+      cont = { ...j.continue };
+    }
+  }
+  const resolve = (t) => { for (let k = 0; k < 3 && to.has(t); k++) t = to.get(t); return t; };
+  return (t) => pages.get(resolve(t));
+}
+async function linkedArticles() {
+  const excluded = (id) => fs.existsSync(lib.profilePath(id)) && readJson(lib.profilePath(id)).notIdeasOfWhatSocietyShouldBe;
+  const seeds = lib.catalog().filter((e) => lib.articleTitle(e) && !excluded(e.id));
+  const found = new Map(); // canonical title -> { title, boxes, disambig, via }
+  const collect = async (links) => {
+    const get = await pageInfo([...new Set(links.map((l) => l.title))]);
+    for (const l of links) {
+      const p = get(l.title); if (!p) continue;
+      const f = found.get(p.title) || { ...p, via: new Set() };
+      f.via.add(l.via); found.set(p.title, f);
+    }
+  };
+  const links = [];
+  for (const s of seeds) {
+    const html = await lib.fetchArticle(s).catch(() => null); if (!html) continue;
+    const x = seeAlsoAndIdeology(html);
+    for (const t of [...x.seeAlso, ...x.ideology]) links.push({ title: t, via: s.id });
+  }
+  await collect(links);
+  // One hop: the Ideology rows of linked parties, movements and organizations.
+  const hop = [];
+  for (const g of [...found.values()].filter((f) => [...f.boxes].some((b) => GROUP_BOX.test(b)))) {
+    const j = await cachedJson(api({ action: "parse", prop: "text", redirects: "1", page: g.title })).catch(() => null);
+    const html = j && j.parse && j.parse.text; if (!html) continue;
+    for (const t of seeAlsoAndIdeology(html).ideology) hop.push({ title: t, via: g.title });
+  }
+  await collect(hop);
+  return [...found.values()].filter((f) => !f.disambig && !NOT_OWN_TOPIC_LINKED.test(f.title)
+    && (f.boxes.size === 0 || [...f.boxes].some((b) => IDEA_BOX.test(b))));
+}
+
 async function main() {
   const listed = await listedArticles();
   const ideologies = await ideologyItems([...new Set(listed.values())]);
   const found = [...listed].filter(([t, q]) => ideologies.has(q) && !NOT_OWN_TOPIC.test(t)).map(([title, wikidata]) => ({ title, wikidata }));
+  const fromList = new Set(found.map((f) => f.title));
+  const linked = await linkedArticles();
+  for (const l of linked) if (!fromList.has(l.title)) found.push({ title: l.title, source: "wikipedia-links", via: [...l.via].slice(0, 3) });
   for (let i = 0; i < found.length; i += CONCURRENCY) {
     await Promise.all(found.slice(i, i + CONCURRENCY).map(async (f) => { f.views12m = await views(f.title); }));
   }
@@ -110,7 +187,7 @@ async function main() {
   const current = data.ideologies.filter(hasArticle);
   const dropped = data.ideologies.filter((e) => !hasArticle(e));
   const key = (t) => t.toLowerCase();
-  const covered = new Set(current.flatMap((e) => [auditLink(e), e.wikipedia && titleOf(e.wikipedia)]).filter(Boolean).map(key));
+  const covered = new Set(current.flatMap((e) => [auditLink(e), e.wikipedia && titleOf(e.wikipedia), lib.articleTitle(e), ...lib.wikipediaOtherNames(e.id)]).filter(Boolean).map(key));
   const added = found.filter((f) => !covered.has(key(f.title)));
   const ids = new Set(current.map((e) => e.id));
   const entries = added.map((f) => {
@@ -118,13 +195,14 @@ async function main() {
     let id = slug(name);
     for (let n = 2; ids.has(id); n++) id = `${slug(name)}-${n}`;
     ids.add(id);
-    return { id, name, wikipedia: articleUrl(f.title), wikipediaMatch: "exact", wikidata: f.wikidata, views12m: f.views12m };
+    return f.source ? { id, name, wikipedia: articleUrl(f.title), wikipediaMatch: "exact", views12m: f.views12m, source: f.source, foundVia: f.via }
+      : { id, name, wikipedia: articleUrl(f.title), wikipediaMatch: "exact", wikidata: f.wikidata, views12m: f.views12m };
   });
 
   const report = {
-    rule: `Union of the current catalog and articles linked from en.wikipedia ${LIST} that Wikidata classes as a political ideology (or a subclass), ideology or political philosophy, or as a direct subclass of one, leaving out articles on one place, a history or a list`,
+    rule: `Union of the current catalog and articles linked from en.wikipedia ${LIST} that Wikidata classes as a political ideology (or a subclass), ideology or political philosophy, or as a direct subclass of one; plus (source wikipedia-links) articles linked from a catalog ideology's See also section or infobox Ideology row, or a linked group's Ideology row, whose infobox, if any, is a movement, ideology, philosophy, religion or school of thought; leaving out articles on one place, a history or a list`,
     viewsPeriod: require("./lib").viewsPeriod().label,
-    listed: listed.size, found: found.length, alreadyInCatalog: found.length - added.length, added: added.length,
+    listed: listed.size, linked: linked.length, found: found.length, alreadyInCatalog: found.length - added.length, added: added.length,
     addedList: entries.map((e) => `${e.name} (${e.views12m})`),
     droppedNoArticle: dropped.map((e) => e.name),
   };

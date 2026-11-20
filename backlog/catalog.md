@@ -23,8 +23,8 @@ Questions about which ideologies the catalog includes.
 
 The list and sidebar pre-checks (scratchpad/list-precheck, scratchpad/template-precheck) rejected entries
 under the old definition "a set of ideas, not a group, state, event, concept or label" (e.g. McCarthyism:
-"a political practice and period"). Since 2026-11-05 the definition is content only: a set of political
-ideas for how to run a society (regime types, doctrines, practices, prejudices and critics' names pass).
+"a political practice and period"). Since 2026-11-05 the definition is content only: political ideas
+of what society should be (regime types, doctrines, practices, prejudices and critics' names pass).
 Re-run both pre-checks with the new definition (same pipeline, `scripts/ideology-candidates.js`) so the
 rejected entries are judged the same way; their verdicts then stand as they are. Costs one cheap
 agent pass over the rejected articles.

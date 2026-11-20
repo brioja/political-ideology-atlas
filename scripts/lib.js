@@ -163,7 +163,7 @@ const ideologyProfile = (audit, statements = activeStatements()) => statements.m
 const completeIdeologies = (statements = activeStatements()) => catalog()
   .filter((e) => fs.existsSync(profilePath(e.id)))
   .map((e) => ({ id: e.id, audit: readJson(profilePath(e.id)) }))
-  .filter(({ audit }) => !audit.notAnIdeology)
+  .filter(({ audit }) => !audit.notIdeasOfWhatSocietyShouldBe)
   .map(({ id, audit }) => ({ id, name: audit.name, profile: ideologyProfile(audit, statements) }));
 let lastJudge = null;
 const shippedJudge = () => {

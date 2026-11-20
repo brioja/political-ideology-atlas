@@ -20,11 +20,15 @@ An entry is in `audits/catalog.json` only if it meets both:
   as a direct subclass of one (Ecofeminism, a social movement under feminism); or one of Wikipedia's
   ideology sidebar templates or navboxes (the categories "Political ideology sidebar templates" and
   "Political ideology navigational boxes") links it, Wikidata classes it the same way, and a
-  pre-check of the whole article finds it meets the definition of a political ideology (a set of
-  political ideas for how to run a society, judged by its content, as in gate 2; `"source":
+  pre-check of the whole article finds it meets the definition of a political ideology (political
+  ideas of what society should be, judged by its content, as in gate 2; `"source":
   "sidebar-template"` in the catalog); or the List links it but Wikidata files it elsewhere, and the same whole-article
-  pre-check finds it meets the definition (`"source": "list-precheck"`); or a contributor suggests
-  it. The pre-check's verdicts stand as they are, with no hand-picking in either direction.
+  pre-check finds it meets the definition (`"source": "list-precheck"`); or a catalog ideology's
+  article links it from its "See also" section or infobox "Ideology" row (or a party, movement or
+  organization it links lists it in its own "Ideology" row), and its infobox, if it has one, is a
+  movement, ideology, philosophy, religion or school of thought rather than a person, party,
+  organization, state, event or work (`"source": "wikipedia-links"`, Brandon, 2026-11-20); or a
+  contributor suggests it. The pre-check's verdicts stand as they are, with no hand-picking in either direction.
 
 Entries that land on the same article are one ideology, with no exceptions: the entry whose own
 title is the article owns it (else the most viewed), and the others are duplicates
@@ -36,12 +40,12 @@ audit order.
 
 ## 2. An ideology: passes the audit's first check
 
-The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the entry is:
+The audit (`audits/PROMPT.md`) records `notIdeasOfWhatSocietyShouldBe` instead of answers if the entry is:
 
 - **something that has ideas but isn't a set of ideas:** a person, party, organization, state,
-  government body (not a form of government) or event (`notAnIdeology.reason` PERSON, PARTY,
+  government body (not a form of government) or event (`notIdeasOfWhatSocietyShouldBe.reason` PERSON, PARTY,
   ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT); or
-- **not a set of political ideas for how to run a society** (DOES_NOT_INCLUDE_IDEAS): its content holds none,
+- **not political ideas of what society should be** (DOES_NOT_INCLUDE_IDEAS; "should be" is the test, a worked-out "how" isn't needed, Brandon 2026-11-20): its content holds none,
   shown by trying: the agent looked for answers to the statements in its sources and found fewer than two
   (Brandon, 2026-11-14), and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".
   `scripts/validate.js` rejects the reason otherwise, and the entry is audited in full (Brandon, 2026-11-06).

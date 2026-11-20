@@ -151,13 +151,14 @@ function validate(id) {
 
   // The first check (audits/PROMPT.md): an entry that isn't an ideology the test can place gets a
   // short record instead of an audit. It's finished, and excluded like an uncertainty failure.
-  if (!PEOPLE && a.notAnIdeology !== undefined) {
+  if (!PEOPLE && a.notAnIdeology !== undefined) errors.push('"notAnIdeology" was renamed "notIdeasOfWhatSocietyShouldBe" (2026-11-20): rename the key');
+  if (!PEOPLE && a.notIdeasOfWhatSocietyShouldBe !== undefined) {
     // { "reason": one of NOT_AN_IDEOLOGY_REASONS, "explanation": "..." }.
-    const n = a.notAnIdeology;
-    if (!n || !NOT_AN_IDEOLOGY_REASONS.includes(n.reason)) errors.push(`"notAnIdeology.reason" must be one of ${NOT_AN_IDEOLOGY_REASONS.join(", ")}`);
-    else if (typeof n.explanation !== "string" || n.explanation.trim().length < 20) errors.push('"notAnIdeology.explanation" needs at least a sentence');
+    const n = a.notIdeasOfWhatSocietyShouldBe;
+    if (!n || !NOT_AN_IDEOLOGY_REASONS.includes(n.reason)) errors.push(`"notIdeasOfWhatSocietyShouldBe.reason" must be one of ${NOT_AN_IDEOLOGY_REASONS.join(", ")}`);
+    else if (typeof n.explanation !== "string" || n.explanation.trim().length < 20) errors.push('"notIdeasOfWhatSocietyShouldBe.explanation" needs at least a sentence');
     const src = Array.isArray(a.sources) ? a.sources : [];
-    if (!src.length || src.some((x) => !/^https?:\/\/\S+$/.test(x.url || ""))) errors.push('"notAnIdeology" needs at least one source with an http(s) url');
+    if (!src.length || src.some((x) => !/^https?:\/\/\S+$/.test(x.url || ""))) errors.push('"notIdeasOfWhatSocietyShouldBe" needs at least one source with an http(s) url');
     // An article that talks about the entry's "ideas" holds ideas (Brandon, 2026-11-06): no DOES_NOT_INCLUDE_IDEAS
     // then; audit it. Reads the cached page (validate.js main fetches it first).
     if (n && n.reason === "DOES_NOT_INCLUDE_IDEAS" && entry) {
@@ -630,7 +631,7 @@ async function main() {
   // Fetch (once, then cached) the whole Wikipedia page the DOES_NOT_INCLUDE_IDEAS check reads.
   if (!PEOPLE) for (const id of ids) {
     let a; try { a = readJson(profilePath(id)); } catch { continue; }
-    const entry = a && a.notAnIdeology && a.notAnIdeology.reason === "DOES_NOT_INCLUDE_IDEAS" && catalog().find((c) => c.id === id);
+    const entry = a && a.notIdeasOfWhatSocietyShouldBe && a.notIdeasOfWhatSocietyShouldBe.reason === "DOES_NOT_INCLUDE_IDEAS" && catalog().find((c) => c.id === id);
     if (entry) try { await lib.fetchArticle(entry); } catch (e) { fetchFailed.set(id, e.message); }
   }
   let failed = 0, excluded = 0;

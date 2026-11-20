@@ -52,7 +52,7 @@ agents too. This file adds what matters when running audits.
 
 - Check `git status`. Agents sometimes leave files uncommitted (often
   `audits/statements/texts.json`) or skip a rebuild because of someone else's uncommitted work.
-- Check the report for audits that weren't produced, failed tests and new `notAnIdeology` records.
+- Check the report for audits that weren't produced, failed tests and new `notIdeasOfWhatSocietyShouldBe` records.
   Judgment calls go to the maintainer rather than being fixed silently. Who the uncertainty rule
   includes or excludes is not one: it follows from the data, so shifts are never flagged.
 - Promote a candidate once it carries signal on the real lines (test 2 in

@@ -67,7 +67,7 @@ function classify(judge = null) {
     const p = profilePath(entry.id);
     if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
     const a = readJson(p);
-    if (a.notAnIdeology) { notIdeology.push(entry.id); continue; } // the audit's first check said so
+    if (a.notIdeasOfWhatSocietyShouldBe) { notIdeology.push(entry.id); continue; } // the audit's first check said so
     // An active statement promoted after the audit was written counts as null until its next pass.
     if (unanswered(a.answers, statements).length) stale.push(entry.id);
     // Stated positions on only some of the dividing lines: opinions, not a full ideology (the

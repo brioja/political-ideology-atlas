@@ -30,10 +30,10 @@ for (const s of allStatements()) {
 {
   const lib = require("./scripts/lib");
   const dupAudits = lib.catalog().filter((e) => lib.duplicateOf(e.id) && require("fs").existsSync(lib.profilePath(e.id))
-    && !lib.readJson(lib.profilePath(e.id)).notAnIdeology).map((e) => `${e.id} (article owned by ${lib.duplicateOf(e.id)})`);
+    && !lib.readJson(lib.profilePath(e.id)).notIdeasOfWhatSocietyShouldBe).map((e) => `${e.id} (article owned by ${lib.duplicateOf(e.id)})`);
   assert(!dupAudits.length, `audits exist for duplicate entries: ${dupAudits.join(", ")}`);
   const nnAudits = lib.catalog().filter((e) => !lib.notable(e.id) && require("fs").existsSync(lib.profilePath(e.id))
-    && !lib.readJson(lib.profilePath(e.id)).notAnIdeology).map((e) => e.id);
+    && !lib.readJson(lib.profilePath(e.id)).notIdeasOfWhatSocietyShouldBe).map((e) => e.id);
   assert(!nnAudits.length, `audits exist for entries with no Wikipedia article of their own: ${nnAudits.join(", ")}`);
 }
 // 1c. An audit that misses an active statement (promoted after it was written) is kept, with that

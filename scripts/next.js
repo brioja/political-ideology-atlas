@@ -52,7 +52,7 @@ function reauditQueue() {
     if (!kind || (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY)) continue;
     const a = readJson(kind === "person" ? lib.personPath(id) : lib.profilePath(id));
     const last = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop() || "";
-    if (a.notAnIdeology || last >= g.queuedAt || nextPassFrom(a) > today) continue;
+    if (a.notIdeasOfWhatSocietyShouldBe || last >= g.queuedAt || nextPassFrom(a) > today) continue;
     const entry = (kind === "person" ? peopleCatalog() : catalog()).find((x) => x.id === id);
     if (!entry) continue;
     const { name, wikipedia, wikipediaMatch, born, living, scopeNote } = entry;
@@ -73,7 +73,7 @@ function olderRules() {
       const f = kind === "person" ? lib.personPath(entry.id) : lib.profilePath(entry.id);
       if (!fs.existsSync(f)) continue;
       const a = readJson(f);
-      if (a.notAnIdeology || (a.rules || 0) >= CURRENT_RULES || nextPassFrom(a) > today) continue;
+      if (a.notIdeasOfWhatSocietyShouldBe || (a.rules || 0) >= CURRENT_RULES || nextPassFrom(a) > today) continue;
       due.push({ kind, entry, rules: a.rules || 0 });
     }
   }

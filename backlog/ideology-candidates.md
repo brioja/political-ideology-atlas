@@ -18,7 +18,7 @@ Federal republicanism, Kinism, Buharism, Persian nationalism, Zaza nationalism, 
 Dataism, Calderonism, Kaczyzm, Danish nationalism, Liberal Marxism.
 
 **Set aside under the old first check** (a concept, practice, policy, field or phenomenon). Since
-2026-11-05 the first check judges content only (a set of political ideas for how to run a society;
+2026-11-05 the first check judges content only (political ideas of what society should be;
 prejudices, doctrines and practices pass), so most of these would now pass if they meet the catalog's
 notability gate; re-check before adding:
 Cultural imperialism, Historical negationism, Terrorism, Referendum, Realpolitik, Bush Doctrine,
