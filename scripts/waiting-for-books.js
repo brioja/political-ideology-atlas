@@ -57,7 +57,7 @@ function status() {
     // (Brandon, 2026-11-20: no audit before they are released or their downloads are queued).
     const why = today() >= until ? "grace period over"
       : e.searching ? null
-      : queued ? (queued.length ? null : `nothing of theirs left downloading (${books} books on disk)`)
+      : queued ? (queued.length ? null : e.works ? "its downloads finished" : `nothing of theirs left downloading (${books} books on disk)`)
       : books > e.booksAtStart ? `books arrived (${e.booksAtStart} -> ${books}; download queue not readable)` : null;
     const holds = e.searching ? `held until ${until} or until looked for (add or sought)`
       : queued && queued.length ? `held until ${until} or their downloads finish (${queued.length} queued)`
@@ -138,5 +138,5 @@ if (require.main === module) {
     const counts = require("./prefetch-books").availableBooks(ids.map((id) => catalog.get(id)));
     write({ people: [...keep, ...ids.map((id) => ({ id, since: today(), booksAtStart: counts[id] || 0, ...(cmd === "hold" ? { searching: true } : {}) }))] });
   }
-  for (const s of status()) console.log(`${s.id}: since ${s.since}, ${s.books} books on disk (${s.booksAtStart} when added); ${s.why}`);
+  for (const s of status()) console.log(`${s.id}: since ${s.since}${s.works ? "" : `, ${s.books} books on disk (${s.booksAtStart} when added)`}; ${s.why}`);
 }
