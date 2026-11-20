@@ -48,6 +48,7 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id>",
+  "rules": 7,
   "notIdeasOfWhatSocietyShouldBe": { "reason": "PERSON | PARTY | ORGANIZATION | STATE | GOVERNMENT_BODY | EVENT | DOES_NOT_INCLUDE_IDEAS", "explanation": "One or two sentences on why." },
   "sources": [{ "id": "s1", "kind": "reference", "title": "…", "url": "https://… (a page you opened)" }]
 }
