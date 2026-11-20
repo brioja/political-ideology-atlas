@@ -14,6 +14,8 @@
 // (scripts/books-to-look-for.js --ideologies). `add` queues a later pass (audits/reaudit-queue.json, "maintainer supplied
 // books" group of that day) and holds the ideology while a queued download matches one of those works; the pass still
 // waits for the re-audit gap. `sought` only records the search.
+// People with an audit whose hold ends because more of their books are on disk get a later pass queued (Brandon,
+// 2026-11-20), checked on every run, before ended holds are dropped; see queueReleased.
 // Books first (Brandon, 2026-11-18: "it's cheap to try, so error on the side of looking for books first"): a list of
 // books to look for includes everyone with political books of their own, commentators too, even when columns or
 // transcripts exist; order it by how much the books matter, never prune it.
@@ -92,10 +94,31 @@ const NOT_BOOK = /journal|\bj\.|doi|article|magazine|britannica|encyclop|entry|w
 // A single-quoted title is an article, essay or lecture ('The end of liberal international order?').
 const ARTICLE = /(^|[\s,(])'[^']{3,}'/;
 const bookWorks = (audit) => (audit.notFound || []).map((e) => e.work).filter((w) => !NOT_BOOK.test(w) && !ARTICLE.test(w));
+// Released people (hold over, more of their books on disk than at add) whose audit predates the books: queue a later
+// pass in a "supplied books of their own" group, unless a group dated after their last pass already has them. A pass
+// run earlier today counts as before the books, so the group is dated tomorrow then.
+function queueReleased(statuses) {
+  const qf = path.join(lib.ROOT, "audits", "reaudit-queue.json"), q = lib.readJson(qf);
+  const reason = "maintainer supplied books of their own (corpora/reference/text, named by author and title) since their last pass; read them.";
+  const added = [];
+  for (const s of statuses) {
+    if (s.held || s.works || !(s.books > s.booksAtStart) || !fs.existsSync(lib.personPath(s.id))) continue;
+    const a = lib.readJson(lib.personPath(s.id));
+    const last = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop() || "";
+    if (q.groups.some((g) => g.queuedAt > last && g.ids.includes(s.id))) continue;
+    const at = last >= today() ? addDays(today(), 1) : today();
+    let g = q.groups.find((x) => x.queuedAt === at && x.reason === reason);
+    if (!g) q.groups.push(g = { queuedAt: at, reason, ids: [] });
+    g.ids.push(s.id); added.push(s.id);
+  }
+  if (added.length) { fs.writeFileSync(qf, JSON.stringify(q, null, 1) + "\n"); console.log(`later pass queued (their books arrived): ${added.join(", ")}`); }
+}
+
 module.exports = { held, status, sought, bookWorks };
 
 if (require.main === module) {
   const [cmd, ...ids] = process.argv.slice(2);
+  queueReleased(status());
   const ideologyIds = new Set(lib.catalog().map((c) => c.id).filter((id) => fs.existsSync(lib.profilePath(id))));
   const ideos = ids.filter((id) => ideologyIds.has(id));
   if ((cmd === "add" || cmd === "sought") && ideos.length) {
