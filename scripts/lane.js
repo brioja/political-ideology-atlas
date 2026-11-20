@@ -4,8 +4,10 @@
 //   node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane <name>] [--until HH:MM] [--resumes 6] [--dry]
 // --lane defaults to <engine>-<kind>, so one lane per engine and kind runs with no --lane (Brandon, 2026-11-19); --until stops new subjects and resumes after that local time (default: run until
 // the queue is empty or the driver is stopped; a stop mid-subject keeps the draft, which the next start carries on).
-// Graceful stop: `touch scratchpad/lane-out/<lane>/STOP` (or scratchpad/lane-out/STOP for all lanes) ends the run after
-// the current subject, with the final signal step and push; the file needs no cleanup.
+// Graceful stop: Ctrl-C or Ctrl-D in the driver's terminal, or `touch scratchpad/lane-out/<lane>/STOP` (or
+// scratchpad/lane-out/STOP for all lanes), ends the run after the current subject, with the final signal step and push;
+// the file needs no cleanup. A second Ctrl-C quits at once, stopping the session; its draft is kept for the next start.
+// Children run in their own process groups, so the terminal's Ctrl-C reaches only the driver.
 //
 // Per subject:
 //  1. Pick: the lane's own unfinished drafts first, then `next.js --lane`, passing over subjects other lanes have
@@ -19,7 +21,7 @@
 // Between subjects the scripts the serial-audits workflow ran: for people, prefetch-books.js and triage.js every
 // BOOKS_EVERY people; for ideologies, statement-signal.js --apply every SIGNAL_EVERY ideologies and at the end.
 // Log: scratchpad/lane-out/<lane>/driver.log, one line per step; integrated subjects in INTEGRATED.txt.
-const { spawnSync, execFileSync } = require("child_process");
+const { spawn, spawnSync, execFileSync } = require("child_process");
 const fs = require("fs"), path = require("path");
 const ROOT = path.join(__dirname, "..");
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
@@ -35,16 +37,34 @@ const timeLeft = () => Date.now() < deadline;
 // Graceful stop: touch scratchpad/lane-out/<lane>/STOP (this lane) or scratchpad/lane-out/STOP (every lane). The
 // driver finishes its current subject, runs the end-of-run steps and pushes. Only files touched after it started count.
 const STARTED = Date.now();
-const stopRequested = () => [path.join(OUT, "STOP"), path.join(LANES, "STOP")].some((f) => { try { return fs.statSync(f).mtimeMs >= STARTED; } catch { return false; } });
+let stopping = false, child = null;
+const stopRequested = () => stopping || [path.join(OUT, "STOP"), path.join(LANES, "STOP")].some((f) => { try { return fs.statSync(f).mtimeMs >= STARTED; } catch { return false; } });
 const LANES = path.join(ROOT, "scratchpad", "lane-out"), OUT = path.join(LANES, LANE);
 const DONE = path.join(OUT, "DONE.txt"), LOG = path.join(OUT, "driver.log"), LOCK = path.join(LANES, ".integrate.lock");
 fs.mkdirSync(OUT, { recursive: true });
 const log = (m) => { const l = `${new Date().toTimeString().slice(0, 8)} ${m}`; console.log(l); fs.appendFileSync(LOG, l + "\n"); };
+const requestStop = (how) => { if (stopping) return; stopping = true; log(`stop requested (${how}): finishing the current subject; Ctrl-C again to quit now`); };
+process.on("SIGINT", () => {
+  if (!stopping) return requestStop("Ctrl-C");
+  log("quit now; the current draft is kept for the next start");
+  if (child) try { process.kill(-child.pid, "SIGTERM"); } catch {}
+  process.exit(130);
+});
+if (process.stdin.isTTY) process.stdin.on("data", () => {}).on("end", () => requestStop("Ctrl-D"));
 // A DONE line's subject is the last word before the first "|": agents copy INTEGRATED.txt's "<date> <line>" format and
 // prefix the date (2026-11-19: undetected, every resume found its line and quit, and finished audits were dropped).
 const lineId = (l) => l.split("|")[0].trim().split(/\s+/).pop();
 const doneIds = () => new Set((fs.existsSync(DONE) ? fs.readFileSync(DONE, "utf8") : "").split("\n").map(lineId).filter(Boolean));
-const run = (cmd, args, opts = {}) => spawnSync(cmd, args, { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 28, ...opts });
+const run = (cmd, args, opts = {}) => spawnSync(cmd, args, { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 28, detached: true, ...opts });
+// Sessions run async, so a Ctrl-C is handled at once rather than when the session ends.
+const runAsync = (cmd, args) => new Promise((resolve) => {
+  let out = "", err = "";
+  const c = child = spawn(cmd, args, { cwd: ROOT, detached: true, stdio: ["ignore", "pipe", "pipe"] });
+  c.stdout.setEncoding("utf8").on("data", (d) => { out += d; });
+  c.stderr.setEncoding("utf8").on("data", (d) => { err += d; });
+  c.on("error", (e) => { child = null; resolve({ status: 1, stdout: out, stderr: String(e) }); });
+  c.on("close", (code) => { child = null; resolve({ status: code === null ? 1 : code, stdout: out, stderr: err }); });
+});
 const git = (...a) => run("git", a);
 const draft = (id) => path.join(OUT, `${id}.json`);
 const flag = PEOPLE ? "--people " : "";
@@ -60,7 +80,7 @@ function nextSubject() {
   }
   const next = (skip) => {
     const a = [path.join(__dirname, "next.js"), `--${KIND}`, "--lane", ...(skip.length ? ["--skip", skip.join(",")] : [])];
-    const j = JSON.parse(execFileSync("node", a, { cwd: ROOT, maxBuffer: 1 << 26 }).toString() || "null");
+    const j = JSON.parse(execFileSync("node", a, { cwd: ROOT, maxBuffer: 1 << 26, detached: true }).toString() || "null");
     return j && j.id;
   };
   const dirty = git("status", "--porcelain", "--", "audits/people", "audits/profiles").stdout
@@ -77,14 +97,14 @@ const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its 
 const FIX = (id, errors) => `Integration found these validator errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
 // Runs one turn (new session, or resume of `thread`); returns the session id.
-function session(prompt, thread) {
+async function session(prompt, thread) {
   let r, id = thread;
   if (ENGINE === "codex") {
     const common = ["--json", "--skip-git-repo-check", "--dangerously-bypass-approvals-and-sandbox"];
-    r = run("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt], { stdio: ["ignore", "pipe", "pipe"] });
+    r = await runAsync("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt]);
     for (const line of (r.stdout || "").split("\n")) { try { const e = JSON.parse(line); if (e.type === "thread.started") id = e.thread_id; } catch {} }
   } else {
-    r = run("claude", ["-p", prompt, "--model", "sonnet", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], { stdio: ["ignore", "pipe", "pipe"] });
+    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])]);
     try { id = JSON.parse(r.stdout).session_id || id; } catch {}
   }
   if (r.status) log(`${ENGINE} exited ${r.status}: ${(r.stderr || "").trim().split("\n").pop()}`);
@@ -97,7 +117,7 @@ function locked(fn) {
     try { fs.mkdirSync(LOCK); break; } catch {
       // A lock older than 30 minutes is left from a killed driver.
       try { if (Date.now() - fs.statSync(LOCK).mtimeMs > 30 * 60000) { fs.rmdirSync(LOCK); continue; } } catch {}
-      execFileSync("sleep", ["5"]);
+      execFileSync("sleep", ["5"], { detached: true });
     }
   }
   try { return fn(); } finally { fs.rmdirSync(LOCK); }
@@ -175,23 +195,24 @@ function signal() {
 // ---- main loop ----
 // --dry: print the subject this lane would take and exit.
 if (process.argv.includes("--dry")) { console.log(nextSubject()); process.exit(0); }
+(async () => {
 let count = 0;
 if (PEOPLE) books();
 while (timeLeft()) {
-  if (stopRequested()) { log("stop requested"); break; }
+  if (stopRequested()) { log("stopping before the next subject"); break; }
   const id = nextSubject();
   if (!id) { log("queue empty"); break; }
   fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
   log(`start ${id}`);
-  let thread = doneIds().has(id) ? null : session(START(id));
+  let thread = doneIds().has(id) ? null : await session(START(id));
   for (let n = 1; !doneIds().has(id) && n <= RESUMES && timeLeft(); n++) {
-    if (!thread) { log(`${id}: no session id; starting a new session`); thread = session(START(id)); continue; }
+    if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(START(id)); continue; }
     log(`resume ${id} (${n})`);
-    thread = session(RESUME(id), thread);
+    thread = await session(RESUME(id), thread);
   }
   if (!doneIds().has(id) || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id);
-  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = session(FIX(id, errors), thread); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); }
+  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); }
   if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); continue; }
   // The DONE line moves to INTEGRATED.txt, so a later pass on the same subject starts clean.
   const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
@@ -207,3 +228,5 @@ while (timeLeft()) {
 if (!PEOPLE && count % SIGNAL_EVERY) signal();
 locked(() => push(true));
 log("driver finished");
+process.exit(0);
+})();
