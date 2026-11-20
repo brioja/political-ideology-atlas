@@ -2,7 +2,7 @@
 // audit itself, so tokens go to research only (Brandon, 2026-11-18: the Codex driver got through a lot with few tokens;
 // the same for Sonnet). Several lanes can run at once in this checkout, e.g. one per engine or per kind.
 //   node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane <name>] [--until HH:MM] [--resumes 6] [--dry]
-// --lane defaults to the engine name; --until stops new subjects and resumes after that local time (default: run until
+// --lane defaults to <engine>-<kind>, so one lane per engine and kind runs with no --lane (Brandon, 2026-11-19); --until stops new subjects and resumes after that local time (default: run until
 // the queue is empty or the driver is stopped; a stop mid-subject keeps the draft, which the next start carries on).
 //
 // Per subject:
@@ -21,7 +21,7 @@ const { spawnSync, execFileSync } = require("child_process");
 const fs = require("fs"), path = require("path");
 const ROOT = path.join(__dirname, "..");
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
-const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane", ENGINE), RESUMES = +arg("--resumes", 6);
+const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane", `${ENGINE}-${KIND}`), RESUMES = +arg("--resumes", 6);
 const UNTIL = arg("--until");
 if (!["codex", "claude"].includes(ENGINE) || !["people", "ideologies"].includes(KIND) || (UNTIL && !/^\d\d:\d\d$/.test(UNTIL))) {
   console.error("usage: node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane name] [--until HH:MM] [--resumes 6]");
