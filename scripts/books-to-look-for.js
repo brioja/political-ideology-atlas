@@ -22,7 +22,7 @@ const DOC = arg("--doc", path.join(os.homedir(), "work", "books-to-look-for.md")
 const WANTED = path.join(os.homedir(), "work", "books-wanted.json");
 const REF = path.join(os.homedir(), ".cache", "political-ideology-atlas", "corpora", "reference", "text");
 
-const fold = (s) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+const fold = (s) => require("./prefetch-books").fold(s).replace(/[^a-z0-9]+/g, " ").trim();
 const text = (h) => h.replace(/<[^>]+>/g, "").replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&nbsp;/g, " ")
   .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
 const KEEP = /bibliograph|books|works|writings|publications|non-?fiction/i;

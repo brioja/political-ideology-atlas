@@ -22,7 +22,10 @@ const DOC = arg("--doc", path.join(os.homedir(), "work", "books-wanted.md"));
 const STATE = DOC.replace(/\.md$/, ".json");
 const CORPORA = path.join(os.homedir(), ".cache", "political-ideology-atlas", "corpora");
 const GUT = path.join(CORPORA, "gutenberg");
-const fold = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+// Letters NFD doesn't split into base + accent ("Søren", "Wałęsa") are mapped by hand, so a file named "Soren
+// Kierkegaard" matches the catalog's "Søren Kierkegaard" (2026-11-20: his downloads went unmatched and his hold ended).
+const LETTERS = { ø: "o", ł: "l", đ: "d", ð: "d", þ: "th", æ: "ae", œ: "oe", ß: "ss", ı: "i" };
+const fold = (s) => String(s || "").toLowerCase().replace(/[øłđðþæœßı]/g, (c) => LETTERS[c]).normalize("NFKD").replace(/[̀-ͯ]/g, "");
 
 function readCsv(file) {
   // RFC 4180 rows (quoted fields may hold newlines).
@@ -186,7 +189,10 @@ function nameMatcher(person) {
     // "A" is the article far more often than an initial ("A Young People's History").
     return { full, gen, surnames, given, initials: new Set([...given].map((g) => g[0]).filter((c) => c !== "a")) };
   });
+  // Books about the person are named "<title> (about <Person>, by <author>).txt": not their own, so not counted
+  // (2026-11-20: biographies of Kierkegaard and Fanon, Corey Robin's book on Clarence Thomas).
   return (file) => {
+    if (/\(about [^)]*\bby\b/i.test(file)) return false;
     const fw = words(file), joined = ` ${fw.join(" ")} `;
     return forms.some((f) => joined.includes(` ${f.full} `) || (f.given.size > 0 && fw.some((x, i) => {
       if (!f.surnames.has(x)) return false;
@@ -216,5 +222,5 @@ function availableBooks(people) {
   }
   return out;
 }
-module.exports = { availableBooks, nameMatcher, gutenbergBooks, readCsv, GUT, CORPORA };
+module.exports = { availableBooks, nameMatcher, fold, gutenbergBooks, readCsv, GUT, CORPORA };
 if (require.main === module) main().catch((e) => { console.error(e.message); process.exit(1); });
