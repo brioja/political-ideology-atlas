@@ -113,7 +113,7 @@ async function main() {
   const SHOWN = 3, short = (t) => t.split(/: | \[|\. /)[0].trim();
   for (const o of out) {
     const more = o.books.length - SHOWN;
-    md.push(`- **${o.name}** (\`${o.id}\`): ${o.books.slice(0, SHOWN).map((b) => short(b.title)).join("; ")}${more > 0 ? `; +${more} more` : ""}${o.marxists ? " (some may be in the local Marxists archive)" : ""}`);
+    md.push(`- ${o.name} (\`${o.id}\`): ${o.books.slice(0, SHOWN).map((b) => short(b.title)).join("; ")}${more > 0 ? `; +${more} more` : ""}${o.marxists ? " (some may be in the local Marxists archive)" : ""}`);
   }
   fs.writeFileSync(DOC, md.join("\n"));
   // Everyone listed waits for the search, as with the 2026-11-18 list: held until add or sought (at most GRACE_DAYS).
