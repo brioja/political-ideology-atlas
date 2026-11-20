@@ -299,8 +299,11 @@ function wordingMarks(text) {
 // a quiz taker found "What does this mean?" only restated the statement).
 const RESTATE_STOP = new Set(("a an the of to in on for and or by with as at from that which who whom is are was were be been being it its " +
   "their there this these those should would will can may must do does did not no never nor need any all every each own one").split(" "));
+// A final -s is dropped (not -ss), so "does not tie" matches "ties" and "benefit" matches "benefits" (Brandon,
+// 2026-11-20: sacred-nation's disagree was its agree with "does not" and passed at 0.82).
+const restateStem = (w) => (w.length > 3 && /[^s]s$/.test(w) ? w.slice(0, -1) : w);
 const restateWords = (t) => new Set((String(t || "").toLowerCase().replace(/\u2019/g, "'").match(/[a-z']+/g) || [])
-  .map((w) => w.replace(/'s$/, "")).filter((w) => !RESTATE_STOP.has(w)));
+  .map((w) => w.replace(/'s$/, "")).filter((w) => !RESTATE_STOP.has(w)).map(restateStem));
 function restateSimilarity(a, b) {
   const A = restateWords(a), B = restateWords(b);
   const shared = [...A].filter((w) => B.has(w)).length;
