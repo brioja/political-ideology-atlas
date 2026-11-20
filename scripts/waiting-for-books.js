@@ -152,7 +152,7 @@ if (require.main === module) {
   }
   if (cmd === "sought" && ideos.length) write({ people: read().people.filter((e) => !ideos.includes(e.id)) });
   ids.splice(0, ids.length, ...ids.filter((id) => !ideologyIds.has(id)));
-  if (ideos.length && !ids.length && cmd !== "hold") { for (const s of status()) console.log(`${s.id}: since ${s.since}; ${s.why}`); process.exit(0); }
+  if (ideos.length && !ids.length) { for (const s of status()) console.log(`${s.id}: since ${s.since}; ${s.why}`); process.exit(0); }
   if (cmd === "add" || cmd === "sought" || cmd === "hold") {
     const catalog = new Map(lib.peopleCatalog().map((p) => [p.id, p]));
     const bad = ids.filter((id) => !catalog.has(id));
