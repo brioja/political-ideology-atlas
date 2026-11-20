@@ -126,7 +126,7 @@ async function main() {
     if (process.argv.includes("--check") || due) await checkPhotos(data);
   }
   // Ideologies found only by a Wikipedia search may point at the wrong article: no image for them.
-  const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || ["exact", "redirect"].includes(p.wikipediaMatch))
+  const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || p.wikipediaMatch === "exact")
     && (REFRESH || p.image === undefined));
   for (let i = 0; i < people.length; i += 50) {
     const batch = people.slice(i, i + 50);

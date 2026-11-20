@@ -85,8 +85,9 @@ source's saved copy that uses the name; validate.js checks the quote is there an
 alias's quote must name the ideology too, showing the source equating the two ("'trans-exclusionary
 radical feminism', or TERFism"). To find that source, look the alias up from its own side
 (a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias ("TERF") usually defines it
-by the ideology's name ("trans-exclusionary radical feminist"). Wikidata never connects an alias (Brandon, 2026-11-14); the
-redirects Wikipedia files as other names for the article count automatically. Save every source
+by the ideology's name ("trans-exclusionary radical feminist"). Wikidata never connects an alias (Brandon, 2026-11-14); every
+redirect to the article counts automatically, unless Wikipedia files it as a section, subtopic, related topic
+or former name, and an alias's quote may name the ideology by any of those redirects. Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - Answer from what the defining sources say the ideology holds: the texts they make canonical
   (founding texts, a defining thinker, a party programme) where they name any, and their own account

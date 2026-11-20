@@ -166,7 +166,7 @@ async function main() {
     const p = path.join(PROFILES_DIR, `${e.id}.json`);
     return fs.existsSync(p) && readJson(p).wikipedia ? titleOf(readJson(p).wikipedia) : null;
   };
-  const hasArticle = (e) => ["exact", "redirect"].includes(e.wikipediaMatch) || auditLink(e);
+  const hasArticle = (e) => e.wikipediaMatch === "exact" || auditLink(e);
   const current = data.ideologies.filter(hasArticle);
   const dropped = data.ideologies.filter((e) => !hasArticle(e));
   const key = (t) => t.toLowerCase();

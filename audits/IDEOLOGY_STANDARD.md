@@ -7,10 +7,12 @@ not by anyone's judgement of which ideologies matter. An entry has to clear four
 
 An entry is in `audits/catalog.json` only if it meets both:
 
-- **Its own English Wikipedia article.** A redirect counts only when it is another spelling or
-  name for the article's subject (Anarcho-Communism → Anarchist communism, Tridemism → Three
-  Principles of the People). A redirect to a broader or different topic (a parent ideology, a
-  section, a person) means Wikipedia doesn't treat the entry as independently notable. An article
+- **Its own English Wikipedia article.** The entry is named after the article's title and links the
+  article itself. A redirect is never an entry: it is only another name of the article it lands on
+  (Anarcho-communism → Anarchist communism, Tridemism → Three Principles of the People), counted
+  among that entry's aliases, and a name that redirects to a broader or different topic (a parent
+  ideology, a section, a person) isn't independently notable (Brandon, 2026-11-20; test.js fails on
+  an entry whose name or link is a redirect). An article
   about an ideology as held in one place ("Conservatism in Australia") is its own article: it is a set
   of ideas, audited from sources about it (Brandon, 2026-11-05). A history or a list ("History of
   democracy") isn't.

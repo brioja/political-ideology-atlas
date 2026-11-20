@@ -1,7 +1,7 @@
 // Finds the English Wikipedia article for each ideology in audits/catalog.json and stores it
 // as `wikipedia` plus `wikipediaMatch` (how it was found):
-//   exact     the name is an article title
-//   redirect  the name redirects to an article
+//   exact     the article; an entry whose name only redirects to it (or differs in case) takes the article's title
+//             as its name, since a redirect is only ever another name of the article (Brandon, 2026-11-20)
 //   search    best search hit; unconfirmed, so the site doesn't link it until an audit confirms one
 //   none      nothing suitable found
 // Entries that already have a link are left alone unless --all is passed.
@@ -33,8 +33,7 @@ async function lookup(name) {
     const q = await api({ action: "query", titles: title, redirects: "1" });
     const page = q.query.pages[0];
     if (page && !page.missing && !page.invalid) {
-      const redirected = (q.query.redirects || []).length > 0 || (q.query.normalized || []).length > 0 || title !== plain;
-      return { url: articleUrl(page.title), match: redirected ? "redirect" : "exact", title: page.title };
+      return { url: articleUrl(page.title), match: "exact", title: page.title };
     }
   }
   const s = await api({ action: "query", list: "search", srsearch: `${plain} ideology`, srlimit: "1" });
@@ -50,6 +49,7 @@ async function main() {
     const r = await lookup(entry.name);
     entry.wikipedia = r.url;
     entry.wikipediaMatch = r.match;
+    if (r.match === "exact" && entry.name !== r.title) { console.log(`renamed ${entry.name} -> ${r.title}`); entry.name = r.title; }
     if (r.match === "search" || r.match === "none") console.log(`${r.match.padEnd(6)} ${entry.name} -> ${r.title ?? "-"}`);
     fs.writeFileSync(CATALOG, JSON.stringify(data, null, 1) + "\n");
   }

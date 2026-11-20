@@ -32,6 +32,12 @@ for (const s of allStatements()) {
   const lib = require("./scripts/lib");
   const dups = lib.catalog().filter((e) => lib.duplicateOf(e.id)).map((e) => `${e.id} (article owned by ${lib.duplicateOf(e.id)})`);
   assert(!dups.length, `catalog entries whose Wikipedia article another entry owns (remove them): ${dups.join(", ")}`);
+  // An entry stands on its article's own title; a redirect is only ever another name of the article it lands on
+  // (Brandon, 2026-11-20). Rename the entry to the article's title, or remove it if the article is another subject's.
+  const W = lib.readJson(require("path").join(lib.ROOT, "audits", "wikipedia-articles.json")).entries;
+  const onRedirect = lib.catalog().filter((e) => W[e.id] && (W[e.id].redirect || W[e.id].nameRedirectsTo || e.wikipediaMatch !== "exact"))
+    .map((e) => `${e.id} ("${e.name}" -> ${W[e.id].nameRedirectsTo || W[e.id].title})`);
+  assert(!onRedirect.length, `catalog entries standing on a Wikipedia redirect (scripts/resolve-articles.js): ${onRedirect.join(", ")}`);
   const nnAudits = lib.catalog().filter((e) => !lib.notable(e.id) && require("fs").existsSync(lib.profilePath(e.id))
     && !lib.readJson(lib.profilePath(e.id)).notIdeasOfWhatSocietyShouldBe).map((e) => e.id);
   assert(!nnAudits.length, `audits exist for entries with no Wikipedia article of their own: ${nnAudits.join(", ")}`);

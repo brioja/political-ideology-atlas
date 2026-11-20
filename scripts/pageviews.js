@@ -20,7 +20,7 @@ const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
 
 async function main() {
   const data = readJson(CATALOG);
-  const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || ["exact", "redirect"].includes(p.wikipediaMatch)));
+  const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || p.wikipediaMatch === "exact"));
   if (IDEOLOGIES) for (const p of data[LIST]) if (!people.includes(p)) p.views12m = 0;
 
   // 1. Resolve redirects in batches (the page-view API counts only the exact title).
@@ -49,16 +49,6 @@ async function main() {
   };
   for (const p of people) {
     if (p.wikipediaMissing) continue;
-    if (IDEOLOGIES && p.wikipediaMatch === "redirect") {
-      // A redirect's target is often a broader or shared article (Anarcho-naturism -> Naturism), and
-      // its views would be credited to every name that redirects there. Count only visits to this
-      // name's own title, the titles scripts/wikipedia.js tried.
-      const plain = p.name.replace(/\s*\(.*?\)\s*/g, " ").trim();
-      let total = 0;
-      for (const title of new Set([plain, plain[0] + plain.slice(1).toLowerCase()])) total += (await views(title)) || 0;
-      p.views12m = total;
-      continue;
-    }
     p.views12m = (await views(titleOf(p.wikipedia))) || 0;
   }
   data.viewsPeriod = require("./lib").viewsPeriod().label;

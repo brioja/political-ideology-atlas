@@ -83,7 +83,7 @@ function classify(judge = null) {
       flag: flagFor(entry.id),
       // The Wikipedia article's freely licensed lead image, with its credit, served from img/ (scripts/images.js).
       image: require("./lib").shippedImage("ideologies", entry),
-      wikipedia: "wikipedia" in a ? a.wikipedia : ["exact", "redirect"].includes(entry.wikipediaMatch) ? entry.wikipedia : null,
+      wikipedia: "wikipedia" in a ? a.wikipedia : entry.wikipediaMatch === "exact" ? entry.wikipedia : null,
       furtherReading: a.furtherReading || [],
       keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
       aliases: searchNames(entry, a),

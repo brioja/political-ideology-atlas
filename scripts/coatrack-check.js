@@ -17,6 +17,8 @@ const fs = require("fs");
 const path = require("path");
 const zlib = require("zlib");
 const lib = require("./lib");
+// A Wikipedia title without its trailing disambiguator ("Radical right (Europe)" -> "Radical right").
+const plainName = (t) => String(t).replace(/\s*\([^)]*\)\s*$/, "").trim();
 
 const LIB_DIR = path.join(lib.ROOT, "scratchpad", "sources");
 const norm = (s) => ` ${String(s || "").replace(/ß/g, "ss").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()} `;
@@ -230,7 +232,7 @@ function check(id, full, { strict = false } = {}) {
     problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
     // A name Wikipedia redirects to the article is already connected by the redirect (Brandon, 2026-11-20), so its quote
     // may name the subject by any of those names (a renamed entry's old name among them).
-    const names = [audit.name, ...lib.wikipediaOtherNames(id)].map(norm);
+    const names = [audit.name, plainName(audit.name), ...lib.wikipediaOtherNames(id)].map(norm);
     if (typeof x === "object" && x && typeof x.quote === "string" && !sameName(entryName(x), audit.name, x.type) && !mentions(norm(x.quote), names))
       problems.push(`alias "${entryName(x)}": its quote doesn't name "${audit.name}" too, so it doesn't show the source equating them`);
   }
@@ -267,12 +269,13 @@ function check(id, full, { strict = false } = {}) {
   // (Brandon, 2026-11-06: "Leftism", "Leftist" for left-wing politics). One that is an everyday word, the name of
   // another ideology or an alias another audit claims is simply left out.
   for (const raw of lib.wikipediaOtherNames(id)) {
-    const al = raw.replace(/\s*\([^)]*\)\s*$/, "").trim(), k = norm(al);
+    const al = plainName(raw), k = norm(al);
     if (!al || k === norm(audit.name) || kept.some((x) => norm(x) === k) || !isName(al, audit.name)) continue;
     if ([...(ownNames.get(k) || [])].some((o) => o !== id) || [...(namesTaken().get(k) || [])].some((o) => o !== id)) continue;
     kept.push(al);
   }
-  const names = [audit.name, ...kept].map(norm);
+  // The name without Wikipedia's disambiguator ("Jacobin (politics)" is written "Jacobin"), as for other names above.
+  const names = [...new Set([audit.name, plainName(audit.name), ...kept])].map(norm);
   const sources = Array.isArray(audit.sources) ? audit.sources : [];
   const defining = [];
   for (const s of sources.filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !isWikipedia(s))) {
