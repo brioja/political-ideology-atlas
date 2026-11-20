@@ -267,8 +267,12 @@ function check(id, full, { strict = false } = {}) {
       problems.push(`alias "${al}": not a spelling of "${audit.name}" (more than two letters differ); give a source saying they are the same (SUPPORTED)`);
     if (reason === "EPONYM" && !isEponymAlias(al, plainName(audit.name))) {
       problems.push(`alias "${al}": "${audit.name}" isn't named after it (EPONYM is for the person an "-ism" is named after)`); }
-    if ((reason === "SUPPORTED" || reason === undefined) && typeof x.quote === "string" && !mentions(norm(x.quote), ideologyNames.map(norm)))
-      problems.push(`alias "${al}": its quote doesn't name "${audit.name}" too, so it doesn't show the source equating them`);
+    // The ideology is named outside the alias itself: "Keywords: Brazilian Integralist Action" names only the party, and
+    // "the Tea Party movement" never says "Tea Party" is another name (Brandon, 2026-11-20: a supported name has to be
+    // supported).
+    if ((reason === "SUPPORTED" || reason === undefined) && typeof x.quote === "string"
+      && !mentions(norm(x.quote).split(norm(al).trim()).join(" | "), ideologyNames.map(norm)))
+      problems.push(`alias "${al}": its quote doesn't name "${audit.name}" apart from the alias itself, so it doesn't show the source equating them`);
   }
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
     const key = authorKey(x);
