@@ -89,46 +89,16 @@ async function views(title) {
 // of them: an article kept here has no infobox, or a movement, ideology, philosophy, religion or
 // school-of-thought one; a person, party, organization, state, event, book or film is left out.
 const lib = require("./lib");
-const { cachedJson } = require("./fetch");
 const NOT_OWN_TOPIC_LINKED = /^(History|Lists?|Timeline|Outline|Index|Glossary) of | in (the |[A-Z])/;
 const IDEA_BOX = /movement|ideolog|philosoph|religio|school of thought/;
 const GROUP_BOX = /party|organi[sz]ation|militant|movement/;
-const api = (params) => `https://en.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
-const linkTitles = (html) => [...html.matchAll(/href="\/wiki\/([^"#?]+)/g)]
-  .map((m) => decodeURIComponent(m[1]).replace(/_/g, " ")).filter((t) => !/^[A-Za-z ]+:/.test(t));
-function seeAlsoAndIdeology(html) {
-  const sa = html.match(/id="See_also"[\s\S]*?(?=<div class="mw-heading mw-heading2|<h2[ >]|$)/);
-  const rows = [...html.matchAll(/<th[^>]*>(?:\s*<[^>]+>)*\s*Ideolog(?:y|ies)[\s\S]*?<\/th>\s*<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => m[1]).join(" ");
-  return { seeAlso: sa ? linkTitles(sa[0]) : [], ideology: linkTitles(rows) };
-}
-// Canonical title, infobox types and disambiguation of each title, 50 at a time.
-async function pageInfo(titles) {
-  const pages = new Map(), to = new Map();
-  for (let i = 0; i < titles.length; i += 50) {
-    for (let cont = {}; ;) {
-      const j = await cachedJson(api({ action: "query", titles: titles.slice(i, i + 50).join("|"), redirects: "1", prop: "templates|pageprops", tlnamespace: "10", tllimit: "max", ppprop: "disambiguation", ...cont }));
-      const q = j.query || {};
-      for (const r of [...(q.normalized || []), ...(q.redirects || [])]) to.set(r.from, r.to);
-      for (const p of q.pages || []) {
-        if (p.missing || p.invalid) continue;
-        const e = pages.get(p.title) || { title: p.title, boxes: new Set(), disambig: false };
-        for (const t of p.templates || []) if (/^Template:Infobox/i.test(t.title)) e.boxes.add(t.title.replace(/^Template:Infobox ?/i, "").toLowerCase());
-        if (p.pageprops && "disambiguation" in p.pageprops) e.disambig = true;
-        pages.set(p.title, e);
-      }
-      if (!j.continue) break;
-      cont = { ...j.continue };
-    }
-  }
-  const resolve = (t) => { for (let k = 0; k < 3 && to.has(t); k++) t = to.get(t); return t; };
-  return (t) => pages.get(resolve(t));
-}
+const wikiLib = require("./wiki");
 async function linkedArticles() {
   const excluded = (id) => fs.existsSync(lib.profilePath(id)) && readJson(lib.profilePath(id)).notIdeasOfWhatSocietyShouldBe;
   const seeds = lib.catalog().filter((e) => lib.articleTitle(e) && !excluded(e.id));
   const found = new Map(); // canonical title -> { title, boxes, disambig, via }
   const collect = async (links) => {
-    const get = await pageInfo([...new Set(links.map((l) => l.title))]);
+    const get = await wikiLib.pageInfo(links.map((l) => l.title));
     for (const l of links) {
       const p = get(l.title); if (!p) continue;
       const f = found.get(p.title) || { ...p, via: new Set() };
@@ -138,16 +108,14 @@ async function linkedArticles() {
   const links = [];
   for (const s of seeds) {
     const html = await lib.fetchArticle(s).catch(() => null); if (!html) continue;
-    const x = seeAlsoAndIdeology(html);
-    for (const t of [...x.seeAlso, ...x.ideology]) links.push({ title: t, via: s.id });
+    for (const t of [...wikiLib.seeAlso(html), ...wikiLib.infoboxRow(html)]) links.push({ title: t, via: s.id });
   }
   await collect(links);
   // One hop: the Ideology rows of linked parties, movements and organizations.
   const hop = [];
   for (const g of [...found.values()].filter((f) => [...f.boxes].some((b) => GROUP_BOX.test(b)))) {
-    const j = await cachedJson(api({ action: "parse", prop: "text", redirects: "1", page: g.title })).catch(() => null);
-    const html = j && j.parse && j.parse.text; if (!html) continue;
-    for (const t of seeAlsoAndIdeology(html).ideology) hop.push({ title: t, via: g.title });
+    const html = await wikiLib.articleHtml(g.title).catch(() => null); if (!html) continue;
+    for (const t of wikiLib.infoboxRow(html)) hop.push({ title: t, via: g.title });
   }
   await collect(hop);
   return [...found.values()].filter((f) => !f.disambig && !NOT_OWN_TOPIC_LINKED.test(f.title)

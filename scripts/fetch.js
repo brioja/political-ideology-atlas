@@ -2,7 +2,7 @@
 // here (Brandon, 2026-11-14: each script had its own copy, with different User-Agents and 429 rules).
 //   politeFetch(url, opts)  one request: the project's User-Agent, the host's pace (below), and a 429 waited out (the
 //                           server's retry-after plus 10 s, 60 s when it gives none), at most 5 times in a row,
-//                           then it stops. Returns the response; the caller handles 404s and other errors.
+//                           then it stops; a dropped connection is retried after 30 s, at most 3 times. Returns the response; the caller handles 404s and other errors.
 //   fetchJson(url, opts)    politeFetch, then the JSON, null for a 404, an error for anything else.
 //   cachedJson(url, opts)   fetchJson cached on disk forever (~/.cache/political-ideology-atlas/http/<sha1>.json), so
 //                           a rerun reads local copies instead of asking again. For pages that don't change; data
@@ -54,9 +54,18 @@ async function paceFor(host) {
 
 async function politeFetch(url, { method = "GET", body = null, headers = {}, signal } = {}) {
   const host = new URL(url).host;
-  for (let throttled = 0; ; throttled++) {
+  for (let throttled = 0, dropped = 0; ; throttled++) {
     await paceFor(host);
-    const res = await fetch(url, { method, body, signal, headers: { "User-Agent": USER_AGENT, ...headers } });
+    // A dropped connection (ECONNRESET and the like; 2026-11-20 one ended an hour-long candidates run) is
+    // tried again after 30 s, at most 3 times in a row; an aborted request is not.
+    let res;
+    try { res = await fetch(url, { method, body, signal, headers: { "User-Agent": USER_AGENT, ...headers } }); }
+    catch (e) {
+      if (signal?.aborted || ++dropped > 3 || e.message !== "fetch failed") throw e;
+      process.stderr.write(`${e.cause?.code || e.message} from ${host}: retrying in 30 s\n`);
+      await sleep(30000); throttled--; continue;
+    }
+    dropped = 0;
     if (res.status !== 429) return res;
     const after = Number(res.headers.get("retry-after")) || 50;
     if (throttled >= 4) throw new Error(`HTTP 429 from ${host} 5 times in a row (retry-after ${after} s): stopping`);
