@@ -51,7 +51,7 @@ function status() {
   const downloads = queuedDownloads();
   return people.map((e) => {
     const until = addDays(e.since, GRACE_DAYS), books = counts[e.id] ?? 0;
-    const p = catalog.get(e.id), match = e.works ? (n) => e.works.some((w) => workMatch(w, n)) : p ? prefetch.nameMatcher(p) : () => false;
+    const p = catalog.get(e.id), match = e.works ? (n) => (e.downloads || []).includes(n) || e.works.some((w) => workMatch(w, n)) : p ? prefetch.nameMatcher(p) : () => false;
     const queued = downloads ? downloads.filter((n) => match(n)) : null;
     // A `hold` (on a books-to-look-for list, not yet looked for) lasts until add or sought, whatever the queue says
     // (Brandon, 2026-11-20: no audit before they are released or their downloads are queued).
@@ -65,13 +65,13 @@ function status() {
     return { ...e, until, books, held: !why, why: why || holds };
   });
 }
-// A download is one of an ideology's notFound works when it shares the work's author surname and a title word, or
+// A download is one of an ideology's notFound works when it shares the work's author surname and two title words, or
 // three title words (words of four letters or more; "Kymlicka, Multicultural Citizenship (1995)").
 const sig = (s) => new Set(String(s).normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length >= 4 && !/^(19|20)\d\d$/.test(w)));
 function workMatch(work, download) {
   const w = sig(work.replace(/\(.*?\)/g, "")), d = sig(download), shared = [...w].filter((x) => d.has(x));
   const author = sig(work.split(/[,:]/)[0]);
-  return shared.length >= 3 || (shared.length >= 2 && [...author].some((x) => d.has(x)));
+  return shared.filter((x) => !author.has(x)).length >= 3 || (shared.filter((x) => !author.has(x)).length >= 2 && [...author].some((x) => d.has(x)));
 }
 const held = () => new Set(status().filter((s) => s.held).map((s) => s.id));
 // The permanent record of whose books have been looked for: id -> dates searched.
@@ -102,10 +102,17 @@ if (require.main === module) {
     recordSought(ideos, "ideologies");
     if (cmd === "add") {
       const works = Object.fromEntries(ideos.map((id) => [id, bookWorks(lib.readJson(lib.profilePath(id)))]));
+      // The maintainer often gets another book by the same author when the one asked for can't be found (Brandon,
+      // 2026-11-20: Hofstadter's Anti-Intellectualism for social Darwinism): a queued download naming one of the
+      // authors (audits/book-searches.json) holds the ideology too, recorded by name at add.
       const downloads = queuedDownloads() || [];
-      for (const id of ideos) if (!downloads.some((n) => works[id].some((w) => workMatch(w, n))))
-        console.warn(`${id}: no queued download matches its notFound works, so nothing holds it (the later pass is queued anyway)`);
-      write({ people: [...read().people.filter((e) => !ideos.includes(e.id)), ...ideos.map((id) => ({ id, since: today(), works: works[id] }))] });
+      const searches = lib.readJson(path.join(lib.ROOT, "audits", "book-searches.json")).works;
+      const byAuthor = (id) => { const s = new Set(works[id].flatMap((w) => (searches[w] || []).map(([a]) => [...sig(a)].pop()).filter(Boolean)));
+        return downloads.filter((n) => [...sig(n)].some((x) => s.has(x)) || works[id].some((w) => workMatch(w, n))); };
+      const entries = ideos.map((id) => ({ id, since: today(), works: works[id], downloads: byAuthor(id) }));
+      for (const e of entries) if (!e.downloads.length) console.warn(`${e.id}: no queued download names its notFound works or their authors, so nothing holds it (the later pass is queued anyway)`);
+      else console.log(`${e.id}: held for ${e.downloads.join("; ")}`);
+      write({ people: [...read().people.filter((e) => !ideos.includes(e.id)), ...entries] });
       const qf = path.join(lib.ROOT, "audits", "reaudit-queue.json"), q = lib.readJson(qf);
       const reason = "maintainer supplied books its notFound lists (corpora/reference/text, named by author and title); read them.";
       let g = q.groups.find((x) => x.queuedAt === today() && x.reason === reason);
@@ -127,7 +134,7 @@ if (require.main === module) {
   if (cmd === "add" || cmd === "hold") {
     const catalog = new Map(lib.peopleCatalog().map((p) => [p.id, p]));
     // Entries that no longer hold are dropped as new ones are added.
-    const keep = status().filter((s) => s.held && !ids.includes(s.id)).map(({ id, since, booksAtStart, searching, works }) => ({ id, since, ...(works ? { works } : { booksAtStart }), ...(searching ? { searching } : {}) }));
+    const keep = status().filter((s) => s.held && !ids.includes(s.id)).map(({ id, since, booksAtStart, searching, works, downloads }) => ({ id, since, ...(works ? { works, downloads } : { booksAtStart }), ...(searching ? { searching } : {}) }));
     const counts = require("./prefetch-books").availableBooks(ids.map((id) => catalog.get(id)));
     write({ people: [...keep, ...ids.map((id) => ({ id, since: today(), booksAtStart: counts[id] || 0, ...(cmd === "hold" ? { searching: true } : {}) }))] });
   }
