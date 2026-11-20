@@ -8,7 +8,7 @@
 //   node scripts/waiting-for-books.js add <id>      (downloads queued: also holds them until the books land)
 //   node scripts/waiting-for-books.js sought <id>   (nothing found)
 // Everyone listed is held out of the audit queue (waiting-for-books.js hold) until add or sought, so audits wait for the search.
-// Usage: node scripts/books-to-look-for.js [--limit N people listed, default 40] [--doc ~/work/books-to-look-for.md] [--no-hold]
+// Usage: node scripts/books-to-look-for.js [--ideologies] [--limit N people listed, default 40] [--doc ~/work/books-to-look-for.md] [--no-hold]
 // Wikipedia's lists are leads for the search, not evidence. Sections of fiction, poetry, children's books,
 // edited or translated works are left out; whether a book is political nonfiction in the person's own words is the
 // maintainer's call when looking.
@@ -72,7 +72,34 @@ function bibliography(html, surname) {
   return { books: books.filter((b) => !seen.has(fold(b.title)) && seen.add(fold(b.title))), more: [...new Set(more)] };
 }
 
+// --ideologies (Brandon, 2026-11-20: "can you make a list for ideologies as well?"): the books each ideology's audit
+// tried and couldn't get (notFound; journal articles, web pages and short documents left out: waiting-for-books.js
+// bookWorks), failing audits first, then by views. Written to ~/work/ideology-books-to-look-for.md; nothing is held.
+// Once looked for: `waiting-for-books.js add <id>` queues a later pass (it runs once the re-audit gap opens; the ideology
+// waits while a queued download matches one of the works) or `sought <id>`. Books found are named "<Author> - <title>.txt".
+function ideologies() {
+  const wfb = require("./waiting-for-books"), sought = wfb.sought("ideologies");
+  const { validate, excludedOnly } = require("./validate");
+  const doc = arg("--doc", path.join(os.homedir(), "work", "ideology-books-to-look-for.md"));
+  const out = [];
+  for (const c of lib.catalog()) {
+    if (sought[c.id] || !fs.existsSync(lib.profilePath(c.id))) continue;
+    const works = wfb.bookWorks(lib.readJson(lib.profilePath(c.id)));
+    if (!works.length) continue;
+    const { errors } = validate(c.id);
+    out.push({ id: c.id, name: c.name, failing: errors.length > 0 && !excludedOnly(errors), views: c.views12m || 0, works });
+  }
+  out.sort((a, b) => b.failing - a.failing || b.views - a.views);
+  const shown = out.slice(0, LIMIT);
+  const md = [`# Ideology books to look for (${new Date().toISOString().slice(0, 10)})`, "",
+    "Books the audits tried and couldn't get; failing audits first. Once looked for: `node scripts/waiting-for-books.js add <id>` (downloading: queues a later pass) or `sought <id>` (nothing found).", ""];
+  for (const o of shown) md.push(`- ${o.name} (\`${o.id}\`): ${o.works.map((w) => w.replace(/\(full texts?, /gi, "(").replace(/,? ?\(?(in |as openly hosted )?full (texts?|book)\)?/gi, "").trim()).join("; ")}`);
+  fs.writeFileSync(doc, md.join("\n") + "\n");
+  console.log(`${shown.length} ideologies listed in ${doc} (${out.length} with books to find, ${out.filter((o) => o.failing).length} failing).`);
+}
+
 async function main() {
+  if (process.argv.includes("--ideologies")) return ideologies();
   const sought = require("./waiting-for-books").sought();
   const wanted = fs.existsSync(WANTED) ? JSON.parse(fs.readFileSync(WANTED, "utf8")) : {};
   const pending = JSON.parse(execFileSync("node", [path.join(__dirname, "pending.js"), "--people", "--triage"], { cwd: lib.ROOT, maxBuffer: 1 << 28 }).toString());
