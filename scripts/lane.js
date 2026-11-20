@@ -113,12 +113,12 @@ function push(force) {
   lastPush = Date.now(); unpushed = false; log("pushed");
 }
 const GENERATED = ["data.js", "people.js", "img", "audits/lines.json", "audits/statements/texts.json", "audits/share-slots.json", "audits/people-catalog.json", "audits/catalog.json"];
-function buildAndCommit(message) {
+function buildAndCommit(message, extra = []) {
   const build = PEOPLE ? [["scripts/images.js"], ["scripts/build.js", "--people"]] : [["scripts/build.js"]];
   for (const b of build) { const r = run("node", b); if (r.status) return `build failed: ${(r.stderr || r.stdout).trim().split("\n").pop()}`; }
   const t = run("node", ["test.js", ...(PEOPLE ? ["--people"] : [])]);
   if (t.status) { git("checkout", "--", ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f)))); return `tests failed: ${(t.stdout + t.stderr).trim().split("\n").slice(-3).join(" / ")}`; }
-  git("add", "--", ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f))));
+  git("add", "--", ...extra, ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f))));
   if (git("diff", "--cached", "--quiet").status) { git("commit", "-q", "-m", message); unpushed = true; }
   return "";
 }
@@ -160,7 +160,7 @@ function signal() {
     const tail = (r.stdout || "").trim().split("\n").filter((l) => /^(Promoted|Demoted)/.test(l));
     log(`signal: ${tail.join("; ") || (r.stderr || "").trim().split("\n").pop()}`);
     if (git("diff", "--quiet", "--", "statements.json").status) {
-      const why = buildAndCommit(`Statements: promote/demote by signal on the real lines\n\n${tail.join("\n")}`);
+      const why = buildAndCommit(`Statements: promote/demote by signal on the real lines\n\n${tail.join("\n")}`, ["statements.json"]);
       if (why) { git("checkout", "--", "statements.json"); log(`signal: ${why}; statements.json restored`); }
     }
   });
