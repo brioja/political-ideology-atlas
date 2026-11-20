@@ -195,15 +195,21 @@ function signal() {
 }
 
 // ---- main loop ----
+const settle = () => new Promise((r) => setTimeout(r, 100));
 // --dry: print the subject this lane would take and exit.
 if (process.argv.includes("--dry")) { console.log(nextSubject()); process.exit(0); }
 (async () => {
 let count = 0;
 if (PEOPLE) books();
 while (timeLeft()) {
+  // The steps between subjects are synchronous, so a Ctrl-C waits in the event loop until something awaits: yield
+  // before each stop check, or the stop shows only once the next subject has started (2026-11-20, naomi-klein).
+  await settle();
   if (stopRequested()) { log("stopping before the next subject"); break; }
   const id = nextSubject();
   if (!id) { log("queue empty"); break; }
+  await settle();
+  if (stopRequested()) { log("stopping before the next subject"); break; }
   fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
   log(`start ${id}`);
   let thread = doneIds().has(id) ? null : await session(START(id));

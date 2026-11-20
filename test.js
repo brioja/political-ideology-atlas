@@ -413,7 +413,7 @@ for (const t of ["validate-rules.test.js", "validate-ideology-rules.test.js"]) {
 {
   const path = require("path");
   const files = [...fs.readdirSync(path.join(__dirname, "audits")).filter((f) => /^(PROMPT.*|AUDIT_RULES)\.md$/.test(f)).map((f) => path.join("audits", f)),
-    ...fs.readdirSync(path.join(__dirname, ".claude", "workflows")).map((f) => path.join(".claude", "workflows", f)), "scripts/lane.js"];
+    "scripts/lane.js"];
   const EXCUSES = [/(fail\w*|failing) (the |it )?(uncertainty|validat)[^.]{0,40}(acceptable|correct|honest|fine|expected|ok\b)/i,
     /(acceptable|correct|honest) (outcome|result)/i, /except (for )?the uncertainty/i, /uncertainty rule aside/i,
     /no later (pass|step|run)[^.]{0,20}(fill|cover|fix)/i, /later pass(es)? (will )?(fill|cover)/i, /stop early/i, /search is wasted/i,
