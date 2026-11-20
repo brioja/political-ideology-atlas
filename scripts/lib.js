@@ -337,6 +337,12 @@ function quizOrder() {
 }
 
 // Every audit's answer to one statement, with the subject's id and kind.
+// An id from a name: accents dropped, and letters that don't decompose (ł, Đ, ø, ß...) spelled out first, so
+// "Lech Wałęsa" is lech-walesa, not lech-waesa (Brandon, 2026-11-19).
+const LETTERS = { ł: "l", Ł: "L", đ: "d", Đ: "D", ð: "d", Ð: "D", ø: "o", Ø: "O", ß: "ss", æ: "ae", Æ: "AE", œ: "oe", Œ: "OE", þ: "th", Þ: "TH", ħ: "h", Ħ: "H", ı: "i", ŀ: "l", Ŀ: "L" };
+const slug = (s) => String(s).replace(/[łŁđĐðÐøØßæÆœŒþÞħĦıŀĿ]/g, (c) => LETTERS[c]).normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 function answersTo(id) {
   const out = [];
   for (const [dir, kind] of [["profiles", "ideology"], ["people", "person"]]) {
@@ -350,6 +356,6 @@ function answersTo(id) {
   return out;
 }
 
-module.exports = { restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
+module.exports = { slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

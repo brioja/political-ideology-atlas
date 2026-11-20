@@ -10,7 +10,7 @@
 //   node scripts/ideology-candidates.js [--write]
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson, PROFILES_DIR } = require("./lib");
+const { ROOT, readJson, PROFILES_DIR, slug } = require("./lib");
 const { sparql } = require("./sparql");
 
 const LIST = "List_of_political_ideologies";
@@ -25,7 +25,6 @@ const CONCURRENCY = 20;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const articleUrl = (title) => `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, "_"))}`;
 const titleOf = (url) => decodeURIComponent(url.split("/wiki/")[1]).replace(/_/g, " ");
-const slug = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 async function getJson(url, opts = {}) {
   for (let attempt = 0; ; attempt++) {

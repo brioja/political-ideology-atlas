@@ -8,14 +8,13 @@
 //   node scripts/candidate-filter.js
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson, PEOPLE_DIR } = require("./lib");
+const { ROOT, readJson, PEOPLE_DIR, slug } = require("./lib");
 const { triage, cachedSparql, PREFIX, REGION_OF, titleOf, viewsPeriod, CACHE_DIR, MIN_LINKS } = require("./candidate-triage");
 const { politeFetch } = require("./fetch");
 
 const CONCURRENCY = 6;
 const CATALOG = path.join(ROOT, "audits", "people-catalog.json");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const slug = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 // The views period (lib.js) moves every two months.
 const { start, end, ymd, label: periodLabel } = viewsPeriod();
