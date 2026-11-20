@@ -36,7 +36,9 @@ An entry is in `audits/catalog.json` only if it meets both:
 
 Entries that land on the same article are one ideology, with no exceptions: the entry whose own
 title is the article owns it (else the most viewed), and the others are removed from the catalog
-(`scripts/lib.js` duplicateOf; test.js fails while one is left, Brandon, 2026-11-20).
+(`scripts/lib.js` duplicateOf; test.js fails while one is left, Brandon, 2026-11-20). Names are one to
+many: an ideology has many names, and each name belongs to one ideology. A catalog entry's own name is
+never another ideology's alias, and no alias is held by two ideologies (test.js; Brandon, 2026-11-20).
 
 The article is required because a quiz-taker matched to an ideology needs somewhere to learn more
 about it. `scripts/ideology-candidates.js` applies this gate, and 12-month page views set the

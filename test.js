@@ -38,6 +38,27 @@ for (const s of allStatements()) {
   const onRedirect = lib.catalog().filter((e) => W[e.id] && (W[e.id].redirect || W[e.id].nameRedirectsTo || e.wikipediaMatch !== "exact"))
     .map((e) => `${e.id} ("${e.name}" -> ${W[e.id].nameRedirectsTo || W[e.id].title})`);
   assert(!onRedirect.length, `catalog entries standing on a Wikipedia redirect (scripts/resolve-articles.js): ${onRedirect.join(", ")}`);
+  // Names are one to many (Brandon, 2026-11-20): an ideology has any number of names (its own and its aliases), and
+  // every name belongs to one ideology. Catalog names are unique, and on the site no name or alias is held by two
+  // ideologies.
+  const fold = (x) => String(x).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const holders = (pairs) => { const m = new Map(); for (const [n, id] of pairs) m.set(fold(n), new Set([...(m.get(fold(n)) || []), id])); return [...m].filter(([, s]) => s.size > 1).map(([n, s]) => `"${n}" (${[...s].join(", ")})`); };
+  const unresolved = lib.catalog().filter((e) => !W[e.id]).map((e) => e.id);
+  assert(!unresolved.length, `catalog entries not yet checked against Wikipedia (run node scripts/resolve-articles.js): ${unresolved.join(", ")}`);
+  // Every entry's names: its own, the redirects to its article (resolve-articles.js) and its audit's aliases.
+  const aliasesOf = (e) => { const p = lib.profilePath(e.id); return require("fs").existsSync(p) ? (lib.readJson(p).aliases || []).map((a) => (typeof a === "string" ? a : a && a.name)).filter(Boolean) : []; };
+  const notTitle = lib.catalog().filter((e) => W[e.id].title && e.name !== W[e.id].title).map((e) => `${e.id} ("${e.name}", article "${W[e.id].title}")`);
+  assert(!notTitle.length, `catalog entries not named after their article's title: ${notTitle.join(", ")}`);
+  const sharedNames = holders(lib.catalog().map((e) => [e.name, e.id]));
+  assert(!sharedNames.length, `catalog names held by more than one entry (name each after its article's full title): ${sharedNames.join(", ")}`);
+  // Only entries named after their own article hold names: an entry named after a redirect gets its article's
+  // redirects too, and must not claim its own name from the real owner.
+  const otherNames = new Map(lib.catalog().filter((e) => W[e.id].title === e.name).flatMap((e) => [...lib.wikipediaOtherNames(e.id), ...aliasesOf(e)].map((n) => [fold(n), e.id])));
+  const nameIsAlias = lib.catalog().filter((e) => otherNames.has(fold(e.name)) && otherNames.get(fold(e.name)) !== e.id)
+    .map((e) => `${e.id} ("${e.name}" is an alias of ${otherNames.get(fold(e.name))})`);
+  assert(!nameIsAlias.length, `catalog entries named after another ideology's alias (it is that ideology's other name, not an entry): ${nameIsAlias.join(", ")}`);
+  const sharedAliases = holders(IDEOLOGIES.flatMap((i) => [[i.name, i.id], ...(i.aliases || []).map((a) => [a, i.id])]));
+  assert(!sharedAliases.length, `names or aliases held by more than one published ideology: ${sharedAliases.join(", ")}`);
   const nnAudits = lib.catalog().filter((e) => !lib.notable(e.id) && require("fs").existsSync(lib.profilePath(e.id))
     && !lib.readJson(lib.profilePath(e.id)).notIdeasOfWhatSocietyShouldBe).map((e) => e.id);
   assert(!nnAudits.length, `audits exist for entries with no Wikipedia article of their own: ${nnAudits.join(", ")}`);

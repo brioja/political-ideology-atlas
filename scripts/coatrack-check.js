@@ -132,6 +132,8 @@ function usage(id, n) {
 function namesTaken() {
   if (taken) return taken;
   taken = new Map();
+  // Every catalog entry's name is its own, audited or not (names are one to many, Brandon 2026-11-20).
+  for (const e of lib.catalog()) { const k = norm(e.name); if (!ownNames.has(k)) ownNames.set(k, new Set()); ownNames.get(k).add(e.id); }
   for (const f of fs.readdirSync(lib.PROFILES_DIR)) {
     if (!f.endsWith(".json")) continue;
     let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
