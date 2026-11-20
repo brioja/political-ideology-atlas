@@ -1,0 +1,121 @@
+// Books for the maintainer to look for (Brandon, 2026-11-20: "make it a script, keep track of people who I looked for,
+// still"; it replaces the hand-made ~/work/books-to-look-for-2026-11-18.md). For people still to audit, or audited and
+// failing (pending.js --people --triage order: most likely to pass first), the books listed in their Wikipedia
+// article's bibliography sections (or its "Main article: X bibliography"), minus what is already on disk.
+// Left out: people already looked for (audits/books-sought.json, which never forgets), people on hold for books
+// (pending.js skips them), and people the books-wanted document (prefetch-books.js) already lists.
+// Record each person once looked for, so the next list leaves them out:
+//   node scripts/waiting-for-books.js add <id>      (downloads queued: also holds them until the books land)
+//   node scripts/waiting-for-books.js sought <id>   (nothing found)
+// Usage: node scripts/books-to-look-for.js [--limit N people listed, default 40] [--doc ~/work/books-to-look-for.md]
+// Wikipedia's lists are leads for the search, not evidence. Sections of fiction, poetry, children's books,
+// edited or translated works are left out; whether a book is political nonfiction in the person's own words is the
+// maintainer's call when looking.
+const fs = require("fs"), os = require("os"), path = require("path");
+const { execFileSync } = require("child_process");
+const lib = require("./lib");
+const { nameMatcher, gutenbergBooks, readCsv, GUT, CORPORA } = require("./prefetch-books");
+const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
+const LIMIT = +arg("--limit", 40);
+const DOC = arg("--doc", path.join(os.homedir(), "work", "books-to-look-for.md"));
+const WANTED = path.join(os.homedir(), "work", "books-wanted.json");
+const REF = path.join(os.homedir(), ".cache", "political-ideology-atlas", "corpora", "reference", "text");
+
+const fold = (s) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+const text = (h) => h.replace(/<[^>]+>/g, "").replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&nbsp;/g, " ")
+  .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+const KEEP = /bibliograph|books|works|writings|publications|non-?fiction/i;
+const DROP = /fiction|novel|poe(m|try)|children|short stor|plays|screen|film|discograph|edited|translat|about him|about her|further reading|works cited|cited|sources|journal|article|essays? in|chapters?|reviews?|music|album|song/i;
+const NONFICTION = /non-?fiction/i;
+
+// Book titles in an article's bibliography sections: the first italic title of each list item or table row.
+// Many articles use "Bibliography" for the sources about the person ("Mango, Andrew (1999). Atatürk"): an item with
+// words before its title is kept only when those words name the person (their surname). Footnotes never count.
+// Also returns the bibliography articles it points to ("Main article: Noam Chomsky bibliography").
+function bibliography(html, surname) {
+  const parts = html.split(/(<h[2-4][^>]*>[\s\S]*?<\/h[2-4]>)/i);
+  const books = [], more = [];
+  // keepLevel: level of the bibliography section we're in; dropLevel: level of a fiction etc. subsection inside it.
+  let keepLevel = null, dropLevel = null;
+  const isKeep = (n) => KEEP.test(n) && (!DROP.test(n) || NONFICTION.test(n)), isDrop = (n) => DROP.test(n) && !NONFICTION.test(n);
+  for (const part of parts) {
+    const h = part.match(/^<h([2-4])[^>]*>([\s\S]*?)<\/h[2-4]>$/i);
+    if (h) {
+      const lv = +h[1], name = text(h[2]);
+      if (dropLevel !== null && lv > dropLevel) continue;
+      dropLevel = null;
+      if (keepLevel !== null && lv <= keepLevel) keepLevel = null;
+      if (keepLevel !== null) { if (isDrop(name)) dropLevel = lv; }
+      else if (isKeep(name)) keepLevel = lv;
+      continue;
+    }
+    const keep = keepLevel !== null && dropLevel === null;
+    if (!keep) continue;
+    for (const m of part.matchAll(/hatnote[^>]*>[\s\S]*?<\/div>/gi))
+      for (const a of m[0].matchAll(/href="\/wiki\/([^"#]+)"[^>]*>([^<]*)/g)) if (/bibliograph|works/i.test(a[2])) more.push(decodeURIComponent(a[1]).replace(/_/g, " "));
+    for (const item of part.matchAll(/<(li|tr)([^>]*)>([\s\S]*?)<\/\1>/gi)) {
+      // Footnotes, and articles in journals or the press (the italics there are the periodical's name), never count.
+      if (/cite.note/.test(item[2]) || /class="citation (journal|news|magazine|web)/.test(item[3])) continue;
+      const i = item[3].match(/<i>([\s\S]*?)<\/i>/i);
+      if (!i) continue;
+      const rawBefore = text(item[3].slice(0, i.index));
+      if (/["“”]/.test(rawBefore)) continue;
+      const before = fold(rawBefore.replace(/\b\d{4}\b/g, ""));
+      if (/[a-z]/.test(before) && !` ${before} `.includes(` ${surname} `)) continue;
+      const title = text(i[1]).replace(/[.,:;]$/, "");
+      const year = (text(item[3]).match(/\b(1[6-9]\d\d|20[0-2]\d)\b/) || [])[1];
+      if (title.length > 2 && title.length < 160) books.push({ title, year: year ? +year : null });
+    }
+  }
+  const seen = new Set();
+  return { books: books.filter((b) => !seen.has(fold(b.title)) && seen.add(fold(b.title))), more: [...new Set(more)] };
+}
+
+async function main() {
+  const sought = require("./waiting-for-books").sought();
+  const wanted = fs.existsSync(WANTED) ? JSON.parse(fs.readFileSync(WANTED, "utf8")) : {};
+  const pending = JSON.parse(execFileSync("node", [path.join(__dirname, "pending.js"), "--people", "--triage"], { cwd: lib.ROOT, maxBuffer: 1 << 28 }).toString());
+  const catalog = new Map(lib.peopleCatalog().map((p) => [p.id, p]));
+  const refFiles = fs.readdirSync(REF);
+  const gutCatalog = readCsv(path.join(GUT, "raw", "pg_catalog.csv"));
+  const audited = (id) => fs.existsSync(lib.personPath(id));
+  const out = [];
+  let checked = 0, none = 0;
+  for (const { id } of pending) {
+    if (out.length >= LIMIT) break;
+    if (sought[id] || wanted[id]) continue;
+    const p = catalog.get(id);
+    if (!p || !p.wikipedia) continue;
+    checked++;
+    let html;
+    try { html = await lib.fetchArticle(p); } catch (e) { console.warn(`${id}: article not fetched (${e.message})`); continue; }
+    if (!html) continue;
+    const surname = fold(p.name).split(" ").pop();
+    let { books, more } = bibliography(html, surname);
+    for (const t of more) {
+      try { const b = await lib.fetchArticle({ id: `${id}-bibliography`, wikipedia: `https://en.wikipedia.org/wiki/${t.replace(/ /g, "_")}` }); if (b) books = books.concat(bibliography(b, surname).books); }
+      catch (e) { console.warn(`${id}: ${t} not fetched (${e.message})`); }
+    }
+    // On disk already, or on Gutenberg (prefetch-books.js fetches those before the audit).
+    const mine = [...refFiles.filter(nameMatcher(p)), ...gutenbergBooks(gutCatalog, p).map((r) => r.Title)].map(fold);
+    books = books.filter((b) => !mine.some((f) => f.includes(fold(b.title).slice(0, 25))));
+    if (!books.length) { none++; continue; }
+    const marxists = fs.existsSync(path.join(CORPORA, "marxists", "text", surname));
+    out.push({ id, name: p.name, audited: audited(id), marxists, books });
+  }
+  const md = [`# Books to look for (${new Date().toISOString().slice(0, 10)})`, "",
+    "Written by `scripts/books-to-look-for.js` (political_ideology_test). People still to audit, or audited and failing, most likely to pass first;",
+    "the books their Wikipedia article's bibliography lists that aren't on disk. Fiction, poetry and edited works are left out; whether a book is",
+    "political nonfiction in their own words is yours to judge. Books from before about 1930 may be free (Gutenberg, archive.org).",
+    "Put finds in `~/Documents/ideology reference/`. Once you've looked for someone, record it so the next list leaves them out:",
+    "`node scripts/waiting-for-books.js add <id>` (downloading; holds them) or `sought <id>` (nothing found).", ""];
+  for (const o of out) {
+    md.push(`## ${o.name} (\`${o.id}\`${o.audited ? ", audited, fails" : ""})`);
+    if (o.marxists) md.push("- (Marxists Internet Archive section is local, filed by year: some of these may be in it)");
+    for (const b of o.books) md.push(`- ${b.title}${b.year ? ` (${b.year})` : ""}`);
+    md.push("");
+  }
+  fs.writeFileSync(DOC, md.join("\n"));
+  console.log(`${out.length} people listed in ${DOC} (${checked} checked; ${none} with no bibliography books left to find).`);
+}
+main().catch((e) => { console.error(e.stack || e.message); process.exit(1); });

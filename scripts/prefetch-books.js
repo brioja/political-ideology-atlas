@@ -216,5 +216,5 @@ function availableBooks(people) {
   }
   return out;
 }
-module.exports = { availableBooks, nameMatcher };
+module.exports = { availableBooks, nameMatcher, gutenbergBooks, readCsv, GUT, CORPORA };
 if (require.main === module) main().catch((e) => { console.error(e.message); process.exit(1); });
