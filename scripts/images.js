@@ -178,7 +178,19 @@ async function main() {
   if (missing.length) console.log(`No free lead image: ${missing.join(", ")}`);
 }
 
-const toWebp = (buf) => require("child_process").execFileSync("convert", ["-[0]", "-resize", "330x330>", "-quality", "80", "webp:-"], { input: buf, maxBuffer: 1 << 26 });
+const { execFileSync } = require("child_process");
+const toWebp = (buf) => execFileSync("convert", ["-[0]", "-resize", "330x330>", "-quality", "80", "webp:-"], { input: buf, maxBuffer: 1 << 26 });
+// A tall or wide photo of a person is cut to the square around their face (scripts/face-crop.py; Brandon, 2026-11-20:
+// the avatar's fixed crop showed Naomi Klein's hair and bookshelf). Without OpenCV, or when no face is confirmed, the
+// photo stays as it is and the site's fixed crop applies.
+function faceCrop(webp) {
+  let box;
+  try { box = execFileSync("python3", ["-I", path.join(__dirname, "face-crop.py"), "-"], { input: webp, stdio: ["pipe", "pipe", "ignore"] }).toString().trim(); }
+  catch { return webp; }
+  const [x, y, side] = box.split(" ").map(Number);
+  if (!side) return webp;
+  return execFileSync("convert", ["-", "-crop", `${side}x${side}+${x}+${y}`, "+repage", "-quality", "80", "webp:-"], { input: webp, maxBuffer: 1 << 26 });
+}
 
 // Downloads each audited entry's thumbnail to img/<kind>/ (only files not there yet) and deletes files
 // that no catalog entry points at any more (a replaced or dropped image).
@@ -200,7 +212,7 @@ async function saveThumbs() {
       try { res = await politeFetch(e.image.url); } catch { res = null; }
       if (!res || !res.ok) { failed.push(`${e.id} (${res ? res.status : "network"})`); keepPrev(); continue; }
       // Re-encoded with ImageMagick: some stored URLs are full-size originals or large PNG thumbnails.
-      try { fs.writeFileSync(file, toWebp(Buffer.from(await res.arrayBuffer()))); }
+      try { const webp = toWebp(Buffer.from(await res.arrayBuffer())); fs.writeFileSync(file, kind === "people" ? faceCrop(webp) : webp); }
       catch (err) { failed.push(`${e.id} (convert: ${err.message.split("\n")[0]})`); keepPrev(); continue; }
       saved++;
       if (e.previousImage) replaced.add(e.id);
