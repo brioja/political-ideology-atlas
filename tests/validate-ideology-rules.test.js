@@ -121,21 +121,28 @@ try {
   // which is held to that from its next pass (its draft or --as-current list) and only warned while committed.
   {
     const vex = () => ({ first: "Quentin", last: "Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" });
-    const listedBy = (id, name, auditedAt) => coatrack.setProfilesForTests(new Map([[id, { name, auditedAt, authors: [vex()] }]]));
+    const listedBy = (id, name, auditedAt) => coatrack.setProfilesForTests(new Map([[id, { name, auditedAt, authors: [vex()] }]]), {});
     const withVex = (auditedAt) => E(base(), (a) => { a.authors = [vex()]; a.auditedAt = auditedAt; });
     try {
-      coatrack.setProfilesForTests(new Map());
+      coatrack.setProfilesForTests(new Map(), {});
       ok("defining author named twice", withVex("2026-11-07"));
       listedBy("other-ideology", "Other ideology", "2026-11-01");
       fails("defining author of another ideology", withVex("2026-11-07"), /author "Quentin Vexmoor" is also a defining author of other-ideology/);
       const authorProblems = (name) => coatrack.check(subject.id, { ...withVex("2026-11-07"), name }, { strict: true }).problems.filter((p) => /author "Quentin Vexmoor"/.test(p));
       assert.deepStrictEqual(authorProblems("Vexmoorism"), [], "the namesake lists its author whatever other ideologies do"); n++;
       // A namesake reserves its author with a bare name until its next pass gives the quote.
-      coatrack.setProfilesForTests(new Map([["vexmoorism", { name: "Vexmoorism", auditedAt: "2026-10-16", authors: ["Quentin Vexmoor"] }]]));
+      coatrack.setProfilesForTests(new Map([["vexmoorism", { name: "Vexmoorism", auditedAt: "2026-10-16", authors: ["Quentin Vexmoor"] }]]), {});
       ok("namesake took the author: no error on the committed audit", withVex("2026-11-12"));
       warns("namesake took the author: a warning on the committed audit", withVex("2026-11-12"), /author "Quentin Vexmoor" belongs to vexmoorism/);
       const inPass = coatrack.check(subject.id, withVex("2026-11-07"), { strict: true, pass: true });
       assert.ok(inPass.problems.some((p) => /author "Quentin Vexmoor" belongs to vexmoorism/.test(p)), "a pass's draft must take the author out"); n++;
+      // An unaudited ideology named after the author's given name, in any word order, reserves them (audits/namesakes.json).
+      coatrack.setProfilesForTests(new Map(), { quentinismo: "Vexmoor Quentin" });
+      warns("namesakes.json reserves the author for an unaudited eponym", withVex("2026-11-12"), /author "Quentin Vexmoor" belongs to quentinismo/);
+      assert.ok(coatrack.isNamesake(vex(), "quentinismo", "Quentinismo") && !coatrack.isNamesake(vex(), "other-ideology", "Other ideology"), "namesakes.json decides the namesake"); n++;
+      // The reserved person is matched by name in any order, or by surname and first initial; not another Vexmoor.
+      coatrack.setProfilesForTests(new Map(), { quentinismo: "Quentin Vexmoor" });
+      assert.ok(coatrack.isNamesake("Q. Vexmoor", "quentinismo", "Quentinismo") && !coatrack.isNamesake("Ralph Vexmoor", "quentinismo", "Quentinismo"), "same surname and first initial"); n++;
     } finally { coatrack.setProfilesForTests(null); }
   }
   // A source cited only on talk pages (reviewHistory) or as a nulling's reason documents what was replaced: the

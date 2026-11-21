@@ -77,9 +77,9 @@ reordered: "Salafi jihadism" / "jihadi-Salafism"; at most two letters differ and
 assumed from initials ("ML" can mean several things). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
 for World communism), so an alias may never be another ideology's name or alias. List in `authors`
 the ideology's own thinkers as its defining sources name them (each named at least twice there, and
-no other ideology's defining author, except that the ideology named after a person, Leninism for Lenin,
-lists them whatever others do; an ideology that listed them first ties their texts another way from its
-next pass): a primary text by one of them is tied to the ideology. List a
+no other ideology's defining author or namesake: audits/namesakes.json reserves each person an ideology
+is named after for it, Lenin for Leninism, and an ideology that listed them first ties their texts another
+way from its next pass): a primary text by one of them is tied to the ideology. List a
 defining author only when the defining sources present the ideology as that person's body of thought;
 never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose
 namesake's other views aren't part of it: tie its texts by title instead (Monroe's 1823 annual message). When a

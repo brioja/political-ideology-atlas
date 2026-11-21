@@ -155,7 +155,7 @@ function namesTaken() {
   return taken;
 }
 
-let takenAuthors = null, committed = null;
+let takenAuthors = null, committed = null, reserved = null;
 // The committed ideology audits' names, dates and authors (tests pass their own list).
 function profiles() {
   if (committed) return committed;
@@ -167,15 +167,34 @@ function profiles() {
   }
   return committed;
 }
-function setProfilesForTests(map) { committed = map; takenAuthors = null; }
+// The person each eponymous catalog ideology is named after, audited or not (audits/namesakes.json). The
+// ideology reserves them as its defining author, so no other audit lists them only to lose them later
+// (Brandon, 2026-11-21). Tests pass their own.
+function namesakes() {
+  if (reserved) return reserved;
+  try { reserved = JSON.parse(fs.readFileSync(path.join(lib.ROOT, "audits", "namesakes.json"), "utf8")).namesakes || {}; } catch { reserved = {}; }
+  return reserved;
+}
+function setProfilesForTests(map, names = null) { committed = map; reserved = names; takenAuthors = null; }
+// A person's name with its words in any order ("Mao Zedong", "Zedong Mao").
+const personKey = (s) => norm(s).trim().split(" ").sort().join(" ");
+// The audits that list each defining author.
 function authorsTaken() {
   if (takenAuthors) return takenAuthors;
   takenAuthors = new Map();
   for (const [id, a] of profiles()) for (const au of list(a.authors)) {
-    const k = norm(au); if (!takenAuthors.has(k)) takenAuthors.set(k, new Set()); takenAuthors.get(k).add(id);
+    const k = personKey(au); if (!takenAuthors.has(k)) takenAuthors.set(k, new Set()); takenAuthors.get(k).add(id);
   }
   return takenAuthors;
 }
+// Whether author `x` is the reserved `person`: the same name in any word order, or the same surname and first
+// initial ("Mohandas Gandhi" for "Mahatma Gandhi", "V. I. Lenin" for "Vladimir Lenin"; never Yuri Ivanov for
+// Porfiry Ivanov).
+const samePerson = (x, person) => {
+  if (personKey(entryName(x)) === personKey(person)) return true;
+  const a = norm(entryName(x)).trim().split(" "), b = norm(person).trim().split(" ");
+  return a.length >= 2 && b.length >= 2 && a[a.length - 1] === b[b.length - 1] && a[0][0] === b[0][0];
+};
 // The ideology named after a person, which takes them as a defining author before any other (Brandon,
 // 2026-11-21: democratic centralism had listed Lenin first, so Leninism couldn't): one word, the surname
 // (a final "e" dropped: de Gaulle, Gaullism) plus "-ism" or "-ianism". Stricter than isEponym, which also
@@ -187,6 +206,13 @@ const namesakeOf = (x, name) => {
   const n = norm(name).trim(), w = norm(last).trim().split(" ").pop();
   return !n.includes(" ") && w.length >= 3 && [w, w.replace(/e$/, "")].some((st) => n === `${st}ism` || n === `${st}ianism`);
 };
+// Whether author `x` is the person ideology `id` is named after: its audits/namesakes.json entry (which also
+// covers given names and other forms: Kemalism, "Xi Jinping Thought"), or for an ideology without one, the
+// surname rule above.
+const isNamesake = (x, id, name) => (namesakes()[id] ? samePerson(x, namesakes()[id]) : namesakeOf(x, name));
+// The ideologies audits/namesakes.json reserves author `x` for.
+const reservedFor = (x) => Object.entries(namesakes()).filter(([, person]) => samePerson(x, person)).map(([o]) => o);
+const ideologyName = (o) => (profiles().get(o) || {}).name || (lib.catalog().find((e) => e.id === o) || {}).name;
 
 // Why an alias is another name for the ideology (Brandon, 2026-11-20): every alias gives one "reason", and each is
 // checked here.
@@ -383,15 +409,16 @@ function check(id, full, { strict = false, pass = false } = {}) {
   const authorOk = [];
   for (const x of authorEntries) {
     const au = entryName(x), sur = authorKey(x);
-    const others = [...(authorsTaken().get(norm(au)) || [])].filter((o) => o !== id);
+    const others = [...(authorsTaken().get(personKey(au)) || [])].filter((o) => o !== id);
+    const reserving = reservedFor(x).filter((o) => o !== id);
     // The ideology named after the author lists them whatever others do; another that lists them too is
     // held to it from its next pass (its draft, and the --as-current list the pass starts with), and until
     // then only warned, its ties standing, so it stays on the site. Not by date: the namesake may list them
     // between its own passes (Brandon, 2026-11-21: eponyms took their authors before their next passes).
-    if (others.length && !namesakeOf(x, audit.name)) {
-      const owner = others.find((o) => namesakeOf(x, (profiles().get(o) || {}).name));
+    if ((others.length || reserving.length) && !isNamesake(x, id, audit.name)) {
+      const owner = reserving[0] || others.find((o) => isNamesake(x, o, ideologyName(o)));
       if (!owner) { problems.push(`author "${au}" is also a defining author of ${others.join(", ")}`); continue; }
-      const msg = `author "${au}" belongs to ${owner}, the ideology named after them, which lists them too: take them out of "authors" and tie their texts here another way (by title, in the source's "titles")`;
+      const msg = `author "${au}" belongs to ${owner}, the ideology named after them, which reserves them: take them out of "authors" and tie their texts here another way (by title, in the source's "titles")`;
       if (pass) { problems.push(msg); continue; }
       warnings.push(msg);
     }
@@ -425,4 +452,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { setProfilesForTests, namesakeOf, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
+module.exports = { setProfilesForTests, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
