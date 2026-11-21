@@ -355,10 +355,10 @@ function check(id, full, { strict = false } = {}) {
   // must be named (by surname) at least twice in the defining sources and belong to no other
   // ideology's "authors". A primary text by one of them is tied to the ideology.
   // Settled, don't reopen (Brandon, 2026-11-21): this ties every text of a listed author, including works
-  // outside the ideology. Checked across all audits: of 208 texts tied only this way, one clear misuse
-  // (Pragmatism: James's "The Moral Equivalent of War" giving pragmatism answers on war and labour
-  // conscription; its anti-imperialism answer also cited his SEP biography, a defining source, so a narrower
-  // tie wouldn't have stopped it). Too rare for a rule; such answers are fixed in the subject's next pass.
+  // outside the ideology. Across all audits 208 texts are tied only this way; outside ideologies named after
+  // a person, 181 of them aren't named by title in the defining sources, so no narrower tie a script can
+  // check would separate off-topic texts from the author's core ones. Whether a text speaks for the ideology
+  // is the auditor's call in each pass; no rule for it.
   const authorEntries = (Array.isArray(audit.authors) ? audit.authors : []).filter((x) => entryName(x).trim());
   const authorOk = [];
   for (const x of authorEntries) {
