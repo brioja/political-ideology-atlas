@@ -2082,6 +2082,7 @@ function renderPersonPage(id) {
   const closest = match(model, profile).ranked.slice(0, 5);
   const similar = matchPeople(model, profile, PEOPLE_LIST.filter((x) => x.id !== p.id).map((x) => ({ ...x, profile: onModel(x.profile) }))).slice(0, 5);
   const yours = lastAnswers ? (matchPeople(model, lastAnswers, [{ ...p, profile }])[0] || {}).similarity : null;
+  const keyOf = model.ideologies.filter((i) => (i.keyFigures || []).some((f) => sameArticle(f.wikipedia, p.wikipedia)));
   const draw = (audit) => {
     root.innerHTML = `
       <a class="back" href="#/people">← All people</a>
@@ -2098,6 +2099,7 @@ function renderPersonPage(id) {
       ${p.summary ? `<p class="lede">${esc(p.summary)}</p>` : ""}
       <p class="read-more small"><span class="muted">Read more:</span> ${p.wikipedia ? `<a href="${esc(p.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a> · ` : ""}<a href="${REPO}/blob/main/audits/${auditFolder(p)}/${esc(p.id)}.json" target="_blank" rel="noopener">${auditLabel(p) || "The full audit"}</a></p>
       ${yourMatchLine(yours, p.name)}
+      ${keyOf.length ? `<section class="stack"><h2>Key figure of</h2><ul class="matches">${keyOf.map(ideologyRow).join("")}</ul></section>` : ""}
       <section class="stack"><h2>Closest ideologies</h2>
         <p class="muted small">Based on the ${profile.filter((x) => x != null).length} statements where ${esc(p.name)} has a known position.</p>
         <ul class="matches">${closest.map(ideologyRow).join("")}</ul></section>

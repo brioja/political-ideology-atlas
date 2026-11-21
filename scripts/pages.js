@@ -120,6 +120,8 @@ function personBody(p) {
   const closest = ctx.match(model, p.profile).ranked.slice(0, 5);
   const similar = ctx.matchPeople(model, p.profile, people.filter((x) => x.id !== p.id)).slice(0, 5);
   const life = p.living ? `born ${p.born}` : `born ${p.born}, historical`;
+  const same = (a, b) => !!a && !!b && decodeURIComponent(a) === decodeURIComponent(b);
+  const keyOf = IDEOLOGIES.filter((i) => (i.keyFigures || []).some((f) => same(f.wikipedia, p.wikipedia)));
   return `${nav("people", "All people")}
     <p class="small">${esc(p.region)} · ${esc(life)}</p>
     <h1>${esc(p.name)}</h1>
@@ -127,6 +129,7 @@ function personBody(p) {
     ${p.role ? `<p>${esc(p.role)}</p>` : ""}
     ${p.summary ? `<p>${esc(p.summary)}</p>` : ""}
     ${p.wikipedia ? `<p class="small"><a href="${esc(p.wikipedia)}">Wikipedia</a></p>` : ""}
+    ${keyOf.length ? `<h2>Key figure of</h2>${ideologyLinks(keyOf)}` : ""}
     <h2>Closest ideologies</h2>
     <p class="small">Based on the ${p.profile.filter((x) => x != null).length} statements where ${esc(p.name)} has a known position.</p>
     ${ideologyLinks(closest)}
