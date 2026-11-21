@@ -354,6 +354,11 @@ function check(id, full, { strict = false } = {}) {
   // Defining authors ("authors"): the ideology's own thinkers, as its defining sources name them. Each
   // must be named (by surname) at least twice in the defining sources and belong to no other
   // ideology's "authors". A primary text by one of them is tied to the ideology.
+  // Settled, don't reopen (Brandon, 2026-11-21): this ties every text of a listed author, including works
+  // outside the ideology. Checked across all audits: of 208 texts tied only this way, one clear misuse
+  // (Pragmatism: James's "The Moral Equivalent of War" giving pragmatism answers on war and labour
+  // conscription; its anti-imperialism answer also cited his SEP biography, a defining source, so a narrower
+  // tie wouldn't have stopped it). Too rare for a rule; such answers are fixed in the subject's next pass.
   const authorEntries = (Array.isArray(audit.authors) ? audit.authors : []).filter((x) => entryName(x).trim());
   const authorOk = [];
   for (const x of authorEntries) {
