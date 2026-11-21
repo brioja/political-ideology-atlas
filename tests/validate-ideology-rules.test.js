@@ -114,6 +114,15 @@ try {
   // Aliases, authors and titles need evidence quoted from a saved source.
   fails("alias as a bare string", E(base(), (a) => { a.aliases = [`${N} Doctrine`]; }), /alias ".*" needs evidence/);
   fails("alias quote not in the source", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s1", quote: `${N}ists believe in ${N} entirely` }]; }), /the quote isn't in s1's saved copy|its quote doesn't contain it/);
+  {
+    // A redirect has one target: another catalog entry's Wikipedia redirect is that entry's name, not this one's alias.
+    const own = new Set([...lib.wikipediaOtherNames(subject.id), ...lib.catalog().map((e) => e.name)].map((t) => t.toLowerCase()));
+    const other = lib.catalog().filter((e) => e.id !== subject.id).map((e) => [e, lib.wikipediaOtherNames(e.id)
+      .find((t) => !/\(/.test(t) && /^[A-Za-z][A-Za-z -]+$/.test(t) && t.includes(" ") && !own.has(t.toLowerCase()))]).find(([, t]) => t);
+    const [e, t] = other;
+    fails("alias that redirects to another entry's article", E(base(), (a) => { a.aliases = [{ name: t, reason: "SUPPORTED", source: "s1", quote: `${t}, or ${N}` }]; }),
+      new RegExp(`"${t}" is a Wikipedia redirect to the article of ${e.id}`));
+  }
   fails("alias from a source not in the audit", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s9", quote: `${N}ists and ${N}` }]; }), /source "s9" is not in the audit/);
   fails("author not named twice in the defining sources", E(base(), (a) => { a.authors = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /author "Imaginary Zorblatt"/);
   fails("author without first and last", E(base(), (a) => { a.authors = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "first" and "last"/);

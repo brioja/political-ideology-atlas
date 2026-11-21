@@ -122,6 +122,10 @@ const list = (v) => (Array.isArray(v) ? v : []).map(entryName).filter((n) => n &
 
 let taken = null;
 const ownNames = new Map(); // normalized name -> ideologies whose own name it is
+// normalized name -> ideologies whose Wikipedia article it redirects to. A redirect has one target (Brandon,
+// 2026-11-06), so it is that ideology's other name, audited or not, and no other ideology's alias ("race realism"
+// redirects to Scientific racism, "liberal theology" to Religious liberalism).
+const redirectNames = new Map();
 // How often an ideology's own defining sources (saved, reference or scholarly, never Wikipedia) use a
 // name, in any of its forms. Decides who owns a contested alias.
 const usageCache = new Map();
@@ -140,6 +144,11 @@ function namesTaken() {
   taken = new Map();
   // Every catalog entry's name is its own, audited or not (names are one to many, Brandon 2026-11-20).
   for (const e of lib.catalog()) { const k = norm(e.name); if (!ownNames.has(k)) ownNames.set(k, new Set()); ownNames.get(k).add(e.id); }
+  // A title with a disambiguator ("Unionists (Ireland)") isn't the bare name ("Unionists"), so it isn't counted.
+  for (const e of lib.catalog()) for (const t of lib.wikipediaOtherNames(e.id)) {
+    if (plainName(t) !== t) continue;
+    const k = norm(t); if (!redirectNames.has(k)) redirectNames.set(k, new Set()); redirectNames.get(k).add(e.id);
+  }
   for (const f of fs.readdirSync(lib.PROFILES_DIR)) {
     if (!f.endsWith(".json")) continue;
     let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
@@ -351,6 +360,8 @@ function check(id, full, { strict = false, pass = false } = {}) {
     const k = norm(al);
     const nameOf = [...(ownNames.get(k) || [])].filter((o) => o !== id);
     if (nameOf.length) { problems.push(`alias "${al}" is the name of ${nameOf.join(", ")}`); continue; }
+    const redirectOf = (redirectNames.get(k) || new Set()).has(id) ? [] : [...(redirectNames.get(k) || [])];
+    if (redirectOf.length) { problems.push(`alias "${al}" is a Wikipedia redirect to the article of ${redirectOf.join(", ")}, so it is that ideology's other name`); continue; }
     const rivals = [...(namesTaken().get(k) || [])].filter((o) => o !== id);
     if (rivals.length) {
       const mine = usage(id, k), best = Math.max(...rivals.map((o) => usage(o, k)));
