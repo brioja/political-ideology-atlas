@@ -143,6 +143,10 @@ try {
       // The reserved person is matched by name in any order, or by surname and first initial; not another Vexmoor.
       coatrack.setProfilesForTests(new Map(), { quentinismo: "Quentin Vexmoor" });
       assert.ok(coatrack.isNamesake("Q. Vexmoor", "quentinismo", "Quentinismo") && !coatrack.isNamesake("Ralph Vexmoor", "quentinismo", "Quentinismo"), "same surname and first initial"); n++;
+      // A numeral or Jr./Sr. is no surname: "Quentin II" is not "Quincy II", and Sr. is not Jr.
+      coatrack.setProfilesForTests(new Map(), { quentinismo: "Quentin II", vexmoorism: "Quentin Vexmoor Sr." });
+      assert.ok(coatrack.isNamesake("Quentin II", "quentinismo", "Quentinismo") && !coatrack.isNamesake("Quincy Ralph II", "quentinismo", "Quentinismo"), "a regnal name counts only whole"); n++;
+      assert.ok(coatrack.isNamesake("Quentin Vexmoor", "vexmoorism", "Vexmoorism") && !coatrack.isNamesake("Q. Vexmoor Jr.", "vexmoorism", "Vexmoorism"), "Jr. is not Sr."); n++;
     } finally { coatrack.setProfilesForTests(null); }
   }
   // A source cited only on talk pages (reviewHistory) or as a nulling's reason documents what was replaced: the

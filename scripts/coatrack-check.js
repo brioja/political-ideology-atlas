@@ -189,10 +189,14 @@ function authorsTaken() {
 }
 // Whether author `x` is the reserved `person`: the same name in any word order, or the same surname and first
 // initial ("Mohandas Gandhi" for "Mahatma Gandhi", "V. I. Lenin" for "Vladimir Lenin"; never Yuri Ivanov for
-// Porfiry Ivanov).
+// Porfiry Ivanov). A numeral or Jr./Sr. is no surname: a regnal name ("Joseph II") counts only whole, never for
+// John Paul II, and where both names give Jr. or Sr. they must agree.
 const samePerson = (x, person) => {
   if (personKey(entryName(x)) === personKey(person)) return true;
   const a = norm(entryName(x)).trim().split(" "), b = norm(person).trim().split(" ");
+  const gen = (w) => (w.length > 1 && /^([ivxl]+|jr|sr)$/.test(w[w.length - 1]) ? w.pop() : null);
+  const ga = gen(a), gb = gen(b);
+  if ([ga, gb].some((g) => g && /^[ivxl]+$/.test(g)) || (ga && gb && ga !== gb)) return false;
   return a.length >= 2 && b.length >= 2 && a[a.length - 1] === b[b.length - 1] && a[0][0] === b[0][0];
 };
 // The ideology named after a person, which takes them as a defining author before any other (Brandon,
