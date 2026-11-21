@@ -383,7 +383,9 @@ function check(id, full, { strict = false } = {}) {
     // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
     // makes an unchecked source an error for them.
     if (t == null) { unchecked.push(s.id); continue; }
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology (cite its title as those sources name it)${ALIAS_HINT}${citedBy(s.id)}`);
+    // The message names all three ways to tie a primary text, each with its evidence (audits/PROMPT.md);
+    // Brandon, 2026-11-21.
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of three ways, each with a quote, as audits/PROMPT.md says: the title those sources use for it (in the source's "titles"); another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}); or its author, if the defining sources present the ideology as that person's body of thought and name them at least twice (in "authors")${citedBy(s.id)}`);
   }
   return { problems, unchecked };
 }
