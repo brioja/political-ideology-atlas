@@ -232,12 +232,42 @@ const ideologyName = (o) => (profiles().get(o) || {}).name || (lib.catalog().fin
 //   REDIRECT     a Wikipedia redirect to the ideology's article (resolve-articles.js otherNames); needs no quote.
 //   SUPPORTED    a source says they are the same: the quote names both the alias and the ideology. Acronyms go here,
 //                found by looking the acronym up ("TERF" in a dictionary): initials alone can mean several things.
+//                Not a name Wikipedia files under another topic (aliasPage below).
 //   TRANSLATION  the name in another language ("laïcité", "Nouvelle Droite" -> "New Right"); the quote uses it.
 //   SPELLING     the same name spelled differently: s/z, case, accents, spacing and hyphens aside, at most two letters
 //                differ and the ending is the same ("Austro-Marxism", "communisation"), or the same words reordered
 //                ("Jihadi-Salafism"). A word form ("Bolshevik", "Gaullist") or another name is a REDIRECT, or SUPPORTED.
 //   EPONYM       the person the "-ism" is named after ("Fortuyn" for Fortuynism).
 const ALIAS_REASONS = ["REDIRECT", "SUPPORTED", "TRANSLATION", "SPELLING", "EPONYM"];
+
+// Where Wikipedia files a SUPPORTED alias. A name Wikipedia gives to another topic (its own article, a disambiguation
+// page, a redirect to another article or to a section of one) would bring that topic's sources in with it ("Committee of
+// Union and Progress", "counterculture", "radical left"), so it isn't this ideology's alias (Brandon, 2026-11-21). A
+// redirect to the ideology's own article, a section of it included, is fine; a name with no page at all is too.
+// validate.js fetches the lookup first (prefetchAliasPages); check() reads it from the cache and skips one not fetched.
+const aliasPageUrl = (al) => require("./wiki").apiUrl({ action: "query", titles: al, redirects: "1", prop: "pageprops", ppprop: "disambiguation" });
+let aliasPagesForTests = null;
+function setAliasPagesForTests(map) { aliasPagesForTests = map; }
+const isSupported = (x) => x && typeof x === "object" && (x.reason === "SUPPORTED" || x.reason === undefined);
+async function prefetchAliasPages(audit) {
+  for (const x of Array.isArray(audit && audit.aliases) ? audit.aliases : []) if (isSupported(x)) await lib.cachedJson(aliasPageUrl(entryName(x)));
+}
+// null: not fetched or no page; otherwise { title, fragment, redirected, disambiguation }.
+function aliasPage(al) {
+  let q;
+  if (aliasPagesForTests) q = aliasPagesForTests[al];
+  else { const f = require("./fetch").cacheFile(aliasPageUrl(al)); if (!fs.existsSync(f)) return null; q = JSON.parse(fs.readFileSync(f, "utf8")); }
+  const page = q && q.query && (q.query.pages || [])[0];
+  if (!page || page.missing || page.invalid) return null;
+  const redirects = q.query.redirects || [], last = redirects[redirects.length - 1];
+  return { title: page.title, fragment: (last && last.tofragment) || "", redirected: !!last, disambiguation: !!(page.pageprops && "disambiguation" in page.pageprops) };
+}
+function aliasPageProblem(id, al) {
+  const p = aliasPage(al), own = lib.articleTitle({ id });
+  if (!p || (!p.disambiguation && own && p.title === own)) return null;
+  const where = p.disambiguation ? `a disambiguation page ("${p.title}")` : p.redirected ? `a redirect to "${p.title}${p.fragment ? "#" + p.fragment : ""}"` : "its own article";
+  return `alias "${al}": Wikipedia files it as ${where}, another topic than "${own}", so it isn't this ideology's other name`;
+}
 const lev = (x, y) => { const d = Array.from({ length: x.length + 1 }, (_, i) => [i]); for (let j = 1; j <= y.length; j++) d[0][j] = j;
   for (let i = 1; i <= x.length; i++) for (let j = 1; j <= y.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (x[i - 1] === y[j - 1] ? 0 : 1));
   return d[x.length][y.length]; };
@@ -337,6 +367,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
     // the Tea Party" does (Brandon, 2026-11-20: a supported name has to be supported).
     if ((reason === "SUPPORTED" || reason === undefined) && typeof x.quote === "string" && !separately(norm(x.quote), [norm(al)], ideologyNames.map(norm)))
       problems.push(`alias "${al}": its quote doesn't name "${audit.name}" and the alias as separate phrases, so it doesn't show the source equating them`);
+    if (isSupported(x)) { const pr = aliasPageProblem(id, al); if (pr) problems.push(pr); }
   }
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
     const key = authorKey(x);
@@ -467,4 +498,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { setProfilesForTests, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
+module.exports = { setProfilesForTests, setAliasPagesForTests, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };

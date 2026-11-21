@@ -642,17 +642,20 @@ async function main() {
   const dir = DIR || PROFILES_DIR;
   if (ids.length === 0) ids = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)) : [];
 
-  const fetchFailed = new Map();
+  const fetchFailed = new Map(), aliasFetchFailed = new Map();
   // Fetch (once, then cached) the whole Wikipedia page the DOES_NOT_INCLUDE_IDEAS check reads.
   if (!PEOPLE) for (const id of ids) {
     let a; try { a = readJson(profilePath(id)); } catch { continue; }
     const entry = a && a.notIdeasOfWhatSocietyShouldBe && a.notIdeasOfWhatSocietyShouldBe.reason === "DOES_NOT_INCLUDE_IDEAS" && catalog().find((c) => c.id === id);
     if (entry) try { await lib.fetchArticle(entry); } catch (e) { fetchFailed.set(id, e.message); }
+    // and where Wikipedia files each SUPPORTED alias (coatrack-check.js aliasPage).
+    try { await require("./coatrack-check").prefetchAliasPages(a); } catch (e) { aliasFetchFailed.set(id, e.message); }
   }
   let failed = 0, excluded = 0;
   for (const id of ids.sort()) {
     const { errors, warnings, sources = [] } = validate(id);
     if (fetchFailed.has(id)) errors.unshift(`DOES_NOT_INCLUDE_IDEAS unchecked: its Wikipedia page could not be fetched (${fetchFailed.get(id)}); validate again later`);
+    if (aliasFetchFailed.has(id)) errors.unshift(`alias lookup unchecked: Wikipedia could not be reached (${aliasFetchFailed.get(id)}); validate again later`);
     if (links && errors.length === 0) for (const b of await checkLinks(sources)) errors.push(`dead link: ${b}`);
     if (errors.length) failed++;
     if (excludedOnly(errors)) excluded++;

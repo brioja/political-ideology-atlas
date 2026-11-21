@@ -123,6 +123,25 @@ try {
     fails("alias that redirects to another entry's article", E(base(), (a) => { a.aliases = [{ name: t, reason: "SUPPORTED", source: "s1", quote: `${t}, or ${N}` }]; }),
       new RegExp(`"${t}" is a Wikipedia redirect to the article of ${e.id}`));
   }
+  // A SUPPORTED alias Wikipedia files under another topic is refused; a redirect to the subject's own article
+  // (a section included) or a name with no page is fine.
+  {
+    const own = lib.articleTitle({ id: subject.id }), al = `${N}ists`;
+    const sup = () => E(base(), (a) => { a.aliases = [{ name: al, reason: "SUPPORTED", source: "s1", quote: `${al}, or ${N}` }]; });
+    const page = (title, extra = {}) => ({ [al]: { query: { pages: [{ title, ...extra }], ...(extra.redirect ? { redirects: [{ from: al, to: title, tofragment: extra.redirect }] } : {}) } } });
+    try {
+      coatrack.setAliasPagesForTests(page("Zorblatt Committee"));
+      fails("SUPPORTED alias with its own Wikipedia article", sup(), new RegExp(`alias "${al}": Wikipedia files it as its own article`));
+      coatrack.setAliasPagesForTests(page(al, { pageprops: { disambiguation: "" } }));
+      fails("SUPPORTED alias that is a disambiguation page", sup(), /Wikipedia files it as a disambiguation page/);
+      coatrack.setAliasPagesForTests(page("Zorblatt", { redirect: "Politics" }));
+      fails("SUPPORTED alias redirecting to a section of another article", sup(), /Wikipedia files it as a redirect to "Zorblatt#Politics"/);
+      coatrack.setAliasPagesForTests(page(own, { redirect: "History" }));
+      assert.ok(!coatrack.check(subject.id, sup(), { strict: true }).problems.some((p) => /Wikipedia files it/.test(p)), "a redirect to a section of the subject's own article is fine"); n++;
+      coatrack.setAliasPagesForTests({ [al]: { query: { pages: [{ title: al, missing: true }] } } });
+      assert.ok(!coatrack.check(subject.id, sup(), { strict: true }).problems.some((p) => /Wikipedia files it/.test(p)), "a name with no Wikipedia page is fine"); n++;
+    } finally { coatrack.setAliasPagesForTests(null); }
+  }
   fails("alias from a source not in the audit", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s9", quote: `${N}ists and ${N}` }]; }), /source "s9" is not in the audit/);
   fails("author not named twice in the defining sources", E(base(), (a) => { a.authors = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /author "Imaginary Zorblatt"/);
   fails("author without first and last", E(base(), (a) => { a.authors = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "first" and "last"/);
