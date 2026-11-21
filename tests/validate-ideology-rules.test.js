@@ -142,6 +142,20 @@ try {
       assert.ok(!coatrack.check(subject.id, sup(), { strict: true }).problems.some((p) => /Wikipedia files it/.test(p)), "a name with no Wikipedia page is fine"); n++;
     } finally { coatrack.setAliasPagesForTests(null); }
   }
+  // A TRANSLATION alias is a name Wikipedia gives the ideology in another language (a language link, or a
+  // language-tagged name in its lead), romanizations and small spelling differences included; it needs no quote.
+  {
+    const tr = (name) => E(base(), (a) => { a.aliases = [{ name, reason: "TRANSLATION" }]; });
+    const trProblems = (name) => coatrack.check(subject.id, tr(name), { strict: true }).problems.filter((p) => p.includes(`"${name}"`));
+    try {
+      coatrack.setAliasPagesForTests({});
+      coatrack.setTranslationNamesForTests({ [subject.id]: ["Zorblattismus", "佐布拉特", "Zuǒbùlātè zhǔyì", "tsʼorblatʼyun"] });
+      for (const name of ["Zorblattismus", "zuobulate zhuyi", "tsorblatyun"]) { assert.deepStrictEqual(trProblems(name), [], `TRANSLATION "${name}" with no quote`); n++; }
+      fails("TRANSLATION that isn't a Wikipedia name in another language", tr("Zorblattisme Nouveau"), /alias "Zorblattisme Nouveau": not a name Wikipedia gives the ideology in another language/);
+      coatrack.setAliasPagesForTests({ Zorblattismus: { query: { pages: [{ title: "Zorblattismus (band)" }] } } });
+      fails("TRANSLATION Wikipedia files under another topic", tr("Zorblattismus"), /alias "Zorblattismus": Wikipedia files it as its own article/);
+    } finally { coatrack.setAliasPagesForTests(null); coatrack.setTranslationNamesForTests(null); }
+  }
   fails("alias from a source not in the audit", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s9", quote: `${N}ists and ${N}` }]; }), /source "s9" is not in the audit/);
   fails("author not named twice in the defining sources", E(base(), (a) => { a.authors = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /author "Imaginary Zorblatt"/);
   fails("author without first and last", E(base(), (a) => { a.authors = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "first" and "last"/);

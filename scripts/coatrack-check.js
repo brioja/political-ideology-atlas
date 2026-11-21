@@ -233,7 +233,9 @@ const ideologyName = (o) => (profiles().get(o) || {}).name || (lib.catalog().fin
 //   SUPPORTED    a source says they are the same: the quote names both the alias and the ideology. Acronyms go here,
 //                found by looking the acronym up ("TERF" in a dictionary): initials alone can mean several things.
 //                Not a name Wikipedia files under another topic (aliasPage below).
-//   TRANSLATION  the name in another language ("laïcité", "Nouvelle Droite" -> "New Right"); the quote uses it.
+//   TRANSLATION  the name in another language, or its romanization, as Wikipedia gives it: the title of the article's
+//                language link in that language, or a name the article's lead or infobox tags with a language
+//                ("Chinese: 新儒家; pinyin: Xīn Rújiā"). Needs no quote (Brandon, 2026-11-21).
 //   SPELLING     the same name spelled differently: s/z, case, accents, spacing and hyphens aside, at most two letters
 //                differ and the ending is the same ("Austro-Marxism", "communisation"), or the same words reordered
 //                ("Jihadi-Salafism"). A word form ("Bolshevik", "Gaullist") or another name is a REDIRECT, or SUPPORTED.
@@ -249,9 +251,32 @@ const aliasPageUrl = (al) => require("./wiki").apiUrl({ action: "query", titles:
 let aliasPagesForTests = null;
 function setAliasPagesForTests(map) { aliasPagesForTests = map; }
 const isSupported = (x) => x && typeof x === "object" && (x.reason === "SUPPORTED" || x.reason === undefined);
-async function prefetchAliasPages(audit) {
-  for (const x of Array.isArray(audit && audit.aliases) ? audit.aliases : []) if (isSupported(x)) await lib.cachedJson(aliasPageUrl(entryName(x)));
+const isTranslation = (x) => x && typeof x === "object" && x.reason === "TRANSLATION";
+const langLinksUrl = (title) => require("./wiki").apiUrl({ action: "query", titles: title, prop: "langlinks", lllimit: "max", redirects: "1" });
+async function prefetchAliasPages(id, audit) {
+  const aliases = Array.isArray(audit && audit.aliases) ? audit.aliases : [];
+  for (const x of aliases) if (isSupported(x) || isTranslation(x)) await lib.cachedJson(aliasPageUrl(entryName(x)));
+  const own = lib.articleTitle({ id });
+  if (own && aliases.some(isTranslation)) { await lib.cachedJson(langLinksUrl(own)); await lib.fetchArticle({ id }); }
 }
+// The ideology's names in other languages on Wikipedia: its article's language links, and the names its lead (the
+// infobox included) tags with a language, romanizations among them (lang="zh-Latn", "he-Latn"). null if not fetched.
+let translationNamesForTests = null;
+function setTranslationNamesForTests(map) { translationNamesForTests = map; }
+function translationNames(id) {
+  if (translationNamesForTests) return translationNamesForTests[id] || [];
+  const own = lib.articleTitle({ id }), f = own && require("./fetch").cacheFile(langLinksUrl(own)), html = lib.articleHtml({ id });
+  if (!f || !fs.existsSync(f) || !html) return null;
+  const q = JSON.parse(fs.readFileSync(f, "utf8")), page = q && q.query && (q.query.pages || [])[0];
+  const links = ((page && page.langlinks) || []).map((l) => plainName(l.title));
+  const lead = html.split(/<h2|<div class="mw-heading mw-heading2/)[0];
+  const tagged = [...lead.matchAll(/<(i|span|b|bdi)\b[^>]*\blang="([^"]+)"[^>]*>([\s\S]*?)<\/\1>/g)]
+    .filter((m) => !/fonipa/.test(m[2]) && !/^en\b/.test(m[2])).map((m) => require("./wiki").htmlToText(m[3]).trim()).filter(Boolean);
+  return [...links, ...tagged];
+}
+// Any script; marks, apostrophes and spacing aside, at most two letters differ and the ending is the same (isSpelling).
+const flatAny = (t) => String(t).replace(/ß/g, "ss").normalize("NFKD").replace(/\p{M}|\p{Lm}/gu, "").toLowerCase().replace(/ı/g, "i").replace(/[^\p{L}\p{N}]+/gu, "");
+const sameTranslation = (al, n) => { const a = flatAny(al), b = flatAny(n); return !!a && !!b && (a === b || (lev(a, b) <= 2 && a.slice(-3) === b.slice(-3))); };
 // null: not fetched or no page; otherwise { title, fragment, redirected, disambiguation }.
 function aliasPage(al) {
   let q;
@@ -352,6 +377,13 @@ function check(id, full, { strict = false, pass = false } = {}) {
     if ("type" in x) problems.push(`alias "${al}": "type" is replaced by "reason" (${ALIAS_REASONS.join(", ")})`);
     if (reason !== undefined && !ALIAS_REASONS.includes(reason)) { problems.push(`alias "${al}": "reason" must be one of ${ALIAS_REASONS.join(", ")}`); continue; }
     if (reason === undefined && strict) problems.push(`alias "${al}" needs a "reason": one of ${ALIAS_REASONS.join(", ")}`);
+    if (reason === "TRANSLATION") {
+      const names = translationNames(id);
+      if (names && !names.some((n) => sameTranslation(al, n)))
+        problems.push(`alias "${al}": not a name Wikipedia gives the ideology in another language (a language link of "${lib.articleTitle({ id })}", or a name its lead tags with a language), so it isn't a TRANSLATION`);
+      const pr = aliasPageProblem(id, al); if (pr) problems.push(pr);
+      continue;
+    }
     if (reason === "REDIRECT") {
       if (!lib.wikipediaOtherNames(id).some((t) => norm(plainName(t)) === norm(al)))
         problems.push(`alias "${al}": not a Wikipedia redirect to the ideology's article (scripts/resolve-articles.js otherNames)`);
@@ -498,4 +530,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { setProfilesForTests, setAliasPagesForTests, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
+module.exports = { setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };

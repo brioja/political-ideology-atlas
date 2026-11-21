@@ -648,8 +648,8 @@ async function main() {
     let a; try { a = readJson(profilePath(id)); } catch { continue; }
     const entry = a && a.notIdeasOfWhatSocietyShouldBe && a.notIdeasOfWhatSocietyShouldBe.reason === "DOES_NOT_INCLUDE_IDEAS" && catalog().find((c) => c.id === id);
     if (entry) try { await lib.fetchArticle(entry); } catch (e) { fetchFailed.set(id, e.message); }
-    // and where Wikipedia files each SUPPORTED alias (coatrack-check.js aliasPage).
-    try { await require("./coatrack-check").prefetchAliasPages(a); } catch (e) { aliasFetchFailed.set(id, e.message); }
+    // and where Wikipedia files each SUPPORTED and TRANSLATION alias, and the names a TRANSLATION may be (coatrack-check.js).
+    try { await require("./coatrack-check").prefetchAliasPages(id, a); } catch (e) { aliasFetchFailed.set(id, e.message); }
   }
   let failed = 0, excluded = 0;
   for (const id of ids.sort()) {

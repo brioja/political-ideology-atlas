@@ -71,7 +71,9 @@ defining source (`reference` or `scholarly`) must name the ideology, by its name
 that does. List in `aliases` the other names the defining sources use for it, liberally, each with
 its `reason` (Brandon, 2026-11-20; validate.js checks each): `REDIRECT` (a Wikipedia redirect to the article;
 word forms such as "Gaullist" and other names come in this way), `SUPPORTED` (a source says they are the same),
-`TRANSLATION` (the name in another language), `SPELLING` (the same name spelled differently or its words
+`TRANSLATION` (the name in another language or its romanization, as Wikipedia gives it: the title of the article's
+link to that language's Wikipedia, or a name the article's lead or infobox tags with a language, such as "pinyin: Xīn
+Rújiā"; needs no quote), `SPELLING` (the same name spelled differently or its words
 reordered: "Salafi jihadism" / "jihadi-Salafism"; at most two letters differ and the ending stays the same) or
 `EPONYM` (the person an "-ism" is named after: "Fortuyn" for Fortuynism). An acronym is `SUPPORTED`, never
 assumed from initials ("ML" can mean several things). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
@@ -87,8 +89,8 @@ defining source names a primary text differently from its title ("the 1856 Imper
 "Rescript of Reform"), record those names in the source's `titles`. Give each alias, author and title its evidence:
 `{ "name" (an author: "first" and "last", or "organisation"; a title: "title"), "source": "<source id>",
 "quote": "<verbatim passage>" }`, a passage from that
-source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT`
-alias needs none). A `SUPPORTED` alias's quote must name the alias and the ideology as separate phrases (not "Brazilian
+source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT` or
+`TRANSLATION` alias needs none). A `SUPPORTED` alias's quote must name the alias and the ideology as separate phrases (not "Brazilian
 Integralist Action" for Brazilian integralism, nor "the Tea Party movement" alone for the Tea Party), showing the source equating the two ("'trans-exclusionary
 radical feminism', or TERFism"). A name Wikipedia files under another topic (its own article, a disambiguation page,
 a redirect to another article or to a section of one: "Committee of Union and Progress", "radical left") isn't a
