@@ -74,8 +74,16 @@ function gutenbergBooks(catalog, person) {
     if (/\[/.test(a)) return false;
     const m = a.match(/^([^,]+),.*?(-?\d{1,4})\??\s*(BCE|BC)?-/) || a.match(/^([^,]+?),?\s+(-?\d{1,4})\??\s*(BCE|BC)?-/);
     if (!m || person.born == null) return false;
-    const born = (m[3] ? -1 : 1) * Number(m[2]), surname = fold(m[1]).trim(), apart = Math.abs(born - person.born);
+    const born = (m[3] ? -1 : 1) * Number(m[2]), apart = Math.abs(born - person.born);
+    const regnal = fold(m[1]).trim().match(/^([a-z-]+) ([ivxl]+)$/), surname = regnal ? regnal[1] : fold(m[1]).trim();
     if (!words.has(surname) || apart > 4 || (apart > 1 && person.born >= 1500)) return false;
+    // A ruler entered by regnal name ("Napoleon I, Emperor of the French") is a person named by that name alone
+    // ("Napoleon"), with its numeral ("Henry VIII", "Charles I of England") or with an epithet ("Catherine the Great"),
+    // never a namesake who shares a given name and a birth year (William Jennings Bryan, 1860; William II, 1859).
+    if (regnal) {
+      const all = fold(person.name).split(/[\s.]+/).filter(Boolean), own = all.filter((x) => !NOT_GIVEN.has(x));
+      return own[0] === regnal[1] && (own.length === 1 || own.includes(regnal[2]) || all[all.indexOf(regnal[1]) + 1] === "the");
+    }
     const rest = a.slice(m[1].length).replace(/\d.*$/, ""), full = rest.match(/\(([^)]*)\)/);
     const given = fold(full ? full[1] : rest).split(/[^a-z]+/).filter((x) => x && !NOT_GIVEN.has(x));
     const others = [...words].filter((x) => x !== surname).flatMap((x) => x.split("-")).filter((x) => !NOT_GIVEN.has(x));
