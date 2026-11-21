@@ -179,10 +179,12 @@ function authorsTaken() {
 // The ideology named after a person, which takes them as a defining author before any other (Brandon,
 // 2026-11-21: democratic centralism had listed Lenin first, so Leninism couldn't): one word, the surname
 // (a final "e" dropped: de Gaulle, Gaullism) plus "-ism" or "-ianism". Stricter than isEponym, which also
-// matches first names and word beginnings (Otto Bauer and Ottomanism, Mill and Millenarianism).
+// matches first names and word beginnings (Otto Bauer and Ottomanism, Mill and Millenarianism). A bare name
+// ("Marcus Garvey") counts by its last word: eponyms reserved their namesakes that way (Brandon, 2026-11-21).
 const namesakeOf = (x, name) => {
-  if (!x || typeof x !== "object" || !x.last) return false;
-  const n = norm(name).trim(), w = norm(x.last).trim().split(" ").pop();
+  const last = typeof x === "string" ? x.trim().split(/\s+/).pop() : x && typeof x === "object" ? x.last : null;
+  if (!last) return false;
+  const n = norm(name).trim(), w = norm(last).trim().split(" ").pop();
   return !n.includes(" ") && w.length >= 3 && [w, w.replace(/e$/, "")].some((st) => n === `${st}ism` || n === `${st}ianism`);
 };
 
@@ -247,7 +249,8 @@ function evidence(id, audit, field, x, strict, contains) {
   return [];
 }
 
-function check(id, full, { strict = false, asCurrent = false } = {}) {
+// `pass`: the audit is a pass's draft (validate.js --dir) or checked as one (--as-current), not a committed audit.
+function check(id, full, { strict = false, pass = false } = {}) {
   const problems = [], unchecked = [], warnings = [];
   // A source cited only on talk pages (reviewHistory) or as the reason for a nulling documents a replaced version,
   // often the very source it was replaced for (Wikipedia, another subject's text): it isn't evidence of a current
@@ -382,13 +385,14 @@ function check(id, full, { strict = false, asCurrent = false } = {}) {
     const au = entryName(x), sur = authorKey(x);
     const others = [...(authorsTaken().get(norm(au)) || [])].filter((o) => o !== id);
     // The ideology named after the author lists them whatever others do; another that lists them too is
-    // held to it from its next pass (an audit dated on or after the namesake's, or a later pass's
-    // --as-current list), and until then only warned, its ties standing, so it stays on the site.
+    // held to it from its next pass (its draft, and the --as-current list the pass starts with), and until
+    // then only warned, its ties standing, so it stays on the site. Not by date: the namesake may list them
+    // between its own passes (Brandon, 2026-11-21: eponyms took their authors before their next passes).
     if (others.length && !namesakeOf(x, audit.name)) {
       const owner = others.find((o) => namesakeOf(x, (profiles().get(o) || {}).name));
       if (!owner) { problems.push(`author "${au}" is also a defining author of ${others.join(", ")}`); continue; }
       const msg = `author "${au}" belongs to ${owner}, the ideology named after them, which lists them too: take them out of "authors" and tie their texts here another way (by title, in the source's "titles")`;
-      if (asCurrent || (audit.auditedAt || "") >= (profiles().get(owner).auditedAt || "")) { problems.push(msg); continue; }
+      if (pass) { problems.push(msg); continue; }
       warnings.push(msg);
     }
     if (count(defining.join(" "), [sur]) < 2) { problems.push(`author "${au}" is named fewer than twice in the defining sources`); continue; }
