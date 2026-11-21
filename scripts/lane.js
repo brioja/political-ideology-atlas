@@ -103,7 +103,25 @@ function laterPassProblems(id) {
   log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
   return `\n\nThis is a later pass. The committed audit, checked under today's rules (\`node scripts/validate.js ${flag}--as-current ${id}\`), has these problems; fix each in your draft:\n${lines.join("\n")}`;
 }
-const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Then add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.${laterPassProblems(id)}`;
+// An eponymous ideology (audits/namesakes.json: Leninism, Stalinism, Trumpism) is handed the maintainer's reference
+// books by its namesake and about them (biographies, named "<title> (about <Person>, by <author>).txt"): a biography
+// counts for the ideology as scholarship defining it, though never as the person's own book (Brandon, 2026-11-21).
+function namesakeBooks(id) {
+  if (PEOPLE) return "";
+  let person;
+  try { person = JSON.parse(fs.readFileSync(path.join(ROOT, "audits", "namesakes.json"), "utf8")).namesakes[id]; } catch { return ""; }
+  if (!person) return "";
+  const { nameMatcher, CORPORA } = require("./prefetch-books");
+  const dir = path.join(CORPORA, "reference", "text");
+  if (!fs.existsSync(dir)) return "";
+  const entry = require("./lib").peopleCatalog().find((p) => p.name === person) || { name: person };
+  const by = nameMatcher(entry), about = nameMatcher({ name: person, wikipedia: entry.wikipedia });
+  const files = fs.readdirSync(dir).filter((f) => by(f.split(" - ")[0]) || (/\(about [^)]*\bby\b/i.test(f) && about(f.replace(/^.*\(about ([^,)]*).*$/, "$1 - x"))));
+  if (!files.length) return "";
+  log(`${id}: ${files.length} reference book(s) by or about ${person}`);
+  return `\n\nThe maintainer's reference library (~/.cache/political-ideology-atlas/corpora/reference/text/) holds these books by or about ${person}, whom \`${id}\` is named after. Search each for the statements' topics: the namesake's own books are primary sources, and books about them (biographies) are scholarship defining the ideology (audits/AUDIT_RULES.md on supplied texts):\n${files.map((f) => `- ${f}`).join("\n")}`;
+}
+const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Then add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.${namesakeBooks(id)}${laterPassProblems(id)}`;
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its line in scratchpad/lane-out/${LANE}/DONE.txt.`;
 const FIX = (id, errors) => `Integration found these validator errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
