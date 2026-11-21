@@ -23,7 +23,9 @@ words; don't paste long passages.
   visited. Never cite from memory or construct a URL.
 - Use at least 3 of the subject's defining sources, whatever their kind: its own texts (founding
   documents, programmes, speeches, books, its record) where it has them, and the scholarship and
-  reference works that define it. One rule for every subject (Brandon, 2026-11-08).
+  reference works that define it. One rule for every subject (Brandon, 2026-11-08). The 3 are a
+  condition for being shown (WP:DIVERSE): when no more exist, record the ones found and the audit is
+  finished, left out by the uncertainty rule (validate.js; Brandon, 2026-11-20).
 - Scholarly reference works (the Stanford and Internet Encyclopedias of Philosophy, Britannica,
   Oxford or Routledge reference works) are scholarship, and count as evidence. Wikipedia,
   OnTheIssues and similar compilations are only a way to find evidence: follow their citations to

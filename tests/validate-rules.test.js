@@ -182,7 +182,10 @@ fails("passes missing an auditor", E(laterPass(base()), (a) => { a.passes.pop();
 fails("wikipedia not an article URL", E(base(), (a) => { a.wikipedia = "https://example.org/x"; }), /"wikipedia" must be an en\.wikipedia\.org article URL or null/);
 ok("wikipedia article URL", E(base(), (a) => { a.wikipedia = "https://en.wikipedia.org/wiki/Example"; }));
 // Sources.
-fails("fewer than 3 sources", E(base(), (a) => { a.sources = a.sources.slice(0, 2); a.answers[A].sources = ["s1"]; }), /needs at least 3 sources, has 2/);
+// Fewer than 3 sources only fails an audit the uncertainty rule places (WP:DIVERSE, Brandon 2026-11-20); this fixture
+// isn't placed, so two sources raise no source-count error.
+{ const errs = errorsFor(E(base(), (a) => { a.sources = a.sources.slice(0, 2); a.answers[A].sources = ["s1"]; }));
+  assert(!errs.some((e) => /at least 3 sources/.test(e)), `fewer than 3 sources, not placed: got ${errs.join("; ")}`); n++; }
 fails("duplicate source id", E(base(), (a) => { a.sources[2].id = "s1"; }), /duplicate source id s1/);
 fails("unknown source kind", E(base(), (a) => { a.sources[2].kind = "blog"; }), /source s3: kind must be one of/);
 fails("source url not http", E(base(), (a) => { a.sources[2].url = "ftp://example.org/x"; }), /source s3: url must be an http\(s\) URL/);

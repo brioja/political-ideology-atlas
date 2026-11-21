@@ -219,7 +219,6 @@ function validate(id) {
   }
 
   const sources = Array.isArray(a.sources) ? a.sources : [];
-  if (sources.length < 3) errors.push(`needs at least 3 sources, has ${sources.length}`);
   // The coatrack check: the sources have to discuss the ideology (scripts/coatrack-check.js). Strict for audits that list
   // "aliases" (required from 2026-11-06); a warning for older audits.
   if (!PEOPLE) {
@@ -589,6 +588,10 @@ function validate(id) {
     // Uncertainty: does their record place them on every dividing line? (see pca.js)
     // For ideologies only stated positions count; inferred answers don't.
     const s = PEOPLE ? personUncertainty(answers) : ideologyUncertainty(a);
+    // Diverse sources (WP:DIVERSE) are a condition for being shown, not for being finished: an audit the uncertainty
+    // rule places needs at least 3 sources, while one it leaves out may rest on fewer when no more exist (Brandon,
+    // 2026-11-20, after marxist-schools-of-thought found only two pages using its name).
+    if (s.placed && sources.length < 3) errors.push(`placed on every dividing line, so it needs at least 3 sources (WP:DIVERSE), has ${sources.length}`);
     if (!s.placed && s.known < s.bars.length) {
       // Fewer positions than dividing lines: no error bar can be solved, so every line would read "no position reaches
       // it" whatever the answers are (Brandon, 2026-11-14: make this clearer). Say so once instead.
