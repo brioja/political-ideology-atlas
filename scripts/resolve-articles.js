@@ -26,6 +26,9 @@ const get = (params) => lib.cachedJson(`https://en.wikipedia.org/w/api.php?${new
 // Redirect categories that make a redirect another name for its target.
 const SAME = /Redirects from (alternative|other|alternate|modification|short|long|plural|ambiguous term|abbreviation|acronym|initialism|alternative spelling|alternative name|alternative language|non-English|other language|other capitalisation|miscapitalisation|American|British|incorrect hyphenation|hyphenation|diacritic|ASCII|title without diacritics|unnecessary disambiguation|synonym)/i;
 const OTHER = /Redirects (from subtopic|to related topic|to section|to anchor|to list|from member|from related word|with possibilities|from former name|from historic name)/i;
+// A related word is another name for the article's subject all the same (Brandon, 2026-11-21: "Narodism" for the
+// Narodniks, "Saffron fascism" for Hindutva), so it counts among otherNames; it still doesn't make a catalog entry notable.
+const NOT_A_NAME = /Redirects (from subtopic|to related topic|to section|to anchor|to list|from member|with possibilities|from former name|from historic name)/i;
 
 const linkTitle = (url) => decodeURIComponent(String(url || "").replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "")).replace(/_/g, " ");
 
@@ -120,7 +123,7 @@ async function main() {
   const entryNames = new Set(entries.filter((e) => !(names.get(e.name) || {}).redirect).map((e) => fold(e.name)));
   for (const x of Object.values(out)) {
     if (!x.notable || !x.title) continue;
-    const names = (redirectsTo.get(x.title) || []).filter((t) => !(rcats.get(t) || []).some((k) => OTHER.test(k))
+    const names = (redirectsTo.get(x.title) || []).filter((t) => !(rcats.get(t) || []).some((k) => NOT_A_NAME.test(k))
       && (fold(t) === fold(x.name) || !entryNames.has(fold(t.replace(/\s*\([^)]*\)\s*$/, "")))));
     if (names.length) x.otherNames = names;
   }
