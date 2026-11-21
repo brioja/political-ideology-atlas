@@ -77,17 +77,21 @@ Rújiā"; needs no quote), `SPELLING` (the same name spelled differently or its 
 reordered: "Salafi jihadism" / "jihadi-Salafism"; at most two letters differ and the ending stays the same) or
 `EPONYM` (the person an "-ism" is named after: "Fortuyn" for Fortuynism). An acronym is `SUPPORTED`, never
 assumed from initials ("ML" can mean several things). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
-for World communism), so an alias may never be another ideology's name or alias. List in `authors`
-the ideology's own thinkers as its defining sources name them (each named at least twice there, and
-no other ideology's defining author or namesake: audits/namesakes.json reserves each person an ideology
+for World communism), so an alias may never be another ideology's name or alias. List in `keyFigures`
+the ideology's own thinkers as its defining sources name them, people only, no organisations (each named at
+least twice there, and no other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology
 is named after for it, Lenin for Leninism, and an ideology that listed them first ties their texts another
 way from its next pass): a primary text by one of them is tied to the ideology. List a
-defining author only when the defining sources present the ideology as that person's body of thought;
+key figure only when the defining sources present the ideology as that person's body of thought;
 never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose
-namesake's other views aren't part of it: tie its texts by title instead (Monroe's 1823 annual message). When a
-defining source names a primary text differently from its title ("the 1856 Imperial Rescript" for the
-"Rescript of Reform"), record those names in the source's `titles`. Give each alias, author and title its evidence:
-`{ "name" (an author: "first" and "last", or "organisation"; a title: "title"), "source": "<source id>",
+namesake's other views aren't part of it, nor for a leader the sources don't present as its thinker: tie their
+texts by title instead (Monroe's 1823 annual message). List in `keyWorks` the texts the defining sources make
+canonical (founding texts, manifestos, programmes, a thinker's major works), by the title those sources use
+("the 1856 Imperial Rescript" for the "Rescript of Reform"), with `"work": "<source id>"` when you cite the text
+itself: a primary text the sources that discuss the ideology name twice, by its own title or a key work's, is tied to it. Each key figure also gives
+a one-line `role` (how the sources associate them) and their English Wikipedia article (`wikipedia`); both lists show on
+the ideology's page. Give each alias, key figure and key work its evidence:
+`{ "name" (a key figure: "first" and "last"; a key work: "title"), "source": "<source id>",
 "quote": "<verbatim passage>" }`, a passage from that
 source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT` or
 `TRANSLATION` alias needs none). A `SUPPORTED` alias's quote must name the alias and the ideology as separate phrases (not "Brazilian
@@ -148,11 +152,6 @@ The results page links each ideology to further reading for curious, non-special
 - `furtherReading`: two to four accessible items a curious reader could open next, such as an
   encyclopedia entry, a founding text online, or a good introduction. They may overlap with your
   sources. Only include pages you opened.
-- `keyFigures`: one to three people most associated with the ideology, such as its founder,
-  defining thinker or best-known leader, as your sources identify them. Each needs a one-line
-  `role` saying how they are associated, their English Wikipedia article, and at least one source
-  id. Pick by documented association, not by fame or by how much you like them. Use `[]` only if
-  the ideology has no identifiable figures.
 
 ## 5. Positions the statements miss
 
@@ -193,13 +192,11 @@ captures, even loosely. List only those; often there are none, and the list is e
   "notFound": [{ "work": "<a source looked for and not found>", "tried": [{ "where": "<place 1>", "how": "<what you searched>" }, { "where": "<place 2>", "how": "…" }] }],
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
   "aliases": [{ "name": "Another name for it", "reason": "SUPPORTED", "source": "s3", "quote": "verbatim passage from s3 that uses it" }],
-  "authors": [{ "first": "Chantal", "last": "Mouffe", "source": "s3", "quote": "verbatim passage from s3 that names them" }],
+  "keyFigures": [{ "first": "Chantal", "last": "Mouffe", "role": "Theorist of agonistic pluralism", "wikipedia": "https://en.wikipedia.org/wiki/Chantal_Mouffe", "source": "s3", "quote": "verbatim passage from s3 that names them" }],
+  "keyWorks": [{ "title": "Hegemony and Socialist Strategy", "work": "s4", "source": "s3", "quote": "verbatim passage from s3 that names it" }],
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
     { "title": "Readable title", "url": "https://…", "note": "One line on why it's worth reading" }
-  ],
-  "keyFigures": [
-    { "name": "Full name", "role": "Founder of …", "wikipedia": "https://en.wikipedia.org/wiki/…", "sources": ["s1"] }
   ],
   "sources": [
     {

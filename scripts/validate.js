@@ -231,7 +231,7 @@ function validate(id) {
     // doesn't change that); every audit written after it, or dated 2026-11-06 on, is held to it.
     const strict = AS_CURRENT || (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
-    // Evidence for aliases, authors and titles is required from 2026-11-06 on (older audits get it at their next pass).
+    // Evidence for aliases, key figures and key works is required from 2026-11-06 on (older audits get it at their next pass).
     const coatrack = require("./coatrack-check").check(id, a, { strict: AS_CURRENT || (a.auditedAt || "") >= "2026-11-06", pass: AS_CURRENT || !!DIR });
     const { problems, unchecked } = coatrack;
     const out = strict ? errors : warnings;
@@ -565,13 +565,21 @@ function validate(id) {
     }
   }
   // People most associated with the ideology, shown as "Key figures".
-  if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
-  else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');
-  else if (!PEOPLE) for (const [i, f] of a.keyFigures.entries()) {
-    if (!f.name || !f.role) errors.push(`keyFigures[${i}]: needs a name and a role`);
-    if (!/^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/.test(f.wikipedia || "")) errors.push(`keyFigures[${i}]: wikipedia must be an en.wikipedia.org article URL`);
-    if (!Array.isArray(f.sources) || !f.sources.length) errors.push(`keyFigures[${i}]: needs at least one source`);
-    else for (const sid of f.sources) if (!sourceIds.has(sid)) errors.push(`keyFigures[${i}]: unknown source '${sid}'`);
+  // Key figures and key works (audits/PROMPT.md): their names and evidence are checked by coatrack-check.js; here,
+  // what the ideology page shows. A pass gives each figure a role and Wikipedia article; figures moved over from the
+  // old "authors" list (2026-11-21) get theirs at their next pass.
+  const WIKI = /^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/;
+  if (!PEOPLE) for (const key of ["keyFigures", "keyWorks"]) if (a[key] !== undefined && !Array.isArray(a[key])) errors.push(`"${key}" must be a list`);
+  if (!PEOPLE && Array.isArray(a.keyFigures)) for (const [i, f] of a.keyFigures.entries()) {
+    if (!f || typeof f !== "object") { errors.push(`keyFigures[${i}]: must be { "first", "last", "role", "wikipedia", "source", "quote" }`); continue; }
+    if (f.wikipedia !== undefined && !WIKI.test(f.wikipedia)) errors.push(`keyFigures[${i}]: wikipedia must be an en.wikipedia.org article URL`);
+    if (AS_CURRENT || DIR) { if (!f.role) errors.push(`keyFigures[${i}]: needs a one-line "role"`); if (!f.wikipedia) errors.push(`keyFigures[${i}]: needs its "wikipedia" article`); }
+  }
+  if (!PEOPLE && Array.isArray(a.keyWorks)) for (const [i, w] of a.keyWorks.entries()) {
+    if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "source", "quote" } (and "work" if you cite it)`); continue; }
+    const src = w.work === undefined ? null : sources.find((s) => s.id === w.work);
+    if (w.work !== undefined && !src) errors.push(`keyWorks[${i}]: unknown source '${w.work}' in "work"`);
+    else if (src && src.kind !== "primary" && src.kind !== "program") errors.push(`keyWorks[${i}]: "work" must be the work itself, a primary or program source (${w.work} is ${src.kind})`);
   }
   // Defining positions no statement captures (audits/statements/STANDARD.md).
   if (!PEOPLE && a.missingStatements === undefined) warnings.push('no "missingStatements" (list defining positions the statements miss, or [] if none)');

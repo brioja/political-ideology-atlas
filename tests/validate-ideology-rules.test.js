@@ -25,7 +25,7 @@ setCommittedForTests(() => null);
 const libDir = path.join(LIBDIR, subject.id);
 const N = subject.name;
 const TEXTS = {
-  "https://example.org/encyclopedia": `${N} is a political doctrine. Its founders set out ${N} in several works.`,
+  "https://example.org/encyclopedia": `${N} is a political doctrine. Its founders set out ${N} in several works, first in the Founding Rescript; the Founding Rescript is its canon.`,
   "https://example.org/manifesto": `The manifesto of ${N}. We hold that ${N} is the way forward for all.`,
   "https://example.org/study": `A study of ${N} and its history, written for students of ${N}. Quentin Vexmoor wrote its founding text; Vexmoor led it for years.`,
   "https://example.org/unrelated": "A text about something else entirely, with no mention of the subject.",
@@ -46,7 +46,7 @@ function base() {
   return {
     id: subject.id, name: N, auditedAt: "2026-11-07", auditor: "claude-sonnet-5-5", rules: 4,
     summary: `A fixture audit of ${N} for the validator's rule tests.`, scope: "The doctrine as its defining sources set it out.",
-    aliases: [], authors: [], wikipedia: null,
+    aliases: [], wikipedia: null,
     furtherReading: [{ title: "An introduction", url: "https://example.org/intro" }, { title: "A history", url: "https://example.org/history" }],
     keyFigures: [], missingStatements: [],
     sources: [
@@ -77,15 +77,21 @@ try {
   fails("further reading without a url", E(base(), (a) => { a.furtherReading[0].url = "not a url"; }), /furtherReading item needs a title and an http\(s\) url/);
   // An ideology's null is low confidence.
   fails("null at medium confidence", E(base(), (a) => { a.answers[st[1]].confidence = "medium"; }), /a "no known position" answer is low confidence/);
-  // Key figures: at most 3, each with a name, role, Wikipedia article and a source.
-  warns("key figures missing", E(base(), (a) => { delete a.keyFigures; }), /no "keyFigures"/);
-  const fig = (i) => ({ name: `Figure ${i}`, role: "Founder", wikipedia: `https://en.wikipedia.org/wiki/Figure_${i}`, sources: ["s1"] });
-  ok("three key figures", E(base(), (a) => { a.keyFigures = [fig(1), fig(2), fig(3)]; }));
-  fails("four key figures", E(base(), (a) => { a.keyFigures = [fig(1), fig(2), fig(3), fig(4)]; }), /"keyFigures" must be a list of at most 3/);
-  fails("key figure without a role", E(base(), (a) => { a.keyFigures = [{ ...fig(1), role: "" }]; }), /keyFigures\[0\]: needs a name and a role/);
-  fails("key figure without a Wikipedia article", E(base(), (a) => { a.keyFigures = [{ ...fig(1), wikipedia: "https://example.org/x" }]; }), /keyFigures\[0\]: wikipedia must be an en\.wikipedia\.org article URL/);
-  fails("key figure without a source", E(base(), (a) => { a.keyFigures = [{ ...fig(1), sources: [] }]; }), /keyFigures\[0\]: needs at least one source/);
-  fails("key figure with an unknown source", E(base(), (a) => { a.keyFigures = [{ ...fig(1), sources: ["s9"] }]; }), /keyFigures\[0\]: unknown source 's9'/);
+  // Key figures: no limit, people only, each with a Wikipedia article URL when given (and a role and article in a pass).
+  ok("key figures left out", E(base(), (a) => { delete a.keyFigures; }));
+  const fig = () => ({ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" });
+  fails("key figures not a list", E(base(), (a) => { a.keyFigures = "Quentin Vexmoor"; }), /"keyFigures" must be a list/);
+  fails("key figure with a bad Wikipedia article", E(base(), (a) => { a.keyFigures = [{ ...fig(), wikipedia: "https://example.org/x" }]; }), /keyFigures\[0\]: wikipedia must be an en\.wikipedia\.org article URL/);
+  fails("organisation as a key figure", E(base(), (a) => { a.keyFigures = [{ organisation: "Vexmoor League", source: "s3", quote: "Quentin Vexmoor wrote its founding text" }]; }), /an organisation isn't a key figure/);
+  // Key works: a title with its evidence; "work" is the cited text itself, which the title then ties to the ideology.
+  const work = (extra = {}) => ({ title: "Founding Rescript", source: "s1", quote: "first in the Founding Rescript", ...extra });
+  const unnamed = (a) => { a.sources.push({ id: "s4", kind: "primary", evidence: "words", title: "Imperial edict", url: "https://example.org/unrelated" }); a.answers[A].sources.push("s4"); };
+  fails("primary text not tied", E(base(), unnamed), /source s4 \(primary\) doesn't name/);
+  ok("primary text tied by its key work title", E(base(), (a) => { unnamed(a); a.keyWorks = [work({ work: "s4" })]; }));
+  ok("key work not cited as a source", E(base(), (a) => { a.keyWorks = [work()]; }));
+  fails("key work quote not in the source", E(base(), (a) => { a.keyWorks = [work({ quote: "the Founding Rescript, a forgery" })]; }), /key work "Founding Rescript": the quote isn't in s1's saved copy/);
+  fails("key work whose work is unknown", E(base(), (a) => { a.keyWorks = [work({ work: "s9" })]; }), /keyWorks\[0\]: unknown source 's9'/);
+  fails("key work whose work is scholarship", E(base(), (a) => { a.keyWorks = [work({ work: "s3" })]; }), /keyWorks\[0\]: "work" must be the work itself/);
   // Missing statements: text, value, rationale, sources, and the rule of two quotes.
   warns("missing statements absent", E(base(), (a) => { delete a.missingStatements; }), /no "missingStatements"/);
   const ms = () => ({ text: "Workers should elect their managers.", value: 2, rationale: "The manifesto demands this in its second and fourth sections.", sources: ["s2"],
@@ -111,7 +117,7 @@ try {
   // Source check: defining sources must discuss the ideology; every source needs a saved copy.
   fails("defining source never names the ideology", E(base(), (a) => { a.sources[2].url = "https://example.org/unrelated"; }), /source s3 \(scholarly\) never names/);
   fails("defining source with no saved copy", E(base(), (a) => { a.sources[2].url = "https://example.org/not-saved"; }), /sources: s3 have no saved copy/);
-  // Aliases, authors and titles need evidence quoted from a saved source.
+  // Aliases, key figures and key works need evidence quoted from a saved source.
   fails("alias as a bare string", E(base(), (a) => { a.aliases = [`${N} Doctrine`]; }), /alias ".*" needs evidence/);
   fails("alias quote not in the source", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s1", quote: `${N}ists believe in ${N} entirely` }]; }), /the quote isn't in s1's saved copy|its quote doesn't contain it/);
   {
@@ -163,30 +169,30 @@ try {
     } finally { coatrack.setAliasPagesForTests(null); coatrack.setTranslationNamesForTests(null); }
   }
   fails("alias from a source not in the audit", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s9", quote: `${N}ists and ${N}` }]; }), /source "s9" is not in the audit/);
-  fails("author not named twice in the defining sources", E(base(), (a) => { a.authors = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /author "Imaginary Zorblatt"/);
-  fails("author without first and last", E(base(), (a) => { a.authors = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "first" and "last"/);
-  // A defining author belongs to one ideology; the one named after them (Vexmoorism) takes them from any other,
+  fails("key figure not named twice in the defining sources", E(base(), (a) => { a.keyFigures = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /key figure "Imaginary Zorblatt"/);
+  fails("key figure without first and last", E(base(), (a) => { a.keyFigures = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "first" and "last"/);
+  // A key figure belongs to one ideology; the one named after them (Vexmoorism) takes them from any other,
   // which is held to that from its next pass (its draft or --as-current list) and only warned while committed.
   {
     const vex = () => ({ first: "Quentin", last: "Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" });
-    const listedBy = (id, name, auditedAt) => coatrack.setProfilesForTests(new Map([[id, { name, auditedAt, authors: [vex()] }]]), {});
-    const withVex = (auditedAt) => E(base(), (a) => { a.authors = [vex()]; a.auditedAt = auditedAt; });
+    const listedBy = (id, name, auditedAt) => coatrack.setProfilesForTests(new Map([[id, { name, auditedAt, keyFigures: [vex()] }]]), {});
+    const withVex = (auditedAt) => E(base(), (a) => { a.keyFigures = [vex()]; a.auditedAt = auditedAt; });
     try {
       coatrack.setProfilesForTests(new Map(), {});
-      ok("defining author named twice", withVex("2026-11-07"));
+      ok("key figure named twice", withVex("2026-11-07"));
       listedBy("other-ideology", "Other ideology", "2026-11-01");
-      fails("defining author of another ideology", withVex("2026-11-07"), /author "Quentin Vexmoor" is also a defining author of other-ideology/);
-      const authorProblems = (name) => coatrack.check(subject.id, { ...withVex("2026-11-07"), name }, { strict: true }).problems.filter((p) => /author "Quentin Vexmoor"/.test(p));
+      fails("key figure of another ideology", withVex("2026-11-07"), /key figure "Quentin Vexmoor" is also a key figure of other-ideology/);
+      const authorProblems = (name) => coatrack.check(subject.id, { ...withVex("2026-11-07"), name }, { strict: true }).problems.filter((p) => /key figure "Quentin Vexmoor"/.test(p));
       assert.deepStrictEqual(authorProblems("Vexmoorism"), [], "the namesake lists its author whatever other ideologies do"); n++;
       // A namesake reserves its author with a bare name until its next pass gives the quote.
-      coatrack.setProfilesForTests(new Map([["vexmoorism", { name: "Vexmoorism", auditedAt: "2026-10-16", authors: ["Quentin Vexmoor"] }]]), {});
+      coatrack.setProfilesForTests(new Map([["vexmoorism", { name: "Vexmoorism", auditedAt: "2026-10-16", keyFigures: ["Quentin Vexmoor"] }]]), {});
       ok("namesake took the author: no error on the committed audit", withVex("2026-11-12"));
-      warns("namesake took the author: a warning on the committed audit", withVex("2026-11-12"), /author "Quentin Vexmoor" belongs to vexmoorism/);
+      warns("namesake took the author: a warning on the committed audit", withVex("2026-11-12"), /key figure "Quentin Vexmoor" belongs to vexmoorism/);
       const inPass = coatrack.check(subject.id, withVex("2026-11-07"), { strict: true, pass: true });
-      assert.ok(inPass.problems.some((p) => /author "Quentin Vexmoor" belongs to vexmoorism/.test(p)), "a pass's draft must take the author out"); n++;
+      assert.ok(inPass.problems.some((p) => /key figure "Quentin Vexmoor" belongs to vexmoorism/.test(p)), "a pass's draft must take the author out"); n++;
       // An unaudited ideology named after the author's given name, in any word order, reserves them (audits/namesakes.json).
       coatrack.setProfilesForTests(new Map(), { quentinismo: "Vexmoor Quentin" });
-      warns("namesakes.json reserves the author for an unaudited eponym", withVex("2026-11-12"), /author "Quentin Vexmoor" belongs to quentinismo/);
+      warns("namesakes.json reserves the author for an unaudited eponym", withVex("2026-11-12"), /key figure "Quentin Vexmoor" belongs to quentinismo/);
       assert.ok(coatrack.isNamesake(vex(), "quentinismo", "Quentinismo") && !coatrack.isNamesake(vex(), "other-ideology", "Other ideology"), "namesakes.json decides the namesake"); n++;
       // The reserved person is matched by name in any order, or by surname and first initial; not another Vexmoor.
       coatrack.setProfilesForTests(new Map(), { quentinismo: "Quentin Vexmoor" });

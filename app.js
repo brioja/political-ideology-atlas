@@ -893,7 +893,7 @@ function showResults(shared = null) {
       ${beliefList(top)}
     </section>
 
-    ${keyFiguresSection(top)}
+    ${keyFiguresAndWorks(top)}
 
     <section>
       <h2>Why ${you_} matched</h2>
@@ -2017,18 +2017,25 @@ function personRow(p) { return `<li><a class="row-link" href="${personHref(p.id)
   ${p.similarity != null ? `<span class="mono small">${pct(p.similarity)}</span>` : `<span class="muted small row-region">${esc(p.region)}</span>`}
   <span class="arrow" aria-hidden="true">→</span></a></li>`; }
 
-// An ideology's key figures (from its audit). Someone with a page here links to it; anyone else
-// links to their Wikipedia article.
+// An ideology's key figures and key works (from its audit). Someone with a page here links to it; anyone else
+// links to their Wikipedia article. A work links to the copy its audit opened. A row with nowhere to go is plain.
 const sameArticle = (a, b) => !!a && !!b && decodeURIComponent(a) === decodeURIComponent(b);
-function keyFigureRow(f) {
-  const person = PEOPLE_LIST.find((p) => sameArticle(p.wikipedia, f.wikipedia));
-  const href = person ? personHref(person.id) : f.wikipedia;
-  return `<li><a class="row-link" href="${esc(href)}"${person ? "" : ` target="_blank" rel="noopener"`}>
-  <span class="match-name">${avatar(person || f)}<span class="stack-tight"><span>${esc(f.name)}</span><span class="muted small">${esc(f.role)}</span></span></span>
-  <span></span><span class="arrow" aria-hidden="true">${person ? "→" : "↗"}</span></a></li>`;
+function linkRow(href, internal, inner) {
+  return href
+    ? `<li><a class="row-link" href="${esc(href)}"${internal ? "" : ` target="_blank" rel="noopener"`}>${inner}<span></span><span class="arrow" aria-hidden="true">${internal ? "→" : "↗"}</span></a></li>`
+    : `<li><div class="row-link row-static">${inner}<span></span><span></span></div></li>`;
 }
-const keyFiguresSection = (ideo) => ideo.keyFigures && ideo.keyFigures.length
-  ? `<section class="stack"><h2>Key figures</h2><ul class="matches">${ideo.keyFigures.map(keyFigureRow).join("")}</ul></section>` : "";
+function keyFigureRow(f) {
+  const person = f.wikipedia ? PEOPLE_LIST.find((p) => sameArticle(p.wikipedia, f.wikipedia)) : null;
+  return linkRow(person ? personHref(person.id) : f.wikipedia, !!person,
+    `<span class="match-name">${avatar(person || f)}<span class="stack-tight"><span>${esc(f.name)}</span>${f.role ? `<span class="muted small">${esc(f.role)}</span>` : ""}</span></span>`);
+}
+const keyWorkRow = (w) => linkRow(w.url, false,
+  `<span class="match-name"><span class="stack-tight"><span>${esc(w.title)}</span>${w.author ? `<span class="muted small">${esc(w.author)}</span>` : ""}</span></span>`);
+const keyFiguresAndWorks = (ideo) => (ideo.keyFigures && ideo.keyFigures.length
+  ? `<section class="stack"><h2>Key figures</h2><ul class="matches">${ideo.keyFigures.map(keyFigureRow).join("")}</ul></section>` : "")
+  + (ideo.keyWorks && ideo.keyWorks.length
+  ? `<section class="stack"><h2>Key works</h2><ul class="matches">${ideo.keyWorks.map(keyWorkRow).join("")}</ul></section>` : "");
 
 function yourMatchLine(value, name) {
   return value == null ? "" : `<p class="your-match">Your answers match ${esc(name)} <strong>${pct(value)}</strong>. <a href="#/results">Back to your results</a></p>`;
@@ -2051,7 +2058,7 @@ function renderIdeologyPage(id) {
         ${yourMatchLine(yours, ideo.name)}
       </div>
       <section class="stack"><h2>What it stands for</h2>${beliefList(ideo, 6)}</section>
-      ${keyFiguresSection(ideo)}
+      ${keyFiguresAndWorks(ideo)}
       <section class="stack"><h2>Where it sits</h2>${lineStrips(ideo.scores, { selfId: ideo.id, spread: lineSpread(model, ideo), more: true })}</section>
       <section class="stack"><h2>Closest ideologies</h2><ul class="matches">${neighbors.map(ideologyRow).join("")}</ul></section>
       ${people.length ? `<section class="stack"><h2>People closest to it</h2><ul class="matches">${people.map(personRow).join("")}</ul></section>` : ""}

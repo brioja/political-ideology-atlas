@@ -106,17 +106,15 @@ const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.lengt
   return /(isms?|ists?|ians?)$/.test(w[0]) || (w[0].length >= 3 && flat.startsWith(w[0])) || (w[0].length >= 5 && flat.slice(0, 4) === w[0].slice(0, 4)); };
 
 // Every ideology audit's name and aliases, normalized, for the uniqueness check.
-// An alias, author or extra title is a string (older audits) or carries its evidence:
-// { "name" | "title": "...", "source": "s3", "quote": "verbatim passage from that source" }.
+// An alias, key figure or key work is a string (older audits) or carries its evidence:
+// { "name" | "first" and "last" | "title": "...", "source": "s3", "quote": "verbatim passage from that source" }.
 const entryName = (x) => (typeof x === "string" ? x : x && typeof x === "object"
   ? x.name || x.title || x.organisation || [x.first, x.last].filter(Boolean).join(" ") : "");
-// The name a defining author is matched by: a person's last name ("last": "de Benoist", "bin Laden"),
-// an organisation's full name. Older entries are a single string: its last word, or the whole string
-// for an organisation (four words or more).
+// The name a key figure is matched by: their last name ("last": "de Benoist", "bin Laden").
 const authorKey = (x) => {
-  if (x && typeof x === "object" && (x.last || x.organisation)) return norm(x.last || x.organisation);
-  const n = entryName(x).trim(), w = n.split(/\s+/);
-  return norm(w.length >= 4 ? n : w[w.length - 1]);
+  if (x && typeof x === "object" && x.last) return norm(x.last);
+  const w = entryName(x).trim().split(/\s+/);
+  return norm(w[w.length - 1]);
 };
 const list = (v) => (Array.isArray(v) ? v : []).map(entryName).filter((n) => n && n.trim());
 
@@ -165,19 +163,19 @@ function namesTaken() {
 }
 
 let takenAuthors = null, committed = null, reserved = null;
-// The committed ideology audits' names, dates and authors (tests pass their own list).
+// The committed ideology audits' names, dates and key figures (tests pass their own list).
 function profiles() {
   if (committed) return committed;
   committed = new Map();
   for (const f of fs.readdirSync(lib.PROFILES_DIR)) {
     if (!f.endsWith(".json")) continue;
     let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
-    committed.set(f.slice(0, -5), { name: a.name, auditedAt: a.auditedAt, authors: a.authors });
+    committed.set(f.slice(0, -5), { name: a.name, auditedAt: a.auditedAt, keyFigures: a.keyFigures });
   }
   return committed;
 }
 // The person each eponymous catalog ideology is named after, audited or not (audits/namesakes.json). The
-// ideology reserves them as its defining author, so no other audit lists them only to lose them later
+// ideology reserves them as its key figure, so no other audit lists them only to lose them later
 // (Brandon, 2026-11-21). Tests pass their own.
 function namesakes() {
   if (reserved) return reserved;
@@ -187,11 +185,11 @@ function namesakes() {
 function setProfilesForTests(map, names = null) { committed = map; reserved = names; takenAuthors = null; }
 // A person's name with its words in any order ("Mao Zedong", "Zedong Mao").
 const personKey = (s) => norm(s).trim().split(" ").sort().join(" ");
-// The audits that list each defining author.
+// The audits that list each key figure.
 function authorsTaken() {
   if (takenAuthors) return takenAuthors;
   takenAuthors = new Map();
-  for (const [id, a] of profiles()) for (const au of list(a.authors)) {
+  for (const [id, a] of profiles()) for (const au of list(a.keyFigures)) {
     const k = personKey(au); if (!takenAuthors.has(k)) takenAuthors.set(k, new Set()); takenAuthors.get(k).add(id);
   }
   return takenAuthors;
@@ -208,7 +206,7 @@ const samePerson = (x, person) => {
   if ([ga, gb].some((g) => g && /^[ivxl]+$/.test(g)) || (ga && gb && ga !== gb)) return false;
   return a.length >= 2 && b.length >= 2 && a[a.length - 1] === b[b.length - 1] && a[0][0] === b[0][0];
 };
-// The ideology named after a person, which takes them as a defining author before any other (Brandon,
+// The ideology named after a person, which takes them as a key figure before any other (Brandon,
 // 2026-11-21: democratic centralism had listed Lenin first, so Leninism couldn't): one word, the surname
 // (a final "e" dropped: de Gaulle, Gaullism) plus "-ism" or "-ianism". Stricter than isEponym, which also
 // matches first names and word beginnings (Otto Bauer and Ottomanism, Mill and Millenarianism). A bare name
@@ -330,11 +328,12 @@ const isEponym = (x, name) => {
   return [x.last, x.first].filter(Boolean).map((w) => norm(w).trim().replace(/ /g, "")).some((w) => w.length >= 3 && n.slice(0, Math.min(5, w.length)) === w.slice(0, Math.min(5, w.length)));
 };
 
-// Evidence for an alias, author or title: the cited source is in the audit, its saved copy contains the
+// Evidence for an alias, key figure or key work: the cited source is in the audit, its saved copy contains the
 // quote, and the quote contains the name (in one of its forms). `strict` audits must give evidence.
 function evidence(id, audit, field, x, strict, contains) {
   const label = `${field} "${entryName(x)}"`;
-  if (typeof x === "string") return strict ? [`${label} needs evidence: { "${field === "title" ? "title" : "name"}", "source", "quote" }`] : [];
+  // A bare name (older audits: a string, or a key figure moved over from "authors" with only a role and article).
+  if (typeof x === "string" || (x && typeof x === "object" && x.source === undefined && x.quote === undefined)) return strict ? [`${label} needs evidence: { ${field === "key work" ? "\"title\"" : field === "key figure" ? "\"first\", \"last\"" : "\"name\""}, "source", "quote" }`] : [];
   const src = (audit.sources || []).find((s) => s.id === x.source);
   if (!src) return [`${label}: source "${x.source}" is not in the audit`];
   if (typeof x.quote !== "string" || x.quote.trim().length < 10) return [`${label}: needs a verbatim "quote" from ${x.source}`];
@@ -354,10 +353,8 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // position, so the check skips it.
   const citedNow = new Set([
     ...Object.values(full.answers || {}).flatMap((x) => (x && x.value !== null && Array.isArray(x.sources) ? x.sources : [])),
-    ...(Array.isArray(full.keyFigures) ? full.keyFigures : []).flatMap((f) => f.sources || []),
     ...(Array.isArray(full.missingStatements) ? full.missingStatements : []).flatMap((m) => [...(m.sources || []), ...(m.quotes || []).map((q) => q.source)]),
-    ...[...(Array.isArray(full.aliases) ? full.aliases : []), ...(Array.isArray(full.authors) ? full.authors : [])].map((x) => x && x.source),
-    ...(Array.isArray(full.sources) ? full.sources : []).flatMap((s) => (s.titles || []).map((t) => t && t.source)),
+    ...["aliases", "keyFigures", "keyWorks"].flatMap((k) => (Array.isArray(full[k]) ? full[k] : []).flatMap((x) => (x ? [x.source, x.work] : []))),
   ].filter(Boolean));
   const historyOnly = new Set(Object.values(full.answers || {}).flatMap((x) => (x && Array.isArray(x.reviewHistory) ? x.reviewHistory : []))
     .flatMap((e) => (e && Array.isArray(e.sources) ? e.sources : [])).filter((sid) => !citedNow.has(sid)));
@@ -404,16 +401,17 @@ function check(id, full, { strict = false, pass = false } = {}) {
       problems.push(`alias "${al}": its quote doesn't name "${audit.name}" and the alias as separate phrases, so it doesn't show the source equating them`);
     if (isSupported(x) || isSpellingAlias(x)) { const pr = aliasPageProblem(id, al); if (pr) problems.push(pr); }
   }
-  for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
+  for (const x of Array.isArray(audit.keyFigures) ? audit.keyFigures : []) {
     const key = authorKey(x);
-    if (strict && typeof x === "object" && !x.organisation && !(x.first && x.last)) problems.push(`author "${entryName(x)}" needs "first" and "last" (or "organisation")`);
-    problems.push(...evidence(id, audit, "author", x, strict, (q) => q.includes(key)));
+    if (x && typeof x === "object" && x.organisation) { problems.push(`key figure "${x.organisation}": an organisation isn't a key figure; list its texts in "keyWorks"`); continue; }
+    if (strict && typeof x === "object" && !(x.first && x.last)) problems.push(`key figure "${entryName(x)}" needs "first" and "last"`);
+    problems.push(...evidence(id, audit, "key figure", x, strict, (q) => q.includes(key)));
   }
-  for (const src of audit.sources || []) for (const x of Array.isArray(src.titles) ? src.titles : []) {
-    problems.push(...evidence(id, audit, "title", x, strict, (q) => q.includes(norm(entryName(x)))));
+  for (const x of Array.isArray(audit.keyWorks) ? audit.keyWorks : []) {
+    problems.push(...evidence(id, audit, "key work", x, strict, (q) => q.includes(norm(entryName(x)))));
   }
-  // Eponymous authors' names count as names of the ideology (as its last name: "Klaus", "Bukharin").
-  const eponyms = (Array.isArray(audit.authors) ? audit.authors : []).filter((x) => isEponym(x, audit.name)).map((x) => x.last || x.first);
+  // Eponymous key figures' names count as names of the ideology (as its last name: "Klaus", "Bukharin").
+  const eponyms = (Array.isArray(audit.keyFigures) ? audit.keyFigures : []).filter((x) => isEponym(x, audit.name)).map((x) => x.last || x.first);
   const aliases = [...list(audit.aliases), ...eponyms];
   for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, a coined word, or a spelling variant of the name)`);
   // Uniqueness. An ideology's own name is never another's alias. An alias two ideologies claim belongs
@@ -478,15 +476,15 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // sources that discuss the ideology (defining sources, and primary texts that passed on their own;
   // never Wikipedia) name it by title twice between them. One mention may be in passing; a source
   // that never names the ideology can't vouch for a text (the World communism case).
-  // Defining authors ("authors"): the ideology's own thinkers, as its defining sources name them. Each
+  // Key figures ("keyFigures"): the ideology's own thinkers, as its defining sources name them. Each
   // must be named (by surname) at least twice in the defining sources and belong to no other
-  // ideology's "authors". A primary text by one of them is tied to the ideology.
+  // ideology's "keyFigures". A primary text by one of them is tied to the ideology.
   // Settled, don't reopen (Brandon, 2026-11-21): this ties every text of a listed author, including works
   // outside the ideology. Across all audits 208 texts are tied only this way; outside ideologies named after
   // a person, 181 of them aren't named by title in the defining sources, so no narrower tie a script can
   // check would separate off-topic texts from the author's core ones. Whether a text speaks for the ideology
   // is the auditor's call in each pass; no rule for it.
-  const authorEntries = (Array.isArray(audit.authors) ? audit.authors : []).filter((x) => entryName(x).trim());
+  const authorEntries = (Array.isArray(audit.keyFigures) ? audit.keyFigures : []).filter((x) => entryName(x).trim() && !(x && x.organisation));
   const authorOk = [];
   for (const x of authorEntries) {
     const au = entryName(x), sur = authorKey(x);
@@ -498,12 +496,12 @@ function check(id, full, { strict = false, pass = false } = {}) {
     // between its own passes (Brandon, 2026-11-21: eponyms took their authors before their next passes).
     if ((others.length || reserving.length) && !isNamesake(x, id, audit.name)) {
       const owner = reserving[0] || others.find((o) => isNamesake(x, o, ideologyName(o)));
-      if (!owner) { problems.push(`author "${au}" is also a defining author of ${others.join(", ")}`); continue; }
-      const msg = `author "${au}" belongs to ${owner}, the ideology named after them, which reserves them: take them out of "authors" and tie their texts here another way (by title, in the source's "titles")`;
+      if (!owner) { problems.push(`key figure "${au}" is also a key figure of ${others.join(", ")}`); continue; }
+      const msg = `key figure "${au}" belongs to ${owner}, the ideology named after them, which reserves them: take them out of "keyFigures" and tie their texts here another way (by title, in "keyWorks")`;
       if (pass) { problems.push(msg); continue; }
       warnings.push(msg);
     }
-    if (count(defining.join(" "), [sur]) < 2) { problems.push(`author "${au}" is named fewer than twice in the defining sources`); continue; }
+    if (count(defining.join(" "), [sur]) < 2) { problems.push(`key figure "${au}" is named fewer than twice in the defining sources`); continue; }
     authorOk.push(sur);
   }
   const primaries = sources.filter((s) => s.kind === "primary" || s.kind === "program");
@@ -515,20 +513,22 @@ function check(id, full, { strict = false, pass = false } = {}) {
     pending.push({ s, t });
   }
   for (const { s, t } of pending) {
-    // Other titles the sources that discuss the ideology use for the text ("titles": ["Hatt-ı Hümayun"]).
-    const heads = [...titleHeads(s.title), ...list(s.titles).map(norm).filter((h) => h.trim().split(" ").length >= 2)];
+    // The titles the sources that discuss the ideology use for the text: its key works ("keyWorks") whose "work" is it
+    // ("Hatt-ı Hümayun" for the Rescript of Reform).
+    const titles = (Array.isArray(audit.keyWorks) ? audit.keyWorks : []).filter((w) => w && w.work === s.id);
+    const heads = [...titleHeads(s.title), ...list(titles).map(norm).filter((h) => h.trim().split(" ").length >= 2)];
     const own = t || "";
     const others = vouching.filter((v) => v !== own).join(" ");
     const named = heads.some((h) => count(others, [h]) >= 2);
     if (named) continue;
-    // A defining author's text: its author is one the audit lists in "authors" (see below).
+    // A key figure's text: its author is one the audit lists in "keyFigures" (see above).
     if (authorOk.length && s.author && authorOk.some((sur) => norm(s.author).includes(sur))) continue;
     // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
     // makes an unchecked source an error for them.
     if (t == null) { unchecked.push(s.id); continue; }
     // The message names all three ways to tie a primary text, each with its evidence (audits/PROMPT.md);
     // Brandon, 2026-11-21.
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of three ways, each with a quote, as audits/PROMPT.md says: the title those sources use for it (in the source's "titles"); another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}); or its author, if the defining sources present the ideology as that person's body of thought and name them at least twice (in "authors")${citedBy(s.id)}`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of three ways, each with a quote, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}"); another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}); or its author, if the defining sources present the ideology as that person's body of thought and name them at least twice (in "keyFigures")${citedBy(s.id)}`);
   }
   return { problems, unchecked, warnings };
 }

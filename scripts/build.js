@@ -86,7 +86,12 @@ function classify(judge = null) {
       image: require("./lib").shippedImage("ideologies", entry),
       wikipedia: "wikipedia" in a ? a.wikipedia : entry.wikipediaMatch === "exact" ? entry.wikipedia : null,
       furtherReading: a.furtherReading || [],
-      keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
+      // Its key figures and key works (audits/PROMPT.md); a work cited as a source links to the copy the audit opened.
+      keyFigures: (a.keyFigures || []).map((f) => ({ name: [f.first, f.last].filter(Boolean).join(" "), role: f.role, wikipedia: f.wikipedia })),
+      keyWorks: (a.keyWorks || []).map((w) => {
+        const s = (a.sources || []).find((x) => x.id === w.work);
+        return { title: w.title, author: s ? s.author : undefined, url: s ? s.url : undefined };
+      }),
       aliases: searchNames(entry, a),
       profile: ideologyProfile(a, statements),
     });

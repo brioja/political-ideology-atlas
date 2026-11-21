@@ -102,7 +102,7 @@ const nav = (section, label) => `<p class="small"><a href="/">${SITE_NAME}</a> Â
 function ideologyBody(ideo) {
   const neighbors = ctx.match(model, ideo.profile).ranked.filter((r) => r.id !== ideo.id).slice(0, 5);
   const closest = people.length ? ctx.matchPeople(model, ideo.profile, people).slice(0, 5) : [];
-  const figures = ideo.keyFigures || [];
+  const figures = ideo.keyFigures || [], works = ideo.keyWorks || [];
   return `${nav("ideologies", "All ideologies")}
     <h1>${esc(ideo.name)}</h1>
     ${figure(ideo, `Image for ${ideo.name}`)}
@@ -110,6 +110,7 @@ function ideologyBody(ideo) {
     ${ideo.wikipedia ? `<p class="small"><a href="${esc(ideo.wikipedia)}">Wikipedia</a></p>` : ""}
     <h2>What it stands for</h2>${beliefs(ideo, 6)}
     ${figures.length ? `<h2>Key figures</h2><ul>${figures.map((f) => `<li>${esc(f.name)}${f.role ? `: ${esc(f.role)}` : ""}</li>`).join("")}</ul>` : ""}
+    ${works.length ? `<h2>Key works</h2><ul>${works.map((w) => `<li>${w.url ? `<a href="${esc(w.url)}">${esc(w.title)}</a>` : esc(w.title)}${w.author ? `, ${esc(w.author)}` : ""}</li>`).join("")}</ul>` : ""}
     <h2>Closest ideologies</h2>${ideologyLinks(neighbors)}
     ${closest.length ? `<h2>People closest to it</h2>${personLinks(closest)}` : ""}
     <h2>Key positions</h2>${positions(ideo.profile)}`;
