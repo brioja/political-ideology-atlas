@@ -29,6 +29,8 @@ which id you took, so the two sessions never work on the same subject.
    from the committed file and follow `audits/AUDIT_RULES.md` section 6 (reviewHistory, `passes`,
    your model in `auditor`), never rewrite it from scratch. `auditor` is your full model id
    (e.g. `gpt-6.1-sol`, `claude-opus-5-5`), not a family name.
+   The driver's first message lists what the committed audit fails under today's rules
+   (`node scripts/validate.js [--people] --as-current <id>`): fix each in your draft.
 3. Sources go in `scratchpad/sources/<id>/`; helper scripts in `scratchpad/<lane>-<id>/`.
 4. Write the audit to `scratchpad/lane-out/<lane>/<id>.json`, never into `audits/`: the integrator's
    build would pick up a file there before it is reviewed. Validate it there:

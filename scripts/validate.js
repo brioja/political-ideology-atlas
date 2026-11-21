@@ -7,12 +7,16 @@
 //   add --dir <folder> to read the audits from that folder instead (a lane's drafts, audits/PROMPT_LANE.md)
 //   add --no-uncertainty to skip the uncertainty rule (whether the audit places them on every
 //   dividing line; it loads the whole model: slow).
+//   add --as-current to check an audit as if it were written under today's rules (every rules-gated and strict
+//   check, statements it has no answer for in one line): what its next pass has to fix. scripts/lane.js puts this in
+//   a later pass's first prompt (Brandon, 2026-11-21: "run validate at the start of an audit").
 const fs = require("fs");
 const lib = require("./lib");
 const { readJson, allStatements, isCandidate, personUncertainty, ideologyUncertainty } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
 const UNCERTAINTY = !process.argv.includes("--no-uncertainty");
+const AS_CURRENT = process.argv.includes("--as-current");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
 const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : lib.catalog;
 const DIR = process.argv.includes("--dir") ? process.argv[process.argv.indexOf("--dir") + 1] : null;
@@ -148,6 +152,7 @@ function validate(id) {
   if (!fs.existsSync(p)) return { errors: [`missing ${p}`], warnings };
   let a;
   try { a = readJson(p); } catch (e) { return { errors: [`invalid JSON: ${e.message}`], warnings }; }
+  if (AS_CURRENT) a = { ...a, rules: CURRENT_RULES };
 
   const entry = catalog().find((c) => c.id === id);
   if (!entry) errors.push(`id '${id}' is not in audits/catalog.json`);
@@ -224,10 +229,10 @@ function validate(id) {
   if (!PEOPLE) {
     // Audits committed before the check (480478e1) only get warnings (adding aliases to one later
     // doesn't change that); every audit written after it, or dated 2026-11-06 on, is held to it.
-    const strict = (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
+    const strict = AS_CURRENT || (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
     // Evidence for aliases, authors and titles is required from 2026-11-06 on (older audits get it at their next pass).
-    const { problems, unchecked } = require("./coatrack-check").check(id, a, { strict: (a.auditedAt || "") >= "2026-11-06" });
+    const { problems, unchecked } = require("./coatrack-check").check(id, a, { strict: AS_CURRENT || (a.auditedAt || "") >= "2026-11-06" });
     const out = strict ? errors : warnings;
     for (const pr of problems) out.push(`sources: ${pr}`);
     if (unchecked.length) out.push(`sources: ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
@@ -259,11 +264,12 @@ function validate(id) {
   const retiredRe = lib.retiredRe();
   const named = retiredRe ? [...new Set(JSON.stringify(a).match(retiredRe) || [])] : [];
   if (named.length) errors.push(`names statements no longer in the bank: ${named.join(", ")}; a dropped statement leaves no trace in an audit, so remove each mention (a list item, or the clause about it)`);
+  const unansweredIds = [];
   for (const st of statements) {
     const ans = answers[st.id];
     // Every statement in the bank gets an answer, candidate or active: promotion only decides what the
     // matching uses, never whether an audit is complete (Brandon, 2026-11-18).
-    if (!ans) { errors.push(`no answer for '${st.id}'`); continue; }
+    if (!ans) { if (AS_CURRENT) unansweredIds.push(st.id); else errors.push(`no answer for '${st.id}'`); continue; }
     // "No known position" (null) needs a reason; for an ideology, that its sources record none
     // (audits/PROMPT.md), at low confidence.
     if (ans.value === null) {
@@ -277,6 +283,7 @@ function validate(id) {
     if (!Array.isArray(ans.sources) || ans.sources.length === 0) errors.push(`${st.id}: cite at least one source`);
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
   }
+  if (unansweredIds.length) errors.push(`${unansweredIds.length} statements have no answer yet (added since this audit); a pass answers every statement`);
   // A high-confidence answer rests on what a source says about that statement, so its rationale
   // can't be one stock phrase shared with other high answers (lower the confidence instead).
   const highs = new Map();

@@ -91,7 +91,19 @@ function nextSubject() {
 
 // ---- sessions ----
 const COLOR = (id) => PEOPLE ? "" : ` If audits/ideology-colors.json has no entry for \`${id}\`, write one to scratchpad/lane-out/${LANE}/${id}.color.json following CONTRIBUTING.md "Ideology colors" (the format of that file's entries).`;
-const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Then add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.`;
+// A later pass with no draft yet starts from what the committed audit fails under today's rules (validate.js
+// --as-current), so the session knows which answers and sources to fix before it researches (Brandon, 2026-11-21:
+// "run validate at the start of an audit"; it learned them only when validating its finished draft).
+function laterPassProblems(id) {
+  const committed = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
+  if (fs.existsSync(draft(id)) || !fs.existsSync(committed)) return "";
+  const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--no-uncertainty", id]);
+  const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`);
+  if (!lines.length) return "";
+  log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
+  return `\n\nThis is a later pass. The committed audit, checked under today's rules (\`node scripts/validate.js ${flag}--as-current ${id}\`), has these problems; fix each in your draft:\n${lines.join("\n")}`;
+}
+const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Then add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.${laterPassProblems(id)}`;
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its line in scratchpad/lane-out/${LANE}/DONE.txt.`;
 const FIX = (id, errors) => `Integration found these validator errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
