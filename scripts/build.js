@@ -64,6 +64,7 @@ function classify(judge = null) {
   for (const entry of catalog()) {
     if (require("./lib").duplicateOf(entry.id)) { duplicates.push(entry.id); continue; } // another entry owns its article
     if (!require("./lib").notable(entry.id)) { notNotable.push(entry.id); continue; } // no Wikipedia article of its own
+    if (require("./lib").personViews(entry)) { notIdeology.push(entry.id); continue; } // one person's views: PERSON, by title
     const p = profilePath(entry.id);
     if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
     const a = readJson(p);

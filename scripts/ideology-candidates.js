@@ -99,7 +99,7 @@ const GROUP_BOX = /party|organi[sz]ation|militant|movement/;
 const wikiLib = require("./wiki");
 async function linkedArticles() {
   const excluded = (id) => fs.existsSync(lib.profilePath(id)) && readJson(lib.profilePath(id)).notIdeasOfWhatSocietyShouldBe;
-  const seeds = lib.catalog().filter((e) => lib.articleTitle(e) && !excluded(e.id));
+  const seeds = lib.catalog().filter((e) => lib.articleTitle(e) && !excluded(e.id) && !lib.personViews(e));
   const found = new Map(); // canonical title -> { title, boxes, disambig, via }
   const collect = async (links) => {
     const get = await wikiLib.pageInfo(links.map((l) => l.title));

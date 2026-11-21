@@ -69,7 +69,7 @@ function olderRules() {
   for (const kind of ["person", "ideology"]) {
     if (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY) continue;
     for (const entry of kind === "person" ? peopleCatalog() : catalog()) {
-      if (SKIP.has(entry.id) || (kind === "ideology" && (lib.duplicateOf(entry.id) || !lib.notable(entry.id)))) continue;
+      if (SKIP.has(entry.id) || (kind === "ideology" && (lib.duplicateOf(entry.id) || !lib.notable(entry.id) || lib.personViews(entry)))) continue;
       const f = kind === "person" ? lib.personPath(entry.id) : lib.profilePath(entry.id);
       if (!fs.existsSync(f)) continue;
       const a = readJson(f);

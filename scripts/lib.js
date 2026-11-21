@@ -54,6 +54,12 @@ const fetchArticle = async (e) => { const t = articleTitle(e); return t ? htmlOf
 // Other names for an entry's article: redirects Wikipedia files as another name for it (resolve-articles.js).
 const wikipediaOtherNames = (id) => { const a = wikipediaArticles()[id]; return (a && a.otherNames) || []; };
 const notable = (id) => { const a = wikipediaArticles()[id]; return !a || a.notable; };
+// An entry on one person's views, by its title ("Political positions of …", "Religious views of …"): that person's
+// views, not a set of ideas, so not an ideology (notIdeasOfWhatSocietyShouldBe reason PERSON), marked by this rule
+// without an audit. The people side audits the person. An ideology named after them (Trumpism) is tied to the
+// person but isn't them, and is audited (Brandon, 2026-11-21).
+const PERSON_VIEWS = /^(Political|Religious) (positions|views|philosophy) of /;
+const personViews = (e) => PERSON_VIEWS.test(e.name);
 const articleKey = (e) => {
   const a = wikipediaArticles()[e.id];
   if (a && a.title) return a.title.toLowerCase();
@@ -356,6 +362,6 @@ function answersTo(id) {
   return out;
 }
 
-module.exports = { slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
+module.exports = { slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, personViews, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

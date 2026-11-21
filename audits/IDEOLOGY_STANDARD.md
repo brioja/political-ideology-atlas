@@ -50,7 +50,10 @@ The audit (`audits/PROMPT.md`) records `notIdeasOfWhatSocietyShouldBe` instead o
 
 - **something that has ideas but isn't a set of ideas:** a person, party, organization, state,
   government body (not a form of government) or event (`notIdeasOfWhatSocietyShouldBe.reason` PERSON, PARTY,
-  ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT); or
+  ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT). An entry on one person's views ("Political positions of …",
+  "Political views of …", "Political philosophy of …", "Religious views of …") is PERSON by its title, checked
+  in code (`scripts/lib.js` personViews) without an audit: the people side audits that person. An ideology named
+  after them (Trumpism) is tied to the person but isn't them, and is audited (Brandon, 2026-11-21); or
 - **not political ideas of what society should be** (DOES_NOT_INCLUDE_IDEAS; "should be" is the test, a worked-out "how" isn't needed, Brandon 2026-11-20): its content holds none,
   shown by trying: the agent looked for answers to the statements in its sources and found fewer than two
   (Brandon, 2026-11-14), and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".

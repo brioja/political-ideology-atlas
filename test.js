@@ -62,6 +62,8 @@ for (const s of allStatements()) {
   const nnAudits = lib.catalog().filter((e) => !lib.notable(e.id) && require("fs").existsSync(lib.profilePath(e.id))
     && !lib.readJson(lib.profilePath(e.id)).notIdeasOfWhatSocietyShouldBe).map((e) => e.id);
   assert(!nnAudits.length, `audits exist for entries with no Wikipedia article of their own: ${nnAudits.join(", ")}`);
+  const pvAudits = lib.catalog().filter((e) => lib.personViews(e) && require("fs").existsSync(lib.profilePath(e.id))).map((e) => e.id);
+  assert(!pvAudits.length, `audits exist for entries on one person's views, which are not ideologies by their title (PERSON, scripts/lib.js personViews): ${pvAudits.join(", ")}`);
 }
 // 1c. An audit that misses an active statement (promoted after it was written) is kept, with that
 // answer counted as null (scripts/lib.js ideologyProfile; Brandon, 2026-11-05).
