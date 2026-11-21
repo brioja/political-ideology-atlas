@@ -149,12 +149,6 @@ async function main() {
   }
   found.sort((a, b) => b.views12m - a.views12m);
 
-  // Wikipedia titles positions on the spectrum as "Far-right politics", "Left-wing politics": the
-  // word places the article among all of politics, which this atlas already is. Name them as nouns
-  // ("Far right", "Left wing", "Centre-left"); "Green politics" stays, as "Green" alone is a colour.
-  const displayName = (t) => t.replace(/^(Far|Centre)-(left|right) politics$/, (_, a, b) => (a === "Far" ? `Far ${b}` : `Centre-${b}`))
-    .replace(/^(Left|Right)-wing politics$/, "$1 wing");
-
   // Neither source is strict, so the catalog is their union: every current entry with its own
   // Wikipedia article stays, and listed ideologies are added unless an entry already points at the
   // same article (whatever its name). An entry whose link is only a search hit (wikipedia.js) or
@@ -174,7 +168,9 @@ async function main() {
   const added = found.filter((f) => !covered.has(key(f.title)));
   const ids = new Set(current.map((e) => e.id));
   const entries = added.map((f) => {
-    const name = displayName(f.title.replace(/\s*\(.*?\)\s*$/, ""));
+    // The article's own title, disambiguator included (test.js): the bare name often redirects elsewhere
+    // ("Black Codes (United States)": "Black Codes" lands on Black Code), and an entry stands on its title.
+    const name = f.title;
     let id = slug(name);
     for (let n = 2; ids.has(id); n++) id = `${slug(name)}-${n}`;
     ids.add(id);

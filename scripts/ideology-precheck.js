@@ -67,11 +67,16 @@ function ask(text) {
         const r = JSON.parse(out);
         const m = String(r.result || "").match(/\{[\s\S]*\}/);
         if (!m) throw new Error(`no JSON in reply: ${String(r.result).slice(0, 200)}`);
-        const v = JSON.parse(m[0]);
-        // A "yes" carries no reason (Haiku sometimes puts its sentence there); a "no" needs one of the listed reasons.
+        let v; try { v = JSON.parse(m[0]); } catch (e) { throw new Error(`${e.message}: ${m[0].slice(0, 200)}`); }
+        // A "yes" carries no reason (Haiku sometimes puts its sentence there). A "no" whose reason isn't one of the
+        // listed ones stands as a "no" with no reason: only the answer decides, and Haiku's own label is kept in "why".
         if (typeof v.why !== "string" && v.answer === "yes") v.why = v.reason;
         if (v.answer === "yes") v.reason = null;
-        if (!["yes", "no"].includes(v.answer) || (v.answer === "no" && !REASONS.includes(v.reason)) || typeof v.why !== "string")
+        if (v.answer === "no" && !REASONS.includes(v.reason)) {
+          v.why = [v.reason, v.why].filter((x) => typeof x === "string" && x && x !== "placeholder").join(": ") || null;
+          v.reason = null;
+        }
+        if (!["yes", "no"].includes(v.answer) || typeof v.why !== "string")
           throw new Error(`bad answer: ${m[0].slice(0, 200)}`);
         resolve({ ...v, cost: r.total_cost_usd });
       } catch (e) { reject(new Error(`claude exit ${code}: ${e.message} ${err.slice(0, 300)}`)); }

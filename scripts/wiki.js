@@ -29,7 +29,10 @@ const lib = require("./lib");
 
 // lib.cachedJson waits out a 429 itself.
 const cached = (url) => lib.cachedJson(url);
-const titleOf = (s) => decodeURIComponent(String(s).replace(/^https?:\/\/en\.(m\.)?wikipedia\.org\/wiki\//, "").replace(/[#?].*$/, "")).replace(/_/g, " ");
+const decode = (s) => { try { return decodeURIComponent(s); } catch { return s; } }; // "3.5% rule" is a title, not an escape
+// A URL loses its query and fragment; a plain title keeps them ("What Is a Nation?").
+const titleOf = (s) => { const url = /^https?:\/\/en\.(m\.)?wikipedia\.org\/wiki\//.test(String(s));
+  return decode(url ? String(s).replace(/^https?:\/\/en\.(m\.)?wikipedia\.org\/wiki\//, "").replace(/[#?].*$/, "") : String(s)).replace(/_/g, " "); };
 const apiUrl = (params, host = "en.wikipedia.org") => `https://${host}/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
 
 async function parsed(title) {
