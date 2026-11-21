@@ -338,12 +338,14 @@ function check(id, full, { strict = false } = {}) {
   // Where a failing source is still cited: if nothing current should rest on it, citing it only in history is the fix.
   const citedBy = (sid) => use.now[sid] ? `; it is cited by ${[...use.now[sid]].slice(0, 4).join(", ")}${use.now[sid].size > 4 ? ` and ${use.now[sid].size - 4} more` : ""}: if none of these should rest on it, stop citing it there and keep it listed for the answer histories that cite it` : "";
   const sources = (Array.isArray(audit.sources) ? audit.sources : []).filter((s) => !(use.past.has(s.id) && !use.now[s.id]));
+  // A source may discuss the ideology under another name: an alias the audit doesn't list yet (Brandon, 2026-11-21).
+  const ALIAS_HINT = `; if it names the ideology another way, list that name in "aliases" with its reason (${ALIAS_REASONS.join(", ")}) and quote, as audits/PROMPT.md says`;
   const defining = [];
   for (const s of sources.filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !isWikipedia(s))) {
     const t = sourceText(id, s.url);
     if (t == null) { unchecked.push(s.id); continue; }
     if (mentions(t, names)) defining.push(t);
-    else problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology${citedBy(s.id)}`);
+    else problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology${ALIAS_HINT}${citedBy(s.id)}`);
   }
   // Primary texts. A text that names the ideology twice passes on its own. Any other passes if the
   // sources that discuss the ideology (defining sources, and primary texts that passed on their own;
@@ -381,7 +383,7 @@ function check(id, full, { strict = false } = {}) {
     // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
     // makes an unchecked source an error for them.
     if (t == null) { unchecked.push(s.id); continue; }
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology (cite its title as those sources name it)${citedBy(s.id)}`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology (cite its title as those sources name it)${ALIAS_HINT}${citedBy(s.id)}`);
   }
   return { problems, unchecked };
 }
