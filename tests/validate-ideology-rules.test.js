@@ -18,6 +18,7 @@ const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "validate-ideology-"
 const profilePath = lib.profilePath;
 lib.profilePath = (id) => (id === subject.id ? tmp : profilePath(id));
 const { validate, setCommittedForTests, CURRENT_RULES } = require("../scripts/validate");
+const coatrack = require("../scripts/coatrack-check");
 setCommittedForTests(() => null);
 
 // The saved source texts the coatrack check reads.
@@ -26,7 +27,7 @@ const N = subject.name;
 const TEXTS = {
   "https://example.org/encyclopedia": `${N} is a political doctrine. Its founders set out ${N} in several works.`,
   "https://example.org/manifesto": `The manifesto of ${N}. We hold that ${N} is the way forward for all.`,
-  "https://example.org/study": `A study of ${N} and its history, written for students of ${N}.`,
+  "https://example.org/study": `A study of ${N} and its history, written for students of ${N}. Quentin Vexmoor wrote its founding text; Vexmoor led it for years.`,
   "https://example.org/unrelated": "A text about something else entirely, with no mention of the subject.",
 };
 function writeLibrary() {
@@ -116,6 +117,25 @@ try {
   fails("alias from a source not in the audit", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s9", quote: `${N}ists and ${N}` }]; }), /source "s9" is not in the audit/);
   fails("author not named twice in the defining sources", E(base(), (a) => { a.authors = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /author "Imaginary Zorblatt"/);
   fails("author without first and last", E(base(), (a) => { a.authors = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "first" and "last"/);
+  // A defining author belongs to one ideology; the one named after them (Vexmoorism) takes them from any other,
+  // which is held to that from its next pass (an audit dated on or after the namesake's) and warned until then.
+  {
+    const vex = () => ({ first: "Quentin", last: "Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" });
+    const listedBy = (id, name, auditedAt) => coatrack.setProfilesForTests(new Map([[id, { name, auditedAt, authors: [vex()] }]]));
+    const withVex = (auditedAt) => E(base(), (a) => { a.authors = [vex()]; a.auditedAt = auditedAt; });
+    try {
+      coatrack.setProfilesForTests(new Map());
+      ok("defining author named twice", withVex("2026-11-07"));
+      listedBy("other-ideology", "Other ideology", "2026-11-01");
+      fails("defining author of another ideology", withVex("2026-11-07"), /author "Quentin Vexmoor" is also a defining author of other-ideology/);
+      const authorProblems = (name) => coatrack.check(subject.id, { ...withVex("2026-11-07"), name }, { strict: true }).problems.filter((p) => /author "Quentin Vexmoor"/.test(p));
+      assert.deepStrictEqual(authorProblems("Vexmoorism"), [], "the namesake lists its author whatever other ideologies do"); n++;
+      listedBy("vexmoorism", "Vexmoorism", "2026-11-10");
+      ok("namesake took the author after this audit: no error yet", withVex("2026-11-07"));
+      warns("namesake took the author after this audit: a warning", withVex("2026-11-07"), /author "Quentin Vexmoor" belongs to vexmoorism/);
+      fails("namesake took the author before this pass", withVex("2026-11-12"), /author "Quentin Vexmoor" belongs to vexmoorism/);
+    } finally { coatrack.setProfilesForTests(null); }
+  }
   // A source cited only on talk pages (reviewHistory) or as a nulling's reason documents what was replaced: the
   // tie check skips it. The same source behind a stated answer is still checked.
   {

@@ -232,9 +232,11 @@ function validate(id) {
     const strict = AS_CURRENT || (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
     // Evidence for aliases, authors and titles is required from 2026-11-06 on (older audits get it at their next pass).
-    const { problems, unchecked } = require("./coatrack-check").check(id, a, { strict: AS_CURRENT || (a.auditedAt || "") >= "2026-11-06" });
+    const coatrack = require("./coatrack-check").check(id, a, { strict: AS_CURRENT || (a.auditedAt || "") >= "2026-11-06", asCurrent: AS_CURRENT });
+    const { problems, unchecked } = coatrack;
     const out = strict ? errors : warnings;
     for (const pr of problems) out.push(`sources: ${pr}`);
+    for (const pr of coatrack.warnings) warnings.push(`sources: ${pr}`);
     if (unchecked.length) out.push(`sources: ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
   }
   const sourceIds = new Set();

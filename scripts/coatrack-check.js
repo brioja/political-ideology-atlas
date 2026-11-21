@@ -155,19 +155,36 @@ function namesTaken() {
   return taken;
 }
 
-let takenAuthors = null;
-function authorsTaken() {
-  if (takenAuthors) return takenAuthors;
-  takenAuthors = new Map();
+let takenAuthors = null, committed = null;
+// The committed ideology audits' names, dates and authors (tests pass their own list).
+function profiles() {
+  if (committed) return committed;
+  committed = new Map();
   for (const f of fs.readdirSync(lib.PROFILES_DIR)) {
     if (!f.endsWith(".json")) continue;
     let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
-    for (const au of list(a.authors)) {
-      const k = norm(au); if (!takenAuthors.has(k)) takenAuthors.set(k, new Set()); takenAuthors.get(k).add(f.slice(0, -5));
-    }
+    committed.set(f.slice(0, -5), { name: a.name, auditedAt: a.auditedAt, authors: a.authors });
+  }
+  return committed;
+}
+function setProfilesForTests(map) { committed = map; takenAuthors = null; }
+function authorsTaken() {
+  if (takenAuthors) return takenAuthors;
+  takenAuthors = new Map();
+  for (const [id, a] of profiles()) for (const au of list(a.authors)) {
+    const k = norm(au); if (!takenAuthors.has(k)) takenAuthors.set(k, new Set()); takenAuthors.get(k).add(id);
   }
   return takenAuthors;
 }
+// The ideology named after a person, which takes them as a defining author before any other (Brandon,
+// 2026-11-21: democratic centralism had listed Lenin first, so Leninism couldn't): one word, the surname
+// (a final "e" dropped: de Gaulle, Gaullism) plus "-ism" or "-ianism". Stricter than isEponym, which also
+// matches first names and word beginnings (Otto Bauer and Ottomanism, Mill and Millenarianism).
+const namesakeOf = (x, name) => {
+  if (!x || typeof x !== "object" || !x.last) return false;
+  const n = norm(name).trim(), w = norm(x.last).trim().split(" ").pop();
+  return !n.includes(" ") && w.length >= 3 && [w, w.replace(/e$/, "")].some((st) => n === `${st}ism` || n === `${st}ianism`);
+};
 
 // Why an alias is another name for the ideology (Brandon, 2026-11-20): every alias gives one "reason", and each is
 // checked here.
@@ -230,8 +247,8 @@ function evidence(id, audit, field, x, strict, contains) {
   return [];
 }
 
-function check(id, full, { strict = false } = {}) {
-  const problems = [], unchecked = [];
+function check(id, full, { strict = false, asCurrent = false } = {}) {
+  const problems = [], unchecked = [], warnings = [];
   // A source cited only on talk pages (reviewHistory) or as the reason for a nulling documents a replaced version,
   // often the very source it was replaced for (Wikipedia, another subject's text): it isn't evidence of a current
   // position, so the check skips it.
@@ -364,7 +381,16 @@ function check(id, full, { strict = false } = {}) {
   for (const x of authorEntries) {
     const au = entryName(x), sur = authorKey(x);
     const others = [...(authorsTaken().get(norm(au)) || [])].filter((o) => o !== id);
-    if (others.length) { problems.push(`author "${au}" is also a defining author of ${others.join(", ")}`); continue; }
+    // The ideology named after the author lists them whatever others do; another that lists them too is
+    // held to it from its next pass (an audit dated on or after the namesake's, or a later pass's
+    // --as-current list), and until then only warned, its ties standing, so it stays on the site.
+    if (others.length && !namesakeOf(x, audit.name)) {
+      const owner = others.find((o) => namesakeOf(x, (profiles().get(o) || {}).name));
+      if (!owner) { problems.push(`author "${au}" is also a defining author of ${others.join(", ")}`); continue; }
+      const msg = `author "${au}" belongs to ${owner}, the ideology named after them, which lists them too: take them out of "authors" and tie their texts here another way (by title, in the source's "titles")`;
+      if (asCurrent || (audit.auditedAt || "") >= (profiles().get(owner).auditedAt || "")) { problems.push(msg); continue; }
+      warnings.push(msg);
+    }
     if (count(defining.join(" "), [sur]) < 2) { problems.push(`author "${au}" is named fewer than twice in the defining sources`); continue; }
     authorOk.push(sur);
   }
@@ -392,7 +418,7 @@ function check(id, full, { strict = false } = {}) {
     // Brandon, 2026-11-21.
     problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of three ways, each with a quote, as audits/PROMPT.md says: the title those sources use for it (in the source's "titles"); another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}); or its author, if the defining sources present the ideology as that person's body of thought and name them at least twice (in "authors")${citedBy(s.id)}`);
   }
-  return { problems, unchecked };
+  return { problems, unchecked, warnings };
 }
 
-module.exports = { check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
+module.exports = { setProfilesForTests, namesakeOf, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
