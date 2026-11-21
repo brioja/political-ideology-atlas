@@ -319,13 +319,31 @@ function check(id, full, { strict = false } = {}) {
   }
   // The name without Wikipedia's disambiguator ("Jacobin (politics)" is written "Jacobin"), as for other names above.
   const names = [...new Set([audit.name, plainName(audit.name), ...kept])].map(norm);
-  const sources = Array.isArray(audit.sources) ? audit.sources : [];
+  // A source only past answers cite (reviewHistory, the talk page) stays listed so those entries keep their meaning
+  // and its id isn't reused, but it supports nothing current, so it isn't checked and can't vouch for another text
+  // (Brandon, 2026-11-21: Savarkar's Essentials of Hindutva in Akhand Bharat, kept after its answers were nulled).
+  const cited = (o, where, inHistory, acc) => {
+    if (Array.isArray(o)) { o.forEach((x, i) => cited(x, `${where}[${i}]`, inHistory, acc)); return acc; }
+    if (o && typeof o === "object") for (const [k, v] of Object.entries(o)) {
+      if (k === "reviewHistory") cited(v, where, true, acc);
+      else if (k === "sources" || k === "source") for (const sid of [v].flat()) {
+        if (typeof sid !== "string") continue;
+        if (inHistory) acc.past.add(sid); else (acc.now[sid] = acc.now[sid] || new Set()).add(where);
+      }
+      else cited(v, where ? `${where}.${k}` : k, inHistory, acc);
+    }
+    return acc;
+  };
+  const use = cited({ ...audit, sources: undefined }, "", false, { now: {}, past: new Set() });
+  // Where a failing source is still cited: if nothing current should rest on it, citing it only in history is the fix.
+  const citedBy = (sid) => use.now[sid] ? `; it is cited by ${[...use.now[sid]].slice(0, 4).join(", ")}${use.now[sid].size > 4 ? ` and ${use.now[sid].size - 4} more` : ""}: if none of these should rest on it, stop citing it there and keep it listed for the answer histories that cite it` : "";
+  const sources = (Array.isArray(audit.sources) ? audit.sources : []).filter((s) => !(use.past.has(s.id) && !use.now[s.id]));
   const defining = [];
   for (const s of sources.filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !isWikipedia(s))) {
     const t = sourceText(id, s.url);
     if (t == null) { unchecked.push(s.id); continue; }
     if (mentions(t, names)) defining.push(t);
-    else problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology`);
+    else problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology${citedBy(s.id)}`);
   }
   // Primary texts. A text that names the ideology twice passes on its own. Any other passes if the
   // sources that discuss the ideology (defining sources, and primary texts that passed on their own;
@@ -363,7 +381,7 @@ function check(id, full, { strict = false } = {}) {
     // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
     // makes an unchecked source an error for them.
     if (t == null) { unchecked.push(s.id); continue; }
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology (cite its title as those sources name it)`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology (cite its title as those sources name it)${citedBy(s.id)}`);
   }
   return { problems, unchecked };
 }
