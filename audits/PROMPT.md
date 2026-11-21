@@ -86,8 +86,8 @@ defining source names a primary text differently from its title ("the 1856 Imper
 `{ "name" (an author: "first" and "last", or "organisation"; a title: "title"), "source": "<source id>",
 "quote": "<verbatim passage>" }`, a passage from that
 source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT`
-alias needs none). A `SUPPORTED` alias's quote must name the ideology too, apart from the alias itself (not "Brazilian
-Integralist Action" for Brazilian integralism), showing the source equating the two ("'trans-exclusionary
+alias needs none). A `SUPPORTED` alias's quote must name the alias and the ideology as separate phrases (not "Brazilian
+Integralist Action" for Brazilian integralism, nor "the Tea Party movement" alone for the Tea Party), showing the source equating the two ("'trans-exclusionary
 radical feminism', or TERFism"). To find that source, look the alias up from its own side
 (a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias ("TERF") usually defines it
 by the ideology's name ("trans-exclusionary radical feminist"). Wikidata never connects an alias (Brandon, 2026-11-14); every

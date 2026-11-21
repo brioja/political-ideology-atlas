@@ -60,6 +60,12 @@ function forms(n) {
   if (m && m[1].length >= 3) for (const e of ["isms", "ist", "ists", "istic", "ian", "ians", "i"]) out.push(m[1] + e);
   return out.map((f) => ` ${f} `);
 }
+// Where a text names something: the [start, end) spans of every form of every name.
+const spans = (text, names) => names.flatMap(forms).flatMap((f) => { const out = []; let i = -1;
+  while ((i = text.indexOf(f, i + 1)) !== -1) out.push([i + 1, i + f.length - 1]); return out; });
+// Two sets of names both named in the text, by phrases that don't overlap.
+const separately = (text, a, b) => { const sb = spans(text, b);
+  return spans(text, a).some(([s, e]) => sb.some(([s2, e2]) => e <= s2 || e2 <= s)); };
 const mentions = (text, names) => names.some((n) => forms(n).some((f) => text.includes(f)));
 // How many times the text names the ideology (any name or alias, any form).
 const count = (text, needles) => needles.reduce((sum, f) => { let k = 0, i = -1; while ((i = text.indexOf(f, i + 1)) !== -1) k++; return sum + k; }, 0);
@@ -267,12 +273,11 @@ function check(id, full, { strict = false } = {}) {
       problems.push(`alias "${al}": not a spelling of "${audit.name}" (more than two letters differ); give a source saying they are the same (SUPPORTED)`);
     if (reason === "EPONYM" && !isEponymAlias(al, plainName(audit.name))) {
       problems.push(`alias "${al}": "${audit.name}" isn't named after it (EPONYM is for the person an "-ism" is named after)`); }
-    // The ideology is named outside the alias itself: "Keywords: Brazilian Integralist Action" names only the party, and
-    // "the Tea Party movement" never says "Tea Party" is another name (Brandon, 2026-11-20: a supported name has to be
-    // supported).
-    if ((reason === "SUPPORTED" || reason === undefined) && typeof x.quote === "string"
-      && !mentions(norm(x.quote).split(norm(al).trim()).join(" | "), ideologyNames.map(norm)))
-      problems.push(`alias "${al}": its quote doesn't name "${audit.name}" apart from the alias itself, so it doesn't show the source equating them`);
+    // The quote names the alias and the ideology as separate phrases: "Keywords: Brazilian Integralist Action" names only
+    // the party, and "the Tea Party movement" never says "Tea Party" is another name, while "the Tea Party movement, or
+    // the Tea Party" does (Brandon, 2026-11-20: a supported name has to be supported).
+    if ((reason === "SUPPORTED" || reason === undefined) && typeof x.quote === "string" && !separately(norm(x.quote), [norm(al)], ideologyNames.map(norm)))
+      problems.push(`alias "${al}": its quote doesn't name "${audit.name}" and the alias as separate phrases, so it doesn't show the source equating them`);
   }
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
     const key = authorKey(x);
@@ -363,4 +368,4 @@ function check(id, full, { strict = false } = {}) {
   return { problems, unchecked };
 }
 
-module.exports = { check, norm, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
+module.exports = { check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
