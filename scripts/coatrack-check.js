@@ -404,14 +404,19 @@ function check(id, full, { strict = false, pass = false } = {}) {
   for (const x of Array.isArray(audit.keyFigures) ? audit.keyFigures : []) {
     const key = authorKey(x);
     if (x && typeof x === "object" && x.organisation) { problems.push(`key figure "${x.organisation}": an organisation isn't a key figure; list its texts in "keyWorks"`); continue; }
-    if (strict && typeof x === "object" && !(x.first && x.last)) problems.push(`key figure "${entryName(x)}" needs "first" and "last"`);
+    if (strict && typeof x === "object" && !x.last) problems.push(`key figure "${entryName(x)}" needs "last" (and "first" unless they go by one name: Plato)`);
+    // The person audits/namesakes.json names the ideology after needs no quote: that record is the evidence
+    // (Brandon, 2026-11-21: Xi Jinping for Xi Jinping Thought).
+    if (namesakes()[id] && typeof x === "object" && samePerson(x, namesakes()[id])) continue;
     problems.push(...evidence(id, audit, "key figure", x, strict, (q) => q.includes(key)));
   }
   for (const x of Array.isArray(audit.keyWorks) ? audit.keyWorks : []) {
     problems.push(...evidence(id, audit, "key work", x, strict, (q) => q.includes(norm(entryName(x)))));
   }
   // Eponymous key figures' names count as names of the ideology (as its last name: "Klaus", "Bukharin").
-  const eponyms = (Array.isArray(audit.keyFigures) ? audit.keyFigures : []).filter((x) => isEponym(x, audit.name)).map((x) => x.last || x.first);
+  // The name it is built from, which may be the first (Saddam for Saddamism).
+  const eponyms = (Array.isArray(audit.keyFigures) ? audit.keyFigures : []).filter((x) => isEponym(x, audit.name))
+    .map((x) => [x.last, x.first].find((w) => w && isEponym({ last: w }, audit.name)));
   const aliases = [...list(audit.aliases), ...eponyms];
   for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, a coined word, or a spelling variant of the name)`);
   // Uniqueness. An ideology's own name is never another's alias. An alias two ideologies claim belongs

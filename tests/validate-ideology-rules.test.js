@@ -170,7 +170,7 @@ try {
   }
   fails("alias from a source not in the audit", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s9", quote: `${N}ists and ${N}` }]; }), /source "s9" is not in the audit/);
   fails("key figure not named twice in the defining sources", E(base(), (a) => { a.keyFigures = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /key figure "Imaginary Zorblatt"/);
-  fails("key figure without first and last", E(base(), (a) => { a.keyFigures = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "first" and "last"/);
+  fails("key figure without a last name", E(base(), (a) => { a.keyFigures = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "last"/);
   // A key figure belongs to one ideology; the one named after them (Vexmoorism) takes them from any other,
   // which is held to that from its next pass (its draft or --as-current list) and only warned while committed.
   {
