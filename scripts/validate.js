@@ -574,6 +574,10 @@ function validate(id) {
     if (!f || typeof f !== "object") { errors.push(`keyFigures[${i}]: must be { "first", "last", "role", "wikipedia", "source", "quote" }`); continue; }
     if (f.wikipedia !== undefined && !WIKI.test(f.wikipedia)) errors.push(`keyFigures[${i}]: wikipedia must be an en.wikipedia.org article URL`);
     if (AS_CURRENT || DIR) { if (!f.role) errors.push(`keyFigures[${i}]: needs a one-line "role"`); if (!f.wikipedia) errors.push(`keyFigures[${i}]: needs its "wikipedia" article`); }
+    // One entry per person (the page lists each entry); one quote is evidence enough.
+    const who = (x) => [x.first, x.last].map((t) => String(t || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()).join("|");
+    const j = a.keyFigures.findIndex((x) => x && typeof x === "object" && who(x) === who(f));
+    if (j < i) errors.push(`keyFigures[${i}]: ${f.first} ${f.last} is already keyFigures[${j}]; list each person once, with one quote`);
   }
   if (!PEOPLE && Array.isArray(a.keyWorks)) for (const [i, w] of a.keyWorks.entries()) {
     if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "source", "quote" } (and "work" if you cite it)`); continue; }
