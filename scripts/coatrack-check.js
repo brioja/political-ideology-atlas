@@ -495,16 +495,14 @@ function check(id, full, { strict = false, pass = false } = {}) {
     const au = entryName(x), sur = authorKey(x);
     const others = [...(authorsTaken().get(personKey(au)) || [])].filter((o) => o !== id);
     const reserving = reservedFor(x).filter((o) => o !== id);
-    // The ideology named after the author lists them whatever others do; another that lists them too is
-    // held to it from its next pass (its draft, and the --as-current list the pass starts with), and until
-    // then only warned, its ties standing, so it stays on the site. Not by date: the namesake may list them
-    // between its own passes (Brandon, 2026-11-21: eponyms took their authors before their next passes).
+    // The ideology named after the author lists them whatever others do; another that lists them too is an
+    // error at once, committed or not (Brandon, 2026-11-21: remove the duplicates even if it breaks older audits).
     if ((others.length || reserving.length) && !isNamesake(x, id, audit.name)) {
       const owner = reserving[0] || others.find((o) => isNamesake(x, o, ideologyName(o)));
-      if (!owner) { problems.push(`key figure "${au}" is also a key figure of ${others.join(", ")}`); continue; }
-      const msg = `key figure "${au}" belongs to ${owner}, the ideology named after them, which reserves them: take them out of "keyFigures" and tie their texts here another way (by title, in "keyWorks")`;
-      if (pass) { problems.push(msg); continue; }
-      warnings.push(msg);
+      problems.push(owner
+        ? `key figure "${au}" belongs to ${owner}, the ideology named after them, which reserves them: take them out of "keyFigures" and tie their texts here another way (by title, in "keyWorks")`
+        : `key figure "${au}" is also a key figure of ${others.join(", ")}`);
+      continue;
     }
     if (count(defining.join(" "), [sur]) < 2) { problems.push(`key figure "${au}" is named fewer than twice in the defining sources`); continue; }
     authorOk.push(sur);

@@ -172,7 +172,7 @@ try {
   fails("key figure not named twice in the defining sources", E(base(), (a) => { a.keyFigures = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /key figure "Imaginary Zorblatt"/);
   fails("key figure without a last name", E(base(), (a) => { a.keyFigures = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "last"/);
   // A key figure belongs to one ideology; the one named after them (Vexmoorism) takes them from any other,
-  // which is held to that from its next pass (its draft or --as-current list) and only warned while committed.
+  // which is an error at once, committed or not.
   {
     const vex = () => ({ first: "Quentin", last: "Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" });
     const listedBy = (id, name, auditedAt) => coatrack.setProfilesForTests(new Map([[id, { name, auditedAt, keyFigures: [vex()] }]]), {});
@@ -186,13 +186,12 @@ try {
       assert.deepStrictEqual(authorProblems("Vexmoorism"), [], "the namesake lists its author whatever other ideologies do"); n++;
       // A namesake reserves its author with a bare name until its next pass gives the quote.
       coatrack.setProfilesForTests(new Map([["vexmoorism", { name: "Vexmoorism", auditedAt: "2026-10-16", keyFigures: ["Quentin Vexmoor"] }]]), {});
-      ok("namesake took the author: no error on the committed audit", withVex("2026-11-12"));
-      warns("namesake took the author: a warning on the committed audit", withVex("2026-11-12"), /key figure "Quentin Vexmoor" belongs to vexmoorism/);
+      fails("namesake took the author: an error on the committed audit too", withVex("2026-11-12"), /key figure "Quentin Vexmoor" belongs to vexmoorism/);
       const inPass = coatrack.check(subject.id, withVex("2026-11-07"), { strict: true, pass: true });
       assert.ok(inPass.problems.some((p) => /key figure "Quentin Vexmoor" belongs to vexmoorism/.test(p)), "a pass's draft must take the author out"); n++;
       // An unaudited ideology named after the author's given name, in any word order, reserves them (audits/namesakes.json).
       coatrack.setProfilesForTests(new Map(), { quentinismo: "Vexmoor Quentin" });
-      warns("namesakes.json reserves the author for an unaudited eponym", withVex("2026-11-12"), /key figure "Quentin Vexmoor" belongs to quentinismo/);
+      fails("namesakes.json reserves the author for an unaudited eponym", withVex("2026-11-12"), /key figure "Quentin Vexmoor" belongs to quentinismo/);
       assert.ok(coatrack.isNamesake(vex(), "quentinismo", "Quentinismo") && !coatrack.isNamesake(vex(), "other-ideology", "Other ideology"), "namesakes.json decides the namesake"); n++;
       // The reserved person is matched by name in any order, or by surname and first initial; not another Vexmoor.
       coatrack.setProfilesForTests(new Map(), { quentinismo: "Quentin Vexmoor" });
