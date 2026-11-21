@@ -1,8 +1,11 @@
 {
   "id": "national-syndicalism",
   "name": "National syndicalism",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-21",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ],
   "summary": "National syndicalism fuses revolutionary syndicalism with integral nationalism: workers are to be won from Marxist internationalism into a nation-state organized as a vertical syndicate of producers, with class struggle replaced by collaboration under state direction. It rejects liberal democracy, parties and parliaments, capitalism and Marxism alike, and values will, discipline, direct action and imperial national destiny.",
   "scope": "Mainly the Spanish strand of 1931-37: Ledesma Ramos's La Conquista del Estado and JONS, Onésimo Redondo, and the 1934 program of FE de las JONS under José Antonio Primo de Rivera, with the Italian precursors (Sorel's syndicalism, Corradini, Panunzio, Rossoni) as background. It excludes Franco's later Francoist regime, the anarcho-syndicalist CNT, and non-Spanish fascism generally.",
   "wikipedia": "https://en.wikipedia.org/wiki/National_syndicalism",
@@ -58,7 +61,8 @@
       "title": "Programa de la Falange Española de las JONS (1934), 26/27-point program as published in ABC, 30 Nov 1934",
       "author": "José Antonio Primo de Rivera / FE de las JONS (hosted by Universitat de València)",
       "url": "https://www.uv.es/Ivorra/Historia/SXX/Falange.html",
-      "usedFor": "Primary text of the national-syndicalist program: nation and empire, totalitarian state, abolition of parties, vertical syndicates, rejection of capitalism and Marxism, banking, land, Catholicism, national revolution."
+      "usedFor": "Primary text of the national-syndicalist program: nation and empire, totalitarian state, abolition of parties, vertical syndicates, rejection of capitalism and Marxism, banking, land, Catholicism, national revolution.",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -66,7 +70,8 @@
       "title": "Falange Española de las JONS",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Falange_Espa%C3%B1ola_de_las_JONS",
-      "usedFor": "Scholarly characterizations (Payne, Blinkhorn, Saz, Griffin): violence, religion, leader, syndicates, strikes, Hispanidad, women's section."
+      "usedFor": "Scholarly characterizations (Payne, Blinkhorn, Saz, Griffin): violence, religion, leader, syndicates, strikes, Hispanidad, women's section.",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -74,7 +79,8 @@
       "title": "National syndicalism",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/National_syndicalism",
-      "usedFor": "Origins in Sorel, Maurras, Corradini, Panunzio and Rossoni; class and nation, vitalism, direct action, rejection of parliamentary democracy."
+      "usedFor": "Origins in Sorel, Maurras, Corradini, Panunzio and Rossoni; class and nation, vitalism, direct action, rejection of parliamentary democracy.",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -82,7 +88,35 @@
       "title": "Ramiro Ledesma",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Ramiro_Ledesma",
-      "usedFor": "Ledesma's La Conquista del Estado and the JONS, statism, syndicalist economy, his atheism and view of the Church."
+      "usedFor": "Ledesma's La Conquista del Estado and the JONS, statism, syndicalist economy, his atheism and view of the Church.",
+      "evidence": "words"
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "title": "Falange (Britannica)",
+      "author": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Falange",
+      "evidence": "words",
+      "usedFor": "Names the national-syndicalist state, the JONS and José Antonio Primo de Rivera."
+    },
+    {
+      "id": "s6",
+      "kind": "primary",
+      "title": "La Conquista del Estado (1931), weekly edited by Ramiro Ledesma Ramos",
+      "author": "Ramiro Ledesma Ramos",
+      "url": "https://archive.org/download/1931-la-conquista-del-estado/1931%20-%20La%20Conquista%20del%20Estado.pdf",
+      "evidence": "words",
+      "usedFor": "Ledesma's manifesto and articles using the term nacional-sindicalismo: State supremacy, obligatory syndication, direct action, empire."
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "title": "Discurso de la Comedia, 29 Oct 1933",
+      "author": "José Antonio Primo de Rivera",
+      "url": "https://perio.unlp.edu.ar/catedras/wp-content/uploads/sites/81/2020/03/8-Jos%C3%A9-Antonio-Primo-de-Rivera-Discurso-Falange.pdf",
+      "evidence": "words",
+      "usedFor": "Founding speech of Falange: rejection of parties, democracy and socialism; totalitarian state; violence."
     }
   ],
   "answers": {
@@ -99,11 +133,33 @@
       "sources": []
     },
     "markets-allocate-better": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The program rejects capitalism and has the state intervene in economic conflict instead of standing aside, organizing the economy as one syndicate of producers (points 9-11).",
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The program rejects capitalism and has the state organise production as one 'gigantesco Sindicato de productores' (points 9-11), so free markets are not left to allocate.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The program rejects capitalism and has the state intervene in economic conflict instead of standing aside, organizing the economy as one syndicate of producers (points 9-11).",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The program rejects capitalism and has the state organise production as one 'gigantesco Sindicato de productores' (points 9-11), so free markets are not left to allocate.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "public-ownership": {
@@ -137,11 +193,33 @@
       ]
     },
     "regulate-corporations": {
-      "value": 1,
+      "value": 2,
       "confidence": "medium",
-      "rationale": "The state is to shield the economy from big financial capital and speculators and bind producers into corporations under national direction (points 11, 13).",
+      "rationale": "Ledesma's nº 21 article says nacional-sindicalismo means state regulatory intervention in private economic enterprises.",
       "sources": [
-        "s1"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The state is to shield the economy from big financial capital and speculators and bind producers into corporations under national direction (points 11, 13).",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Ledesma's nº 21 article says nacional-sindicalismo means state regulatory intervention in private economic enterprises.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "worker-ownership": {
@@ -175,9 +253,31 @@
     "strong-leader": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "The movement sought a nationalist dictatorship and unified under a single Jefe Nacional in 1934.",
+      "rationale": "José Antonio's speech rejects democracy as a waste of the governor's energy and calls for a totalitarian state of service and sacrifice.",
       "sources": [
-        "s2"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The movement sought a nationalist dictatorship and unified under a single Jefe Nacional in 1934.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "José Antonio's speech rejects democracy as a waste of the governor's energy and calls for a totalitarian state of service and sacrifice.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "state-harmful": {
@@ -201,11 +301,33 @@
       "sources": []
     },
     "decide-locally": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Separatism is a crime and Spain is one unity of destiny (point 2); local bodies only serve as channels of participation within the national state (point 6).",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Ledesma wants autonomous municipalities but extirpation of regional political autonomy (words against words).",
       "sources": [
-        "s1"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Separatism is a crime and Spain is one unity of destiny (point 2); local bodies only serve as channels of participation within the national state (point 6).",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Ledesma wants autonomous municipalities but extirpation of regional political autonomy (words against words).",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "rehabilitation": {
@@ -235,11 +357,33 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Catholicism is part of the national identity, but the state is placed above the Church and Ledesma was an atheist, so support is moderate.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The program incorporates Catholic sense in national life, while Ledesma's writing subordinates the Church to the State (words against words).",
       "sources": [
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Catholicism is part of the national identity, but the state is placed above the Church and Ledesma was an atheist, so support is moderate.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The program incorporates Catholic sense in national life, while Ledesma's writing subordinates the Church to the State (words against words).",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "correct-racial-injustice": {
@@ -293,12 +437,40 @@
       ]
     },
     "nation-first": {
-      "value": 2,
+      "value": 1,
       "confidence": "medium",
-      "rationale": "Individual, group and class interests must yield to the supreme reality of the nation (point 1).",
+      "rationale": "Point 1 declares Spain an irrevocable unit of destiny whose supreme reality comes first.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Individual, group and class interests must yield to the supreme reality of the nation (point 1).",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Point 1 declares Spain an irrevocable unit of destiny whose supreme reality comes first.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
+    },
+    "military-force-for-human-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     },
     "open-borders": {
       "value": -2,
@@ -332,12 +504,40 @@
       "rationale": "No stated position found.",
       "sources": []
     },
-    "experts-over-public": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Blinkhorn describes the leader's vision as elitist regenerationism, implying rule by an elite rather than popular opinion.",
+    "revolution-legitimate": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The program demands a national revolution.",
       "sources": [
-        "s2"
+        "s1"
+      ]
+    },
+    "experts-over-public": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Blinkhorn describes the leader's vision as elitist regenerationism, implying rule by an elite rather than popular opinion.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "central-planning": {
@@ -387,11 +587,33 @@
       ]
     },
     "state-directs-investment": {
-      "value": 1,
+      "value": 2,
       "confidence": "medium",
-      "rationale": "The state does not stand aside from economic conflict and nationalizes banking and credit (points 11, 14).",
+      "rationale": "Ledesma's nº 23 article describes an economy polarised around protected, officially syndicated producers under state direction.",
       "sources": [
-        "s1"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The state does not stand aside from economic conflict and nationalizes banking and credit (points 11, 14).",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Ledesma's nº 23 article describes an economy polarised around protected, officially syndicated producers under state direction.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "widespread-small-property": {
@@ -427,11 +649,31 @@
       ]
     },
     "one-party-rule": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Parties are to be abolished in favour of a nationalist dictatorship led by the movement; the Falange later became the single party of Franco's state.",
-      "sources": [
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Parties are to be abolished in favour of a nationalist dictatorship led by the movement; the Falange later became the single party of Franco's state.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "monarchy-legitimate": {
@@ -473,11 +715,39 @@
       ]
     },
     "natural-rulers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Blinkhorn describes the elitist regenerationism of the movement's leadership; a hierarchical leader principle presumes some are fitted to rule.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Blinkhorn describes the elitist regenerationism of the movement's leadership; a hierarchical leader principle presumes some are fitted to rule.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
+      ]
+    },
+    "political-violence-legitimate": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The speech praises 'la dialéctica de los puños y las pistolas'.",
       "sources": [
-        "s2"
+        "s7"
       ]
     },
     "war-builds-character": {
@@ -497,11 +767,31 @@
       ]
     },
     "laws-from-scripture": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The party rejected direct clerical influence in government and put the state above the Church.",
-      "sources": [
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The party rejected direct clerical influence in government and put the state above the Church.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "private-courts-defense": {
@@ -557,11 +847,33 @@
       "sources": []
     },
     "civilizational-union": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Point 3 seeks to unify culture, economic interests and power with Hispanic America.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Point 4 seeks unification of Spanish culture with Hispanoamérica.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Point 3 seeks to unify culture, economic interests and power with Hispanic America.",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Point 4 seeks unification of Spanish culture with Hispanoamérica.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "self-interest-moral": {
@@ -593,11 +905,31 @@
       "sources": []
     },
     "industrial-civilization-disaster": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Syndicalist national movements were productivist, favoring industrial labor, not rejecting industry.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Syndicalist national movements were productivist, favoring industrial labor, not rejecting industry.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "accelerate-technology": {
@@ -703,19 +1035,61 @@
       ]
     },
     "collective-farming": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Point 19 favors family holdings and farmers' unions, not collectivized agriculture.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Ledesma's manifesto tends toward communal or cooperative land use while the program (words against words) redistributes to family property.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Point 19 favors family holdings and farmers' unions, not collectivized agriculture.",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Ledesma's manifesto tends toward communal or cooperative land use while the program (words against words) redistributes to family property.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "capitalism-causes-war": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Italian strand held that proletarian nations need imperialism against richer powers, but the program treats capitalism's flaw as misery, not war.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The Italian strand held that proletarian nations need imperialism against richer powers, but the program treats capitalism's flaw as misery, not war.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "taxation-theft": {
@@ -813,19 +1187,61 @@
       ]
     },
     "territorial-expansion": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Point 3 sets an imperial destiny, but Primo de Rivera described empire as cultural leadership over Hispanic America rather than conquest.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The program states a 'voluntad de Imperio' and unification with Hispanoamérica (points 3-4).",
       "sources": [
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Point 3 sets an imperial destiny, but Primo de Rivera described empire as cultural leadership over Hispanic America rather than conquest.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The program states a 'voluntad de Imperio' and unification with Hispanoamérica (points 3-4).",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "personal-loyalty-rule": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The leader principle involves personal fidelity, but the movement conceived a modern totalitarian state, not feudal lord-vassal bonds.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The leader principle involves personal fidelity, but the movement conceived a modern totalitarian state, not feudal lord-vassal bonds.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "bound-labor": {
@@ -835,6 +1251,12 @@
       "sources": [
         "s1"
       ]
+    },
+    "power-shapes-accepted-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     },
     "universal-morality": {
       "value": 1,
@@ -901,18 +1323,40 @@
       ]
     },
     "rule-by-example": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The movement emphasized service, sacrifice and elite leadership, but its program relies on discipline and punishment too.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The movement emphasized service, sacrifice and elite leadership, but its program relies on discipline and punishment too.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "national-self-determination": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
-      "sources": [],
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Separatism is a crime; Spain is an irrevocable unit of destiny.",
+      "sources": [
+        "s1"
+      ],
       "reviewHistory": [
         {
           "value": 1,
@@ -933,6 +1377,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-12"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Separatism is a crime; Spain is an irrevocable unit of destiny.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
         }
       ]
     },
@@ -943,11 +1397,31 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "National syndicalism built on Sorel's myth, vitalism and heroic action, which exalt will and emotion over reason.",
-      "sources": [
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "National syndicalism built on Sorel's myth, vitalism and heroic action, which exalt will and emotion over reason.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "welfare-for-citizens": {
@@ -983,27 +1457,89 @@
       ]
     },
     "dominated-front": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Corradini's idea of a proletarian nation against wealthy powers supports such a front, but the Spanish program pursues Hispanic rather than wider fronts.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Corradini's idea of a proletarian nation against wealthy powers supports such a front, but the Spanish program pursues Hispanic rather than wider fronts.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "workers-nation": {
       "value": 2,
       "confidence": "high",
-      "rationale": "National syndicalism holds that workers belong to the nation, as with Corradini and Rossoni, and aims to draw them from Marxist internationalism into the national state (point 10).",
+      "rationale": "The program makes Spain a 'gigantesco Sindicato de productores'.",
       "sources": [
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "National syndicalism holds that workers belong to the nation, as with Corradini and Rossoni, and aims to draw them from Marxist internationalism into the national state (point 10).",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The program makes Spain a 'gigantesco Sindicato de productores'.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "distinct-gender-roles": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Sección Femenina was an auxiliary, nursing and support organization, implying separate roles.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Sección Femenina was an auxiliary, nursing and support organization, implying separate roles.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "ban-interest": {
@@ -1093,11 +1629,31 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The party opposed oligarchy and the liberal party system it saw as divisive.",
-      "sources": [
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The party opposed oligarchy and the liberal party system it saw as divisive.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -1157,11 +1713,31 @@
       "sources": []
     },
     "restrict-conversion": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Falange did not seek to impose Catholicism on non-believers.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Falange did not seek to impose Catholicism on non-believers.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "ban-cattle-slaughter": {
@@ -1206,19 +1782,47 @@
       "rationale": "No stated position found.",
       "sources": []
     },
+    "initiating-nondefensive-force-unjustified": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The speech justifies violence as 'la dialéctica de los puños y las pistolas'.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Sorelian and vitalist currents stress struggle and heroism, and imperial rivalry among nations (Corradini).",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
+      ]
+    },
     "ban-extremist-parties": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
-    },
-    "competition-drives-progress": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Sorelian and vitalist currents stress struggle and heroism, and imperial rivalry among nations (Corradini).",
-      "sources": [
-        "s3"
-      ]
     },
     "freedom-as-non-domination": {
       "value": -1,
@@ -1259,11 +1863,31 @@
       "sources": []
     },
     "restrict-strikes-picketing": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The programme called for criminalizing strikes and lockouts; syndicates settle disputes under the state.",
-      "sources": [
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The programme called for criminalizing strikes and lockouts; syndicates settle disputes under the state.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "population-causes-poverty": {
@@ -1358,10 +1982,32 @@
     },
     "clerical-rule": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "The party rejected direct clerical influence and put the state above the Church.",
+      "confidence": "high",
+      "rationale": "Ledesma says the Church 'no puede jamás pretender soberanía' and is subordinate to the State.",
       "sources": [
-        "s2"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The party rejected direct clerical influence and put the state above the Church.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Ledesma says the Church 'no puede jamás pretender soberanía' and is subordinate to the State.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "defeat-own-government-war": {
@@ -1429,19 +2075,61 @@
       "sources": []
     },
     "educated-out-of-touch": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The movement attracted prominent intellectuals and valued higher education for the deserving (point 24).",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The movement attracted prominent intellectuals and valued higher education for the deserving (point 24).",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "cultures-equal-different": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Hispanic culture is cast as the spiritual center of a world mission (point 3), implying a hierarchy.",
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The manifesto promotes the imperial diffusion of Hispanic culture.",
       "sources": [
-        "s1"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Hispanic culture is cast as the spiritual center of a world mission (point 3), implying a hierarchy.",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The manifesto promotes the imperial diffusion of Hispanic culture.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "death-penalty": {
@@ -1492,20 +2180,40 @@
         "s1"
       ]
     },
-    "sovereign-debt-cancellation": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Corradini's proletarian-nation idea supports poor nations' claims but the Spanish program is silent; adherents had no settled view.",
-      "sources": [
-        "s3"
-      ]
-    },
     "encourage-eccentricity": {
       "value": -2,
       "confidence": "medium",
       "rationale": "Discipline and conformity to the national task come first (points 1, 7, 26).",
       "sources": [
         "s1"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Corradini's proletarian-nation idea supports poor nations' claims but the Spanish program is silent; adherents had no settled view.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "independence-needs-economic-change": {
@@ -1603,11 +2311,33 @@
       "sources": []
     },
     "subordinate-church-to-state": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The program wants the state to respect the Catholic tradition and keep church and state separate in function, but Ledesma's atheism and totalitarian statism pulled the other way, leaving adherents mildly against curbing the Church.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Ledesma: the Church is subordinate to the State and cannot claim sovereignty.",
       "sources": [
-        "s1"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The program wants the state to respect the Catholic tradition and keep church and state separate in function, but Ledesma's atheism and totalitarian statism pulled the other way, leaving adherents mildly against curbing the Church.",
+          "sources": [
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Ledesma: the Church is subordinate to the State and cannot claim sovereignty.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "nonpartisan-head-of-state": {
@@ -1635,11 +2365,31 @@
       ]
     },
     "sacred-ruler": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The movement was authoritarian and Catholic but not monarchist, and did not claim divine descent for its leader; a sacred ruler is foreign to its secular nationalism.",
-      "sources": [
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The movement was authoritarian and Catholic but not monarchist, and did not claim divine descent for its leader; a sacred ruler is foreign to its secular nationalism.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "flat-income-tax": {
@@ -1673,11 +2423,31 @@
       "sources": []
     },
     "leader-cult": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Falange built a cult of the Jefe and of Jose Antonio, with portraits, salutes and mass praise, as scholars note.",
-      "sources": [
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Falange built a cult of the Jefe and of Jose Antonio, with portraits, salutes and mass praise, as scholars note.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "equal-parenting": {
@@ -1809,11 +2579,33 @@
     },
     "armed-group-creates-revolution": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Direct action and violence by committed minorities were central to its method, as scholars of the Falange and JONS document.",
+      "confidence": "high",
+      "rationale": "Ledesma's manifesto and 'La Revolución y la violencia' call for direct action by organised cells.",
       "sources": [
-        "s2",
-        "s3"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Direct action and violence by committed minorities were central to its method, as scholars of the Falange and JONS document.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Ledesma's manifesto and 'La Revolución y la violencia' call for direct action by organised cells.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "abolish-hereditary-privilege": {
@@ -1941,10 +2733,12 @@
       "sources": []
     },
     "noblesse-oblige": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The speech says 'No debe haber convidados ni zánganos' and calls for service.",
+      "sources": [
+        "s7"
+      ]
     },
     "withdraw-from-politics": {
       "value": -2,
@@ -2004,11 +2798,31 @@
       "sources": []
     },
     "antifascism-founding-value": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "National syndicalism is a fascist current and rejects anti-fascism.",
-      "sources": [
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "National syndicalism is a fascist current and rejects anti-fascism.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "totalitarianisms-equivalent": {
@@ -2074,20 +2888,62 @@
       "sources": []
     },
     "office-by-exam": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Ledesma favored a technocratic, authoritarian state but no examination system is documented.",
-      "sources": [
-        "s4"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Ledesma favored a technocratic, authoritarian state but no examination system is documented.",
+          "sources": [
+            "s4"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "foreign-takeover-block": {
-      "value": 2,
+      "value": 1,
       "confidence": "medium",
-      "rationale": "Point 14 nationalizes banking and public services, and national syndicalism favors economic nationalism.",
+      "rationale": "Ledesma's manifesto demands the Telefónica contract with foreign capital be rescinded.",
       "sources": [
-        "s1",
-        "s3"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Point 14 nationalizes banking and public services, and national syndicalism favors economic nationalism.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Ledesma's manifesto demands the Telefónica contract with foreign capital be rescinded.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "no-fault-divorce": {
@@ -2194,11 +3050,31 @@
       "sources": []
     },
     "democratic-peace": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The movement rejects liberal democracy and glorifies national imperial will, so promoting democracy for peace is rejected.",
-      "sources": [
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The movement rejects liberal democracy and glorifies national imperial will, so promoting democracy for peace is rejected.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "no-duty-to-obey": {
@@ -2207,13 +3083,41 @@
       "rationale": "No stated position found.",
       "sources": []
     },
+    "foreign-policy-non-interference": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
     "industrial-unions": {
-      "value": 2,
+      "value": 1,
       "confidence": "medium",
-      "rationale": "The program organises producers in vertical syndicates by industry, and Rossoni and Panunzio built syndicalism on this.",
+      "rationale": "Point 9 organises production in vertical syndicates by branch of production, each integrating all producers.",
       "sources": [
-        "s1",
-        "s3"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The program organises producers in vertical syndicates by industry, and Rossoni and Panunzio built syndicalism on this.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Point 9 organises production in vertical syndicates by branch of production, each integrating all producers.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "minority-conspiracy": {
@@ -2241,12 +3145,32 @@
       "sources": []
     },
     "informal-organisation": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The movement prizes direct action and violence but through a disciplined party and national syndicates, not informal groups.",
-      "sources": [
-        "s2",
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The movement prizes direct action and violence but through a disciplined party and national syndicates, not informal groups.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "national-law-over-international": {
@@ -2324,12 +3248,32 @@
       "sources": []
     },
     "religion-illusion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents split: Ledesma was an atheist hostile to Church influence while Redondo and the Falange stressed Catholicism.",
-      "sources": [
-        "s4",
-        "s2"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents split: Ledesma was an atheist hostile to Church influence while Redondo and the Falange stressed Catholicism.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "capitalism-progressive": {
@@ -2408,19 +3352,61 @@
     },
     "suppress-opposition": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Ledesma and the JONS wanted a single national state that crushes parties, and accepted violence.",
+      "confidence": "high",
+      "rationale": "Ledesma's 'La Revolución y la violencia' sets 'pena última' for opponents of the Revolution and 'El individuo ha muerto' denies a right to dissent.",
       "sources": [
-        "s4",
-        "s2"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Ledesma and the JONS wanted a single national state that crushes parties, and accepted violence.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Ledesma's 'La Revolución y la violencia' sets 'pena última' for opponents of the Revolution and 'El individuo ha muerto' denies a right to dissent.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "punish-blasphemy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Ledesma's JONS put the state above the Church while Redondo's wing was strongly Catholic, so adherents were split.",
-      "sources": [
-        "s4"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Ledesma's JONS put the state above the Church while Redondo's wing was strongly Catholic, so adherents were split.",
+          "sources": [
+            "s4"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "colonies-serve-metropole": {
@@ -2442,19 +3428,59 @@
       "sources": []
     },
     "participatory-democracy": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "National syndicalism replaced parliamentary politics with state-led syndicates, not direct participation in decisions.",
-      "sources": [
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "National syndicalism replaced parliamentary politics with state-led syndicates, not direct participation in decisions.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "intersecting-oppressions": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The strand rejected class struggle and sought class harmony within the nation.",
-      "sources": [
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The strand rejected class struggle and sought class harmony within the nation.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "gender-identity-recognition": {
@@ -2470,12 +3496,34 @@
       "sources": []
     },
     "left-right-obsolete": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "National syndicalism claimed to transcend liberal capitalism and Marxism, combining nationalism with a social program.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "José Antonio calls the movement 'no de derecha ni de izquierda'.",
       "sources": [
-        "s2",
-        "s3"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "National syndicalism claimed to transcend liberal capitalism and Marxism, combining nationalism with a social program.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "José Antonio calls the movement 'no de derecha ni de izquierda'.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "alienated-labor": {
@@ -2497,6 +3545,12 @@
       "sources": []
     },
     "religious-dress-in-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "harassment-claims-court-access": {
       "value": null,
       "confidence": "low",
       "rationale": "No stated position found.",
@@ -2727,11 +3781,31 @@
       "sources": []
     },
     "uniformed-youth": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The JONS and Falange used blue shirts, militias and drilled youth sections.",
-      "sources": [
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The JONS and Falange used blue shirts, militias and drilled youth sections.",
+          "sources": [
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "no-nuclear-weapons-on-territory": {
@@ -2763,11 +3837,33 @@
     },
     "never-kill-self-defence": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "National syndicalism prizes will, discipline and direct action and endorsed violence.",
+      "confidence": "high",
+      "rationale": "'La Revolución y la violencia' defends violence and 'pena última' for opponents.",
       "sources": [
-        "s3",
-        "s2"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "National syndicalism prizes will, discipline and direct action and endorsed violence.",
+          "sources": [
+            "s3",
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "'La Revolución y la violencia' defends violence and 'pena última' for opponents.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "unbroken-national-continuity": {
@@ -2779,29 +3875,89 @@
       ]
     },
     "sex-socially-constructed": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Falangism held fixed gender roles in a patriarchal family and a Women's Section dedicated to domestic and service roles.",
-      "sources": [
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Falangism held fixed gender roles in a patriarchal family and a Women's Section dedicated to domestic and service roles.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "no-fixed-category-of-women": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Falangism assigned women a fixed role through the Sección Femenina and had no feminist politics.",
-      "sources": [
-        "s3",
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Falangism assigned women a fixed role through the Sección Femenina and had no feminist politics.",
+          "sources": [
+            "s3",
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "martyrs-honoured": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The Falange's cult of \"the Fallen\" (Caidos), with José Antonio as its martyr, was central to its ritual.",
-      "sources": [
-        "s2",
-        "s3"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The Falange's cult of \"the Fallen\" (Caidos), with José Antonio as its martyr, was central to its ritual.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "politics-spiritual-struggle": {
@@ -2817,11 +3973,31 @@
       "sources": []
     },
     "culture-before-state": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Ledesma's La Conquista del Estado puts conquest of the state first.",
-      "sources": [
-        "s4"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Ledesma's La Conquista del Estado puts conquest of the state first.",
+          "sources": [
+            "s4"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "god-not-male": {
@@ -2831,12 +4007,32 @@
       "sources": []
     },
     "scripture-judged-by-women": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Patriarchal outlook and subordination of religion to the state, but not a feminist critique of it.",
-      "sources": [
-        "s2",
-        "s4"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Patriarchal outlook and subordination of religion to the state, but not a feminist critique of it.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "economy-in-majority-hands": {
@@ -2921,12 +4117,34 @@
       "sources": []
     },
     "person-over-state": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Ledesma's La Conquista del Estado and the program make the totalitarian state the supreme end to which individuals are subordinate.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The speech calls man a bearer of eternal values while demanding a totalitarian state (words against words).",
       "sources": [
-        "s4",
-        "s1"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Ledesma's La Conquista del Estado and the program make the totalitarian state the supreme end to which individuals are subordinate.",
+          "sources": [
+            "s4",
+            "s1"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The speech calls man a bearer of eternal values while demanding a totalitarian state (words against words).",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "spiritual-nature": {
@@ -2970,6 +4188,14 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "military-force-beyond-defence": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The 'voluntad de Imperio' of points 3-4 asks for armed forces to make Spain's imperial destiny count.",
+      "sources": [
+        "s1"
+      ]
     },
     "language-defines-nation": {
       "value": null,
@@ -3016,13 +4242,41 @@
       "sources": []
     },
     "arms-reduction": {
-      "value": -2,
+      "value": -1,
       "confidence": "medium",
-      "rationale": "The program demands a strong army, navy and air force, and the movement glorified violence and imperial greatness, so disarmament is rejected.",
+      "rationale": "The manifesto fights 'el farisaico pacifismo de Ginebra'.",
       "sources": [
-        "s1",
-        "s2"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The program demands a strong army, navy and air force, and the movement glorified violence and imperial greatness, so disarmament is rejected.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The manifesto fights 'el farisaico pacifismo de Ginebra'.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
+    },
+    "publish-international-agreements": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     },
     "capital-controls": {
       "value": null,
@@ -3073,10 +4327,12 @@
       "sources": []
     },
     "smash-state-machine": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The program annuls the republican Constitution and seeks a national revolution.",
+      "sources": [
+        "s1"
+      ]
     },
     "free-economic-experiment": {
       "value": -2,
@@ -3160,6 +4416,12 @@
       "rationale": "No stated position found.",
       "sources": []
     },
+    "mutual-intelligibility-defines-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
     "pollution-tort-liability": {
       "value": null,
       "confidence": "low",
@@ -3189,6 +4451,14 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "voluntary-union-payments-at-work": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The manifesto calls for obligatory syndication of the economy.",
+      "sources": [
+        "s6"
+      ]
     },
     "voter-id": {
       "value": null,
@@ -3266,12 +4536,32 @@
       "sources": []
     },
     "scripture-inerrant": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents were split: Redondo was a militant Catholic while Ledesma was an atheist who valued the Church only as a national force.",
-      "sources": [
-        "s4",
-        "s2"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents were split: Redondo was a militant Catholic while Ledesma was an atheist who valued the Church only as a national force.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "gendered-self-government": {
@@ -3377,12 +4667,32 @@
       "sources": []
     },
     "self-ownership": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The nation-state as a vertical syndicate of producers subordinates the individual to the national whole.",
-      "sources": [
-        "s3",
-        "s4"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The nation-state as a vertical syndicate of producers subordinates the individual to the national whole.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "cut-consumption-tax": {
@@ -3480,11 +4790,31 @@
       "sources": []
     },
     "labour-theory-of-value": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "National syndicalism rejected Marxism, though its Sorelian syndicalist roots honoured the producer, so adherents may have valued labour highly without accepting the Marxist theory.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "National syndicalism rejected Marxism, though its Sorelian syndicalist roots honoured the producer, so adherents may have valued labour highly without accepting the Marxist theory.",
+          "sources": [
+            "s3"
+          ],
+          "date": "2026-10-15",
+          "author": "claude-sonnet-5-5"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-21): the earlier rationale rested on a Wikipedia summary, which is only a way to find evidence, and the defining sources (the 1934 program, Ledesma's La Conquista del Estado, José Antonio's 1933 speech) record no position on this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-21"
+        }
       ]
     },
     "patriotism-serves-workers": {
@@ -3507,6 +4837,676 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The speech asks the state for a 'sentido ascético y militar de la vida'.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "technology-design-reflects-political-interests": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The program makes work a right and duty, rejects capitalism and protects the producer against big finance and those who live off others.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The program holds that 'La vida es milicia' and calls for the 'ascetic and military sense of life'.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The speech wants the political parties to disappear and an 'antipartido' movement.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Ledesma rejects electoral tactics for direct action: 'No elecciones, sino combates'.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Ledesma subordinates the syndicates to the State, which holds all power ('Nada sobre el Estado'), rather than letting them run the economy.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Point 10 states the right and the duty to work.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "recognize-territorial-claims-from-conquest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The manifesto wants revolution, not electoral reform.",
+      "sources": [
+        "s6"
+      ]
     },
     "decent-living-guarantee": {
       "value": 1,
@@ -3587,6 +5587,51 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-21",
+      "nulled": 36
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-15"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-21"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "Nacional-sindicalismo",
+      "reason": "TRANSLATION",
+      "source": "s6",
+      "quote": "No se olvide que nuestro nacional-sindicalismo acepta con alegría la realidad revolucionaria."
+    },
+    {
+      "name": "Nacionalsindicalista",
+      "reason": "TRANSLATION",
+      "source": "s1",
+      "quote": "El Estado nacionalsindicalista permitirá"
+    },
+    {
+      "name": "National Syndicalist",
+      "reason": "TRANSLATION",
+      "source": "s5",
+      "quote": "the Juntas of the National Syndicalist Offensive"
+    }
+  ],
+  "authors": [
+    {
+      "first": "José Antonio",
+      "last": "Primo de Rivera",
+      "source": "s5",
+      "quote": "founded in Spain in 1933 by José Antonio Primo de Rivera"
     }
   ]
 }
