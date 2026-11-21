@@ -44,15 +44,45 @@ function readCsv(file) {
 }
 
 // A Gutenberg author entry ("Rizal, José, 1861-1896") is this person when its surname is one of the person's name
-// words and its birth year is the person's. Translators, editors and other roles ("[Translator]") don't count.
+// words, its given names agree with the person's other name words and its birth year is the person's. Translators,
+// editors and other roles ("[Translator]") don't count.
+// Given names (Brandon, 2026-11-21: William James had 95 of Henry James's books, Ida B. Wells 65 of Carolyn Wells's):
+// an entry's given names, in full where it adds them ("Wells, H. G. (Herbert George)"), must share one with the person,
+// as an initial where either side gives only that, a common short form (Bill for William) or a spelling a letter or two
+// apart ("Gorky, Maksim", "Kropotkin, Petr"). A one-word name on either side ("Aristotle", "Plato") needs none. Titles
+// aren't names, so royals entered under a title alone ("Alice, Grand Duchess ...") go unmatched.
+// Dates before 1500 are approximate, and Gutenberg's differ from the catalog's by a few years (Aristotle 385 BCE
+// there, -383 here; Confucius 552 BCE, -550): for them up to 4 years apart counts (Brandon, 2026-11-21). Later birth
+// years are exact: a namesake born three years apart is someone else (the American novelist Winston Churchill, 1871).
+const NOT_GIVEN = new Set(["the", "of", "and", "graf", "kniaz", "freiherr", "sir", "saint", "st", "lord", "lady", "dame", "baron",
+  "baroness", "earl", "count", "countess", "mrs", "mr", "dr", "rev", "jr", "sr", "prince", "princess", "king", "queen", "emperor",
+  "empress", "tsar", "pope", "duke", "duchess", "grand", "consort"]);
+function editDistance(a, b) {
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i];
+    for (let j = 1; j <= b.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[b.length];
+}
+const sameGiven = (g, o) => (g.length === 1 || o.length === 1 ? g[0] === o[0]
+  : g === o || NICKNAMES.some((n) => n.includes(g) && n.includes(o)) || (Math.min(g.length, o.length) >= 4 && g[0] === o[0] && editDistance(g, o) <= 2));
 function gutenbergBooks(catalog, person) {
   const words = new Set(fold(person.name).split(/[\s.]+/).filter(Boolean));
   return catalog.filter((r) => r.Language === "en" && r.Type === "Text" && r.Authors.split(/;\s*/).some((a) => {
     if (/\[/.test(a)) return false;
     const m = a.match(/^([^,]+),.*?(-?\d{1,4})\??\s*(BCE|BC)?-/) || a.match(/^([^,]+?),?\s+(-?\d{1,4})\??\s*(BCE|BC)?-/);
-    if (!m) return false;
-    const born = (m[3] ? -1 : 1) * Number(m[2]);
-    return words.has(fold(m[1]).trim()) && person.born != null && Math.abs(born - person.born) <= 1;
+    if (!m || person.born == null) return false;
+    const born = (m[3] ? -1 : 1) * Number(m[2]), surname = fold(m[1]).trim(), apart = Math.abs(born - person.born);
+    if (!words.has(surname) || apart > 4 || (apart > 1 && person.born >= 1500)) return false;
+    const rest = a.slice(m[1].length).replace(/\d.*$/, ""), full = rest.match(/\(([^)]*)\)/);
+    const given = fold(full ? full[1] : rest).split(/[^a-z]+/).filter((x) => x && !NOT_GIVEN.has(x));
+    const others = [...words].filter((x) => x !== surname).flatMap((x) => x.split("-")).filter((x) => !NOT_GIVEN.has(x));
+    const named = others.filter((x) => !ROMAN.test(x));
+    // A ruler's numeral ("Jahangir I") matches an entry under a ruler's title ("Jahangir, Emperor of Hindustan").
+    if (others.length && !named.length) return /\b(king|queen|emperor|empress|tsar|czar|sultan|shah|pope)\b/.test(fold(rest));
+    return !given.length || !others.length || given.some((g) => named.some((o) => sameGiven(g, o)));
   }));
 }
 
