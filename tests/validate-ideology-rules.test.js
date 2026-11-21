@@ -140,6 +140,12 @@ try {
       assert.ok(!coatrack.check(subject.id, sup(), { strict: true }).problems.some((p) => /Wikipedia files it/.test(p)), "a redirect to a section of the subject's own article is fine"); n++;
       coatrack.setAliasPagesForTests({ [al]: { query: { pages: [{ title: al, missing: true }] } } });
       assert.ok(!coatrack.check(subject.id, sup(), { strict: true }).problems.some((p) => /Wikipedia files it/.test(p)), "a name with no Wikipedia page is fine"); n++;
+      // A SPELLING alias too ("modern liberalism", two letters off "Modern U.S. liberalism", is a disambiguation page).
+      const sp = N.toLowerCase(), spAudit = E(base(), (a) => { a.aliases = [{ name: sp, reason: "SPELLING", source: "s1", quote: sp }]; });
+      coatrack.setAliasPagesForTests({ [sp]: { query: { pages: [{ title: sp, pageprops: { disambiguation: "" } }] } } });
+      fails("SPELLING alias that is a disambiguation page", spAudit, new RegExp(`alias "${sp}": Wikipedia files it as a disambiguation page`));
+      coatrack.setAliasPagesForTests({ [sp]: { query: { pages: [{ title: own }], redirects: [{ from: sp, to: own }] } } });
+      assert.ok(!coatrack.check(subject.id, spAudit, { strict: true }).problems.some((p) => /Wikipedia files it/.test(p)), "a SPELLING alias redirecting to the subject's own article is fine"); n++;
     } finally { coatrack.setAliasPagesForTests(null); }
   }
   // A TRANSLATION alias is a name Wikipedia gives the ideology in another language (a language link, or a

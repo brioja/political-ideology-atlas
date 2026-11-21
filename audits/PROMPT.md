@@ -94,7 +94,7 @@ source's saved copy that uses the name; validate.js checks the quote is there an
 Integralist Action" for Brazilian integralism, nor "the Tea Party movement" alone for the Tea Party), showing the source equating the two ("'trans-exclusionary
 radical feminism', or TERFism"). A name Wikipedia files under another topic (its own article, a disambiguation page,
 a redirect to another article or to a section of one: "Committee of Union and Progress", "radical left") isn't a
-`SUPPORTED` alias, whatever the quote; a redirect to a section of the ideology's own article is fine. To find that source, look the alias up from its own side
+`SUPPORTED`, `TRANSLATION` or `SPELLING` alias, whatever the quote ("modern liberalism" is a disambiguation page); a redirect to a section of the ideology's own article is fine. To find that source, look the alias up from its own side
 (a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias ("TERF") usually defines it
 by the ideology's name ("trans-exclusionary radical feminist"). Wikidata never connects an alias (Brandon, 2026-11-14); every
 redirect to the article counts automatically, unless Wikipedia files it as a section, subtopic, related topic

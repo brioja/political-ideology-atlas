@@ -238,11 +238,12 @@ const ideologyName = (o) => (profiles().get(o) || {}).name || (lib.catalog().fin
 //                ("Chinese: 新儒家; pinyin: Xīn Rújiā"). Needs no quote (Brandon, 2026-11-21).
 //   SPELLING     the same name spelled differently: s/z, case, accents, spacing and hyphens aside, at most two letters
 //                differ and the ending is the same ("Austro-Marxism", "communisation"), or the same words reordered
-//                ("Jihadi-Salafism"). A word form ("Bolshevik", "Gaullist") or another name is a REDIRECT, or SUPPORTED.
+//                ("Jihadi-Salafism"). Not a name Wikipedia files under another topic (aliasPage below): "modern liberalism"
+//                is two letters off "Modern U.S. liberalism" but a disambiguation page. A word form ("Bolshevik", "Gaullist") or another name is a REDIRECT, or SUPPORTED.
 //   EPONYM       the person the "-ism" is named after ("Fortuyn" for Fortuynism).
 const ALIAS_REASONS = ["REDIRECT", "SUPPORTED", "TRANSLATION", "SPELLING", "EPONYM"];
 
-// Where Wikipedia files a SUPPORTED alias. A name Wikipedia gives to another topic (its own article, a disambiguation
+// Where Wikipedia files a SUPPORTED, TRANSLATION or SPELLING alias. A name Wikipedia gives to another topic (its own article, a disambiguation
 // page, a redirect to another article or to a section of one) would bring that topic's sources in with it ("Committee of
 // Union and Progress", "counterculture", "radical left"), so it isn't this ideology's alias (Brandon, 2026-11-21). A
 // redirect to the ideology's own article, a section of it included, is fine; a name with no page at all is too.
@@ -252,10 +253,12 @@ let aliasPagesForTests = null;
 function setAliasPagesForTests(map) { aliasPagesForTests = map; }
 const isSupported = (x) => x && typeof x === "object" && (x.reason === "SUPPORTED" || x.reason === undefined);
 const isTranslation = (x) => x && typeof x === "object" && x.reason === "TRANSLATION";
+const isSpellingAlias = (x) => x && typeof x === "object" && x.reason === "SPELLING";
+const pageChecked = (x) => isSupported(x) || isTranslation(x) || isSpellingAlias(x);
 const langLinksUrl = (title) => require("./wiki").apiUrl({ action: "query", titles: title, prop: "langlinks", lllimit: "max", redirects: "1" });
 async function prefetchAliasPages(id, audit) {
   const aliases = Array.isArray(audit && audit.aliases) ? audit.aliases : [];
-  for (const x of aliases) if (isSupported(x) || isTranslation(x)) await lib.cachedJson(aliasPageUrl(entryName(x)));
+  for (const x of aliases) if (pageChecked(x)) await lib.cachedJson(aliasPageUrl(entryName(x)));
   const own = lib.articleTitle({ id });
   if (own && aliases.some(isTranslation)) { await lib.cachedJson(langLinksUrl(own)); await lib.fetchArticle({ id }); }
 }
@@ -399,7 +402,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
     // the Tea Party" does (Brandon, 2026-11-20: a supported name has to be supported).
     if ((reason === "SUPPORTED" || reason === undefined) && typeof x.quote === "string" && !separately(norm(x.quote), [norm(al)], ideologyNames.map(norm)))
       problems.push(`alias "${al}": its quote doesn't name "${audit.name}" and the alias as separate phrases, so it doesn't show the source equating them`);
-    if (isSupported(x)) { const pr = aliasPageProblem(id, al); if (pr) problems.push(pr); }
+    if (isSupported(x) || isSpellingAlias(x)) { const pr = aliasPageProblem(id, al); if (pr) problems.push(pr); }
   }
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
     const key = authorKey(x);
