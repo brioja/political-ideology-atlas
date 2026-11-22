@@ -304,15 +304,9 @@ const people = judged(lib.PEOPLE_DIR, lib.peopleCatalog());
 console.log(`Uncertainty: ${people.filter((x) => x.r.placed).length}/${people.length} audited people are placed on every line; ` +
   `${controls.filter((x) => !x.p.borderline && !x.r.placed).length}/${controls.filter((x) => !x.p.borderline).length} controls correctly excluded.`);
 
-// 4b. Ideology colors: never only neutral shades (grey, black, white); a neutral is fine next to a
-// real color. Saturation is HSL saturation; below 0.15 reads as neutral.
-const saturation = (hex) => {
-  const v = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
-  const mx = Math.max(...v), mn = Math.min(...v);
-  return mx === mn ? 0 : (mx - mn) / (255 - Math.abs(mx + mn - 255));
-};
+// 4b. Ideology colors: never only neutral shades (lib.onlyNeutralColors).
 const colorFile = lib.readJson(require("path").join(__dirname, "audits", "ideology-colors.json"));
-const dull = Object.entries(colorFile).filter(([, v]) => v.colors.length && !v.colors.some((c) => saturation(c.hex) >= 0.15)).map(([id]) => id);
+const dull = Object.entries(colorFile).filter(([, v]) => lib.onlyNeutralColors(v)).map(([id]) => id);
 assert(!dull.length, `ideology colors are only grey, black or white (add a real color): ${dull.join(", ")}`);
 
 // 5. people.js (people and AI models) lines up with the statements.

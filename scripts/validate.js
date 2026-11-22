@@ -145,6 +145,23 @@ function personTexts(name, born) {
 const UNFOUND = /\b(?:not (?:available|accessible|online|found|located|obtainable|digiti[sz]ed|in the local corpora)|unavailable|(?:could|was|were) not (?:be )?(?:found|obtained|accessed|located|read)|no (?:online|digital|accessible|full)[- ](?:copy|text|edition|transcript))\b/i;
 const STOP = new Set(["the", "and", "his", "her", "their", "from", "with", "that", "this", "were", "which", "into", "over", "about", "speeches", "speech", "text", "texts", "local", "corpora"]);
 
+// The ideology's color entry: the committed one in audits/ideology-colors.json, or, with --dir and none committed, the
+// lane's <id>.color.json that scripts/lane.js merges in. Checked here so the session fixes it before integration.
+function colorErrors(id) {
+  const committed = readJson(require("path").join(lib.ROOT, "audits", "ideology-colors.json"))[id];
+  const draftFile = DIR && require("path").resolve(DIR, `${id}.color.json`);
+  let entry = committed, where = "audits/ideology-colors.json";
+  if (!committed && draftFile && fs.existsSync(draftFile)) {
+    where = `${id}.color.json`;
+    try { const c = readJson(draftFile); entry = c[id] || c; } catch (e) { return [`${where}: invalid JSON: ${e.message}`]; }
+  }
+  if (!entry) return [];
+  if (!Array.isArray(entry.colors) || entry.colors.some((c) => !/^#[0-9a-f]{6}$/i.test((c && c.hex) || "")))
+    return [`${where}: "colors" must be a list of { "name", "hex": "#rrggbb" }`];
+  if (lib.onlyNeutralColors(entry)) return [`${where}: colors are only grey, black or white; add a real color (CONTRIBUTING.md "Ideology colors")`];
+  return [];
+}
+
 function validate(id) {
   const errors = [];
   const warnings = [];
@@ -178,6 +195,7 @@ function validate(id) {
     return { errors, warnings };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
+  if (!PEOPLE) errors.push(...colorErrors(id));
   // An old audit passes the checks of the rules it was written under, not the current ones (a pass at "rules" 3
   // predates the coatrack rule and the source-tie check): say so first, so a pass isn't read as meeting today's rules.
   if ((a.rules || 0) < CURRENT_RULES) {

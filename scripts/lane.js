@@ -125,6 +125,18 @@ const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your su
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its line in scratchpad/lane-out/${LANE}/DONE.txt.`;
 const FIX = (id, errors) => `Integration found these validator errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
+// Why a child process failed, for the log: an uncaught error's message and where it was thrown, not the last lines of
+// its stack trace (2026-11-22: six audits logged "tests failed: } /  / Node.js v24.14.0" for a test.js assertion);
+// otherwise the output's last non-empty lines.
+function failure(out, n = 3) {
+  const lines = (out || "").split("\n").map((l) => l.trimEnd());
+  const i = lines.findIndex((l) => /^([A-Z]\w*)?Error\b[^:]*: /.test(l));
+  if (i > -1) {
+    const at = lines.slice(i + 1).map((l) => /^\s+at .*?\(?([^\s()]+):(\d+):\d+\)?$/.exec(l)).find(Boolean);
+    return lines[i] + (at ? ` (${path.relative(ROOT, at[1])}:${at[2]})` : "");
+  }
+  return lines.filter((l) => l.trim() && !/^Node\.js v\d/.test(l)).slice(-n).join(" / ");
+}
 // Runs one turn (new session, or resume of `thread`); returns the session id.
 async function session(prompt, thread) {
   let r, id = thread;
@@ -136,7 +148,7 @@ async function session(prompt, thread) {
     r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])]);
     try { id = JSON.parse(r.stdout).session_id || id; } catch {}
   }
-  if (r.status) log(`${ENGINE} exited ${r.status}: ${(r.stderr || "").trim().split("\n").pop()}`);
+  if (r.status) log(`${ENGINE} exited ${r.status}: ${failure(r.stderr, 1)}`);
   return id;
 }
 
@@ -174,9 +186,9 @@ function push(force) {
 const GENERATED = ["data.js", "people.js", "img", "audits/lines.json", "audits/statements/texts.json", "audits/share-slots.json", "audits/people-catalog.json", "audits/catalog.json"];
 function buildAndCommit(message, extra = []) {
   const build = PEOPLE ? [["scripts/images.js"], ["scripts/build.js", "--people"]] : [["scripts/build.js"]];
-  for (const b of build) { const r = run("node", b); if (r.status) return `build failed: ${(r.stderr || r.stdout).trim().split("\n").pop()}`; }
+  for (const b of build) { const r = run("node", b); if (r.status) return `build failed: ${failure(r.stderr || r.stdout)}`; }
   const t = run("node", ["test.js", ...(PEOPLE ? ["--people"] : [])]);
-  if (t.status) { git("checkout", "--", ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f)))); return `tests failed: ${(t.stdout + t.stderr).trim().split("\n").slice(-3).join(" / ")}`; }
+  if (t.status) { git("checkout", "--", ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f)))); return `tests failed: ${failure(t.stdout + t.stderr)}`; }
   git("add", "--", ...extra, ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f))));
   if (git("diff", "--cached", "--quiet").status) { git("commit", "-q", "-m", message); unpushed = true; }
   return "";
@@ -205,10 +217,10 @@ function integrate(id) {
 // ---- between subjects ----
 function books() {
   const r = run("node", ["scripts/prefetch-books.js", "--next", String(BOOKS_EVERY * 3)]);
-  log(`books: ${(r.stdout || r.stderr).trim().split("\n").pop()}`);
+  log(`books: ${r.status ? `failed: ${failure(r.stdout + r.stderr)}` : (r.stdout || r.stderr).trim().split("\n").pop()}`);
   locked(() => {
     const t = run("node", ["scripts/triage.js"]);
-    log(`triage: ${(t.stdout || t.stderr).trim().split("\n").pop()}`);
+    log(`triage: ${t.status ? `failed: ${failure(t.stdout + t.stderr)}` : (t.stdout || t.stderr).trim().split("\n").pop()}`);
     git("add", "audits/people-triage.json");
     if (git("diff", "--cached", "--quiet").status) { git("commit", "-q", "-m", "Triage: refit on the latest people audits"); unpushed = true; }
   });
@@ -217,7 +229,7 @@ function signal() {
   locked(() => {
     const r = run("node", ["scripts/statement-signal.js", "--apply"]);
     const tail = (r.stdout || "").trim().split("\n").filter((l) => /^(Promoted|Demoted)/.test(l));
-    log(`signal: ${tail.join("; ") || (r.stderr || "").trim().split("\n").pop()}`);
+    log(`signal: ${r.status ? `failed: ${failure(r.stdout + r.stderr)}` : tail.join("; ") || (r.stderr || "").trim().split("\n").pop()}`);
     if (git("diff", "--quiet", "--", "statements.json").status) {
       const why = buildAndCommit(`Statements: promote/demote by signal on the real lines\n\n${tail.join("\n")}`, ["statements.json"]);
       if (why) { git("checkout", "--", "statements.json"); log(`signal: ${why}; statements.json restored`); }

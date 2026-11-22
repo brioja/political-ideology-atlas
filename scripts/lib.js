@@ -362,6 +362,15 @@ function answersTo(id) {
   return out;
 }
 
-module.exports = { slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, personViews, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
+// Ideology colors (audits/ideology-colors.json): never only neutral shades (grey, black, white); a neutral is fine next
+// to a real color. Saturation is HSL saturation; below 0.15 reads as neutral. test.js checks the committed file,
+// validate.js a lane's <id>.color.json before it is merged (2026-11-22: Taoism's black-and-white entry failed every build).
+const saturation = (hex) => {
+  const v = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+  const mx = Math.max(...v), mn = Math.min(...v);
+  return mx === mn ? 0 : (mx - mn) / (255 - Math.abs(mx + mn - 255));
+};
+const onlyNeutralColors = (entry) => entry.colors.length > 0 && !entry.colors.some((c) => saturation(c.hex) >= 0.15);
+module.exports = { saturation, onlyNeutralColors, slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, personViews, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };
