@@ -1,8 +1,11 @@
 {
   "id": "catherine-of-aragon",
   "name": "Catherine of Aragon",
-  "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditedAt": "2026-11-22",
+  "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.2-sol"
+  ],
   "living": false,
   "role": "Queen of England as Henry VIII's first wife (1509–1533); regent during the 1513 war with Scotland",
   "summary": "Spanish-born queen who was married to Henry VIII until the marriage was annulled by the English church in 1533. Her surviving words and her record show a devout Catholic who refused the royal supremacy, appealed her case toward Rome and governed England as regent in 1513. Little of her own writing sets out a general political programme.",
@@ -10,11 +13,12 @@
   "sources": [
     {
       "id": "s1",
-      "kind": "primary",
+      "kind": "reference",
       "title": "The Life of Cardinal Wolsey (George Cavendish; Project Gutenberg text)",
       "author": "George Cavendish",
       "url": "https://www.gutenberg.org/cache/epub/54043/pg54043.txt",
-      "usedFor": "Her 1529 speech at the Blackfriars legatine court, as reported by Cavendish (secondhand, written decades later): appeal for justice, distrust of English counsel, wish for counsel from Spain"
+      "usedFor": "Her 1529 speech at the Blackfriars legatine court, as reported by Cavendish (secondhand, written decades later): appeal for justice, distrust of English counsel, wish for counsel from Spain",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,15 +26,80 @@
       "title": "Catherine of Aragon",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Catherine_of_Aragon",
-      "usedFor": "Overview of her record: 1513 regency and Scottish war, 1520 advice on alliance, refusal of the royal supremacy, poor relief, religious devotion, 1536 letter (authenticity disputed)"
+      "usedFor": "Historical citation preserved for review history.",
+      "evidence": "action"
     },
     {
       "id": "s3",
-      "kind": "reference",
+      "kind": "primary",
       "title": "Letters and Papers, Foreign and Domestic, Henry VIII, vol. 1 (September 1513 despatches)",
       "author": "J. S. Brewer (ed.), British History Online",
       "url": "https://www.british-history.ac.uk/letters-papers-hen8/vol1/pp1023-1042",
-      "usedFor": "Context for the 1513 war with Scotland and the Flodden despatches; no statement by her was taken from this page"
+      "usedFor": "Calendar of warrants and commissions issued under Catherine as regent in September 1513.",
+      "evidence": "action"
+    },
+    {
+      "id": "s4",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Catherine of Arragon, Dictionary of National Biography (Wikisource transcription)",
+      "author": "James Gairdner",
+      "url": "https://en.wikisource.org/wiki/Dictionary_of_National_Biography%2C_1885-1900/Catherine_of_Arragon",
+      "usedFor": "Catherine's intervention against the French meeting in 1520, objection to the legatine court, appeal to Rome, and refusal of the succession oath."
+    },
+    {
+      "id": "s5",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Letters and Papers, Foreign and Domestic, Henry VIII, vol. 7, 11–15 April 1534",
+      "author": "James Gairdner (ed.)",
+      "url": "https://www.british-history.ac.uk/letters-papers-hen8/vol7/pp188-199",
+      "usedFor": "Chapuys's contemporary report of Catherine's customary almsgiving at the Royal Maundy."
+    },
+    {
+      "id": "s6",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Inside and outside the palace: Henry VIII’s queens at law",
+      "author": "Anthony Musson and Kirsty Wright",
+      "url": "https://read.uolpress.co.uk/read/insiders-and-outsiders-in-the-history-of-law/section/c8551ce9-99ae-4fb0-b044-19b85b466515",
+      "usedFor": "Catherine's exercise of regency powers, military mobilisation and administration of her estates."
+    },
+    {
+      "id": "s7",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Practices and Performances of Queenship: Catherine of Aragon and Margaret Tudor, 1503–1533",
+      "author": "Michelle L. Beer",
+      "url": "https://www.ideals.illinois.edu/items/49863/bitstreams/145419/data.pdf",
+      "usedFor": "Catherine's role arranging the imperial meetings in 1520 and the accounts of her regular almsgiving."
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Letters and Papers, Foreign and Domestic, Henry VIII, vol. 6, 1–10 July 1533",
+      "author": "James Gairdner (ed.)",
+      "url": "https://www.british-history.ac.uk/letters-papers-hen8/vol6/pp334-352",
+      "usedFor": "Mountjoy's report on Catherine's rejection of her new title and appeal to papal jurisdiction, no. 760."
+    },
+    {
+      "id": "s9",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Catherine of Aragon, The New Historia",
+      "author": "Michelle L. Beer",
+      "url": "https://www.thenewhistoria.org/schema/catherine-of-aragon/",
+      "usedFor": "Catherine's preparations for Mary to succeed to the English throne."
+    },
+    {
+      "id": "s10",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Letters and Papers, Foreign and Domestic, Henry VIII, vol. 3, 2–15 April 1520",
+      "author": "J. S. Brewer (ed.)",
+      "url": "https://www.british-history.ac.uk/letters-papers-hen8/vol3/pp249-264",
+      "usedFor": "De La Sauch's dispatch reporting Catherine's council against the planned French meeting, no. 728."
     }
   ],
   "answers": {
@@ -113,10 +182,12 @@
       "sources": []
     },
     "state-harmful": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "As regent in 1513 Catherine exercised England's governing powers, including issuing military warrants and commissioning a judicial officer to hear criminal cases.",
+      "sources": [
+        "s3"
+      ]
     },
     "limit-guns": {
       "value": null,
@@ -365,10 +436,13 @@
       "sources": []
     },
     "separate-church-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Catherine contested the loss of her public standing as queen by obtaining a ruling from the pope on the validity of her royal marriage and invoking it against the government's decision.",
+      "sources": [
+        "s4",
+        "s8"
+      ]
     },
     "laws-from-scripture": {
       "value": null,
@@ -569,10 +643,12 @@
       "sources": []
     },
     "conscription": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "high",
+      "rationale": "As regent Catherine commissioned Thomas Lovell to raise forces through county levies in 1513 and issued a warrant empowering him to punish obstruction of the levy.",
+      "sources": [
+        "s3"
+      ]
     },
     "exit-over-voice": {
       "value": null,
@@ -1067,11 +1143,31 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Her record: she urged Henry to ally with her nephew Charles V rather than with France in 1520 (Wikipedia), which is a stated preference for a continuing foreign alliance.",
-      "sources": [
-        "s2"
+      "rationale": "Catherine promoted an imperial alliance in 1520. Her intervention establishes her preferred partner at that moment, with no position on permanent military commitments.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Her record: she urged Henry to ally with her nephew Charles V rather than with France in 1520 (Wikipedia), which is a stated preference for a continuing foreign alliance.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Catherine promoted an imperial alliance in 1520. Her intervention establishes her preferred partner at that moment, with no position on permanent military commitments.",
+          "sources": [
+            "s7"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "abolish-rental-housing": {
@@ -1245,9 +1341,33 @@
     "subordinate-church-to-state": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Her record: she refused to accept Henry as supreme head of the Church in England and kept to papal authority over her marriage, opposing the king's control of the Church (Wikipedia, citing the 1533 events). Her position is shown by that refusal rather than a quoted statement.",
+      "rationale": "Catherine appealed her marriage case to Rome and struck out the title that commissioners assigned her under the English judgment. She reserved the decision to the pope despite the king’s insistence that the English decision bound her.",
       "sources": [
-        "s2"
+        "s4",
+        "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Her record: she refused to accept Henry as supreme head of the Church in England and kept to papal authority over her marriage, opposing the king's control of the Church (Wikipedia, citing the 1533 events). Her position is shown by that refusal rather than a quoted statement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Catherine appealed her marriage case to Rome and struck out the title that commissioners assigned her under the English judgment. She reserved the decision to the pope despite the king’s insistence that the English decision bound her.",
+          "sources": [
+            "s4",
+            "s8"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "nonpartisan-head-of-state": {
@@ -1287,11 +1407,31 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "In her speech at the 1529 Blackfriars court she asked that the case be decided by the law and not by the king's pleasure ('if there be any just cause by the law that ye can allege against me'), reported by Cavendish, which is secondhand.",
-      "sources": [
-        "s1"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Catherine challenged the jurisdiction of the legatine tribunal in her marriage case and sought a judgment from Rome. Her challenge concerned ecclesiastical jurisdiction and leaves the ruler's standing under England's civil laws unresolved.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "In her speech at the 1529 Blackfriars court she asked that the case be decided by the law and not by the king's pleasure ('if there be any just cause by the law that ye can allege against me'), reported by Cavendish, which is secondhand.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Catherine challenged the jurisdiction of the legatine tribunal in her marriage case and sought a judgment from Rome. Her challenge concerned ecclesiastical jurisdiction and leaves the ruler's standing under England's civil laws unresolved.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "space-expansion": {
@@ -1433,10 +1573,13 @@
       "sources": []
     },
     "abolish-hereditary-privilege": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Catherine defended Mary's status as a legitimate royal child and prepared her to exercise the governing authority of the Crown through dynastic succession.",
+      "sources": [
+        "s4",
+        "s9"
+      ]
     },
     "history-own-civilization": {
       "value": null,
@@ -1505,10 +1648,13 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Catherine prepared Mary to inherit the governing powers of the Crown as the legitimate child of Henry VIII and refused the oath to the revised succession.",
+      "sources": [
+        "s4",
+        "s9"
+      ]
     },
     "minority-veto": {
       "value": null,
@@ -1541,11 +1687,31 @@
       "sources": []
     },
     "noblesse-oblige": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Her record: as queen she started an extensive programme for the relief of the poor and gave to colleges and charities (Wikipedia), which shows she accepted that the privileged owe care to the less fortunate.",
-      "sources": [
-        "s2"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Chapuys reports that Catherine customarily distributed alms to the poor at the Royal Maundy. The record establishes her own practice and leaves open whether she held that wealth itself creates a duty.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Her record: as queen she started an extensive programme for the relief of the poor and gave to colleges and charities (Wikipedia), which shows she accepted that the privileged owe care to the less fortunate.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Chapuys reports that Catherine customarily distributed alms to the poor at the Royal Maundy. The record establishes her own practice and leaves open whether she held that wealth itself creates a duty.",
+          "sources": [
+            "s5"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "withdraw-from-politics": {
@@ -1795,10 +1961,13 @@
       "sources": []
     },
     "abolish-legal-marriage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Catherine pursued formal legal recognition of her existing marriage through an appeal to Rome and continued to assert its binding legal status after the English annulment.",
+      "sources": [
+        "s4",
+        "s8"
+      ]
     },
     "public-access-to-information": {
       "value": null,
@@ -1819,11 +1988,31 @@
       "sources": []
     },
     "national-law-over-international": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Cavendish reports that she asked for counsel from Spain, not England, saying her English judges could not be indifferent, and that the case should be heard in Rome; this is secondhand and her words are only partly quoted.",
-      "sources": [
-        "s1"
+      "rationale": "Catherine appealed her annulment to the pope as the competent ecclesiastical authority. The appeal concerned church jurisdiction over marriage and leaves constitutional precedence over international law unresolved.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Cavendish reports that she asked for counsel from Spain, not England, saying her English judges could not be indifferent, and that the case should be heard in Rome; this is secondhand and her words are only partly quoted.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Catherine appealed her annulment to the pope as the competent ecclesiastical authority. The appeal concerned church jurisdiction over marriage and leaves constitutional precedence over international law unresolved.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "religious-nation": {
@@ -2027,7 +2216,7 @@
     "abolish-armed-forces": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
+      "rationale": "Catherine mobilised forces by issuing commissions of array in 1513. These wartime levies leave her position on keeping a standing military unresolved.",
       "sources": []
     },
     "rich-first": {
@@ -2037,18 +2226,45 @@
       "sources": []
     },
     "stay-neutral-between-blocs": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Her record: she urged Henry to enter an alliance with Charles V rather than with France (Wikipedia), a preference for taking a side between the great powers.",
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In 1520 Catherine convened her council to oppose the planned meeting with Francis I and helped arrange Henry’s meetings with Emperor Charles V, which produced an agreement offsetting the French approach.",
       "sources": [
-        "s2"
+        "s7",
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Her record: she urged Henry to enter an alliance with Charles V rather than with France (Wikipedia), a preference for taking a side between the great powers.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "In 1520 Catherine convened her council to oppose the planned meeting with Francis I and helped arrange Henry’s meetings with Emperor Charles V, which produced an agreement offsetting the French approach.",
+          "sources": [
+            "s7",
+            "s10"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Catherine prepared her daughter Mary to govern and resisted measures that would displace Mary as Henry’s legitimate child in the succession.",
+      "sources": [
+        "s4",
+        "s9"
+      ]
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -2483,10 +2699,12 @@
       "sources": []
     },
     "soldiers-refuse-war": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "Catherine used her regency powers to require levies for England’s war against Scotland and authorised punishment for obstruction of the muster.",
+      "sources": [
+        "s3"
+      ]
     },
     "collective-bargaining": {
       "value": null,
@@ -2901,15 +3119,766 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "military-force-for-human-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "revolution-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-violence-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "power-shapes-accepted-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "initiating-nondefensive-force-unjustified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-policy-non-interference": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "harassment-claims-court-access": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-force-beyond-defence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "publish-international-agreements": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mutual-intelligibility-defines-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "voluntary-union-payments-at-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-design-reflects-political-interests": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "Catherine contested the English ruling that made Henry’s marriage to Anne lawful and maintained her claim to be his legal wife while their marriage stood in canon law.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recognize-territorial-claims-from-conquest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "Early-exit audit: her recorded political positions are few. Her own words survive mainly in letters about her marriage and her daughter, and in Cavendish's account of her 1529 speech, which is secondhand. Most statements are null. Her appeal to Rome and her refusal of the royal supremacy are the clearest public positions. Several answers are low-confidence inferences from those positions. Her 1536 letter to Henry is reported by later writers and its authenticity is disputed, so it is not used as an answer.",
+  "notes": "This pass checked diplomacy, regency and military administration, succession and courts, ecclesiastical jurisdiction, estate administration and poor relief, and household and educational patronage. The records document particular actions in those areas and give little evidence about general economic policy, civil liberties, ecology, technology, or modern international institutions. The disputed letter attributed to Catherine shortly before her death was not used.",
   "reviews": [
     {
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 6
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "gpt-6.2-sol",
+      "reviewedAt": "2026-11-22",
+      "nulled": 4
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.2-sol",
+      "auditedAt": "2026-11-22"
     }
   ]
 }
