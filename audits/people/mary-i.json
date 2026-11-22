@@ -1,10 +1,11 @@
 {
   "id": "mary-i",
   "name": "Mary I",
-  "auditedAt": "2026-10-23",
+  "auditedAt": "2026-11-22",
   "auditor": [
     "claude-sonnet-5-5",
-    "claude-haiku-5-5"
+    "claude-haiku-5-5",
+    "gpt-6.2-sol"
   ],
   "passes": [
     {
@@ -14,6 +15,10 @@
     {
       "auditor": "claude-haiku-5-5",
       "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.2-sol",
+      "auditedAt": "2026-11-22"
     }
   ],
   "living": false,
@@ -27,7 +32,8 @@
       "title": "Mary I's Guildhall speech, 1 February 1554 (Proctor's and Foxe's versions)",
       "author": "Mary I, as reported by John Proctor and John Foxe",
       "url": "https://tudorsociety.com/1-february-1554-mary-i-rallies-london-against-wyatts-rebellion",
-      "usedFor": "Right to the crown, wedded to the realm and laws, marriage, Wyatt as traitor"
+      "usedFor": "Right to the crown, wedded to the realm and laws, marriage, Wyatt as traitor",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -35,7 +41,8 @@
       "title": "Letter to the Privy Council, 9 July 1553",
       "author": "Mary I",
       "url": "https://www.tudorsociety.com/9-july-1553-mary-tudor-writes-to-the-privy-council/",
-      "usedFor": "Claim to the throne by Act of Parliament and Henry VIII's will; promise of pardon and avoiding bloodshed"
+      "usedFor": "Claim to the throne by Act of Parliament and Henry VIII's will; promise of pardon and avoiding bloodshed",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -43,7 +50,8 @@
       "title": "Mary Tudor: Princess, Bastard, Queen (chapter 39, quoting the August 1553 proclamation and her letters)",
       "author": "Linda Porter",
       "url": "https://erenow.org/biographies/mary-tudor-princess-bastard-queen/40.php",
-      "usedFor": "Proclamation on compulsion in religion until common assent; remarks to Renard on Elizabeth and Jane Grey; letters to the pope"
+      "usedFor": "Historical citation for the earlier answer on the treason executions",
+      "evidence": "action"
     },
     {
       "id": "s4",
@@ -51,7 +59,8 @@
       "title": "Mary I of England",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Mary_I_of_England",
-      "usedFor": "Restoration of Rome, heresy laws, Spanish marriage, Wyatt, succession, will, war with France"
+      "usedFor": "Restoration of Rome, heresy laws, Spanish marriage, Wyatt, succession, will, war with France",
+      "evidence": "action"
     },
     {
       "id": "s5",
@@ -59,7 +68,8 @@
       "title": "Marian Restoration",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Marian_Restoration",
-      "usedFor": "Statutes of Repeal, papal supremacy, heresy acts, her funding of religious houses"
+      "usedFor": "Statutes of Repeal, papal supremacy, heresy acts, her funding of religious houses",
+      "evidence": "action"
     },
     {
       "id": "s6",
@@ -67,7 +77,8 @@
       "title": "Marian persecutions",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Marian_persecutions",
-      "usedFor": "Heresy laws from January 1555, trials by bishops, numbers burned"
+      "usedFor": "Heresy laws from January 1555, trials by bishops, numbers burned",
+      "evidence": "action"
     },
     {
       "id": "s7",
@@ -75,7 +86,8 @@
       "title": "Wedding of Mary I of England and Philip of Spain",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Wedding_of_Mary_I_of_England_and_Philip_of_Spain",
-      "usedFor": "Marriage treaty terms, parliamentary act, her ring remark"
+      "usedFor": "Marriage treaty terms, parliamentary act, her ring remark",
+      "evidence": "action"
     },
     {
       "id": "b1",
@@ -83,7 +95,8 @@
       "title": "Guildhall speech, 1 February 1554 (as recorded in later accounts)",
       "author": "Mary I (reported by englandcast.com, from the Guildhall text)",
       "url": "https://www.englandcast.com/2023/02/mary-i-guildhall-speech/",
-      "usedFor": "Her own words at the Guildhall: rightful queen, wedded to the realm and laws, obedience of subjects"
+      "usedFor": "Her own words at the Guildhall: rightful queen, wedded to the realm and laws, obedience of subjects",
+      "evidence": "words"
     },
     {
       "id": "b2",
@@ -91,7 +104,8 @@
       "title": "Mary I of England",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Mary_I_of_England",
-      "usedFor": "Restoration of Catholicism and papal authority, Pole as legate and archbishop, Spanish marriage, Wyatt's rebellion, succession and her will"
+      "usedFor": "Restoration of Catholicism and papal authority, Pole as legate and archbishop, Spanish marriage, Wyatt's rebellion, succession and her will",
+      "evidence": "action"
     },
     {
       "id": "b3",
@@ -99,7 +113,152 @@
       "title": "Marian persecutions",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Marian_persecutions",
-      "usedFor": "Revival of the heresy laws in January 1555, burnings and executions, numbers"
+      "usedFor": "Revival of the heresy laws in January 1555, burnings and executions, numbers",
+      "evidence": "action"
+    },
+    {
+      "id": "acts",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Marian statutes in Select Documents of English Constitutional History, nos. 163–166 (scanned edition)",
+      "author": "George Burton Adams and H. Morse Stephens, editors",
+      "url": "https://archive.org/download/cu31924030503555/cu31924030503555.pdf",
+      "usedFor": "Repeal acts, marriage settlement and revival of the heresy statutes"
+    },
+    {
+      "id": "bonner",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "March 1554 royal letter to Bonner and articles to the ordinaries, in Foxe’s Acts and Monuments (mirror)",
+      "author": "Mary I",
+      "url": "https://www.godrules.net/library/foxe/119foxe_f2.htm",
+      "usedFor": "Full royal articles on enforcement of canon law, discipline of clergy, church attendance and school instruction"
+    },
+    {
+      "id": "august",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Proclamation of 18 August 1553, in The English Drama and Stage under the Tudor and Stuart Princes, pp. 15–17 (scanned edition)",
+      "author": "Mary I, edited by William Carew Hazlitt",
+      "url": "https://archive.org/download/cu31924013271709/cu31924013271709.pdf",
+      "usedFor": "Licensing of publication and dramatic performance, bans on private reprisals and procedures for enforcement"
+    },
+    {
+      "id": "dnb",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Mary I (1516–1558), Dictionary of National Biography, vol. 36 (transcription)",
+      "author": "Sidney Lee",
+      "url": "https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Mary_I_(1516-1558)",
+      "usedFor": "Accession, parliamentary sessions, Wyatt’s revolt, war, succession, and financial and religious measures"
+    },
+    {
+      "id": "royal",
+      "kind": "reference",
+      "evidence": "action",
+      "title": "Mary I (r.1553–1558)",
+      "author": "The Royal Household",
+      "url": "https://www.royal.uk/mary-i",
+      "usedFor": "Religious settlement and the war with France alongside Spain"
+    },
+    {
+      "id": "palace",
+      "kind": "reference",
+      "evidence": "action",
+      "title": "Mary I: first crowned Queen of England",
+      "author": "Historic Royal Palaces",
+      "url": "https://www.hrp.org.uk/hampton-court-palace/history-and-stories/mary-i/",
+      "usedFor": "Regnal power, Wyatt’s rebellion, imprisonment of Elizabeth and executions"
+    },
+    {
+      "id": "ireland",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Ireland under the Tudors, vol. 1, ch. XVIII (mirror)",
+      "author": "Richard Bagwell",
+      "url": "https://www.cyberlibrary.org/en/books/ireland-under-the-tudors-with-a-succinct-account-of-the-earlier-4ae0b44a/chapters/37/",
+      "usedFor": "Crown acquisition and plantation of Leix and Offaly"
+    },
+    {
+      "id": "printing",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Commentary on the Stationers’ Royal Charter 1557",
+      "author": "Ronan Deazley",
+      "url": "https://www.copyrighthistory.org/cam/tools/request/showRecord.php?id=commentary_uk_1557",
+      "usedFor": "Printing privileges and the 1558 proclamation on prohibited books"
+    },
+    {
+      "id": "accession",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Accession proclamation, 19 July 1553, Tudor Royal Proclamations no. 388 (transcription)",
+      "author": "Mary I",
+      "url": "https://www.heraldica.org/topics/britain/brit-proclamations.htm",
+      "usedFor": "Formal assertion of the right to succeed Edward VI"
+    },
+    {
+      "id": "mint",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "The Coinage of Queen Mary Tudor, 1553–1558, Illustrated from the Public Records",
+      "author": "Henry Symonds",
+      "url": "https://www.britnumsoc.org/publications/Digital%20BNJ/pdfs/1911_BNJ_8_12.pdf",
+      "usedFor": "Royal indentures specifying gold and silver coinage standards"
+    },
+    {
+      "id": "trade",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Charter of the Merchants of Russia (1555), in The Principal Navigations, vol. 3",
+      "author": "Philip and Mary, collected by Richard Hakluyt",
+      "url": "https://www.gutenberg.org/ebooks/7476",
+      "usedFor": "Terms of incorporation and exclusive commercial privileges"
+    },
+    {
+      "id": "regal",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Act Concerning the Regal Power (1554), excerpt in Sources of English Constitutional History",
+      "author": "Parliament of England and Mary I",
+      "url": "https://constitution.org/1-History/sech/sech_078.htm",
+      "usedFor": "Equal legal powers of queens and kings regnant"
+    },
+    {
+      "id": "mobilization",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Mary I’s proclamation at Framlingham, 18 July 1553 (museum transcription)",
+      "author": "Mary I",
+      "url": "https://lanmanmuseum.uk/what-is-in-the-museum/mary-queen-of-england/",
+      "usedFor": "Mary’s personal orders mobilizing subjects under her appointed lieutenant"
+    },
+    {
+      "id": "musters",
+      "kind": "reference",
+      "evidence": "action",
+      "title": "Military orders and musters, British Library Add MS 48018, ff. 336r–337v",
+      "author": "British Library",
+      "url": "https://searcharchives.bl.uk/catalog/040-001951027",
+      "usedFor": "Mary’s orders to muster and levy men"
+    },
+    {
+      "id": "calais",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "The History of Mary I, Queen of England, ch. XV (mirror)",
+      "author": "J. M. Stone",
+      "url": "https://www.cyberlibrary.org/en/books/the-history-of-mary-i-queen-of-england-as-found-in-the-public-r-ce280c3a/chapters/17/",
+      "usedFor": "Efforts to recover Calais, including requests to Philip and the council"
+    },
+    {
+      "id": "accession-words",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Accession proclamation, 19 July 1553, Tudor Royal Proclamations no. 388 (transcription)",
+      "author": "Mary I",
+      "url": "https://www.heraldica.org/topics/britain/brit-proclamations.htm",
+      "usedFor": "Mary’s stated warrant for succession and allegiance"
     }
   ],
   "answers": {
@@ -146,10 +305,14 @@
       "sources": []
     },
     "regulate-corporations": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Muscovy Company obtained defined commercial privileges and a prescribed corporate structure by royal charter. The Stationers’ Company’s royal charter confined printing to company members and independent holders of royal licenses.",
+      "sources": [
+        "trade",
+        "printing"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "worker-ownership": {
       "value": null,
@@ -232,15 +395,36 @@
     "more-religion-public": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Her first measures and the Marian Restoration returned England to Catholic worship under papal obedience, and she persevered with the burnings even when advisers warned of revolt.",
+      "rationale": "Mary restored Catholic worship by repealing Edward VI’s religious settlement and ordered the Bishop of London to enforce her religious reforms throughout his diocese.",
       "sources": [
-        "s4",
-        "s5",
-        "b2"
+        "acts",
+        "bonner"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Her first measures and the Marian Restoration returned England to Catholic worship under papal obedience, and she persevered with the burnings even when advisers warned of revolt.",
+          "sources": [
+            "s4",
+            "s5",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Mary restored Catholic worship by repealing Edward VI’s religious settlement and ordered the Bishop of London to enforce her religious reforms throughout his diocese.",
+          "sources": [
+            "acts",
+            "bonner"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "correct-racial-injustice": {
@@ -400,17 +584,35 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "In her Guildhall speech (Foxe's version) she claims the crown by inheritance from her father and by coronation, and her 9 July 1553 letter orders the council to proclaim her title as rightful sovereign.",
-      "sources": [
-        "s1",
-        "s2",
-        "b1"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Mary claimed and exercised the governing powers of a hereditary sovereign. Her accession and marriage settlement do not address a monarchy confined to a ceremonial role.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "In her Guildhall speech (Foxe's version) she claims the crown by inheritance from her father and by coronation, and her 9 July 1553 letter orders the council to proclaim her title as rightful sovereign.",
+          "sources": [
+            "s1",
+            "s2",
+            "b1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Mary claimed and exercised the governing powers of a hereditary sovereign. Her accession and marriage settlement do not address a monarchy confined to a ceremonial role.",
+          "sources": [
+            "accession",
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "democracy-best": {
@@ -451,16 +653,35 @@
     },
     "separate-church-state": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "She drove the reunion with Rome and the repeal of her father's and brother's church laws, so that Catholic doctrine was enforced by the crown and Parliament as the realm's religion.",
+      "confidence": "high",
+      "rationale": "Mary used statutes to restore the authority of Rome and revive civil enforcement of Catholic orthodoxy through the heresy laws.",
       "sources": [
-        "s4",
-        "s5",
-        "b2"
+        "acts"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "She drove the reunion with Rome and the repeal of her father's and brother's church laws, so that Catholic doctrine was enforced by the crown and Parliament as the realm's religion.",
+          "sources": [
+            "s4",
+            "s5",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Mary used statutes to restore the authority of Rome and revive civil enforcement of Catholic orthodoxy through the heresy laws.",
+          "sources": [
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "laws-from-scripture": {
@@ -500,10 +721,13 @@
       "sources": []
     },
     "indigenous-land-authority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Mary approved a plantation that vested Leix and Offaly in the Crown and subjected the Irish holdings reserved in Leix to tenures and conditions laid down by the Crown administration.",
+      "sources": [
+        "ireland"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "colonial-reparations": {
       "value": null,
@@ -573,13 +797,35 @@
     },
     "restore-past-order": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Her stated and enacted aim was to undo the religious changes of Henry VIII and Edward VI and restore the church as it was before the break with Rome.",
+      "confidence": "high",
+      "rationale": "Her repeal acts reversed Edward VI’s church settlement and Henry VIII’s break with Rome, bringing back the earlier system of worship and ecclesiastical jurisdiction.",
       "sources": [
-        "s5",
-        "s4"
+        "acts"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Her stated and enacted aim was to undo the religious changes of Henry VIII and Edward VI and restore the church as it was before the break with Rome.",
+          "sources": [
+            "s5",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Her repeal acts reversed Edward VI’s church settlement and Henry VIII’s break with Rome, bringing back the earlier system of worship and ecclesiastical jurisdiction.",
+          "sources": [
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
+      ]
     },
     "results-over-ideology": {
       "value": null,
@@ -654,10 +900,14 @@
       "sources": []
     },
     "harm-principle": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mary subjected religious preaching, interpretation of scripture even in private settings, and printing to royal control, and her heresy settlement penalized doctrinal dissent.",
+      "sources": [
+        "august",
+        "acts"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "individual-rights-only": {
       "value": null,
@@ -666,10 +916,13 @@
       "sources": []
     },
     "conscription": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mary issued orders for mustering men for the army at the siege of Calais, and a royal order to London directed a levy for the relief of Calais.",
+      "sources": [
+        "musters"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "exit-over-voice": {
       "value": null,
@@ -852,10 +1105,13 @@
       "sources": []
     },
     "distinct-gender-roles": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Mary’s 1554 statute gave male and female sovereigns identical powers to exercise every function of the Crown.",
+      "sources": [
+        "regal"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "ban-interest": {
       "value": null,
@@ -884,8 +1140,9 @@
     "assimilate-immigrants": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "The Irish plantation terms imposed English customs in a conquered district. They do not set out a general policy on immigrants and their cultures.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
     },
     "elite-replacement": {
       "value": null,
@@ -930,10 +1187,14 @@
       "sources": []
     },
     "night-watchman-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mary’s enactments made enforcing religious doctrine and restoring ecclesiastical jurisdiction functions of the Crown and government.",
+      "sources": [
+        "acts",
+        "bonner"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "discourage-race-mixing": {
       "value": null,
@@ -942,10 +1203,13 @@
       "sources": []
     },
     "equal-moral-worth": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Leix plantation Mary approved subjected Irish and English inhabitants to different legal rules for keeping arms. It restricted the Irish from holding firearms without a license and required English settler households to keep arms.",
+      "sources": [
+        "ireland"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "socialism-one-country": {
       "value": null,
@@ -966,10 +1230,13 @@
       "sources": []
     },
     "restrict-conversion": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mary’s revived heresy statutes gave church authorities power to prosecute those who adopted teachings outside Catholic orthodoxy.",
+      "sources": [
+        "acts"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -978,10 +1245,13 @@
       "sources": []
     },
     "no-religion-state-schools": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mary’s articles ordered bishops to examine schoolmasters, remove those suspected of religious heterodoxy, and have Catholic replacements prepare pupils to assist at Mass.",
+      "sources": [
+        "bonner"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "state-strengthens-encirclement": {
       "value": null,
@@ -1074,10 +1344,13 @@
       "sources": []
     },
     "emergency-suspend-protections": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In 1558 Mary placed possession of prohibited heretical and seditious books under martial law by proclamation.",
+      "sources": [
+        "printing"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "price-controls-essentials": {
       "value": null,
@@ -1086,10 +1359,14 @@
       "sources": []
     },
     "party-controls-media": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Mary required written royal authorization to print books, ballads and rhymes. Her 1557 charter reserved most printing to members of the Stationers’ Company or holders of a royal license.",
+      "sources": [
+        "august",
+        "printing"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "party-commands-army": {
       "value": null,
@@ -1122,23 +1399,47 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Mary’s signed Framlingham proclamation ordered her subjects to join the royal army she had assembled under her lieutenant, the Earl of Sussex.",
+      "sources": [
+        "mobilization"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "church-by-bishops": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "She freed and reinstated the conservative bishops, made Reginald Pole Archbishop of Canterbury in 1556 and had bishops run the heresy trials and the deprivation of married clergy.",
+      "confidence": "high",
+      "rationale": "Mary directed the bishop of London and his officers to carry out her reforms throughout his diocese. Her heresy statute restored diocesan authorities’ power to proceed against alleged heretics.",
       "sources": [
-        "s4",
-        "s6",
-        "b2"
+        "bonner",
+        "acts"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "She freed and reinstated the conservative bishops, made Reginald Pole Archbishop of Canterbury in 1556 and had bishops run the heresy trials and the deprivation of married clergy.",
+          "sources": [
+            "s4",
+            "s6",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Mary directed the bishop of London and his officers to carry out her reforms throughout his diocese. Her heresy statute restored diocesan authorities’ power to proceed against alleged heretics.",
+          "sources": [
+            "bonner",
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "clerical-rule": {
@@ -1154,10 +1455,13 @@
       "sources": []
     },
     "censor-art-for-virtue": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mary made plays, ballads and rhymes subject to express royal authorization in a proclamation that treated unauthorized religious teaching and seditious performances as harms to public order.",
+      "sources": [
+        "august"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "unlimited-reelection": {
       "value": null,
@@ -1172,17 +1476,38 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "She did the reverse: she married Philip of Spain for a Habsburg alliance and declared war on France in 1557 alongside Spain.",
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Spanish marriage settlement reaffirmed a perpetual confederacy and mutual aid under the earlier treaties with Charles V. Mary subsequently entered the war against France on Spain’s side.",
       "sources": [
-        "s4",
-        "s7",
-        "b2"
+        "acts",
+        "royal"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "She did the reverse: she married Philip of Spain for a Habsburg alliance and declared war on France in 1557 alongside Spain.",
+          "sources": [
+            "s4",
+            "s7",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The Spanish marriage settlement reaffirmed a perpetual confederacy and mutual aid under the earlier treaties with Charles V. Mary subsequently entered the war against France on Spain’s side.",
+          "sources": [
+            "acts",
+            "royal"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "abolish-rental-housing": {
@@ -1224,16 +1549,37 @@
     "death-penalty": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "She approved the execution of the leaders of Wyatt's rebellion, Lady Jane Grey and Suffolk for treason, after first declining to execute Jane.",
+      "rationale": "Mary’s government executed Lady Jane Grey and the leaders of Wyatt’s rising after convictions for treason.",
       "sources": [
-        "s4",
-        "s3",
-        "b2",
-        "b3"
+        "dnb",
+        "palace"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "She approved the execution of the leaders of Wyatt's rebellion, Lady Jane Grey and Suffolk for treason, after first declining to execute Jane.",
+          "sources": [
+            "s4",
+            "s3",
+            "b2",
+            "b3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Mary’s government executed Lady Jane Grey and the leaders of Wyatt’s rising after convictions for treason.",
+          "sources": [
+            "dnb",
+            "palace"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "sex-ed-in-schools": {
@@ -1261,16 +1607,23 @@
       "sources": []
     },
     "minority-language-support": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Under the Leix plantation Mary approved, Irish tenants had to teach their children English and settlers risked forfeiture for abandoning English.",
+      "sources": [
+        "ireland"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "religious-exemptions": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mary restored laws allowing church authorities to proceed against adherents of competing religious doctrines, and Protestant religious practice was prosecuted under the settlement.",
+      "sources": [
+        "acts",
+        "dnb"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "encourage-eccentricity": {
       "value": null,
@@ -1315,10 +1668,13 @@
       "sources": []
     },
     "direct-election-head-of-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mary’s accession proclamation treated her title as hers by right on her brother’s death and called for allegiance on that basis.",
+      "sources": [
+        "accession"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "central-bank-independence": {
       "value": null,
@@ -1365,15 +1721,34 @@
     "subordinate-church-to-state": {
       "value": -2,
       "confidence": "high",
-      "rationale": "She dropped the title Supreme Head of the Church, restored papal authority, returned First Fruits and Tenths to the Church and funded the refounding of religious houses from her own money, the opposite of curbing clerical power and property.",
+      "rationale": "Mary assented to the repeal of royal supremacy and restored the jurisdiction of the See of Rome and the pre-schism jurisdiction of church courts, within the limits set out in the repeal act.",
       "sources": [
-        "s4",
-        "s5",
-        "b2"
+        "acts"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "She dropped the title Supreme Head of the Church, restored papal authority, returned First Fruits and Tenths to the Church and funded the refounding of religious houses from her own money, the opposite of curbing clerical power and property.",
+          "sources": [
+            "s4",
+            "s5",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Mary assented to the repeal of royal supremacy and restored the jurisdiction of the See of Rome and the pre-schism jurisdiction of church courts, within the limits set out in the repeal act.",
+          "sources": [
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "nonpartisan-head-of-state": {
@@ -1415,12 +1790,34 @@
     "sovereign-above-law": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "At the Guildhall she described herself as wedded to the realm and its laws by her coronation ring, and said she would marry only with Parliament's approval.",
+      "rationale": "Mary accepted a statutory marriage settlement preserving the laws and customs of the realm and limiting what Philip could do as joint sovereign.",
       "sources": [
-        "s1",
-        "s7"
+        "acts"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "At the Guildhall she described herself as wedded to the realm and its laws by her coronation ring, and said she would marry only with Parliament's approval.",
+          "sources": [
+            "s1",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Mary accepted a statutory marriage settlement preserving the laws and customs of the realm and limiting what Philip could do as joint sovereign.",
+          "sources": [
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
+      ]
     },
     "space-expansion": {
       "value": null,
@@ -1473,14 +1870,35 @@
     "apostasy-punishable": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Contested fit: the revived heresy laws punished Protestants, including those who had returned to Protestantism, but they were framed as heresy against the Catholic church, not as a law against leaving a religion as such.",
+      "rationale": "Mary revived laws against heresy and her reign saw Cranmer executed after he repudiated his Catholic recantations. The law targeted departure from Catholic orthodoxy as heresy, so the fit to a general ban on leaving one’s religion is limited.",
       "sources": [
-        "s6",
-        "b3"
+        "acts",
+        "dnb"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Contested fit: the revived heresy laws punished Protestants, including those who had returned to Protestantism, but they were framed as heresy against the Catholic church, not as a law against leaving a religion as such.",
+          "sources": [
+            "s6",
+            "b3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Mary revived laws against heresy and her reign saw Cranmer executed after he repudiated his Catholic recantations. The law targeted departure from Catholic orthodoxy as heresy, so the fit to a general ban on leaving one’s religion is limited.",
+          "sources": [
+            "acts",
+            "dnb"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "women-must-cover": {
@@ -1641,13 +2059,37 @@
     },
     "elective-rulers": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "She based her claim on inheritance from Henry VIII, the Act of Succession and his will, not on any election by the political nation.",
+      "confidence": "high",
+      "rationale": "Mary proclaimed her own accession as a legal right on Edward VI’s death. Her marriage settlement provided for the succession of her children under the laws of inheritance.",
       "sources": [
-        "s1",
-        "s2"
+        "accession",
+        "acts"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "She based her claim on inheritance from Henry VIII, the Act of Succession and his will, not on any election by the political nation.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Mary proclaimed her own accession as a legal right on Edward VI’s death. Her marriage settlement provided for the succession of her children under the laws of inheritance.",
+          "sources": [
+            "accession",
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
+      ]
     },
     "minority-veto": {
       "value": null,
@@ -1656,29 +2098,70 @@
       "sources": []
     },
     "resist-lawless-ruler": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "She called Wyatt a vile traitor in the Guildhall speech (Foxe) and had the leaders of the 1554 rebellion executed, though the rebels objected to her marriage and policy.",
-      "sources": [
-        "s1",
-        "s4",
-        "b2",
-        "b1"
-      ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "value": null,
+      "confidence": "low",
+      "rationale": "Mary prosecuted a rising against her marriage and rule. The record of Wyatt’s rising does not establish her position on resistance to a sovereign who violates the constitution.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "She called Wyatt a vile traitor in the Guildhall speech (Foxe) and had the leaders of the 1554 rebellion executed, though the rebels objected to her marriage and policy.",
+          "sources": [
+            "s1",
+            "s4",
+            "b2",
+            "b1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Mary prosecuted a rising against her marriage and rule. The record of Wyatt’s rising does not establish her position on resistance to a sovereign who violates the constitution.",
+          "sources": [
+            "dnb"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "parliament-supreme": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Mixed evidence: she submitted her marriage and the religious repeals to Parliament, but she tried to unsettle Elizabeth's succession against Parliament's resistance.",
+      "rationale": "Mary secured parliamentary statutes for the marriage settlement and religious restoration. Her own proclamations also imposed rules on printing and religious debate and directed detention for breach.",
       "sources": [
-        "s1",
-        "s4"
+        "acts",
+        "august"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Mixed evidence: she submitted her marriage and the religious repeals to Parliament, but she tried to unsettle Elizabeth's succession against Parliament's resistance.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Mary secured parliamentary statutes for the marriage settlement and religious restoration. Her own proclamations also imposed rules on printing and religious debate and directed detention for breach.",
+          "sources": [
+            "acts",
+            "august"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
+      ]
     },
     "animal-suffering-matters": {
       "value": null,
@@ -1723,10 +2206,13 @@
       "sources": []
     },
     "native-born-offices": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The marriage settlement reserved English and dependent territories’ offices and benefices to persons born in the relevant realms and barred Philip from appointing foreigners to them.",
+      "sources": [
+        "acts"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "party-own-road": {
       "value": null,
@@ -1741,10 +2227,13 @@
       "sources": []
     },
     "return-lost-territory": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "After France captured Calais in 1558, Mary pressed Philip and her council to recover it and sought its restoration in any peace.",
+      "sources": [
+        "calais"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "indigenous-political-leadership": {
       "value": null,
@@ -2053,10 +2542,14 @@
       "sources": []
     },
     "majority-settlement": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mary’s Irish administration seized Leix and Offaly and put the districts under Crown plantation, granting confiscated land to settlers and reserving fortified towns for the new administration.",
+      "sources": [
+        "ireland",
+        "dnb"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "neither-capitalism-nor-communism": {
       "value": null,
@@ -2085,11 +2578,35 @@
     "suppress-opposition": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "She suppressed Wyatt's rebellion and Protestant dissent through trials and executions, but the record does not show her targeting ordinary political opposition in general (Wikipedia, Mary I of England).",
+      "rationale": "Mary’s proclamation against sedition put unauthorized plays and publications under royal license and directed officers to detain deliberate offenders. She also imprisoned Elizabeth on suspicion of involvement in Wyatt’s rebellion.",
       "sources": [
-        "b2"
+        "august",
+        "palace"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "She suppressed Wyatt's rebellion and Protestant dissent through trials and executions, but the record does not show her targeting ordinary political opposition in general (Wikipedia, Mary I of England).",
+          "sources": [
+            "b2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Mary’s proclamation against sedition put unauthorized plays and publications under royal license and directed officers to detain deliberate offenders. She also imprisoned Elizabeth on suspicion of involvement in Wyatt’s rebellion.",
+          "sources": [
+            "august",
+            "palace"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
+      ]
     },
     "punish-blasphemy": {
       "value": null,
@@ -2188,10 +2705,13 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mary’s accession proclamation attributes the succession to divine providence and presents her claim as a lawful inheritance that obliges her subjects’ allegiance.",
+      "sources": [
+        "accession-words"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2225,16 +2745,35 @@
     },
     "dynastic-succession": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "She hoped for a child of her own to succeed, her will named Philip regent during such a child's minority, and she told Renard it would burden her conscience to let a bastard (Elizabeth) succeed.",
+      "confidence": "high",
+      "rationale": "Mary’s marriage settlement expressly provided that children of the marriage would succeed to her realms under their succession laws and customs.",
       "sources": [
-        "s3",
-        "s4",
-        "b2"
+        "acts"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "She hoped for a child of her own to succeed, her will named Philip regent during such a child's minority, and she told Renard it would burden her conscience to let a bastard (Elizabeth) succeed.",
+          "sources": [
+            "s3",
+            "s4",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Mary’s marriage settlement expressly provided that children of the marriage would succeed to her realms under their succession laws and customs.",
+          "sources": [
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "interest-free-mutual-credit": {
@@ -2400,10 +2939,13 @@
       "sources": []
     },
     "abolish-ip": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Stationers’ Company charter made enforcement of exclusive printing privileges part of the Crown’s regulation of the book trade.",
+      "sources": [
+        "printing"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "uniformed-youth": {
       "value": null,
@@ -2664,10 +3206,13 @@
       "sources": []
     },
     "state-arms-monopoly": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The plantation Mary approved in Leix required English settler households to keep arms, and imposed separate restrictions on the arms held by the Irish.",
+      "sources": [
+        "ireland"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "soldiers-refuse-war": {
       "value": null,
@@ -2815,16 +3360,35 @@
     },
     "religious-equal-recognition": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Her measures gave Catholic doctrine exclusive legal precedence and punished Protestant interpretations as heresy.",
+      "confidence": "high",
+      "rationale": "Mary’s settlement restored Roman jurisdiction and revived statutes to enforce Catholic orthodoxy against rival Christian doctrines.",
       "sources": [
-        "s5",
-        "s6",
-        "b3"
+        "acts"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Her measures gave Catholic doctrine exclusive legal precedence and punished Protestant interpretations as heresy.",
+          "sources": [
+            "s5",
+            "s6",
+            "b3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Mary’s settlement restored Roman jurisdiction and revived statutes to enforce Catholic orthodoxy against rival Christian doctrines.",
+          "sources": [
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "democracy-is-procedure": {
@@ -2854,8 +3418,9 @@
     "women-suffrage": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "The 1554 statute addresses the powers of the Crown when held by a woman. It does not address women’s electoral or general political rights.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
     },
     "religion-oppresses-women": {
       "value": null,
@@ -2913,23 +3478,45 @@
     },
     "national-church-status": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "She restored the traditional Catholic church as the sole legally established church of England, though under papal rather than royal headship.",
+      "confidence": "high",
+      "rationale": "The repeal acts restored the Catholic church’s public worship and jurisdiction, and a separate statute supplied legal sanctions against doctrines outside its teaching.",
       "sources": [
-        "s4",
-        "s5",
-        "b2"
+        "acts"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "auditor": "gpt-6.2-sol",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "She restored the traditional Catholic church as the sole legally established church of England, though under papal rather than royal headship.",
+          "sources": [
+            "s4",
+            "s5",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The repeal acts restored the Catholic church’s public worship and jurisdiction, and a separate statute supplied legal sanctions against doctrines outside its teaching.",
+          "sources": [
+            "acts"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-22"
+        }
       ]
     },
     "minority-territorial-autonomy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Crown turned Leix and Offaly into shires. In the parts of Leix set aside for the O’Mores, their chiefs held land under Crown tenure and were required to use English common law.",
+      "sources": [
+        "ireland"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "disputed-territory-plebiscite": {
       "value": null,
@@ -2950,10 +3537,13 @@
       "sources": []
     },
     "restrict-indigenous-settlement": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Mary approved the plantation of Leix, under which English settlers received the eastern district and most areas were assigned according to terms set by her administration.",
+      "sources": [
+        "ireland"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "equal-conscription": {
       "value": null,
@@ -3016,10 +3606,14 @@
       "sources": []
     },
     "no-business-privileges": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mary chartered the Stationers’ Company with exclusive printing privileges, subject to separate royal licenses, and with Philip approved the Muscovy Company’s trading charter.",
+      "sources": [
+        "printing",
+        "trade"
+      ],
+      "auditor": "gpt-6.2-sol"
     },
     "no-denominational-politics": {
       "value": null,
@@ -3104,9 +3698,877 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Mary used royal injunctions and acts of Parliament to restore Catholic worship and enforce its standards of religious conduct.",
+      "sources": [
+        "bonner",
+        "acts"
+      ],
+      "auditor": "gpt-6.2-sol"
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Mary dissolved her third Parliament in January 1555 after it passed the statutes restoring papal jurisdiction and reviving the heresy laws.",
+      "sources": [
+        "dnb"
+      ],
+      "auditor": "gpt-6.2-sol"
+    },
+    "money-backed-by-precious-metals": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Mary contracted with mint officers to issue coins under specified gold and silver fineness and weight standards.",
+      "sources": [
+        "mint"
+      ],
+      "auditor": "gpt-6.2-sol"
+    },
+    "remove-indigenous-peoples": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Crown took land in Leix and Offaly for plantation. In Leix the settlers received the eastern district, with a portion of the western district reserved under new Crown tenures for members of the O’More clans.",
+      "sources": [
+        "ireland"
+      ],
+      "auditor": "gpt-6.2-sol"
+    },
+    "military-force-beyond-defence": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mary committed England to war against France in 1557 alongside Philip, sending English forces to take part in his campaign in France.",
+      "sources": [
+        "dnb",
+        "royal"
+      ],
+      "auditor": "gpt-6.2-sol"
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The 1553 proclamation reserves punishment of offenders to public authorities. It does not address how opposition movements may act under a repressive government.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "military-force-for-human-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "revolution-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "political-violence-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "power-shapes-accepted-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "initiating-nondefensive-force-unjustified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "foreign-policy-non-interference": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "harassment-claims-court-access": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "publish-international-agreements": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "mutual-intelligibility-defines-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "voluntary-union-payments-at-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "technology-design-reflects-political-interests": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "indigenous-internal-justice": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Marian settlement required the O’Mores in the Irish part of Leix to use only common law, replacing their right to administer justice according to their own customs.",
+      "sources": [
+        "ireland"
+      ],
+      "auditor": "gpt-6.2-sol"
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "recognize-territorial-claims-from-conquest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": [],
+      "auditor": "gpt-6.2-sol"
     }
   },
-  "notes": "Mary's August 1553 proclamation said she would not compel subjects in religion until further order by common assent; within a year she had moved to full restoration. Statutes enacted in her name on Parliament's or ministers' advice were not counted unless she personally drove them. Foxe and chroniclers' versions of the Guildhall speech differ and are partly secondhand. Limits: the full texts of her 1554 instructions to bishops and of the proclamation were not found online in this session, so those rest on summaries.\n\nMerged with an independent claude-haiku-5-5 audit: 1 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Her record (restoration, heresy laws, Spanish marriage) is documented in secondary accounts; few of her own words survive, so most answers rest on what she drove. The 1553 proclamation promising not to force consciences is noted in the Wikipedia article but its wording was not retrieved, so it is not used. Chroniclers and Foxe were not opened. Counts and burnings are contested by Protestant writers; the answers follow the measures she personally drove.",
+  "notes": "Mary’s August 1553 proclamation promised temporary forbearance in matters of conscience while imposing immediate controls on preaching, publication and private reprisals. Her subsequent statutes restored Roman jurisdiction and made religious conformity enforceable. Both the August proclamation and the March 1554 royal instructions are available in full transcriptions. This pass reviewed the full statement bank and checked religious policy, the royal succession, parliamentary power, press regulation, war, diplomacy, coinage, trade and the Irish plantations. Follow-up for the widest uncertainty lines used the marriage statute and trading charter, the Irish plantation terms, and work on Tudor customs, textiles, grain provisioning and poor relief. The evidence on customs describes a revenue measure and does not establish a protective tariff policy, and the evidence on labour and relief does not settle the statements on class relations. Earlier source IDs are retained for the signed answer history.",
   "reviews": [
     {
       "kind": "inference",
@@ -3119,6 +4581,13 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "gpt-6.2-sol",
+      "reviewedAt": "2026-11-22",
+      "nulled": 2
     }
-  ]
+  ],
+  "rules": 7
 }
