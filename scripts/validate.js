@@ -26,7 +26,7 @@ const KINDS = ["primary", "scholarly", "reference", "program"];
 const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the subject (AUDIT_RULES.md, "Record over words")
 // Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
-const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
+const NOT_IDEAS_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
 // The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT.md, PROMPT_PEOPLE.md).
 const CURRENT_RULES = 7;
@@ -178,9 +178,9 @@ function validate(id) {
   // short record instead of an audit. It's finished, and excluded like an uncertainty failure.
   if (!PEOPLE && a.notAnIdeology !== undefined) errors.push('"notAnIdeology" was renamed "notIdeasOfWhatSocietyShouldBe" (2026-11-20): rename the key');
   if (!PEOPLE && a.notIdeasOfWhatSocietyShouldBe !== undefined) {
-    // { "reason": one of NOT_AN_IDEOLOGY_REASONS, "explanation": "..." }.
+    // { "reason": one of NOT_IDEAS_REASONS, "explanation": "..." }.
     const n = a.notIdeasOfWhatSocietyShouldBe;
-    if (!n || !NOT_AN_IDEOLOGY_REASONS.includes(n.reason)) errors.push(`"notIdeasOfWhatSocietyShouldBe.reason" must be one of ${NOT_AN_IDEOLOGY_REASONS.join(", ")}`);
+    if (!n || !NOT_IDEAS_REASONS.includes(n.reason)) errors.push(`"notIdeasOfWhatSocietyShouldBe.reason" must be one of ${NOT_IDEAS_REASONS.join(", ")}`);
     else if (typeof n.explanation !== "string" || n.explanation.trim().length < 20) errors.push('"notIdeasOfWhatSocietyShouldBe.explanation" needs at least a sentence');
     const src = Array.isArray(a.sources) ? a.sources : [];
     if (!src.length || src.some((x) => !/^https?:\/\/\S+$/.test(x.url || ""))) errors.push('"notIdeasOfWhatSocietyShouldBe" needs at least one source with an http(s) url');
@@ -191,7 +191,7 @@ function validate(id) {
       const hits = text ? (text.match(/\bideas\b/gi) || []).length : 0;
       if (hits) errors.push(`DOES_NOT_INCLUDE_IDEAS not allowed: its Wikipedia article (${lib.articleTitle(entry)}) says "ideas" ${hits} time${hits > 1 ? "s" : ""}; audit it in full`);
     }
-    if (!errors.length) errors.push(`not an ideology: ${n.reason}: ${n.explanation}`);
+    if (!errors.length) errors.push(`not ideas of what society should be: ${n.reason}: ${n.explanation}`);
     return { errors, warnings };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
@@ -700,10 +700,10 @@ async function main() {
   process.exit(failed === 0 ? 0 : failed === excluded ? 2 : 1);
 }
 
-// Finished but excluded: by the uncertainty rule, or as not an ideology (the first check).
+// Finished but excluded: by the uncertainty rule, or as not ideas of what society should be (the first check).
 // Errors that don't send an existing audit back to the audit queue (pending.js): an honest uncertainty
-// failure, a "not an ideology" record, or a coatrack-check finding (fixed in the audit, not by redoing it).
-const excludedOnly = (errors) => errors.length > 0 && errors.every((e) => e.startsWith("uncertainty:") || e.startsWith("not an ideology:") || e.startsWith("sources:"));
+// failure, a notIdeasOfWhatSocietyShouldBe record, or a coatrack-check finding (fixed in the audit, not by redoing it).
+const excludedOnly = (errors) => errors.length > 0 && errors.every((e) => e.startsWith("uncertainty:") || e.startsWith("not ideas of what society should be:") || e.startsWith("sources:"));
 // A dividing line as the site names it (data.js), or past the drawn ones by its strongest statements.
 function lineName(i) {
   const { MODEL, QUESTIONS } = require(require("path").join(lib.ROOT, "data.js"));

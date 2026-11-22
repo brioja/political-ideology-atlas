@@ -55,7 +55,7 @@ const fetchArticle = async (e) => { const t = articleTitle(e); return t ? htmlOf
 const wikipediaOtherNames = (id) => { const a = wikipediaArticles()[id]; return (a && a.otherNames) || []; };
 const notable = (id) => { const a = wikipediaArticles()[id]; return !a || a.notable; };
 // An entry on one person's views, by its title ("Political positions of …", "Religious views of …"): that person's
-// views, not a set of ideas, so not an ideology (notIdeasOfWhatSocietyShouldBe reason PERSON), marked by this rule
+// views, not a set of ideas (notIdeasOfWhatSocietyShouldBe reason PERSON), marked by this rule
 // without an audit. The people side audits the person. An ideology named after them (Trumpism) is tied to the
 // person but isn't them, and is audited (Brandon, 2026-11-21).
 const PERSON_VIEWS = /^(Political|Religious) (positions|views|philosophy) of /;

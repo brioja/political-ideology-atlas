@@ -105,11 +105,11 @@ try {
   fails("missing statement with an unknown source", E(base(), (a) => { a.missingStatements = [{ ...ms(), sources: ["s9"] }]; }), /missingStatements\[0\]: unknown source 's9'/);
   fails("missing statement with one quote", E(base(), (a) => { a.missingStatements = [{ ...ms(), quotes: [{ source: "s2", text: `We hold that ${N} is the way forward for all` }] }]; }), /missingStatements\[0\]: 1 quote\(s\); the rule of two/);
   warns("missing statement without quotes", E(base(), (a) => { const m = ms(); delete m.quotes; a.missingStatements = [m]; }), /missingStatements\[0\]: no "quotes"/);
-  // "Not an ideology": a reason from the list, a sentence of explanation, a source; the "ideas" test.
+  // notIdeasOfWhatSocietyShouldBe: a reason from the list, a sentence of explanation, a source; the "ideas" test.
   const nai = (n) => ({ id: subject.id, name: N, auditedAt: "2026-11-07", auditor: "claude-sonnet-5-5", notIdeasOfWhatSocietyShouldBe: n,
     sources: [{ id: "s1", kind: "reference", title: "Article", url: "https://example.org/encyclopedia" }] });
   { const e = result(nai({ reason: "PARTY", explanation: "It is a political party, not a set of political ideas." })).errors;
-    assert(e.length === 1 && /^not an ideology: PARTY/.test(e[0]), `valid notIdeasOfWhatSocietyShouldBe record: got ${e}`); n++; }
+    assert(e.length === 1 && /^not ideas of what society should be: PARTY/.test(e[0]), `valid notIdeasOfWhatSocietyShouldBe record: got ${e}`); n++; }
   fails("notIdeasOfWhatSocietyShouldBe reason not in the list", nai({ reason: "CLUB", explanation: "It is a club, not a set of political ideas at all." }), /"notIdeasOfWhatSocietyShouldBe\.reason" must be one of/);
   fails("notIdeasOfWhatSocietyShouldBe explanation too short", nai({ reason: "PARTY", explanation: "A party." }), /"notIdeasOfWhatSocietyShouldBe\.explanation" needs at least a sentence/);
   fails("notIdeasOfWhatSocietyShouldBe as free text", nai("It is a political party, not a set of political ideas."), /"notIdeasOfWhatSocietyShouldBe\.reason" must be one of/);

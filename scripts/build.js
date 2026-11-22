@@ -37,7 +37,7 @@ const r4 = (x) => Math.round(x * 1e4) / 1e4;
 // A list of answers' bars as shipped (lineBars in pca.js): rounded, null for a line its answers don't
 // reach (JSON has no Infinity; lineSpread reads null as infinite).
 const barsOf = (ctx, profile) => lineBars(ctx, answeredIndexes(profile)).map((b) => (isFinite(b) ? r4(b) : null));
-let included, stale, missing, notPlaced, notIdeology, awaiting, duplicates, notNotable;
+let included, stale, missing, notPlaced, notIdeas, awaiting, duplicates, notNotable;
 const awaitingReaudit = require("./lib").awaitingReaudit();
 
 if (process.argv.includes("--people")) {
@@ -59,16 +59,16 @@ function classify(judge = null) {
   notNotable = [];
   missing = [];
   notPlaced = [];
-  notIdeology = [];
+  notIdeas = [];
   awaiting = [];
   for (const entry of catalog()) {
     if (require("./lib").duplicateOf(entry.id)) { duplicates.push(entry.id); continue; } // another entry owns its article
     if (!require("./lib").notable(entry.id)) { notNotable.push(entry.id); continue; } // no Wikipedia article of its own
-    if (require("./lib").personViews(entry)) { notIdeology.push(entry.id); continue; } // one person's views: PERSON, by title
+    if (require("./lib").personViews(entry)) { notIdeas.push(entry.id); continue; } // one person's views: PERSON, by title
     const p = profilePath(entry.id);
     if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
     const a = readJson(p);
-    if (a.notIdeasOfWhatSocietyShouldBe) { notIdeology.push(entry.id); continue; } // the audit's first check said so
+    if (a.notIdeasOfWhatSocietyShouldBe) { notIdeas.push(entry.id); continue; } // the audit's first check said so
     // An active statement promoted after the audit was written counts as null until its next pass.
     if (unanswered(a.answers, statements).length) stale.push(entry.id);
     // Stated positions on only some of the dividing lines: opinions, not a full ideology (the
@@ -329,7 +329,7 @@ if (stale.length) console.log(`Behind the bank (missing answers count as null un
 if (notPlaced.length) console.log(`Excluded as not placed on every line (an error bar over ±${MAX_BAR} on one, or over ±${MAX_MEAN_BAR} on average): ${notPlaced.join(", ")}`);
 if (merged.length) console.log(`Indistinguishable, listed on the closer match's page: ${merged.join(", ")}`);
 if (awaiting.length) console.log(`Off the site until re-audited: ${awaiting.length}`);
-if (notIdeology.length) console.log(`Not an ideology the test can place: ${notIdeology.join(", ")}`);
+if (notIdeas.length) console.log(`Not ideas of what society should be (notIdeasOfWhatSocietyShouldBe): ${notIdeas.join(", ")}`);
 if (duplicates.length) console.log(`Duplicates (another entry owns the Wikipedia article): ${duplicates.length}`);
 if (notNotable.length) console.log(`Not notable (no Wikipedia article of its own): ${notNotable.join(", ")}`);
 if (process.argv.includes("--status")) process.exit(0);

@@ -24,7 +24,7 @@ const pending = catalog().filter((entry) => {
   if (waiting.has(entry.id)) return false;
   if (!PEOPLE && lib.duplicateOf(entry.id)) return false; // another entry owns its Wikipedia article
   if (!PEOPLE && !lib.notable(entry.id)) return false; // no Wikipedia article of its own
-  if (!PEOPLE && lib.personViews(entry)) return false; // one person's views: not an ideology (PERSON), by title
+  if (!PEOPLE && lib.personViews(entry)) return false; // one person's views: notIdeasOfWhatSocietyShouldBe (PERSON), by title
   if (!fs.existsSync(profilePath(entry.id))) return true;
   const { errors } = validate(entry.id);
   if (!(errors.length > 0 && !excludedOnly(errors))) return false; // complete but excluded: don't redo it
