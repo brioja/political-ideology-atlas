@@ -2,43 +2,72 @@
   "id": "roy-cohn",
   "name": "Roy Cohn",
   "living": false,
-  "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditedAt": "2026-11-22",
+  "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6"
+  ],
   "role": "Chief counsel to Senator Joseph McCarthy's subcommittee (1953–54) and New York lawyer (1927–1986)",
-  "summary": "Cohn was McCarthy's chief counsel in anti-Communist investigations and prosecuted the Rosenberg espionage case. His own recorded views are sparse; the sources describe strong anti-Communism, opposition to gay rights and marriage, and criticism of taxes and welfare spending.",
+  "summary": "Cohn prosecuted the Rosenberg espionage case and led questioning in anti-Communist investigations as chief counsel to Senator Joseph McCarthy’s subcommittee. He defended legal marriage between men and women, opposed estate taxation, and argued against unilateral nuclear disarmament.",
   "wikipedia": "https://en.wikipedia.org/wiki/Roy_Cohn",
   "sources": [
-    {
-      "id": "s1",
-      "kind": "primary",
-      "title": "Roy Cohn Discusses Joe McCarthy (1968 recording, from the book McCarthy)",
-      "author": "Roy Cohn; hosted by History on the Net",
-      "url": "https://historyonthenet.com/authentichistory/1946-1960/4-cwhomefront/1-mccarthyism/19680000_Roy_Cohn_Discusses_Joe_McCarthy.html",
-      "usedFor": "Located as Cohn's own recording on McCarthy; the page holds only an audio file, which could not be transcribed, so no answer rests on it."
-    },
     {
       "id": "s2",
       "kind": "reference",
       "title": "Roy Cohn",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Roy_Cohn",
-      "usedFor": "Reports his record (McCarthy hearings, Rosenberg prosecution, New York practice) and quotations from his autobiography, his 1981 book and other writings, with their citations."
+      "usedFor": "Historical citation retained for earlier answers in reviewHistory. Current answers use the underlying evidence.",
+      "evidence": "words"
     },
     {
-      "id": "s3",
-      "kind": "reference",
-      "title": "Army–McCarthy hearings",
-      "author": "Wikipedia contributors",
-      "url": "https://en.wikipedia.org/wiki/Army%E2%80%93McCarthy_hearings",
-      "usedFor": "Cohn's role as McCarthy's chief counsel, the Schine dispute, and the 1954 committee findings."
+      "id": "s5",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Roy Cohn, How to Stand Up for Your Rights—and Win! (1981, Scribd mirror of the Internet Archive scan)",
+      "url": "https://www.scribd.com/document/796798071/How-to-Stand-Up-for-Your-Rights-And-Win-Roy-M-Cohn-First-Edition-First-Printing-PT-1981-Simon-and-Schuster-9780615307886-16acbdbd",
+      "usedFor": "Marriage, cohabitation, taxes, estates, and legal advice.",
+      "library": "scribd-com-document-796798071-How-to-Stand-Up-for-Your-Rights-And-Win-.txt"
     },
     {
-      "id": "s4",
+      "id": "s6",
       "kind": "reference",
-      "title": "Lavender Scare",
-      "author": "Wikipedia contributors",
-      "url": "https://en.wikipedia.org/wiki/Lavender_Scare",
-      "usedFor": "McCarthy and Cohn's role in firing gay federal employees and in using rumours about opponents' sexuality."
+      "evidence": "action",
+      "title": "Roy Cohn Did It First (reporting on Kai Bird’s biography)",
+      "url": "https://www.theatlantic.com/magazine/2026/10/roy-cohn-american-scoundrel-review/688351/",
+      "usedFor": "Cohn’s intervention in the Rosenberg sentencing."
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Cohn on the Rosenbergs, McCarthy and Death Penalty (interview reprinted in the Congressional Record, February 15, 1983)",
+      "url": "https://www.govinfo.gov/content/pkg/GPO-CRECB-1983-pt2/pdf/GPO-CRECB-1983-pt2-7.pdf",
+      "usedFor": "His case against unilateral nuclear disarmament and his stated defense of capital punishment."
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Executive Sessions of the Senate Permanent Subcommittee on Investigations, Vol. 5 (1954)",
+      "url": "https://www.govinfo.gov/content/pkg/CPRT-107SPRT83873/html/CPRT-107SPRT83873.htm",
+      "usedFor": "Army–McCarthy hearings and conduct of subcommittee investigations."
+    },
+    {
+      "id": "s9",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Roy Cohn Oral History Interview, March 24, 1971 (John F. Kennedy Presidential Library)",
+      "url": "https://static.jfklibrary.org/870mc4isjum20us146258ye3t847l2a1.pdf",
+      "usedFor": "His account of the subcommittee, Robert Kennedy, and anti-Communist investigations."
+    },
+    {
+      "id": "s10",
+      "kind": "reference",
+      "evidence": "action",
+      "title": "Democracy Now! interview with biographer Kai Bird (November 11, 2026)",
+      "url": "https://www.democracynow.org/2026/11/11/kai_bird_american_scoundrel",
+      "usedFor": "Bird’s account of Cohn’s personal intervention in the Rosenberg sentencing."
     }
   ],
   "answers": {
@@ -152,18 +181,62 @@
     },
     "traditional-family": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Cohn wrote that 'marriage is the bulwark of society' and opposed palimony rulings, as reported in the Wikipedia article on his 1981 book. The quote concerns marriage rather than family structures in general.",
+      "confidence": "high",
+      "rationale": "In the chapter on cohabitation, Cohn described marriage as the foundation of society and urged keeping strong incentives for couples to marry before having children.",
       "sources": [
-        "s2"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Cohn wrote that 'marriage is the bulwark of society' and opposed palimony rulings, as reported in the Wikipedia article on his 1981 book. The quote concerns marriage rather than family structures in general.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "In the chapter on cohabitation, Cohn described marriage as the foundation of society and urged keeping strong incentives for couples to marry before having children.",
+          "sources": [
+            "s5"
+          ],
+          "author": "gpt-6",
+          "date": "2026-11-22"
+        }
       ]
     },
     "same-sex-marriage": {
-      "value": -2,
+      "value": -1,
       "confidence": "medium",
-      "rationale": "The Wikipedia article reports that Cohn opposed gay marriage and the New York Gay Rights Bill, and that he aligned with the Archdiocese of New York against the first gay rights bill.",
+      "rationale": "In the chapter on cohabitation, Cohn treated marriage as an institution for opposite-sex partners and expressed opposition to the Equal Rights Amendment while discussing arguments for recognizing same-sex marriages.",
       "sources": [
-        "s2"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The Wikipedia article reports that Cohn opposed gay marriage and the New York Gay Rights Bill, and that he aligned with the Archdiocese of New York against the first gay rights bill.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "In the chapter on cohabitation, Cohn treated marriage as an institution for opposite-sex partners and expressed opposition to the Equal Rights Amendment while discussing arguments for recognizing same-sex marriages.",
+          "sources": [
+            "s5"
+          ],
+          "author": "gpt-6",
+          "date": "2026-11-22"
+        }
       ]
     },
     "abortion-legal": {
@@ -281,10 +354,12 @@
       "sources": []
     },
     "tax-inheritance": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "In the chapter on wills, Cohn opposed the estate tax and argued that people should be free to transfer their estates without a tax charge.",
+      "sources": [
+        "s5"
+      ]
     },
     "basic-income": {
       "value": null,
@@ -1123,9 +1198,33 @@
     "death-penalty": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Cohn's autobiography, as reported in the Wikipedia article, claims he recommended death sentences for the Rosenbergs, who were executed. This is his own account of his role, not a general statement on capital punishment.",
+      "rationale": "As a federal prosecutor, Cohn personally pressed Judge Irving Kaufman for death sentences after Julius and Ethel Rosenberg were convicted of conspiring to commit espionage.",
       "sources": [
-        "s2"
+        "s6",
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Cohn's autobiography, as reported in the Wikipedia article, claims he recommended death sentences for the Rosenbergs, who were executed. This is his own account of his role, not a general statement on capital punishment.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "As a federal prosecutor, Cohn personally pressed Judge Irving Kaufman for death sentences after Julius and Ethel Rosenberg were convicted of conspiring to commit espionage.",
+          "sources": [
+            "s6",
+            "s10"
+          ],
+          "author": "gpt-6",
+          "date": "2026-11-22"
+        }
       ]
     },
     "sex-ed-in-schools": {
@@ -1201,10 +1300,12 @@
       "sources": []
     },
     "independent-nuclear-deterrent": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Cohn argued that the United States needed to retain its own nuclear arsenal to avoid leaving the country at the mercy of the Soviet Union.",
+      "sources": [
+        "s7"
+      ]
     },
     "direct-election-head-of-state": {
       "value": null,
@@ -1801,10 +1902,12 @@
       "sources": []
     },
     "abolish-legal-marriage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "In the chapter on cohabitation, Cohn argued for retaining the distinctive protections and incentives of legal marriage, particularly for couples with children.",
+      "sources": [
+        "s5"
+      ]
     },
     "public-access-to-information": {
       "value": null,
@@ -2575,10 +2678,12 @@
       "sources": []
     },
     "keep-nuclear-weapons": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Cohn opposed unilateral U.S. nuclear disarmament because he believed it would leave the United States and other countries exposed to Soviet nuclear superiority.",
+      "sources": [
+        "s7"
+      ]
     },
     "workers-own-party": {
       "value": null,
@@ -2905,22 +3010,825 @@
       "sources": []
     },
     "decent-living-guarantee": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Wikipedia article reports that Cohn criticised New York State's spending on welfare. That is criticism of spending, not a stated view that welfare creates dependency.",
-      "sources": [
-        "s2"
-      ],
-      "auditor": "claude-opus-5-5"
+      "value": null,
+      "confidence": "low",
+      "rationale": "In the chapter on taxes, Cohn objected to paying for New York’s welfare and food stamp programs. He did not address whether the state should guarantee a minimum standard of living by other means.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Wikipedia article reports that Cohn criticised New York State's spending on welfare. That is criticism of spending, not a stated view that welfare creates dependency.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "In the chapter on taxes, Cohn objected to paying for New York’s welfare and food stamp programs. He did not address whether the state should guarantee a minimum standard of living by other means.",
+          "sources": [
+            "s5"
+          ],
+          "author": "gpt-6",
+          "date": "2026-11-22"
+        }
+      ]
+    },
+    "military-force-for-human-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "revolution-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-violence-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "power-shapes-accepted-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "initiating-nondefensive-force-unjustified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-policy-non-interference": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "harassment-claims-court-access": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-force-beyond-defence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "publish-international-agreements": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mutual-intelligibility-defines-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "voluntary-union-payments-at-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-design-reflects-political-interests": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recognize-territorial-claims-from-conquest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "Sources were limited: the 1954 Army–McCarthy transcripts, the 1968 book McCarthy, and the 1981 book were not available in full text, so most positions are as reported in Wikipedia articles, which cite his autobiography (Sidney Zion, 1988). Many statements are null because nothing was found on them. Inclusion is expected to fail on the thin record.",
+  "notes": "The later pass searched the 1954 Senate hearing transcripts, the 1971 Kennedy Library oral history, the 1983 interview printed in the Congressional Record, and the chapters on family law, consumer transactions, legal practice, libel, taxation and estates in the 1981 book. Targeted searches covered courts and elections, civil liberties, domestic anti-communism, Cold War diplomacy and arms policy, welfare and taxation, marriage and civil rights, immigration and trade, environmental policy, and technology. I also checked Hoover’s catalog entry for the 1976 Firing Line discussion of subversion and law, and checked the local congressional hearing index for testimony in his name. The hearing record concerns specific witnesses and security investigations, and most of the book concerns legal advice under existing law.",
   "reviews": [
     {
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 6
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "gpt-6",
+      "reviewedAt": "2026-11-22",
+      "nulled": 1
+    }
+  ],
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6",
+      "auditedAt": "2026-11-22"
+    }
+  ],
+  "rules": 7,
+  "notFound": [
+    {
+      "work": "McCarthy (1968), complete text",
+      "tried": [
+        {
+          "where": "Internet Archive",
+          "how": "Opened the Lancer edition at mccarthy00cohn; the catalog marks the text as access restricted."
+        },
+        {
+          "where": "Google Books",
+          "how": "Opened the New American Library edition; the listing was in snippet view."
+        }
+      ]
+    },
+    {
+      "work": "Firing Line: Subversion and the Law (1976), full transcript",
+      "tried": [
+        {
+          "where": "Hoover Institution Digital Collections",
+          "how": "Read the episode record for program S0247; it contains an excerpt and points to the video."
+        },
+        {
+          "where": "Hoover Institution YouTube channel",
+          "how": "Tried the original recording with the repository caption tool, which received a rate limit or verification response."
+        }
+      ]
+    },
+    {
+      "work": "The Autobiography of Roy Cohn (1988), complete text",
+      "tried": [
+        {
+          "where": "Open Library",
+          "how": "Followed the Lyle Stuart edition to the Internet Archive, where the copy is access restricted."
+        },
+        {
+          "where": "Google Books",
+          "how": "Looked up the Lyle Stuart edition; the listing provided a synopsis and index terms."
+        }
+      ]
     }
   ]
 }
