@@ -99,7 +99,7 @@ radical feminism', or TERFism"). A name Wikipedia files under another topic (its
 a redirect to another article or to a section of one: "Committee of Union and Progress", "radical left") isn't a
 `SUPPORTED`, `TRANSLATION` or `SPELLING` alias, whatever the quote ("modern liberalism" is a disambiguation page); a redirect to a section of the ideology's own article is fine. To find that source, look the alias up from its own side
 (a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias ("TERF") usually defines it
-by the ideology's name ("trans-exclusionary radical feminist"). Wikidata never connects an alias (Brandon, 2026-11-14); every
+by the ideology's name ("trans-exclusionary radical feminist"). Every
 redirect to the article counts automatically, unless Wikipedia files it as a section, subtopic, related topic
 or former name (a related word counts), and an alias's quote may name the ideology by any of those redirects. Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
