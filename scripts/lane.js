@@ -16,7 +16,7 @@
 //     ends its turn at natural report points, so the loop lives here.
 //  3. Integrate (under a lock shared by all lanes): validate (errors other than the uncertainty rule go back to the
 //     session to fix), move the draft into audits/, merge an ideology's color, build, test, commit with no attribution
-//     line. Pushes go out at most every PUSH_MINUTES (bursts cancel Pages deploys) and when the driver stops.
+//     line. Pushes go out at most every PUSH_MINUTES across all lanes, and when a driver starts or stops.
 // Between subjects: for people, prefetch-books.js and triage.js every
 // BOOKS_EVERY people; for ideologies, statement-signal.js --apply once, when the lane stops (Brandon, 2026-11-20: it takes
 // about 9 minutes inside the integrate lock, so running it every 5 ideologies slowed both lanes by about a fifth; since
@@ -32,7 +32,7 @@ if (!["codex", "claude"].includes(ENGINE) || !["people", "ideologies"].includes(
   console.error("usage: node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane name] [--until HH:MM] [--resumes 6]");
   process.exit(1);
 }
-const PEOPLE = KIND === "people", PUSH_MINUTES = 10, BOOKS_EVERY = 5, FIX_ROUNDS = 3;
+const PEOPLE = KIND === "people", PUSH_MINUTES = 60, BOOKS_EVERY = 5, FIX_ROUNDS = 3;
 const deadline = UNTIL ? (() => { const d = new Date(); d.setHours(+UNTIL.slice(0, 2), +UNTIL.slice(3), 0, 0); return d.getTime(); })() : Infinity;
 const timeLeft = () => Date.now() < deadline;
 // Graceful stop: touch scratchpad/lane-out/<lane>/STOP (this lane) or scratchpad/lane-out/STOP (every lane). The
@@ -175,9 +175,15 @@ function errorsIn(dirArgs, id) {
   if (r.status === 2 && errors.length) return errors.filter((l) => !FINISHED.test(l)).join("\n");
   return errors.join("\n") || out.trim();
 }
-let lastPush = 0, unpushed = false;
+// About one Pages deploy in seven fails (deploy-pages can't find the artifact it was just given, 2026-11-21..23), and
+// each failure emails Brandon, so pushes are rare: every PUSH_MINUTES at most, timed across lanes by .last-push's
+// mtime, plus one when a driver starts (commits a hard quit left unpushed) and one when it stops. Brandon, 2026-11-23.
+// Unpushed = any local commit not on origin/main, whichever lane made it.
+const LAST_PUSH = path.join(LANES, ".last-push");
+const sinceLastPush = () => { try { return Date.now() - fs.statSync(LAST_PUSH).mtimeMs; } catch { return Infinity; } };
+const unpushed = () => git("rev-list", "--count", "origin/main..HEAD").stdout.trim() !== "0";
 function push(force) {
-  if (!unpushed || (!force && Date.now() - lastPush < PUSH_MINUTES * 60000)) return;
+  if (!unpushed() || (!force && sinceLastPush() < PUSH_MINUTES * 60000)) return;
   git("fetch", "-q", "origin");
   // --autostash: someone else's uncommitted edits in this checkout (the integrator recording books, 2026-11-20) are
   // set aside for the rebase and put back, instead of failing every push. If putting them back conflicts, git keeps
@@ -187,7 +193,7 @@ function push(force) {
   if (/autostash resulted in conflicts/i.test(rb.stderr + rb.stdout)) log("push: uncommitted edits in the checkout conflicted with the rebase; they are in `git stash list`");
   const p = git("push", "-q", "origin", "HEAD:main");
   if (p.status) { log(`push failed: ${p.stderr.trim().split("\n").pop()}`); return; }
-  lastPush = Date.now(); unpushed = false; log("pushed");
+  fs.writeFileSync(LAST_PUSH, `${new Date().toISOString()}\n`); log("pushed");
 }
 const GENERATED = ["data.js", "people.js", "img", "audits/lines.json", "audits/statements/texts.json", "audits/share-slots.json", "audits/people-catalog.json", "audits/catalog.json"];
 function buildAndCommit(message, extra = []) {
@@ -196,7 +202,7 @@ function buildAndCommit(message, extra = []) {
   const t = run("node", ["test.js", ...(PEOPLE ? ["--people"] : [])]);
   if (t.status) { git("checkout", "--", ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f)))); return `tests failed: ${failure(t.stdout + t.stderr)}`; }
   git("add", "--", ...extra, ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f))));
-  if (git("diff", "--cached", "--quiet").status) { git("commit", "-q", "-m", message); unpushed = true; }
+  if (git("diff", "--cached", "--quiet").status) git("commit", "-q", "-m", message);
   return "";
 }
 function integrate(id) {
@@ -212,7 +218,6 @@ function integrate(id) {
     }
     git("add", "--", ...files);
     git("commit", "-q", "-m", `Audit ${name}`);
-    unpushed = true;
     const why = buildAndCommit(PEOPLE ? "Rebuild people data" : "Rebuild site data");
     if (why) log(`${id}: ${why}; audit committed, generated files left for the next build`);
     for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`)]) if (fs.existsSync(f)) fs.unlinkSync(f);
@@ -228,7 +233,7 @@ function books() {
     const t = run("node", ["scripts/triage.js"]);
     log(`triage: ${t.status ? `failed: ${failure(t.stdout + t.stderr)}` : (t.stdout || t.stderr).trim().split("\n").pop()}`);
     git("add", "audits/people-triage.json");
-    if (git("diff", "--cached", "--quiet").status) { git("commit", "-q", "-m", "Triage: refit on the latest people audits"); unpushed = true; }
+    if (git("diff", "--cached", "--quiet").status) git("commit", "-q", "-m", "Triage: refit on the latest people audits");
   });
 }
 function signal() {
@@ -249,6 +254,7 @@ const settle = () => new Promise((r) => setTimeout(r, 100));
 if (process.argv.includes("--dry")) { console.log(nextSubject()); process.exit(0); }
 (async () => {
 let count = 0;
+locked(() => push(true));
 if (PEOPLE) books();
 while (timeLeft()) {
   // The steps between subjects are synchronous, so a Ctrl-C waits in the event loop until something awaits: yield
