@@ -1,7 +1,7 @@
 // Coatrack check for ideology audits (audits/AUDIT_RULES.md, "No coatracks"; Brandon, 2026-11-05): the sources
 // have to discuss the ideology, so another subject's sources can't answer for it. Run by validate.js. All of the
 // check's logic lives here.
-//   - A defining source (kind "reference" or "scholarly") must contain the ideology's name or one of
+//   - A defining source (kind "reference", "scholarly" or "secondary") must contain the ideology's name or one of
 //     its `aliases` in its saved text.
 //   - A primary source ("primary" or "program") passes if its own text names the ideology twice, or if
 //     the sources that discuss the ideology (defining sources and primary texts that passed on their
@@ -141,14 +141,17 @@ const ownNames = new Map(); // normalized name -> ideologies whose own name it i
 // 2026-11-06), so it is that ideology's other name, audited or not, and no other ideology's alias ("race realism"
 // redirects to Scientific racism, "liberal theology" to Religious liberalism).
 const redirectNames = new Map();
-// How often an ideology's own defining sources (saved, reference or scholarly, never Wikipedia) use a
+// The kinds of source that say what an ideology holds: reference works, scholarship, and other reliable sources on it
+// ("secondary": journalism, books from reputable publishers; ideologies only, Brandon 2026-11-23).
+const DEFINING = ["reference", "scholarly", "secondary"];
+// How often an ideology's own defining sources (saved, of a DEFINING kind, never Wikipedia) use a
 // name, in any of its forms. Decides who owns a contested alias.
 const usageCache = new Map();
 function usage(id, n) {
   const key = id + "|" + n;
   if (usageCache.has(key)) return usageCache.get(key);
   let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, id + ".json"), "utf8")); } catch { a = {}; }
-  const text = (a.sources || []).filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !isWikipedia(s))
+  const text = (a.sources || []).filter((s) => DEFINING.includes(s.kind) && !isWikipedia(s))
     .map((s) => sourceText(id, s.url)).filter(Boolean).join(" ");
   const u = count(text, [...new Set(forms(n))]);
   usageCache.set(key, u);
@@ -488,7 +491,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // A source may discuss the ideology under another name: an alias the audit doesn't list yet (Brandon, 2026-11-21).
   const ALIAS_HINT = `; if it names the ideology another way, list that name in "aliases" with its reason (${ALIAS_REASONS.join(", ")}) and quote, as audits/PROMPT.md says`;
   const defining = [];
-  for (const s of sources.filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !isWikipedia(s))) {
+  for (const s of sources.filter((s) => DEFINING.includes(s.kind) && !isWikipedia(s))) {
     const t = sourceText(id, s.url);
     if (t == null) { unchecked.push(s.id); continue; }
     if (mentions(t, names)) defining.push(t);
@@ -553,4 +556,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
+module.exports = { DEFINING, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };

@@ -22,7 +22,9 @@ const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : li
 const DIR = process.argv.includes("--dir") ? process.argv[process.argv.indexOf("--dir") + 1] : null;
 const profilePath = DIR ? (id) => require("path").resolve(DIR, `${id}.json`) : CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
 
-const KINDS = ["primary", "scholarly", "reference", "program"];
+// "secondary" (journalism, books from reputable publishers on an ideology) is for ideologies only: people rank
+// secondhand reports by tier instead (PROMPT_PEOPLE.md, "Source priority"; Brandon, 2026-11-23).
+const KINDS = PEOPLE ? ["primary", "scholarly", "reference", "program"] : ["primary", "scholarly", "reference", "program", "secondary"];
 const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the subject (AUDIT_RULES.md, "Record over words")
 // Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
@@ -269,7 +271,7 @@ function validate(id) {
   // A Wikipedia article about a document is a reference, never the document itself.
   const wikiPrimary = sources.filter((s) => (s.kind === "primary" || s.kind === "program") && /wikipedia\.org/i.test(s.url || "")).map((s) => s.id);
   if (wikiPrimary.length) errors.push(`${wikiPrimary.join(", ")}: a Wikipedia article is a "reference" source, not "primary" or "program"`);
-  if (!sources.some((s) => s.kind === "scholarly" || s.kind === "reference")) errors.push("needs at least one scholarly or reference source");
+  if (!sources.some((s) => s.kind === "scholarly" || s.kind === "reference" || (!PEOPLE && s.kind === "secondary"))) errors.push(`needs at least one ${PEOPLE ? "scholarly or reference" : "scholarly, reference or secondary"} source`);
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
 
   const answers = a.answers || {};

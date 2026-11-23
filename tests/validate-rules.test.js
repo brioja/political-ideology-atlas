@@ -77,6 +77,7 @@ ok("base fixture", base());
 // Sources are tagged as the subject's actions or words.
 { const a = base(); delete a.sources[0].evidence; fails("untagged source", a, /"evidence" must be one of action, words/); }
 { const a = base(); a.sources[0].evidence = "deeds"; fails("unknown evidence tag", a, /"evidence" must be one of/); }
+{ const a = base(); a.sources[0].kind = "secondary"; fails("secondary is for ideologies only", a, /kind must be one of primary, scholarly, reference, program$/); }
 
 // Record over words: an answer never cites both kinds.
 { const a = base(); a.answers[A].sources = ["s1", "s2"]; fails("answer mixes action and words", a, /cites actions \(s1\) and words \(s2\)/); }

@@ -58,7 +58,7 @@ text counts for the subject only as far as they tie it to the subject; don't cho
 no defining source states.
 
 **Every source has to discuss the ideology** (the coatrack check, `scripts/coatrack-check.js`, run by validate.js). A
-defining source (`reference` or `scholarly`) must name the ideology, by its name or an alias. A
+defining source (`reference`, `scholarly` or `secondary`) must name the ideology, by its name or an alias. A
 `primary` or `program` source must name it too, or be named (by title or author) in a defining source
 that does. List in `aliases` the other names the defining sources use for it, liberally, each with
 its `reason` (validate.js checks each):
@@ -110,6 +110,7 @@ These answer for an ideology:
 
 - Sources that say what it holds, naming it (by its name or an alias):
   - reference works and scholarship on it (Payne, Paxton or Griffin for fascism; Bobbio for left and right)
+  - other reliable sources on it: journalism, books from reputable publishers
   - a thinker's or organisation's account of its tenets
   - data on what the label means (surveys asking what "left" stands for)
 - Its `keyWorks` and its `keyFigures`' texts (section 1).
@@ -122,7 +123,8 @@ answers no particular statement (`null`).
 
 - An ideology's `primary` sources are its founding texts, manifestos, party programmes and the
   major works of its defining thinkers. Its scholarship (the Stanford or Internet Encyclopedia of
-  Philosophy, Britannica, academic work) is a `scholarly` or `reference` source. Wikipedia only
+  Philosophy, Britannica, academic work) is a `scholarly` or `reference` source; other reliable sources on
+  it (journalism, books from reputable publishers) are `secondary`. Wikipedia only
   helps you find these (audits/AUDIT_RULES.md, section 2).
 - For a thin theme, search the ideology's programme sections and what its thinkers wrote on that
   topic.
@@ -198,7 +200,7 @@ captures, even loosely. List only those; often there are none, and the list is e
   "sources": [
     {
       "id": "s1",
-      "kind": "primary | scholarly | reference | program",
+      "kind": "primary | scholarly | reference | program | secondary",
       "title": "Title of the work or page",
       "author": "Author or publisher",
       "url": "https://… (the page you actually opened)",

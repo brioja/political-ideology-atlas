@@ -104,7 +104,7 @@ function findTies(id, sid, { people = false, dir = null } = {}) {
   const au = String(src.author || "").replace(/\([^)]*\)/g, " ").trim(), sur = au.split(/\s+/).pop();
   const ORG = /\b(party|organi[sz]ation|international|league|committee|union|movement|group|congress|front|council|association|federation|society|institute|press|foundation|government|ministry|alliance|network|cent(er|re)|club|bund|order|brotherhood|army|church|forum|campaign|initiative|wikipedia|contributors|editors|britannica)\b/i;
   if (sur && sur.length > 2 && au.split(/\s+/).length <= 4 && !ORG.test(au)) {
-    const defining = (a.sources || []).filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !ct.isWikipedia(s));
+    const defining = (a.sources || []).filter((s) => ct.DEFINING.includes(s.kind) && !ct.isWikipedia(s));
     let n = 0;
     for (const s of defining) { const t = ct.sourceText(id, s.url); if (t) n += (t.match(new RegExp(` ${esc(ct.norm(sur).trim())} `, "g")) || []).length; }
     out.author = { name: au, surname: sur, definingMentions: n, listed: (a.keyFigures || []).some((x) => x && ct.norm(x.last || "").trim() === ct.norm(sur).trim()) };
