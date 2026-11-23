@@ -69,6 +69,8 @@ texts, thinkers or programs they name as its own. Record that in `scope`, citing
 text counts for the subject only as far as they tie it to the subject; don't choose a scope that
 no defining source states.
 
+### Aliases
+
 **Every source has to discuss the ideology** (the coatrack check, `scripts/coatrack-check.js`, run by validate.js). A
 defining source (`reference`, `scholarly` or `secondary`) must name the ideology, by its name or an alias. A
 `primary` or `program` source must name it too, or be named (by title or author) in a defining source
@@ -96,25 +98,32 @@ and Progress", "radical left") isn't a `SUPPORTED`, `TRANSLATION` or `SPELLING` 
 ("modern liberalism" is a disambiguation page); a redirect to a section of the ideology's own article is fine.
 An alias's quote may name the ideology by any of its redirects.
 
-List in `keyFigures`
-the ideology's own thinkers as its defining sources name them, people only, no organisations (each named at
-least twice there, and no other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology
-is named after for it, Lenin for Leninism; that namesake is listed first, and needs no quote): a primary text by one of them is tied to the ideology. List a
-key figure only when the defining sources present the ideology as that person's body of thought;
-never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose
-namesake's other views aren't part of it, nor for a leader the sources don't present as its thinker: tie their
-texts by title instead (Monroe's 1823 annual message). List in `keyWorks` the texts the defining sources make
-canonical (founding texts, manifestos, programmes, a thinker's major works), by the title those sources use
-("the 1856 Imperial Rescript" for the "Rescript of Reform"), with `"work": "<source id>"` when you cite the text
-itself: a primary text is tied to the ideology when the sources that discuss it (by its name or an alias) name the
-text twice between them, by its own title or a key work's. Each key figure also gives
-a one-line `role` (how the sources associate them) and their English Wikipedia article (`wikipedia`); both lists show on
-the ideology's page. Give each alias, key figure and key work its evidence:
-`{ "name" (a key figure: "first" and "last"; a key work: "title"), "source": "<source id>",
-"quote": "<verbatim passage>" }`, a passage from that
-source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT` or
-`TRANSLATION` alias needs none). Save every source
-you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
+### Key figures and key works
+
+List in `keyFigures` the ideology's own thinkers as its defining sources name them, people only, no
+organisations (each named at least twice there, and no other ideology's key figure or namesake:
+audits/namesakes.json reserves each person an ideology is named after for it, Lenin for Leninism; that
+namesake is listed first, and needs no quote): a primary text by one of them is tied to the ideology. List a
+key figure only when the defining sources present the ideology as that person's body of thought; never for a
+single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's other views
+aren't part of it, nor for a leader the sources don't present as its thinker: tie their texts by title instead
+(Monroe's 1823 annual message). Each key figure also gives a one-line `role` (how the sources associate them)
+and their English Wikipedia article (`wikipedia`).
+
+List in `keyWorks` the texts the defining sources make canonical (founding texts, manifestos, programmes, a
+thinker's major works), by the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of
+Reform"), with `"work": "<source id>"` when you cite the text itself: a primary text is tied to the ideology
+when the defining sources name it twice between them, by its own title or a key work's.
+
+Both lists show on the ideology's page.
+
+### Evidence
+
+Give each alias, key figure and key work its evidence: `{ "name" (a key figure: "first" and "last"; a key
+work: "title"), "source": "<source id>", "quote": "<verbatim passage>" }`, a passage from that source's saved
+copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT` or `TRANSLATION`
+alias needs none). Save every source you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so
+the check can read it.
 
 ## 3. What answers for an ideology
 
