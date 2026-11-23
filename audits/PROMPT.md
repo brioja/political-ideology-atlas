@@ -1,6 +1,7 @@
 # Ideology audit instructions
 
-You are auditing one catalog entry for Political Ideology Atlas, a political ideology test. Your job is to record
+You are auditing one catalog entry for Political Ideology Atlas, a political ideology test. Here an ideology is any set of political ideas of what society
+should be, whatever form it takes (`audits/IDEOLOGY_STANDARD.md`). Your job is to record
 the ideology's positions on each test statement as its own sources state them, and to show your
 evidence. Each answer you give becomes one coordinate of the ideology's profile, which test takers
 are matched against. Getting it wrong puts real people into the wrong ideology.

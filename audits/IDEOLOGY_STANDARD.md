@@ -1,5 +1,9 @@
 # What counts as an ideology
 
+An ideology is any set of political ideas of what society should be, whatever form it takes: a doctrine, a
+movement, a slogan (the Fourteen Words), a label others use for it (woke) or a subculture's worldview
+(incel). The four gates below decide which ones the test can place.
+
 The catalog is built generously from data, and the bar for reaching the test is set by evidence,
 not by anyone's judgement of which ideologies matter. An entry has to clear four gates in order.
 
