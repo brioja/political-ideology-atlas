@@ -268,15 +268,18 @@ while (timeLeft()) {
     thread = await session(RESUME(id), thread);
   }
   if (!doneIds().has(id) || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
-  let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id);
-  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); }
+  let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
+  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
   if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); continue; }
   // The DONE line moves to INTEGRATED.txt, so a later pass on the same subject starts clean.
   const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
   const name = integrate(id);
   fs.writeFileSync(DONE, lines.filter((l) => l !== line).join("\n"));
   fs.appendFileSync(path.join(OUT, "INTEGRATED.txt"), `${new Date().toISOString().slice(0, 10)} ${line}\n`);
-  log(`done ${id} (${name}): ${line.split("|").slice(1).join("|").trim()}`);
+  // The session writes its DONE line before any fix round, so after one its note on validate.js is out of date
+  // (trotskyism, 2026-11-23: "still errors on one point ... left in" for an audit that passed in round 1).
+  const fixed = rounds ? ` [validate.js passed after ${rounds} fix round${rounds > 1 ? "s" : ""}; the note below is from before]` : "";
+  log(`done ${id} (${name})${fixed}: ${line.split("|").slice(1).join("|").trim()}`);
   count++;
   if (PEOPLE && count % BOOKS_EVERY === 0) books();
   locked(() => push(false));
