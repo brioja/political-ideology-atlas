@@ -19,7 +19,8 @@
 //     line. Pushes go out at most every PUSH_MINUTES (bursts cancel Pages deploys) and when the driver stops.
 // Between subjects: for people, prefetch-books.js and triage.js every
 // BOOKS_EVERY people; for ideologies, statement-signal.js --apply once, when the lane stops (Brandon, 2026-11-20: it takes
-// about 9 minutes inside the integrate lock, so running it every 5 ideologies slowed both lanes by about a fifth).
+// about 9 minutes inside the integrate lock, so running it every 5 ideologies slowed both lanes by about a fifth; since
+// 2026-11-23 it takes about half a minute, refits in parallel).
 // Log: scratchpad/lane-out/<lane>/driver.log, one line per step; integrated subjects in INTEGRATED.txt.
 const { spawn, spawnSync, execFileSync } = require("child_process");
 const fs = require("fs"), path = require("path");

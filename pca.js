@@ -119,15 +119,12 @@ function symmetricEigen(matrix) {
 
 const dot = (x, y) => x.reduce((sum, xi, i) => sum + xi * y[i], 0);
 
-// Builds the axes from the reference profiles. `varianceTarget` decides how many
-// axes are kept: the fewest that together explain that share of the variance.
-function buildModel(ideologies, opts = {}) {
-  const { varianceTarget = 0.8, minAxes = 2 } = opts;
-  const rows = ideologies.map((i) => i.profile);
+// Mean and covariance of the profiles, by statement. An ideology with no known position on a
+// statement (null) is filled with that statement's mean over the ideologies that have one, so after
+// centring it adds nothing to the lines. Also returns the centred rows.
+function covariance(rows) {
   const m = rows.length;
   const n = rows[0].length;
-  // An ideology with no known position on a statement (null) is filled with that statement's mean
-  // over the ideologies that have one, so after centring it adds nothing to the lines.
   const mean = Array.from({ length: n }, (_, j) => {
     let s = 0, c = 0;
     for (const r of rows) if (r[j] != null) { s += r[j]; c++; }
@@ -143,10 +140,14 @@ function buildModel(ideologies, opts = {}) {
       cov[i][j] = cov[j][i] = s / (m - 1);
     }
   }
+  return { mean, cov, centered };
+}
 
+// The lines of a covariance matrix: its eigenvectors carrying variance, biggest first.
+function componentsOf(cov) {
   const eig = symmetricEigen(cov);
   const total = eig.reduce((s, e) => s + e.value, 0);
-  const components = eig
+  return eig
     .filter((e) => e.value / total > 1e-9) // at most m-1 components carry any variance
     .map((e) => {
       // Eigenvector signs are arbitrary; make the largest loading positive so axes are stable.
@@ -154,6 +155,14 @@ function buildModel(ideologies, opts = {}) {
       const vector = big < 0 ? e.vector.map((x) => -x) : e.vector;
       return { eigenvalue: e.value, share: e.value / total, vector };
     });
+}
+
+// Builds the axes from the reference profiles. `varianceTarget` decides how many
+// axes are kept: the fewest that together explain that share of the variance.
+function buildModel(ideologies, opts = {}) {
+  const { varianceTarget = 0.8, minAxes = 2 } = opts;
+  const { mean, cov } = covariance(ideologies.map((i) => i.profile));
+  const components = componentsOf(cov);
 
   let kept = 0;
   for (let cum = 0; kept < components.length && (cum < varianceTarget || kept < minAxes); kept++) {
@@ -711,5 +720,5 @@ function decodeShare(s, ids, slots) {
 function distinctiveness(mean, profile, j) { return Math.abs(profile[j] - mean[j]); }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, statementsToDone, quizMinutes, describeAxis, distinctiveness };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, covariance, componentsOf, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, statementsToDone, quizMinutes, describeAxis, distinctiveness };
 }

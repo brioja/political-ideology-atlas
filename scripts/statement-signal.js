@@ -9,7 +9,10 @@
 // percentile.
 //   Candidates: tested against the current lines (built from the active statements).
 //   Active statements: tested against lines refit without that statement (leave-one-out), so a
-//   statement doesn't get credit for a line it helped make. Slow: one refit per statement.
+//   statement doesn't get credit for a line it helped make. One refit per statement: the covariance
+//   is computed once (leaving a statement out only drops its row and column), and the refits run in
+//   worker threads, one per core. Each test's shuffles start where the serial run's would, so the
+//   results don't depend on the number of workers.
 // This is the bank's test 2 (audits/statements/STANDARD.md): candidates that pass are promoted,
 // active statements that fail are demoted to candidates. A candidate answered by too few ideologies
 // can't beat noise (with fewer answers than lines+1 any answers fit), so it waits for more audits.
@@ -20,25 +23,14 @@
 // --apply promotes candidates with signal and demotes active statements without it (statements.json).
 // statements-check.js uses the candidate part.
 "use strict";
-const lib = require("./lib");
-const { buildModel } = require("../pca.js");
+const { Worker, isMainThread, parentPort, workerData } = require("worker_threads");
+const { buildModel, covariance, componentsOf } = require("../pca.js");
 
 const RUNS = 60, QUANTILE = 0.95; // the lines' own test (meaningfulAxes)
-const K = lib.readJson(require("path").join(lib.ROOT, "audits", "lines.json")).realLines;
-const onlyCandidates = process.argv.includes("--candidates");
-
-const all = lib.allStatements();
-const active = lib.activeStatements();
-const ideologies = lib.completeIdeologies(active);
-const audits = new Map(ideologies.map((i) => [i.id, lib.readJson(lib.profilePath(i.id))]));
-
-function scores(model, profile) {
-  const c = profile.map((x, j) => (x == null ? 0 : x - model.mean[j]));
-  return model.components.slice(0, K).map((comp) => comp.vector.reduce((s, v, j) => s + v * c[j], 0));
-}
 
 // R² of y on X (rows of K scores) with an intercept, by the normal equations.
 function r2(X, y) {
+  const K = X.length ? X[0].length : 0;
   const n = y.length, p = K + 1;
   if (n <= p) return 1;
   const A = Array.from({ length: p }, () => new Array(p).fill(0)), b = new Array(p).fill(0);
@@ -64,9 +56,14 @@ function r2(X, y) {
   return ssTot ? 1 - ssRes / ssTot : 0;
 }
 
-let seed = 12345;
-const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
-function test(X, y) {
+// The shuffles' random numbers: one linear congruential sequence. A test of n answers draws
+// RUNS * (n - 1) of them, so where each test starts in the sequence is known without running the
+// tests before it.
+const SEED = 12345;
+const nextSeed = (seed) => (seed * 1103515245 + 12345) % 2147483648;
+function skip(seed, n) { for (let i = RUNS * Math.max(0, n - 1); i > 0; i--) seed = nextSeed(seed); return seed; }
+function test(X, y, seed) {
+  const rand = () => ((seed = nextSeed(seed)) / 2147483648);
   const real = r2(X, y);
   const nulls = [];
   for (let run = 0; run < RUNS; run++) {
@@ -79,6 +76,35 @@ function test(X, y) {
   return { r2: real, bar, signal: real > bar };
 }
 
+// Leave-one-out test of active statement j: the lines refit on the covariance without j's row and
+// column, the answering ideologies placed on them from their centred answers without j.
+function leaveOneOut({ cov, centered, K }, { j, rows, seed }) {
+  const keep = cov.map((_, c) => c).filter((c) => c !== j);
+  const components = componentsOf(keep.map((a) => keep.map((b) => cov[a][b]))).slice(0, K);
+  const X = rows.map(([i]) => components.map((comp) => comp.vector.reduce((s, v, c) => s + v * centered[i][keep[c]], 0)));
+  return test(X, rows.map(([, v]) => v), seed);
+}
+
+if (!isMainThread) {
+  const data = workerData;
+  parentPort.postMessage(data.tasks.map((t) => ({ j: t.j, ...leaveOneOut(data, t) })));
+  return;
+}
+
+const lib = require("./lib");
+const K = lib.readJson(require("path").join(lib.ROOT, "audits", "lines.json")).realLines;
+const onlyCandidates = process.argv.includes("--candidates");
+
+const all = lib.allStatements();
+const active = lib.activeStatements();
+const ideologies = lib.completeIdeologies(active);
+const audits = new Map(ideologies.map((i) => [i.id, lib.readJson(lib.profilePath(i.id))]));
+
+function scores(model, profile) {
+  const c = profile.map((x, j) => (x == null ? 0 : x - model.mean[j]));
+  return model.components.slice(0, K).map((comp) => comp.vector.reduce((s, v, j) => s + v * c[j], 0));
+}
+
 function answersFor(id) {
   const rows = [];
   ideologies.forEach((ideo, i) => { const a = audits.get(ideo.id).answers[id]; if (a && a.value != null) rows.push([i, a.value]); });
@@ -86,30 +112,53 @@ function answersFor(id) {
 }
 const disagreeAgree = (vals) => ({ agree: vals.filter((v) => v > 0).length, disagree: vals.filter((v) => v < 0).length });
 
-// Results for the candidates (fast: the current lines) and, unless candidatesOnly, the active
-// statements (leave-one-out: one refit each, minutes).
-function signal({ candidatesOnly = false, progress = false } = {}) {
+// Candidates, tested against the current lines (fast, synchronous). Also returns where the
+// shuffles' random sequence stands after them, for the active statements' tests.
+function candidateSignal() {
   const results = [];
   const full = buildModel(ideologies, { skipExtras: true });
   const fullScores = ideologies.map((i) => scores(full, i.profile));
+  let seed = SEED;
   for (const s of all.filter(lib.isCandidate)) {
     const rows = answersFor(s.id);
-    const t = test(rows.map(([i]) => fullScores[i]), rows.map(([, v]) => v));
+    const t = test(rows.map(([i]) => fullScores[i]), rows.map(([, v]) => v), seed);
+    seed = skip(seed, rows.length);
     results.push({ id: s.id, text: s.text, candidate: true, answered: rows.length, ...disagreeAgree(rows.map(([, v]) => v)), ...t });
   }
-  if (!candidatesOnly) {
-    active.forEach((s, j) => {
-      const loo = ideologies.map((i) => ({ profile: i.profile.filter((_, c) => c !== j) }));
-      const model = buildModel(loo, { skipExtras: true });
-      const rows = answersFor(s.id);
-      const t = test(rows.map(([i]) => scores(model, loo[i].profile)), rows.map(([, v]) => v));
-      results.push({ id: s.id, text: s.text, candidate: false, answered: rows.length, ...disagreeAgree(rows.map(([, v]) => v)), ...t });
-      if (progress && process.stderr.isTTY) process.stderr.write(`\r${j + 1}/${active.length}`);
+  return { results, seed };
+}
+
+// Results for the candidates and, unless candidatesOnly, the active statements (leave-one-out, in
+// worker threads, so async).
+async function signal({ candidatesOnly = false, progress = false } = {}) {
+  let { results, seed } = candidateSignal();
+  if (candidatesOnly) return results;
+  const tasks = active.map((s, j) => {
+    const rows = answersFor(s.id), task = { j, rows, seed };
+    seed = skip(seed, rows.length);
+    return task;
+  });
+  const { cov, centered } = covariance(ideologies.map((i) => i.profile));
+  const workers = Math.min(require("os").availableParallelism(), tasks.length);
+  let done = 0;
+  const parts = await Promise.all(Array.from({ length: workers }, (_, w) => new Promise((resolve, reject) => {
+    const worker = new Worker(__filename, { workerData: { cov, centered, K, tasks: tasks.filter((_, t) => t % workers === w) } });
+    worker.once("message", (out) => {
+      done += out.length;
+      if (progress && process.stderr.isTTY) process.stderr.write(`\r${done}/${active.length}`);
+      resolve(out);
     });
-  }
+    worker.once("error", reject);
+    worker.once("exit", (code) => { if (code) reject(new Error(`worker exited with ${code}`)); });
+  })));
+  const byJ = new Map(parts.flat().map(({ j, ...t }) => [j, t]));
+  active.forEach((s, j) => {
+    const rows = tasks[j].rows;
+    results.push({ id: s.id, text: s.text, candidate: false, answered: rows.length, ...disagreeAgree(rows.map(([, v]) => v)), ...byJ.get(j) });
+  });
   return results;
 }
-module.exports = { signal, LINES: K, IDEOLOGIES: ideologies.length };
+module.exports = { signal, candidateSignal: () => candidateSignal().results, LINES: K, IDEOLOGIES: ideologies.length };
 
 // Promote candidates with signal and demote active statements without it, in statements.json
 // (one-line format kept). Returns the ids changed. Needs the full run (not candidatesOnly).
@@ -135,8 +184,8 @@ function apply(results) {
 }
 module.exports.apply = apply;
 
-if (require.main === module) {
-  const results = signal({ candidatesOnly: onlyCandidates, progress: true });
+if (require.main === module) (async () => {
+  const results = await signal({ candidatesOnly: onlyCandidates, progress: true });
   if (process.argv.includes("--apply")) {
     if (onlyCandidates) { console.error("--apply needs the full run (active statements too)"); process.exit(1); }
     const { promoted, demoted } = apply(results);
@@ -159,4 +208,4 @@ if (require.main === module) {
       if (no.length) console.log(`${cand ? "Waiting (no signal yet)" : "No signal: demote to candidate"}:\n${no.map(show).join("\n")}`);
     }
   }
-}
+})().catch((e) => { console.error(e); process.exit(1); });

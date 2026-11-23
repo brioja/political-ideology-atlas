@@ -106,7 +106,7 @@ console.log(`${audits.length} audited ideologies.\n`);
 const cands = rows.filter((r) => r.candidate);
 if (cands.length) {
   // Test 2 (audits/statements/STANDARD.md): signal on the real lines, scripts/statement-signal.js.
-  const sig = new Map(require("./statement-signal").signal({ candidatesOnly: true }).map((r) => [r.id, r]));
+  const sig = new Map(require("./statement-signal").candidateSignal().map((r) => [r.id, r]));
   const sline = (r) => { const g = sig.get(r.id); return `${line(r)}  R² ${g.r2.toFixed(2)} vs noise ${g.bar.toFixed(2)}`; };
   const ready = cands.filter((r) => sig.get(r.id).signal);
   console.log(`\nCandidates: ${ready.length}/${cands.length} carry signal on the real lines and are ready to make active.`);
@@ -114,7 +114,7 @@ if (cands.length) {
   const waiting = cands.filter((r) => !sig.get(r.id).signal);
   if (waiting.length) console.log(`Waiting:\n${waiting.map(sline).join("\n")}`);
 }
-console.log("\nActive statements are checked by `node scripts/statement-signal.js` (minutes): any without signal is demoted.");
+console.log("\nActive statements are checked by `node scripts/statement-signal.js` (about half a minute): any without signal is demoted.");
 // Each missing statement is marked once handled: "addedAs" (the statement id it became, or merged into) or
 // "declined" (why not), so the record shows where every statement came from.
 const open = missing.filter((c) => !c.addedAs && !c.declined);
