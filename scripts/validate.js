@@ -10,13 +10,18 @@
 //   add --as-current to check an audit as if it were written under today's rules (every rules-gated and strict
 //   check, statements it has no answer for in one line): what its next pass has to fix. scripts/lane.js puts this in
 //   a later pass's first prompt (Brandon, 2026-11-21: "run validate at the start of an audit").
+//   add --stage scope to check only what an ideology's draft settles before answering (audits/PROMPT.md section 2):
+//   scope, sources and their ties, aliases, key figures and key works, under today's rules. A lane session runs it
+//   once those are in its draft (audits/PROMPT_LANE.md; Brandon, 2026-11-23, so a missed key figure shows up before
+//   the answers are researched rather than after).
 const fs = require("fs");
 const lib = require("./lib");
 const { readJson, allStatements, isCandidate, personUncertainty, ideologyUncertainty } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
-const UNCERTAINTY = !process.argv.includes("--no-uncertainty");
-const AS_CURRENT = process.argv.includes("--as-current");
+const UNCERTAINTY = !process.argv.includes("--no-uncertainty") && !process.argv.includes("--stage");
+const STAGE_SCOPE = process.argv.includes("--stage") && process.argv[process.argv.indexOf("--stage") + 1] === "scope";
+const AS_CURRENT = STAGE_SCOPE || process.argv.includes("--as-current");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
 const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : lib.catalog;
 const DIR = process.argv.includes("--dir") ? process.argv[process.argv.indexOf("--dir") + 1] : null;
@@ -164,6 +169,52 @@ function colorErrors(id) {
   return [];
 }
 
+// Key figures and key works (audits/PROMPT.md section 2), checked in a full validation and in --stage scope.
+function keyFigureChecks(a, id, sources, errors, warnings) {
+  // People most associated with the ideology, shown as "Key figures".
+  // Key figures and key works (audits/PROMPT.md): their names and evidence are checked by coatrack-check.js; here,
+  // what the ideology page shows. A pass gives each figure a role and Wikipedia article; figures moved over from the
+  // old "authors" list (2026-11-21) get theirs at their next pass.
+  const WIKI = /^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/;
+  if (!PEOPLE) for (const key of ["keyFigures", "keyWorks"]) if (a[key] !== undefined && !Array.isArray(a[key])) errors.push(`"${key}" must be a list`);
+  if (!PEOPLE && Array.isArray(a.keyFigures)) for (const [i, f] of a.keyFigures.entries()) {
+    if (!f || typeof f !== "object") { errors.push(`keyFigures[${i}]: must be { "first", "last", "role", "wikipedia", "source", "quote" }`); continue; }
+    if (f.wikipedia !== undefined && !WIKI.test(f.wikipedia)) errors.push(`keyFigures[${i}]: wikipedia must be an en.wikipedia.org article URL`);
+    if (AS_CURRENT || DIR) { if (!f.role) errors.push(`keyFigures[${i}]: needs a one-line "role"`); if (!f.wikipedia) errors.push(`keyFigures[${i}]: needs its "wikipedia" article`); }
+    // One entry per person (the page lists each entry); one quote is evidence enough.
+    const who = (x) => [x.first, x.last].map((t) => String(t || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()).join("|");
+    const j = a.keyFigures.findIndex((x) => x && typeof x === "object" && who(x) === who(f));
+    if (j < i) errors.push(`keyFigures[${i}]: ${f.first} ${f.last} is already keyFigures[${j}]; list each person once, with one quote`);
+  }
+  // A person a key figure's quote names who isn't a key figure is likely one the audit missed (Brandon, 2026-11-23:
+  // Assadism listed Hafez but not Bashar al-Assad, named in the same quote, and so left his speeches untied). People
+  // from the people catalog only, matched as written (capitalised, whole words, so the Italian "sulla" is not Sulla);
+  // a listed figure counts by name or Wikipedia article, and a namesake another ideology reserves can't be one here.
+  // A warning: a quote may name someone only in passing ("Althusius, like Aristotle").
+  if (!PEOPLE && Array.isArray(a.keyFigures) && a.keyFigures.length) {
+    const C = require("./coatrack-check");
+    const plain = (t) => ` ${String(t || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Za-z0-9]+/g, " ").trim()} `;
+    const page = (u) => { try { return decodeURIComponent(String(u || "").replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "")).replace(/ /g, "_"); } catch { return ""; } };
+    const figs = a.keyFigures.filter((f) => f && typeof f === "object" && f.last);
+    const listed = (p) => figs.some((f) => C.samePerson(f, p.name) || (f.wikipedia && page(f.wikipedia) === page(p.wikipedia)));
+    const quotes = figs.map((f) => plain(f.quote)).join(" | ");
+    const named = new Set();
+    for (const p of lib.peopleCatalog()) {
+      const n = plain(p.name);
+      if (n.trim().length < 3 || !quotes.includes(n) || listed(p)) continue;
+      if (C.reservedFor(p.name).some((o) => o !== id)) continue;
+      named.add(p.name);
+    }
+    for (const name of named) warnings.push(`keyFigures: ${name} is named in a key figure's quote but isn't a key figure; add them if the defining sources present ${a.name || id} as their thought or political legacy`);
+  }
+  if (!PEOPLE && Array.isArray(a.keyWorks)) for (const [i, w] of a.keyWorks.entries()) {
+    if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "source", "quote" } (and "work" if you cite it)`); continue; }
+    const src = w.work === undefined ? null : sources.find((s) => s.id === w.work);
+    if (w.work !== undefined && !src) errors.push(`keyWorks[${i}]: unknown source '${w.work}' in "work"`);
+    else if (src && src.kind !== "primary" && src.kind !== "program") errors.push(`keyWorks[${i}]: "work" must be the work itself, a primary or program source (${w.work} is ${src.kind})`);
+  }
+}
+
 function validate(id) {
   const errors = [];
   const warnings = [];
@@ -197,14 +248,14 @@ function validate(id) {
     return { errors, warnings };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
-  if (!PEOPLE) errors.push(...colorErrors(id));
+  if (!PEOPLE && !STAGE_SCOPE) errors.push(...colorErrors(id));
   // An old audit passes the checks of the rules it was written under, not the current ones (a pass at "rules" 3
   // predates the coatrack rule and the source-tie check): say so first, so a pass isn't read as meeting today's rules.
   if ((a.rules || 0) < CURRENT_RULES) {
     let from = ""; try { from = nextPassFrom(a); } catch { /* an invalid date is reported by its own check */ }
     warnings.push(`old audit: written under ${a.rules ? `rules ${a.rules}` : "no rules version"} (current ${CURRENT_RULES}), so later rules aren't checked here; a later pass brings it up to rules ${CURRENT_RULES}${from ? ` (from ${from})` : ""}`);
   }
-  for (const f of PEOPLE ? ["name", "auditedAt", "summary", "role"] : ["name", "auditedAt", "summary", "scope"]) {
+  for (const f of PEOPLE ? ["name", "auditedAt", "summary", "role"] : STAGE_SCOPE ? ["name", "scope"] : ["name", "auditedAt", "summary", "scope"]) {
     if (typeof a[f] !== "string" || !a[f].trim()) errors.push(`"${f}" must be a non-empty string`);
   }
   // A merged audit (two models researched independently) lists every model id.
@@ -238,7 +289,7 @@ function validate(id) {
     errors.push('"wikipedia" must be an en.wikipedia.org article URL or null');
   }
   const reading = Array.isArray(a.furtherReading) ? a.furtherReading : [];
-  if (!PEOPLE && (reading.length < 2 || reading.length > 4)) errors.push(`"furtherReading" needs 2 to 4 items, has ${reading.length}`);
+  if (!PEOPLE && !STAGE_SCOPE && (reading.length < 2 || reading.length > 4)) errors.push(`"furtherReading" needs 2 to 4 items, has ${reading.length}`);
   for (const r of reading) {
     if (!r.title || !/^https?:\/\/\S+$/.test(r.url || "")) errors.push(`furtherReading item needs a title and an http(s) url`);
   }
@@ -274,6 +325,8 @@ function validate(id) {
   if (!sources.some((s) => s.kind === "scholarly" || s.kind === "reference" || (!PEOPLE && s.kind === "secondary"))) errors.push(`needs at least one ${PEOPLE ? "scholarly or reference" : "scholarly, reference or secondary"} source`);
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
 
+  // --stage scope stops here: the draft has its scope, sources, aliases, key figures and key works but no answers yet.
+  if (STAGE_SCOPE) { if (!PEOPLE) keyFigureChecks(a, id, sources, errors, warnings); return { errors, warnings, sources }; }
   const answers = a.answers || {};
   const statements = allStatements();
   const active = statements.filter((s) => !isCandidate(s));
@@ -597,48 +650,7 @@ function validate(id) {
       if (w && d) errors.push(`${sid}: a 0 whose rationale sets words ("${w[0]}") against actions ("${d[0]}"); record over words: that is no split, answer from the actions. (If "${w[0]}" only names what a source says, reword the rationale.)`);
     }
   }
-  // People most associated with the ideology, shown as "Key figures".
-  // Key figures and key works (audits/PROMPT.md): their names and evidence are checked by coatrack-check.js; here,
-  // what the ideology page shows. A pass gives each figure a role and Wikipedia article; figures moved over from the
-  // old "authors" list (2026-11-21) get theirs at their next pass.
-  const WIKI = /^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/;
-  if (!PEOPLE) for (const key of ["keyFigures", "keyWorks"]) if (a[key] !== undefined && !Array.isArray(a[key])) errors.push(`"${key}" must be a list`);
-  if (!PEOPLE && Array.isArray(a.keyFigures)) for (const [i, f] of a.keyFigures.entries()) {
-    if (!f || typeof f !== "object") { errors.push(`keyFigures[${i}]: must be { "first", "last", "role", "wikipedia", "source", "quote" }`); continue; }
-    if (f.wikipedia !== undefined && !WIKI.test(f.wikipedia)) errors.push(`keyFigures[${i}]: wikipedia must be an en.wikipedia.org article URL`);
-    if (AS_CURRENT || DIR) { if (!f.role) errors.push(`keyFigures[${i}]: needs a one-line "role"`); if (!f.wikipedia) errors.push(`keyFigures[${i}]: needs its "wikipedia" article`); }
-    // One entry per person (the page lists each entry); one quote is evidence enough.
-    const who = (x) => [x.first, x.last].map((t) => String(t || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()).join("|");
-    const j = a.keyFigures.findIndex((x) => x && typeof x === "object" && who(x) === who(f));
-    if (j < i) errors.push(`keyFigures[${i}]: ${f.first} ${f.last} is already keyFigures[${j}]; list each person once, with one quote`);
-  }
-  // A person a key figure's quote names who isn't a key figure is likely one the audit missed (Brandon, 2026-11-23:
-  // Assadism listed Hafez but not Bashar al-Assad, named in the same quote, and so left his speeches untied). People
-  // from the people catalog only, matched as written (capitalised, whole words, so the Italian "sulla" is not Sulla);
-  // a listed figure counts by name or Wikipedia article, and a namesake another ideology reserves can't be one here.
-  // A warning: a quote may name someone only in passing ("Althusius, like Aristotle").
-  if (!PEOPLE && Array.isArray(a.keyFigures) && a.keyFigures.length) {
-    const C = require("./coatrack-check");
-    const plain = (t) => ` ${String(t || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Za-z0-9]+/g, " ").trim()} `;
-    const page = (u) => { try { return decodeURIComponent(String(u || "").replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "")).replace(/ /g, "_"); } catch { return ""; } };
-    const figs = a.keyFigures.filter((f) => f && typeof f === "object" && f.last);
-    const listed = (p) => figs.some((f) => C.samePerson(f, p.name) || (f.wikipedia && page(f.wikipedia) === page(p.wikipedia)));
-    const quotes = figs.map((f) => plain(f.quote)).join(" | ");
-    const named = new Set();
-    for (const p of lib.peopleCatalog()) {
-      const n = plain(p.name);
-      if (n.trim().length < 3 || !quotes.includes(n) || listed(p)) continue;
-      if (C.reservedFor(p.name).some((o) => o !== id)) continue;
-      named.add(p.name);
-    }
-    for (const name of named) warnings.push(`keyFigures: ${name} is named in a key figure's quote but isn't a key figure; add them if the defining sources present ${a.name || id} as their thought or political legacy`);
-  }
-  if (!PEOPLE && Array.isArray(a.keyWorks)) for (const [i, w] of a.keyWorks.entries()) {
-    if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "source", "quote" } (and "work" if you cite it)`); continue; }
-    const src = w.work === undefined ? null : sources.find((s) => s.id === w.work);
-    if (w.work !== undefined && !src) errors.push(`keyWorks[${i}]: unknown source '${w.work}' in "work"`);
-    else if (src && src.kind !== "primary" && src.kind !== "program") errors.push(`keyWorks[${i}]: "work" must be the work itself, a primary or program source (${w.work} is ${src.kind})`);
-  }
+  keyFigureChecks(a, id, sources, errors, warnings);
   // Defining positions no statement captures (audits/statements/STANDARD.md).
   if (!PEOPLE && a.missingStatements === undefined) warnings.push('no "missingStatements" (list defining positions the statements miss, or [] if none)');
   else if (!PEOPLE && !Array.isArray(a.missingStatements)) errors.push('"missingStatements" must be a list');
@@ -704,7 +716,7 @@ async function checkLinks(sources) {
 async function main() {
   const args = process.argv.slice(2);
   const links = args.includes("--links");
-  let ids = args.filter((x, i) => !x.startsWith("--") && args[i - 1] !== "--dir");
+  let ids = args.filter((x, i) => !x.startsWith("--") && args[i - 1] !== "--dir" && args[i - 1] !== "--stage");
   const dir = DIR || PROFILES_DIR;
   if (ids.length === 0) ids = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)) : [];
 

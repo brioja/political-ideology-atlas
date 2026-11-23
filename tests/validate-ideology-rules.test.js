@@ -91,6 +91,15 @@ try {
     const quiet = (name, a) => { const w = result(a).warnings.filter((x) => /named in a key figure's quote/.test(x)); assert.deepStrictEqual(w, [], `${name}: ${w.join("; ")}`); n++; };
     quiet("person in the quote who is a key figure", E(pair(`Quentin Vexmoor and ${person.name} wrote its founding text`), (a) => { const [first, last] = person.name.split(" "); a.keyFigures.push({ ...fig(), first, last, wikipedia: person.wikipedia }); }));
     quiet("name only in lower case", pair(`Quentin Vexmoor and ${person.name.toLowerCase()} wrote its founding text`)); }
+  // --stage scope (a lane draft before answering): only section 2's checks, so a draft without answers, further
+  // reading or summary still gets the key-figure warning and no errors for what it hasn't written yet.
+  { const person = lib.peopleCatalog().find((p) => /^[A-Z][a-z]+ [A-Z][a-z]+$/.test(p.name) && !coatrack.reservedFor(p.name).length);
+    const draft = E(base(), (a) => { delete a.answers; delete a.furtherReading; delete a.summary; delete a.missingStatements; a.keyFigures = [{ ...fig(), quote: `Quentin Vexmoor and ${person.name} wrote its founding text` }]; });
+    fs.writeFileSync(tmp, JSON.stringify(draft, null, 2));
+    const out = require("child_process").spawnSync("node", [path.join(lib.ROOT, "scripts", "validate.js"), "--dir", path.dirname(tmp), "--stage", "scope", subject.id], { encoding: "utf8" }).stdout;
+    const errs = out.split("\n").filter((l) => /^\s+error:/.test(l)).filter((l) => !/the quote isn't in s3's saved copy/.test(l));
+    assert.deepStrictEqual(errs, [], `--stage scope: expected no errors for unwritten parts, got:\n${errs.join("\n")}`);
+    assert(out.includes(`keyFigures: ${person.name} is named in a key figure's quote`), `--stage scope: expected the key-figure warning, got:\n${out}`); n++; }
   // Key works: a title with its evidence; "work" is the cited text itself, which the title then ties to the ideology.
   const work = (extra = {}) => ({ title: "Founding Rescript", source: "s1", quote: "first in the Founding Rescript", ...extra });
   const unnamed = (a) => { a.sources.push({ id: "s4", kind: "primary", evidence: "words", title: "Imperial edict", url: "https://example.org/unrelated" }); a.answers[A].sources.push("s4"); };

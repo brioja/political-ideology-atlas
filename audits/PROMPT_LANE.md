@@ -22,6 +22,12 @@ Audit the id the driver gives you, person or ideology.
    The driver's first message lists what the committed audit fails under today's rules
    (`node scripts/validate.js [--people] --as-current <id>`): fix each in your draft.
 3. Sources go in `scratchpad/sources/<id>/`; helper scripts in `scratchpad/<lane>-<id>/`.
+   For an ideology, once the draft has its scope, sources, aliases, key figures and key works (PROMPT.md
+   section 2), and before you answer the statements, check them:
+
+       node scripts/validate.js --dir scratchpad/lane-out/<lane> --stage scope <id>
+
+   and fix every error and act on every warning it reports.
 4. Write the audit to `scratchpad/lane-out/<lane>/<id>.json`; the driver moves it into `audits/`
    once it validates. Validate it there:
 
