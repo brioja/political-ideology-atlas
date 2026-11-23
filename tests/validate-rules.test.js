@@ -299,6 +299,22 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
 { const a = base(); a.answers[B].confidence = "high"; a.answers[B].rationale = "Said in a 2020 interview that this statement is wrong."; ok("rationale that states the evidence", a); }
 { const a = base(); a.rules = 2; a.answers[B].rationale = "Said so; not inferred."; fails("older audits: no 'not inferred' exception either", a, /so the confidence is low/); }
 
+// A source dropped from an answer takes its claims with it: kept word for word, a rationale that still names the
+// dropped source is flagged (an error for drafts and --as-current, a warning here; trotskyism, 2026-11-23).
+{
+  const dropped = (rationale) => {
+    const a = laterPass(base());
+    a.answers[B] = { value: -1, confidence: "medium", rationale: "Said in a 2020 interview transcript and the 2021 speech that this statement is wrong.", sources: ["s2", "s3"] };
+    const earlier = version(a.answers[B], "claude-sonnet-5-5", "2026-11-01");
+    a.answers[B] = { ...a.answers[B], sources: ["s2"], rationale: rationale || a.answers[B].rationale };
+    return withHistory(a, B, [earlier]);
+  };
+  const warns = (a) => { fs.writeFileSync(tmp, JSON.stringify(a, null, 2)); setCommittedForTests(() => null); return validate(subject.id).warnings.filter((w) => /was dropped but/.test(w)); };
+  assert.deepStrictEqual(warns(dropped()).length, 1, "a dropped source still named in an unchanged rationale"); n++;
+  assert.match(warns(dropped())[0], /source s3 was dropped but the rationale still names it \("2021 speech"\)/); n++;
+  assert.deepStrictEqual(warns(dropped("Said in a 2020 interview transcript that this statement is wrong.")), [], "rewritten without the dropped source"); n++;
+}
+
 setCommittedForTests(null);
 fs.rmSync(path.dirname(tmp), { recursive: true, force: true });
 console.log(`validate rules: ${n} cases passed`);

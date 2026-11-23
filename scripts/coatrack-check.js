@@ -81,6 +81,23 @@ const titleHeads = (t) => {
   if (m) heads.push(m[1]);
   return heads.map(norm).filter((h) => h.trim().split(" ").length >= 2);
 };
+// How a rationale names a source: the head of its title (as above), its author (two words or more, without a
+// bracket), and an organisation author's initials ("ISO" for "International Socialist Organization"). For the
+// validate.js check on a source dropped from an answer whose rationale still names it, and for drop-source.js.
+const sourceNames = (s) => {
+  const out = new Set(titleHeads(s && s.title));
+  const au = String((s && s.author) || "").replace(/\([^)]*\)/g, " ").trim();
+  if (norm(au).trim().split(" ").length >= 2) out.add(norm(au));
+  const words = au.split(/\s+/).filter((w) => w && !/^(of|the|and|for|in|de|du|la|le|des|und|der)$/i.test(w));
+  if (words.length >= 3 && words.every((w) => /^\p{Lu}/u.test(w))) out.add(` ${words.map((w) => w[0]).join("").toLowerCase()} `);
+  return [...out];
+};
+// The names of `dropped` that `rationale` still uses, leaving out those the cited sources carry in their own title or
+// author (a kept copy of the same text: "The Treaty of Troyes, 1420" for a dropped "Treaty of Troyes" article).
+const namesLeft = (rationale, dropped, cited) => {
+  const r = norm(rationale), kept = cited.map((s) => norm(s.title) + norm(s.author)).join(" ");
+  return sourceNames(dropped).filter((n) => r.includes(n) && !kept.includes(n)).map((n) => n.trim());
+};
 // Wikipedia never defines an ideology (audits/AUDIT_RULES.md section 2): it can't be a defining source.
 const isWikipedia = (s) => /(^|\.)wikipedia\.org$/.test((() => { try { return new URL(s.url).host; } catch { return ""; } })());
 // An alias is a name, not an everyday word: several words, an acronym of the name, an -ism/-ist/-ian form, the eponym an
@@ -531,9 +548,9 @@ function check(id, full, { strict = false, pass = false } = {}) {
     if (t == null) { unchecked.push(s.id); continue; }
     // The message names all three ways to tie a primary text, each with its evidence (audits/PROMPT.md);
     // Brandon, 2026-11-21.
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of three ways, each with a quote, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}"); another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}); or its author, listed as a key figure (in "keyFigures"), if the defining sources present the ideology as that person's body of thought and name them at least twice${citedBy(s.id)}`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of three ways, each with a quote, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}"); another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}); or its author, listed as a key figure (in "keyFigures"), if the defining sources present the ideology as that person's body of thought and name them at least twice. \`node scripts/tie-source.js ${id} ${s.id}\` searches the saved pages and local corpora for a tie; if none fits, \`node scripts/drop-source.js ${id} ${s.id}\` takes it out of the answers and lists the rationales to rewrite${citedBy(s.id)}`);
   }
   return { problems, unchecked, warnings };
 }
 
-module.exports = { setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName };
+module.exports = { setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };

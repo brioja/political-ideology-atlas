@@ -443,6 +443,18 @@ function validate(id) {
     if (!ok) continue;
     if (h[0].value === null) errors.push(`${st.id}: reviewHistory starts at the first answer: a null before it found nothing and has nothing to review, so leave it out`);
     if (!isCurrent(h[h.length - 1], x)) errors.push(`${st.id}: the last reviewHistory entry is the current answer, word for word (a null leaves out its sources)`);
+    // A source dropped from an answer takes its claims with it: a pass that drops one and keeps the rationale word for
+    // word, still naming it, left the claims in (trotskyism, 2026-11-23: the ISO programme, untied, dropped from 59
+    // answers whose rationales still gave its position). An error for drafts and --as-current; committed audits get a
+    // warning until their next pass.
+    const before1 = h[h.length - 2];
+    if (x.value !== null && before1.value !== null && before1.rationale === x.rationale) {
+      const byId = new Map(sources.map((s) => [s.id, s])), cited = (x.sources || []).map((sid) => byId.get(sid)).filter(Boolean);
+      for (const sid of before1.sources.filter((sid) => !(x.sources || []).includes(sid) && byId.has(sid))) {
+        const left = require("./coatrack-check").namesLeft(x.rationale, byId.get(sid), cited);
+        if (left.length) (DIR || AS_CURRENT ? errors : warnings).push(`${st.id}: source ${sid} was dropped but the rationale still names it ("${left.join('", "')}"), word for word as before: rewrite it from the sources it cites, without ${sid}'s claims, and change the value or confidence if they rested on it`);
+      }
+    }
     // Walk the versions in order and check each change.
     let lastNulled = null;
     for (let i = 1; i < h.length; i++) {
