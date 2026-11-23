@@ -110,8 +110,8 @@ Both lists show on the ideology's page.
   after for it (Lenin for Leninism).
 - Never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's
   other views aren't part of it: tie their texts by title instead (Monroe's 1823 annual message).
-- Each gives a one-line `role` (how the sources associate them) and their English Wikipedia article
-  (`wikipedia`).
+- Give each two fields for the page: `role`, one line on how the sources connect them to the ideology
+  ("Theorist of agonistic pluralism"), and `wikipedia`, the URL of their English Wikipedia article.
 - A primary text by one of them is tied to the ideology.
 
 `keyWorks`: the texts the defining sources make canonical (founding texts, manifestos, programmes, a thinker's
