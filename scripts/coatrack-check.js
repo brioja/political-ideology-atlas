@@ -111,7 +111,7 @@ const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.lengt
 const entryName = (x) => (typeof x === "string" ? x : x && typeof x === "object"
   ? x.name || x.title || x.organisation || [x.first, x.last].filter(Boolean).join(" ") : "");
 // The name a key figure is matched by: their last name ("last": "de Benoist", "bin Laden").
-const authorKey = (x) => {
+const figureKey = (x) => {
   if (x && typeof x === "object" && x.last) return norm(x.last);
   const w = entryName(x).trim().split(/\s+/);
   return norm(w[w.length - 1]);
@@ -162,7 +162,7 @@ function namesTaken() {
   return taken;
 }
 
-let takenAuthors = null, committed = null, reserved = null;
+let takenFigures = null, committed = null, reserved = null;
 // The committed ideology audits' names, dates and key figures (tests pass their own list).
 function profiles() {
   if (committed) return committed;
@@ -182,19 +182,19 @@ function namesakes() {
   try { reserved = JSON.parse(fs.readFileSync(path.join(lib.ROOT, "audits", "namesakes.json"), "utf8")).namesakes || {}; } catch { reserved = {}; }
   return reserved;
 }
-function setProfilesForTests(map, names = null) { committed = map; reserved = names; takenAuthors = null; }
+function setProfilesForTests(map, names = null) { committed = map; reserved = names; takenFigures = null; }
 // A person's name with its words in any order ("Mao Zedong", "Zedong Mao").
 const personKey = (s) => norm(s).trim().split(" ").sort().join(" ");
 // The audits that list each key figure.
-function authorsTaken() {
-  if (takenAuthors) return takenAuthors;
-  takenAuthors = new Map();
+function figuresTaken() {
+  if (takenFigures) return takenFigures;
+  takenFigures = new Map();
   for (const [id, a] of profiles()) for (const au of list(a.keyFigures)) {
-    const k = personKey(au); if (!takenAuthors.has(k)) takenAuthors.set(k, new Set()); takenAuthors.get(k).add(id);
+    const k = personKey(au); if (!takenFigures.has(k)) takenFigures.set(k, new Set()); takenFigures.get(k).add(id);
   }
-  return takenAuthors;
+  return takenFigures;
 }
-// Whether author `x` is the reserved `person`: the same name in any word order, or the same surname and first
+// Whether key figure `x` is the reserved `person`: the same name in any word order, or the same surname and first
 // initial ("Mohandas Gandhi" for "Mahatma Gandhi", "V. I. Lenin" for "Vladimir Lenin"; never Yuri Ivanov for
 // Porfiry Ivanov). A numeral or Jr./Sr. is no surname: a regnal name ("Joseph II") counts only whole, never for
 // John Paul II, and where both names give Jr. or Sr. they must agree.
@@ -217,11 +217,11 @@ const namesakeOf = (x, name) => {
   const n = norm(name).trim(), w = norm(last).trim().split(" ").pop();
   return !n.includes(" ") && w.length >= 3 && [w, w.replace(/e$/, "")].some((st) => n === `${st}ism` || n === `${st}ianism`);
 };
-// Whether author `x` is the person ideology `id` is named after: its audits/namesakes.json entry (which also
+// Whether key figure `x` is the person ideology `id` is named after: its audits/namesakes.json entry (which also
 // covers given names and other forms: Kemalism, "Xi Jinping Thought"), or for an ideology without one, the
 // surname rule above.
 const isNamesake = (x, id, name) => (namesakes()[id] ? samePerson(x, namesakes()[id]) : namesakeOf(x, name));
-// The ideologies audits/namesakes.json reserves author `x` for.
+// The ideologies audits/namesakes.json reserves key figure `x` for.
 const reservedFor = (x) => Object.entries(namesakes()).filter(([, person]) => samePerson(x, person)).map(([o]) => o);
 const ideologyName = (o) => (profiles().get(o) || {}).name || (lib.catalog().find((e) => e.id === o) || {}).name;
 
@@ -316,7 +316,7 @@ const isEponymAlias = (al, name) => {
   const n = norm(al).trim().split(" ");
   return isEponym({ first: n[0], last: n[n.length - 1] }, name);
 };
-// An eponym: the ideology is named after this author ("Klaus" for Klausism, "Sankara" for Sankarism,
+// An eponym: the ideology is named after this person ("Klaus" for Klausism, "Sankara" for Sankarism,
 // "Camilo" for Camilism). Their name counts as the ideology's name.
 const isEponym = (x, name) => {
   if (!x || typeof x !== "object") return false;
@@ -402,7 +402,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
     if (isSupported(x) || isSpellingAlias(x)) { const pr = aliasPageProblem(id, al); if (pr) problems.push(pr); }
   }
   for (const x of Array.isArray(audit.keyFigures) ? audit.keyFigures : []) {
-    const key = authorKey(x);
+    const key = figureKey(x);
     if (x && typeof x === "object" && x.organisation) { problems.push(`key figure "${x.organisation}": an organisation isn't a key figure; list its texts in "keyWorks"`); continue; }
     if (strict && typeof x === "object" && !x.last) problems.push(`key figure "${entryName(x)}" needs "last" (and "first" unless they go by one name: Plato)`);
     // The person audits/namesakes.json names the ideology after needs no quote: that record is the evidence
@@ -484,18 +484,18 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // Key figures ("keyFigures"): the ideology's own thinkers, as its defining sources name them. Each
   // must be named (by surname) at least twice in the defining sources and belong to no other
   // ideology's "keyFigures". A primary text by one of them is tied to the ideology.
-  // Settled, don't reopen (Brandon, 2026-11-21): this ties every text of a listed author, including works
+  // Settled, don't reopen (Brandon, 2026-11-21): this ties every text a listed key figure wrote, including works
   // outside the ideology. Across all audits 208 texts are tied only this way; outside ideologies named after
   // a person, 181 of them aren't named by title in the defining sources, so no narrower tie a script can
-  // check would separate off-topic texts from the author's core ones. Whether a text speaks for the ideology
+  // check would separate off-topic texts from their core ones. Whether a text speaks for the ideology
   // is the auditor's call in each pass; no rule for it.
-  const authorEntries = (Array.isArray(audit.keyFigures) ? audit.keyFigures : []).filter((x) => entryName(x).trim() && !(x && x.organisation));
-  const authorOk = [];
-  for (const x of authorEntries) {
-    const au = entryName(x), sur = authorKey(x);
-    const others = [...(authorsTaken().get(personKey(au)) || [])].filter((o) => o !== id);
+  const figureEntries = (Array.isArray(audit.keyFigures) ? audit.keyFigures : []).filter((x) => entryName(x).trim() && !(x && x.organisation));
+  const figuresOk = [];
+  for (const x of figureEntries) {
+    const au = entryName(x), sur = figureKey(x);
+    const others = [...(figuresTaken().get(personKey(au)) || [])].filter((o) => o !== id);
     const reserving = reservedFor(x).filter((o) => o !== id);
-    // The ideology named after the author lists them whatever others do; another that lists them too is an
+    // The ideology named after the key figure lists them whatever others do; another that lists them too is an
     // error at once, committed or not (Brandon, 2026-11-21: remove the duplicates even if it breaks older audits).
     if ((others.length || reserving.length) && !isNamesake(x, id, audit.name)) {
       const owner = reserving[0] || others.find((o) => isNamesake(x, o, ideologyName(o)));
@@ -505,7 +505,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
       continue;
     }
     if (count(defining.join(" "), [sur]) < 2) { problems.push(`key figure "${au}" is named fewer than twice in the defining sources`); continue; }
-    authorOk.push(sur);
+    figuresOk.push(sur);
   }
   const primaries = sources.filter((s) => s.kind === "primary" || s.kind === "program");
   const vouching = [...defining];
@@ -525,13 +525,13 @@ function check(id, full, { strict = false, pass = false } = {}) {
     const named = heads.some((h) => count(others, [h]) >= 2);
     if (named) continue;
     // A key figure's text: its author is one the audit lists in "keyFigures" (see above).
-    if (authorOk.length && s.author && authorOk.some((sur) => norm(s.author).includes(sur))) continue;
+    if (figuresOk.length && s.author && figuresOk.some((sur) => norm(s.author).includes(sur))) continue;
     // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
     // makes an unchecked source an error for them.
     if (t == null) { unchecked.push(s.id); continue; }
     // The message names all three ways to tie a primary text, each with its evidence (audits/PROMPT.md);
     // Brandon, 2026-11-21.
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of three ways, each with a quote, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}"); another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}); or its author, if the defining sources present the ideology as that person's body of thought and name them at least twice (in "keyFigures")${citedBy(s.id)}`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of three ways, each with a quote, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}"); another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}); or its author, listed as a key figure (in "keyFigures"), if the defining sources present the ideology as that person's body of thought and name them at least twice${citedBy(s.id)}`);
   }
   return { problems, unchecked, warnings };
 }
