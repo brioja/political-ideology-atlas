@@ -1,6 +1,6 @@
 # Ideology audit instructions
 
-You are auditing one ideology for Political Ideology Atlas, a political ideology test. Your job is to record
+You are auditing one catalog entry for Political Ideology Atlas, a political ideology test. Your job is to record
 the ideology's positions on each test statement as its own sources state them, and to show your
 evidence. Each answer you give becomes one coordinate of the ideology's profile, which test takers
 are matched against. Getting it wrong puts real people into the wrong ideology.
@@ -16,10 +16,10 @@ Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, unc
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
 is specific to ideologies.
 
-## First check: is this an ideology the test can place?
+## First check: does it hold political ideas of what society should be?
 
 The catalog is built generously from loose sources (Wikipedia's list of political ideologies and an
-older hand-made list), so some entries aren't ideologies. Before researching, open the suggested
+older hand-made list), so some entries hold no political ideas of what society should be. Before researching, open the suggested
 Wikipedia article and check (the full criteria are in `audits/IDEOLOGY_STANDARD.md`). Skip the
 full audit if the entry is:
 - something that has ideas but isn't a set of ideas: a person (`PERSON`), a political party (`PARTY`),
@@ -54,7 +54,7 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
 }
 ```
 
-When in doubt, audit it: a thin ideology is excluded later by the uncertainty rule, on evidence.
+When in doubt, audit it: a thin entry is excluded later by the uncertainty rule, on evidence.
 
 ## 1. Pin down what the ideology is
 
