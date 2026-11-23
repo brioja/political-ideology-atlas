@@ -62,15 +62,32 @@ no defining source states.
 defining source (`reference` or `scholarly`) must name the ideology, by its name or an alias. A
 `primary` or `program` source must name it too, or be named (by title or author) in a defining source
 that does. List in `aliases` the other names the defining sources use for it, liberally, each with
-its `reason` (Brandon, 2026-11-20; validate.js checks each): `REDIRECT` (a Wikipedia redirect to the article;
-word forms such as "Gaullist" and other names come in this way), `SUPPORTED` (a source says they are the same),
-`TRANSLATION` (the name in another language or its romanization, as Wikipedia gives it: the title of the article's
-link to that language's Wikipedia, or a name the article's lead or infobox tags with a language, such as "pinyin: Xīn
-Rújiā"; needs no quote), `SPELLING` (the same name spelled differently or its words
-reordered: "Salafi jihadism" / "jihadi-Salafism"; at most two letters differ and the ending stays the same) or
-`EPONYM` (the person an "-ism" is named after: "Fortuyn" for Fortuynism). An acronym is `SUPPORTED`, never
-assumed from initials ("ML" can mean several things). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
-for World communism), so an alias may never be another ideology's name or alias. List in `keyFigures`
+its `reason` (Brandon, 2026-11-20; validate.js checks each):
+- `REDIRECT`: a Wikipedia redirect to the article; word forms such as "Gaullist" and other names come in
+  this way. Every redirect to the article counts automatically, unless Wikipedia files it as a section,
+  subtopic, related topic or former name (a related word counts). Needs no quote.
+- `SUPPORTED`: a source says they are the same. Its quote must name the alias and the ideology as separate
+  phrases (not "Brazilian Integralist Action" for Brazilian integralism, nor "the Tea Party movement" alone
+  for the Tea Party), showing the source equating the two ("'trans-exclusionary radical feminism', or
+  TERFism"). To find that source, look the alias up from its own side (a reverse lookup): a dictionary,
+  glossary or encyclopedia entry for the alias ("TERF") usually defines it by the ideology's name
+  ("trans-exclusionary radical feminist"). An acronym is `SUPPORTED`, never assumed from initials ("ML" can
+  mean several things).
+- `TRANSLATION`: the name in another language or its romanization, as Wikipedia gives it: the title of the
+  article's link to that language's Wikipedia, or a name the article's lead or infobox tags with a language,
+  such as "pinyin: Xīn Rújiā". Needs no quote.
+- `SPELLING`: the same name spelled differently or its words reordered: "Salafi jihadism" /
+  "jihadi-Salafism"; at most two letters differ and the ending stays the same.
+- `EPONYM`: the person an "-ism" is named after: "Fortuyn" for Fortuynism.
+
+The check exists to stop an audit leaning on a broader ideology's sources ("communism" for World communism),
+so an alias may never be another ideology's name or alias. A name Wikipedia files under another topic (its
+own article, a disambiguation page, a redirect to another article or to a section of one: "Committee of Union
+and Progress", "radical left") isn't a `SUPPORTED`, `TRANSLATION` or `SPELLING` alias, whatever the quote
+("modern liberalism" is a disambiguation page); a redirect to a section of the ideology's own article is fine.
+An alias's quote may name the ideology by any of its redirects.
+
+List in `keyFigures`
 the ideology's own thinkers as its defining sources name them, people only, no organisations (each named at
 least twice there, and no other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology
 is named after for it, Lenin for Leninism; that namesake is listed first, and needs no quote): a primary text by one of them is tied to the ideology. List a
@@ -86,15 +103,7 @@ the ideology's page. Give each alias, key figure and key work its evidence:
 `{ "name" (a key figure: "first" and "last"; a key work: "title"), "source": "<source id>",
 "quote": "<verbatim passage>" }`, a passage from that
 source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT` or
-`TRANSLATION` alias needs none). A `SUPPORTED` alias's quote must name the alias and the ideology as separate phrases (not "Brazilian
-Integralist Action" for Brazilian integralism, nor "the Tea Party movement" alone for the Tea Party), showing the source equating the two ("'trans-exclusionary
-radical feminism', or TERFism"). A name Wikipedia files under another topic (its own article, a disambiguation page,
-a redirect to another article or to a section of one: "Committee of Union and Progress", "radical left") isn't a
-`SUPPORTED`, `TRANSLATION` or `SPELLING` alias, whatever the quote ("modern liberalism" is a disambiguation page); a redirect to a section of the ideology's own article is fine. To find that source, look the alias up from its own side
-(a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias ("TERF") usually defines it
-by the ideology's name ("trans-exclusionary radical feminist"). Every
-redirect to the article counts automatically, unless Wikipedia files it as a section, subtopic, related topic
-or former name (a related word counts), and an alias's quote may name the ideology by any of those redirects. Save every source
+`TRANSLATION` alias needs none). Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - Answer from what the defining sources say the ideology holds: the texts they make canonical
   (founding texts, a defining thinker, a party programme) where they name any, and their own account
