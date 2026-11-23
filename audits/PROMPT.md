@@ -113,8 +113,6 @@ Answer from what the defining sources say the ideology holds. These answer:
   the label means (surveys asking what "left" stands for).
 - Primary texts tied to it (section 1): texts that name it twice, texts the defining sources name twice
   (its key works), and texts by its key figures.
-- Movements and offshoots under the name, where the defining sources make them the ideology's own
-  (AUDIT_RULES.md section 3).
 - Its record, for "record over words": the sustained, documented practice of regimes where it was the
   official doctrine of the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in
   power), and any practice a defining source describes as part of it (emperor-system fascism, a
