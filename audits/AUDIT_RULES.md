@@ -161,8 +161,7 @@ free trade, not about markets in general.
   doesn't). A passage counts when its author presents it as a tenet or requirement of the ideology; a
   proposed measure, a current campaign or an organisational choice doesn't become one by appearing in a
   declaration or an article about what the ideology is. Only the subject's own sources
-  answer (for an ideology, its defining sources and the texts they tie to it), and without them the
-  answer is `null`. Where the subject's own sources take opposite positions on the same question, it
+  answer, and without them the answer is `null`. Where the subject's own sources take opposite positions on the same question, it
   is a split (0, `low`).
 - **Sources count by what they are, not by who publishes them.** Anyone's account of what the subject
   thinks is a way to find evidence, not evidence. A quotation of the subject, whoever publishes it,
