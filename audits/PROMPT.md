@@ -104,10 +104,10 @@ List in `keyFigures` the ideology's own thinkers as its defining sources name th
 organisations (each named at least twice there, and no other ideology's key figure or namesake:
 audits/namesakes.json reserves each person an ideology is named after for it, Lenin for Leninism; that
 namesake is listed first, and needs no quote): a primary text by one of them is tied to the ideology. List a
-key figure only when the defining sources present the ideology as that person's body of thought; never for a
-single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's other views
-aren't part of it, nor for a leader the sources don't present as its thinker: tie their texts by title instead
-(Monroe's 1823 annual message). Each key figure also gives a one-line `role` (how the sources associate them)
+key figure only when the defining sources present the ideology as that person's thought or political legacy
+(Clinton for Clintonism); never for a single doctrine, policy or programme named after someone (the Monroe
+Doctrine), whose namesake's other views aren't part of it: tie their texts by title instead (Monroe's 1823
+annual message). Each key figure also gives a one-line `role` (how the sources associate them)
 and their English Wikipedia article (`wikipedia`).
 
 List in `keyWorks` the texts the defining sources make canonical (founding texts, manifestos, programmes, a
