@@ -131,7 +131,9 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
   power (`null`), but a doctrine of rule by competence settles hereditary office.
 - Its own record, for "record over words", is that of regimes where it was the official doctrine of
   the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): their
-  sustained, documented practice is part of the ideology. Where that practice answers a statement,
+  sustained, documented practice is part of the ideology. So is any practice a defining source
+  describes as part of it, official doctrine or not (Brandon, 2026-11-23: emperor-system fascism, a
+  historians' name for wartime Japan's system, takes its record from them). Where that practice answers a statement,
   answer from the practice and leave the doctrine's words on it out (one-party rule alongside praise
   of popular democracy, a leader cult alongside collective leadership). A lapse of one regime or one period is not the
   ideology's position, and parties that governed as one party among others are not the ideology's
