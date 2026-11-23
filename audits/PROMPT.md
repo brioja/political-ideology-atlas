@@ -107,7 +107,7 @@ Both lists show on the ideology's page.
 - People only, no organisations.
 - Named at least twice by the defining sources: in two of them, or twice in one.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
-  after for it (Lenin for Leninism). That namesake is listed first, and needs no quote.
+  after for it (Lenin for Leninism).
 - Never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's
   other views aren't part of it: tie their texts by title instead (Monroe's 1823 annual message).
 - Each gives a one-line `role` (how the sources associate them) and their English Wikipedia article
