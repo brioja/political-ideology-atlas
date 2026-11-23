@@ -122,7 +122,16 @@ function namesakeBooks(id) {
   log(`${id}: ${files.length} reference book(s) by or about ${person}`);
   return `\n\nThe maintainer's reference library (~/.cache/political-ideology-atlas/corpora/reference/text/) holds these books by or about ${person}, whom \`${id}\` is named after. Search each for the statements' topics: the namesake's own books are primary sources, and books about them (biographies) are scholarship defining the ideology (audits/AUDIT_RULES.md on supplied texts):\n${files.map((f) => `- ${f}`).join("\n")}`;
 }
-const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors other than the uncertainty rule, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.${namesakeBooks(id)}${laterPassProblems(id)}`;
+// An ideology's other names (the Wikipedia redirects to its article) go in the first message, so the session searches
+// under them from the start; the coatrack check already accepts them as aliases (Brandon, 2026-11-23: kokkashugi was
+// nulled for want of a source naming it, while scholarship on the same texts says "Japanese fascism").
+function otherNames(id) {
+  if (PEOPLE) return "";
+  const names = require("./lib").wikipediaOtherNames(id);
+  if (!names.length) return "";
+  return ` Wikipedia redirects these names to the subject's article: ${names.map((n) => `"${n}"`).join(", ")}. Search under them from the start, not only the subject's own name: a source naming the subject by one of them counts as naming it (the coatrack check takes them as aliases, unless another ideology claims the name).`;
+}
+const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors other than the uncertainty rule, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.${otherNames(id)}${namesakeBooks(id)}${laterPassProblems(id)}`;
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its line in scratchpad/lane-out/${LANE}/DONE.txt.`;
 const FIX = (id, errors) => `validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
