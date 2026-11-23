@@ -115,8 +115,8 @@ These answer for an ideology:
   - data on what the label means (surveys asking what "left" stands for)
 - Its `keyWorks` and its `keyFigures`' texts (section 1).
 
-Adherents, member organisations and critics don't answer, since they hold more opinions than just the
-ideology. A general remark that its content varies
+An adherent's or member organisation's own platform doesn't answer, since they hold more opinions than
+just the ideology; their account of what the ideology holds does (above). Critics don't answer. A general remark that its content varies
 answers no particular statement (`null`).
 
 ## 3. Sources for an ideology
