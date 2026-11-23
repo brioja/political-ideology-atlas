@@ -65,10 +65,8 @@ its `reason` (validate.js checks each):
 - `REDIRECT`: a Wikipedia redirect to the article; word forms such as "Gaullist" and other names come in
   this way. Every redirect to the article counts automatically, unless Wikipedia files it as a section,
   subtopic, related topic or former name (a related word counts). Needs no quote.
-- `SUPPORTED`: a source says they are the same. Its quote must name the alias and the ideology as separate
-  phrases (not "Brazilian Integralist Action" for Brazilian integralism, nor "the Tea Party movement" alone
-  for the Tea Party), showing the source equating the two ("'trans-exclusionary radical feminism', or
-  TERFism"). To find that source, look the alias up from its own side (a reverse lookup): a dictionary,
+- `SUPPORTED`: a source says they are the same. Quote the passage where it equates them
+  ("'trans-exclusionary radical feminism', or TERFism"). To find that source, look the alias up from its own side (a reverse lookup): a dictionary,
   glossary or encyclopedia entry for the alias ("TERF") usually defines it by the ideology's name
   ("trans-exclusionary radical feminist"). An acronym is `SUPPORTED`, never assumed from initials ("ML" can
   mean several things).
