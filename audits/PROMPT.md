@@ -52,8 +52,8 @@ When in doubt, audit it: a thin entry is excluded later by the uncertainty rule,
 ## 1. Pin down what the ideology is
 
 The sources decide the scope, not you (Brandon, 2026-11-05). Before answering, find the reference
-and scholarly works that define the name itself (encyclopedia and dictionary entries, scholarship
-on the term): what they say it is, which strand it names when the name covers several, and which
+and scholarly works that define the name or any of its aliases (encyclopedia and dictionary
+entries, scholarship on the term): what they say it is, which strand it names when the name covers several, and which
 texts, thinkers or programs they name as its own. Record that in `scope`, citing those sources. A
 text counts for the subject only as far as they tie it to the subject; don't choose a scope that
 no defining source states.
