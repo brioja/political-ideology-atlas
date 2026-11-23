@@ -55,7 +55,7 @@ alias):
 - reference works and scholarship on it (Payne, Paxton or Griffin for fascism; Bobbio for left and
   right): `reference` or `scholarly`
 - other reliable sources on it (journalism, books from reputable publishers): `secondary`
-- a thinker's or organisation's account of its tenets
+- a thinker's or organisation's account of its tenets: `secondary`
 - data on what the label means (surveys asking what "left" stands for)
 
 Wikipedia only helps you find these (audits/AUDIT_RULES.md, section 2).
@@ -64,7 +64,7 @@ Wikipedia only helps you find these (audits/AUDIT_RULES.md, section 2).
 
 The sources decide the scope, not you. Before answering, find its defining sources (section 1):
 what they say it is, which strand it names when the name covers several, and which
-texts, thinkers or programs they name as its own. Record that in `scope`, citing those sources. A
+texts, thinkers or programmes they name as its own. Record that in `scope`, citing those sources. A
 text counts for the subject only as far as they tie it to the subject; don't choose a scope that
 no defining source states.
 
@@ -163,7 +163,7 @@ The results page links each ideology to further reading for curious, non-special
 
 The statements are chosen by the standard in `audits/statements/STANDARD.md`, and audits are how
 gaps get found. After answering, list in `missingStatements` the positions that **define** this
-ideology (stated in its primary sources or central in the scholarship) but that no statement
+ideology (stated in its sources, section 3) but that no statement
 captures, even loosely. List only those; often there are none, and the list is empty.
 
 - Write each as a candidate statement in the bank's form: one claim, read literally, in neutral

@@ -58,8 +58,9 @@ The audit (`audits/PROMPT.md`) records `notIdeasOfWhatSocietyShouldBe` instead o
   "Political views of …", "Political philosophy of …", "Religious views of …") is PERSON by its title, checked
   in code (`scripts/lib.js` personViews) without an audit: the people side audits that person. An ideology named
   after them (Trumpism) is tied to the person but isn't them, and is audited; or
-- **not political ideas of what society should be** (DOES_NOT_INCLUDE_IDEAS; "should be" is the test, a worked-out "how" isn't needed): its content holds none,
-  shown by trying: the agent looked for answers to the statements in its sources and found fewer than two,
+- **not political ideas of what society should be** (DOES_NOT_INCLUDE_IDEAS): its content holds none, shown by trying: the
+  agent looked for answers to the statements in its defining sources and its critics (audits/PROMPT.md, first
+  check) and found fewer than two,
   and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".
   `scripts/validate.js` rejects the reason otherwise, and the entry is audited in full.
   Notability and duplicates are gate 1, checked in code.
