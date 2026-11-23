@@ -94,7 +94,8 @@ namesake's other views aren't part of it, nor for a leader the sources don't pre
 texts by title instead (Monroe's 1823 annual message). List in `keyWorks` the texts the defining sources make
 canonical (founding texts, manifestos, programmes, a thinker's major works), by the title those sources use
 ("the 1856 Imperial Rescript" for the "Rescript of Reform"), with `"work": "<source id>"` when you cite the text
-itself: a primary text the sources that discuss the ideology name twice, by its own title or a key work's, is tied to it. Each key figure also gives
+itself: a primary text is tied to the ideology when the sources that discuss it (by its name or an alias) name the
+text twice between them, by its own title or a key work's. Each key figure also gives
 a one-line `role` (how the sources associate them) and their English Wikipedia article (`wikipedia`); both lists show on
 the ideology's page. Give each alias, key figure and key work its evidence:
 `{ "name" (a key figure: "first" and "last"; a key work: "title"), "source": "<source id>",
