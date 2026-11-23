@@ -48,7 +48,15 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
 
 When in doubt, audit it: a thin entry is excluded later by the uncertainty rule, on evidence.
 
-## 1. Pin down what the ideology is
+## 1. Sources for an ideology
+
+An ideology's `primary` sources are its founding texts, manifestos, party programmes and the major
+works of its defining thinkers. Its scholarship (the Stanford or Internet Encyclopedia of Philosophy,
+Britannica, academic work) is a `scholarly` or `reference` source; other reliable sources on it
+(journalism, books from reputable publishers) are `secondary`. Wikipedia only helps you find these
+(audits/AUDIT_RULES.md, section 2).
+
+## 2. Pin down what the ideology is
 
 The sources decide the scope, not you. Before answering, find the reference
 and scholarly works that define the name or any of its aliases (encyclopedia and dictionary
@@ -104,7 +112,7 @@ source's saved copy that uses the name; validate.js checks the quote is there an
 `TRANSLATION` alias needs none). Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 
-## 2. What answers for an ideology
+## 3. What answers for an ideology
 
 These answer for an ideology:
 
@@ -113,21 +121,11 @@ These answer for an ideology:
   - other reliable sources on it: journalism, books from reputable publishers
   - a thinker's or organisation's account of its tenets
   - data on what the label means (surveys asking what "left" stands for)
-- Its `keyWorks` and its `keyFigures`' texts (section 1).
+- Its `keyWorks` and its `keyFigures`' texts (section 2).
 
 An adherent's or member organisation's own platform doesn't answer, since they hold more opinions than
 just the ideology; their account of what the ideology holds does (above). Critics don't answer. A general remark that its content varies
 answers no particular statement (`null`).
-
-## 3. Sources for an ideology
-
-- An ideology's `primary` sources are its founding texts, manifestos, party programmes and the
-  major works of its defining thinkers. Its scholarship (the Stanford or Internet Encyclopedia of
-  Philosophy, Britannica, academic work) is a `scholarly` or `reference` source; other reliable sources on
-  it (journalism, books from reputable publishers) are `secondary`. Wikipedia only
-  helps you find these (audits/AUDIT_RULES.md, section 2).
-- For a thin theme, search the ideology's programme sections and what its thinkers wrote on that
-  topic.
 
 ## 4. Answering for an ideology
 
@@ -238,4 +236,5 @@ captures, even loosely. List only those; often there are none, and the list is e
 
 Follow audits/AUDIT_RULES.md, section 6. For an ideology, keep its `scope`: research what the
 ideology itself states (its programmes, defining thinkers, organisations and the scholarship on
-them), not a related movement's positions.
+them), not a related movement's positions. For a thin theme, search the ideology's programme sections
+and what its thinkers wrote on that topic.
