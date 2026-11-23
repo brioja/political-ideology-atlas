@@ -112,7 +112,6 @@ Both lists show on the ideology's page.
   other views aren't part of it: tie their texts by title instead (Monroe's 1823 annual message).
 - Give each two fields for the page: `role`, one line on how the sources connect them to the ideology
   ("Theorist of agonistic pluralism"), and `wikipedia`, the URL of their English Wikipedia article.
-- A primary text by one of them is tied to the ideology.
 
 `keyWorks`: the texts the defining sources make canonical (founding texts, manifestos, programmes, a thinker's
 major works).
