@@ -84,6 +84,13 @@ try {
   fails("key figures not a list", E(base(), (a) => { a.keyFigures = "Quentin Vexmoor"; }), /"keyFigures" must be a list/);
   fails("key figure with a bad Wikipedia article", E(base(), (a) => { a.keyFigures = [{ ...fig(), wikipedia: "https://example.org/x" }]; }), /keyFigures\[0\]: wikipedia must be an en\.wikipedia\.org article URL/);
   fails("organisation as a key figure", E(base(), (a) => { a.keyFigures = [{ organisation: "Vexmoor League", source: "s3", quote: "Quentin Vexmoor wrote its founding text" }]; }), /an organisation isn't a key figure/);
+  // A person a key figure's quote names (from the people catalog) is likely a missed key figure: a warning.
+  { const person = lib.peopleCatalog().find((p) => /^[A-Z][a-z]+ [A-Z][a-z]+$/.test(p.name) && !coatrack.reservedFor(p.name).length);
+    const pair = (q) => E(base(), (a) => { a.keyFigures = [{ ...fig(), quote: q }]; });
+    warns("person named in a key figure's quote", pair(`Quentin Vexmoor and ${person.name} wrote its founding text`), new RegExp(`keyFigures: ${person.name} is named in a key figure's quote`));
+    const quiet = (name, a) => { const w = result(a).warnings.filter((x) => /named in a key figure's quote/.test(x)); assert.deepStrictEqual(w, [], `${name}: ${w.join("; ")}`); n++; };
+    quiet("person in the quote who is a key figure", E(pair(`Quentin Vexmoor and ${person.name} wrote its founding text`), (a) => { const [first, last] = person.name.split(" "); a.keyFigures.push({ ...fig(), first, last, wikipedia: person.wikipedia }); }));
+    quiet("name only in lower case", pair(`Quentin Vexmoor and ${person.name.toLowerCase()} wrote its founding text`)); }
   // Key works: a title with its evidence; "work" is the cited text itself, which the title then ties to the ideology.
   const work = (extra = {}) => ({ title: "Founding Rescript", source: "s1", quote: "first in the Founding Rescript", ...extra });
   const unnamed = (a) => { a.sources.push({ id: "s4", kind: "primary", evidence: "words", title: "Imperial edict", url: "https://example.org/unrelated" }); a.answers[A].sources.push("s4"); };

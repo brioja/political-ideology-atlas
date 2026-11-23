@@ -556,4 +556,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { DEFINING, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
+module.exports = { DEFINING, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
