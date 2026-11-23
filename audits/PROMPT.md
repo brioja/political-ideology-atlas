@@ -103,15 +103,30 @@ the ideology's page. Give each alias, key figure and key work its evidence:
 source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT` or
 `TRANSLATION` alias needs none). Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
-- Answer from what the defining sources say the ideology holds: their own account of its tenets, and
-  the texts they make canonical (founding texts, a defining thinker, a party programme). The defining
-  sources are the scholarship that defines the name (Payne, Paxton or Griffin for fascism; Bobbio for
-  left and right) and data on what the label means (surveys asking what "left" stands for). Movements and offshoots
-  under the name are other subjects: their texts answer only where the defining sources make them the
-  ideology's own (no coatracks, AUDIT_RULES.md section 3). A general remark that its content varies
-  answers no particular statement (`null`).
 
-## 2. Sources for an ideology
+## 2. What answers for an ideology
+
+Answer from what the defining sources say the ideology holds. These answer:
+
+- The defining sources' own account of its tenets. The defining sources are the scholarship that
+  defines the name (Payne, Paxton or Griffin for fascism; Bobbio for left and right) and data on what
+  the label means (surveys asking what "left" stands for).
+- The texts they make canonical: founding texts, a defining thinker's works, a party programme.
+- Movements and offshoots under the name, where the defining sources make them the ideology's own
+  (AUDIT_RULES.md section 3).
+- Its record, for "record over words": the sustained, documented practice of regimes where it was the
+  official doctrine of the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in
+  power), and any practice a defining source describes as part of it (emperor-system fascism, a
+  historians' name for wartime Japan's system, takes its record from them). Where that practice
+  answers a statement, answer from the practice and leave the doctrine's words on it out (one-party
+  rule alongside praise of popular democracy, a leader cult alongside collective leadership). A lapse
+  of one regime or one period is not the ideology's position, and parties that governed as one party
+  among others are not the ideology's record.
+
+Adherents, member organisations and critics don't answer. A general remark that its content varies
+answers no particular statement (`null`).
+
+## 3. Sources for an ideology
 
 - An ideology's `primary` sources are its founding texts, manifestos, party programmes and the
   major works of its defining thinkers. Its scholarship (the Stanford or Internet Encyclopedia of
@@ -120,29 +135,19 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
 - For a thin theme, search the ideology's programme sections and what its thinkers wrote on that
   topic.
 
-## 3. Answering for an ideology
+## 4. Answering for an ideology
 
-- Answer from the ideology's own sources (section 1), not from adherents, member organisations or
-  critics. Where its own sources take opposite positions on a statement, it is a split: 0 at `low`, a
+- Where its own sources take opposite positions on a statement, it is a split: 0 at `low`, a
   real position. Silence is `null`.
 - The ideology's stated position settles a statement only where the statement couldn't be true
   without contradicting it: a 19th-century ideology's stated view on industry doesn't settle nuclear
   power (`null`), but a doctrine of rule by competence settles hereditary office.
-- Its own record, for "record over words", is that of regimes where it was the official doctrine of
-  the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): their
-  sustained, documented practice is part of the ideology. So is any practice a defining source
-  describes as part of it (emperor-system fascism, a historians' name for wartime Japan's
-  system, takes its record from them). Where that practice answers a statement,
-  answer from the practice and leave the doctrine's words on it out (one-party rule alongside praise
-  of popular democracy, a leader cult alongside collective leadership). A lapse of one regime or one period is not the
-  ideology's position, and parties that governed as one party among others are not the ideology's
-  record.
 - Audits written before the shared rules (no `"rules"`) recorded silence as 0 and inferences without
   the "Inferred:" mark, so their uncertainty still counts only `medium` and `high` answers until they
   are re-audited. Audits under rules 2 may hold marked inferences ("Inferred:"); the rule leaves
   them out, and the next pass makes each stated or `null`.
 
-## 4. Further reading for test takers
+## 5. Further reading for test takers
 
 The results page links each ideology to further reading for curious, non-specialist readers.
 - `wikipedia`: the English Wikipedia article that is actually about this ideology. The catalog
@@ -153,7 +158,7 @@ The results page links each ideology to further reading for curious, non-special
   encyclopedia entry, a founding text online, or a good introduction. They may overlap with your
   sources. Only include pages you opened.
 
-## 5. Positions the statements miss
+## 6. Positions the statements miss
 
 The statements are chosen by the standard in `audits/statements/STANDARD.md`, and audits are how
 gaps get found. After answering, list in `missingStatements` the positions that **define** this
@@ -179,7 +184,7 @@ captures, even loosely. List only those; often there are none, and the list is e
   would do, a means attached to a goal, a vague scope). Errors are absolute: reword every one; no
   explanation excuses it.
 
-## 6. Output format
+## 7. Output format
 
 ```json
 {
@@ -236,7 +241,7 @@ captures, even loosely. List only those; often there are none, and the list is e
 }
 ```
 
-## 7. Research to the end
+## 8. Research to the end
 
 Follow audits/AUDIT_RULES.md, section 6. For an ideology, keep its `scope`: research what the
 ideology itself states (its programmes, defining thinkers, organisations and the scholarship on
