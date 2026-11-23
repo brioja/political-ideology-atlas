@@ -103,11 +103,10 @@ the ideology's page. Give each alias, key figure and key work its evidence:
 source's saved copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT` or
 `TRANSLATION` alias needs none). Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
-- Answer from what the defining sources say the ideology holds: the texts they make canonical
-  (founding texts, a defining thinker, a party programme) where they name any, and their own account
-  of its tenets. Where no text is canonical (fascism, left-wing), the defining sources are the
-  scholarship that defines the name (Payne, Paxton or Griffin for fascism; Bobbio for left and right)
-  and data on what the label means (surveys asking what "left" stands for). Movements and offshoots
+- Answer from what the defining sources say the ideology holds: their own account of its tenets, and
+  the texts they make canonical (founding texts, a defining thinker, a party programme). The defining
+  sources are the scholarship that defines the name (Payne, Paxton or Griffin for fascism; Bobbio for
+  left and right) and data on what the label means (surveys asking what "left" stands for). Movements and offshoots
   under the name are other subjects: their texts answer only where the defining sources make them the
   ideology's own (no coatracks, AUDIT_RULES.md section 3). A general remark that its content varies
   answers no particular statement (`null`).
