@@ -1,18 +1,15 @@
 {
   "id": "communards",
   "name": "Communards",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-23",
+  "auditor": ["claude-sonnet-5-5"],
+  "rules": 7,
   "notIdeasOfWhatSocietyShouldBe": {
-    "reason": "DOES_NOT_INCLUDE_IDEAS",
-    "explanation": "The Communards are the participants in and supporters of the 1871 Paris Commune, a group of people and an event rather than a doctrine; they included Jacobins, Proudhonists, Blanquists and members of the International with differing beliefs, so there is no single set of positions to profile."
+    "reason": "EVENT",
+    "explanation": "The Communards are defined entirely by an event: the members and supporters of the 1871 Paris Commune. Looking through the statements, the Commune's decrees do answer some (separation of church and state, abolition of the death penalty and conscription, workers' right to take over abandoned enterprises, self-policing), so this is not an entry without ideas; but those are the Commune's record as an event, one government of two months made up of Jacobins, Blanquists, Proudhonists and members of the International, and no source names a doctrine of the Communards themselves. The ideas belong to the Paris Commune, socialism, communalism and the other ideologies its participants held, and the entry has only the event's participants."
   },
   "sources": [
-    {
-      "id": "s1",
-      "kind": "reference",
-      "title": "Communards (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Communards"
-    }
+    { "id": "s1", "kind": "reference", "evidence": "words", "title": "Communards (Wikipedia, read with scripts/wiki.js)", "url": "https://en.wikipedia.org/wiki/Communards", "usedFor": "Defines the Communards as members and supporters of the 1871 Commune; describes their deportation and exile, with no doctrine of their own." },
+    { "id": "s2", "kind": "reference", "evidence": "words", "title": "Paris Commune (Wikipedia, read with scripts/wiki.js)", "url": "https://en.wikipedia.org/wiki/Paris_Commune", "usedFor": "Shows the programme and decrees belong to the event, adopted by an eclectic mix of Blanquists, Internationalists, Proudhonists and independent revolutionaries." }
   ]
 }
