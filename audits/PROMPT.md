@@ -105,7 +105,7 @@ Both lists show on the ideology's page.
 `keyFigures`: the people the defining sources present the ideology as the thought or political legacy of
 (Clinton for Clintonism).
 - People only, no organisations.
-- Each named at least twice in the defining sources.
+- Named at least twice by the defining sources: in two of them, or twice in one.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
   after for it (Lenin for Leninism). That namesake is listed first, and needs no quote.
 - Never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's
