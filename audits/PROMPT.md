@@ -112,7 +112,7 @@ These answer for an ideology:
   Reference works and scholarship on it (Payne, Paxton or Griffin for fascism; Bobbio for left and
   right), a thinker's or organisation's account of its tenets, and data on what the label means
   (surveys asking what "left" stands for).
-- Its `keyWorks` and its `keyFigures`' texts (section 1), and other primary texts that name it twice.
+- Its `keyWorks` and its `keyFigures`' texts (section 1).
 - Its record, for "record over words": the sustained, documented practice of regimes where it was the
   official doctrine of the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in
   power), and any practice a defining source describes as part of it (emperor-system fascism, a
