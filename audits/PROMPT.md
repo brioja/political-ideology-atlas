@@ -106,11 +106,12 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
 
 ## 2. What answers for an ideology
 
-Answer from what the defining sources say the ideology holds. These answer:
+These answer for an ideology:
 
-- The defining sources' own account of its tenets. The defining sources are the scholarship that
-  defines the name (Payne, Paxton or Griffin for fascism; Bobbio for left and right) and data on what
-  the label means (surveys asking what "left" stands for).
+- Its defining sources: the sources that discuss it (by its name or an alias) and say what it holds.
+  Reference works and scholarship on it (Payne, Paxton or Griffin for fascism; Bobbio for left and
+  right), a thinker's or organisation's account of its tenets, and data on what the label means
+  (surveys asking what "left" stands for).
 - Primary texts tied to it (section 1): texts that name it twice, texts the defining sources name twice
   (its key works), and texts by its key figures.
 - Its record, for "record over words": the sustained, documented practice of regimes where it was the
