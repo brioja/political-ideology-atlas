@@ -23,9 +23,9 @@ words; don't paste long passages.
   visited. Never cite from memory or construct a URL.
 - Use at least 3 of the subject's defining sources, whatever their kind: its own texts (founding
   documents, programmes, speeches, books, its record) where it has them, and the scholarship and
-  reference works that define it. One rule for every subject (Brandon, 2026-11-08). The 3 are a
+  reference works that define it. One rule for every subject. The 3 are a
   condition for being shown (WP:DIVERSE): when no more exist, record the ones found and the audit is
-  finished, left out by the uncertainty rule (validate.js; Brandon, 2026-11-20).
+  finished, left out by the uncertainty rule (validate.js).
 - Scholarly reference works (the Stanford and Internet Encyclopedias of Philosophy, Britannica,
   Oxford or Routledge reference works) are scholarship, and count as evidence. Wikipedia,
   OnTheIssues and similar compilations are only a way to find evidence: follow their citations to
@@ -39,10 +39,10 @@ words; don't paste long passages.
   mirror, as its robot policy requires).
 - Prefer a publisher's, author's, library's or archive's own copy (university repositories, publisher
   open-access pages, archive.org scans). When that copy can't be opened, an archived copy (Wayback), a
-  mirror or a third-party copy of the same text is fine to read and cite (Brandon, 2026-11-12: there is
+  mirror or a third-party copy of the same text is fine to read and cite (there is
   no reason to think the text there is wrong); say in the source title which copy it is.
 - A publisher's or bookseller's book preview (a sample PDF, preview pages) is fine to read and cite for the
-  pages it shows: front matter, preface, introduction, a sample chapter (Brandon, 2026-11-14). Say in the source
+  pages it shows: front matter, preface, introduction, a sample chapter. Say in the source
   title that it is the preview, and cite only what it shows.
 - Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed
   or out of context. If the original is blocked or offline, look for it elsewhere (a Wayback or archive.org
@@ -50,7 +50,7 @@ words; don't paste long passages.
   elsewhere is fine to use even when the original refuses scripted access.
 - Download pages and documents with `node scripts/get.js <id> <url>`: it saves into the source library and
   tries each download agent in turn (curl, wget, wget2, aria2c, lynx, w3m, headless Firefox, headless Chrome),
-  moving on after any refusal (a 403, a 429, a bot check; Brandon, 2026-11-14), and records which one got it.
+  moving on after any refusal (a 403, a 429, a bot check), and records which one got it.
   Each agent uses its own name; never set a browser's User-Agent on a script (a hook blocks it), reuse cookies
   or solve a captcha. A robots.txt block aimed only at crawlers, such as `User-agent: ClaudeBot`, doesn't stop
   an audit: it fetches pages, it doesn't crawl. If no agent gets the page, name it in your report; the
@@ -101,7 +101,7 @@ free trade, not about markets in general.
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
-- **Evidence for one part is not evidence for the whole** (Brandon, 2026-11-11). Where a statement covers
+- **Evidence for one part is not evidence for the whole**. Where a statement covers
   several things (a list, or a general word such as "security forces" for police and military), agree or
   disagree only on evidence that covers the whole claim. Support for one part, with the sources silent on the
   rest, never implies the rest: that silence is not a position. Answer `null` unless the sources speak to the
@@ -127,7 +127,7 @@ free trade, not about markets in general.
   position the source presents as part of the subject. Regan's "there would be nothing wrong with
   apartheid ... if few white South Africans were upset" refutes contractarianism; it doesn't state animal
   rights' position on segregation laws, so that statement is `null`. Answer only from what the source
-  presents as the subject's own position (Brandon, 2026-11-05).
+  presents as the subject's own position.
 - **A general value doesn't answer a specific statement.** Humanism, liberty, equality, democracy,
   "freedom of religion" or "equal rights for all" say nothing about returning to foraging, apostasy
   laws or blasphemy: `null`.
@@ -153,12 +153,11 @@ free trade, not about markets in general.
   government's for the monarch or head of state who only signed or proclaimed its measures on advice
   (their position is what they drove or said themselves), nor one
   organisation's or several organisations' platform for an ideology they share (organisations can agree
-  on something that isn't part of the ideology; Brandon, 2026-11-06). Nor is an organisation tied to an
+  on something that isn't part of the ideology). Nor is an organisation tied to an
   ideology the way a key figure is: its platform keeps changing under the same name, so a source tying it to
-  the ideology can't vouch for platforms written later, while a person's works stay what they were
-  (Brandon, 2026-11-23). An organisation's or thinker's own
+  the ideology can't vouch for platforms written later, while a person's works stay what they were. An organisation's or thinker's own
   account of what the ideology is, its tenets as they define them, is one of the ideology's defining
-  sources (Brandon, 2026-11-08: the DSA's account of democratic socialism counts; the DSA's platform
+  sources (the DSA's account of democratic socialism counts; the DSA's platform
   doesn't). A passage counts when its author presents it as a tenet or requirement of the ideology; a
   proposed measure, a current campaign or an organisational choice doesn't become one by appearing in a
   declaration or an article about what the ideology is. Only the subject's own sources
@@ -218,19 +217,19 @@ rules 2 still hold. A failure names the lines whose bars are too wide.
 
 ## 6. Research to the end, and later passes
 
-**An audit goes as deep as the record allows** (Brandon, 2026-11-05 and 11-07). There is no limit on
+**An audit goes as deep as the record allows**. There is no limit on
 sources. If your draft fails the uncertainty rule,
 keep researching before you finish: the lines the validator names, then the statements still null, in
 new sources (the local corpora too). Stop when they are covered or when the record really has nothing
 more, and say in `notes` which themes you searched. Each confidence stays what its evidence supports (section 4).
 
-**Texts known to exist** (people, Brandon 2026-11-12). Every text by the person that the validator knows
+**Texts known to exist** (people). Every text by the person that the validator knows
 of is read and cited, or declined in `booksNotUsed` with a reason: Project Gutenberg's whole catalog
 (`node scripts/gutenberg.js --search "<name>"`, then `node scripts/gutenberg.js <id>` fetches it), their
 Miller Center speeches, and their Voteview roll calls if they sat in Congress. `validate.js` names each one
 missing.
 
-**Not found means tried twice** (Brandon, 2026-11-12). A source you looked for and couldn't get goes in
+**Not found means tried twice**. A source you looked for and couldn't get goes in
 `notFound`: `[{ "work": "Senate speeches, 1827-1836", "tried": [{ "where": "local corpora", "how":
 "crec.js and voteview.js by name" }, { "where": "Library of Congress, A Century of Lawmaking", "how":
 "Register of Debates index" }] }]`, with at least two attempts in different places (a local corpus, a

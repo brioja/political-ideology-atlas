@@ -15,10 +15,10 @@ An entry is in `audits/catalog.json` only if it meets both:
   article itself. A redirect is never an entry: it is only another name of the article it lands on
   (Anarcho-communism → Anarchist communism, Tridemism → Three Principles of the People), counted
   among that entry's aliases, and a name that redirects to a broader or different topic (a parent
-  ideology, a section, a person) isn't independently notable (Brandon, 2026-11-20; test.js fails on
+  ideology, a section, a person) isn't independently notable (test.js fails on
   an entry whose name or link is a redirect). An article
   about an ideology as held in one place ("Conservatism in Australia") is its own article: it is a set
-  of ideas, audited from sources about it (Brandon, 2026-11-05). A history or a list ("History of
+  of ideas, audited from sources about it. A history or a list ("History of
   democracy") isn't.
 - **A source names it as an ideology.** Either Wikipedia's
   [List of political ideologies](https://en.wikipedia.org/wiki/List_of_political_ideologies)
@@ -34,15 +34,15 @@ An entry is in `audits/catalog.json` only if it meets both:
   organization it links lists it in its own "Ideology" row), and its infobox, if it has one, is a
   movement, ideology, philosophy, religion or school of thought rather than a person, party,
   organization, state, event or work, it is not a disambiguation page, and the same whole-article
-  pre-check finds it meets the definition (`"source": "wikipedia-links"`, Brandon, 2026-11-20; run by
+  pre-check finds it meets the definition (`"source": "wikipedia-links"`; run by
   `scripts/ideology-precheck.js`, with Haiku, and no form of the word "ideology" in what is sent); or a
   contributor suggests it. The pre-check's verdicts stand as they are, with no hand-picking in either direction.
 
 Entries that land on the same article are one ideology, with no exceptions: the entry whose own
 title is the article owns it (else the most viewed), and the others are removed from the catalog
-(`scripts/lib.js` duplicateOf; test.js fails while one is left, Brandon, 2026-11-20). Names are one to
+(`scripts/lib.js` duplicateOf; test.js fails while one is left). Names are one to
 many: an ideology has many names, and each name belongs to one ideology. A catalog entry's own name is
-never another ideology's alias, and no alias is held by two ideologies (test.js; Brandon, 2026-11-20).
+never another ideology's alias, and no alias is held by two ideologies (test.js).
 
 The article is required because a quiz-taker matched to an ideology needs somewhere to learn more
 about it. `scripts/ideology-candidates.js` applies this gate, and 12-month page views set the
@@ -57,11 +57,11 @@ The audit (`audits/PROMPT.md`) records `notIdeasOfWhatSocietyShouldBe` instead o
   ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT). An entry on one person's views ("Political positions of …",
   "Political views of …", "Political philosophy of …", "Religious views of …") is PERSON by its title, checked
   in code (`scripts/lib.js` personViews) without an audit: the people side audits that person. An ideology named
-  after them (Trumpism) is tied to the person but isn't them, and is audited (Brandon, 2026-11-21); or
-- **not political ideas of what society should be** (DOES_NOT_INCLUDE_IDEAS; "should be" is the test, a worked-out "how" isn't needed, Brandon 2026-11-20): its content holds none,
-  shown by trying: the agent looked for answers to the statements in its sources and found fewer than two
-  (Brandon, 2026-11-14), and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".
-  `scripts/validate.js` rejects the reason otherwise, and the entry is audited in full (Brandon, 2026-11-06).
+  after them (Trumpism) is tied to the person but isn't them, and is audited; or
+- **not political ideas of what society should be** (DOES_NOT_INCLUDE_IDEAS; "should be" is the test, a worked-out "how" isn't needed): its content holds none,
+  shown by trying: the agent looked for answers to the statements in its sources and found fewer than two,
+  and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".
+  `scripts/validate.js` rejects the reason otherwise, and the entry is audited in full.
   Notability and duplicates are gate 1, checked in code.
 
 When in doubt, the entry is audited, and gate 3 decides on the evidence.

@@ -29,9 +29,8 @@ full audit if the entry is:
   such as a war, revolution, election, battle or protest (`EVENT`); or
 - something with no political ideas of what society should be (`DOES_NOT_INCLUDE_IDEAS`). Decide this by trying:
   go through the statements and look for answers in its own sources and in its critics, since each view a
-  critic argues against is a view it holds (Brandon, 2026-11-17). Two answerable statements make a set of
-  ideas: record `DOES_NOT_INCLUDE_IDEAS` only below two, and say in the explanation what you looked through
-  (Brandon, 2026-11-14).
+  critic argues against is a view it holds Two answerable statements make a set of
+  ideas: record `DOES_NOT_INCLUDE_IDEAS` only below two, and say in the explanation what you looked through.
 
 Then write only this to `audits/profiles/{{id}}.json` and stop (the validator accepts it):
 
@@ -51,7 +50,7 @@ When in doubt, audit it: a thin entry is excluded later by the uncertainty rule,
 
 ## 1. Pin down what the ideology is
 
-The sources decide the scope, not you (Brandon, 2026-11-05). Before answering, find the reference
+The sources decide the scope, not you. Before answering, find the reference
 and scholarly works that define the name or any of its aliases (encyclopedia and dictionary
 entries, scholarship on the term): what they say it is, which strand it names when the name covers several, and which
 texts, thinkers or programs they name as its own. Record that in `scope`, citing those sources. A
@@ -62,7 +61,7 @@ no defining source states.
 defining source (`reference` or `scholarly`) must name the ideology, by its name or an alias. A
 `primary` or `program` source must name it too, or be named (by title or author) in a defining source
 that does. List in `aliases` the other names the defining sources use for it, liberally, each with
-its `reason` (Brandon, 2026-11-20; validate.js checks each):
+its `reason` (validate.js checks each):
 - `REDIRECT`: a Wikipedia redirect to the article; word forms such as "Gaullist" and other names come in
   this way. Every redirect to the article counts automatically, unless Wikipedia files it as a section,
   subtopic, related topic or former name (a related word counts). Needs no quote.
@@ -134,8 +133,8 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
 - Its own record, for "record over words", is that of regimes where it was the official doctrine of
   the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): their
   sustained, documented practice is part of the ideology. So is any practice a defining source
-  describes as part of it (Brandon, 2026-11-23: emperor-system fascism, a historians' name for
-  wartime Japan's system, takes its record from them). Where that practice answers a statement,
+  describes as part of it (emperor-system fascism, a historians' name for wartime Japan's
+  system, takes its record from them). Where that practice answers a statement,
   answer from the practice and leave the doctrine's words on it out (one-party rule alongside praise
   of popular democracy, a leader cult alongside collective leadership). A lapse of one regime or one period is not the
   ideology's position, and parties that governed as one party among others are not the ideology's
