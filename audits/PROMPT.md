@@ -50,17 +50,21 @@ When in doubt, audit it: a thin entry is excluded later by the uncertainty rule,
 
 ## 1. Sources for an ideology
 
-An ideology's `primary` sources are its founding texts, manifestos, party programmes and the major
-works of its defining thinkers. Its scholarship (the Stanford or Internet Encyclopedia of Philosophy,
-Britannica, academic work) is a `scholarly` or `reference` source; other reliable sources on it
-(journalism, books from reputable publishers) are `secondary`. Wikipedia only helps you find these
-(audits/AUDIT_RULES.md, section 2).
+An ideology's defining sources are the sources that say what it holds, naming it (by its name or an
+alias):
+- reference works and scholarship on it (Payne, Paxton or Griffin for fascism; Bobbio for left and
+  right): `reference` or `scholarly`
+- other reliable sources on it (journalism, books from reputable publishers): `secondary`
+- a thinker's or organisation's account of its tenets
+- data on what the label means (surveys asking what "left" stands for)
+
+Its `primary` sources are its founding texts, manifestos, party programmes and the major works of its
+thinkers. Wikipedia only helps you find these (audits/AUDIT_RULES.md, section 2).
 
 ## 2. Pin down what the ideology is
 
-The sources decide the scope, not you. Before answering, find the reference
-and scholarly works that define the name or any of its aliases (encyclopedia and dictionary
-entries, scholarship on the term): what they say it is, which strand it names when the name covers several, and which
+The sources decide the scope, not you. Before answering, find its defining sources (section 1):
+what they say it is, which strand it names when the name covers several, and which
 texts, thinkers or programs they name as its own. Record that in `scope`, citing those sources. A
 text counts for the subject only as far as they tie it to the subject; don't choose a scope that
 no defining source states.
@@ -116,16 +120,12 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
 
 These answer for an ideology:
 
-- Sources that say what it holds, naming it (by its name or an alias):
-  - reference works and scholarship on it (Payne, Paxton or Griffin for fascism; Bobbio for left and right)
-  - other reliable sources on it: journalism, books from reputable publishers
-  - a thinker's or organisation's account of its tenets
-  - data on what the label means (surveys asking what "left" stands for)
+- Its defining sources (section 1).
 - Its `keyWorks` and its `keyFigures`' texts (section 2).
 
 An adherent's or member organisation's own platform doesn't answer, since they hold more opinions than
-just the ideology; their account of what the ideology holds does (above). Critics don't answer. A general remark that its content varies
-answers no particular statement (`null`).
+just the ideology; their account of what the ideology holds does (section 1). Critics don't answer. A
+general remark that its content varies answers no particular statement (`null`).
 
 ## 4. Answering for an ideology
 
