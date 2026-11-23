@@ -244,6 +244,6 @@ captures, even loosely. List only those; often there are none, and the list is e
 ## 8. Research to the end
 
 Follow audits/AUDIT_RULES.md, section 6. For an ideology, keep its `scope`: research what the
-ideology itself states (its programmes, defining thinkers, organisations and the scholarship on
-them), not a related movement's positions. For a thin theme, search the ideology's programme sections
-and what its thinkers wrote on that topic.
+ideology itself states (its defining sources, key works and key figures' texts: sections 1–3), not a
+related movement's positions. For a thin theme, search its key works and key figures' texts for that
+topic.
