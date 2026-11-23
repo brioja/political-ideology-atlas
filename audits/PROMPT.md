@@ -113,16 +113,9 @@ These answer for an ideology:
   right), a thinker's or organisation's account of its tenets, and data on what the label means
   (surveys asking what "left" stands for).
 - Its `keyWorks` and its `keyFigures`' texts (section 1).
-- Its record, for "record over words": the sustained, documented practice of regimes where it was the
-  official doctrine of the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in
-  power), and any practice a defining source describes as part of it (emperor-system fascism, a
-  historians' name for wartime Japan's system, takes its record from them). Where that practice
-  answers a statement, answer from the practice and leave the doctrine's words on it out (one-party
-  rule alongside praise of popular democracy, a leader cult alongside collective leadership). A lapse
-  of one regime or one period is not the ideology's position, and parties that governed as one party
-  among others are not the ideology's record.
 
-Adherents, member organisations and critics don't answer. A general remark that its content varies
+Adherents, member organisations and critics don't answer, since they hold more opinions than just the
+ideology. A general remark that its content varies
 answers no particular statement (`null`).
 
 ## 3. Sources for an ideology
@@ -206,7 +199,6 @@ captures, even loosely. List only those; often there are none, and the list is e
     {
       "id": "s1",
       "kind": "primary | scholarly | reference | program",
-      "evidence": "action | words",
       "title": "Title of the work or page",
       "author": "Author or publisher",
       "url": "https://… (the page you actually opened)",

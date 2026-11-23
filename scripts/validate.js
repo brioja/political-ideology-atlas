@@ -369,7 +369,7 @@ function validate(id) {
   // Rules 4 (Brandon, 2026-11-07). AUDIT_RULES.md states only the principle ("Record over words": where the
   // subject has a record on a statement it answers alone, and words never set aside an action); the mechanics
   // live here, and each error message says how to fix it.
-  // - Every source has "evidence": "action" when it records what the subject did (votes, laws, orders, acts,
+  // - Every source of a person has "evidence": "action" when it records what the subject did (votes, laws, orders, acts,
   //   policies, or a report that they happened), "words" when it records what they said or wrote (speeches,
   //   interviews, books, posts, programmes, a summary of their views). A source holding both (a day of the
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
@@ -393,10 +393,11 @@ function validate(id) {
   //   counts add up to the nullings in the history. A first audit (one pass, no nulling review) has no history.
   // - Removing the answers to statements dropped from the bank removes their history too, and lowers the nulling
   //   reviews by the nullings that went with it (scripts/drop-answers.js).
-  const ev = new Map(sources.map((s) => [s.id, s.evidence]));
+  // Only people have a record: an ideology doesn't act, so its sources all count as words (Brandon, 2026-11-23).
+  const ev = new Map(sources.map((s) => [s.id, PEOPLE ? s.evidence : "words"]));
   const kinds = (ids, k) => (Array.isArray(ids) ? ids : []).filter((sid) => ev.get(sid) === k);
   if (a.rules >= 4) {
-    for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
+    if (PEOPLE) for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
     for (const st of statements) {
       const x = answers[st.id];
       if (!x) continue;
@@ -585,7 +586,7 @@ function validate(id) {
   // Rules 7 (Brandon, 2026-11-12): a 0 is a split within actions or within words. Source tags can't see a split
   // inside one source (a biography recording both a speech and a law), so the rationale is read too: a 0 that
   // names both something said and something done is words against actions, which the actions decide.
-  if (a.rules >= 7) {
+  if (PEOPLE && a.rules >= 7) {
     const SAID = /\b(said|says|saying|wrote|writes|written|argued|argues|arguing|stated|speech|speeches|praised|critici[sz]ed|denounced|interview|told|essay|pamphlet|called for|calls for|urged|urges|insisted|warned|rhetoric|manifesto|the green book)\b/i;
     const DONE = /\b(voted|votes|signed(?! (?:an? |the )?(?:open )?(?:letter|petition|statement|pledge))|enacted|decreed|decree|vetoed|veto|ordered|nationali[sz]ed|abolished|banned|imprisoned|executed|implemented|appointed|deported|expelled|invaded|annexed|legislated|cosponsored|sponsored|passed (?:a|the) (?:law|bill|act))\b/i;
     for (const [sid, x] of Object.entries(answers)) {

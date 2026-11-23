@@ -173,8 +173,9 @@ free trade, not about markets in general.
   from the record alone and leave their words on it out entirely, whether they agree with it or not
   (elections rigged or cancelled while praising pluralism; deficits signed into law while condemning
   them). Words answer a statement only where there is no record on it. A record that itself points
-  both ways is 0 at `low`. Each prompt says what counts as the subject's own record.
-  Words never set aside an action. Tag each source as the subject's actions or words; a source
+  both ways is 0 at `low`. Only people have a record; an ideology answers from what its sources say it holds
+  (PROMPT.md section 2).
+  Words never set aside an action. Tag each of a person's sources as their actions or words; a source
   holding both (a biography with a speech and a law, a day of the Congressional Record with a speech
   and a roll call) is listed twice, once per kind. `validate.js` enforces how they combine.
 - **Over time.** Answer the subject's mature position: the one held longest and set out most fully

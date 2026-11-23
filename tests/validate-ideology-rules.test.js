@@ -220,7 +220,9 @@ try {
     fails("the same source behind a stated answer is still tied", withOld(true), /source s4 \(primary\)/);
   }
   // Rules 4 is shared with people: one case to show it runs for ideologies too.
-  fails("ideology answer mixes action and words", E(base(), (a) => { a.sources.push({ id: "s4", kind: "primary", evidence: "action", title: "Regime decree", url: "https://example.org/manifesto" }); a.answers[A].sources = ["s2", "s4"]; }), /cites actions \(s4\) and words \(s2\)/);
+  // Only people have a record: an ideology's sources need no "evidence" tag, and the record checks don't apply.
+  { const e = errorsOf(E(base(), (a) => { for (const s of a.sources) delete s.evidence; a.sources.push({ id: "s4", kind: "primary", evidence: "action", title: "Regime decree", url: "https://example.org/manifesto" }); a.answers[A].sources = ["s2", "s4"]; }));
+    assert(!e.some((x) => /"evidence"|cites actions/.test(x)), `ideology: no record checks, got:\n  ${e.join("\n  ")}`); n++; }
   // One rule for every ideology (Brandon, 2026-11-08): no "family" exemption, so no primary-source requirement; an
   // audit cites its defining sources, whatever kind they are.
   ok("defining scholarship alone, no primary source", E(base(), (a) => { a.sources[1].kind = "scholarly"; }));
