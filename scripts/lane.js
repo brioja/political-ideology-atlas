@@ -123,8 +123,8 @@ function namesakeBooks(id) {
   return `\n\nThe maintainer's reference library (~/.cache/political-ideology-atlas/corpora/reference/text/) holds these books by or about ${person}, whom \`${id}\` is named after. Search each for the statements' topics: the namesake's own books are primary sources, and books about them (biographies) are scholarship defining the ideology (audits/AUDIT_RULES.md on supplied texts):\n${files.map((f) => `- ${f}`).join("\n")}`;
 }
 // An ideology's other names (the Wikipedia redirects to its article) go in the first message, so the session searches
-// under them from the start; the coatrack check already accepts them as aliases (Brandon, 2026-11-23: kokkashugi was
-// nulled for want of a source naming it, while scholarship on the same texts says "Japanese fascism").
+// under them from the start instead of finding them late (Brandon, 2026-11-23). The coatrack check already accepts
+// them as aliases.
 function otherNames(id) {
   if (PEOPLE) return "";
   const names = require("./lib").wikipediaOtherNames(id);
