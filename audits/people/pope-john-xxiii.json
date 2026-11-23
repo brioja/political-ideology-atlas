@@ -1,0 +1,3922 @@
+{
+ "id": "pope-john-xxiii",
+ "name": "Pope John XXIII",
+ "auditedAt": "2026-11-23",
+ "auditor": "claude-sonnet-5-5",
+ "rules": 7,
+ "living": false,
+ "role": "Pope of the Catholic Church (1958–1963)",
+ "summary": "Angelo Roncalli, pope 1958–1963, called the Second Vatican Council. His encyclicals defend private property with a social duty, workers' unions and a just family wage, subsidiarity and aid to poor countries, and reject communism and class war. Pacem in Terris sets out human rights, an end to the arms race and a world public authority; his addresses call for gradual reform from within.",
+ "wikipedia": "https://en.wikipedia.org/wiki/Pope_John_XXIII",
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Mater et Magistra (encyclical, 15 May 1961)",
+   "author": "Pope John XXIII",
+   "url": "https://www.vatican.va/content/john-xxiii/en/encyclicals/documents/hf_j-xxiii_enc_15051961_mater.html",
+   "usedFor": "Economy, property, wages, unions, state, aid, population, culture"
+  },
+  {
+   "id": "s2",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Pacem in Terris (encyclical, 11 April 1963)",
+   "author": "Pope John XXIII",
+   "url": "https://www.vatican.va/content/john-xxiii/en/encyclicals/documents/hf_j-xxiii_enc_11041963_pacem.html",
+   "usedFor": "Rights, authority, equality, minorities, migration, arms, world authority, gradual change"
+  },
+  {
+   "id": "s3",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Ad Petri Cathedram (encyclical, 29 June 1959)",
+   "author": "Pope John XXIII",
+   "url": "https://www.vatican.va/content/john-xxiii/en/encyclicals/documents/hf_j-xxiii_enc_29061959_ad-petri.html",
+   "usedFor": "Religious truth, marriage, Church liberty"
+  },
+  {
+   "id": "s4",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Princeps Pastorum (encyclical, 28 November 1959)",
+   "author": "Pope John XXIII",
+   "url": "https://www.vatican.va/content/john-xxiii/en/encyclicals/documents/hf_j-xxiii_enc_28111959_princeps.html",
+   "usedFor": "Local hierarchy in mission churches"
+  },
+  {
+   "id": "s6",
+   "kind": "reference",
+   "evidence": "words",
+   "title": "Pope John XXIII (Wikipedia)",
+   "author": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pope_John_XXIII",
+   "usedFor": "Role, dates and the summary of his career"
+  },
+  {
+   "id": "s5",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Opening address of the Second Vatican Council, Gaudet Mater Ecclesia (11 October 1962), Italian original, translated by the auditor",
+   "author": "Pope John XXIII",
+   "url": "https://www.vatican.va/content/john-xxiii/it/speeches/1962/documents/hf_j-xxiii_spe_19621011_opening-council.html",
+   "usedFor": "Doctrine and its formulation; against prophets of doom"
+  }
+ ],
+ "booksNotUsed": [
+  {
+   "file": "gutenberg",
+   "reason": "Not in Gutenberg or a local corpus; searches for John XXIII and Roncalli found nothing relevant, and the encyclicals already give his published positions."
+  },
+  {
+   "file": "corpus",
+   "reason": "Not applicable: a pope held no US or legislative office."
+  }
+ ],
+ "notFound": [
+  {
+   "work": "English text of the Vatican II opening address",
+   "tried": [
+    {
+     "where": "vatican.va English page via scripts/get.js",
+     "how": "Fetched; only a script shell of about 100 words came back."
+    },
+    {
+     "where": "vatican.va English page via local text browsers (chrome, lynx, w3m)",
+     "how": "Rendered the same empty shell; the Italian original was used instead."
+    }
+   ]
+  }
+ ],
+ "answers": {
+  "universal-healthcare": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §11 lists medical care and care in ill health among each person's rights, and §§32 and 64 say society must supply the means and public administration must develop medical services; he names no particular system.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "raise-minimum-wage": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§21 and 71 make the state responsible for regulating terms of employment by justice and say pay may not be left to the market but must allow a truly human life; Pacem in Terris §20 repeats the wage standard, though he names no statutory minimum.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "markets-allocate-better": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Mater et Magistra §51 gives first place to private initiative and §57 says its absence brings stagnation, while §§11 and 58 condemn pure market mechanics and the exploitation that follows where the state is absent.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "public-ownership": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Mater et Magistra §116 calls state and public ownership lawful, especially of goods carrying excessive power, but §117 says it must not extend beyond what the common good clearly requires.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "tax-the-wealthy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unions-good": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§22, 97 and 100-102 defend workers' natural right to associate, praise workers' associations and the ILO, and welcome their collective bargaining.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "property-fundamental": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§19 and 109 call private ownership, even of productive goods, a natural right the state cannot suppress, but §§19, 43 and 119-120 attach a social obligation and put the use of goods for all first.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "regulate-corporations": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §104 says public authorities must see that the aims of the large firms' leaders do not conflict with the common good, and §36 condemns economic domination by a few; he does not say 'strict'.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "worker-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "surveillance-ok": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legalize-drugs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-hate-speech": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "strong-leader": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-harmful": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §20 says the state's whole purpose is the common good and Pacem in Terris §46 says no society can be well ordered without legal authority.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "limit-guns": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legalize-sex-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "decide-locally": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §53 makes subsidiary function a fundamental, unchangeable principle that what smaller bodies can do must not be taken by larger ones, and Pacem in Terris §140 applies it to every level.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "rehabilitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "traditional-family": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §16 calls the family founded on marriage the natural primary cell of society, and Ad Petri Cathedram §58 says the foundations of the state tremble if the Christian family totters.",
+   "sources": [
+    "s2",
+    "s3"
+   ]
+  },
+  "same-sex-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abortion-legal": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§193-194 call human life sacred from its very inception and say violations of God's laws on its transmission offend God; he does not name abortion.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "more-religion-public": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§217 and 256 call for the Church to Christianise modern civilisation and Pacem in Terris §§146-147 urge Catholics to shape every public institution from within.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "correct-racial-injustice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gender-social-construct": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "preserve-national-culture": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§177 and 181 say a nation's own character is to be respected and may be treated as a sacred inheritance, and Pacem in Terris §55 counts each people's distinctive traits within the common good.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "gradual-change": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §162 says all things grow gradually and institutions must be improved slowly and deliberately from within, not by hot-headed uprooting.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "reduce-immigration": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §106 includes in each person's rights the right to enter a country in search of a better life and says officials must accept immigrants so far as their community's good permits.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "empower-international-orgs": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§137-139 say the moral order demands a world public authority with the power and means to match world problems, set up by consent, and §145 hopes the UN will develop in that direction.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "free-trade": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "nation-first": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §131 says no state can pursue its own interests in isolation from the rest, since each state's prosperity is part cause and part effect of the others'.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "military-force-for-human-rights": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §127 says it no longer makes sense in the atomic age to hold that war is a fit instrument to repair a violation of justice.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "open-borders": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-growth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "drastic-climate-action": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tech-solves-problems": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§175 and 209-215 say scientific and technical progress is only instrumental and that peace and justice will not come without a return to God.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "expand-nuclear": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "revolution-legitimate": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§161-162 caution those who tackle injustice as though starting a political revolution and say reform must come slowly from within.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "experts-over-public": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "central-planning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialized-markets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "land-value-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tax-inheritance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "basic-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tariffs-protect-industry": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-directs-investment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "widespread-small-property": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§113-115 insist that ownership of productive property be extended to all classes and call for policy that spreads property widely among small owners.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "abolish-money-wages": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-central-banks": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "corporatist-bargaining": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "one-party-rule": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "monarchy-legitimate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-best": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Pacem in Terris §52 says his teaching is consonant with any genuinely democratic government, yet §§67-68 say no general ruling can be given on the most suitable form of government.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "direct-votes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-councils": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "right-to-secede": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "natural-rulers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-violence-legitimate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "war-builds-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "separate-church-state": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §217 calls the attempt to build a temporal order divorced from God the most pernicious typical feature of the modern age.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "laws-from-scripture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "private-courts-defense": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-superiority": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§110-112 condemn the competitive build-up of armaments and say peace cannot rest on an armed balance.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "ethnic-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "class-struggle-history": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "equal-outcomes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-land-authority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonial-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilizational-union": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "self-interest-moral": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §11 criticises the view that personal gain is the only valid economic motive, and §92 asks employers and workers to cooperate for duty and service rather than for what they can get.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "duties-before-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "nature-intrinsic-value": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-population": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§188-192 say there is no imminent world population problem and reject any solution that offends the moral order or human dignity.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "industrial-civilization-disaster": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§47 and 242 describe modern scientific and technical achievements as deserving ungrudging admiration while warning about neglect of spiritual values.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "accelerate-technology": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-enhancement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "algorithmic-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unbreakable-encryption": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restore-past-order": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "results-over-ideology": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "direct-action": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "means-match-ends": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "return-to-foraging": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-division-of-labor": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "distribute-by-need": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "production-for-use": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "profit-exploitation": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §31 rejects the view that the wage system is unjust in itself and §§76 and 81 treat a return to capital as legitimate within the common good.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "dictatorship-of-proletariat": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "collective-farming": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§85 and 142-143 say the family farm and cooperative enterprise should be safeguarded and encouraged, and that the family farm is the ideal form of agricultural enterprise.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "capitalism-causes-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "taxation-theft": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §132 speaks of a tax system based on justice and equity with burdens proportioned to capacity, treating taxation as a legitimate duty.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "harm-principle": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "individual-rights-only": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §§23, 80 and 92 assign rights to associations and to nations, such as the right of States to existence and self-development, as well as to individuals.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "conscription": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "exit-over-voice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-as-business": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "positive-liberty": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §32 says it is useless to admit a right to the necessities of life unless means sufficient for livelihood are also supplied.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "media-academia-power": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "hereditarian-race": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "organic-representation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "total-state": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §55 says state influence must never deprive citizens of their freedom of action, and §53 makes subsidiary function the guiding principle.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "national-rebirth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "territorial-expansion": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§88 and 120 deny that a stronger nation may dominate another or interfere unjustly in its affairs, and §93 forbids settling clashes of interest by armed force.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "personal-loyalty-rule": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "bound-labor": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "power-shapes-accepted-knowledge": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "universal-morality": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §205 speaks of a moral order transcendent, absolute, universal and binding on all, and Pacem in Terris §38 calls it universal and immutable.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "single-common-good": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §§54 and 56 say the common good is the sole reason for civil authority, which must serve all without favouring any person or category.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "jewish-state-israel": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "diaspora-return-right": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "revive-national-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workplace-democracy": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§91-93 say workers are justified in wishing to take part in the running of their firm and need an active part in its business, without prescribing a form.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "school-vouchers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "avoid-deficit-stimulus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "economic-freedom": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §57 says that where personal initiative is lacking political tyranny ensues along with economic stagnation.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "rule-by-example": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §48 says authority is first a moral force, that rulers should appeal to conscience, and that governing by threats or rewards offends human dignity.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "national-self-determination": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "force-without-un": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reason-over-faith": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "welfare-for-citizens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "work-for-welfare": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "class-collaboration": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §23 says the Marxist creed of class warfare is clearly contrary to Christian teaching and that employers and workers should deal with each other in solidarity and brotherhood; §92 asks for joint loyal cooperation.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "sacrifice-heritage": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§177 and 181 say undermining a nation's integrity is immoral and that its differences are a sacred inheritance to guard.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "dominated-front": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "distinct-gender-roles": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-interest": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-segregation-law": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§44 and 86 call for the elimination of every trace of racial discrimination and affirm the equal natural dignity of all.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "state-class-instrument": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "expand-fossil-fuels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "assimilate-immigrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "elite-replacement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "proportional-representation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-mission": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "patriarchy-structural": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-elite-corrupt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "heritable-defect-limits": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §15 gives every person the right to found a family, and Mater et Magistra §§191-194 reject measures that do violence to human dignity or the sacredness of life.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "security-forces-accountable": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "night-watchman-state": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§20 and 52 say the state cannot hold aloof from the economy and must protect the weaker and promote production and social progress.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "discourage-race-mixing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "equal-moral-worth": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§44 and 89 say all are equal in natural dignity, and §27 gives each person effective, impartial legal protection of their rights.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "socialism-one-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "settler-state-colonial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "uniform-civil-code": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-conversion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-cattle-slaughter": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-religion-state-schools": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-strengthens-encirclement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "consent-of-governed": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "trade-surplus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "population-transfer": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §95 calls any attempt to check the vitality of ethnic minorities, above all their extinction, a flagrant violation of justice, and §105 says refugees keep their rights.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "initiating-nondefensive-force-unjustified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "competition-drives-progress": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §129 says love, not fear, must govern relations between nations, and Mater et Magistra §202 says nations must work with each other for mutual benefit.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "ban-extremist-parties": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-as-non-domination": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "separated-powers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vanguard-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "priority-to-poor": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §20 makes the state's duty to protect the weaker members, workers, women and children, a special concern, but Pacem in Terris §56 forbids favouring any category of citizen.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "right-to-buy-council-homes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-strikes-picketing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "population-causes-poverty": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §190 says the poverty of poorer nations comes more often than not from deficient economic and social organisation and lack of solidarity.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "diversity-weakens-cohesion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "offices-by-lottery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "emergency-suspend-protections": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-controls-essentials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "party-controls-media": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "party-commands-army": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "long-naturalization-wait": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "representatives-worker-pay": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "party-discipline-binding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pool-sovereignty": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Pacem in Terris §§98-99 and 137 say states must pool resources and plans where their own efforts fall short and call for a world public authority; he does not name the European Union.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "head-commands-forces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "church-by-bishops": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Princeps Pastorum §8 repeats that mission churches are to be entrusted to a local hierarchy chosen from their own people, and the See has established hierarchies in those areas.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "clerical-rule": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "defeat-own-government-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "censor-art-for-virtue": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unlimited-reelection": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recall-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "end-foreign-alliances": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-rental-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "people-in-arms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rural-life-healthier": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reunify-divided-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "educated-out-of-touch": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "cultures-equal-different": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "death-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sex-ed-in-schools": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "creationism-in-schools": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-private-adult-pornography-access": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "citizenship-by-descent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "minority-language-support": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §96 says justice is best served by authorities that do all they can to improve the condition of minorities, especially in language, culture, traditions and economic activity.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "religious-exemptions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "encourage-eccentricity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sovereign-debt-cancellation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "independence-needs-economic-change": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constituent-assembly": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-freedoms-for-growth": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§69 and 83 call an economic system unjust, however much wealth it produces, if it harms human dignity or removes responsibility and initiative.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "rich-countries-aid-poor": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§157-163 say wealthy nations cannot be indifferent to hunger and must give emergency and development aid, and Pacem in Terris §§121-125 repeat the appeal.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "independent-nuclear-deterrent": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §112 says nuclear weapons must be banned by general agreement and §109 laments their manufacture.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "direct-election-head-of-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "central-bank-independence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-land-for-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-serves-common-good": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§19 and 119-120 call the social function inherent in the right of ownership, and Pacem in Terris §22 repeats that ownership entails a social obligation.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "soviet-state-capitalist": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "precautionary-principle": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "collective-defense": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "annexed-territory-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "subordinate-church-to-state": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ad Petri Cathedram §§35 and 139 ask that the Church be granted the lawful liberty owed to it, alongside that due to citizens and the state, and §141 laments restrictions on believers.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "nonpartisan-head-of-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "force-to-prevent-secession": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "region-keeps-system": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sacred-ruler": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "flat-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "character-from-environment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sovereign-above-law": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §§47 and 81-83 say authority is bound by the moral order and natural law and that rulers have no authority to depart from it.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "space-expansion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mixed-constitution": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "leader-cult": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "equal-parenting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "class-struggle-under-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "land-redistribution": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refugee-return": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "co-ethnic-territorial-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "apostasy-punishable": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-must-cover": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "common-currency": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "kin-peoples-union": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-cultural-autonomy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rights-where-you-live": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "material-conditions-drive-history": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-cartels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-bailouts": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "courts-bound-by-majority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gender-parity-bodies": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "economic-self-sufficiency": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§80 and 155 and Pacem in Terris §101 ask for the circulation of goods, capital and manpower between nations, and Mater et Magistra §172 calls colonialism outdated.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "trade-labor-env-standards": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "moral-incentives": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "armed-group-creates-revolution": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-hereditary-privilege": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "history-own-civilization": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilizing-tutelage": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §88 says nations more advanced in science, culture and economy have no title to unjust political domination of others, only a greater duty to help.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "patriotic-education": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "end-racial-preferences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "public-money-creation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "capitalism-adapts": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "delink-world-market": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §155 and Pacem in Terris §§101 and 131 call for cooperation and the movement of goods and capital between countries, and say no state can prosper in isolation.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "labor-aristocracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-to-discriminate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "entrenched-bill-of-rights": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Pacem in Terris §§75 and 79 report with evident approval the demand that a charter of fundamental human rights be incorporated into each State's constitution; he says nothing on how hard it is to amend.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "colonial-treaties-void": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "elective-rulers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "minority-veto": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "resist-lawless-ruler": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parliament-supreme": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "animal-suffering-matters": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "animal-use-humane": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "noblesse-oblige": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§121 and 158-159 say those more blessed with this world's goods bear a special responsibility toward the poor and hungry.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "withdraw-from-politics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mass-culture-pacifies": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ruling-class-consent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "world-economy-extracts-surplus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "native-born-offices": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "party-own-road": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "self-reliance-over-aid": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §123 says developing peoples must be conscious that they shoulder the main burden of their own development, while still being helped.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "return-lost-territory": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-political-leadership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "antifascism-founding-value": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "totalitarianisms-equivalent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "slavery-not-civil-war-cause": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "preserve-contested-monuments": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "male-disadvantage-attention": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "domestic-violence-symmetry": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "institutions-fit-civilization": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-guardian-role": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "paid-care-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "filial-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "office-by-exam": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-takeover-block": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-fault-divorce": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §193, Pacem in Terris §16 and Ad Petri Cathedram §52 all describe marriage as one and indissoluble.",
+   "sources": [
+    "s1",
+    "s2",
+    "s3"
+   ]
+  },
+  "recallable-delegates": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "individual-pension-accounts": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "land-use-tenure": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "budget-needs-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "single-official-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-land-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "disparate-impact-discrimination": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "consumerism-harmful": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§176 and 234-235 warn against treating material well-being as the aim of life and against hedonism, and urge moderation, temperance and simplicity.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "arm-foreign-insurgents": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "intervene-in-bloc": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§120 and 124 say no state may interfere unjustly in the affairs of others, whatever its size or power.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "corporate-influence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-foreign-funding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pronatalist-incentives": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "residents-only-property": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "job-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democratic-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-duty-to-obey": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-policy-non-interference": {
+   "value": 1,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §120 says no country may take action that would unjustly oppress other countries or interfere unwarrantedly in their affairs.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "industrial-unions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "minority-conspiracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-legal-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "public-access-to-information": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-production": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "informal-organisation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-law-over-international": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "deference-to-leading-power": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §§86-89 say all states are equal in natural dignity and that superior development gives no right to impose will on others.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "regional-revenue-retention": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "personal-possessions-private": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "defeat-communism": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Pacem in Terris §§126-129 and 157-160 favour negotiation and practical cooperation with those who hold a false philosophy, so he did not put defeating communism ahead of coexistence; §159 still keeps the philosophy distinct from its undertakings.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "mixed-public-service-providers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religion-illusion": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §214 calls the idea that the sense of religion is mere feeling or fantasy to be eradicated the most fundamental modern error and says it reveals man as made for God.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "capitalism-progressive": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-equality-needs-economic-change": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialized-care": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "purge-loanwords": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "treaties-binding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "cooperative-communities": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "majority-settlement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "neither-capitalism-nor-communism": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §23 calls both unrestricted liberal competition and the Marxist creed of class warfare contrary to Christian teaching, and §34 says no Catholic can accept even moderate socialism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "historical-land-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "holocaust-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "criminalize-homosexuality": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "suppress-opposition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "punish-blasphemy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonies-serve-metropole": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §172 calls colonialism outdated, and Pacem in Terris §§42-43 and 88 say no nation should rule over another.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "defensive-jihad-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unreligious-rulers-fought": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "participatory-democracy": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Pacem in Terris §§26 and 73 call taking an active part in public life and government a natural right of every person, to a degree suited to the community's development.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "intersecting-oppressions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gender-identity-recognition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "assisted-dying": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "left-right-obsolete": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "alienated-labor": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "islam-incompatible": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "divine-source-of-authority": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §§46 and 51 say rulers derive their authority from God and that governmental authority is a postulate of the moral order.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "religious-dress-in-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "harassment-claims-court-access": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "social-market-economy": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §51 gives first place to private initiative, §52 gives the state a hand in the economy, and §§48 and 136 welcome social insurance and social security.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "abolish-armed-forces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rich-first": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§128 and 150-151 say public authority must develop agriculture, industry and services evenly and treat citizens of less developed areas as responsible participants.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "stay-neutral-between-blocs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "dynastic-succession": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "interest-free-mutual-credit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refuse-lender-austerity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-franchise": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "domination-women-nature": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reification": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "press-owned-by-wealth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promulgated-standing-laws": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §27 gives everyone a right to a defined sphere of law immune from arbitrary attack, and §§76-79 ask for a public constitution fixing officials' competences and procedures.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "racial-franchise": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§44 and 73 affirm the equal dignity of all and the right of every person to take part in government.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "online-participation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "open-government-data": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "interfaith-marriage-restriction": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "boycott-minority-shops": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "citizens-assembly": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reinterpret-religion": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "In the opening address of Vatican II he says the doctrine is certain and immutable and must be kept intact, yet must be explored and set out as the times require, since the deposit of faith differs from how it is formulated.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "wealth-concentration-endangers-liberty": {
+   "value": 1,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§35-36 describe a vast accumulation of wealth giving a few despotic economic power, with public authority becoming a tool of plutocracy.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "open-lgbt-military-service": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-promotes-atheism": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§214-217 call the attempt to uproot religion the most fundamental modern error, and Pacem in Terris §14 affirms the right to worship publicly and privately.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "abolish-police-prisons": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "power-sharing-divided-societies": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "charity-over-state-aid": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "term-limits": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vote-delegation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "existential-risk-priority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-in-religious-leadership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shared-marital-authority": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §15 says in founding a family both man and woman enjoy equal rights and duties.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "foreign-residents-local-vote": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rent-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-ip": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "uniformed-youth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-nuclear-weapons-on-territory": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-foreign-bases": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recognise-genocide": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "income-for-work-not-ownership": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §107 says work must always rank above possession of external goods and §70 criticises high pay for services of doubtful value, though §§76 and 81 still allow a return to capital.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "never-kill-self-defence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unbroken-national-continuity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sex-socially-constructed": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-fixed-category-of-women": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "martyrs-honoured": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "politics-spiritual-struggle": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "homeland-cultural-centre": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "culture-before-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "god-not-male": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "scripture-judged-by-women": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "economy-in-majority-hands": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "single-unit-for-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "independent-unions": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §22 holds that workers may act freely on their own initiative within their associations and §37 asks for vocational bodies autonomous of the state.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "socialism-needs-workers-power": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-essentials-public": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "second-chamber": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "municipal-property": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "confederal-coordination": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "family-wage": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §71 and Pacem in Terris §20 say a worker must be paid enough to live a truly human life and meet family obligations in a worthy manner.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "ageing-research-funding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "anonymous-payments": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "online-anonymity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "person-over-state": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§109 and 219 say the individual is prior to society and the foundation, cause and end of every social institution, and Pacem in Terris §26 calls the person its subject and purpose.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "spiritual-nature": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §57 says rulers must aim at the spiritual as well as the material prosperity of their subjects and respect the hierarchy of values.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "regional-powers-revocable": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gm-crops": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "dense-cities": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-group-interests": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-pride": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-force-beyond-defence": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§93 and 127 say disputes between states must be settled by negotiation, not armed force, and that war is no fit instrument to repair injustice.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "language-defines-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "communal-electorates": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-partition-plot": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-public-college": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pollution-taxes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "future-generations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-distinct-values": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "arms-reduction": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §112 says justice and right reason demand ending the arms race, reducing stockpiles on all sides at once, and banning nuclear weapons under effective mutual control.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "publish-international-agreements": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "capital-controls": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-arms-monopoly": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "soldiers-refuse-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "collective-bargaining": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §97 notes with approval that workers' associations now work chiefly through collective bargaining, though §71 adds other factors in setting a just wage.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "in-work-tax-credits": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "fiscal-rules-binding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restructure-world-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "smash-state-machine": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-economic-experiment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "nature-as-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sacred-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "student-debt-relief": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "internal-colonialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shared-human-nature": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §§9 and 28 say each person's rights and duties flow directly from their nature as an intelligent, free being and are universal and inviolable.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "public-service-media": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religions-one-truth": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ad Petri Cathedram §§17-18 call the view that one religion is as good as another absurd and say the Catholic faith cannot be placed on a level with others.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "farm-price-support": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §137 says economists must devise price protection for agricultural produce, preferably enforced by the parties themselves under some public supervision.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "keep-nuclear-weapons": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §112 calls for banning nuclear weapons through a general agreement with mutual control, and §128 treats deterrence as a product of fear.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "workers-own-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-property-inheritance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mutual-intelligibility-defines-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pollution-tort-liability": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "customary-chiefs-lawmaking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "environment-over-liberty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mandatory-sentences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "immigrants-learn-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "voluntary-union-payments-at-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "voter-id": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-equal-recognition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-is-procedure": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "premarital-sex": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "internet-shutdowns": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "negative-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-suffrage": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§41 and 43 present women's growing part in political life and their demand for the rights and duties of persons, in public as well as domestic life, as a favourable sign of the age.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "religion-oppresses-women": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "race-social-construct": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gender-equality-agencies": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "homestead-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "international-criminal-courts": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "scripture-inerrant": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gendered-self-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "defend-planned-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indirect-election": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-church-status": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "minority-territorial-autonomy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "disputed-territory-plebiscite": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "keep-colonial-borders": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "simple-living": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §§234-235 say the Christian view of life asks of all a spirit of moderation and sacrifice and that temperance and simplicity of life are essential.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "restrict-indigenous-settlement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "equal-conscription": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "homeland-spiritual-bond": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "extrajudicial-killing": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §§11 and 27 affirm the right to life and a right to effective legal protection immune from arbitrary attack.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "close-ties-china": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "protect-kin-minorities": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "resources-common-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "self-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "cut-consumption-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "targeted-social-spending": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "bypass-parties-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-business-privileges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-denominational-politics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tech-with-ancestral-values": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "wife-divorce-without-consent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-resource-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "distribution-by-process": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "financial-transactions-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racism-not-main-obstacle": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unjust-law-not-binding": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Pacem in Terris §§51 and 61 say laws contrary to the moral order, or violating human rights, have no binding force in conscience.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "automate-paid-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "multipolar-world": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "labour-theory-of-value": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §76 endorses Pius XI's statement that it is false to credit work alone with what labour and property produce together.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "patriotism-serves-workers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "material-over-identity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "market-under-party-rule": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §95 calls efforts to check or extinguish ethnic minorities a flagrant violation of justice, and §96 asks authorities to protect their language, culture and traditions.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "In the opening address of Vatican II he says he must firmly dissent from the prophets of doom who see only ruin in the present and say the times are worse than before.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §86 calls for elimination of every trace of racial discrimination and §106 says officials must accept immigrants as far as the common good permits.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "technology-design-reflects-political-interests": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §107 states that work must always be rated higher than the possession of external goods, which are merely instrumental.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §95 calls efforts to check or extinguish ethnic minorities a flagrant violation of justice, and §100 says nothing may prevent relations between ethnic groups.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §100 says the universal common good requires encouraging every kind of reciprocation between groups of different ethnic origin and that nothing may prevent it.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Mater et Magistra §§109 and 115 defend private ownership of land and productive goods and call for widely distributed ownership of houses, land and tools.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mater et Magistra §31 repeats Pius XI's rejection of the view that the wage system is unjust by nature, asking only that it be modified with partnership elements (§32).",
+   "sources": [
+    "s1"
+   ]
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recognize-territorial-claims-from-conquest": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "small-step-social-reform": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §162 cites Pius XII that justice lies not in uprooting an outdated system but in a well-designed policy of development.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "decent-living-guarantee": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Pacem in Terris §11 gives everyone a right to food, clothing, shelter, medical care and support in unemployment, old age or disability, and §32 says it is useless to admit the right without supplying the means; he does not say the state alone does it.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  }
+ },
+ "notes": "Themes searched in the encyclicals and council address: property, wages, unions, cooperatives, farming, taxes, state and subsidiarity, capitalism and communism, aid and colonialism, population, culture, rights, women, race and equality, authority and law, democracy, minorities, migration, arms and war, world authority, revolution and gradual change, religion and state, marriage, family. Statements with no passage on the matter are null. Gutenberg searches for John XXIII and Roncalli found no relevant text."
+}
