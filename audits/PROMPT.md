@@ -100,22 +100,26 @@ An alias's quote may name the ideology by any of its redirects.
 
 ### Key figures and key works
 
-List in `keyFigures` the ideology's own thinkers as its defining sources name them, people only, no
-organisations (each named at least twice there, and no other ideology's key figure or namesake:
-audits/namesakes.json reserves each person an ideology is named after for it, Lenin for Leninism; that
-namesake is listed first, and needs no quote): a primary text by one of them is tied to the ideology. List a
-key figure only when the defining sources present the ideology as that person's thought or political legacy
-(Clinton for Clintonism); never for a single doctrine, policy or programme named after someone (the Monroe
-Doctrine), whose namesake's other views aren't part of it: tie their texts by title instead (Monroe's 1823
-annual message). Each key figure also gives a one-line `role` (how the sources associate them)
-and their English Wikipedia article (`wikipedia`).
-
-List in `keyWorks` the texts the defining sources make canonical (founding texts, manifestos, programmes, a
-thinker's major works), by the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of
-Reform"), with `"work": "<source id>"` when you cite the text itself: a primary text is tied to the ideology
-when the defining sources name it twice between them, by its own title or a key work's.
-
 Both lists show on the ideology's page.
+
+`keyFigures`: the people the defining sources present the ideology as the thought or political legacy of
+(Clinton for Clintonism).
+- People only, no organisations.
+- Each named at least twice in the defining sources.
+- No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
+  after for it (Lenin for Leninism). That namesake is listed first, and needs no quote.
+- Never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's
+  other views aren't part of it: tie their texts by title instead (Monroe's 1823 annual message).
+- Each gives a one-line `role` (how the sources associate them) and their English Wikipedia article
+  (`wikipedia`).
+- A primary text by one of them is tied to the ideology.
+
+`keyWorks`: the texts the defining sources make canonical (founding texts, manifestos, programmes, a thinker's
+major works).
+- By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform").
+- With `"work": "<source id>"` when you cite the text itself.
+- A primary text is tied to the ideology when the defining sources name it twice between them, by its own
+  title or a key work's.
 
 ### Evidence
 
