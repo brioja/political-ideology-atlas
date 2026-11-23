@@ -27,19 +27,11 @@ full audit if the entry is:
   an organization (`ORGANIZATION`), a state (`STATE`), a government body such as "the Government of
   France" (`GOVERNMENT_BODY`; a form of government such as totalitarianism is a set of ideas), or an event
   such as a war, revolution, election, battle or protest (`EVENT`); or
-- not political ideas of what society should be (`DOES_NOT_INCLUDE_IDEAS`; what it wants society to be is enough, with or without a worked-out "how"): its content holds
-  none. Decide this by trying, not by its label: go through the statements and look for an answer in its
-  sources, and record `DOES_NOT_INCLUDE_IDEAS` only if fewer than two can be answered (two positions make a
-  set of ideas); otherwise audit it in full. Say in the explanation what you looked through (Brandon,
-  2026-11-14). Critics count here: a source arguing against views it holds is evidence that it holds ideas
-  other people oppose, so each view critics argue against counts toward the two, and a name used mostly
-  by its critics is no reason for this record (Brandon, 2026-11-17). Only views count: criticism of what
-  something did (an event, a regime's conduct, a person's acts) shows nothing about ideas, and the
-  categories above still come first. That is all critics show: their
-  account of what it holds isn't reliable, so the full audit's answers still come from its own sources
-  (section 3). It must also pass a code check: if the entry's Wikipedia article says "ideas" anywhere,
-  `scripts/validate.js` rejects the reason (Brandon, 2026-11-06), and you audit the entry in full.
-  Notability and duplicates are also checked in code before an entry reaches you.
+- something with no political ideas of what society should be (`DOES_NOT_INCLUDE_IDEAS`). Decide this by trying:
+  go through the statements and look for answers in its own sources and in its critics, since each view a
+  critic argues against is a view it holds (Brandon, 2026-11-17). Two answerable statements make a set of
+  ideas: record `DOES_NOT_INCLUDE_IDEAS` only below two, and say in the explanation what you looked through
+  (Brandon, 2026-11-14).
 
 Then write only this to `audits/profiles/{{id}}.json` and stop (the validator accepts it):
 
