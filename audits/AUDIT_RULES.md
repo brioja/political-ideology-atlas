@@ -153,7 +153,10 @@ free trade, not about markets in general.
   government's for the monarch or head of state who only signed or proclaimed its measures on advice
   (their position is what they drove or said themselves), nor one
   organisation's or several organisations' platform for an ideology they share (organisations can agree
-  on something that isn't part of the ideology; Brandon, 2026-11-06). An organisation's or thinker's own
+  on something that isn't part of the ideology; Brandon, 2026-11-06). Nor is an organisation tied to an
+  ideology the way a key figure is: its platform keeps changing under the same name, so a source tying it to
+  the ideology can't vouch for platforms written later, while a person's works stay what they were
+  (Brandon, 2026-11-23). An organisation's or thinker's own
   account of what the ideology is, its tenets as they define them, is one of the ideology's defining
   sources (Brandon, 2026-11-08: the DSA's account of democratic socialism counts; the DSA's platform
   doesn't). A passage counts when its author presents it as a tenet or requirement of the ideology; a
