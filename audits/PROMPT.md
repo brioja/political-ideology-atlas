@@ -58,8 +58,7 @@ alias):
 - a thinker's or organisation's account of its tenets
 - data on what the label means (surveys asking what "left" stands for)
 
-Its `primary` sources are its founding texts, manifestos, party programmes and the major works of its
-thinkers. Wikipedia only helps you find these (audits/AUDIT_RULES.md, section 2).
+Wikipedia only helps you find these (audits/AUDIT_RULES.md, section 2).
 
 ## 2. Pin down what the ideology is
 
@@ -71,11 +70,10 @@ no defining source states.
 
 ### Aliases
 
-**Every source has to discuss the ideology** (the coatrack check, `scripts/coatrack-check.js`, run by validate.js). A
-defining source (`reference`, `scholarly` or `secondary`) must name the ideology, by its name or an alias. A
-`primary` or `program` source must name it too, or be named (by title or author) in a defining source
-that does. List in `aliases` the other names the defining sources use for it, liberally, each with
-its `reason` (validate.js checks each):
+**Every source has to discuss the ideology** (the coatrack check, `scripts/coatrack-check.js`, run by
+validate.js). A defining source (`reference`, `scholarly` or `secondary`) must name the ideology, by its
+name or an alias; primary texts are tied to it as the next subsection says. List in `aliases` the other
+names the defining sources use for it, liberally, each with its `reason` (validate.js checks each):
 - `REDIRECT`: a Wikipedia redirect to the article; word forms such as "Gaullist" and other names come in
   this way. Every redirect to the article counts automatically, unless Wikipedia files it as a section,
   subtopic, related topic or former name (a related word counts). Needs no quote.
@@ -117,8 +115,11 @@ Both lists show on the ideology's page.
 major works).
 - By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform").
 - With `"work": "<source id>"` when you cite the text itself.
-- A primary text is tied to the ideology when the defining sources name it twice between them, by its own
-  title or a key work's.
+
+Primary texts (`primary` or `program`) are the ideology's own texts: founding documents, manifestos,
+programmes, writings and speeches. One is tied to the ideology when it is a key work (the defining sources
+name it twice between them, by its own title or a key work's), when its author is a key figure, or when it
+names the ideology twice itself.
 
 ### Evidence
 
