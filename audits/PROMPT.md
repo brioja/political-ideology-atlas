@@ -146,10 +146,6 @@ general remark that its content varies answers no particular statement (`null`).
 - The ideology's stated position settles a statement only where the statement couldn't be true
   without contradicting it: a 19th-century ideology's stated view on industry doesn't settle nuclear
   power (`null`), but a doctrine of rule by competence settles hereditary office.
-- Audits written before the shared rules (no `"rules"`) recorded silence as 0 and inferences without
-  the "Inferred:" mark, so their uncertainty still counts only `medium` and `high` answers until they
-  are re-audited. Audits under rules 2 may hold marked inferences ("Inferred:"); the rule leaves
-  them out, and the next pass makes each stated or `null`.
 
 ## 5. Further reading for test takers
 
