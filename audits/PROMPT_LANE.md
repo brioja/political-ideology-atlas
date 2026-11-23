@@ -1,23 +1,13 @@
 # Audit lane
 
-For running audits from a session (Codex or Claude) alongside the integrator: `scripts/lane.js`
-for headless lanes, or the session that started this lane, which reviews lane files, builds, tests
-and pushes. A lane only writes audit drafts. Start it with one line:
+`scripts/lane.js` runs this file in one session per subject. A lane writes audit drafts.
 
-> Follow audits/PROMPT_LANE.md.
+Follow the driver's instructions (subject, report) when it sends them; they take precedence over
+this file.
 
-Follow the integrator's instructions (which subjects, in what order, how to report) when it sends
-them; they take precedence over this file.
+## Which subject
 
-## Which subjects
-
-Audit the ids the integrator gives you, people or ideologies. With no list, take the next one with
-
-    node scripts/next.js --lane --skip <id>,<id>,...   (--lane passes over every draft in scratchpad/lane-out/;
-                                                     --skip names any other ids the integrator has taken)
-
-(add `--people` or `--ideologies` if the integrator assigned you a kind) and tell the integrator
-which id you took, so the two sessions never work on the same subject.
+Audit the id the driver gives you, person or ideology.
 
 ## For each subject
 
@@ -32,14 +22,16 @@ which id you took, so the two sessions never work on the same subject.
    The driver's first message lists what the committed audit fails under today's rules
    (`node scripts/validate.js [--people] --as-current <id>`): fix each in your draft.
 3. Sources go in `scratchpad/sources/<id>/`; helper scripts in `scratchpad/<lane>-<id>/`.
-4. Write the audit to `scratchpad/lane-out/<lane>/<id>.json`, never into `audits/`: the integrator's
-   build would pick up a file there before it is reviewed. Validate it there:
+4. Write the audit to `scratchpad/lane-out/<lane>/<id>.json`; the driver moves it into `audits/`
+   once it validates. Validate it there:
 
        node scripts/validate.js [--people] --dir scratchpad/lane-out/<lane> <id>
 
-   and fix every error.
+   and fix every error. A source you can't tie to the subject leaves the audit with everything
+   taken from it: its id in the answers' `sources` and its claims in their rationales.
 5. Edit no other file. Do not build, test, commit or push.
 
-After each subject, tell the integrator one line: id, kind, known answers, and whether the
-uncertainty rule passed (or the lines it names). The integrator moves the file into `audits/`
-after review, builds, tests and pushes.
+Once validate.js reports no errors other than the uncertainty rule (or a
+`notIdeasOfWhatSocietyShouldBe` record), add one line to
+`scratchpad/lane-out/<lane>/DONE.txt`: id, kind, known answers, and whether the uncertainty rule
+passed (or the lines it names).

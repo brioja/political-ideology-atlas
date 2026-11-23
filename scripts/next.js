@@ -25,7 +25,7 @@ const PEOPLE_ONLY = process.argv.includes("--people");
 // People whose books are being fetched wait for later passes too (scripts/waiting-for-books.js; pending.js holds new ones).
 // Held for books: people while their own books download, ideologies while books their notFound lists download (waiting-for-books.js).
 for (const id of require("./waiting-for-books").held()) SKIP.add(id);
-// Drafts already written by a lane (audits/PROMPT_LANE.md) are taken until the integrator moves them into audits/.
+// Drafts already written by a lane (audits/PROMPT_LANE.md) are taken until the lane driver moves them into audits/.
 if (process.argv.includes("--lane")) {
   const fs = require("fs"), out = path.join(__dirname, "..", "scratchpad", "lane-out");
   for (const lane of fs.existsSync(out) ? fs.readdirSync(out) : [])
