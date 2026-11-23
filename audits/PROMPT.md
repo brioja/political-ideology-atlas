@@ -108,10 +108,10 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
 
 These answer for an ideology:
 
-- Its defining sources: the sources that discuss it (by its name or an alias) and say what it holds.
-  Reference works and scholarship on it (Payne, Paxton or Griffin for fascism; Bobbio for left and
-  right), a thinker's or organisation's account of its tenets, and data on what the label means
-  (surveys asking what "left" stands for).
+- Sources that say what it holds, naming it (by its name or an alias): reference works and
+  scholarship on it (Payne, Paxton or Griffin for fascism; Bobbio for left and right), a thinker's
+  or organisation's account of its tenets, and data on what the label means (surveys asking what
+  "left" stands for).
 - Its `keyWorks` and its `keyFigures`' texts (section 1).
 
 Adherents, member organisations and critics don't answer, since they hold more opinions than just the
