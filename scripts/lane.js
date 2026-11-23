@@ -12,7 +12,9 @@
 // Per subject:
 //  1. Pick: the lane's own unfinished drafts first, then `next.js --lane`, passing over subjects other lanes have
 //     claimed (scratchpad/lane-out/*/<id>.claim, written at once) and any audit with uncommitted changes. Greta Thunberg and Annie Besant were audited twice before this.
-//  2. Audit: a new session with START, resumed with RESUME until the subject has its DONE.txt line. The session
+//  2. Audit: a new session with START, resumed with RESUME until the subject has its DONE.txt line. An ideology first
+//     runs a scope phase (SCOPE_START, until <id>.scope exists), checked with validate.js --stage scope and sent back
+//     to fix (SCOPE_FIX), then answers in the same session (ANSWER). The session
 //     ends its turn at natural report points, so the loop lives here.
 //  3. Integrate (under a lock shared by all lanes): validate (errors other than the uncertainty rule go back to the
 //     session to fix), move the draft into audits/, merge an ideology's color, build, test, commit with no attribution
@@ -132,6 +134,21 @@ function otherNames(id) {
   return ` Wikipedia redirects these names to the subject's article: ${names.map((n) => `"${n}"`).join(", ")}. Search under them from the start, not only the subject's own name: a source naming the subject by one of them counts as naming it (the coatrack check takes them as aliases, unless another ideology claims the name).`;
 }
 const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors other than the uncertainty rule, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.${otherNames(id)}${namesakeBooks(id)}${laterPassProblems(id)}`;
+// An ideology's audit runs in two phases (Brandon, 2026-11-23): first what PROMPT.md section 2 settles (scope, sources,
+// aliases, key figures, key works), which the driver checks with validate.js --stage scope and sends back to fix, then
+// the answers. Assadism had listed Hafez but not Bashar al-Assad as a key figure, which left Bashar's speeches untied;
+// the final validate found it only after the answers were done, and a warning there sent nothing back. The session
+// marks the first phase done by creating <id>.scope; a draft alone can't say so, since a later pass starts as a copy
+// of the committed audit.
+const scopeMark = (id) => path.join(OUT, `${id}.scope`);
+const SCOPE_START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This first phase covers audits/PROMPT.md sections 1 and 2 only: find the defining sources and write scratchpad/lane-out/${LANE}/${id}.json with its scope, sources, aliases, key figures and key works (if that draft exists, carry on from it; a later pass keeps the committed answers as they are for now). Don't answer statements yet. When those parts are in the draft, create the empty file scratchpad/lane-out/${LANE}/${id}.scope and end your turn; the driver checks them and then asks for the answers.${otherNames(id)}${namesakeBooks(id)}${laterPassProblems(id)}`;
+const SCOPE_FIX = (id, problems) => `\`node scripts/validate.js --dir scratchpad/lane-out/${LANE} --stage scope ${id}\` reports these problems with the scope, sources, aliases, key figures and key works of scratchpad/lane-out/${LANE}/${id}.json:\n${problems}\nFix each error, and act on each warning (a person named in a key figure's quote: list them if the defining sources present the ideology as their thought or political legacy). Check again with that command, and end your turn.`;
+const ANSWER = (id) => `The scope, sources, aliases, key figures and key works of \`${id}\` are checked. Now answer the statements. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer. When every statement has an answer, validate with \`node scripts/validate.js --dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors other than the uncertainty rule, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.`;
+// validate.js --stage scope's errors and warnings for the draft, as "- " lines ("" when clean).
+function scopeProblems(id) {
+  const r = run("node", ["scripts/validate.js", "--dir", path.relative(ROOT, OUT), "--stage", "scope", id]);
+  return (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`).join("\n");
+}
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its line in scratchpad/lane-out/${LANE}/DONE.txt.`;
 const FIX = (id, errors) => `validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
@@ -229,7 +246,7 @@ function integrate(id) {
     git("commit", "-q", "-m", `Audit ${name}`);
     const why = buildAndCommit(PEOPLE ? "Rebuild people data" : "Rebuild site data");
     if (why) log(`${id}: ${why}; audit committed, generated files left for the next build`);
-    for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`)]) if (fs.existsSync(f)) fs.unlinkSync(f);
+    for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`), path.join(OUT, `${id}.scope`)]) if (fs.existsSync(f)) fs.unlinkSync(f);
     return name;
   });
 }
@@ -276,7 +293,27 @@ while (timeLeft()) {
   if (stopRequested()) { log("stopping before the next subject"); break; }
   fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
   log(`start ${id}`);
-  let thread = doneIds().has(id) ? null : await session(START(id));
+  let thread = null;
+  if (!PEOPLE && !doneIds().has(id) && !fs.existsSync(scopeMark(id))) {
+    thread = await session(SCOPE_START(id));
+    for (let n = 1; !fs.existsSync(scopeMark(id)) && n <= RESUMES && timeLeft(); n++) {
+      if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(SCOPE_START(id)); continue; }
+      log(`resume ${id} scope (${n})`);
+      thread = await session(`Go on with the scope phase of \`${id}\` where you left off, through to creating scratchpad/lane-out/${LANE}/${id}.scope.`, thread);
+    }
+    if (!fs.existsSync(scopeMark(id))) { log(`${id}: scope phase not done; left for the next start`); tried.add(id); continue; }
+  }
+  if (!PEOPLE && !doneIds().has(id)) {
+    let problems = fs.existsSync(draft(id)) ? scopeProblems(id) : "";
+    for (let n = 1; problems && thread && n <= FIX_ROUNDS; n++) {
+      log(`${id}: scope check, fix round ${n} (${problems.split("\n").length} problem(s))`);
+      thread = await session(SCOPE_FIX(id, problems), thread);
+      problems = scopeProblems(id);
+    }
+    if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again)`);
+    thread = await session(thread ? ANSWER(id) : `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`; your subject is \`${id}\`, and its draft exists. ${ANSWER(id)}`, thread);
+  }
+  if (!thread && !doneIds().has(id)) thread = await session(START(id));
   for (let n = 1; !doneIds().has(id) && n <= RESUMES && timeLeft(); n++) {
     if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(START(id)); continue; }
     log(`resume ${id} (${n})`);
@@ -285,7 +322,7 @@ while (timeLeft()) {
   if (!doneIds().has(id) || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
   for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
-  if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); continue; }
+  if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); if (fs.existsSync(scopeMark(id))) fs.unlinkSync(scopeMark(id)); continue; }
   // The DONE line moves to INTEGRATED.txt, so a later pass on the same subject starts clean.
   const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
   const name = integrate(id);
