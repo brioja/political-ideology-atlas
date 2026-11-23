@@ -111,7 +111,8 @@ Answer from what the defining sources say the ideology holds. These answer:
 - The defining sources' own account of its tenets. The defining sources are the scholarship that
   defines the name (Payne, Paxton or Griffin for fascism; Bobbio for left and right) and data on what
   the label means (surveys asking what "left" stands for).
-- The texts they make canonical: founding texts, a defining thinker's works, a party programme.
+- Primary texts tied to it (section 1): its key works, texts by its key figures, and texts the sources
+  that discuss it name twice between them.
 - Movements and offshoots under the name, where the defining sources make them the ideology's own
   (AUDIT_RULES.md section 3).
 - Its record, for "record over words": the sustained, documented practice of regimes where it was the
