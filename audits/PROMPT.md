@@ -79,11 +79,11 @@ its `reason` (validate.js checks each):
 - `REDIRECT`: a Wikipedia redirect to the article; word forms such as "Gaullist" and other names come in
   this way. Every redirect to the article counts automatically, unless Wikipedia files it as a section,
   subtopic, related topic or former name (a related word counts). Needs no quote.
-- `SUPPORTED`: a source says they are the same. Quote the passage where it equates them
-  ("'trans-exclusionary radical feminism', or TERFism"). To find that source, look the alias up from its own side (a reverse lookup): a dictionary,
-  glossary or encyclopedia entry for the alias ("TERF") usually defines it by the ideology's name
-  ("trans-exclusionary radical feminist"). An acronym is `SUPPORTED`, never assumed from initials ("ML" can
-  mean several things).
+- `SUPPORTED`: a source says they are the same. Quote the passage where it equates them ("often referred
+  to as 'green liberalism', 'eco-liberalism', or 'liberal ecology'"). To find that source, look the alias up
+  from its own side (a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias usually
+  defines it by the ideology's name. An acronym is `SUPPORTED`, never assumed from initials ("ML" can mean
+  several things).
 - `TRANSLATION`: the name in another language or its romanization, as Wikipedia gives it: the title of the
   article's link to that language's Wikipedia, or a name the article's lead or infobox tags with a language,
   such as "pinyin: Xīn Rújiā". Needs no quote.
