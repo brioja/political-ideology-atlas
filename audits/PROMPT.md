@@ -2,7 +2,7 @@
 
 You are auditing one catalog entry for Political Ideology Atlas, a political ideology test. Here an ideology is any set of political ideas of what society
 should be, whatever form it takes (`audits/IDEOLOGY_STANDARD.md`). Your job is to record
-the ideology's positions on each test statement as its own sources state them, and to show your
+the ideology's positions on each test statement as the sources in section 3 state them, and to show your
 evidence. Each answer you give becomes one coordinate of the ideology's profile, which test takers
 are matched against. Getting it wrong puts real people into the wrong ideology.
 
@@ -28,8 +28,8 @@ full audit if the entry is:
   France" (`GOVERNMENT_BODY`; a form of government such as totalitarianism is a set of ideas), or an event
   such as a war, revolution, election, battle or protest (`EVENT`); or
 - something with no political ideas of what society should be (`DOES_NOT_INCLUDE_IDEAS`). Decide this by trying:
-  go through the statements and look for answers in its own sources and in its critics, since each view a
-  critic argues against is a view it holds Two answerable statements make a set of
+  go through the statements and look for answers in its defining sources and in its critics, since each view a
+  critic argues against is a view it holds. Two answerable statements make a set of
   ideas: record `DOES_NOT_INCLUDE_IDEAS` only below two, and say in the explanation what you looked through.
 
 Then write only this to `audits/profiles/{{id}}.json` and stop (the validator accepts it):
@@ -141,7 +141,7 @@ general remark that its content varies answers no particular statement (`null`).
 
 ## 4. Answering for an ideology
 
-- Where its own sources take opposite positions on a statement, it is a split: 0 at `low`, a
+- Where its sources take opposite positions on a statement, it is a split: 0 at `low`, a
   real position. Silence is `null`.
 - The ideology's stated position settles a statement only where the statement couldn't be true
   without contradicting it: a 19th-century ideology's stated view on industry doesn't settle nuclear
@@ -221,7 +221,7 @@ captures, even loosely. List only those; often there are none, and the list is e
     "<statement id>": {
       "value": 2,
       "confidence": "high | medium | low",
-      "rationale": "What the ideology's own sources state on this.",
+      "rationale": "What the ideology's sources state on this.",
       "sources": ["s1"]
     },
     "<statement id>": {
