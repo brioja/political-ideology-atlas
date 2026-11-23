@@ -163,11 +163,16 @@ function locked(fn) {
   }
   try { return fn(); } finally { fs.rmdirSync(LOCK); }
 }
-// Validator errors other than the uncertainty rule, or "" when only that (or nothing) fails.
+// Validator errors other than the uncertainty rule and a notIdeasOfWhatSocietyShouldBe record, or "" when only
+// those (or nothing) fail. Not validate.js's exit 2: that also passes coatrack-check ("sources:") errors, which
+// pending.js shouldn't requeue but a lane must fix before integrating (neo-nazism, 2026-11-23, went in with five).
+const FINISHED = /^\s*error: (uncertainty|not ideas of what society should be):/;
 function errorsIn(dirArgs, id) {
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), ...dirArgs, id]);
-  if (r.status === 0 || r.status === 2) return "";
-  return (r.stdout + r.stderr).split("\n").filter((l) => /error/.test(l)).join("\n") || (r.stdout + r.stderr).trim();
+  if (r.status === 0) return "";
+  const out = r.stdout + r.stderr, errors = out.split("\n").filter((l) => /^\s*error:/.test(l));
+  if (r.status === 2 && errors.length) return errors.filter((l) => !FINISHED.test(l)).join("\n");
+  return errors.join("\n") || out.trim();
 }
 let lastPush = 0, unpushed = false;
 function push(force) {
