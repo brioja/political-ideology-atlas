@@ -24,19 +24,19 @@ let MODEL = "haiku";
 const WORD = /ideolog/i;
 const mask = (t) => String(t).replace(/ideolog\w*/gi, "[…]");
 
-const REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
+const REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATES", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const SYSTEM = "You classify encyclopedia articles. Reply with one JSON object and nothing else.";
 const QUESTION = `Below is the full text of an English Wikipedia article. Decide whether its subject is political ideas of what society should be.
 
 Answer "yes" if what the article describes includes ideas of what society, government, the economy or relations between groups ought to be. A worked-out plan for getting there is not needed. Doctrines, the beliefs of movements, regime types and forms of government, political practices, prejudices, and names that critics use for a set of views all count when the article describes what their holders want society to be.
 
 Answer "no" in two cases:
-- the subject has ideas but is not itself a set of ideas: a person (PERSON), a political party (PARTY), an organization (ORGANIZATION), a state (STATE), a particular government body (GOVERNMENT_BODY; a form of government is not one), or an event (EVENT);
+- the subject has ideas but is not itself a set of ideas: a person (PERSON), a political party (PARTY), an organization (ORGANIZATION), a state or a group of states such as a bloc or a category of countries (STATES), a particular government body (GOVERNMENT_BODY; a form of government is not one), or an event (EVENT);
 - the subject holds no political ideas of what society should be (DOES_NOT_INCLUDE_IDEAS).
 
 Judge by what the article says about the subject's content, not by what it is called. Where the article's text shows "[…]", a word has been removed.
 
-Reply with exactly this JSON: {"answer": "yes" or "no", "reason": null if yes, else one of PERSON, PARTY, ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT, DOES_NOT_INCLUDE_IDEAS, "why": "one sentence"}`;
+Reply with exactly this JSON: {"answer": "yes" or "no", "reason": null if yes, else one of PERSON, PARTY, ORGANIZATION, STATES, GOVERNMENT_BODY, EVENT, DOES_NOT_INCLUDE_IDEAS, "why": "one sentence"}`;
 
 const load = () => (fs.existsSync(FILE) ? readJson(FILE) : { rule: "", verdicts: {} });
 const verdicts = () => load().verdicts;

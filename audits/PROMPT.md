@@ -24,7 +24,7 @@ older hand-made list), so some entries hold no political ideas of what society s
 Wikipedia article and check (the full criteria are in `audits/IDEOLOGY_STANDARD.md`). Skip the
 full audit if the entry is:
 - something that has ideas but isn't a set of ideas: a person (`PERSON`), a political party (`PARTY`),
-  an organization (`ORGANIZATION`), a state (`STATE`), a government body such as "the Government of
+  an organization (`ORGANIZATION`), a state or a group of states such as a bloc or a category of countries (`STATES`), a government body such as "the Government of
   France" (`GOVERNMENT_BODY`; a form of government such as totalitarianism is a set of ideas), or an event
   such as a war, revolution, election, battle or protest (`EVENT`); or
 - something with no political ideas of what society should be (`DOES_NOT_INCLUDE_IDEAS`). Decide this by trying:
@@ -41,7 +41,7 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id>",
   "rules": 7,
-  "notIdeasOfWhatSocietyShouldBe": { "reason": "PERSON | PARTY | ORGANIZATION | STATE | GOVERNMENT_BODY | EVENT | DOES_NOT_INCLUDE_IDEAS", "explanation": "One or two sentences on why." },
+  "notIdeasOfWhatSocietyShouldBe": { "reason": "PERSON | PARTY | ORGANIZATION | STATES | GOVERNMENT_BODY | EVENT | DOES_NOT_INCLUDE_IDEAS", "explanation": "One or two sentences on why." },
   "sources": [{ "id": "s1", "kind": "reference", "title": "…", "url": "https://… (a page you opened)" }]
 }
 ```

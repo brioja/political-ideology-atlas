@@ -33,7 +33,7 @@ const KINDS = PEOPLE ? ["primary", "scholarly", "reference", "program"] : ["prim
 const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the subject (AUDIT_RULES.md, "Record over words")
 // Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
-const NOT_IDEAS_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
+const NOT_IDEAS_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATES", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
 // The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT.md, PROMPT_PEOPLE.md).
 const CURRENT_RULES = 7;
