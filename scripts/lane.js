@@ -69,6 +69,16 @@ const runAsync = (cmd, args) => new Promise((resolve) => {
   c.on("close", (code) => { child = null; resolve({ status: code === null ? 1 : code, stdout: out, stderr: err }); });
 });
 const git = (...a) => run("git", a);
+// Commits only these paths (git commit -- paths), so a file someone else staged can neither ride along nor fail the
+// commit. Returns "" when committed or nothing changed, else why it failed (a hook's message). 2026-11-24: a people
+// audit citing reference books whose filenames tripped the commit-msg hook stayed staged, and every later commit of
+// both lanes failed with it, unchecked, for two hours (31 audits logged as integrated, none committed).
+function commit(message, paths) {
+  git("add", "--", ...paths);
+  if (!git("diff", "--cached", "--quiet", "HEAD", "--", ...paths).status) return "";
+  const r = git("commit", "-q", "-m", message, "--", ...paths);
+  return r.status ? `commit failed: ${(r.stderr || r.stdout).trim().split("\n").slice(0, 3).join(" / ")}` : "";
+}
 const draft = (id) => path.join(OUT, `${id}.json`);
 const flag = PEOPLE ? "--people " : "";
 
@@ -227,9 +237,7 @@ function buildAndCommit(message, extra = []) {
   for (const b of build) { const r = run("node", b); if (r.status) return `build failed: ${failure(r.stderr || r.stdout)}`; }
   const t = run("node", ["test.js", ...(PEOPLE ? ["--people"] : [])]);
   if (t.status) { git("checkout", "--", ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f)))); return `tests failed: ${failure(t.stdout + t.stderr)}`; }
-  git("add", "--", ...extra, ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f))));
-  if (git("diff", "--cached", "--quiet").status) git("commit", "-q", "-m", message);
-  return "";
+  return commit(message, [...extra, ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f)))]);
 }
 function integrate(id) {
   return locked(() => {
@@ -242,10 +250,10 @@ function integrate(id) {
       const colorsPath = path.join(ROOT, "audits", "ideology-colors.json"), colors = JSON.parse(fs.readFileSync(colorsPath, "utf8"));
       if (!colors[id]) { const c = JSON.parse(fs.readFileSync(colorFile, "utf8")); colors[id] = c[id] || c; fs.writeFileSync(colorsPath, JSON.stringify(colors, null, 2) + "\n"); files.push(colorsPath); }
     }
-    git("add", "--", ...files);
-    git("commit", "-q", "-m", `Audit ${name}`);
+    const failed = commit(`Audit ${name}`, files);
+    if (failed) log(`${id}: ${failed}; the audit is in audits/ but not committed`);
     const why = buildAndCommit(PEOPLE ? "Rebuild people data" : "Rebuild site data");
-    if (why) log(`${id}: ${why}; audit committed, generated files left for the next build`);
+    if (why) log(`${id}: ${why}; ${failed ? "" : "audit committed, "}generated files left for the next build`);
     for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`), path.join(OUT, `${id}.scope`)]) if (fs.existsSync(f)) fs.unlinkSync(f);
     return name;
   });
@@ -258,8 +266,8 @@ function books() {
   locked(() => {
     const t = run("node", ["scripts/triage.js"]);
     log(`triage: ${t.status ? `failed: ${failure(t.stdout + t.stderr)}` : (t.stdout || t.stderr).trim().split("\n").pop()}`);
-    git("add", "audits/people-triage.json");
-    if (git("diff", "--cached", "--quiet").status) git("commit", "-q", "-m", "Triage: refit on the latest people audits");
+    const failed = commit("Triage: refit on the latest people audits", ["audits/people-triage.json"]);
+    if (failed) log(`triage: ${failed}`);
   });
 }
 function signal() {
