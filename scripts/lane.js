@@ -185,8 +185,21 @@ async function session(prompt, thread) {
     r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])]);
     try { id = JSON.parse(r.stdout).session_id || id; } catch {}
   }
-  if (r.status) log(`${ENGINE} exited ${r.status}: ${failure(r.stderr, 1)}`);
+  if (r.status) log(`${ENGINE} exited ${r.status}: ${failure(r.stderr, 1) || stdoutError(r.stdout)}`);
   return id;
+}
+// The error a session reported on stdout: `claude -p --output-format json` puts it in the result there, and stderr
+// stays empty, so failures were logged as a bare "claude exited 1:" (2026-11-24); codex --json emits error events.
+function stdoutError(out) {
+  const errs = [];
+  for (const l of (out || "").split("\n")) {
+    try {
+      const e = JSON.parse(l);
+      if (e.is_error || e.subtype?.startsWith("error")) errs.push(e.result || (e.errors || []).join("; ") || e.subtype);
+      else if (e.type === "error" || e.type === "turn.failed") errs.push(e.message || e.error?.message || JSON.stringify(e).slice(0, 300));
+    } catch {}
+  }
+  return String(errs.pop() || failure(out, 1)).replace(/\s+/g, " ").slice(0, 300);
 }
 
 // ---- integration ----
