@@ -5,77 +5,125 @@
  "auditor": "claude-sonnet-5-5",
  "rules": 7,
  "living": false,
- "role": "First Lady of Argentina and Peronist leader (1946–1952)",
- "summary": "Eva Perón was the wife of President Juan Perón and a central figure of Peronism, devoted to the working class, the unions and the poor. She ran the Eva Perón Foundation, campaigned for women's suffrage and led the Female Peronist Party. Her words centre on loyalty to Perón, the descamisados and opposition to oligarchy and imperialism.",
+ "role": "First Lady of Argentina (1946–1952), head of the Eva Perón Foundation and the Female Peronist Party",
+ "summary": "Eva Perón was a Peronist leader who spoke for the working poor, led the union-backed Peronist movement's women's branch and ran a large social-aid foundation. She presented Peronism as a third way between capitalism and communism and held up Juan Perón as the unique leader of the nation.",
  "wikipedia": "https://en.wikipedia.org/wiki/Eva_Per%C3%B3n",
  "sources": [
   {
    "id": "s1",
    "kind": "primary",
    "evidence": "words",
-   "title": "La razón de mi vida (1951), prologue and chapter XXI 'Los obreros y yo' (Peuser edition, excerpted copy on a UBC course site)",
-   "author": "Eva Perón",
-   "url": "https://blogs.ubc.ca/span221/files/2018/03/evita_obreros.pdf",
-   "usedFor": "Her own words on workers, unions (sindicalismo) and Perón."
+   "title": "Historia del Peronismo (1951), excerpts in English, Internet Modern History Sourcebook",
+   "author": "Eva Duarte de Perón",
+   "url": "https://sourcebooks.web.fordham.edu/mod/1951evaperon.asp",
+   "usedFor": "Capitalism and communism, Perón as the nation, nationalisation and syndicalism."
   },
   {
    "id": "s2",
    "kind": "primary",
    "evidence": "words",
-   "title": "Historia del Peronismo (1951), excerpts in English (Internet Modern History Sourcebook)",
+   "title": "Speech to Peronist women of the Capital, 1950, Internet Modern History Sourcebook",
    "author": "Eva Duarte de Perón",
-   "url": "https://sourcebooks.web.fordham.edu/mod/1951evaperon.asp",
-   "usedFor": "Her lectures: Peronism against capitalism and communism, unions, the poor, Perón as the nation."
+   "url": "https://sourcebooks.web.fordham.edu/mod/1950evaspeech.asp",
+   "usedFor": "Her Female Peronist Party leadership and its relation to the men's movement."
   },
   {
    "id": "s3",
    "kind": "primary",
    "evidence": "words",
-   "title": "Speech to the Descamisados, 17 October 1951 (translation on marxists.org)",
+   "title": "Speech to the Descamisados, 17 October 1951 (translated), Marxists Internet Archive",
    "author": "Eva Perón",
    "url": "https://www.marxists.org/history/argentina/peron/1951/speech.htm",
-   "usedFor": "Her last public speech: loyalty to Perón, readiness to die for the cause."
+   "usedFor": "Her last public speech: loyalty to Perón and the workers."
   },
   {
    "id": "s4",
    "kind": "primary",
    "evidence": "words",
-   "title": "Speech to the Female Peronist Party, 4 May 1950 (Fordham sourcebook, with Spanish original)",
+   "title": "La razón de mi vida (Peuser, 1951), chapter XXI 'Los obreros y yo' and chapter pages, as hosted by La Baldrich on a UBC course page",
    "author": "Eva Perón",
-   "url": "https://sourcebooks.web.fordham.edu/mod/1950evaspeech.asp",
-   "usedFor": "Women's party, collaboration with men, loyalty to Perón."
+   "url": "https://blogs.ubc.ca/span221/files/2018/03/evita_obreros.pdf",
+   "usedFor": "Read for her views on workers and unions; no position settled a further statement."
   },
   {
    "id": "s5",
    "kind": "scholarly",
    "evidence": "action",
-   "title": "La palabra viva de Eva Perón (scholarly article quoting and dating her speeches and books)",
+   "title": "La palabra viva de Eva Perón (record of her foundation, women's party and union role)",
    "author": "Alberto Julián Pérez",
    "url": "https://cedinpe.unsam.edu.ar/sites/default/files/pdfs/eva_peron_la_palabra_viva_de_eva_peron.pdf",
-   "usedFor": "Report of her record: campaign for the women's suffrage law, the Female Peronist Party, the Eva Perón Foundation."
+   "usedFor": "Her record: the Foundation's social aid, the women's party, her role with unions."
   },
   {
    "id": "s6",
    "kind": "scholarly",
    "evidence": "words",
-   "title": "La palabra viva de Eva Perón (same article, her positions as summarised and quoted)",
+   "title": "La palabra viva de Eva Perón (her speeches and books as summarised and quoted)",
    "author": "Alberto Julián Pérez",
    "url": "https://cedinpe.unsam.edu.ar/sites/default/files/pdfs/eva_peron_la_palabra_viva_de_eva_peron.pdf",
-   "usedFor": "Her stated views on capital, labour, the poor and the state."
+   "usedFor": "Her speeches and writings, 1946-1952."
+  },
+  {
+   "id": "s7",
+   "kind": "reference",
+   "evidence": "action",
+   "title": "Eva Peron, Encyclopaedia Britannica",
+   "author": "The Editors of Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/biography/Eva-Peron",
+   "usedFor": "Her record: union wage awards, Foundation, women's suffrage law, women's party, compulsory religious education, 1951 vice-presidential bid."
   }
  ],
  "booksNotUsed": [],
  "notFound": [
   {
-   "work": "Mi mensaje (1952) and the complete La razón de mi vida",
+   "work": "La razón de mi vida, full text",
    "tried": [
     {
-     "where": "Web search",
-     "how": "Spanish full-text searches for both books"
+     "where": "archive.org",
+     "how": "Fetched the djvu text and PDF of the scan 'la-razon-de-mi-vida' with scripts/get.js; it returned a landing page"
     },
     {
-     "where": "Project Gutenberg catalog",
-     "how": "node scripts/gutenberg.js --search Peron"
+     "where": "La Baldrich PDF",
+     "how": "Fetched labaldrich.com.ar's PDF address; HTTP 404 (only a partial copy on the UBC course page opened)"
+    }
+   ]
+  },
+  {
+   "work": "Mi mensaje (1987 edition of her last manuscript)",
+   "tried": [
+    {
+     "where": "educ.ar archive",
+     "how": "Fetched backend.educ.ar get-attachment 24409/24405/24404/24406 with scripts/get.js; no copy opened"
+    },
+    {
+     "where": "web search",
+     "how": "Searched for the full text of 'Mi mensaje'; only excerpts and summaries turned up"
+    }
+   ]
+  },
+  {
+   "work": "Evita, Mensajes y discursos (4 volumes, 1999)",
+   "tried": [
+    {
+     "where": "local corpora",
+     "how": "Searched the maintainer reference library by name; no file for her"
+    },
+    {
+     "where": "web search",
+     "how": "Searched for the volumes' text; found only scholarly quotations"
+    }
+   ]
+  },
+  {
+   "work": "Ley 13.010 (women's suffrage law, 1947)",
+   "tried": [
+    {
+     "where": "Infoleg",
+     "how": "Fetched the Infoleg page by id; it returned a different law's page"
+    },
+    {
+     "where": "web search",
+     "how": "Searched for the law's text; no copy opened"
     }
    ]
   }
@@ -100,10 +148,12 @@
    "sources": []
   },
   "public-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In a 1949 speech she praised the nationalisation of railways, ports, insurance and telephones that earlier governments had sold to foreigners (as reported by Pérez).",
+   "sources": [
+    "s6"
+   ]
   },
   "tax-the-wealthy": {
    "value": null,
@@ -113,11 +163,10 @@
   },
   "unions-good": {
    "value": 2,
-   "confidence": "high",
-   "rationale": "She calls the unions the organised force of the movement and says Argentine unions authentically represent their members and defend workers' gains.",
+   "confidence": "medium",
+   "rationale": "She acted as the de facto labour minister, awarding generous wage increases to the unions, who answered with political support for the Perón government (Britannica).",
    "sources": [
-    "s2",
-    "s1"
+    "s7"
    ]
   },
   "property-fundamental": {
@@ -211,10 +260,12 @@
    "sources": []
   },
   "more-religion-public": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She introduced compulsory religious education into all Argentine schools (Britannica).",
+   "sources": [
+    "s7"
+   ]
   },
   "correct-racial-injustice": {
    "value": null,
@@ -229,10 +280,12 @@
    "sources": []
   },
   "preserve-national-culture": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In a 1949 speech to railway workers she called for cleansing the nation of sell-outs and instilling the criollo spirit in place of the foreign (as reported by Pérez).",
+   "sources": [
+    "s6"
+   ]
   },
   "gradual-change": {
    "value": null,
@@ -806,10 +859,9 @@
   },
   "class-collaboration": {
    "value": 1,
-   "confidence": "low",
-   "rationale": "She describes Peronism as putting capital at the service of the economy and, in the scholarly account, a 'humanised capitalism' joining state, capital and labour; she also calls for the oligarchy to be fought.",
+   "confidence": "medium",
+   "rationale": "Scholarship reports her 1949 speech presenting the Third Position as harmonising the forces of state, capital and labour.",
    "sources": [
-    "s2",
     "s6"
    ]
   },
@@ -922,10 +974,12 @@
    "sources": []
   },
   "equal-moral-worth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In a 1947 speech she called for an end to discrimination in the world by race, nationality, sex, ideas, religion and economic power (as reported by Pérez).",
+   "sources": [
+    "s6"
+   ]
   },
   "socialism-one-country": {
    "value": null,
@@ -958,10 +1012,12 @@
    "sources": []
   },
   "no-religion-state-schools": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "She introduced compulsory religious education into all Argentine schools (Britannica).",
+   "sources": [
+    "s7"
+   ]
   },
   "state-strengthens-encirclement": {
    "value": null,
@@ -1026,8 +1082,9 @@
   "priority-to-poor": {
    "value": 2,
    "confidence": "medium",
-   "rationale": "A scholarly account reports she built the Eva Perón Foundation to give aid to the poor as social justice rather than rich people's charity.",
+   "rationale": "Her Foundation, funded from union and business contributions and the national lottery, built hospitals, schools and homes for the poor, and the Peronist government organised social aid for those without social protection.",
    "sources": [
+    "s7",
     "s5"
    ]
   },
@@ -1068,10 +1125,12 @@
    "sources": []
   },
   "price-controls-essentials": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In a 1946 national radio speech she urged housewives to make merchants respect the government's maximum prices (as reported by Pérez).",
+   "sources": [
+    "s6"
+   ]
   },
   "party-controls-media": {
    "value": null,
@@ -1388,10 +1447,10 @@
   "leader-cult": {
    "value": 2,
    "confidence": "high",
-   "rationale": "She writes 'Perón is the nation, Perón is work, and Perón is well-being' and calls him a condor above all others; she asks crowds to vow their lives to him.",
+   "rationale": "She wrote that Perón is the nation, work and well-being, and in her speeches and lectures kept up a public cult of Perón as the unique leader.",
    "sources": [
-    "s2",
-    "s3"
+    "s1",
+    "s6"
    ]
   },
   "equal-parenting": {
@@ -1997,9 +2056,10 @@
   "neither-capitalism-nor-communism": {
    "value": 2,
    "confidence": "high",
-   "rationale": "In Historia del Peronismo she says Perón defeated both capitalism and communism and replaced them with social justice and syndicalism.",
+   "rationale": "In her 1951 History of Peronism text she says Perón defeated both capitalism and communism, replacing them with social economy and syndicalism; she presents Peronism as the Third Position.",
    "sources": [
-    "s2"
+    "s1",
+    "s6"
    ]
   },
   "historical-land-claim": {
@@ -2773,9 +2833,9 @@
   "women-suffrage": {
    "value": 2,
    "confidence": "medium",
-   "rationale": "A scholarly account reports that she campaigned by radio and press for the 1947 women's suffrage law and demanded women's civic and political will, ending traditional tutelage.",
+   "rationale": "Britannica credits her as largely responsible for passage of the women's suffrage law, which gave women the vote.",
    "sources": [
-    "s5"
+    "s7"
    ]
   },
   "religion-oppresses-women": {
@@ -3307,10 +3367,13 @@
    "sources": []
   },
   "women-organise-apart-from-men": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She founded and led the separate Female Peronist Party in 1949, a women's branch apart from the men's party.",
+   "sources": [
+    "s7",
+    "s5"
+   ]
   },
   "human-caused-global-warming": {
    "value": null,
@@ -3409,10 +3472,12 @@
    "sources": []
   },
   "price-controls-fight-inflation": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Her 1946 radio speech backed the government campaign against speculation and high living costs by enforcing maximum prices (as reported by Pérez).",
+   "sources": [
+    "s6"
+   ]
   },
   "femininity-compatible-with-feminism": {
    "value": null,
@@ -3685,5 +3750,5 @@
    "sources": []
   }
  },
- "notes": "Her record is mostly charity, women's organising and loyalty to Perón; she held no office, so few statements on government or world are settled by her own words. Searched: economy, society, government, world, liberty. Her speeches were partly drafted by collaborators; words delivered as hers count."
+ "notes": "Searched economy, government, society, world and religion themes in her speeches, Historia del Peronismo excerpts, Britannica and one scholarly study of her words. Most statements are left null because her sources do not speak to them. Her own books beyond excerpts could not be opened in full."
 }
