@@ -1,8 +1,10 @@
 {
  "id": "manny-pacquiao",
  "name": "Manny Pacquiao",
- "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditedAt": "2026-11-24",
+ "auditor": [
+  "claude-sonnet-5-5"
+ ],
  "living": true,
  "role": "Filipino boxer; congressman (2010-2016), senator (2016-2022), 2022 presidential candidate",
  "summary": "Former world boxing champion turned Philippine legislator and born-again evangelical. His documented positions center on religiously grounded social conservatism (against same-sex marriage and divorce), anti-corruption and poverty/housing themes, federalism, and a drug-war stance that moved from support to acknowledging possible extrajudicial killings. He has a thin legislative record and few stated positions on most economic and institutional questions.",
@@ -14,7 +16,8 @@
    "title": "Manny Pacquiao",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Manny_Pacquiao",
-   "usedFor": "Identity, birth year 1978, offices (Representative 2010-16, Senator 2016-22, 2022 presidential run, 2025 Senate bid), legislative record"
+   "usedFor": "Identity, birth year 1978, offices (Representative 2010-16, Senator 2016-22, 2022 presidential run, 2025 Senate bid), legislative record",
+   "evidence": "action"
   },
   {
    "id": "s2",
@@ -22,7 +25,8 @@
    "title": "Senator Manny Pacquiao preaches death penalty",
    "author": "Gulf Times",
    "url": "https://www.gulf-times.com/story/506437/Senator-Manny-Pacquiao-preaches-death-penalty",
-   "usedFor": "His August 2016 Senate speech on the death penalty"
+   "usedFor": "His August 2016 Senate speech on the death penalty",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +34,8 @@
    "title": "Pacquiao won't push for death penalty for now, says judicial system needs fixing",
    "author": "GMA News",
    "url": "https://www.gmanetwork.com/news/topstories/nation/810103/pacquiao-won-t-push-for-death-penalty-for-now-says-judicial-system-needs-fixing/story/",
-   "usedFor": "2021 interview: death penalty, same-sex marriage, corruption"
+   "usedFor": "2021 interview: death penalty, same-sex marriage, corruption",
+   "evidence": "words"
   },
   {
    "id": "s4",
@@ -38,7 +43,8 @@
    "title": "Pacquiao won't push for divorce",
    "author": "GMA News",
    "url": "https://www.gmanetwork.com/news/topstories/nation/814732/pacquiao-won-t-push-for-divorce/story",
-   "usedFor": "December 2021 statements on divorce and marriage"
+   "usedFor": "December 2021 statements on divorce and marriage",
+   "evidence": "words"
   },
   {
    "id": "s5",
@@ -46,7 +52,8 @@
    "title": "Pacquiao, Manny: presidential candidate profile",
    "author": "Vote Pilipinas",
    "url": "https://votepilipinas.com/candidate/pacquiao-manny.html",
-   "usedFor": "Death penalty reversal, divorce, SOGIE, corruption, housing law, religious leaders in cabinet"
+   "usedFor": "Death penalty reversal, divorce, SOGIE, corruption, housing law, religious leaders in cabinet",
+   "evidence": "words"
   },
   {
    "id": "s6",
@@ -54,7 +61,8 @@
    "title": "Manny Pacquiao Vows to Fight to the End in Philippine Presidential Race",
    "author": "BenarNews",
    "url": "https://www.benarnews.org/english/news/philippine/pacquaio-presidential-run-02152022160241.html",
-   "usedFor": "February 2022 quotes on drug war, ICC, China"
+   "usedFor": "February 2022 quotes on drug war, ICC, China",
+   "evidence": "words"
   },
   {
    "id": "s7",
@@ -62,7 +70,26 @@
    "title": "Filipino senators and allies of President Duterte support shift to federalism",
    "author": "ConstitutionNet",
    "url": "https://constitutionnet.org/fr/news/filipino-senators-and-allies-president-duterte-support-shift-federalism-incoming-18th-congress",
-   "usedFor": "2019 federalism remarks"
+   "usedFor": "2019 federalism remarks",
+   "evidence": "words"
+  },
+  {
+   "id": "s8",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Pacquiao maintains hard stance vs abortion even in rape-induced pregnancies",
+   "author": "ABS-CBN News",
+   "url": "https://abs-cbn.com/news/01/28/22/pacquiao-maintains-stance-vs-abortion-even-in-rape-cases",
+   "usedFor": "January 2022 Boy Abunda presidential interview: opposes abortion even after rape"
+  },
+  {
+   "id": "s9",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "De Guzman, Pacquiao favor raising minimum wage",
+   "author": "GMA News",
+   "url": "https://www.gmanetwork.com/news/money/economy/823296/de-guzman-pacquiao-favor-raising-minimum-wage/story",
+   "usedFor": "March 2022 CNN Philippines presidential debate: minimum wage should be P700-800"
   }
  ],
  "answers": {
@@ -73,10 +100,12 @@
    "sources": []
   },
   "raise-minimum-wage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "In the March 2022 presidential debate he said the daily minimum wage should be P700-800, against a prevailing top rate of P537 (s9).",
+   "sources": [
+    "s9"
+   ]
   },
   "markets-allocate-better": {
    "value": null,
@@ -191,10 +220,12 @@
    ]
   },
   "abortion-legal": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "In his January 2022 presidential interview he stood by his pro-life position even for pregnancies from rape, proposing counselling instead of abortion (s8).",
+   "sources": [
+    "s8"
+   ]
   },
   "more-religion-public": {
    "value": 1,
@@ -985,8 +1016,30 @@
    "confidence": "medium",
    "rationale": "Principal Senate author of the law creating the Department of Human Settlements and Urban Development (R.A. 11201) and campaigned on poverty and housing for the poor.",
    "sources": [
-    "s5",
-    "s1"
+    "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Principal Senate author of the law creating the Department of Human Settlements and Urban Development (R.A. 11201) and campaigned on poverty and housing for the poor.",
+     "sources": [
+      "s5",
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Principal Senate author of the law creating the Department of Human Settlements and Urban Development (R.A. 11201) and campaigned on poverty and housing for the poor.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-24"
+    }
    ]
   },
   "right-to-buy-council-homes": {
@@ -2821,8 +2874,30 @@
    "confidence": "low",
    "rationale": "Criticised Duterte's soft line on China in 2021 and in 2022 said 'we would not be bullied', planning a peace panel with China while saying he would invoke the US mutual defense treaty if talks failed and 'we are friends to all nations'. Mixed.",
    "sources": [
-    "s1",
     "s6"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "low",
+     "rationale": "Criticised Duterte's soft line on China in 2021 and in 2022 said 'we would not be bullied', planning a peace panel with China while saying he would invoke the US mutual defense treaty if talks failed and 'we are friends to all nations'. Mixed.",
+     "sources": [
+      "s1",
+      "s6"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": -1,
+     "confidence": "low",
+     "rationale": "Criticised Duterte's soft line on China in 2021 and in 2022 said 'we would not be bullied', planning a peace panel with China while saying he would invoke the US mutual defense treaty if talks failed and 'we are friends to all nations'. Mixed.",
+     "sources": [
+      "s6"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-24"
+    }
    ]
   },
   "protect-kin-minorities": {
@@ -2950,15 +3025,773 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "military-force-for-human-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "revolution-legitimate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-violence-legitimate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "power-shapes-accepted-knowledge": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "initiating-nondefensive-force-unjustified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-policy-non-interference": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "harassment-claims-court-access": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-force-beyond-defence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "publish-international-agreements": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mutual-intelligibility-defines-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "voluntary-union-payments-at-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "technology-design-reflects-political-interests": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recognize-territorial-claims-from-conquest": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "decent-living-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
   }
  },
- "notes": "Death penalty: strongly in favour 2016-2018, then in November 2021 held his bill pending judicial reform. Drug war: supported as senator, in 2022 said extrajudicial killings may have occurred. Many topics (abortion, age of criminal responsibility, anti-terror vote, wage platform) were found only in pages that could not be opened, so left null.",
+ "notes": "Death penalty: strongly in favour 2016-2018, then in November 2021 held his bill pending judicial reform. Drug war: supported as senator, in 2022 said extrajudicial killings may have occurred. This pass added abortion and minimum wage from opened pages. Searched: economy (wages, stimulus bill, tobacco tax), society (abortion), government (anti-terror law vote, federalism), world (West Philippine Sea, China, ICC). His 2020 vote for the Anti-Terrorism Act and his P335B stimulus bill were found but do not settle the surveillance or deficit statements, so those stay null. Senate legacy pages and Manila Bulletin were blocked to all download agents.",
  "reviews": [
   {
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 1
+  }
+ ],
+ "rules": 7,
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-24"
+  }
+ ],
+ "notFound": [
+  {
+   "work": "Senate press releases and bill texts (legacy.senate.gov.ph)",
+   "tried": [
+    {
+     "where": "legacy.senate.gov.ph",
+     "how": "scripts/get.js, all agents refused (403/bot check)"
+    },
+    {
+     "where": "web search",
+     "how": "searched bill titles; found only news reports of the bills"
+    }
+   ]
   }
  ]
 }
