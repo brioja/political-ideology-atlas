@@ -1,11 +1,14 @@
 {
   "id": "corey-lewandowski",
   "name": "Corey Lewandowski",
-  "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditedAt": "2026-11-24",
+  "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.2-sol"
+  ],
   "living": true,
   "role": "Former senior adviser to DHS Secretary Kristi Noem (2025-2026); Trump's first 2016 campaign manager",
-  "summary": "Lewandowski is a Republican political operative who ran Donald Trump's 2016 campaign and later advised the Department of Homeland Security. His recorded public statements are mainly about border policy and immigration enforcement, with some remarks on trade with China, climate policy and health care. He has given few on-record views on most of the test's topics, so most answers are null.",
+  "summary": "Lewandowski managed Donald Trump’s 2016 campaign and later advised the Department of Homeland Security. In interviews he endorsed continued controls on entry into the United States and called for voters to present government-issued identification at the polls.",
   "wikipedia": "https://en.wikipedia.org/wiki/Corey_Lewandowski",
   "sources": [
     {
@@ -14,7 +17,8 @@
       "title": "Zero Tolerance interview with Corey Lewandowski (FRONTLINE)",
       "author": "Michael Kirk, PBS FRONTLINE",
       "url": "https://www.pbs.org/wgbh/frontline/interview/corey-lewandowski-2",
-      "usedFor": "His July 9, 2019 interview on border wall, limiting immigration, open borders, fair trade, and health care markets"
+      "usedFor": "His July 9, 2019 interview on border wall, limiting immigration, open borders, fair trade, and health care markets",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,7 +26,8 @@
       "title": "Former Trump campaign manager visits Topeka, talks 2020 election",
       "author": "KSNT 27 News",
       "url": "https://digital-release.ksnt.com/news/former-trump-campaign-manager-visits-topeka-talks-2020-election",
-      "usedFor": "Quotes from his March 7, 2019 Topeka remarks on China market access and trade"
+      "usedFor": "Historical citation retained for the review history of the committed audit.",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -30,15 +35,8 @@
       "title": "Corey Lewandowski",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Corey_Lewandowski",
-      "usedFor": "Role and dates (senior adviser to DHS, April 2025 to March 2026), birth year, and his undated RGGI remark at Americans for Prosperity"
-    },
-    {
-      "id": "s4",
-      "kind": "reference",
-      "title": "Let Trump Be Trump",
-      "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Let_Trump_Be_Trump",
-      "usedFor": "Confirms the book is co-written with David Bossie (Center Street, 2017). No positions were taken from it: the page does not describe policy content"
+      "usedFor": "Historical citation retained for the review history of the committed audit.",
+      "evidence": "words"
     },
     {
       "id": "s5",
@@ -46,16 +44,62 @@
       "title": "Trump campaign's latest anti-immigrant screed: round and deport or self-deport",
       "author": "Alternet",
       "url": "https://www.alternet.org/2015/07/trump-campaigns-latest-anti-immigrant-screed-round-and-deport-or-self-deport",
-      "usedFor": "His July 28, 2015 radio interview with John Fredericks: he agreed the campaign would round up and send back those here illegally, and argued for a wall. Superseded by the 2019 interview"
+      "usedFor": "Historical citation retained for the review history of the committed audit.",
+      "evidence": "words"
+    },
+    {
+      "id": "s6",
+      "kind": "reference",
+      "evidence": "words",
+      "title": "How to Live Freer in New Hampshire (Wall Street Journal column reprinted by the New Hampshire House Republican Caucus)",
+      "author": "Stephen Moore",
+      "url": "https://www.nhhousegop.com/news-updates/wall-street-journal-how-to-live-freer-in-new-hampshire/",
+      "usedFor": "Checked the context of the criticism of the Regional Greenhouse Gas Initiative for the climate review."
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "CNN Tonight transcript, November 7, 2016",
+      "url": "https://transcripts.cnn.com/show/cnnt/date/2016-11-07/segment/03",
+      "usedFor": "Lewandowski’s remarks on identification at the polls."
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "New Day transcript, March 5, 2018",
+      "url": "https://transcripts.cnn.com/show/nday/date/2018-03-05/segment/03",
+      "usedFor": "Checked Lewandowski’s account of Trump’s steel and aluminum tariffs for the trade review."
     }
   ],
   "answers": {
     "universal-healthcare": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "In the July 2019 PBS FRONTLINE interview he listed among Trump's health care priorities \"giving people the opportunity to buy their health care across state lines\", a market-based approach. He did not address state-provided universal coverage directly, so this is low confidence.",
-      "sources": [
-        "s1"
+      "rationale": "His support for coverage of pre-existing conditions and purchasing insurance across state lines leaves open whether government should provide universal coverage.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "In the July 2019 PBS FRONTLINE interview he listed among Trump's health care priorities \"giving people the opportunity to buy their health care across state lines\", a market-based approach. He did not address state-provided universal coverage directly, so this is low confidence.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "His support for coverage of pre-existing conditions and purchasing insurance across state lines leaves open whether government should provide universal coverage.",
+          "sources": [
+            "s1"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-24"
+        }
       ]
     },
     "raise-minimum-wage": {
@@ -209,12 +253,32 @@
       "sources": []
     },
     "reduce-immigration": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "In a July 2019 PBS FRONTLINE interview he favored \"limiting the number of people coming in as opposed to open borders\" and called building the wall the first order of business. The campaign's 2015 position, reported by Alternet, was mass removal; his later mass-deportation remark (\"complete fallacy\") is the more recent clear statement and is the one used.",
-      "sources": [
-        "s1",
-        "s5"
+      "value": null,
+      "confidence": "low",
+      "rationale": "In the FRONTLINE interview he called for a wall and described controlled entry with a continuing route to asylum. His contrast between limiting arrivals and opening borders leaves open how tightly he would limit lawful immigration.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "In a July 2019 PBS FRONTLINE interview he favored \"limiting the number of people coming in as opposed to open borders\" and called building the wall the first order of business. The campaign's 2015 position, reported by Alternet, was mass removal; his later mass-deportation remark (\"complete fallacy\") is the more recent clear statement and is the one used.",
+          "sources": [
+            "s1",
+            "s5"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "In the FRONTLINE interview he called for a wall and described controlled entry with a continuing route to asylum. His contrast between limiting arrivals and opening borders leaves open how tightly he would limit lawful immigration.",
+          "sources": [
+            "s1"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-24"
+        }
       ]
     },
     "empower-international-orgs": {
@@ -238,9 +302,31 @@
     "open-borders": {
       "value": -2,
       "confidence": "high",
-      "rationale": "In a July 2019 PBS FRONTLINE interview he said border policy should be \"limiting the number of people coming in as opposed to open borders\".",
+      "rationale": "In the FRONTLINE interview he backed continued controls on entry, calling a border wall the first priority and describing a formal process for people to enter the United States.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "In a July 2019 PBS FRONTLINE interview he said border policy should be \"limiting the number of people coming in as opposed to open borders\".",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "In the FRONTLINE interview he backed continued controls on entry, calling a border wall the first priority and describing a formal process for people to enter the United States.",
+          "sources": [
+            "s1"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-24"
+        }
       ]
     },
     "limit-growth": {
@@ -250,11 +336,31 @@
       "sources": []
     },
     "drastic-climate-action": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "While at Americans for Prosperity he said the Regional Greenhouse Gas Initiative \"does nothing to reduce greenhouse gases\" because jobs and businesses move to other states, as reported in Wikipedia (undated). This criticises a regional emissions program's effectiveness rather than the case for climate action, so it is low confidence.",
-      "sources": [
-        "s3"
+      "rationale": "The Wall Street Journal column quotes him arguing that a regional cap-and-trade system would shift emissions elsewhere. That objection leaves open what scale of government action he thinks climate change requires.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "While at Americans for Prosperity he said the Regional Greenhouse Gas Initiative \"does nothing to reduce greenhouse gases\" because jobs and businesses move to other states, as reported in Wikipedia (undated). This criticises a regional emissions program's effectiveness rather than the case for climate action, so it is low confidence.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The Wall Street Journal column quotes him arguing that a regional cap-and-trade system would shift emissions elsewhere. That objection leaves open what scale of government action he thinks climate change requires.",
+          "sources": [
+            "s6"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-24"
+        }
       ]
     },
     "tech-solves-problems": {
@@ -306,12 +412,32 @@
       "sources": []
     },
     "tariffs-protect-industry": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "In March 2019 he said access to the Chinese market requires China to treat the US fairly, citing the president's China trade approach. He did not discuss tariffs as protection for domestic industry, so this is low confidence.",
-      "sources": [
-        "s2",
-        "s1"
+      "rationale": "In the 2018 CNN interview he explained Trump’s national-security case for the steel and aluminum tariffs. His explanation of that policy leaves open his own position on tariffs to protect domestic industry from competition.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "In March 2019 he said access to the Chinese market requires China to treat the US fairly, citing the president's China trade approach. He did not discuss tariffs as protection for domestic industry, so this is low confidence.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "In the 2018 CNN interview he explained Trump’s national-security case for the steel and aluminum tariffs. His explanation of that policy leaves open his own position on tariffs to protect domestic industry from competition.",
+          "sources": [
+            "s8"
+          ],
+          "author": "gpt-6.2-sol",
+          "date": "2026-11-24"
+        }
       ]
     },
     "state-directs-investment": {
@@ -2637,10 +2763,12 @@
       "sources": []
     },
     "voter-id": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He said voters should present government-issued identification and compared the check at the polls to the identification check for boarding a plane.",
+      "sources": [
+        "s7"
+      ]
     },
     "religious-equal-recognition": {
       "value": null,
@@ -2917,7 +3045,812 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "military-force-for-human-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "revolution-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-violence-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "power-shapes-accepted-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "initiating-nondefensive-force-unjustified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-policy-non-interference": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "harassment-claims-court-access": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-force-beyond-defence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "publish-international-agreements": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mutual-intelligibility-defines-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "voluntary-union-payments-at-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-design-reflects-political-interests": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recognize-territorial-claims-from-conquest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "Thin public record of his own views. Most of his on-record statements concern immigration enforcement, trade with China and the 2015-2019 campaign, and are mostly paraphrases or reports rather than his full words. In 2015 he endorsed the campaign's mass-removal plan (\"Yes, that's right\"); in 2019 he called mass removal a \"complete fallacy\" (FRONTLINE), so the later statement is used. He defended family separation rhetorically in 2018 but gave no position on the policy's merits that matches any statement. The 2019 FRONTLINE excerpt contains no statement on taxes, so tax statements are null. Advocacy for Trump and his campaign is not counted as a position on any statement. Several outlets have reported controversies about his DHS role and conduct (2025-2026); those reports are not used for answers."
+  "notes": "Reviewed the statement bank, including candidates, against the public record. Searched government and elections through campaign interviews and House testimony, immigration and foreign affairs through FRONTLINE, DHS reporting and interviews, and economic, social, liberty, cultural, ecological, technology, political means and globalism topics through the local interview corpus and targeted searches. Reports on his role in interior immigration enforcement do not establish his desired level of lawful admissions or an immediate-return rule at the border. The available Trump: America First excerpt concerns a campaign appearance at Daytona. The publisher listings and available excerpts cover only part of the three coauthored books.",
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.2-sol",
+      "auditedAt": "2026-11-24"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "gpt-6.2-sol",
+      "reviewedAt": "2026-11-24",
+      "nulled": 4
+    }
+  ],
+  "notFound": [
+    {
+      "work": "Let Trump Be Trump (full text)",
+      "tried": [
+        {
+          "where": "Maintainer reference library",
+          "how": "Searched the book and author filenames."
+        },
+        {
+          "where": "Hachette Book Group",
+          "how": "Read the publisher listing and checked for a full-text reading option."
+        }
+      ]
+    },
+    {
+      "work": "Trump’s Enemies (full text)",
+      "tried": [
+        {
+          "where": "Maintainer reference library",
+          "how": "Searched the book and author filenames."
+        },
+        {
+          "where": "Hachette Book Group",
+          "how": "Read the publisher listing and checked for a full-text reading option."
+        }
+      ]
+    },
+    {
+      "work": "Trump: America First (full text)",
+      "tried": [
+        {
+          "where": "Maintainer reference library",
+          "how": "Searched the book and author filenames."
+        },
+        {
+          "where": "Hachette Book Group",
+          "how": "Read the publisher listing and checked for a full-text reading option."
+        }
+      ]
+    },
+    {
+      "work": "A Giant Leap Forward: New Hampshire Smacks Down Cap-and-Trade (Lewandowski and Kerpen op-ed)",
+      "tried": [
+        {
+          "where": "Fox News",
+          "how": "Tried the original link from Grist through the cached fetch tool."
+        },
+        {
+          "where": "Web search",
+          "how": "Searched for the title, authors and a reprint."
+        }
+      ]
+    }
+  ]
 }
