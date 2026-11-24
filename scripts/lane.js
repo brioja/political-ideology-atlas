@@ -301,6 +301,7 @@ const settle = () => new Promise((r) => setTimeout(r, 100));
 if (process.argv.includes("--dry")) { console.log(nextSubject()); process.exit(0); }
 (async () => {
 let count = 0;
+log(`lane ${LANE} (${ENGINE}, ${KIND}) started${UNTIL ? `, until ${UNTIL}` : ""}`);
 locked(() => push(true));
 if (PEOPLE) books();
 while (timeLeft()) {
