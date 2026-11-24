@@ -5,7 +5,9 @@
 // The likelihood is learned from the audits already done: a logistic regression on Wikidata facts about
 // each person (offices held, party, stated ideology, occupations, notable works, memberships, number of
 // Wikipedia languages, era; own writings: a Gutenberg author ID, works authored and own full-length books
-// already on disk (about 20,000 words or more; fetched by prefetch-books.js before each people run), kept only if they raise the cross-validated AUC) plus page views, fitted to pass/fail (on the site or not) of every audited
+// already on disk (about 20,000 words or more; fetched by prefetch-books.js before each people run), kept only if they raise the cross-validated AUC) plus page views
+// and the number of ideology audits that list the person as a key figure (matched by Wikipedia URL; also kept only if it
+// raises the cross-validated AUC: key figures passed 81% against 33%, within every page-views quartile, 2026-11-24), fitted to pass/fail (on the site or not) of every audited
 // person. The regularisation strength is chosen by cross-validation; nothing is hand-weighted. Gender and
 // region are left out on purpose: they would only reproduce who has been documented, not who has a record.
 // Rerun after audits (labels grow): writes audits/people-triage.json, read by pending.js --triage.
@@ -16,7 +18,19 @@ const path = require("path");
 const lib = require("./lib");
 
 const OUT = path.join(lib.ROOT, "audits", "people-triage.json");
-const MIN_OCC = 15; // an occupation becomes a feature when at least this many catalog people have it
+const MIN_OCC = 15;
+
+// How many ideology audits list each person as a key figure, keyed by the Wikipedia article title.
+const wikiKey = (u) => decodeURIComponent((u || "").replace(/^https?:\/\/en\.(m\.)?wikipedia\.org\/wiki\//, "")).replace(/_/g, " ").replace(/#.*/, "").toLowerCase().trim();
+function keyFigureCounts() {
+  const n = new Map(), dir = path.join(lib.ROOT, "audits", "profiles");
+  for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+    for (const k of JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")).keyFigures || []) {
+      const t = wikiKey(k.wikipedia); if (t) n.set(t, (n.get(t) || 0) + 1);
+    }
+  }
+  return n;
+} // an occupation becomes a feature when at least this many catalog people have it
 
 async function entities(qids) {
   const out = new Map();
@@ -88,6 +102,7 @@ async function main() {
   // Own books on disk (local Gutenberg corpus, reference library, Marxists section; prefetch-books.js), counted the
   // same way for audited and pending people.
   const available = require("./prefetch-books").availableBooks(people);
+  const keyFig = keyFigureCounts();
   const occCount = new Map();
   for (const f of facts.values()) for (const o of new Set(f.P106)) occCount.set(o, (occCount.get(o) || 0) + 1);
   const occs = [...occCount].filter(([, n]) => n >= MIN_OCC).map(([o]) => o).sort();
@@ -98,12 +113,15 @@ async function main() {
       Math.log1p(f.P800), Math.log1p(f.P463), p.living ? 1 : 0, born < 1500 ? 1 : 0, born >= 1500 && born < 1800 ? 1 : 0,
       born >= 1800 && born < 1900 ? 1 : 0, born >= 1900 && born < 1945 ? 1 : 0, ...occs.map((o) => (f.P106.includes(o) ? 1 : 0)),
       // Own writings (last BOOK_FEATURES columns, so the fit can be compared with and without them).
-      f.gutenberg ? 1 : 0, Math.log1p(works[p.wikidata] || 0), Math.log1p(available[p.id] || 0)];
+      f.gutenberg ? 1 : 0, Math.log1p(works[p.wikidata] || 0), Math.log1p(available[p.id] || 0),
+      // Key figure (last column).
+      Math.log1p(keyFig.get(wikiKey(p.wikipedia)) || 0)];
   };
   const names = ["log views", "log languages", "log offices held", "party", "stated ideology", "log notable works", "log memberships",
     "living", "born <1500", "born 1500-1799", "born 1800-1899", "born 1900-1944", ...occs.map((o) => `occupation ${o}`),
-    "Gutenberg author", "log works authored", "log own books available"];
-  const BOOK_FEATURES = 3;
+    "Gutenberg author", "log works authored", "log own books available", "log key figure of ideologies"];
+  // Optional column groups, each kept only if it raises the cross-validated AUC: own writings, then key figure.
+  const KF = (len) => len - 1, BOOKS = (len) => [len - 4, len - 3, len - 2];
   const all = people.map(raw);
   // Standardise on the whole pool.
   const mean = all[0].map((_, j) => all.reduce((s, r) => s + r[j], 0) / all.length);
@@ -127,14 +145,17 @@ async function main() {
     }
     return auc(sc, yl);
   };
-  const allCols = (x) => x, noBooks = (x) => x.slice(0, x.length - BOOK_FEATURES), viewsOnly = (x) => [x[0]];
+  const len = names.length, drop = (idx) => (x) => x.filter((_, j) => !idx.includes(j)), viewsOnly = (x) => [x[0]];
   const grid = [0.003, 0.01, 0.03, 0.1, 0.3, 1, 3];
   const best = (cols) => grid.map((l) => [l, cv(l, cols)]).sort((a, b) => b[1] - a[1])[0];
-  const withBooks = best(allCols), withoutBooks = best(noBooks);
-  // The own-writings features stay only if they raise the cross-validated AUC.
+  // Own writings first (key figure left in), then key figure on top of that choice.
+  const withBooks = best(drop([])), withoutBooks = best(drop(BOOKS(len)));
   const useBooks = withBooks[1] > withoutBooks[1];
-  const cols = useBooks ? allCols : noBooks;
-  const [lambda, cvAuc] = useBooks ? withBooks : withoutBooks;
+  const booksOff = useBooks ? [] : BOOKS(len);
+  const withKf = useBooks ? withBooks : withoutBooks, withoutKf = best(drop([...booksOff, KF(len)]));
+  const useKf = withKf[1] > withoutKf[1];
+  const cols = drop([...booksOff, ...(useKf ? [] : [KF(len)])]);
+  const [lambda, cvAuc] = useKf ? withKf : withoutKf;
   const viewsAuc = cv(0.01, viewsOnly);
   const model = fit(Xl.map(cols), yl, lambda);
   const scores = {};
@@ -145,8 +166,10 @@ async function main() {
     fitted: new Date().toISOString().slice(0, 10), labelled: yl.length, passed: yl.filter(Boolean).length,
     lambda, crossValidatedAuc: Math.round(cvAuc * 1000) / 1000, viewsOnlyAuc: Math.round(viewsAuc * 1000) / 1000,
     ownWritings: { used: useBooks, aucWith: Math.round(withBooks[1] * 1000) / 1000, aucWithout: Math.round(withoutBooks[1] * 1000) / 1000 },
+    keyFigure: { used: useKf, aucWith: Math.round(withKf[1] * 1000) / 1000, aucWithout: Math.round(withoutKf[1] * 1000) / 1000 },
     topWeights: weights.slice(0, 15), scores }, null, 1) + "\n");
   console.log(`Own-writings features (Gutenberg author, works authored, own books available): AUC ${withBooks[1].toFixed(3)} with, ${withoutBooks[1].toFixed(3)} without -> ${useBooks ? "used" : "left out"}.`);
+  console.log(`Key figure of ideologies: AUC ${withKf[1].toFixed(3)} with, ${withoutKf[1].toFixed(3)} without -> ${useKf ? "used" : "left out"}.`);
   console.log(`${yl.length} audited (${yl.filter(Boolean).length} passed). Cross-validated AUC ${cvAuc.toFixed(3)} (lambda ${lambda}); views alone ${viewsAuc.toFixed(3)}.`);
   console.log("Strongest weights:", weights.slice(0, 10).map(([n, w]) => `${n} ${w}`).join(", "));
 }
