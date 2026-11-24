@@ -1,10 +1,12 @@
 {
   "id": "christian-anarchism",
   "name": "Christian anarchism",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-24",
+  "auditor": [
+    "claude-sonnet-5-5"
+  ],
   "summary": "Christian anarchism holds that Jesus' teaching, above all the Sermon on the Mount's call to non-resistance and love of enemies, is incompatible with the state, which rests on violence and claims an allegiance owed only to God. Adherents are overwhelmingly pacifist, reject war, oaths and military service, favour voluntary poverty, sharing and servant leadership, and distrust hierarchical churches. Methods are nonviolent: refusal, civil disobedience and community, not revolution or politics.",
-  "scope": "The mainstream pacifist strand: Tolstoy (The Kingdom of God Is Within You, drawing on Ballou, Garrison and Chelcicky), Jacques Ellul (Anarchism and Christianity) and the Catholic Worker tradition of Dorothy Day and Ammon Hennacy. Excludes violent Christian revolutionary movements and non-anarchist Christian socialism. Many answers on modern issues are low-confidence inferences because the sources focus on the state, violence and property.",
+  "scope": "The strand the defining scholarship (Christoyannopoulos) treats as Christian anarchism: the claim that, properly understood, Jesus's political teaching, above all the Sermon on the Mount's non-resistance and forgiveness, points to anarchism. It names Tolstoy (rationalist reading, The Kingdom of God Is Within You), Jacques Ellul (Protestant, Anarchism and Christianity), Vernard Eller (Christian Anarchy), Michael Elliott, Dave Andrews and the Catholic Worker tradition of Dorothy Day, Peter Maurin and Ammon Hennacy. Nonviolent; it contrasts itself with Liberation theology, which uses the state. Excludes violent Christian revolutionary movements and non-anarchist Christian socialism. Strands differ on Romans 13, civil disobedience and the institutional church.",
   "wikipedia": "https://en.wikipedia.org/wiki/Christian_anarchism",
   "furtherReading": [
     {
@@ -13,9 +15,14 @@
       "note": "Overview of beliefs, history and key figures."
     },
     {
-      "title": "The Kingdom of God Is Within You (Tolstoy, Gutenberg)",
+      "title": "An Introduction to Christian Anarchism (Christoyannopoulos interview)",
+      "url": "https://theanarchistlibrary.org/library/alexandre-christoyannopoulos-an-introduction-to-christian-anarchism.html",
+      "note": "Short plain definition by the leading scholar."
+    },
+    {
+      "title": "The Kingdom of God Is Within You (Tolstoy)",
       "url": "https://www.gutenberg.org/cache/epub/4602/pg4602.txt",
-      "note": "The founding modern text on non-resistance and the state."
+      "note": "Founding modern text on non-resistance and the state."
     },
     {
       "title": "Anarchism and Christianity (Ellul)",
@@ -26,19 +33,19 @@
   "sources": [
     {
       "id": "s1",
-      "kind": "reference",
-      "title": "Christian anarchism",
-      "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Christian_anarchism",
-      "usedFor": "Overview of beliefs on state, violence, property, church and figures (first 100,000 characters read)."
+      "kind": "scholarly",
+      "title": "Christian Anarchism: A Political Commentary on the Gospel (Anarchist Library copy)",
+      "author": "Alexandre Christoyannopoulos",
+      "url": "https://theanarchistlibrary.org/library/alexandre-christoyannopoulos-christian-anarchism.html",
+      "usedFor": "Defines Christian anarchism, names its thinkers and key texts."
     },
     {
       "id": "s2",
       "kind": "primary",
-      "title": "The Kingdom of God Is Within You",
-      "author": "Leo Tolstoy (trans. Constance Garnett)",
+      "title": "The Kingdom of God Is Within You (Gutenberg 4602, Garnett translation)",
+      "author": "Leo Tolstoy",
       "url": "https://www.gutenberg.org/cache/epub/4602/pg4602.txt",
-      "usedFor": "Non-resistance, military service, oaths, patriotism, taxes, elections (early chapters)."
+      "usedFor": "Non-resistance, military service, oaths, state."
     },
     {
       "id": "s3",
@@ -46,7 +53,23 @@
       "title": "Anarchism and Christianity",
       "author": "Jacques Ellul",
       "url": "https://theanarchistlibrary.org/library/jacques-ellul-anarchism-and-christianity-en.html",
-      "usedFor": "State legitimacy, Romans 13, money, church hierarchy, revolution."
+      "usedFor": "State, Romans 13, money, church, revolution."
+    },
+    {
+      "id": "s4",
+      "kind": "secondary",
+      "title": "An Introduction to Christian Anarchism: an interview with Dr. Alexandre Christoyannopoulos",
+      "author": "Alexandre Christoyannopoulos",
+      "url": "https://theanarchistlibrary.org/library/alexandre-christoyannopoulos-an-introduction-to-christian-anarchism.html",
+      "usedFor": "Short definition, scriptures, strands, Liberation theology contrast."
+    },
+    {
+      "id": "s5",
+      "kind": "secondary",
+      "title": "Was Jesus an anarchist? (BBC Will & Testament blog post, Anarchist Library copy)",
+      "author": "William Crawley",
+      "url": "https://theanarchistlibrary.org/library/william-crawley-was-jesus-an-anarchist-en.html",
+      "usedFor": "Account of the book's argument."
     }
   ],
   "answers": {
@@ -87,11 +110,31 @@
       ]
     },
     "unions-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents split: Catholic Worker figures backed labour solidarity, while others reject organised coercive pressure; the sources do not settle it.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents split: Catholic Worker figures backed labour solidarity, while others reject organised coercive pressure; the sources do not settle it.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "property-fundamental": {
@@ -145,9 +188,33 @@
     "state-harmful": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Ellul says the state is illegitimate and must be destroyed unless it serves all; Wikipedia describes the state as violent, deceitful and idolatrous in their view.",
+      "rationale": "Christoyannopoulos reports that Christian anarchists hold the state to be founded on violence and so contrary to Jesus' teaching, and Ellul holds the state illegitimate and an object of idolatry that Christians must refuse allegiance to.",
       "sources": [
+        "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Ellul says the state is illegitimate and must be destroyed unless it serves all; Wikipedia describes the state as violent, deceitful and idolatrous in their view.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Christoyannopoulos reports that Christian anarchists hold the state to be founded on violence and so contrary to Jesus' teaching, and Ellul holds the state illegitimate and an object of idolatry that Christians must refuse allegiance to.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "limit-guns": {
@@ -233,11 +300,31 @@
       ]
     },
     "gradual-change": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They reject deference to state institutions, though Ellul prefers persistent small refusals over sudden revolution; so not respecting institutions outweighs.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They reject deference to state institutions, though Ellul prefers persistent small refusals over sudden revolution; so not respecting institutions outweighs.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "reduce-immigration": {
@@ -285,11 +372,31 @@
       "sources": []
     },
     "drastic-climate-action": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "No documented position; the state-led form would be rejected, while stewardship is accepted.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "No documented position; the state-led form would be rejected, while stewardship is accepted.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "tech-solves-problems": {
@@ -327,19 +434,59 @@
       "sources": []
     },
     "land-value-tax": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "A tax is state coercion; Helchitsky doubted landownership but the tax solution is not their programme.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "A tax is state coercion; Helchitsky doubted landownership but the tax solution is not their programme.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "tax-inheritance": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They do not advocate state taxation, though Ballou's catechism accepts non-resisting taxes.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They do not advocate state taxation, though Ballou's catechism accepts non-resisting taxes.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "basic-income": {
@@ -349,11 +496,31 @@
       "sources": []
     },
     "tariffs-protect-industry": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Nationalist economic policy contradicts renouncing national distinctions.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Nationalist economic policy contradicts renouncing national distinctions.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "state-directs-investment": {
@@ -373,11 +540,31 @@
       ]
     },
     "abolish-money-wages": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Ellul calls money the domain of Mammon, but abolition is not a programme for most adherents.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Ellul calls money the domain of Mammon, but abolition is not a programme for most adherents.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "abolish-central-banks": {
@@ -463,11 +650,31 @@
       ]
     },
     "laws-from-scripture": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Tolstoy reads the Sermon on the Mount as a rule for personal conduct and rejects coercive law, so scripture is not to be made state law; the cited sources do not take up the question directly.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Tolstoy reads the Sermon on the Mount as a rule for personal conduct and rejects coercive law, so scripture is not to be made state law; the cited sources do not take up the question directly.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "private-courts-defense": {
@@ -591,19 +798,59 @@
       "sources": []
     },
     "restore-past-order": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They see the Constantinian church-state order as a corruption; but they look back to the early church.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They see the Constantinian church-state order as a corruption; but they look back to the early church.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "results-over-ideology": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They hold that ends never justify means and follow Christ's commands as principle.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They hold that ends never justify means and follow Christ's commands as principle.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "direct-action": {
@@ -617,17 +864,59 @@
     "means-match-ends": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Wikipedia reports the view that the ends never justify the means; nonviolence in pursuit of a loving community.",
+      "rationale": "Christoyannopoulos: for Christian anarchists the ends never justify the means; change comes by example, nonviolently, from the bottom up.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Wikipedia reports the view that the ends never justify the means; nonviolence in pursuit of a loving community.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Christoyannopoulos: for Christian anarchists the ends never justify the means; change comes by example, nonviolently, from the bottom up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "return-to-foraging": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Voluntary simple living is admired but not foraging.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Voluntary simple living is admired but not foraging.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "abolish-division-of-labor": {
@@ -743,11 +1032,31 @@
       "sources": []
     },
     "organic-representation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They reject representation in government by force.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They reject representation in government by force.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "total-state": {
@@ -759,11 +1068,31 @@
       ]
     },
     "national-rebirth": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Tolstoy and Ellul reject nationalism and patriotism as idolatry of the state, so a call for national rebirth runs against them, though neither discusses the statement's decadence-and-rebirth theme.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Tolstoy and Ellul reject nationalism and patriotism as idolatry of the state, so a call for national rebirth runs against them, though neither discusses the statement's decadence-and-rebirth theme.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "territorial-expansion": {
@@ -887,11 +1216,31 @@
       "sources": []
     },
     "class-collaboration": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Love of enemies and nonviolence favour cooperation over struggle.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Love of enemies and nonviolence favour cooperation over struggle.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "sacrifice-heritage": {
@@ -917,19 +1266,59 @@
       ]
     },
     "distinct-gender-roles": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They reject legal enforcement.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They reject legal enforcement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "ban-interest": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They reject state prohibition; Mammon critique applies though.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They reject state prohibition; Mammon critique applies though.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "racial-segregation-law": {
@@ -939,11 +1328,31 @@
       "sources": []
     },
     "state-class-instrument": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Ellul says the bourgeoisie used Christianity and the state to subjugate workers.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Ellul says the bourgeoisie used Christianity and the state to subjugate workers.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "expand-fossil-fuels": {
@@ -967,11 +1376,31 @@
       "sources": []
     },
     "proportional-representation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Participation in elections is itself rejected.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Participation in elections is itself rejected.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "national-mission": {
@@ -1049,11 +1478,31 @@
       "sources": []
     },
     "uniform-civil-code": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They reject state law as authority.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They reject state law as authority.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "restrict-conversion": {
@@ -1085,11 +1534,31 @@
       ]
     },
     "trade-surplus": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mercantilist nationalism rejected.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Mercantilist nationalism rejected.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "population-transfer": {
@@ -1115,19 +1584,59 @@
       ]
     },
     "freedom-as-non-domination": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Ellul says the state is illegitimate unless it serves all; they reject domination.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Ellul says the state is illegitimate unless it serves all; they reject domination.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "separated-powers": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Still government; they reject it though less than concentrated power.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Still government; they reject it though less than concentrated power.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "vanguard-party": {
@@ -1153,19 +1662,59 @@
       "sources": []
     },
     "restrict-strikes-picketing": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Opposes state coercion against nonviolent protest.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Opposes state coercion against nonviolent protest.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "population-causes-poverty": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Contradicts Christian view of institutions and greed.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Contradicts Christian view of institutions and greed.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "diversity-weakens-cohesion": {
@@ -1177,11 +1726,31 @@
       ]
     },
     "offices-by-lottery": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "They reject offices by the sources I read, so this is a low-weight inference from their anti-state, nonviolent principles.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "They reject offices by the sources I read, so this is a low-weight inference from their anti-state, nonviolent principles.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "emergency-suspend-protections": {
@@ -1249,12 +1818,33 @@
       ]
     },
     "church-by-bishops": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The strands differ: Tolstoy was excommunicated and rejected church hierarchy, and Ellul says institutionalised love produces authority and hierarchy, while Dorothy Day's Catholic Worker accepted the authority of the Catholic bishops.",
-      "sources": [
-        "s1",
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The strands differ: Tolstoy was excommunicated and rejected church hierarchy, and Ellul says institutionalised love produces authority and hierarchy, while Dorothy Day's Catholic Worker accepted the authority of the Catholic bishops.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "clerical-rule": {
@@ -1280,11 +1870,31 @@
       "sources": []
     },
     "unlimited-reelection": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They don't take part in elections.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They don't take part in elections.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "recall-officials": {
@@ -1300,11 +1910,31 @@
       "sources": []
     },
     "abolish-rental-housing": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "State prohibition opposed; they favour sharing housing voluntarily.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "State prohibition opposed; they favour sharing housing voluntarily.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "people-in-arms": {
@@ -1314,11 +1944,31 @@
       "sources": []
     },
     "rural-life-healthier": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Tolstoy admired peasant life; the sources used do not centre it.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Tolstoy admired peasant life; the sources used do not centre it.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "educated-out-of-touch": {
@@ -1348,11 +1998,31 @@
       "sources": []
     },
     "creationism-in-schools": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They oppose state schooling imposing religion.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They oppose state schooling imposing religion.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "restrict-private-adult-pornography-access": {
@@ -1402,11 +2072,31 @@
       "sources": []
     },
     "constituent-assembly": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Participation in political process rejected.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Participation in political process rejected.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "restrict-freedoms-for-growth": {
@@ -1432,11 +2122,31 @@
       "sources": []
     },
     "direct-election-head-of-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Rejects participation in elections.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Rejects participation in elections.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "central-bank-independence": {
@@ -1482,11 +2192,31 @@
       ]
     },
     "annexed-territory-occupation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Rejects state but not specifically addressed.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Rejects state but not specifically addressed.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "subordinate-church-to-state": {
@@ -1498,11 +2228,31 @@
       ]
     },
     "nonpartisan-head-of-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Rejects heads of state by the sources I read, so this is a low-weight inference from their anti-state, nonviolent principles.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Rejects heads of state by the sources I read, so this is a low-weight inference from their anti-state, nonviolent principles.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "force-to-prevent-secession": {
@@ -1550,11 +2300,31 @@
       "sources": []
     },
     "mixed-constitution": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Still government by the sources I read, so this is a low-weight inference from their anti-state, nonviolent principles.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Still government by the sources I read, so this is a low-weight inference from their anti-state, nonviolent principles.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "leader-cult": {
@@ -1578,19 +2348,59 @@
       "sources": []
     },
     "land-redistribution": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Violent seizure opposed, though Helchitsky doubted landownership.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Violent seizure opposed, though Helchitsky doubted landownership.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "refugee-return": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Opposes state barriers by the sources I read, so this is a low-weight inference from their anti-state, nonviolent principles.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Opposes state barriers by the sources I read, so this is a low-weight inference from their anti-state, nonviolent principles.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "co-ethnic-territorial-claim": {
@@ -1735,20 +2545,61 @@
       "sources": []
     },
     "civilizing-tutelage": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Rule of one people by another rests on violence, which Christian anarchists reject, and Tolstoy condemned it as hypocrisy.",
-      "sources": [
-        "s2",
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Rule of one people by another rests on violence, which Christian anarchists reject, and Tolstoy condemned it as hypocrisy.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "patriotic-education": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Tolstoy attacked patriotism and drilling children in national loyalty as contrary to Christ's teaching and a tool of state power.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Tolstoy attacked patriotism and drilling children in national loyalty as contrary to Christ's teaching and a tool of state power.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "end-racial-preferences": {
@@ -1764,11 +2615,31 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Sources critique money and property but offer no theory of capitalist collapse; indifferent.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Sources critique money and property but offer no theory of capitalist collapse; indifferent.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "delink-world-market": {
@@ -2106,12 +2977,33 @@
       "sources": []
     },
     "democratic-peace": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Ellul and Tolstoy treat all states, democratic or not, as resting on violence, so spreading democracy is not a path to peace.",
-      "sources": [
-        "s2",
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Ellul and Tolstoy treat all states, democratic or not, as resting on violence, so spreading democracy is not a path to peace.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "no-duty-to-obey": {
@@ -2162,11 +3054,31 @@
       "sources": []
     },
     "national-law-over-international": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Tolstoy rejects patriotism and national sovereignty as a claim on conscience, so national precedence is not accepted.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Tolstoy rejects patriotism and national sovereignty as a claim on conscience, so national precedence is not accepted.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "religious-nation": {
@@ -2241,11 +3153,31 @@
       "sources": []
     },
     "treaties-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents distrust state authority but value keeping one's word; they do not address such treaties.",
-      "sources": [
-        "s2"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents distrust state authority but value keeping one's word; they do not address such treaties.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "cooperative-communities": {
@@ -2335,11 +3267,31 @@
       "sources": []
     },
     "intersecting-oppressions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents oppose domination of every kind but the tradition does not use the intersectional framework, and its focus on the state, violence and property leaves the claim neither endorsed nor rejected.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents oppose domination of every kind but the tradition does not use the intersectional framework, and its focus on the state, violence and property leaves the claim neither endorsed nor rejected.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "gender-identity-recognition": {
@@ -2357,12 +3309,33 @@
       "sources": []
     },
     "left-right-obsolete": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Christian anarchists place themselves outside state politics and both left and right as Ellul and Tolstoy describe them, but the claim that the best ideas of each should be combined is an inference.",
-      "sources": [
-        "s1",
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Christian anarchists place themselves outside state politics and both left and right as Ellul and Tolstoy describe them, but the claim that the best ideas of each should be combined is an inference.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "alienated-labor": {
@@ -2769,11 +3742,31 @@
       "sources": []
     },
     "municipal-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Christian anarchists favour sharing and voluntary community of goods, but the sources do not decide on municipal ownership.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Christian anarchists favour sharing and voluntary community of goods, but the sources do not decide on municipal ownership.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "confederal-coordination": {
@@ -2963,11 +3956,31 @@
       ]
     },
     "free-economic-experiment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "They favour sharing and simple living but have no stated view on economic pluralism; adherents split.",
-      "sources": [
-        "s3"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "They favour sharing and simple living but have no stated view on economic pluralism; adherents split.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "nature-as-capital": {
@@ -3298,11 +4311,31 @@
       ]
     },
     "tech-with-ancestral-values": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Christian anarchism has no documented position on technology versus ancestral tradition; adherents are split between simple living and acceptance of technology.",
-      "sources": [
-        "s1"
+      "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Christian anarchism has no documented position on technology versus ancestral tradition; adherents are split between simple living and acceptance of technology.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on silence in the sources, which is not a split; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
       ]
     },
     "wife-divorce-without-consent": {
@@ -3384,23 +4417,813 @@
       ]
     },
     "decent-living-guarantee": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They would not defend state welfare as such, but cutting aid to the poor contradicts Jesus' teaching on charity; they want it replaced by voluntary giving, not simply abolished.",
-      "sources": [
-        "s1"
-      ],
-      "auditor": "claude-opus-5-5"
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "They would not defend state welfare as such, but cutting aid to the poor contradicts Jesus' teaching on charity; they want it replaced by voluntary giving, not simply abolished.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
+      ]
     },
     "former-empire-equal-treatment": {
-      "value": 2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Nationalist and imperial ambition is a form of state violence and idolatry in Tolstoy's and Ellul's view.",
+      "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+      "sources": [],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "low",
+          "rationale": "Nationalist and imperial ambition is a form of state violence and idolatry in Tolstoy's and Ellul's view.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (rules 7 pass): the answer rested on a general principle, not a position the sources state on this question; no source cited here takes this question up.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-24"
+        }
+      ]
+    },
+    "military-force-for-human-rights": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Tolstoy holds that Christ's law of non-resistance forbids any part in war, whatever the cause; Christoyannopoulos reports that Christian anarchists reject war as contrary to Jesus' teaching.",
       "sources": [
-        "s2",
-        "s3"
-      ],
-      "auditor": "claude-sonnet-5-5"
+        "s1",
+        "s2"
+      ]
+    },
+    "revolution-legitimate": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Christoyannopoulos (section 4.5): Christian anarchists reject violent revolution; change is to come by example and from the bottom up, never by violence.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "political-violence-legitimate": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Christoyannopoulos: the ends never justify the means and Jesus' instruction not to resist evil excludes violence; Tolstoy rejects violence including revolutionary violence.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "power-shapes-accepted-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "initiating-nondefensive-force-unjustified": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Christian anarchists reject the use of force altogether (Christoyannopoulos, Tolstoy), so they agree that initiating force is unjustified, and go further by rejecting defensive force too.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "foreign-policy-non-interference": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "harassment-claims-court-access": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "military-force-beyond-defence": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Tolstoy calls on each man to refuse military service altogether and condemns war; Christoyannopoulos reports the same rejection of war.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "publish-international-agreements": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "mutual-intelligibility-defines-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "voluntary-union-payments-at-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Christian anarchists reject war and the killing of anyone, including enemies, under Jesus' command to love enemies and not resist evil (Christoyannopoulos, Tolstoy).",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Tolstoy condemns war and the church's blessing of it as contrary to Christ; Christoyannopoulos reports that Christian anarchists reject war.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "technology-design-reflects-political-interests": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Christian anarchists reject war and violent revolution as means; Christoyannopoulos section 4.5 has change by example instead.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Christoyannopoulos reports that physical work features prominently among Christian anarchist prescriptions: all should earn their bread by the sweat of their brows, and Tolstoy eulogises labouring the land.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Christoyannopoulos: for Christian anarchists the state's punishment for disobedience should be fully accepted; Day says Hennacy was ready to go to jail. (Not every adherent disobeys.)",
+      "sources": [
+        "s1"
+      ]
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Christoyannopoulos: the cross represents a willing acceptance of the costliest consequence of contending against the state, answering its violence with love and non-resistance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Christian anarchists reject violent resistance of any kind; Jesus' instruction not to resist evil excludes it (Christoyannopoulos, Tolstoy).",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "recognize-territorial-claims-from-conquest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No source cited here takes this question up.",
+      "sources": []
     }
   },
   "missingStatements": [
@@ -3433,7 +5256,7 @@
       "addedAs": "direct-action"
     }
   ],
-  "notes": "Ellul read Romans 13 as a reason not to overthrow the state, while Hennacy and O'Reilly favoured civil disobedience; strands differ on voting, taxes and the Church. Only part of the long Wikipedia and Tolstoy texts was read.",
+  "notes": "Ellul read Romans 13 as a reason not to overthrow the state, while Hennacy and O'Reilly favoured civil disobedience; strands differ on voting, taxes and the Church. Only part of the long Wikipedia and Tolstoy texts was read. Pass of 2026-11-24 (rules 7): sources re-chosen (Christoyannopoulos, Tolstoy, Ellul, an interview with Christoyannopoulos, Crawley). Themes searched: the state and violence, war and conscription, oaths, courts and punishment, voting, revolution and methods, taxes and civil disobedience, property and wealth, labour, charity, church and state, technology, liberation theology. Answers that rested on a general principle or on silence were nulled (50, with history); themes the sources do not take up stay null.",
   "reviews": [
     {
       "kind": "silence",
@@ -3464,6 +5287,105 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-24",
+      "nulled": 50
+    }
+  ],
+  "aliases": [
+    {
+      "name": "Christian anarchist",
+      "reason": "REDIRECT"
+    },
+    {
+      "name": "Christian anarchy",
+      "reason": "REDIRECT"
+    },
+    {
+      "name": "Christo-anarchism",
+      "reason": "REDIRECT"
+    },
+    {
+      "name": "Catholic anarchism",
+      "reason": "REDIRECT"
+    }
+  ],
+  "keyFigures": [
+    {
+      "first": "Jacques",
+      "last": "Ellul",
+      "role": "French theologian and sociologist; wrote Anarchism and Christianity",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jacques_Ellul",
+      "source": "s1",
+      "quote": "Perhaps the most important of these other Christian anarchist thinkers is French scholar Jacques Ellul"
+    },
+    {
+      "first": "Dorothy",
+      "last": "Day",
+      "role": "Co-founder of the Catholic Worker movement",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dorothy_Day",
+      "source": "s1",
+      "quote": "One of the two main founders of the movement is Dorothy Day"
+    },
+    {
+      "first": "Peter",
+      "last": "Maurin",
+      "role": "Co-founder of the Catholic Worker movement; 'personalist' anarchist",
+      "wikipedia": "https://en.wikipedia.org/wiki/Peter_Maurin",
+      "source": "s1",
+      "quote": "The other main founder of the Catholic Worker movement is Frenchman Peter Maurin"
+    },
+    {
+      "first": "Ammon",
+      "last": "Hennacy",
+      "role": "Catholic Worker activist and Tolstoyan Christian anarchist",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ammon_Hennacy",
+      "source": "s1",
+      "quote": "The third main figure of the Catholic Worker movement is American campaigner Ammon Hennacy"
+    },
+    {
+      "first": "Vernard",
+      "last": "Eller",
+      "role": "Author of Christian Anarchy; exegete of Romans 13",
+      "wikipedia": "https://en.wikipedia.org/wiki/Vernard_Eller",
+      "source": "s1",
+      "quote": "One author who makes clear his appreciation of Ellul is American academic Vernard Eller"
+    }
+  ],
+  "keyWorks": [
+    {
+      "title": "The Kingdom of God Is Within You",
+      "work": "s2",
+      "source": "s1",
+      "quote": "the most often cited one among anarchists is The Kingdom of God Is within You"
+    },
+    {
+      "title": "Anarchism and Christianity",
+      "work": "s3",
+      "source": "s1",
+      "quote": "Jacques Ellul, “Anarchism and Christianity,” in Jesus and Marx"
+    },
+    {
+      "title": "Christian Anarchy",
+      "author": "Vernard Eller",
+      "wikipedia": null,
+      "authorWikipedia": "https://en.wikipedia.org/wiki/Vernard_Eller",
+      "source": "s1",
+      "quote": "titled Christian Anarchy"
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-15"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-24"
     }
   ]
 }
