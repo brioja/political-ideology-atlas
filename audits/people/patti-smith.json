@@ -1,11 +1,14 @@
 {
   "id": "patti-smith",
   "name": "Patti Smith",
-  "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditedAt": "2026-11-24",
+  "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.2-sol"
+  ],
   "living": true,
   "role": "American singer-songwriter, poet and writer (punk and protest-tinged music)",
-  "summary": "Patti Smith is a musician, poet and writer whose work is often read as political. Her documented public statements are mainly anti-war remarks opposing the Iraq War and criticism of the George W. Bush administration in 2004, plus a remark that her humanist views have brought her censorship. She has said she would never call herself an activist. Her record of stated political positions is thin.",
+  "summary": "Patti Smith is a musician, poet and writer who opposed the U.S. invasion of Iraq and criticized detention at Guantánamo Bay. She has called for a transition from fossil fuels to renewable energy and urged people to use elections and collective protest to bring about change. She has opposed censorship of art while urging artists to consider their audiences.",
   "wikipedia": "https://en.wikipedia.org/wiki/Patti_Smith",
   "sources": [
     {
@@ -14,7 +17,8 @@
       "title": "Singer Patti Smith on Bush, Peace and Activism (interview by Joshua Rotter, August 9, 2004)",
       "author": "Joshua Rotter, BeyondChronicle",
       "url": "https://beyondchron.org/singer-patti-smith-on-bush-peace-and-activism/",
-      "usedFor": "Her own words on the anti-war stance, the Bush administration, voter turnout and unity across parties (2004)"
+      "usedFor": "Her own words on the anti-war stance, the Bush administration, voter turnout and unity across parties (2004)",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,7 +26,8 @@
       "title": "Punk Rock Legend Patti Smith on Censorship, Activism and Guantanamo (Democracy Now! interview, April 29, 2010)",
       "author": "Democracy Now!",
       "url": "https://www.democracynow.org/2010/4/29/punk_rock_legend_patti_smith_on",
-      "usedFor": "Her own words on censorship from her political and humanist views, her view of herself as not an activist, and her reaction to Murat Kurnaz's detention"
+      "usedFor": "Her own words on censorship from her political and humanist views, her view of herself as not an activist, and her reaction to Murat Kurnaz's detention",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -30,7 +35,8 @@
       "title": "Patti Smith and Julian Casablancas among over 600 musicians to call for boycott of Israel",
       "author": "Times of Israel",
       "url": "https://www.timesofisrael.com/patti-smith-julian-casablancas-among-600-musicians-to-urge-boycott-of-israel/",
-      "usedFor": "Records that she was among the signers of a May 2021 open letter; the article reports no personal statement from her, so the signature is not used as a position"
+      "usedFor": "Records that she was among the signers of a May 2021 open letter; the article reports no personal statement from her, so the signature is not used as a position",
+      "evidence": "action"
     },
     {
       "id": "s4",
@@ -38,7 +44,8 @@
       "title": "Nader's groovy night out (2000 rally report)",
       "author": "Salon",
       "url": "https://salon.com/2000/10/23/nader_rally",
-      "usedFor": "Her remarks at a 2000 rally supporting Ralph Nader; endorsing a candidate is not a position on any statement, so it is not used for answers"
+      "usedFor": "Her remarks at a 2000 rally supporting Ralph Nader; endorsing a candidate is not a position on any statement, so it is not used for answers",
+      "evidence": "action"
     },
     {
       "id": "s5",
@@ -46,7 +53,32 @@
       "title": "Patti Smith",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Patti_Smith",
-      "usedFor": "Overview of her life, activism and status as living; its political claims were not used unless confirmed in the sources above"
+      "usedFor": "Overview of her life, activism and status as living; its political claims were not used unless confirmed in the sources above",
+      "evidence": "words"
+    },
+    {
+      "id": "s6",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Nylon interview on climate change and Pathway to Paris (2017)",
+      "url": "https://www.nylon.com/articles/patti-smith-interview-climate-change-pathway-to-paris",
+      "usedFor": "Smith discusses replacing fossil fuels with renewable energy, the damage environmental neglect leaves to children, and voting alongside protest."
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Patti Smith on the Scene (PBS American Masters interview transcript)",
+      "url": "https://www.pbs.org/wnet/americanmasters/podcast/patti-smith-on-the-scene/",
+      "usedFor": "Smith discusses her opposition to censorship and the role of artists’ own judgment about what to share."
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Guardian reader interview on Springsteen, climate and punk (2022)",
+      "url": "https://www.theguardian.com/music/2022/mar/31/i-experience-joy-very-easily-patti-smith-on-springsteen-the-climate-fight-and-the-meaning-of-punk",
+      "usedFor": "Smith discusses her work on the effects of underwater drilling on whales."
     }
   ],
   "answers": {
@@ -507,10 +539,13 @@
       "sources": []
     },
     "direct-action": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Smith urged people to register and vote as a way to bring about change in 2004. In 2017 she again presented elections and mass protest as ways for people to exercise power.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
     },
     "means-match-ends": {
       "value": null,
@@ -795,10 +830,13 @@
       "sources": []
     },
     "expand-fossil-fuels": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Smith condemned fracking for polluting water and urged cities to shift away from fossil fuels toward renewable energy. She later singled out underwater drilling as a practice that harms whales.",
+      "sources": [
+        "s6",
+        "s8"
+      ]
     },
     "assimilate-immigrants": {
       "value": null,
@@ -1065,10 +1103,12 @@
       "sources": []
     },
     "censor-art-for-virtue": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In her PBS interview, Smith described fighting radio censorship and said artists should use their own judgment about what to present to the public out of respect for audiences’ values.",
+      "sources": [
+        "s7"
+      ]
     },
     "unlimited-reelection": {
       "value": null,
@@ -2457,10 +2497,12 @@
       "sources": []
     },
     "future-generations": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Smith condemned environmental neglect for leaving a damaged world to children and grandchildren. She called for cities to move off fossil fuels and develop renewable energy.",
+      "sources": [
+        "s6"
+      ]
     },
     "women-distinct-values": {
       "value": null,
@@ -2905,7 +2947,772 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "military-force-for-human-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "revolution-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-violence-legitimate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "power-shapes-accepted-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "initiating-nondefensive-force-unjustified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-policy-non-interference": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "harassment-claims-court-access": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-force-beyond-defence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "publish-international-agreements": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mutual-intelligibility-defines-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "voluntary-union-payments-at-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-design-reflects-political-interests": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recognize-territorial-claims-from-conquest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "Thin political record. No statement is answered: the anti-war remarks from 2004 do not speak to any statement in the test (such as defensive-only war) in her own words, so every answer is null. Endorsements (Ralph Nader in 2000, the 2021 Israel boycott letter), benefit and festival performances (Rachel Corrie, COP26 and Pathway to Paris, Iraq protests), and her songs and artworks are not positions. Wikipedia's claims about 2004 support for John Kerry, 2014 remarks on feminism and religion, and 2022 Ukraine comments were not confirmed in an opened source, so they are not used. Her 2015 AFP quote on climate ('it's never too late to have positive change') could not be confirmed from an opened page, so the climate statements stay null. Rolling Stone pages redirected and the Malay Mail, Democracy Now (2015) and attn.com pages returned errors. Her 2004 statements on Bush and voting are about the election, not any statement in the test."
+  "notes": "Reviewed the prior sources and searched by theme for economic policy, government and elections, war and foreign policy, civil liberties, gender and religion, climate and energy, technological change, political action, and international cooperation. I checked the local MediaSum speaker index and the maintainer’s reference library. Smith’s interviews address the Iraq invasion, Murat Kurnaz’s detention and the prospects for closing Guantánamo, and the environmental consequences of fossil fuels. Her accounts of individual wars and detention cases leave the broader rules on military force and torture open. The prior interviews were supplemented with her 2017 Nylon interview, Democracy Now!’s 2015 interview as republished by Truthout, the PBS and BOMB discussions of censorship, the 2021 and 2022 Guardian interviews, and her 2025 El País interview and 2026 Asturias speech. Candidate endorsements and benefit appearances do not establish positions on their organisers’ programmes.",
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.2-sol",
+      "auditedAt": "2026-11-24"
+    }
+  ],
+  "rules": 7,
+  "booksNotUsed": [
+    {
+      "gutenberg": [
+        8544,
+        12390,
+        26733,
+        41682
+      ],
+      "reason": "Project Gutenberg credits these works to Logan Pearsall Smith (1865–1946), a different author."
+    },
+    {
+      "gutenberg": 38280,
+      "reason": "This anthology credits Logan Pearsall Smith (1865–1946) as a contributor. Patti Smith is not a contributor."
+    },
+    {
+      "gutenberg": [
+        70717,
+        72698
+      ],
+      "reason": "Edmund Spenser wrote the poem and James Cruickshanks Smith (1867–1946) edited these volumes."
+    }
+  ]
 }
