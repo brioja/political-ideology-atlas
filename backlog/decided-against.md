@@ -109,3 +109,10 @@ section on the results, Compare, ideology and person pages, each with its statem
 After the record-over-words and mature-position rules (2026-11-02), a scan of existing audits for answers the
 new rules would change was parked, then dropped: re-audits already follow the current rules and take audits
 written under the oldest rules first, so old answers are brought up to date without a separate scan.
+
+## Corpus presence as a people-triage feature (2026-11-24)
+
+Counting each person's speeches, interviews and addresses in the local corpora (Congressional Record, Hansard,
+ParlaMint, UN debates, Miller Center, MediaSum, ...) as a triage feature was tried and dropped: cross-validated AUC
+0.720 with it, 0.719 without. Before the audit, people with any corpus presence passed 42% against 33%, but within
+bands of the existing triage score the gap mostly vanished: views, languages and offices held already carry it.
