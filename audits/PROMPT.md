@@ -115,6 +115,10 @@ Both lists show on the ideology's page.
 major works).
 - By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform").
 - With `"work": "<source id>"` when you cite the text itself.
+- Unless you cite it, give it two fields for the page, as for key figures: `author`, as the sources name it
+  ("Pierre-Joseph Proudhon"; an organisation for a programme), and `wikipedia`, the URL of the work's own English
+  Wikipedia article, or `null` if it has none. Add `authorWikipedia`, the author's article, when there is one. You needn't
+  open the work: the page links the copy you cite, else the work's article, else the author.
 
 Primary texts (`primary` or `program`) are the ideology's own texts: founding documents, manifestos,
 programmes, writings and speeches. One is tied to the ideology when it is a key work (the defining sources

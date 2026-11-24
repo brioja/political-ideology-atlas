@@ -208,10 +208,13 @@ function keyFigureChecks(a, id, sources, errors, warnings) {
     for (const name of named) warnings.push(`keyFigures: ${name} is named in a key figure's quote but isn't a key figure; add them if the defining sources present ${a.name || id} as their thought or political legacy`);
   }
   if (!PEOPLE && Array.isArray(a.keyWorks)) for (const [i, w] of a.keyWorks.entries()) {
-    if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "source", "quote" } (and "work" if you cite it)`); continue; }
+    if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "author", "wikipedia", "source", "quote" } (and "authorWikipedia" if the author has an article, "work" if you cite it)`); continue; }
     const src = w.work === undefined ? null : sources.find((s) => s.id === w.work);
     if (w.work !== undefined && !src) errors.push(`keyWorks[${i}]: unknown source '${w.work}' in "work"`);
     else if (src && src.kind !== "primary" && src.kind !== "program") errors.push(`keyWorks[${i}]: "work" must be the work itself, a primary or program source (${w.work} is ${src.kind})`);
+    for (const k of ["wikipedia", "authorWikipedia"]) if (w[k] != null && !WIKI.test(w[k])) errors.push(`keyWorks[${i}]: ${k} must be an en.wikipedia.org article URL`);
+    // A cited copy gives the page its link and author; without one, a pass gives the work both (audits/PROMPT.md).
+    if ((AS_CURRENT || DIR) && !src) { if (!w.author) errors.push(`keyWorks[${i}]: needs its "author"`); if (w.wikipedia === undefined) errors.push(`keyWorks[${i}]: needs "wikipedia", the work's own article, or null if it has none`); }
   }
 }
 

@@ -86,11 +86,13 @@ function classify(judge = null) {
       image: require("./lib").shippedImage("ideologies", entry),
       wikipedia: "wikipedia" in a ? a.wikipedia : entry.wikipediaMatch === "exact" ? entry.wikipedia : null,
       furtherReading: a.furtherReading || [],
-      // Its key figures and key works (audits/PROMPT.md); a work cited as a source links to the copy the audit opened.
+      // Its key figures and key works (audits/PROMPT.md). A work links to the copy the audit opened, else its own
+      // Wikipedia article, else its author's (Brandon, 2026-11-24: a bare title didn't say what the work was).
       keyFigures: (a.keyFigures || []).map((f) => ({ name: [f.first, f.last].filter(Boolean).join(" "), role: f.role, wikipedia: f.wikipedia })),
       keyWorks: (a.keyWorks || []).map((w) => {
         const s = (a.sources || []).find((x) => x.id === w.work);
-        return { title: w.title, author: s ? s.author : undefined, url: s ? s.url : undefined };
+        return { title: w.title, author: w.author || (s ? s.author : undefined), url: s ? s.url : w.wikipedia || undefined,
+          authorWikipedia: s || w.wikipedia ? undefined : w.authorWikipedia || undefined };
       }),
       aliases: searchNames(entry, a),
       profile: ideologyProfile(a, statements),

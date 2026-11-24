@@ -108,6 +108,15 @@ try {
   ok("key work not cited as a source", E(base(), (a) => { a.keyWorks = [work()]; }));
   fails("key work quote not in the source", E(base(), (a) => { a.keyWorks = [work({ quote: "the Founding Rescript, a forgery" })]; }), /key work "Founding Rescript": the quote isn't in s1's saved copy/);
   fails("key work whose work is unknown", E(base(), (a) => { a.keyWorks = [work({ work: "s9" })]; }), /keyWorks\[0\]: unknown source 's9'/);
+  ok("key work with its author and no article", E(base(), (a) => { a.keyWorks = [work({ author: "Quentin Vexmoor", wikipedia: null, authorWikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor" })]; }));
+  fails("key work with a bad Wikipedia article", E(base(), (a) => { a.keyWorks = [work({ author: "Quentin Vexmoor", wikipedia: "https://example.org/x" })]; }), /keyWorks\[0\]: wikipedia must be an en\.wikipedia\.org article URL/);
+  fails("key work with a bad author article", E(base(), (a) => { a.keyWorks = [work({ author: "Quentin Vexmoor", wikipedia: null, authorWikipedia: "Quentin Vexmoor" })]; }), /keyWorks\[0\]: authorWikipedia must be an en\.wikipedia\.org article URL/);
+  // A lane draft (--dir) gives a key work it doesn't cite its author and article (or null), for the page to show.
+  { const errsFor = (w) => { fs.writeFileSync(tmp, JSON.stringify(E(base(), (a) => { a.keyWorks = [w]; }), null, 2));
+      return require("child_process").spawnSync("node", [path.join(lib.ROOT, "scripts", "validate.js"), "--dir", path.dirname(tmp), subject.id], { encoding: "utf8" }).stdout.split("\n").filter((l) => /keyWorks\[0\]/.test(l)); };
+    const bare = errsFor(work());
+    assert(bare.some((l) => /needs its "author"/.test(l)) && bare.some((l) => /needs "wikipedia"/.test(l)), `--dir: expected a bare key work to need its author and article, got:\n${bare.join("\n")}`);
+    assert.deepStrictEqual(errsFor(work({ author: "Quentin Vexmoor", wikipedia: null })), [], "--dir: an author and a null article are enough"); n += 2; }
   fails("key work whose work is scholarship", E(base(), (a) => { a.keyWorks = [work({ work: "s3" })]; }), /keyWorks\[0\]: "work" must be the work itself/);
   // Missing statements: text, value, rationale, sources, and the rule of two quotes.
   warns("missing statements absent", E(base(), (a) => { delete a.missingStatements; }), /no "missingStatements"/);
