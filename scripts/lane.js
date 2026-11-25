@@ -334,6 +334,7 @@ function integrate(id) {
   return locked(() => {
     const target = path.join(ROOT, "audits", PEOPLE ? "people" : "profiles", `${id}.json`);
     const name = JSON.parse(fs.readFileSync(draft(id), "utf8")).name || id;
+    const before = new Map([target, path.join(ROOT, "audits", "ideology-colors.json")].map((f) => [f, fs.existsSync(f) ? fs.readFileSync(f) : null]));
     fs.copyFileSync(draft(id), target);
     const colorFile = path.join(OUT, `${id}.color.json`);
     const files = [target];
@@ -345,11 +346,9 @@ function integrate(id) {
     // A failed audit commit is undone in audits/ and the draft, claim and DONE line kept, so the next start integrates
     // it again: the picker passes over audits with uncommitted changes, so one left in audits/ was never committed.
     if (failed) {
-      for (const f of files) {
-        const rel = path.relative(ROOT, f);
-        if (git("cat-file", "-e", `HEAD:${rel}`).status) { git("rm", "-q", "--cached", "--", rel); fs.unlinkSync(f); }
-        else git("checkout", "HEAD", "--", rel);
-      }
+      // Written back from memory: git may still be locked out. The unstage is best effort.
+      for (const f of files) { const b = before.get(f); if (b) fs.writeFileSync(f, b); else fs.unlinkSync(f); }
+      git("reset", "-q", "--", ...files.map((f) => path.relative(ROOT, f)));
       log(`${id}: ${failed}; draft kept, integrated again at the next start`);
       return null;
     }
