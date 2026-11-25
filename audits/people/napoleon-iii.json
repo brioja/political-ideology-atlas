@@ -1,7 +1,7 @@
 {
  "id": "napoleon-iii",
  "name": "Napoleon III",
- "auditedAt": "2026-10-24",
+ "auditedAt": "2026-11-25",
  "auditor": "claude-sonnet-5-5",
  "living": false,
  "role": "President of the French Republic (1848-1852) and Emperor of the French (1852-1870)",
@@ -14,7 +14,8 @@
    "title": "Napoleonic Ideas (Des idees napoleoniennes, 1839; English translation)",
    "author": "Louis-Napoleon Bonaparte",
    "url": "https://archive.org/details/napoleonicideasd00napoiala",
-   "usedFor": "Views on government forms, monarchy, the Concordat, nationalities, European association, liberty and progress"
+   "usedFor": "Views on government forms, monarchy, the Concordat, nationalities, European association, liberty and progress",
+   "evidence": "words"
   },
   {
    "id": "s2",
@@ -22,7 +23,8 @@
    "title": "La politique imperiale exposee par les discours et proclamations de l'empereur Napoleon III depuis le 10 decembre 1848 jusqu'en fevrier 1868",
    "author": "Napoleon III",
    "url": "https://archive.org/details/lapolitiqueimp00fran",
-   "usedFor": "Manifesto of 1848, speeches, proclamations, 1852 constitution preamble, 1860 free-trade letter, 1863-1867 speeches, Italian and Algerian proclamations"
+   "usedFor": "Manifesto of 1848, speeches, proclamations, 1852 constitution preamble, 1860 free-trade letter, 1863-1867 speeches, Italian and Algerian proclamations",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +32,8 @@
    "title": "Extinction du pauperisme (1844)",
    "author": "Louis-Napoleon Bonaparte",
    "url": "https://fr.wikisource.org/wiki/Extinction_du_paup%C3%A9risme",
-   "usedFor": "1844 proposals on poverty, agricultural colonies, industry and taxation"
+   "usedFor": "1844 proposals on poverty, agricultural colonies, industry and taxation",
+   "evidence": "words"
   },
   {
    "id": "s4",
@@ -38,7 +41,17 @@
    "title": "Napoleon III",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Napoleon_III",
-   "usedFor": "Record of the 1851 coup, press decree, 1860 treaty, 1864 strike law, Italian, Roman and Mexican policy"
+   "usedFor": "Used by the first pass to find leads; no answer cites it now (a tertiary compilation).",
+   "evidence": "words"
+  },
+  {
+   "id": "s5",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Constitution du 14 janvier 1852 (proclamation and text, Wikisource transcription of the official edition)",
+   "author": "Louis Napoleon Bonaparte, President of the Republic",
+   "url": "https://fr.wikisource.org/wiki/Constitution_du_14_janvier_1852",
+   "usedFor": "The constitution he promulgated: powers of the head of state, the Senate and Corps legislatif, state of siege, how it was made"
   }
  ],
  "answers": {
@@ -52,12 +65,32 @@
    ]
   },
   "unions-good": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "His government drafted and carried the 1864 law on coalitions, which let workers and employers settle disputes between themselves, and he spoke of mutual-aid societies as reconciling classes. He never praised trade unions as such, and strikes stayed restricted when violent.",
-   "sources": [
-    "s2",
-    "s4"
+   "rationale": "Nulled (2026-11-25): the 1864 coalitions law is not cited here and his speeches speak of workers and employers settling differences themselves, not of unions benefiting workers.",
+   "sources": [],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "His government drafted and carried the 1864 law on coalitions, which let workers and employers settle disputes between themselves, and he spoke of mutual-aid societies as reconciling classes. He never praised trade unions as such, and strikes stayed restricted when violent.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (2026-11-25): the 1864 coalitions law is not cited here and his speeches speak of workers and employers settling differences themselves, not of unions benefiting workers.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "property-fundamental": {
@@ -121,10 +154,32 @@
   "more-religion-public": {
    "value": 1,
    "confidence": "low",
-   "rationale": "At Bordeaux (1852) he promised to win the population 'to religion, morality and comfort'; he laid the first stone of Marseille cathedral and kept the Concordat. His school policy in the 1860s conflicted with the Church.",
+   "rationale": "At Bordeaux (1852) he promised to win the population 'to religion, morality and comfort', and his speeches credit Providence and religion for social order.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "At Bordeaux (1852) he promised to win the population 'to religion, morality and comfort'; he laid the first stone of Marseille cathedral and kept the Concordat. His school policy in the 1860s conflicted with the Church.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "At Bordeaux (1852) he promised to win the population 'to religion, morality and comfort', and his speeches credit Providence and religion for social order.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "gradual-change": {
@@ -137,11 +192,33 @@
   },
   "free-trade": {
    "value": 2,
-   "confidence": "high",
-   "rationale": "He personally negotiated the 1860 Cobden-Chevalier treaty over industrialists' protests and in 1860 wrote that without competition industry stagnates. In 1867 he said free trade alone can secure supplies and level prices.",
+   "confidence": "medium",
+   "rationale": "In his 1860 letter he wrote that without competition industry stagnates, and in 1867 that free trade alone can secure supplies and level prices.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "He personally negotiated the 1860 Cobden-Chevalier treaty over industrialists' protests and in 1860 wrote that without competition industry stagnates. In 1867 he said free trade alone can secure supplies and level prices.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "In his 1860 letter he wrote that without competition industry stagnates, and in 1867 that free trade alone can secure supplies and level prices.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "experts-over-public": {
@@ -154,11 +231,33 @@
   },
   "tariffs-protect-industry": {
    "value": -1,
-   "confidence": "high",
-   "rationale": "His 1860 letter replaced the prohibitive system with moderate protective duties and free entry for raw materials, and the 1860 treaty cut duties on British goods despite industrial protest.",
+   "confidence": "medium",
+   "rationale": "His 1860 letter replaced the prohibitive system with moderate protective duties and free entry for raw materials, over industrialists' objections.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "high",
+     "rationale": "His 1860 letter replaced the prohibitive system with moderate protective duties and free entry for raw materials, and the 1860 treaty cut duties on British goods despite industrial protest.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "His 1860 letter replaced the prohibitive system with moderate protective duties and free entry for raw materials, over industrialists' objections.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "state-directs-investment": {
@@ -237,10 +336,32 @@
   "direct-votes": {
    "value": 1,
    "confidence": "low",
-   "rationale": "He repeatedly appealed directly to the people by plebiscite (December 1851, 1852, 1870) on his regime and constitution, and wrote that nothing fundamental is done outside the people's will; ordinary laws stayed with the Corps legislatif.",
+   "rationale": "He appealed directly to the people by plebiscite on his regime and constitution, and wrote that nothing fundamental is done outside the people's will; ordinary laws are not put to a vote in his speeches.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "He repeatedly appealed directly to the people by plebiscite (December 1851, 1852, 1870) on his regime and constitution, and wrote that nothing fundamental is done outside the people's will; ordinary laws stayed with the Corps legislatif.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "He appealed directly to the people by plebiscite on his regime and constitution, and wrote that nothing fundamental is done outside the people's will; ordinary laws are not put to a vote in his speeches.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "natural-rulers": {
@@ -263,10 +384,32 @@
   "separate-church-state": {
    "value": -1,
    "confidence": "medium",
-   "rationale": "His 1852 preamble endorsed the Concordat as the settled regulation of relations between State and Church, and as president he approved the 1850-51 Falloux law that widened church influence in education.",
+   "rationale": "His 1852 preamble endorsed the Concordat as the settled regulation of relations between State and Church.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "His 1852 preamble endorsed the Concordat as the settled regulation of relations between State and Church, and as president he approved the 1850-51 Falloux law that widened church influence in education.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "His 1852 preamble endorsed the Concordat as the settled regulation of relations between State and Church.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "laws-from-scripture": {
@@ -380,30 +523,96 @@
    ]
   },
   "territorial-expansion": {
-   "value": 1,
+   "value": 0,
    "confidence": "low",
-   "rationale": "In 1859 he said one is greater today by moral influence than by sterile conquests, but he annexed Savoy and Nice in 1860, took Cochinchina and defended his Mexican and Asian expeditions in 1863 as needed to keep French influence.",
+   "rationale": "In 1859 he said one is greater by moral influence than by sterile conquests, yet in 1860 he proclaimed the reunion of Savoy and Nice with France and in 1863 defended his overseas expeditions as needed to keep French influence; his words point both ways.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "In 1859 he said one is greater today by moral influence than by sterile conquests, but he annexed Savoy and Nice in 1860, took Cochinchina and defended his Mexican and Asian expeditions in 1863 as needed to keep French influence.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "In 1859 he said one is greater by moral influence than by sterile conquests, yet in 1860 he proclaimed the reunion of Savoy and Nice with France and in 1863 defended his overseas expeditions as needed to keep French influence; his words point both ways.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "avoid-deficit-stimulus": {
    "value": 1,
    "confidence": "low",
-   "rationale": "In 1859 and 1861 he proudly reported balanced budgets without new loans, but his large public works ran deficits.",
+   "rationale": "In 1859 and 1861 he proudly reported budgets balanced without new loans, and said public works would be done without recourse to credit.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "In 1859 and 1861 he proudly reported balanced budgets without new loans, but his large public works ran deficits.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "In 1859 and 1861 he proudly reported budgets balanced without new loans, and said public works would be done without recourse to credit.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "national-self-determination": {
    "value": 1,
-   "confidence": "medium",
-   "rationale": "In 1859 he told Italians he would not impose his will and that his army would not obstruct 'the free expression of your legitimate wishes'; in 1864 France argued for the nationality principle and the right of populations to be consulted. His Mexican and Algerian policies cut against this.",
+   "confidence": "low",
+   "rationale": "In 1859 he told Italians he would not impose his will and that his army would not obstruct 'the free expression of your legitimate wishes', and he said the Italian nationality idea was now admitted.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "In 1859 he told Italians he would not impose his will and that his army would not obstruct 'the free expression of your legitimate wishes'; in 1864 France argued for the nationality principle and the right of populations to be consulted. His Mexican and Algerian policies cut against this.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "In 1859 he told Italians he would not impose his will and that his army would not obstruct 'the free expression of your legitimate wishes', and he said the Italian nationality idea was now admitted.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "reason-over-faith": {
@@ -467,12 +676,32 @@
    ]
   },
   "no-religion-state-schools": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
-   "rationale": "In 1848 he promised freedom of teaching alongside protecting religion, and approved the 1850-51 Falloux law; later his minister Duruy clashed with the Church.",
-   "sources": [
-    "s2",
-    "s4"
+   "rationale": "Nulled (2026-11-25): his 1848 promise of freedom of teaching alongside protecting religion does not say whether state schools give religious instruction.",
+   "sources": [],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "low",
+     "rationale": "In 1848 he promised freedom of teaching alongside protecting religion, and approved the 1850-51 Falloux law; later his minister Duruy clashed with the Church.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (2026-11-25): his 1848 promise of freedom of teaching alongside protecting religion does not say whether state schools give religious instruction.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "consent-of-governed": {
@@ -494,11 +723,33 @@
   },
   "ban-extremist-parties": {
    "value": 1,
-   "confidence": "medium",
-   "rationale": "He called those who sought to change by illegal means enemies of the country in 1848, and after 1851 repressed republican opposition, arresting about 26,000.",
+   "confidence": "low",
+   "rationale": "In 1848 he called those who seek change by illegal means enemies of the country.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He called those who sought to change by illegal means enemies of the country in 1848, and after 1851 repressed republican opposition, arresting about 26,000.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "In 1848 he called those who seek change by illegal means enemies of the country.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "separated-powers": {
@@ -519,12 +770,32 @@
    ]
   },
   "restrict-strikes-picketing": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "His government introduced the 1864 law on coalitions, repealing the ban on strikes, and in 1865 he said workers and employers had learned to settle their disputes between themselves.",
-   "sources": [
-    "s2",
-    "s4"
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (2026-11-25): his 1865 words that workers and employers had learned to settle disputes themselves do not state a position on restricting strikes; the law itself is not cited.",
+   "sources": [],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "His government introduced the 1864 law on coalitions, repealing the ban on strikes, and in 1865 he said workers and employers had learned to settle their disputes between themselves.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (2026-11-25): his 1865 words that workers and employers had learned to settle disputes themselves do not state a position on restricting strikes; the law itself is not cited.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "population-causes-poverty": {
@@ -536,12 +807,34 @@
    ]
   },
   "emergency-suspend-protections": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "He said in December 1851 that he had left legality only to return to right, after dissolving the Assembly; about 26,000 were arrested, and the 1852 constitution kept the army's passive obedience.",
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The 1852 constitution he promulgated gave the head of state the right to declare a state of siege in one or more departments, reporting to the Senate afterwards (art. 12).",
    "sources": [
-    "s2",
-    "s4"
+    "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "He said in December 1851 that he had left legality only to return to right, after dissolving the Assembly; about 26,000 were arrested, and the 1852 constitution kept the army's passive obedience.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "The 1852 constitution he promulgated gave the head of state the right to declare a state of siege in one or more departments, reporting to the Senate afterwards (art. 12).",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "price-controls-essentials": {
@@ -553,12 +846,32 @@
    ]
   },
   "party-controls-media": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "His 1852 decree required government authorisation for political papers and allowed suspensions; in 1867 he announced a law to give press offences to the courts and end the government's discretionary power.",
-   "sources": [
-    "s2",
-    "s4"
+   "rationale": "Nulled (2026-11-25): the 1852 press decree is not cited, and art. 42 of the constitution restricts only reporting of the legislature.",
+   "sources": [],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "His 1852 decree required government authorisation for political papers and allowed suspensions; in 1867 he announced a law to give press offences to the courts and end the government's discretionary power.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (2026-11-25): the 1852 press decree is not cited, and art. 42 of the constitution restricts only reporting of the legislature.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "pool-sovereignty": {
@@ -597,11 +910,33 @@
   },
   "end-foreign-alliances": {
    "value": -1,
-   "confidence": "medium",
-   "rationale": "He allied with Britain in the Crimean War, with Piedmont in 1859, and kept a French garrison in Rome from 1849 to 1870.",
+   "confidence": "low",
+   "rationale": "His speeches praise the alliance with Britain, whose bonds he said tightened from day to day, and he supported Piedmont as an ally in 1859.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "He allied with Britain in the Crimean War, with Piedmont in 1859, and kept a French garrison in Rome from 1849 to 1870.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": -1,
+     "confidence": "low",
+     "rationale": "His speeches praise the alliance with Britain, whose bonds he said tightened from day to day, and he supported Piedmont as an ally in 1859.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "rural-life-healthier": {
@@ -631,28 +966,94 @@
   "constituent-assembly": {
    "value": -1,
    "confidence": "medium",
-   "rationale": "The 1852 constitution was drafted by a commission he chose and ratified by plebiscite, after he dissolved the elected Assembly.",
+   "rationale": "The constitution states it was made by Louis Napoleon under powers a plebiscite gave him on bases he laid down himself and promulgated by him, not drafted by an elected constituent assembly.",
    "sources": [
-    "s2",
-    "s4"
+    "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "The 1852 constitution was drafted by a commission he chose and ratified by plebiscite, after he dissolved the elected Assembly.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "The constitution states it was made by Louis Napoleon under powers a plebiscite gave him on bases he laid down himself and promulgated by him, not drafted by an elected constituent assembly.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "restrict-freedoms-for-growth": {
    "value": 1,
-   "confidence": "medium",
-   "rationale": "In December 1851 he said a system that rebuilds authority is the only edifice able later to bear wise liberty, and in 1852 he promised conquests of waste land, roads, ports and railways, while censoring the press from February 1852.",
+   "confidence": "low",
+   "rationale": "In December 1851 he said a system that rebuilds authority is the only edifice able later to bear wise liberty, and in 1852 he promised conquests of waste land, roads, ports and railways.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "In December 1851 he said a system that rebuilds authority is the only edifice able later to bear wise liberty, and in 1852 he promised conquests of waste land, roads, ports and railways, while censoring the press from February 1852.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "In December 1851 he said a system that rebuilds authority is the only edifice able later to bear wise liberty, and in 1852 he promised conquests of waste land, roads, ports and railways.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "direct-election-head-of-state": {
    "value": 1,
    "confidence": "low",
-   "rationale": "He was elected president by direct universal suffrage in 1848 and later wrote that the chief elected by the people is responsible to them; he then made the title hereditary.",
+   "rationale": "He wrote that the chief elected by the people is responsible to them, and the constitution's art. 5 makes the president responsible to the French people.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "He was elected president by direct universal suffrage in 1848 and later wrote that the chief elected by the people is responsible to them; he then made the title hereditary.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "He wrote that the chief elected by the people is responsible to them, and the constitution's art. 5 makes the president responsible to the French people.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "property-serves-common-good": {
@@ -732,12 +1133,34 @@
    ]
   },
   "economic-self-sufficiency": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "His 1860 policy opened France to imports and he repeatedly championed free trade.",
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His 1860 letter opened France to imports and he repeatedly championed commercial freedom; he did not speak of a closed colonial bloc.",
    "sources": [
-    "s2",
-    "s4"
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "His 1860 policy opened France to imports and he repeatedly championed free trade.",
+     "sources": [
+      "s2",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "His 1860 letter opened France to imports and he repeatedly championed commercial freedom; he did not speak of a closed colonial bloc.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "abolish-hereditary-privilege": {
@@ -758,11 +1181,31 @@
    ]
   },
   "armed-group-creates-revolution": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "He led armed attempts at Strasbourg (1836) and Boulogne (1840) with a small group, hoping troops would rally to him; both failed.",
-   "sources": [
-    "s4"
+   "rationale": "Nulled (2026-11-25): the Strasbourg and Boulogne attempts rested on Wikipedia alone; no primary or scholarly source for them was opened, and his own writings on them were not found.",
+   "sources": [],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "He led armed attempts at Strasbourg (1836) and Boulogne (1840) with a small group, hoping troops would rally to him; both failed.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (2026-11-25): the Strasbourg and Boulogne attempts rested on Wikipedia alone; no primary or scholarly source for them was opened, and his own writings on them were not found.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-25"
+    }
    ]
   },
   "national-mission": {
@@ -3145,15 +3588,788 @@
     "s3"
    ],
    "auditor": "claude-opus-5-5"
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Art. 46 of the 1852 constitution he promulgated: the president convenes, adjourns, prorogues and dissolves the Corps legislatif.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "arbitrator-settles-disputes": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "In 1863 he proposed a European congress where disputes would meet a supreme arbitration, and wished great questions between governments to be settled peacefully by European arbitration.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "free-trade-promotes-peace": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In a speech on industrial rivalry he said trade treaties bring peoples together and remove national prejudices without weakening love of country.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "military-force-beyond-defence": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In 1859 he took the army to Italy to free Italy up to the Adriatic from Austria, a war fought beyond France's own defence.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "remove-indigenous-peoples": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "In his 1863 letter on Algeria he withdrew the plan to take part of the Arabs' land for colonisation, said France had not come to dispossess them and called them undisputed masters of their soil.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "small-step-social-reform": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He wrote in 1867 that to govern is to use acquired experience and admit only progress compatible with national habits.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "military-force-for-human-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "revolution-legitimate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-violence-legitimate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "power-shapes-accepted-knowledge": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "initiating-nondefensive-force-unjustified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-policy-non-interference": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "harassment-claims-court-access": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "publish-international-agreements": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mutual-intelligibility-defines-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "voluntary-union-payments-at-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "technology-design-reflects-political-interests": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recognize-territorial-claims-from-conquest": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "occupational-licensing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "morality-needs-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shared-state-rival-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
   }
  },
- "notes": "Historical figure, died 1873. Answers rest on his own writings and speeches, and on measures he personally drove (the 1860 tariff treaty, the 1851 coup, the 1852 decree, the 1864 coalitions law); laws passed by ministers or the legislature are not counted. His views shifted from the social-reform pamphlets of the 1840s towards authoritarian rule in the 1850s and liberalisation in the 1860s.",
+ "notes": "Historical figure, died 1873. Answers rest on his own writings and speeches, and on measures he personally drove (the 1860 tariff treaty, the 1851 coup, the 1852 decree, the 1864 coalitions law); laws passed by ministers or the legislature are not counted. His views shifted from the social-reform pamphlets of the 1840s towards authoritarian rule in the 1850s and liberalisation in the 1860s. Later pass (2026-11-25): answers that rested on Wikipedia were redone from his own speeches (words) or the 1852 constitution (action), or nulled. Themes searched in the speeches volume: trade, press, religion, workers, Algeria, Italy, arbitration, budgets; new statements answered only where his own text or the constitution states the position.",
  "reviews": [
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
    "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-sonnet-5-5",
+   "reviewedAt": "2026-11-25",
+   "nulled": 5
   }
- ]
+ ],
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-24"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-25"
+  }
+ ],
+ "rules": 7
 }
