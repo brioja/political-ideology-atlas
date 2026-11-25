@@ -138,11 +138,13 @@ function moreLines(strip) {
 }
 // Three of the line's cluster statements per end. A rotated line often loads on one end only, so
 // an end short of its own is topped up with the other end's spare ones, in their disagree wording.
-function lineSides(L, cluster) {
+// Each statement links to its page in the test, except on someone else's shared result (`linked` false).
+function lineSides(L, cluster, linked = true) {
   const low = cluster.filter((p) => p.w < 0), high = cluster.filter((p) => p.w > 0);
+  const item = (p, text) => statementLink(QUESTIONS[p.q], text, linked ? [] : null);
   const end = (name, own, other) => {
-    const items = own.slice(0, 3).map((p) => p.text)
-      .concat(other.slice(3, 3 + 3 - Math.min(own.length, 3)).map((p) => esc(QUESTIONS[p.q].disagree)));
+    const items = own.slice(0, 3).map((p) => item(p, QUESTIONS[p.q].text))
+      .concat(other.slice(3, 3 + 3 - Math.min(own.length, 3)).map((p) => item(p, QUESTIONS[p.q].disagree)));
     return `<div><p class="pull-head">${esc(name)}</p><ul class="plain">${items.map((t) => `<li>${t}</li>`).join("")}</ul></div>`;
   };
   return `<div class="sides">${end(L.low, low, high)}${end(L.high, high, low)}</div>`;
@@ -990,7 +992,7 @@ function showResults(shared = null) {
         ${rangeBand(pos, you[i], youSpread[i])}
       </svg>
       <details><summary>${L.unnamed ? "What divides its two ends?" : `What divides ${esc(L.low)} and ${esc(L.high)}?`}</summary>
-        ${lineSides(L, ax.cluster)}
+        ${lineSides(L, ax.cluster, !shared)}
       </details>
     </div>`;
   };
