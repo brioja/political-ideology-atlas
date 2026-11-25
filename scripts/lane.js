@@ -85,10 +85,15 @@ const git = (...a) => run("git", a);
 // commit. Returns "" when committed or nothing changed, else why it failed (a hook's message). 2026-11-24: a people
 // audit citing reference books whose filenames tripped the commit-msg hook stayed staged, and every later commit of
 // both lanes failed with it, unchecked, for two hours (31 audits logged as integrated, none committed).
+// Another git process's .git/index.lock (the maintainer committing in this checkout) is waited out for up to two
+// minutes (2026-11-25: alt-lite's commit hit one and was left uncommitted).
 function commit(message, paths) {
-  git("add", "--", ...paths);
+  const locked = (r) => r.status && /index\.lock/.test(r.stderr + r.stdout);
+  const retry = (...a) => { let r; for (let i = 0; i < 24 && locked(r = git(...a)); i++) execFileSync("sleep", ["5"], { detached: true }); return r; };
+  const add = retry("add", "--", ...paths);
+  if (add.status) return `commit failed: ${(add.stderr || add.stdout).trim().split("\n").slice(0, 3).join(" / ")}`;
   if (!git("diff", "--cached", "--quiet", "HEAD", "--", ...paths).status) return "";
-  const r = git("commit", "-q", "-m", message, "--", ...paths);
+  const r = retry("commit", "-q", "-m", message, "--", ...paths);
   return r.status ? `commit failed: ${(r.stderr || r.stdout).trim().split("\n").slice(0, 3).join(" / ")}` : "";
 }
 const draft = (id) => path.join(OUT, `${id}.json`);
@@ -337,9 +342,19 @@ function integrate(id) {
       if (!colors[id]) { const c = JSON.parse(fs.readFileSync(colorFile, "utf8")); colors[id] = c[id] || c; fs.writeFileSync(colorsPath, JSON.stringify(colors, null, 2) + "\n"); files.push(colorsPath); }
     }
     const failed = commit(`Audit ${name}`, files);
-    if (failed) log(`${id}: ${failed}; the audit is in audits/ but not committed`);
+    // A failed audit commit is undone in audits/ and the draft, claim and DONE line kept, so the next start integrates
+    // it again: the picker passes over audits with uncommitted changes, so one left in audits/ was never committed.
+    if (failed) {
+      for (const f of files) {
+        const rel = path.relative(ROOT, f);
+        if (git("cat-file", "-e", `HEAD:${rel}`).status) { git("rm", "-q", "--cached", "--", rel); fs.unlinkSync(f); }
+        else git("checkout", "HEAD", "--", rel);
+      }
+      log(`${id}: ${failed}; draft kept, integrated again at the next start`);
+      return null;
+    }
     const why = buildAndCommit(PEOPLE ? "Rebuild people data" : "Rebuild site data");
-    if (why) log(`${id}: ${why}; ${failed ? "" : "audit committed, "}generated files left for the next build`);
+    if (why) log(`${id}: ${why}; audit committed, generated files left for the next build`);
     for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`), path.join(OUT, `${id}.scope`)]) if (fs.existsSync(f)) fs.unlinkSync(f);
     return name;
   });
@@ -427,6 +442,7 @@ while (timeLeft()) {
   // The DONE line moves to INTEGRATED.txt, so a later pass on the same subject starts clean.
   const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
   const name = integrate(id);
+  if (!name) { tried.add(id); continue; }
   fs.writeFileSync(DONE, lines.filter((l) => l !== line).join("\n"));
   fs.appendFileSync(path.join(OUT, "INTEGRATED.txt"), `${new Date().toISOString().slice(0, 10)} ${line}\n`);
   // The session writes its DONE line before any fix round, so after one its note on validate.js is out of date
