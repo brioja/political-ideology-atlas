@@ -208,6 +208,7 @@ const SCOPE_FIX = (id, problems) => `\`node scripts/validate.js --dir scratchpad
 const ANSWER = (id, added = "") => `The scope, sources, aliases, key figures and key works of \`${id}\` are checked.${added} Now answer the statements. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer. When every statement has an answer, validate with \`node scripts/validate.js --dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.`;
 // validate.js --stage scope's errors and warnings for the draft, as "- " lines ("" when clean).
 function scopeProblems(id) {
+  exceptGap(id); // the gap check is part of the scope stage, so the maintainer's exception goes in first
   const r = run("node", ["scripts/validate.js", "--dir", path.relative(ROOT, OUT), "--stage", "scope", id]);
   return (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`).join("\n");
 }
@@ -405,7 +406,7 @@ while (timeLeft()) {
       thread = await session(SCOPE_FIX(id, problems), thread);
       problems = scopeProblems(id);
     }
-    if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again)`);
+    if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again):\n${problems}`);
     // The books by the key figures and key works the scope phase settled (Brandon, 2026-11-25).
     const before = new Set((startBooks.get(id) || []).map((b) => b.file));
     const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
