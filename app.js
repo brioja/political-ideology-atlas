@@ -931,7 +931,7 @@ function showResults(shared = null) {
 
     <section>
       <h2>Where ${you_} stand</h2>
-      <p>Most disagreement between ideologies comes down to a few big dividing lines. The test found them by looking at how the ideologies answer, rather than deciding them in advance. The ${SHOWN_LINES} below are the ones that stand out from random noise, from biggest to smallest.</p>
+      <p>Most disagreement between ideologies comes down to a few big dividing lines. The test found them by looking at how the ideologies answer, rather than deciding them in advance. The ${SHOWN_LINES} below come out the same however the ideologies are sampled, so each has a name.${REAL_LINES > SHOWN_LINES ? ` The ${REAL_LINES - SHOWN_LINES} smaller ones after them also stand out from random noise, but shift too much to name.` : ""}</p>
       <div id="axes"></div>
     </section>
 
