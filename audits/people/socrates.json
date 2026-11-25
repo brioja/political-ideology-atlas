@@ -1,8 +1,10 @@
 {
  "id": "socrates",
  "name": "Socrates",
- "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditedAt": "2026-11-24",
+ "auditor": [
+  "claude-sonnet-5-5"
+ ],
  "living": false,
  "role": "Athenian philosopher (c. 470-399 BC)",
  "summary": "Socrates wrote nothing, so all views come from Plato, Xenophon and others, and scholars dispute how far each portrays the real man. The reports show him obeying Athenian law even to his death while refusing unjust orders, doubting selection of officials by lot or ballot in favour of those who know, and preaching simple living and care of the soul. Where Plato may be speaking through him, as in the Republic, answers are low confidence.",
@@ -14,7 +16,8 @@
    "title": "Memorabilia (Recollections of Socrates), Dakyns translation",
    "author": "Xenophon",
    "url": "https://www.gutenberg.org/cache/epub/1177/pg1177.txt",
-   "usedFor": "Xenophon's reports of Socrates' sayings (I.2, I.6, II.2, III.9, IV.4, IV.6); secondhand"
+   "usedFor": "Xenophon's reports of Socrates' sayings (I.2, I.6, II.2, III.9, IV.4, IV.6); secondhand",
+   "evidence": "words"
   },
   {
    "id": "s2",
@@ -22,7 +25,8 @@
    "title": "Crito (Jowett translation)",
    "author": "Plato",
    "url": "https://www.gutenberg.org/cache/epub/1657/pg1657.txt",
-   "usedFor": "Socrates and the Laws on obedience, experts' opinion vs the many; secondhand, Plato's account"
+   "usedFor": "Socrates and the Laws on obedience, experts' opinion vs the many; secondhand, Plato's account",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +34,8 @@
    "title": "Apology (Jowett translation)",
    "author": "Plato",
    "url": "https://www.gutenberg.org/cache/epub/1656/pg1656.txt",
-   "usedFor": "Socrates' defence speech as reported by Plato: care of the soul, wealth, the Leon episode; secondhand"
+   "usedFor": "Socrates' defence speech as reported by Plato: care of the soul, wealth, the Leon episode; secondhand",
+   "evidence": "words"
   },
   {
    "id": "s4",
@@ -38,7 +43,8 @@
    "title": "Gorgias (Jowett translation)",
    "author": "Plato",
    "url": "https://www.gutenberg.org/cache/epub/1672/pg1672.txt",
-   "usedFor": "Punishment as improving the soul, the true political art; Plato's later construction"
+   "usedFor": "Punishment as improving the soul, the true political art; Plato's later construction",
+   "evidence": "words"
   },
   {
    "id": "s5",
@@ -46,7 +52,8 @@
    "title": "The Republic (Jowett translation)",
    "author": "Plato",
    "url": "https://www.gutenberg.org/cache/epub/1497/pg1497.txt",
-   "usedFor": "Censorship of poetry, division of labour, guardians' natures, women guardians; Plato's construction as much as Socrates'"
+   "usedFor": "Censorship of poetry, division of labour, guardians' natures, women guardians; Plato's construction as much as Socrates'",
+   "evidence": "words"
   },
   {
    "id": "s6",
@@ -54,7 +61,8 @@
    "title": "Apology of Xenophon (Dakyns translation)",
    "author": "Xenophon",
    "url": "https://www.gutenberg.org/cache/epub/1171/pg1171.txt",
-   "usedFor": "Xenophon's account of Socrates' trial and piety; secondhand"
+   "usedFor": "Xenophon's account of Socrates' trial and piety; secondhand",
+   "evidence": "words"
   },
   {
    "id": "s7",
@@ -62,7 +70,8 @@
    "title": "Socrates",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Socrates",
-   "usedFor": "Dates, sources problem, scholarly dispute on his politics"
+   "usedFor": "Dates, sources problem, scholarly dispute on his politics",
+   "evidence": "words"
   },
   {
    "id": "s8",
@@ -70,7 +79,26 @@
    "title": "Socrates",
    "author": "Stanford Encyclopedia of Philosophy",
    "url": "https://plato.stanford.edu/entries/socrates/",
-   "usedFor": "Socratic problem; obedience to law, civil disobedience, democracy; Xenophon vs Plato"
+   "usedFor": "Socratic problem; obedience to law, civil disobedience, democracy; Xenophon vs Plato",
+   "evidence": "words"
+  },
+  {
+   "id": "s9",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Crito (Jowett translation): Socrates' refusal to escape and acceptance of his sentence, as Plato reports it",
+   "author": "Plato",
+   "url": "https://www.gutenberg.org/cache/epub/1657/pg1657.txt",
+   "usedFor": "Socrates stays in prison and accepts the penalty; secondhand, Plato's account"
+  },
+  {
+   "id": "s10",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Apology (Jowett translation): Socrates' acts at Arginusae and under the Thirty, as Plato reports them",
+   "author": "Plato",
+   "url": "https://www.gutenberg.org/cache/epub/1656/pg1656.txt",
+   "usedFor": "Refusing an illegal vote and the order to arrest Leon despite risk of death; secondhand, Plato's account"
   }
  ],
  "answers": {
@@ -2989,9 +3017,753 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "military-force-for-human-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "revolution-legitimate": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Plato's Laws tell Socrates that a citizen must persuade the city or obey it and may do no violence to his country (Crito 51b-c).",
+   "sources": [
+    "s2"
+   ]
+  },
+  "political-violence-legitimate": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Plato's Socrates holds that one may never injure or retaliate, and the Laws forbid violence against one's country (Crito 49c, 51c).",
+   "sources": [
+    "s2"
+   ]
+  },
+  "power-shapes-accepted-knowledge": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "initiating-nondefensive-force-unjustified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "foreign-policy-non-interference": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "harassment-claims-court-access": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "military-force-beyond-defence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "publish-international-agreements": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "mutual-intelligibility-defines-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "voluntary-union-payments-at-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "technology-design-reflects-political-interests": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Xenophon's Socrates says animals are born and bred for the sake of man, who tames and uses them for food, trade and war (Mem. IV.3.10).",
+   "sources": [
+    "s1"
+   ]
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Xenophon's Socrates leads Euthydemus to agree that those ruled by bodily pleasures are not free, so self-control is the basis of freedom (Mem. IV.5).",
+   "sources": [
+    "s1"
+   ]
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Plato reports Socrates refusing to escape after his conviction and accepting the penalty for his conduct, which the Laws say must be endured or the city persuaded.",
+   "sources": [
+    "s9"
+   ]
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "resist-oppression-despite-death": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "As Plato reports it, he voted against an illegal trial at Arginusae and refused the Thirty's order to arrest Leon, accepting the risk of death rather than take part in injustice.",
+   "sources": [
+    "s10"
+   ]
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "recognize-territorial-claims-from-conquest": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "decent-living-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in Plato or Xenophon.",
+   "sources": []
   }
  },
- "notes": "Born 470/469 BC, died 399 BC. Every answer is secondhand (Plato, Xenophon). Answers drawn only from the Republic are Plato's construction as much as Socrates' and are low. The Socratic problem is unresolved; the reports contradict one another.",
+ "notes": "Born 470/469 BC, died 399 BC. Every answer is secondhand (Plato, Xenophon). Answers drawn only from the Republic are Plato's construction as much as Socrates' and are low. The Socratic problem is unresolved; the reports contradict one another. Later pass 2026-11-24: all new statements checked against Xenophon's Memorabilia, Plato's Apology and Crito; themes searched: government, means, world, economy, society, culture, liberty, ecology, technology. Nearly all new statements are not addressed in the sources and stay null.",
  "reviews": [
   {
    "kind": "inference",
@@ -2999,5 +3771,16 @@
    "reviewedAt": "2026-10-31",
    "nulled": 3
   }
- ]
+ ],
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-24"
+  }
+ ],
+ "rules": 7
 }
