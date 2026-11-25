@@ -5,7 +5,8 @@
 //                        [--subjects id,id --gap-exception "<why> (<maintainer>, <date>)"]
 // --subjects audits only these, in this order, then stops (a test of a change); --gap-exception marks each pass it
 // integrates as exempt from the re-audit gap (validate.js), for a maintainer-approved early pass.
-// --lane defaults to <engine>-<kind>, so one lane per engine and kind runs with no --lane (Brandon, 2026-11-19); --until stops new subjects and resumes after that local time (default: run until
+// --lane defaults to the tmux window number when the driver runs in tmux (one tmux, one lane per window), else to
+// <engine>-<kind> (Brandon, 2026-11-19 and 11-25); --until stops new subjects and resumes after that local time (default: run until
 // the queue is empty or the driver is stopped; a stop mid-subject keeps the draft, which the next start carries on).
 // Graceful stop: Ctrl-C or Ctrl-D in the driver's terminal, or `touch scratchpad/lane-out/<lane>/STOP` (or
 // scratchpad/lane-out/STOP for all lanes), ends the run after the current subject, with the final signal step and push;
@@ -31,7 +32,13 @@ const { spawn, spawnSync, execFileSync } = require("child_process");
 const fs = require("fs"), path = require("path");
 const ROOT = path.join(__dirname, "..");
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
-const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane", `${ENGINE}-${KIND}`), RESUMES = +arg("--resumes", 6);
+// The window of the pane the driver runs in ($TMUX_PANE), not whichever window is active.
+const tmuxWindow = () => {
+  if (!process.env.TMUX || !process.env.TMUX_PANE) return null;
+  const r = spawnSync("tmux", ["display-message", "-p", "-t", process.env.TMUX_PANE, "#I"], { encoding: "utf8" });
+  return r.status === 0 && /^\d+$/.test(r.stdout.trim()) ? r.stdout.trim() : null;
+};
+const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane") || tmuxWindow() || `${ENGINE}-${KIND}`, RESUMES = +arg("--resumes", 6);
 const UNTIL = arg("--until"), DRY = process.argv.includes("--dry");
 const SUBJECTS = arg("--subjects") ? arg("--subjects").split(",").filter(Boolean) : null, GAP_EXCEPTION = arg("--gap-exception");
 if (GAP_EXCEPTION && GAP_EXCEPTION.trim().length < 10) { console.error("--gap-exception: say why, and who approved it"); process.exit(1); }
