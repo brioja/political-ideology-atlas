@@ -39,6 +39,11 @@ agents too. This file adds what matters when running audits.
   statements that fail the wording check in quiz order (`node scripts/statement-review.js next`) and writing
   proposals to `scratchpad/statement-review/`. It edits nothing else; the maintainer approves each proposal.
 
+- **Missing statements wait for a second audit:** a statement is worked on only once two audits ask for it, so it
+  isn't a one-off request. Differently worded requests count together once Claude and Codex agree they mean the same
+  thing and give them a shared `"group"` key; `node scripts/statements-check.js` lists those asked for twice.
+  Brandon, 2026-11-25.
+
 - New ideologies get a statement pass before their audits: `audits/PROMPT_STATEMENTS.md` (Opus builds
   the source library and proposes missing statements, each worded from at least two source quotes from separate places). Batches of
   about 20 proposed statements go to one Codex review; statements Claude and Codex both approve go into

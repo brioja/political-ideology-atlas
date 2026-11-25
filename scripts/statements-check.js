@@ -3,7 +3,10 @@
 //   Signal (test 2): the real lines predict a candidate's answers better than shuffled answers
 //   (scripts/statement-signal.js). Candidates that pass are ready to be made active. Agree and
 //   disagree counts are shown for reference only.
-//   Missing statements: each audit's missingStatements not yet added to statements.json or declined.
+//   Missing statements: each audit's missingStatements not yet added to statements.json or declined. A statement
+//   is worked on only once at least two audits ask for it, so it isn't a one-off request (Brandon, 2026-11-25).
+//   Requests worded differently count together when they share a "group" key, which Claude and Codex give
+//   them once both agree the requests mean the same thing: no script can match vague wordings.
 //   node scripts/statements-check.js [--json]
 //   node scripts/statements-check.js --wording [file.json ...]
 //     Test 3: marks wording in candidate statements, or in the statements of proposal or review
@@ -119,4 +122,12 @@ console.log("\nActive statements are checked by `node scripts/statement-signal.j
 // "declined" (why not), so the record shows where every statement came from.
 const open = missing.filter((c) => !c.addedAs && !c.declined);
 console.log(`\nMissing statements in audits: ${missing.length}, ${open.length} not yet handled.`);
-for (const c of open) console.log(`  [${c.from} ${c.value > 0 ? "+" : ""}${c.value}] ${c.text}`);
+const entry = (c) => `  [${c.from} ${c.value > 0 ? "+" : ""}${c.value}] ${c.text}`;
+const groups = new Map();
+for (const c of open) { const k = c.group || `${c.from}\u0000${c.text}`; groups.set(k, [...(groups.get(k) || []), c]); }
+const twice = [...groups].filter(([, cs]) => new Set(cs.map((c) => c.from)).size >= 2);
+const once = [...groups].filter(([, cs]) => new Set(cs.map((c) => c.from)).size < 2).flatMap(([, cs]) => cs);
+console.log(`Asked for by two or more audits (${twice.length}), ready for a statement pass:`);
+for (const [k, cs] of twice) console.log(`  ${cs[0].group ? k : "(same text)"}\n${cs.map((c) => "  " + entry(c)).join("\n")}`);
+console.log(`Asked for by one audit (${once.length}), waiting for a second; give matching requests a shared "group":`);
+for (const c of once) console.log(entry(c));
