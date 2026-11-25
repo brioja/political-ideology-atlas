@@ -1,8 +1,10 @@
 {
  "id": "harriet-tubman",
  "name": "Harriet Tubman",
- "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditedAt": "2026-11-24",
+ "auditor": [
+  "claude-sonnet-5-5"
+ ],
  "living": false,
  "role": "Abolitionist, Underground Railroad conductor, Union scout and suffrage campaigner (c. 1822-1913)",
  "summary": "Born into slavery, Tubman escaped and led many others to freedom, supported John Brown's plan for an armed attack on slavery, and served the Union army as a nurse, scout and spy. Late in life she spoke for women's suffrage and founded a home for aged Black people. She could not write, so her views survive through dictated accounts and reports of her speeches.",
@@ -11,30 +13,34 @@
   {
    "id": "s1",
    "kind": "primary",
+   "evidence": "words",
    "title": "Scenes in the Life of Harriet Tubman (1869), dictated accounts and letters",
    "author": "Sarah H. Bradford, from Tubman's own telling",
    "url": "https://www.gutenberg.org/cache/epub/57821/pg57821.txt",
-   "usedFor": "Her dictated words on flight, the Fugitive Slave Law, the revolver, visions, John Brown; secondhand"
+   "usedFor": "Her dictated words on flight, the Fugitive Slave Law, the revolver; secondhand"
   },
   {
    "id": "s2",
    "kind": "primary",
-   "title": "Harriet, the Moses of Her People (1886)",
+   "evidence": "words",
+   "title": "Harriet, the Moses of Her People (1886), dictated words",
    "author": "Sarah H. Bradford, from Tubman's own telling",
    "url": "https://archive.org/download/harrietmosesofh00brad/harrietmosesofh00brad_djvu.txt",
-   "usedFor": "Revised dictated account: 'liberty or death', Nalle rescue, Combahee raid, Brown, faith; secondhand"
+   "usedFor": "Her dictated words: 'liberty or death', faith and visions, Rochester suffrage meeting; secondhand"
   },
   {
    "id": "s3",
    "kind": "reference",
-   "title": "Harriet Tubman (Wikipedia article, wikitext)",
+   "evidence": "words",
+   "title": "Harriet Tubman (Wikipedia article, wikitext), used only to find leads",
    "author": "Wikipedia contributors",
    "url": "https://en.wikipedia.org/w/index.php?title=Harriet_Tubman&action=raw",
-   "usedFor": "Reported quotes on suffrage and Lincoln, Brown, Civil War service, Home for the Aged, birth and death dates"
+   "usedFor": "Leads only; no answer rests on it"
   },
   {
    "id": "s4",
    "kind": "scholarly",
+   "evidence": "words",
    "title": "A supporter of the women's suffrage movement, Tubman speaks at the 1896 Rochester Convention",
    "author": "James Chapnick, House Divided (Dickinson College), citing Larson, Bound for the Promised Land",
    "url": "https://hd.housedivided.dickinson.edu/node/15055",
@@ -43,10 +49,38 @@
   {
    "id": "s5",
    "kind": "reference",
+   "evidence": "words",
    "title": "Harriet Tubman (Davis)",
    "author": "Women and the Vote NY",
    "url": "https://www.womenandthevotenys.com/1suffragists-vetted/harriet-tubman-davis",
    "usedFor": "Suffrage speeches in New York, Boston and Washington; 1896 keynote"
+  },
+  {
+   "id": "s6",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Harriet, the Moses of Her People (1886), contemporary reports of her acts",
+   "author": "Sarah H. Bradford, quoting John Brown's letter, F. B. Sanborn and the Troy newspapers",
+   "url": "https://archive.org/download/harrietmosesofh00brad/harrietmosesofh00brad_djvu.txt",
+   "usedFor": "Nineteen Underground Railroad trips with a revolver, the 1860 Nalle rescue, help to John Brown, Civil War scouting; secondhand reports"
+  },
+  {
+   "id": "s7",
+   "kind": "scholarly",
+   "evidence": "action",
+   "title": "Harriet Tubman (Britannica)",
+   "author": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/biography/Harriet-Tubman",
+   "usedFor": "Her flight and rescues, reward on her head, John Brown's consultation, the Home for Aged and Indigent Negroes"
+  },
+  {
+   "id": "s8",
+   "kind": "scholarly",
+   "evidence": "action",
+   "title": "Harriet Tubman (National Park Service)",
+   "author": "US National Park Service, Harriet Tubman Underground Railroad National Historical Park",
+   "url": "https://www.nps.gov/hatu/learn/historyculture/htubman.htm",
+   "usedFor": "The armed Combahee River raid she planned and led (1863), Underground Railroad, suffrage work, co-founding the National Association of Colored Women"
   }
  ],
  "answers": {
@@ -890,11 +924,35 @@
   "equal-moral-worth": {
    "value": 2,
    "confidence": "medium",
-   "rationale": "Devoted her life to freeing enslaved people and argued from women's wartime sacrifices that women are equal to men; the reports of her speeches are secondhand.",
+   "rationale": "Devoted her life to freeing enslaved people, ran a home for aged and poor Black people and co-founded the National Association of Colored Women, which demanded equality; the reports of these acts are secondhand.",
    "sources": [
-    "s2",
-    "s3",
-    "s4"
+    "s7",
+    "s8"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Devoted her life to freeing enslaved people and argued from women's wartime sacrifices that women are equal to men; the reports of her speeches are secondhand.",
+     "sources": [
+      "s2",
+      "s3",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Devoted her life to freeing enslaved people, ran a home for aged and poor Black people and co-founded the National Association of Colored Women, which demanded equality; the reports of these acts are secondhand.",
+     "sources": [
+      "s7",
+      "s8"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-24"
+    }
    ]
   },
   "socialism-one-country": {
@@ -1470,10 +1528,34 @@
   "armed-group-creates-revolution": {
    "value": 1,
    "confidence": "low",
-   "rationale": "Helped Brown plan and recruit for a small armed force meant to start an uprising against slavery; she did not take part in the Harpers Ferry attack and her own statements on the method are not recorded.",
+   "rationale": "Reported as helping John Brown plan and recruit for an armed uprising against slavery and as consulted on his Harpers Ferry plan; she did not take part in the raid, and no statement of hers on the method is recorded.",
    "sources": [
-    "s2",
-    "s3"
+    "s6",
+    "s7"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Helped Brown plan and recruit for a small armed force meant to start an uprising against slavery; she did not take part in the Harpers Ferry attack and her own statements on the method are not recorded.",
+     "sources": [
+      "s2",
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Reported as helping John Brown plan and recruit for an armed uprising against slavery and as consulted on his Harpers Ferry plan; she did not take part in the raid, and no statement of hers on the method is recorded.",
+     "sources": [
+      "s6",
+      "s7"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-24"
+    }
    ]
   },
   "abolish-hereditary-privilege": {
@@ -2289,10 +2371,34 @@
   "never-kill-self-defence": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Told in her own dictated account that she would fight for her liberty as long as her strength lasted, and carried a revolver, which she threatened to use, as protection and to keep fugitives moving.",
+   "rationale": "Told in her own dictated account that she would fight for her liberty as long as her strength lasted and that no one would take her alive; she carried a revolver, which she threatened to use to keep fugitives moving.",
    "sources": [
     "s1",
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "Told in her own dictated account that she would fight for her liberty as long as her strength lasted, and carried a revolver, which she threatened to use, as protection and to keep fugitives moving.",
+     "sources": [
+      "s1",
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "Told in her own dictated account that she would fight for her liberty as long as her strength lasted and that no one would take her alive; she carried a revolver, which she threatened to use to keep fugitives moving.",
+     "sources": [
+      "s1",
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-24"
+    }
    ]
   },
   "unbroken-national-continuity": {
@@ -2702,8 +2808,32 @@
    "confidence": "medium",
    "rationale": "Reported as answering a woman who asked if women should vote with \"I suffered enough to believe it\", and as speaking for women's voting rights at suffrage meetings and the 1896 federation conference; the words are secondhand.",
    "sources": [
-    "s3",
-    "s4"
+    "s4",
+    "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Reported as answering a woman who asked if women should vote with \"I suffered enough to believe it\", and as speaking for women's voting rights at suffrage meetings and the 1896 federation conference; the words are secondhand.",
+     "sources": [
+      "s3",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Reported as answering a woman who asked if women should vote with \"I suffered enough to believe it\", and as speaking for women's voting rights at suffrage meetings and the 1896 federation conference; the words are secondhand.",
+     "sources": [
+      "s4",
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-24"
+    }
    ]
   },
   "religion-oppresses-women": {
@@ -2945,9 +3075,753 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "political-violence-legitimate": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Reported by Brown and Sanborn as helping Brown plan and recruit for an armed attack to start a slave uprising, but she did not join the raid and no statement of hers on political violence as such is recorded.",
+   "sources": [
+    "s6",
+    "s7"
+   ]
+  },
+  "revolution-legitimate": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Reported as helping Brown plan and recruit for an armed uprising against slavery; she stayed out of the raid itself and left no statement on revolution as a method.",
+   "sources": [
+    "s6",
+    "s7"
+   ]
+  },
+  "resist-oppression-despite-death": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Reported as making nineteen trips into slave territory with a price on her head, and as leading an armed raid and rescuing a captured fugitive from federal officers, risking her life each time.",
+   "sources": [
+    "s6",
+    "s7",
+    "s8"
+   ]
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Reported as defying the Fugitive Slave Law, rescuing the arrested fugitive Nalle from US officers in 1860 and then vanishing rather than facing any penalty; this fits both a refusal of penalties and flight from a return to slavery.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "military-force-for-human-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "power-shapes-accepted-knowledge": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "initiating-nondefensive-force-unjustified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-policy-non-interference": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "harassment-claims-court-access": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-force-beyond-defence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "publish-international-agreements": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mutual-intelligibility-defines-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "voluntary-union-payments-at-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "technology-design-reflects-political-interests": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recognize-territorial-claims-from-conquest": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "decent-living-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
   }
  },
- "notes": "Wikipedia gives her birth as c. March 1822 (the task listed 1820). Her words are reported by Bradford and others and cannot be checked against her own writing. Her political record is thin on the test's statements, so many answers are null.",
+ "notes": "Wikipedia gives her birth as c. March 1822. Her words are reported by Bradford and others and cannot be checked against her own writing. Later pass 2026-11-24: sources tagged action/words, no answer rests on Wikipedia, 122 new statements answered (4 with a stated or recorded position, the rest null). Searched: both Bradford books (Gutenberg 57821, 9999) by theme (violence, law, religion, suffrage, race, pensions, war), Britannica, NPS. Segregated-train ejection (1865) found only in an NPS planning document, not read. Her record is thin on economy, government, ecology and technology.",
  "reviews": [
   {
    "kind": "inference",
@@ -2960,6 +3834,17 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-10",
    "nulled": 1
+  }
+ ],
+ "rules": 7,
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-24"
   }
  ]
 }
