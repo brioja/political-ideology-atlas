@@ -11,7 +11,7 @@
 //
 // Per subject:
 //  1. Pick: the lane's own unfinished drafts first, then `next.js --lane`, passing over subjects other lanes have
-//     claimed (scratchpad/lane-out/*/<id>.claim, written at once) and any audit with uncommitted changes. Greta Thunberg and Annie Besant were audited twice before this.
+//     claimed (scratchpad/lane-out/*/<id>.claim, checked and written under .claim.lock) and any audit with uncommitted changes. Greta Thunberg and Annie Besant were audited twice before this.
 //  2. Audit: a new session with START, resumed with RESUME until the subject has its DONE.txt line. An ideology first
 //     runs a scope phase (SCOPE_START, until <id>.scope exists), checked with validate.js --stage scope and sent back
 //     to fix (SCOPE_FIX), then answers in the same session (ANSWER). The session
@@ -29,7 +29,7 @@ const fs = require("fs"), path = require("path");
 const ROOT = path.join(__dirname, "..");
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane", `${ENGINE}-${KIND}`), RESUMES = +arg("--resumes", 6);
-const UNTIL = arg("--until");
+const UNTIL = arg("--until"), DRY = process.argv.includes("--dry");
 if (!["codex", "claude"].includes(ENGINE) || !["people", "ideologies"].includes(KIND) || (UNTIL && !/^\d\d:\d\d$/.test(UNTIL))) {
   console.error("usage: node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane name] [--until HH:MM] [--resumes 6]");
   process.exit(1);
@@ -43,7 +43,7 @@ const STARTED = Date.now();
 let stopping = false, child = null;
 const stopRequested = () => stopping || [path.join(OUT, "STOP"), path.join(LANES, "STOP")].some((f) => { try { return fs.statSync(f).mtimeMs >= STARTED; } catch { return false; } });
 const LANES = path.join(ROOT, "scratchpad", "lane-out"), OUT = path.join(LANES, LANE);
-const DONE = path.join(OUT, "DONE.txt"), LOG = path.join(OUT, "driver.log"), LOCK = path.join(LANES, ".integrate.lock");
+const DONE = path.join(OUT, "DONE.txt"), LOG = path.join(OUT, "driver.log"), LOCK = path.join(LANES, ".integrate.lock"), CLAIM_LOCK = path.join(LANES, ".claim.lock");
 fs.mkdirSync(OUT, { recursive: true });
 const log = (m) => { const l = `${new Date().toTimeString().slice(0, 8)} ${m}`; console.log(l); fs.appendFileSync(LOG, l + "\n"); };
 const requestStop = (how) => { if (stopping) return; stopping = true; log(`stop requested (${how}): finishing the current subject; Ctrl-C again to quit now`); };
@@ -98,8 +98,24 @@ function nextSubject() {
   };
   const dirty = git("status", "--porcelain", "--", "audits/people", "audits/profiles").stdout
     .split("\n").map((l) => (l.slice(3).match(/([^/]+)\.json$/) || [])[1]).filter(Boolean);
-  // next.js --lane passes over every lane's drafts and claims.
-  return next(dirty);
+  // next.js --lane passes over every lane's drafts and claims, but a people pick takes about a minute, and lanes
+  // picking inside that window all chose the same subject (2026-11-24: Futurism taken by 5 lanes, Laozi by 3, Eva
+  // Perón by 2 and committed twice). So the claim is checked and written under a lock, and a subject another lane
+  // claimed meanwhile is skipped and the pick run again.
+  const skip = [...dirty];
+  for (;;) {
+    const id = next(skip);
+    if (!id) return null;
+    const taken = locked(() => {
+      const other = fs.readdirSync(LANES, { withFileTypes: true }).some((d) => d.isDirectory() && d.name !== LANE
+        && [".claim", ".json"].some((x) => fs.existsSync(path.join(LANES, d.name, id + x))));
+      if (!other && !DRY) fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
+      return other;
+    }, CLAIM_LOCK);
+    if (!taken) return id;
+    log(`${id}: claimed by another lane during the pick; picking again`);
+    skip.push(id);
+  }
 }
 
 // ---- sessions ----
@@ -203,15 +219,15 @@ function stdoutError(out) {
 }
 
 // ---- integration ----
-function locked(fn) {
+function locked(fn, lock = LOCK) {
   for (let i = 0; ; i++) {
-    try { fs.mkdirSync(LOCK); break; } catch {
+    try { fs.mkdirSync(lock); break; } catch {
       // A lock older than 30 minutes is left from a killed driver.
-      try { if (Date.now() - fs.statSync(LOCK).mtimeMs > 30 * 60000) { fs.rmdirSync(LOCK); continue; } } catch {}
+      try { if (Date.now() - fs.statSync(lock).mtimeMs > 30 * 60000) { fs.rmdirSync(lock); continue; } } catch {}
       execFileSync("sleep", ["5"], { detached: true });
     }
   }
-  try { return fn(); } finally { fs.rmdirSync(LOCK); }
+  try { return fn(); } finally { fs.rmdirSync(lock); }
 }
 // Validator errors other than the uncertainty rule and a notIdeasOfWhatSocietyShouldBe record, or "" when only
 // those (or nothing) fail. Not validate.js's exit 2: that also passes coatrack-check ("sources:") errors, which
@@ -298,7 +314,7 @@ function signal() {
 // ---- main loop ----
 const settle = () => new Promise((r) => setTimeout(r, 100));
 // --dry: print the subject this lane would take and exit.
-if (process.argv.includes("--dry")) { console.log(nextSubject()); process.exit(0); }
+if (DRY) { console.log(nextSubject()); process.exit(0); }
 (async () => {
 let count = 0;
 log(`lane ${LANE} (${ENGINE}, ${KIND}) started${UNTIL ? `, until ${UNTIL}` : ""}`);
