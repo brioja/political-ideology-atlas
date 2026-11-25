@@ -79,7 +79,7 @@ function bibliography(html, surname) {
 // waits while a queued download matches one of the works) or `sought <id>`. Books found are named "<Author> - <title>.txt".
 function ideologies() {
   const wfb = require("./waiting-for-books"), sought = wfb.sought("ideologies");
-  const { validate, excludedOnly } = require("./validate");
+  const { validate } = require("./validate");
   const doc = arg("--doc", path.join(os.homedir(), "work", "ideology-books-to-look-for.md"));
   // Each book as the author's first and last name (one name for those known by one) and a short title, no commas, so it
   // can be pasted into a search (Brandon, 2026-11-20); audits/book-searches.json, hand-written. A work not in it yet is
@@ -98,8 +98,8 @@ function ideologies() {
     if (!works.length) continue;
     const want = works.flatMap((w) => searches[w] ? searches[w].filter((b) => !have(b)).map(([a, t]) => `${a} *${t}*`) : [clean(w)]);
     if (!want.length) { landed.push(c.id); continue; }
-    const { errors } = validate(c.id);
-    out.push({ id: c.id, name: c.name, failing: errors.length > 0 && !excludedOnly(errors), views: c.views12m || 0, works: [...new Set(want)] });
+    const { errors, coatrack = [] } = validate(c.id);
+    out.push({ id: c.id, name: c.name, failing: errors.length > coatrack.length, views: c.views12m || 0, works: [...new Set(want)] });
   }
   out.sort((a, b) => b.failing - a.failing || b.views - a.views);
   const shown = out.slice(0, LIMIT);

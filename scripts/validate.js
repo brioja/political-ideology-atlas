@@ -218,13 +218,18 @@ function keyFigureChecks(a, id, sources, errors, warnings) {
   }
 }
 
+// Returns { errors, warnings, excluded, coatrack, sources }. "excluded" is not an error: a finished audit the site leaves
+// out, by the uncertainty rule or as a notIdeasOfWhatSocietyShouldBe record (the data decides, so nothing to fix).
+// "coatrack" lists the errors (also in "errors") from the coatrack check: fixed in the audit, not by redoing it.
 function validate(id) {
   const errors = [];
   const warnings = [];
+  const excluded = [];
+  const coatrackErrors = [];
   const p = profilePath(id);
-  if (!fs.existsSync(p)) return { errors: [`missing ${p}`], warnings };
+  if (!fs.existsSync(p)) return { errors: [`missing ${p}`], warnings, excluded, coatrack: coatrackErrors };
   let a;
-  try { a = readJson(p); } catch (e) { return { errors: [`invalid JSON: ${e.message}`], warnings }; }
+  try { a = readJson(p); } catch (e) { return { errors: [`invalid JSON: ${e.message}`], warnings, excluded, coatrack: coatrackErrors }; }
   if (AS_CURRENT) a = { ...a, rules: CURRENT_RULES };
 
   const entry = catalog().find((c) => c.id === id);
@@ -247,8 +252,8 @@ function validate(id) {
       const hits = text ? (text.match(/\bideas\b/gi) || []).length : 0;
       if (hits) errors.push(`DOES_NOT_INCLUDE_IDEAS not allowed: its Wikipedia article (${lib.articleTitle(entry)}) says "ideas" ${hits} time${hits > 1 ? "s" : ""}; audit it in full`);
     }
-    if (!errors.length) errors.push(`not ideas of what society should be: ${n.reason}: ${n.explanation}`);
-    return { errors, warnings };
+    // A valid record is finished and excluded, not an error: it goes in "excluded", which the lane never hands a session to fix.
+    return { errors, warnings, excluded: errors.length ? [] : [`not ideas of what society should be: ${n.reason}: ${n.explanation}`], coatrack: [] };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
   if (!PEOPLE && !STAGE_SCOPE) errors.push(...colorErrors(id));
@@ -308,10 +313,11 @@ function validate(id) {
     // Evidence for aliases, key figures and key works is required from 2026-11-06 on (older audits get it at their next pass).
     const coatrack = require("./coatrack-check").check(id, a, { strict: AS_CURRENT || (a.auditedAt || "") >= "2026-11-06", pass: AS_CURRENT || !!DIR });
     const { problems, unchecked } = coatrack;
-    const out = strict ? errors : warnings;
-    for (const pr of problems) out.push(`sources: ${pr}`);
+    const found = problems.map((pr) => `sources: ${pr}`);
+    if (unchecked.length) found.push(`sources: ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
+    (strict ? coatrackErrors : warnings).push(...found);
+    if (strict) errors.push(...found);
     for (const pr of coatrack.warnings) warnings.push(`sources: ${pr}`);
-    if (unchecked.length) out.push(`sources: ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
   }
   const sourceIds = new Set();
   for (const s of sources) {
@@ -329,7 +335,7 @@ function validate(id) {
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
 
   // --stage scope stops here: the draft has its scope, sources, aliases, key figures and key works but no answers yet.
-  if (STAGE_SCOPE) { if (!PEOPLE) keyFigureChecks(a, id, sources, errors, warnings); return { errors, warnings, sources }; }
+  if (STAGE_SCOPE) { if (!PEOPLE) keyFigureChecks(a, id, sources, errors, warnings); return { errors, warnings, excluded: [], coatrack: coatrackErrors, sources }; }
   const answers = a.answers || {};
   const statements = allStatements();
   const active = statements.filter((s) => !isCandidate(s));
@@ -685,20 +691,20 @@ function validate(id) {
     if (!s.placed && s.known < s.bars.length) {
       // Fewer positions than dividing lines: no error bar can be solved, so every line would read "no position reaches
       // it" whatever the answers are (Brandon, 2026-11-14: make this clearer). Say so once instead.
-      errors.push("uncertainty: too few positions to place them on the dividing lines yet. Find more positions, or accept the failure if the record has no more.");
+      excluded.push("uncertainty: too few positions to place them on the dividing lines yet. Find more positions, or accept the failure if the record has no more.");
     } else if (!s.placed) {
       const bar = (b) => (isFinite(b) ? `±${b.toFixed(2)}` : "no position reaches it");
       const weak = s.bars.map((b, i) => [b, i]).filter(([b]) => b > s.maxBar).sort((x, y) => y[0] - x[0])
         .map(([b, i]) => `${lineName(i)} ${bar(b)}`);
-      if (weak.length) errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave ${weak.length > 1 ? "these dividing lines" : "a dividing line"} with an error bar over ±${s.maxBar}: ${weak.join(", ")}`);
-      if (s.mean > s.maxMean) errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave error bars of ${isFinite(s.mean) ? `±${s.mean.toFixed(2)}` : "infinite width"} on average over the dividing lines (over ±${s.maxMean}); the widest: ${s.bars.map((b, i) => [b, i]).sort((x, y) => y[0] - x[0]).slice(0, 4).map(([b, i]) => `${lineName(i)} ${bar(b)}`).join(", ")}`);
+      if (weak.length) excluded.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave ${weak.length > 1 ? "these dividing lines" : "a dividing line"} with an error bar over ±${s.maxBar}: ${weak.join(", ")}`);
+      if (s.mean > s.maxMean) excluded.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave error bars of ${isFinite(s.mean) ? `±${s.mean.toFixed(2)}` : "infinite width"} on average over the dividing lines (over ±${s.maxMean}); the widest: ${s.bars.map((b, i) => [b, i]).sort((x, y) => y[0] - x[0]).slice(0, 4).map(([b, i]) => `${lineName(i)} ${bar(b)}`).join(", ")}`);
     }
   }
   const zeros = vals.filter((x) => x.value === 0).length;
   const lows = vals.filter((x) => x.confidence === "low" && x.value !== null).length;
   if (zeros > active.length * 0.3) warnings.push(`${zeros} neutral answers (over 30%)`);
   if (lows > active.length * 0.5) warnings.push(`${lows} low-confidence answers (over 50%)`);
-  return { errors, warnings, sources: [...sources, ...reading.map((r, i) => ({ id: `reading${i + 1}`, url: r.url })),
+  return { errors, warnings, excluded, coatrack: coatrackErrors, sources: [...sources, ...reading.map((r, i) => ({ id: `reading${i + 1}`, url: r.url })),
     ...(a.wikipedia ? [{ id: "wikipedia", url: a.wikipedia }] : [])] };
 }
 
@@ -734,27 +740,24 @@ async function main() {
   }
   let failed = 0, excluded = 0;
   for (const id of ids.sort()) {
-    const { errors, warnings, sources = [] } = validate(id);
+    const { errors, warnings, excluded: out, sources = [] } = validate(id);
     if (fetchFailed.has(id)) errors.unshift(`DOES_NOT_INCLUDE_IDEAS unchecked: its Wikipedia page could not be fetched (${fetchFailed.get(id)}); validate again later`);
     if (aliasFetchFailed.has(id)) errors.unshift(`alias lookup unchecked: Wikipedia could not be reached (${aliasFetchFailed.get(id)}); validate again later`);
     if (links && errors.length === 0) for (const b of await checkLinks(sources)) errors.push(`dead link: ${b}`);
     if (errors.length) failed++;
-    if (excludedOnly(errors)) excluded++;
-    const status = errors.length ? "FAIL" : warnings.length ? "WARN" : "ok";
+    else if (out.length) excluded++;
+    const status = errors.length ? "FAIL" : out.length ? "EXCL" : warnings.length ? "WARN" : "ok";
     console.log(`${status.padEnd(4)} ${id}`);
     for (const e of errors) console.log(`     error: ${e}`);
+    for (const x of out) console.log(`     excluded: ${x}`);
     for (const w of warnings) console.log(`     warning: ${w}`);
   }
-  console.log(`\n${ids.length - failed}/${ids.length} audits valid.`);
-  // Exit 2 when every failure is only the uncertainty rule: a finished audit that is excluded, not
-  // one to redo. pending.js relies on this so excluded people aren't re-audited on every run.
-  process.exit(failed === 0 ? 0 : failed === excluded ? 2 : 1);
+  console.log(`\n${ids.length - failed}/${ids.length} audits valid${excluded ? ` (${excluded} excluded from the site)` : ""}.`);
+  // Exit 1 when any audit has errors; 2 when none has but some are excluded (finished, left off the site by the
+  // uncertainty rule or as not ideas of what society should be); 0 otherwise.
+  process.exit(failed ? 1 : excluded ? 2 : 0);
 }
 
-// Finished but excluded: by the uncertainty rule, or as not ideas of what society should be (the first check).
-// Errors that don't send an existing audit back to the audit queue (pending.js): an honest uncertainty
-// failure, a notIdeasOfWhatSocietyShouldBe record, or a coatrack-check finding (fixed in the audit, not by redoing it).
-const excludedOnly = (errors) => errors.length > 0 && errors.every((e) => e.startsWith("uncertainty:") || e.startsWith("not ideas of what society should be:") || e.startsWith("sources:"));
 // A dividing line as the site names it (data.js), or past the drawn ones by its strongest statements.
 function lineName(i) {
   const { MODEL, QUESTIONS } = require(require("path").join(lib.ROOT, "data.js"));
@@ -769,4 +772,4 @@ if (require.main === module) main();
 const setCommittedForTests = (fn) => { committedForTests = fn; };
 const setLibraryForTests = (l) => { libraryForTests = l; };
 const setTextsForTests = (t) => { textsForTests = t; };
-module.exports = { validate, excludedOnly, CURRENT_RULES, setCommittedForTests, setLibraryForTests, setTextsForTests, nextPassFrom, reauditGap, PROJECT_START };
+module.exports = { validate, CURRENT_RULES, setCommittedForTests, setLibraryForTests, setTextsForTests, nextPassFrom, reauditGap, PROJECT_START };

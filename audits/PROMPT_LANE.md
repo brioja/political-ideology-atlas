@@ -35,7 +35,7 @@ Audit the id the driver gives you, person or ideology.
    taken from it: its id in the answers' `sources` and its claims in their rationales.
 5. Edit no other file. Do not build, test, commit or push.
 
-Once validate.js reports no errors other than the uncertainty rule (or a
-`notIdeasOfWhatSocietyShouldBe` record), add one line to
+Once validate.js reports no errors (an `excluded:` line, the uncertainty rule or a
+`notIdeasOfWhatSocietyShouldBe` record, is a result, not an error), add one line to
 `scratchpad/lane-out/<lane>/DONE.txt`: id, kind, known answers, and whether the uncertainty rule
 passed (or the lines it names).

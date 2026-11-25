@@ -57,7 +57,7 @@ function withHistory(a, id, earlier) {
 function errorsFor(a, committed = null) {
   fs.writeFileSync(tmp, JSON.stringify(a, null, 2));
   setCommittedForTests(() => committed);
-  return validate(subject.id).errors.filter((e) => !e.startsWith("uncertainty:"));
+  return validate(subject.id).errors;
 }
 let n = 0;
 function ok(name, a, committed) {
@@ -219,7 +219,8 @@ fails("answer resting only on Wikipedia", E(base(), (a) => { a.sources.push({ id
 fails("answer resting only on OnTheIssues", E(base(), (a) => { a.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "OnTheIssues", url: "https://www.ontheissues.org/x.htm" }); a.answers[B].sources = ["s6"]; }), /OnTheIssues is only a way to find evidence/);
 // Uncertainty: a thin audit fails the rule (filtered from the other cases, checked here).
 { fs.writeFileSync(tmp, JSON.stringify(base(), null, 2)); setCommittedForTests(() => null);
-  assert(validate(subject.id).errors.some((e) => e.startsWith("uncertainty:")), "thin fixture: expected the uncertainty rule to fail"); n++; }
+  const r = validate(subject.id);
+  assert(r.errors.length === 0 && r.excluded.some((e) => e.startsWith("uncertainty:")), `thin fixture: expected the uncertainty rule to exclude it, not an error; got errors ${r.errors}`); n++; }
 // Review history details.
 fails("nulling review malformed", E(nulled(["s1"]), (a) => { a.reviews[0].reviewedAt = "today"; }), /a "nulling" review is/);
 fails("history entry cites an unknown source", withHistory(laterPass(base()), A, [{ ...earlierA, sources: ["s9"] }]), /reviewHistory\[0\]: unknown source 's9'/);

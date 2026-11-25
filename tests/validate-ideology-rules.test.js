@@ -59,7 +59,7 @@ function base() {
 }
 const E = (a, f) => { f(a); return a; };
 function result(a) { fs.writeFileSync(tmp, JSON.stringify(a, null, 2)); return validate(subject.id); }
-const errorsOf = (a) => result(a).errors.filter((e) => !e.startsWith("uncertainty:"));
+const errorsOf = (a) => result(a).errors;
 let n = 0;
 function ok(name, a) { const e = errorsOf(a); assert.deepStrictEqual(e, [], `${name}: expected no errors, got:\n  ${e.join("\n  ")}`); n++; }
 function fails(name, a, re) { const e = errorsOf(a); assert(e.some((x) => re.test(x)), `${name}: expected an error matching ${re}, got:\n  ${e.join("\n  ") || "(none)"}`); n++; }
@@ -134,8 +134,9 @@ try {
   // notIdeasOfWhatSocietyShouldBe: a reason from the list, a sentence of explanation, a source; the "ideas" test.
   const nai = (n) => ({ id: subject.id, name: N, auditedAt: "2026-11-07", auditor: "claude-sonnet-5-5", notIdeasOfWhatSocietyShouldBe: n,
     sources: [{ id: "s1", kind: "reference", title: "Article", url: "https://example.org/encyclopedia" }] });
-  { const e = result(nai({ reason: "PARTY", explanation: "It is a political party, not a set of political ideas." })).errors;
-    assert(e.length === 1 && /^not ideas of what society should be: PARTY/.test(e[0]), `valid notIdeasOfWhatSocietyShouldBe record: got ${e}`); n++; }
+  { const r = result(nai({ reason: "PARTY", explanation: "It is a political party, not a set of political ideas." }));
+    assert(r.errors.length === 0 && r.excluded.length === 1 && /^not ideas of what society should be: PARTY/.test(r.excluded[0]),
+      `valid notIdeasOfWhatSocietyShouldBe record: excluded, not an error; got errors ${r.errors}, excluded ${r.excluded}`); n++; }
   fails("notIdeasOfWhatSocietyShouldBe reason not in the list", nai({ reason: "CLUB", explanation: "It is a club, not a set of political ideas at all." }), /"notIdeasOfWhatSocietyShouldBe\.reason" must be one of/);
   fails("notIdeasOfWhatSocietyShouldBe explanation too short", nai({ reason: "PARTY", explanation: "A party." }), /"notIdeasOfWhatSocietyShouldBe\.explanation" needs at least a sentence/);
   fails("notIdeasOfWhatSocietyShouldBe as free text", nai("It is a political party, not a set of political ideas."), /"notIdeasOfWhatSocietyShouldBe\.reason" must be one of/);
