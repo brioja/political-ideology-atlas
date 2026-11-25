@@ -140,7 +140,7 @@ These answer for an ideology:
 - Its defining sources (section 1).
 - Its `keyWorks` and its `keyFigures`' texts (section 2).
 
-An adherent's or member organisation's own platform doesn't answer, since they hold more opinions than
+An adherent's or organisation's own platform doesn't answer, since they hold more opinions than
 just the ideology; their account of what the ideology holds does (section 1). Critics don't answer. A
 general remark that its content varies answers no particular statement (`null`).
 
