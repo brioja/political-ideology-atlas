@@ -4,6 +4,7 @@
 //   node scripts/get.js <audit id> <url> --short-ok  accept a page under 300 words (it really is that short)
 //   node scripts/get.js <audit id> <url> --refresh   fetch again even if the library already has this url
 //   node scripts/get.js <audit id> <url> --agents=firefox,chrome   try only these agents
+//   node scripts/get.js <audit id> <url> --no-wayback  don't fall back to a Wayback Machine capture
 // Agents, in order (those not installed are skipped):
 //   curl (the project's own User-Agent), wget, wget2, aria2c (each its own), lynx, w3m (text browsers, their
 //   own), headless Firefox, headless Chrome (real browsers, their own User-Agents).
@@ -11,6 +12,9 @@
 // refusals"). What stays out: posing as a browser from a script, reusing cookies, solving a captcha.
 // A good copy is a 2xx PDF with text, or a page with at least 300 words of text that isn't a bot check or a
 // JavaScript shell. The index.json entry records which agent got it.
+// When no agent gets a good copy (a refusal, a 404, a dead page), the latest good Wayback Machine capture is
+// saved instead (copies elsewhere are fine to cite, Brandon 2026-11-12); its index.json entry has agent "wayback"
+// and the capture's address in `archived`. --no-wayback skips this.
 // Wikipedia/Wikidata, YouTube and Gutenberg are refused here: they have their own cached tools.
 "use strict";
 const fs = require("fs");
@@ -193,6 +197,29 @@ function save(id, url, file, verdict, extra) {
   return { dir: path.relative(path.join(__dirname, ".."), dir), entry };
 }
 
+// The newest Wayback captures of `url` that the archive got with a 200, newest first, as raw-copy addresses
+// (id_: the page as captured, without the archive's toolbar).
+function waybackCaptures(url, n = 3) {
+  const q = `https://web.archive.org/cdx/search/cdx?url=${encodeURIComponent(url)}&filter=statuscode:200&fl=timestamp&limit=-${n}&output=json`;
+  const r = run("curl", ["-sS", "--max-time", "60", "-A", USER_AGENT, q]);
+  let rows; try { rows = JSON.parse(r.out); } catch { return []; }
+  return rows.slice(1).map(([ts]) => ts).reverse().map((ts) => ({ ts, raw: `https://web.archive.org/web/${ts}id_/${url}`, archived: `https://web.archive.org/web/${ts}/${url}` }));
+}
+
+async function wayback(url, tmp, shortOk, tried) {
+  const caps = waybackCaptures(url);
+  if (!caps.length) { tried.push({ agent: "wayback", result: "no capture" }); return null; }
+  for (const c of caps) {
+    await sleep(2000);
+    const out = path.join(tmp, "wayback-" + c.ts + ".download");
+    const r = run("curl", ["-sSL", "--compressed", "--max-time", "90", "-A", USER_AGENT, "-o", out, "-w", "%{http_code}", c.raw], 120000);
+    const v = judge(out, { shortOk, status: Number(r.out.trim()) || 0 });
+    tried.push({ agent: `wayback ${c.ts.slice(0, 8)}`, result: v.ok ? "ok" : v.why });
+    if (v.ok) return { out, v, c };
+  }
+  return null;
+}
+
 function existing(id, url) {
   const idxFile = path.join(__dirname, "..", "scratchpad", "sources", id, "index.json");
   if (!fs.existsSync(idxFile)) return null;
@@ -200,7 +227,7 @@ function existing(id, url) {
   return (Array.isArray(idx) ? idx : idx.files || []).find((x) => x.url === url) || null;
 }
 
-async function get(id, url, { shortOk = false, refresh = false, addedBy, only = null } = {}) {
+async function get(id, url, { shortOk = false, refresh = false, addedBy, only = null, noWayback = false } = {}) {
   const host = new URL(url).hostname;
   const own = OWN_TOOL.find(([re]) => re.test(host));
   if (own) throw new Error(`${host} has its own cached tool: ${own[1]}`);
@@ -220,6 +247,10 @@ async function get(id, url, { shortOk = false, refresh = false, addedBy, only = 
       if (r.status === 404 || r.status === 410) break; // not there: no other agent will find it
       if (v.ok) return { ...save(id, url, out, v, { agent: a.name, ...(addedBy ? { addedBy } : {}) }), tried, note: v.why };
     }
+    if (!noWayback && !/^web\.archive\.org$/i.test(host)) {
+      const w = await wayback(url, tmp, shortOk, tried);
+      if (w) return { ...save(id, url, w.out, w.v, { agent: "wayback", archived: w.c.archived, ...(addedBy ? { addedBy } : {}) }), tried, note: w.v.why };
+    }
     return { tried };
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
 }
@@ -234,12 +265,13 @@ if (require.main === module) {
     process.exit(1);
   }
   const only = (args.find((a) => a.startsWith("--agents=")) || "").slice(9).split(",").filter(Boolean);
-  get(id, url, { shortOk: args.includes("--short-ok"), refresh: args.includes("--refresh"), only: only.length ? only : null }).then((r) => {
+  get(id, url, { shortOk: args.includes("--short-ok"), refresh: args.includes("--refresh"), only: only.length ? only : null, noWayback: args.includes("--no-wayback") }).then((r) => {
     for (const t of r.tried) console.error(`  ${t.agent}: ${t.result}`);
     if (r.cached) console.log(`already in the library: ${r.dir}/${r.entry.file}`);
+    else if (r.entry?.archived) console.log(`saved from the Wayback Machine (the original refused or is gone): ${r.dir}/${r.entry.file}; cite it as a Wayback copy, ${r.entry.archived}${r.note ? `; ${r.note}` : ""}`);
     else if (r.entry) console.log(`saved by ${r.entry.agent}: ${r.dir}/${r.entry.file} (${words(fs.readFileSync(path.join(__dirname, "..", r.dir, r.entry.file), "utf8"))} words)${r.note ? `; ${r.note}, original ${r.entry.original}` : ""}`);
     else {
-      console.error("No agent got a good copy. Try another copy of the same text (Wayback, archive.org, a mirror); otherwise name the page in your report (backlog/blocked-sources.md).");
+      console.error("No agent got a good copy and the Wayback Machine has none. Try another copy of the same text (archive.org, a mirror); otherwise name the page in your report (backlog/blocked-sources.md).");
       process.exit(1);
     }
   }).catch((e) => { console.error(String(e.message || e)); process.exit(1); });

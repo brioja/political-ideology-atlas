@@ -52,7 +52,8 @@ words; don't paste long passages.
   moving on after any refusal (a 403, a 429, a bot check), and records which one got it.
   Each agent uses its own name; never set a browser's User-Agent on a script (a hook blocks it), reuse cookies
   or solve a captcha. A robots.txt block aimed only at crawlers, such as `User-agent: ClaudeBot`, doesn't stop
-  an audit: it fetches pages, it doesn't crawl. If no agent gets the page, name it in your report; the
+  an audit: it fetches pages, it doesn't crawl. If every agent fails, it saves the newest good Wayback Machine
+  capture instead and prints its address: cite that copy as a Wayback copy. If there is none, name the page in your report; the
   maintainer can open it by hand (`backlog/blocked-sources.md` tracks audits held back this way).
 - Song lyrics are the subject's own words only if the subject wrote or co-wrote them. Lyrics
   written by someone else and only performed by the subject are not evidence of the subject's views.

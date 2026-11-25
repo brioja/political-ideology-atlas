@@ -11,33 +11,23 @@ when that gap plausibly cost answers (not for a reference page that had other co
 
 ## People
 
-- **Recep Tayyip Erdoğan** (second pass 2026-10-30, 37 known, off the site): tccb.gov.tr (presidency
-  speeches), akparti.org.tr (403), the UN General Debate PDFs, Washington Post and Washington Times
-  refused automated download; every quote came through press reports, so nothing is high confidence.
-  Lacks his labour and union positions and full speech texts. Candidate for a third pass once the
-  presidency speech archive is reachable.
 - **James Buchanan** (second pass 2026-10-30, shown): Moore's *Works* vol. XI (1860-68: the December
   1860 message, secession) failed to download; his secession and use-of-force answers rest on the
   first audit alone.
-- **Harriet Harman** (2026-10-30, 28 known, not shown): TheyWorkForYou, Parallel Parliament and ukpol
-  returned 403/503; votes came from a Wayback copy and the Commons divisions API.
 - **Charlotte of Mecklenburg-Strelitz** (2026-10-23, 0 known): her letters are the main primary source;
-  the Georgian Papers transcription sites didn't resolve and the Library of Congress copy didn't open.
+  the Georgian Papers transcription sites didn't resolve (georgianpapers.com is gone; the Wayback Machine
+  has it) and the Library of Congress copy didn't open.
 - **Ronan Farrow** (2026-10-28, 0 answerable): his books weren't fetchable; what was reachable covers only
   diplomacy funding and over-classification.
 - **Christopher Guest** (2026-10-23, 2 known): the 2004 Guardian interview (Richard Grant) wouldn't open.
 - **Vlad the Impaler** (8 known): his own letters weren't available in full; the rest is hostile or late
   secondhand accounts.
-- **Lee Anderson** (2026-10-30, 24 known, not shown): his TheyWorkForYou votes page (no Wayback snapshot;
-  Commons Votes API gaps for most of 2019 to early 2022), the Chad NHS/ECHR column (403), GB News
-  deportations piece (paywall redirect) and the original Feb 2023 Spectator interview. Would cover his
-  2019-22 votes (assisted dying, unions, EU, welfare, tax, policing, drugs) and his own death-penalty words.
-- **Rand Paul** (second pass 2026-10-30, shown): paul.senate.gov and congress.gov returned 403; no press
-  releases or Congressional Record.
-
+- **Lee Anderson** (2026-10-30, 24 known, not shown): the Chad NHS/ECHR column (403), GB News
+  deportations piece (paywall redirect) and the original Feb 2023 Spectator interview: his own
+  death-penalty words. (His TheyWorkForYou votes page, the 2019-22 votes, opens since 2026-11-25.)
 - **Reza Shah** (second pass 2026-10-30, shown): Encyclopaedia Iranica entries (court, Anglo-Iranian
-  relations, conscription, education; 403/Cloudflare), Brew on the D'Arcy cancellation (paywall),
-  Chehabi on the dress laws (paywall); no speech collection found online.
+  relations, conscription, education; Cloudflare, but wget2 gets past it since 2026-11-25), Brew on the
+  D'Arcy cancellation (paywall), Chehabi on the dress laws (paywall); no speech collection found online.
 - **Balen Shah** (second pass 2026-10-30, 25 known, off the site): his first parliamentary appearance
   (redvoicenepal.com, 404), his Facebook/X posts and Nepali speech transcripts weren't reached; his own
   words in Nepali would be the source.
@@ -48,9 +38,7 @@ when that gap plausibly cost answers (not for a reference page that had other co
 - **Christina, Queen of Sweden** (second pass 2026-10-30, 32 known, off the site): Drottning Kristina,
   Brev och skrifter (2006; her Swedish letters and speeches on government, the Diet and peace), archive.org
   text 404.
-- **Frances Perkins** (second pass 2026-10-30, 32 known, off the site): ssa.gov/history (her 1935 radio
-  addresses, the 1962 Roots of Social Security lecture, FLSA and immigration speeches) returned 403. The
-  Wayback Machine has perkinsradio.html (2023 capture); perkins.html and fp1962.html weren't captured.
+
 ## Ideologies
 
 - **Soviet anti-Zionism** (re-audit 2026-10-30, 23 stated, off the site): the Great Soviet Encyclopedia
@@ -83,10 +71,10 @@ when that gap plausibly cost answers (not for a reference page that had other co
   weren't reached; Clinton's own books were not tried. Any of them could carry it over the bar.
 - **Left-wing politics** (re-audit 2026-11-06, 7 known, off the site): Noël and Thérien's chapters on left and
   right (paywalled), a Leiden thesis and a UPF paper (bot checks). Answers rest on Bobbio alone.
-- **Woke** (2026-11-06, 7 known, held by Brandon): Merriam-Webster, SAGE, Cardiff ORCA (VanDreew et al. 2025,
-  *Research & Politics*) and Black Lives Matter pages returned 403. Not yet looked for: Lahtinen's Critical Social
-  Justice Attitudes Scale (2024), Bunyasi and Smith, *Stay Woke* (NYU Press 2019), al-Gharbi, *We Have Never
-  Been Woke* (Princeton 2024).
+- **Woke** (2026-11-06, 7 known, held by Brandon): SAGE and Cardiff ORCA (VanDreew et al. 2025,
+  *Research & Politics*) returned 403 (Merriam-Webster and Black Lives Matter open since 2026-11-25). Not
+  yet looked for: Lahtinen's Critical Social Justice Attitudes Scale (2024), Bunyasi and Smith, *Stay Woke*
+  (NYU Press 2019), al-Gharbi, *We Have Never Been Woke* (Princeton 2024).
 - **Pharaonism** (re-audit 2026-11-06, 8 known, off the site; Brandon: no deepen pass): Gershoni and
   Jankowski, *Egypt, Islam and the Arabs*, Hindawi's Arabic editions, the Potenza, Geer and CUNY theses and
   the Wilson Center piece were blocked or lending-only. Hussein's *Mustaqbal al-thaqafa fi Misr* is now in the
@@ -95,8 +83,9 @@ when that gap plausibly cost answers (not for a reference page that had other co
   *The Wretched of the Earth* and the Bandung communique could not be opened from an official copy (403 and a
   bot check); the violence answers rest on an encyclopedia entry's report of Fanon.
 - **Chicano Movement** (audit 2026-11-07, 36 known, off the site at ±2.10, line 4 ±4.70): public.websites.umich.edu,
-  archives.calstate.edu and core.ac.uk (403), UCSD library pages (bot check) and the SAGE reference body text
+  archives.calstate.edu (403), UCSD library pages (bot check) and the SAGE reference body text
   (paywall) were refused; the Plan de Santa Barbara is only the condensed USC copy. Lacks the full Plan and the
   archive texts on religion, gender and economy.
-- **State atheism** (audit 2026-11-07, 15 known, off the site): Karataş (2020, Albania) and the 2025 *Religions*
-  article sat behind bot checks (403); open by hand. Lacks the Albanian record beyond the ban on religion.
+- **State atheism** (audit 2026-11-07, 15 known, off the site): Karataş (2020, Albania) sat behind a bot check
+  (403); open by hand. Lacks the Albanian record beyond the ban on religion. (MDPI, home of the 2025
+  *Religions* article, opens since 2026-11-25.)
