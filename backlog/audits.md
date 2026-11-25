@@ -112,3 +112,15 @@ Vermeule: its defining source never names them), Irish nationalism (no defining 
   stated answers rest on them), United Armenia (memorandum), Greater Indonesia (Yamin's BPUPK speech),
   Dirigisme (Monnet note), Producerism (Western Sydney thesis was a 403), Moderate conservatism (Kekes's
   book behind Cloudflare; its answers were cleared), Irish republican legitimism (s3 reference).
+- **Thin later passes to look at (2026-11-24, to do 11-25).** Re-audits null whatever no defining source ties, often
+  without first looking for the scholarship that would tie it. Shown 11-10, off the site now:
+  - Monarchism (1 answer, 21 sources): Filmer, Bossuet, James I, Bagehot and Hegel nulled as untied; the
+    notes say a second defining source naming Maurras's *Enquête sur la monarchie* restores about a dozen answers.
+    It may still not reach every line (Brandon: he'd be surprised if it did).
+  - Libertarian socialism (21 answers, 4 non-Wikipedia sources, none a book on it): Prichard et al., *Libertarian
+    Socialism: Politics in Black and Red* (Palgrave, 2012) is on archive.org
+    (https://archive.org/details/LibertarianSocialism). `books-to-look-for.js --ideologies` didn't list it: it
+    only lists books an audit named in notFound, and this one named none. Idea: a book-download step that finds
+    books on the ideology itself (scholarly monographs, edited volumes) before the pass, not only ones the
+    audit asked for.
+  - Also lighter: Republicanism (Federalist No. 51 untied), Neoconservatism (no scholarly literature used).
