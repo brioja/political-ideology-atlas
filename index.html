@@ -79,7 +79,7 @@ main { flex: 1; outline: none; }
 .page > .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
 .stack-lg { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
 h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; overflow-wrap: break-word; margin: 0; }
-h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; }
+h1, h2.h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; }
 h2 { font-size: 1.5rem; font-weight: 700; }
 h3 { font-size: 1.05rem; font-weight: 500; }
 p { margin: 0; max-width: 65ch; }
@@ -317,7 +317,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 /* ---------- Reading pages ---------- */
 .notice { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 0.9rem 1.1rem; font-size: 0.95rem; }
 .prose { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-.prose h2 { margin-top: 1.25rem; }
+.prose h2:not(.h1) { margin-top: 1.25rem; }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--line); background: var(--surface); padding-block: 2rem calc(2rem + env(safe-area-inset-bottom, 0px)); }
@@ -647,7 +647,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
   <section class="page" id="page-ideologies" hidden>
     <div class="wrap narrow stack-lg">
       <div class="stack">
-        <h1>Ideologies</h1>
+        <h2 class="h1">Ideologies</h2>
         <p class="lede">Every ideology in the test, where it sits on the dividing lines, what it stands for, and where to read more.</p>
       </div>
       <figure>
@@ -689,7 +689,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
   <section class="page" id="page-people" hidden>
     <div class="wrap narrow stack-lg">
       <div class="stack">
-        <h1>People</h1>
+        <h2 class="h1">People</h2>
         <p class="lede">Political leaders, thinkers and activists from every region, era and side of politics. Your results show whose recorded positions are closest to yours.</p>
       </div>
       <p class="notice" id="people-status" hidden></p>
@@ -716,7 +716,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
   <!-- About -->
   <section class="page" id="page-about" hidden>
     <div class="wrap narrow prose">
-      <h1>About</h1>
+      <h2 class="h1">About</h2>
       <p class="lede">Political Ideology Atlas is a free, open-source political ideology test. Instead of placing you on axes someone chose in advance, it learns the dividing lines from what the ideologies themselves believe.</p>
 
       <p class="notice" id="data-status" hidden></p>
