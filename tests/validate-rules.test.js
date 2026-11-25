@@ -183,10 +183,6 @@ fails("passes missing an auditor", E(laterPass(base()), (a) => { a.passes.pop();
 fails("wikipedia not an article URL", E(base(), (a) => { a.wikipedia = "https://example.org/x"; }), /"wikipedia" must be an en\.wikipedia\.org article URL or null/);
 ok("wikipedia article URL", E(base(), (a) => { a.wikipedia = "https://en.wikipedia.org/wiki/Example"; }));
 // Sources.
-// Fewer than 3 sources only fails an audit the uncertainty rule places (WP:DIVERSE, Brandon 2026-11-20); this fixture
-// isn't placed, so two sources raise no source-count error.
-{ const errs = errorsFor(E(base(), (a) => { a.sources = a.sources.slice(0, 2); a.answers[A].sources = ["s1"]; }));
-  assert(!errs.some((e) => /at least 3 sources/.test(e)), `fewer than 3 sources, not placed: got ${errs.join("; ")}`); n++; }
 fails("duplicate source id", E(base(), (a) => { a.sources[2].id = "s1"; }), /duplicate source id s1/);
 fails("unknown source kind", E(base(), (a) => { a.sources[2].kind = "blog"; }), /source s3: kind must be one of/);
 fails("source url not http", E(base(), (a) => { a.sources[2].url = "ftp://example.org/x"; }), /source s3: url must be an http\(s\) URL/);
@@ -217,10 +213,6 @@ fails("rules 2: unmarked inference", E(base(), (a) => { a.rules = 2; a.answers[A
 fails("rules 3: no inferences at all", E(base(), (a) => { a.answers[A].confidence = "low"; a.answers[A].rationale = "Inferred: from the bill he voted for on this statement."; }), /rules 3 has no inferences/);
 fails("answer resting only on Wikipedia", E(base(), (a) => { a.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "Wikipedia", url: "https://en.wikipedia.org/wiki/Example" }); a.answers[B].sources = ["s6"]; }), /Wikipedia is only a way to find evidence/);
 fails("answer resting only on OnTheIssues", E(base(), (a) => { a.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "OnTheIssues", url: "https://www.ontheissues.org/x.htm" }); a.answers[B].sources = ["s6"]; }), /OnTheIssues is only a way to find evidence/);
-// Uncertainty: a thin audit fails the rule (filtered from the other cases, checked here).
-{ fs.writeFileSync(tmp, JSON.stringify(base(), null, 2)); setCommittedForTests(() => null);
-  const r = validate(subject.id);
-  assert(r.errors.length === 0 && r.excluded.some((e) => e.startsWith("uncertainty:")), `thin fixture: expected the uncertainty rule to exclude it, not an error; got errors ${r.errors}`); n++; }
 // Review history details.
 fails("nulling review malformed", E(nulled(["s1"]), (a) => { a.reviews[0].reviewedAt = "today"; }), /a "nulling" review is/);
 fails("history entry cites an unknown source", withHistory(laterPass(base()), A, [{ ...earlierA, sources: ["s9"] }]), /reviewHistory\[0\]: unknown source 's9'/);

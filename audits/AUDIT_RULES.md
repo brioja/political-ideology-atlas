@@ -21,11 +21,10 @@ words; don't paste long passages.
 
 - Use web search and fetch tools and cite only pages you opened in this session, by the URL you
   visited. Never cite from memory or construct a URL.
-- Use at least 3 of the subject's defining sources, whatever their kind: its own texts (founding
-  documents, programmes, speeches, books, its record) where it has them, and the scholarship and
-  reference works that define it. One rule for every subject. The 3 are a
-  condition for being shown (WP:DIVERSE): when no more exist, record the ones found and the audit is
-  finished, left out by the uncertainty rule (validate.js).
+- Use the subject's defining sources, whatever their kind: its own texts (founding documents,
+  programmes, speeches, books, its record) where it has them, and the scholarship and reference works
+  that define it. One rule for every subject. When no more exist, record the ones found and the audit
+  is finished.
 - Scholarly reference works (the Stanford and Internet Encyclopedias of Philosophy, Britannica,
   Oxford or Routledge reference works) are scholarship, and count as evidence. Wikipedia,
   OnTheIssues and similar compilations are only a way to find evidence: follow their citations to
@@ -201,26 +200,11 @@ least one source id from your `sources` list.
 - `low`: mixed or contested. If the rationale has to say that the evidence is split, the answer is
   `low`.
 
-## 5. Uncertainty: placed on every dividing line
-
-A political ideology or figure takes positions across all of the test's dividing lines; a record
-that speaks to only some of them holds opinions, not a full politics. The validator measures, on
-each line, the error bar the subject's known positions leave (±1 standard deviation of their place,
-from those positions alone, in line units), and the subject is shown only if no line's bar is wider
-than ±4 (`MAX_BAR` in `pca.js`) and the bars average at most ±2 over the lines (`MAX_MEAN_BAR`), so a
-record precise on some lines but loose on several others is not shown. A line no known position
-reaches has an infinite bar and always fails.
-The same rule applies to
-ideologies, people and AI models. Every answer resting on evidence counts,
-whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred:") that audits under
-rules 2 still hold. A failure names the lines whose bars are too wide.
-
-## 6. Research to the end, and later passes
+## 5. Research to the end, and later passes
 
 **An audit goes as deep as the record allows**. There is no limit on
-sources. If your draft fails the uncertainty rule,
-keep researching before you finish: the lines the validator names, then the statements still null, in
-new sources (the local corpora too). Stop when they are covered or when the record really has nothing
+sources. Keep researching before you finish: the statements still null, in new sources (the local
+corpora too). Stop when they are covered or when the record really has nothing
 more, and say in `notes` which themes you searched. Each confidence stays what its evidence supports (section 4).
 
 **Texts known to exist** (people). Every text by the person that the validator knows

@@ -126,8 +126,8 @@ const COLOR = (id) => PEOPLE ? "" : ` If audits/ideology-colors.json has no entr
 function laterPassProblems(id) {
   const committed = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
   if (fs.existsSync(draft(id)) || !fs.existsSync(committed)) return "";
-  const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--no-uncertainty", id]);
-  // Only errors and warnings: an "excluded:" line (not ideas of what society should be, the uncertainty rule) is a
+  const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", id]);
+  // Only errors and warnings: an "excluded:" line (not ideas of what society should be) is a
   // finished result, not a problem, and handing it over as one had sessions overturn the record (2026-11-24, Extremism).
   const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`);
   if (!lines.length) return "";
@@ -161,7 +161,7 @@ function otherNames(id) {
   if (!names.length) return "";
   return ` Wikipedia redirects these names to the subject's article: ${names.map((n) => `"${n}"`).join(", ")}. Search under them from the start, not only the subject's own name: a source naming the subject by one of them counts as naming it (the coatrack check takes them as aliases, unless another ideology claims the name).`;
 }
-const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.${otherNames(id)}${namesakeBooks(id)}${laterPassProblems(id)}`;
+const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.${otherNames(id)}${namesakeBooks(id)}${laterPassProblems(id)}`;
 // An ideology's audit runs in two phases (Brandon, 2026-11-23): first what PROMPT.md section 2 settles (scope, sources,
 // aliases, key figures, key works), which the driver checks with validate.js --stage scope and sends back to fix, then
 // the answers. Assadism had listed Hafez but not Bashar al-Assad as a key figure, which left Bashar's speeches untied;
@@ -171,7 +171,7 @@ const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your su
 const scopeMark = (id) => path.join(OUT, `${id}.scope`);
 const SCOPE_START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This first phase covers audits/PROMPT.md sections 1 and 2 only: find the defining sources and write scratchpad/lane-out/${LANE}/${id}.json with its scope, sources, aliases, key figures and key works (if that draft exists, carry on from it; a later pass keeps the committed answers as they are for now). Don't answer statements yet. When those parts are in the draft, create the empty file scratchpad/lane-out/${LANE}/${id}.scope and end your turn; the driver checks them and then asks for the answers.${otherNames(id)}${namesakeBooks(id)}${laterPassProblems(id)}`;
 const SCOPE_FIX = (id, problems) => `\`node scripts/validate.js --dir scratchpad/lane-out/${LANE} --stage scope ${id}\` reports these problems with the scope, sources, aliases, key figures and key works of scratchpad/lane-out/${LANE}/${id}.json:\n${problems}\nFix each error, and act on each warning (a person named in a key figure's quote: list them if the defining sources present the ideology as their thought or political legacy). Check again with that command, and end your turn.`;
-const ANSWER = (id) => `The scope, sources, aliases, key figures and key works of \`${id}\` are checked. Now answer the statements. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer. When every statement has an answer, validate with \`node scripts/validate.js --dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers> | <uncertainty result>\`.`;
+const ANSWER = (id) => `The scope, sources, aliases, key figures and key works of \`${id}\` are checked. Now answer the statements. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer. When every statement has an answer, validate with \`node scripts/validate.js --dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.`;
 // validate.js --stage scope's errors and warnings for the draft, as "- " lines ("" when clean).
 function scopeProblems(id) {
   const r = run("node", ["scripts/validate.js", "--dir", path.relative(ROOT, OUT), "--stage", "scope", id]);
@@ -231,8 +231,8 @@ function locked(fn, lock = LOCK) {
   }
   try { return fn(); } finally { fs.rmdirSync(lock); }
 }
-// Validator errors, or "" when there are none: exit 0 (valid) or 2 (valid, excluded from the site by the uncertainty
-// rule or as not ideas of what society should be).
+// Validator errors, or "" when there are none: exit 0 (valid) or 2 (valid, excluded from the site
+// as not ideas of what society should be).
 function errorsIn(dirArgs, id) {
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), ...dirArgs, id]);
   if (r.status === 0 || r.status === 2) return "";
@@ -266,6 +266,16 @@ function buildAndCommit(message, extra = []) {
   const t = run("node", ["test.js", ...(PEOPLE ? ["--people"] : [])]);
   if (t.status) { git("checkout", "--", ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f)))); return `tests failed: ${failure(t.stdout + t.stderr)}`; }
   return commit(message, [...extra, ...GENERATED.filter((f) => fs.existsSync(path.join(ROOT, f)))]);
+}
+// Whether the site shows the integrated audit (the uncertainty rule), for the log only: sessions aren't told, they go as
+// far as the record allows (Brandon, 2026-11-24). A child process, so it reads the data.js this integration just built.
+function placement(id) {
+  const code = `const lib = require("./scripts/lib"), id = ${JSON.stringify(id)};
+    const a = lib.readJson(${PEOPLE} ? lib.personPath(id) : lib.profilePath(id));
+    const u = a.notIdeasOfWhatSocietyShouldBe ? null : ${PEOPLE} ? lib.personUncertainty(a.answers || {}) : lib.ideologyUncertainty(a);
+    console.log(!u ? "not ideas of what society should be" : u.placed ? "placed on every line (shown)" : "not placed on every line (not shown)");`;
+  const r = run("node", ["-e", code]);
+  return r.status ? "placement unknown" : r.stdout.trim();
 }
 function integrate(id) {
   return locked(() => {
@@ -368,7 +378,7 @@ while (timeLeft()) {
   // The session writes its DONE line before any fix round, so after one its note on validate.js is out of date
   // (trotskyism, 2026-11-23: "still errors on one point ... left in" for an audit that passed in round 1).
   const fixed = rounds ? ` [validate.js passed after ${rounds} fix round${rounds > 1 ? "s" : ""}; the note below is from before]` : "";
-  log(`done ${id} (${name})${fixed}: ${line.split("|").slice(1).join("|").trim()}`);
+  log(`done ${id} (${name})${fixed}: ${line.split("|").slice(1).join("|").trim()} | ${placement(id)}`);
   count++;
   if (PEOPLE && count % BOOKS_EVERY === 0) books();
   locked(() => push(false));

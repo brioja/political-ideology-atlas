@@ -14,9 +14,9 @@ Audit the id the driver gives you, person or ideology.
 1. Follow `audits/AUDIT_RULES.md` and `audits/PROMPT.md` (ideology) or `audits/PROMPT_PEOPLE.md`
    (person) exactly, with `{{id}}`, `{{name}}` and the other fields taken from the next.js output
    or the catalog. Answer every statement in statements.json, candidates included, and set `rules`
-   to the current version (`CURRENT_RULES` in scripts/validate.js). Research to the end (section 6).
+   to the current version (`CURRENT_RULES` in scripts/validate.js). Research to the end (section 5).
 2. If the subject already has an audit (or next.js gives a "reason"), this is a later pass: start
-   from the committed file and follow `audits/AUDIT_RULES.md` section 6 (reviewHistory, `passes`,
+   from the committed file and follow `audits/AUDIT_RULES.md` section 5 (reviewHistory, `passes`,
    your model in `auditor`), never rewrite it from scratch. `auditor` is your full model id
    (e.g. `gpt-6.1-sol`, `claude-opus-5-5`), not a family name.
    The driver's first message lists what the committed audit fails under today's rules
@@ -35,7 +35,6 @@ Audit the id the driver gives you, person or ideology.
    taken from it: its id in the answers' `sources` and its claims in their rationales.
 5. Edit no other file. Do not build, test, commit or push.
 
-Once validate.js reports no errors (an `excluded:` line, the uncertainty rule or a
-`notIdeasOfWhatSocietyShouldBe` record, is a result, not an error), add one line to
-`scratchpad/lane-out/<lane>/DONE.txt`: id, kind, known answers, and whether the uncertainty rule
-passed (or the lines it names).
+Once validate.js reports no errors (an `excluded:` line, a `notIdeasOfWhatSocietyShouldBe` record,
+is a result, not an error), add one line to
+`scratchpad/lane-out/<lane>/DONE.txt`: id, kind and known answers.

@@ -5,8 +5,6 @@
 //   add --people to validate person audits (audits/people) instead of ideologies
 //   add --controls to validate the negative-control audits (audits/controls)
 //   add --dir <folder> to read the audits from that folder instead (a lane's drafts, audits/PROMPT_LANE.md)
-//   add --no-uncertainty to skip the uncertainty rule (whether the audit places them on every
-//   dividing line; it loads the whole model: slow).
 //   add --as-current to check an audit as if it were written under today's rules (every rules-gated and strict
 //   check, statements it has no answer for in one line): what its next pass has to fix. scripts/lane.js puts this in
 //   a later pass's first prompt (Brandon, 2026-11-21: "run validate at the start of an audit").
@@ -16,10 +14,9 @@
 //   the answers are researched rather than after).
 const fs = require("fs");
 const lib = require("./lib");
-const { readJson, allStatements, isCandidate, personUncertainty, ideologyUncertainty } = lib;
+const { readJson, allStatements, isCandidate } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
-const UNCERTAINTY = !process.argv.includes("--no-uncertainty") && !process.argv.includes("--stage");
 const STAGE_SCOPE = process.argv.includes("--stage") && process.argv[process.argv.indexOf("--stage") + 1] === "scope";
 const AS_CURRENT = STAGE_SCOPE || process.argv.includes("--as-current");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
@@ -218,8 +215,10 @@ function keyFigureChecks(a, id, sources, errors, warnings) {
   }
 }
 
-// Returns { errors, warnings, excluded, coatrack, sources }. "excluded" is not an error: a finished audit the site leaves
-// out, by the uncertainty rule or as a notIdeasOfWhatSocietyShouldBe record (the data decides, so nothing to fix).
+// Returns { errors, warnings, excluded, coatrack, sources }. "excluded" is not an error: a notIdeasOfWhatSocietyShouldBe
+// record, finished and left off the site. Whether an audit is placed on every dividing line (the uncertainty rule) is
+// not checked here: the build decides that, and the auditor goes as far as the record allows either way (Brandon,
+// 2026-11-24: "we don't need to pass it to the agent, it should be going as far as it can").
 // "coatrack" lists the errors (also in "errors") from the coatrack check: fixed in the audit, not by redoing it.
 function validate(id) {
   const errors = [];
@@ -680,26 +679,6 @@ function validate(id) {
 
   // Not errors, but signs of a lazy audit worth a look.
   const vals = active.map((s) => answers[s.id]).filter(Boolean);
-  if (errors.length === 0 && UNCERTAINTY) {
-    // Uncertainty: does their record place them on every dividing line? (see pca.js)
-    // For ideologies only stated positions count; inferred answers don't.
-    const s = PEOPLE ? personUncertainty(answers) : ideologyUncertainty(a);
-    // Diverse sources (WP:DIVERSE) are a condition for being shown, not for being finished: an audit the uncertainty
-    // rule places needs at least 3 sources, while one it leaves out may rest on fewer when no more exist (Brandon,
-    // 2026-11-20, after marxist-schools-of-thought found only two pages using its name).
-    if (s.placed && sources.length < 3) errors.push(`placed on every dividing line, so it needs at least 3 sources (WP:DIVERSE), has ${sources.length}`);
-    if (!s.placed && s.known < s.bars.length) {
-      // Fewer positions than dividing lines: no error bar can be solved, so every line would read "no position reaches
-      // it" whatever the answers are (Brandon, 2026-11-14: make this clearer). Say so once instead.
-      excluded.push("uncertainty: too few positions to place them on the dividing lines yet. Find more positions, or accept the failure if the record has no more.");
-    } else if (!s.placed) {
-      const bar = (b) => (isFinite(b) ? `±${b.toFixed(2)}` : "no position reaches it");
-      const weak = s.bars.map((b, i) => [b, i]).filter(([b]) => b > s.maxBar).sort((x, y) => y[0] - x[0])
-        .map(([b, i]) => `${lineName(i)} ${bar(b)}`);
-      if (weak.length) excluded.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave ${weak.length > 1 ? "these dividing lines" : "a dividing line"} with an error bar over ±${s.maxBar}: ${weak.join(", ")}`);
-      if (s.mean > s.maxMean) excluded.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave error bars of ${isFinite(s.mean) ? `±${s.mean.toFixed(2)}` : "infinite width"} on average over the dividing lines (over ±${s.maxMean}); the widest: ${s.bars.map((b, i) => [b, i]).sort((x, y) => y[0] - x[0]).slice(0, 4).map(([b, i]) => `${lineName(i)} ${bar(b)}`).join(", ")}`);
-    }
-  }
   const zeros = vals.filter((x) => x.value === 0).length;
   const lows = vals.filter((x) => x.confidence === "low" && x.value !== null).length;
   if (zeros > active.length * 0.3) warnings.push(`${zeros} neutral answers (over 30%)`);
@@ -753,18 +732,8 @@ async function main() {
     for (const w of warnings) console.log(`     warning: ${w}`);
   }
   console.log(`\n${ids.length - failed}/${ids.length} audits valid${excluded ? ` (${excluded} excluded from the site)` : ""}.`);
-  // Exit 1 when any audit has errors; 2 when none has but some are excluded (finished, left off the site by the
-  // uncertainty rule or as not ideas of what society should be); 0 otherwise.
+  // Exit 1 when any audit has errors; 2 when none has but some are excluded (not ideas of what society should be); 0 otherwise.
   process.exit(failed ? 1 : excluded ? 2 : 0);
-}
-
-// A dividing line as the site names it (data.js), or past the drawn ones by its strongest statements.
-function lineName(i) {
-  const { MODEL, QUESTIONS } = require(require("path").join(lib.ROOT, "data.js"));
-  const label = (MODEL.labels || [])[i];
-  if (label) return `line ${i + 1} (${label.low} / ${label.high})`;
-  const top = MODEL.components[i].vector.map((w, j) => [Math.abs(w), j]).sort((x, y) => y[0] - x[0]).slice(0, 3);
-  return `line ${i + 1} (strongest: ${top.map(([, j]) => QUESTIONS[j].id).join(", ")})`;
 }
 
 if (require.main === module) main();

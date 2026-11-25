@@ -179,8 +179,8 @@ const shippedJudge = () => {
 // The uncertainty rule (pca.js), from audit answers.
 const judged = (answers, judge) =>
   require(path.join(ROOT, "pca.js")).uncertainty(judge.ctx, judge.ids.map((id) => (answers[id] ? answers[id].value : null)));
-// Uncertainty counts every answer with a position, whatever its confidence (audits/AUDIT_RULES.md,
-// section 5); "no known position" (null) doesn't count.
+// Uncertainty counts every answer with a position, whatever its confidence (README, "Uncertainty");
+// "no known position" (null) doesn't count.
 const RULES = 2;
 const personUncertainty = (answers, judge = shippedJudge()) => judged(answers, judge);
 

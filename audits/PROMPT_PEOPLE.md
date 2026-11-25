@@ -11,7 +11,7 @@ Inputs (filled in by the runner):
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
 run the validator command the runner gives and fix every error.
 
-Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, uncertainty, research to the end)
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, research to the end)
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
 is specific to people.
 
@@ -117,10 +117,6 @@ disagree, the higher tier wins.
 Confidence follows AUDIT_RULES.md, section 4: `high` is tier 1 or 2 on that specific statement,
 cited from the primary source; tiers 3 and 4 are `medium` at most. Cosponsoring or voting for a bill
 alone is `medium`: it shows support for the bill, not for every way a statement could be read.
-
-**Uncertainty** (AUDIT_RULES.md, section 5) counts every recorded position (not `null`). When it
-fails, the validator names the dividing lines whose error bars are too wide; keep researching before you
-finish: search those first for stated positions. If the record really has nothing more, stop.
 
 ## 3. Output format
 
