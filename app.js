@@ -115,19 +115,19 @@ const weightBar = (i) => `<span class="bar line-weight" role="img" title="${pct(
 
 const END_CHARS = 20;
 function lineInfo(i) {
-  // Past the drawn lines: unnamed (see moreLines).
-  if (i >= SHOWN_LINES) return { name: `Line ${i + 1}`, low: "Left end", high: "Right end", lowId: null, highId: null, unnamed: true };
   // A rotated line named in audits/line-labels.json (see build.js) is named by its theme.
   const named = model.labels && model.labels[i];
   if (named) return { name: `${named.low} ↔ ${named.high}`, low: named.low, high: named.high, lowId: null, highId: null };
+  // Past the drawn lines, a line with no name is titled by its number (see moreLines).
+  if (i >= SHOWN_LINES) return { name: `Line ${i + 1}`, low: "Left end", high: "Right end", lowId: null, highId: null, unnamed: true };
   const sorted = model.ideologies.slice().sort((a, b) => a.scores[i] - b.scores[i]);
   const pick = (ends) => ends.find((d) => d.name.length <= END_CHARS) || ends[0];
   const low = pick(sorted.slice(0, 5)), high = pick(sorted.slice(-5).reverse());
   return { name: `${low.name} ↔ ${high.name}`, low: low.name, high: high.name, lowId: low.id, highId: high.id };
 }
-// The real lines past the drawn ones (SHOWN_LINES..REAL_LINES), unnamed, in a collapsed section;
-// `strip(i)` draws line i. Names for these were decided against (backlog/decided-against.md), so each
-// is titled by its number and its statements say what it divides.
+// The real lines past the drawn ones (SHOWN_LINES..REAL_LINES), in a collapsed section; `strip(i)` draws
+// line i. The ones that hold up when the ideologies are resampled are named (NAMED_LINES in pca.js); the
+// rest are titled by their number, and their statements say what they divide.
 function moreLines(strip) {
   const n = REAL_LINES - SHOWN_LINES;
   if (n <= 0) return "";
@@ -1033,7 +1033,7 @@ function showResults(shared = null) {
 }
 
 // About page: one row per real dividing line with its name, a bar scaled to the biggest line and its share;
-// the lines drawn in results are coloured, the smaller unnamed ones muted. HTML rather than a chart, so the
+// the lines drawn in results are coloured, the smaller ones muted. HTML rather than a chart, so the
 // names and numbers stay readable on a phone.
 function listLineSizes(box) {
   const max = maxShare();
@@ -1043,12 +1043,14 @@ function listLineSizes(box) {
     `<span class="bar" aria-hidden="true"><span style="width:${pct(c.share / max)}"></span></span>` +
     `<span class="ls-pct">${share(c.share)}</span></li>`;
   const lines = model.components.slice(0, REAL_LINES).map(row);
-  // The smaller, unnamed lines in a collapsed section, as on the results page (moreLines).
+  // The smaller lines in a collapsed section, as on the results page (moreLines).
   const n = lines.length - SHOWN_LINES;
+  const named = Array.from({ length: n }, (_, k) => SHOWN_LINES + k).filter((i) => !lineInfo(i).unnamed).length;
   box.innerHTML = `<ol class="line-sizes">${lines.slice(0, SHOWN_LINES).join("")}</ol>` + (n > 0
     ? `<details class="more-lines"><summary>${n} smaller dividing line${n === 1 ? "" : "s"}</summary>` +
-      // Why they have no names (backlog/decided-against.md, 2026-11-01), in plain words.
-      `<p class="ls-why">These lines have no names. Each is small and mixes several issues rather than one clear idea, ` +
+      // Why the rest have no names (NAMED_LINES in pca.js; backlog/decided-against.md), in plain words.
+      `<p class="ls-why">${named ? `The first ${named === 1 ? "one has a name" : `${named} have names`}. The others are numbered: each` : "These lines have no names. Each"} ` +
+      `is small and mixes several issues rather than one clear idea, ` +
       `and what goes into it shifts as ideologies are added or revised, so any name would mislead or soon go out of date. ` +
       `They still count: your matches use all ${REAL_LINES} lines, and your results list the statements behind each one.</p>` +
       `<ol class="line-sizes">${lines.slice(SHOWN_LINES).join("")}</ol></details>`
@@ -1057,7 +1059,7 @@ function listLineSizes(box) {
   const total = model.components.slice(0, REAL_LINES).reduce((t, c) => t + c.share, 0);
   $("line-sizes-note").textContent = `Each percentage is how much of the difference between the ideologies' answers that line explains: ` +
     `the bigger it is, the more statements it separates them on. Together these lines explain about ${pct(total)}; the rest is ` +
-    `disagreement on single issues that doesn't follow any broader divide. The named lines are the ones drawn in your results.`;
+    `disagreement on single issues that doesn't follow any broader divide. Lines 1-${SHOWN_LINES} are the ones drawn in your results.`;
 }
 
 // ---------- Sharing ----------

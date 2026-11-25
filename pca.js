@@ -460,6 +460,10 @@ function nextQuestion(model, answers, asked, done = DONE) {
 
 // The most dividing lines the site shows (and build.js names and rotates for), however many beat noise.
 const MAX_SHOWN_LINES = 8;
+// How many lines carry names: the drawn ones plus the smaller lines that come back the same when the ideologies
+// are resampled (bootstrap of the rotated lines: congruence >= 0.85 with the full-data line in at least 80% of
+// resamples, at 16 and at 17 real lines). Lines past it stay "Line N", since each resample gives a different line there.
+const NAMED_LINES = 11;
 
 // Parallel analysis: how many axes reflect real structure rather than noise. Each run shuffles
 // every statement's answers independently across ideologies (keeping each statement's spread
@@ -653,10 +657,10 @@ function describeAxis(model, index, questions, count = 3) {
     positive: byLoading.slice(0, count),
     negative: byLoading.slice(-count).reverse(),
     // The line's cluster: its strongest statements whichever end they point to, among those mostly
-    // about this line (over half their squared weight across the named lines is on it), so one shared
+    // about this line (over half their squared weight across the drawn lines is on it), so one shared
     // with another line isn't shown as this line's. A rotated line usually loads on one end only.
     cluster: byLoading.filter((p) => {
-      const lines = model.components.slice(0, model.labels ? model.labels.length : index + 1);
+      const lines = model.components.slice(0, model.labels ? Math.min(model.labels.length, MAX_SHOWN_LINES) : index + 1);
       return p.w * p.w > lines.reduce((s, l) => s + l.vector[p.q] ** 2, 0) / 2;
     }).sort((x, y) => Math.abs(y.w) - Math.abs(x.w)).slice(0, count * 2),
     lowEnd: byScore.slice(0, 2).map((i) => i.name),
@@ -720,5 +724,5 @@ function decodeShare(s, ids, slots) {
 function distinctiveness(mean, profile, j) { return Math.abs(profile[j] - mean[j]); }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, covariance, componentsOf, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, statementsToDone, quizMinutes, describeAxis, distinctiveness };
+  module.exports = { MAX_SHOWN_LINES, NAMED_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, covariance, componentsOf, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, statementsToDone, quizMinutes, describeAxis, distinctiveness };
 }

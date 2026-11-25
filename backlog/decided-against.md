@@ -17,7 +17,8 @@ explicit decision from the maintainer.
   flip: the maintainer's own runs gave "Major industries like energy, rail and utilities should be
   publicly owned" +1 on 2026-10-31 and -1 the next day. Taken at face value the flip moves the result
   a little, as the doubt warrants; amplified, a coin-flip would swing it.
-- **Naming dividing lines the page doesn't draw.**
+- **Naming the smaller dividing lines that don't hold up when the ideologies are resampled** (lines past
+  NAMED_LINES in pca.js): each resample gives a different line there, so a name would describe noise.
 - **Rewording the 17 statements whose text bundles two claims** (found 2026-10-29: `unions-good`,
   `cut-welfare`, `abolish-money-wages`, `democracy-best`, `political-elite-corrupt`,
   `equal-moral-worth`, `head-commands-forces`, `end-foreign-alliances`, `abolish-rental-housing`,
@@ -86,6 +87,8 @@ inclusion still use all 14. A shared true-width scale across lines was also weig
 stretched to its own extremes, since band width relative to the line is what the uncertainty rule measures.
 Later the same day lines 9-14 were added unnamed ("Line 9"...) in a collapsed "6 smaller dividing lines"
 section on the results, Compare, ideology and person pages, each with its statements per end; not on the share card.
+On 2026-11-25 lines 9-11 got names after all (they come back the same in at least 80% of bootstrap
+resamples; 12 and up don't), still undrawn and in the same collapsed section.
 
 - **Rewording the active bank's "rather than" statements into priority form** (2026-11-04): 62
   active statements use "X rather than Y"; turning them into "X should matter more than Y" would
