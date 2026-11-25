@@ -93,9 +93,9 @@ if (!PEOPLE_ONLY) {
 // its name (build.js warns); that must be renamed deliberately, not shipped nameless.
 {
   const { MODEL } = require("./data.js");
-  const { MAX_SHOWN_LINES, matchLines, modelFromParts } = require("./pca.js");
+  const { STABLE_LINES, matchLines, modelFromParts } = require("./pca.js");
   const real = matchLines(modelFromParts([], MODEL));
-  const drawn = Math.min(MAX_SHOWN_LINES, MODEL.components.length, Math.max(2, real));
+  const drawn = Math.min(STABLE_LINES, MODEL.components.length, Math.max(2, real));
   const unnamed = Array.from({ length: drawn }, (_, i) => i).filter((i) => !(MODEL.labels || [])[i]).map((i) => i + 1);
   assert(!unnamed.length, `dividing line${unnamed.length > 1 ? "s" : ""} ${unnamed.join(", ")} ha${unnamed.length > 1 ? "ve" : "s"} no name: add or update its anchors in audits/line-labels.json`);
 }

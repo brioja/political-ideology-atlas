@@ -18,7 +18,7 @@ explicit decision from the maintainer.
   publicly owned" +1 on 2026-10-31 and -1 the next day. Taken at face value the flip moves the result
   a little, as the doubt warrants; amplified, a coin-flip would swing it.
 - **Naming the smaller dividing lines that don't hold up when the ideologies are resampled** (lines past
-  NAMED_LINES in pca.js): each resample gives a different line there, so a name would describe noise.
+  STABLE_LINES in pca.js): each resample gives a different line there, so a name would describe noise.
 - **Rewording the 17 statements whose text bundles two claims** (found 2026-10-29: `unions-good`,
   `cut-welfare`, `abolish-money-wages`, `democracy-best`, `political-elite-corrupt`,
   `equal-moral-worth`, `head-commands-forces`, `end-foreign-alliances`, `abolish-rental-housing`,

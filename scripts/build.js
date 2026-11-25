@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personUncertainty, ideologyUncertainty, ideologyProfile, judgeParts, judgeFrom } = require("./lib");
-const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, lineBars, answeredIndexes, MAX_BAR, MAX_MEAN_BAR, MAX_SHOWN_LINES, distinctiveness, statementsToDone } = require("../pca.js");
+const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, lineBars, answeredIndexes, MAX_BAR, MAX_MEAN_BAR, STABLE_LINES, distinctiveness, statementsToDone } = require("../pca.js");
 
 // Summaries and roles are spelled in the English variety the entry's Wikipedia article declares (Brandon,
 // 2026-11-06; scripts/english-variety.js, scripts/spelling.js); undeclared ones stay as written.
@@ -136,13 +136,13 @@ if (meaningful == null) {
 const landscape = complete.length >= 3 ? buildModel(complete, { realLines: meaningful }) : null;
 // The page needs only the leading components: the real lines (matchLines in pca.js, which partial
 // answer sets are also fitted on) and the shown ones, if fewer lines are real than are shown.
-const SHIPPED_COMPONENTS = Math.max(MAX_SHOWN_LINES, meaningful);
+const SHIPPED_COMPONENTS = Math.max(STABLE_LINES, meaningful);
 // Every line that beats noise is rotated so each is one cluster of statements (rotating only the
 // shown ones blends the clusters left out into them); the shown lines (as app.js counts them) are named
 // from audits/line-labels.json the way factors are named: by the statements that load most. A name holds
 // only while its anchor statements are still among that end's strongest; otherwise the build warns and
 // the page names the line's ends by ideologies, as before.
-const SHOWN = Math.min(MAX_SHOWN_LINES, Math.max(2, meaningful));
+const SHOWN = Math.min(STABLE_LINES, Math.max(2, meaningful));
 const ROTATED = Math.max(SHOWN, meaningful);
 const rotatedLines = landscape ? keepLineOrder(varimax(landscape, ROTATED), ROTATED) : [];
 const lines = rotatedLines.slice(0, SHIPPED_COMPONENTS);

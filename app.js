@@ -72,11 +72,11 @@ function savedResult() {
 }
 
 // How many dividing lines to show: the real ones (matchLines in pca.js, counted by the build and
-// shipped with the model), at least 2 and at most MAX_SHOWN_LINES (pca.js).
+// shipped with the model), at least 2 and at most the stable ones (STABLE_LINES in pca.js).
 // People placed on the same lines (people.js, loaded only where people are included).
 const PEOPLE_LIST = typeof PEOPLE === "undefined" ? [] : PEOPLE;
 const REAL_LINES = matchLines(model);
-const SHOWN_LINES = Math.min(MAX_SHOWN_LINES, model.components.length, Math.max(2, REAL_LINES));
+const SHOWN_LINES = Math.min(STABLE_LINES, model.components.length, Math.max(2, REAL_LINES));
 // The share images have room for fewer: the card fits about 8 rows of line ends.
 const CARD_LINES = Math.min(8, SHOWN_LINES);
 
@@ -128,7 +128,7 @@ function lineInfo(i) {
   return { name: `${low.name} ↔ ${high.name}`, low: low.name, high: high.name, lowId: low.id, highId: high.id };
 }
 // The real lines past the drawn ones (SHOWN_LINES..REAL_LINES), in a collapsed section; `strip(i)` draws
-// line i. They don't hold up when the ideologies are resampled (MAX_SHOWN_LINES in pca.js), so they are
+// line i. They don't hold up when the ideologies are resampled (STABLE_LINES in pca.js), so they are
 // titled by their number, and their statements say what they divide.
 function moreLines(strip) {
   const n = REAL_LINES - SHOWN_LINES;
@@ -1049,7 +1049,7 @@ function listLineSizes(box) {
   const n = lines.length - SHOWN_LINES;
   box.innerHTML = `<ol class="line-sizes">${lines.slice(0, SHOWN_LINES).join("")}</ol>` + (n > 0
     ? `<details class="more-lines"><summary>${n} smaller dividing line${n === 1 ? "" : "s"}</summary>` +
-      // Why they have no names (MAX_SHOWN_LINES in pca.js; backlog/decided-against.md), in plain words.
+      // Why they have no names (STABLE_LINES in pca.js; backlog/decided-against.md), in plain words.
       `<p class="ls-why">These lines have no names. Each ` +
       `is small and mixes several issues rather than one clear idea, ` +
       `and what goes into it shifts as ideologies are added or revised, so any name would mislead or soon go out of date. ` +
