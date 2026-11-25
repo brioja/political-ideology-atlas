@@ -119,3 +119,13 @@ Counting each person's speeches, interviews and addresses in the local corpora (
 ParlaMint, UN debates, Miller Center, MediaSum, ...) as a triage feature was tried and dropped: cross-validated AUC
 0.720 with it, 0.719 without. Before the audit, people with any corpus presence passed 42% against 33%, but within
 bands of the existing triage score the gap mostly vanished: views, languages and offices held already carry it.
+
+**A validate.js check on programme sources** (2026-11-25), failing an answer that rests only on an organisation's
+`program` source unless it is a key work, or unless a tie quote names the ideology. The rule stands (an
+organisation's account of the ideology counts, its platform doesn't: AUDIT_RULES.md, "No coatracks"), but
+a script can't tell an account from a platform. The key-works version would have failed charters and
+self-descriptions (Liberal International's manifestos for liberalism, the Ba'th Party's theoretical
+principles, the National Secular Society on secularism, the Iranian and Soviet constitutions) along with
+real platforms (the Libertarian Party's for libertarianism, the CPI (Maoist) programme for
+Marxism–Leninism–Maoism). A tie quote can't check that a passage presents tenets, and only 29 rules-7
+audits had answers resting on programmes alone, too few to back-test on.
