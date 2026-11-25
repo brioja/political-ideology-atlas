@@ -458,12 +458,11 @@ function nextQuestion(model, answers, asked, done = DONE) {
   return best;
 }
 
-// The most dividing lines the site shows (and build.js names and rotates for), however many beat noise.
-const MAX_SHOWN_LINES = 8;
-// How many lines carry names: the drawn ones plus the smaller lines that come back the same when the ideologies
-// are resampled (bootstrap of the rotated lines: congruence >= 0.85 with the full-data line in at least 80% of
-// resamples, at 16 and at 17 real lines). Lines past it stay "Line N", since each resample gives a different line there.
-const NAMED_LINES = 11;
+// The most dividing lines the site draws and names (build.js), however many beat noise: the lines that come
+// back the same when the ideologies are resampled (bootstrap of the rotated lines: congruence >= 0.85 with the
+// full-data line in at least 80% of resamples, at 16 and at 17 real lines). Lines past it stay "Line N", in a
+// collapsed section, since each resample gives a different line there.
+const MAX_SHOWN_LINES = 11;
 
 // Parallel analysis: how many axes reflect real structure rather than noise. Each run shuffles
 // every statement's answers independently across ideologies (keeping each statement's spread
@@ -724,5 +723,5 @@ function decodeShare(s, ids, slots) {
 function distinctiveness(mean, profile, j) { return Math.abs(profile[j] - mean[j]); }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, NAMED_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, covariance, componentsOf, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, statementsToDone, quizMinutes, describeAxis, distinctiveness };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, covariance, componentsOf, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, statementsToDone, quizMinutes, describeAxis, distinctiveness };
 }

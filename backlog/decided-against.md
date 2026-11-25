@@ -89,6 +89,8 @@ Later the same day lines 9-14 were added unnamed ("Line 9"...) in a collapsed "6
 section on the results, Compare, ideology and person pages, each with its statements per end; not on the share card.
 On 2026-11-25 lines 9-11 got names after all (they come back the same in at least 80% of bootstrap
 resamples; 12 and up don't), still undrawn and in the same collapsed section.
+The same day they were drawn like 1-8 everywhere except the share images (results, Compare, ideology and
+person pages, map axes, About chart); the share card and og image keep 8 rows, as 11 wouldn't fit.
 
 - **Rewording the active bank's "rather than" statements into priority form** (2026-11-04): 62
   active statements use "X rather than Y"; turning them into "X should matter more than Y" would

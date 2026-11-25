@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personUncertainty, ideologyUncertainty, ideologyProfile, judgeParts, judgeFrom } = require("./lib");
-const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, lineBars, answeredIndexes, MAX_BAR, MAX_MEAN_BAR, MAX_SHOWN_LINES, NAMED_LINES, distinctiveness, statementsToDone } = require("../pca.js");
+const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, lineBars, answeredIndexes, MAX_BAR, MAX_MEAN_BAR, MAX_SHOWN_LINES, distinctiveness, statementsToDone } = require("../pca.js");
 
 // Summaries and roles are spelled in the English variety the entry's Wikipedia article declares (Brandon,
 // 2026-11-06; scripts/english-variety.js, scripts/spelling.js); undeclared ones stay as written.
@@ -138,15 +138,12 @@ const landscape = complete.length >= 3 ? buildModel(complete, { realLines: meani
 // answer sets are also fitted on) and the shown ones, if fewer lines are real than are shown.
 const SHIPPED_COMPONENTS = Math.max(MAX_SHOWN_LINES, meaningful);
 // Every line that beats noise is rotated so each is one cluster of statements (rotating only the
-// shown ones blends the clusters left out into them); the shown lines (as app.js counts them) and the
-// smaller ones after them up to NAMED_LINES (pca.js) are named from audits/line-labels.json the way
-// factors are named: by the statements that load most. A name holds only while its anchor statements
-// are still among that end's strongest; otherwise the build warns and the page names a shown line's
-// ends by ideologies, as before (a smaller line shows as "Line N").
+// shown ones blends the clusters left out into them); the shown lines (as app.js counts them) are named
+// from audits/line-labels.json the way factors are named: by the statements that load most. A name holds
+// only while its anchor statements are still among that end's strongest; otherwise the build warns and
+// the page names the line's ends by ideologies, as before.
 const SHOWN = Math.min(MAX_SHOWN_LINES, Math.max(2, meaningful));
 const ROTATED = Math.max(SHOWN, meaningful);
-// The named lines: the shown ones, then smaller ones up to NAMED_LINES (pca.js), as many as are real.
-const NAMED = Math.max(SHOWN, Math.min(NAMED_LINES, meaningful));
 const rotatedLines = landscape ? keepLineOrder(varimax(landscape, ROTATED), ROTATED) : [];
 const lines = rotatedLines.slice(0, SHIPPED_COMPONENTS);
 // The rotation sorts lines by variance, and mid-sized lines are close: one re-audit can swap their
@@ -200,12 +197,12 @@ function keepLineOrder(rotated, k) {
   }
   // Only the named lines need stable slots; the lines after them are unnamed, so they're kept in order of
   // size (Brandon, 2026-11-14: the About page's bar chart had lines 9 and up out of order).
-  return [...order.slice(0, NAMED), ...order.slice(NAMED).sort((a, b) => b.share - a.share), ...rotated.slice(k)];
+  return [...order.slice(0, SHOWN), ...order.slice(SHOWN).sort((a, b) => b.share - a.share), ...rotated.slice(k)];
 }
 const labelSets = readJson(path.join(ROOT, "audits", "line-labels.json")).lines;
 const qIndex = Object.fromEntries(statements.map((s, j) => [s.id, j]));
 const used = new Set();
-const labels = lines.slice(0, NAMED).map((c, i) => {
+const labels = lines.slice(0, SHOWN).map((c, i) => {
   const order = c.vector.map((w, j) => [w, j]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
   const lowTop = new Set(order.slice(0, 10)), highTop = new Set(order.slice(-10));
   const holds = (end, top) => end.anchors.filter((id) => top.has(qIndex[id])).length >= Math.min(2, end.anchors.length);
@@ -216,7 +213,7 @@ const labels = lines.slice(0, NAMED).map((c, i) => {
     if (holds(b, lowTop) && holds(a, highTop)) { used.add(k); c.vector = c.vector.map((x) => -x); return { low: a.name, high: b.name }; }
   }
   const top = (ids) => ids.slice(0, 3).map((j) => statements[j].id).join(", ");
-  console.warn(`Line ${i + 1} matches no name in audits/line-labels.json (strongest statements: ${top(order)} | ${top(order.slice().reverse())}); ${i < SHOWN ? "its ends are named by ideologies" : `it shows as Line ${i + 1}`}.`);
+  console.warn(`Line ${i + 1} matches no name in audits/line-labels.json (strongest statements: ${top(order)} | ${top(order.slice().reverse())}); its ends are named by ideologies.`);
   return null;
 });
 // Any set of ideologies placed on the rotated lines, as the page does (modelFromParts), with the

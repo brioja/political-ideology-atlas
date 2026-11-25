@@ -89,16 +89,14 @@ if (!PEOPLE_ONLY) {
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
   assert(!misjudged.length, `the shown ideologies don't match the uncertainty judge (run a full build): ${misjudged.join(", ")}`);
 }
-// Every dividing line the page draws, and the smaller ones named after them (NAMED_LINES in pca.js), has a
-// name from audits/line-labels.json. A line whose anchor statements are no longer among its strongest loses
+// Every dividing line the page draws has a name from audits/line-labels.json. A line whose anchor statements are no longer among its strongest loses
 // its name (build.js warns); that must be renamed deliberately, not shipped nameless.
 {
   const { MODEL } = require("./data.js");
-  const { MAX_SHOWN_LINES, NAMED_LINES, matchLines, modelFromParts } = require("./pca.js");
+  const { MAX_SHOWN_LINES, matchLines, modelFromParts } = require("./pca.js");
   const real = matchLines(modelFromParts([], MODEL));
   const drawn = Math.min(MAX_SHOWN_LINES, MODEL.components.length, Math.max(2, real));
-  const named = Math.max(drawn, Math.min(NAMED_LINES, real));
-  const unnamed = Array.from({ length: named }, (_, i) => i).filter((i) => !(MODEL.labels || [])[i]).map((i) => i + 1);
+  const unnamed = Array.from({ length: drawn }, (_, i) => i).filter((i) => !(MODEL.labels || [])[i]).map((i) => i + 1);
   assert(!unnamed.length, `dividing line${unnamed.length > 1 ? "s" : ""} ${unnamed.join(", ")} ha${unnamed.length > 1 ? "ve" : "s"} no name: add or update its anchors in audits/line-labels.json`);
 }
 // An ideology's "no known position" (null) is low confidence (audits/PROMPT.md; validate.js checks one

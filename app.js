@@ -77,6 +77,8 @@ function savedResult() {
 const PEOPLE_LIST = typeof PEOPLE === "undefined" ? [] : PEOPLE;
 const REAL_LINES = matchLines(model);
 const SHOWN_LINES = Math.min(MAX_SHOWN_LINES, model.components.length, Math.max(2, REAL_LINES));
+// The share images have room for fewer: the card fits about 8 rows of line ends.
+const CARD_LINES = Math.min(8, SHOWN_LINES);
 
 // Where a score falls along a drawn line, 0-1: scaled to the line's own extremes (plus a small
 // margin) rather than centred on zero, so a lopsided line doesn't leave one end empty.
@@ -108,7 +110,7 @@ function rangeBand(pos, x, sd, color = "var(--accent)") {
 // nearest that end, so labels stay short on phones and the share card; failing that, the most extreme.
 // How much of the differences between ideologies line i covers, relative to the biggest line (0-1):
 // shown as a bar, with the exact share only as a tooltip.
-// The biggest line's share: lines 1-8 are rotated and ordered by their labels, so line 1 isn't always the biggest.
+// The biggest line's share: the drawn lines are rotated and ordered by their labels, so line 1 isn't always the biggest.
 const maxShare = () => Math.max(...model.components.slice(0, REAL_LINES).map((c) => c.share));
 const lineWeight = (i) => model.components[i].share / maxShare();
 const weightBar = (i) => `<span class="bar line-weight" role="img" title="${pct(model.components[i].share)} of the differences between ideologies" aria-label="${pct(model.components[i].share)} of the differences between ideologies"><span style="width:${pct(lineWeight(i))}"></span></span>`;
@@ -126,8 +128,8 @@ function lineInfo(i) {
   return { name: `${low.name} ↔ ${high.name}`, low: low.name, high: high.name, lowId: low.id, highId: high.id };
 }
 // The real lines past the drawn ones (SHOWN_LINES..REAL_LINES), in a collapsed section; `strip(i)` draws
-// line i. The ones that hold up when the ideologies are resampled are named (NAMED_LINES in pca.js); the
-// rest are titled by their number, and their statements say what they divide.
+// line i. They don't hold up when the ideologies are resampled (MAX_SHOWN_LINES in pca.js), so they are
+// titled by their number, and their statements say what they divide.
 function moreLines(strip) {
   const n = REAL_LINES - SHOWN_LINES;
   if (n <= 0) return "";
@@ -1045,11 +1047,10 @@ function listLineSizes(box) {
   const lines = model.components.slice(0, REAL_LINES).map(row);
   // The smaller lines in a collapsed section, as on the results page (moreLines).
   const n = lines.length - SHOWN_LINES;
-  const named = Array.from({ length: n }, (_, k) => SHOWN_LINES + k).filter((i) => !lineInfo(i).unnamed).length;
   box.innerHTML = `<ol class="line-sizes">${lines.slice(0, SHOWN_LINES).join("")}</ol>` + (n > 0
     ? `<details class="more-lines"><summary>${n} smaller dividing line${n === 1 ? "" : "s"}</summary>` +
-      // Why the rest have no names (NAMED_LINES in pca.js; backlog/decided-against.md), in plain words.
-      `<p class="ls-why">${named ? `The first ${named === 1 ? "one has a name" : `${named} have names`}. The others are numbered: each` : "These lines have no names. Each"} ` +
+      // Why they have no names (MAX_SHOWN_LINES in pca.js; backlog/decided-against.md), in plain words.
+      `<p class="ls-why">These lines have no names. Each ` +
       `is small and mixes several issues rather than one clear idea, ` +
       `and what goes into it shifts as ideologies are added or revised, so any name would mislead or soon go out of date. ` +
       `They still count: your matches use all ${REAL_LINES} lines, and your results list the statements behind each one.</p>` +
@@ -1456,7 +1457,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   // Where you stand on the real dividing lines: all of them, unless the card runs out of room. Each
   // row is "low end  ──○──  high end", so rows can sit 36px apart; the last needs ~20px above the footer.
   const room = H - 130 - 20 - (y + 68);
-  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 36) + 1));
+  const lines = Math.max(1, Math.min(CARD_LINES, Math.floor(room / 36) + 1));
   const lh = lines > 1 ? Math.min(64, room / (lines - 1)) : 0;
   // The closest person, if any, gets a third marker: a faint diamond, so shape tells the three apart.
   const near = people[0] || null;
@@ -1682,7 +1683,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
   ctx.fillText(result ? "WHERE YOU STAND" : "THE DIVIDING LINES", mx + 28, my + 40);
 
   // The generic preview shows only the strongest lines: hundreds of ideologies need room to read as dots.
-  const lines = result ? SHOWN_LINES : Math.min(4, SHOWN_LINES);
+  const lines = result ? CARD_LINES : Math.min(4, CARD_LINES);
   const top = result ? result.ranked[0] : null;
   const rowH = (ms - 80) / lines;
   for (let i = 0; i < lines; i++) {
