@@ -165,4 +165,5 @@ async function main() {
     execFileSync("node", [path.join(__dirname, "waiting-for-books.js"), "hold", ...out.map((o) => o.id)], { cwd: lib.ROOT, stdio: "ignore" });
   console.log(`${out.length} people listed in ${DOC} (${checked} checked; ${none} with no bibliography books left to find).`);
 }
-main().catch((e) => { console.error(e.stack || e.message); process.exit(1); });
+module.exports = { bibliography };
+if (require.main === module) main().catch((e) => { console.error(e.stack || e.message); process.exit(1); });

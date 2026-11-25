@@ -2,6 +2,9 @@
 // audit itself, so tokens go to research only (Brandon, 2026-11-18: the Codex driver got through a lot with few tokens;
 // the same for Sonnet). Several lanes can run at once in this checkout, e.g. one per engine or per kind.
 //   node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane <name>] [--until HH:MM] [--resumes 6] [--dry]
+//                        [--subjects id,id --gap-exception "<why> (<maintainer>, <date>)"]
+// --subjects audits only these, in this order, then stops (a test of a change); --gap-exception marks each pass it
+// integrates as exempt from the re-audit gap (validate.js), for a maintainer-approved early pass.
 // --lane defaults to <engine>-<kind>, so one lane per engine and kind runs with no --lane (Brandon, 2026-11-19); --until stops new subjects and resumes after that local time (default: run until
 // the queue is empty or the driver is stopped; a stop mid-subject keeps the draft, which the next start carries on).
 // Graceful stop: Ctrl-C or Ctrl-D in the driver's terminal, or `touch scratchpad/lane-out/<lane>/STOP` (or
@@ -30,6 +33,8 @@ const ROOT = path.join(__dirname, "..");
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane", `${ENGINE}-${KIND}`), RESUMES = +arg("--resumes", 6);
 const UNTIL = arg("--until"), DRY = process.argv.includes("--dry");
+const SUBJECTS = arg("--subjects") ? arg("--subjects").split(",").filter(Boolean) : null, GAP_EXCEPTION = arg("--gap-exception");
+if (GAP_EXCEPTION && GAP_EXCEPTION.trim().length < 10) { console.error("--gap-exception: say why, and who approved it"); process.exit(1); }
 if (!["codex", "claude"].includes(ENGINE) || !["people", "ideologies"].includes(KIND) || (UNTIL && !/^\d\d:\d\d$/.test(UNTIL))) {
   console.error("usage: node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane name] [--until HH:MM] [--resumes 6]");
   process.exit(1);
@@ -84,8 +89,10 @@ const flag = PEOPLE ? "--people " : "";
 
 // ---- picking ----
 const tried = new Set(); // subjects this run already gave up on (not done after every resume)
+const integrated = new Set(); // subjects this run integrated (--subjects)
 function nextSubject() {
   const done = doneIds(), lib = require("./lib");
+  if (SUBJECTS) return SUBJECTS.find((id) => !tried.has(id) && !integrated.has(id)) || null;
   const people = new Set(lib.peopleCatalog().map((p) => p.id));
   for (const f of fs.readdirSync(OUT)) {
     const id = f.endsWith(".claim") ? f.slice(0, -6) : null;
@@ -152,6 +159,25 @@ function namesakeBooks(id) {
   log(`${id}: ${files.length} reference book(s) by or about ${person}`);
   return `\n\nThe maintainer's reference library (~/.cache/political-ideology-atlas/corpora/reference/text/) holds these books by or about ${person}, whom \`${id}\` is named after. Search each for the statements' topics: the namesake's own books are primary sources, and books about them (biographies) are scholarship defining the ideology (audits/AUDIT_RULES.md on supplied texts):\n${files.map((f) => `- ${f}`).join("\n")}`;
 }
+// Books on the ideology (scripts/ideology-books.js, Brandon 2026-11-25): before the pass, the books its Wikipedia
+// article lists (further reading, bibliography, notable works), the committed audit's key works and key figures' own
+// books, and archive.org books named after it, wherever archive.org has the full text open; after the scope phase,
+// again with the draft's key works and key figures. Re-audits had nulled what no defining source tied without opening
+// the scholarship that would tie it (Libertarian socialism, Monarchism).
+function fetchBooks(id, draftFile) {
+  if (PEOPLE) return null;
+  const r = run("node", ["scripts/ideology-books.js", id, ...(draftFile ? ["--draft", draftFile] : [])], { timeout: 30 * 60000 });
+  log(`${id}: books${draftFile ? " (key figures and works from the scope phase)" : ""}: ${r.status ? `failed: ${failure(r.stdout + r.stderr)}` : r.stdout.trim().split("\n").pop()}`);
+  try { return JSON.parse(fs.readFileSync(path.join(require("./ideology-books").DIR, id, "index.json"), "utf8")); } catch { return null; }
+}
+const BOOKS_NOTE = (dir) => `They were found by title, not read: open each, and whether it is the subject's own text or scholarship defining it (audits/AUDIT_RULES.md) is your call, as for any source. Search each for the statements' topics (\`grep -i -n\` in ${dir}/, in the book's language), cite it by its archive.org page (the url given), and name the chapter or page in each rationale that rests on it. Books listed under its "lending" and "missing" in index.json are leads you may look for elsewhere.`;
+function bookList(books, id, intro) {
+  if (!books || !books.length) return "";
+  const dir = `~/.cache/political-ideology-atlas/corpora/ideology-books/${id}`;
+  return `\n\n${intro} (full text, local, in ${dir}/):\n${books.map((b) => `- ${b.file} (${b.url}; ${b.from})`).join("\n")}\n${BOOKS_NOTE(dir)}`;
+}
+const booksAtStart = (id) => bookList(startBooks.get(id), id, `Books on \`${id}\` are downloaded for this pass`);
+const startBooks = new Map();
 // An ideology's other names (the Wikipedia redirects to its article) go in the first message, so the session searches
 // under them from the start instead of finding them late (Brandon, 2026-11-23). The coatrack check already accepts
 // them as aliases.
@@ -161,7 +187,8 @@ function otherNames(id) {
   if (!names.length) return "";
   return ` Wikipedia redirects these names to the subject's article: ${names.map((n) => `"${n}"`).join(", ")}. Search under them from the start, not only the subject's own name: a source naming the subject by one of them counts as naming it (the coatrack check takes them as aliases, unless another ideology claims the name).`;
 }
-const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.${otherNames(id)}${namesakeBooks(id)}${laterPassProblems(id)}`;
+const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}${laterPassProblems(id)}${GAP_NOTE}`;
+const GAP_NOTE = GAP_EXCEPTION ? `\n\nThis pass is exempt from the re-audit gap (the maintainer approved it early): the driver adds "gapException" to its entry in "passes". Date the entry today as usual and leave that field to the driver.` : "";
 // An ideology's audit runs in two phases (Brandon, 2026-11-23): first what PROMPT.md section 2 settles (scope, sources,
 // aliases, key figures, key works), which the driver checks with validate.js --stage scope and sends back to fix, then
 // the answers. Assadism had listed Hafez but not Bashar al-Assad as a key figure, which left Bashar's speeches untied;
@@ -169,9 +196,9 @@ const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your su
 // marks the first phase done by creating <id>.scope; a draft alone can't say so, since a later pass starts as a copy
 // of the committed audit.
 const scopeMark = (id) => path.join(OUT, `${id}.scope`);
-const SCOPE_START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This first phase covers audits/PROMPT.md sections 1 and 2 only: find the defining sources and write scratchpad/lane-out/${LANE}/${id}.json with its scope, sources, aliases, key figures and key works (if that draft exists, carry on from it; a later pass keeps the committed answers as they are for now). Don't answer statements yet. When those parts are in the draft, create the empty file scratchpad/lane-out/${LANE}/${id}.scope and end your turn; the driver checks them and then asks for the answers.${otherNames(id)}${namesakeBooks(id)}${laterPassProblems(id)}`;
+const SCOPE_START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This first phase covers audits/PROMPT.md sections 1 and 2 only: find the defining sources and write scratchpad/lane-out/${LANE}/${id}.json with its scope, sources, aliases, key figures and key works (if that draft exists, carry on from it; a later pass keeps the committed answers as they are for now). Don't answer statements yet. When those parts are in the draft, create the empty file scratchpad/lane-out/${LANE}/${id}.scope and end your turn; the driver checks them and then asks for the answers.${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}${laterPassProblems(id)}${GAP_NOTE}`;
 const SCOPE_FIX = (id, problems) => `\`node scripts/validate.js --dir scratchpad/lane-out/${LANE} --stage scope ${id}\` reports these problems with the scope, sources, aliases, key figures and key works of scratchpad/lane-out/${LANE}/${id}.json:\n${problems}\nFix each error, and act on each warning (a person named in a key figure's quote: list them if the defining sources present the ideology as their thought or political legacy). Check again with that command, and end your turn.`;
-const ANSWER = (id) => `The scope, sources, aliases, key figures and key works of \`${id}\` are checked. Now answer the statements. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer. When every statement has an answer, validate with \`node scripts/validate.js --dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.`;
+const ANSWER = (id, added = "") => `The scope, sources, aliases, key figures and key works of \`${id}\` are checked.${added} Now answer the statements. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer. When every statement has an answer, validate with \`node scripts/validate.js --dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.`;
 // validate.js --stage scope's errors and warnings for the draft, as "- " lines ("" when clean).
 function scopeProblems(id) {
   const r = run("node", ["scripts/validate.js", "--dir", path.relative(ROOT, OUT), "--stage", "scope", id]);
@@ -218,6 +245,19 @@ function stdoutError(out) {
     } catch {}
   }
   return String(errs.pop() || failure(out, 1)).replace(/\s+/g, " ").slice(0, 300);
+}
+
+// --gap-exception: the newest entry in the draft's "passes" gets the maintainer's exception (validate.js), unless it has one.
+function exceptGap(id) {
+  if (!GAP_EXCEPTION || !fs.existsSync(draft(id))) return;
+  try {
+    const a = JSON.parse(fs.readFileSync(draft(id), "utf8")), passes = Array.isArray(a.passes) ? a.passes : [];
+    const last = [...passes].sort((x, y) => String(x.auditedAt).localeCompare(String(y.auditedAt))).pop();
+    if (!last || last.gapException || last.auditedAt !== new Date().toISOString().slice(0, 10)) return;
+    last.gapException = GAP_EXCEPTION;
+    fs.writeFileSync(draft(id), JSON.stringify(a, null, 2) + "\n");
+    log(`${id}: gap exception added to the ${last.auditedAt} pass`);
+  } catch (e) { log(`${id}: gap exception not added (${e.message})`); }
 }
 
 // ---- integration ----
@@ -341,6 +381,7 @@ while (timeLeft()) {
   fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
   log(`start ${id}`);
   let thread = null;
+  if (!PEOPLE && !doneIds().has(id)) startBooks.set(id, (fetchBooks(id) || {}).books || []);
   if (!PEOPLE && !doneIds().has(id) && !fs.existsSync(scopeMark(id))) {
     thread = await session(SCOPE_START(id));
     for (let n = 1; !fs.existsSync(scopeMark(id)) && n <= RESUMES && timeLeft(); n++) {
@@ -358,7 +399,11 @@ while (timeLeft()) {
       problems = scopeProblems(id);
     }
     if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again)`);
-    thread = await session(thread ? ANSWER(id) : `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`; your subject is \`${id}\`, and its draft exists. ${ANSWER(id)}`, thread);
+    // The books by the key figures and key works the scope phase settled (Brandon, 2026-11-25).
+    const before = new Set((startBooks.get(id) || []).map((b) => b.file));
+    const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
+    const added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works your scope phase listed are now downloaded too");
+    thread = await session(thread ? ANSWER(id, added) : `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`; your subject is \`${id}\`, and its draft exists.${booksAtStart(id)} ${ANSWER(id, added)}`, thread);
   }
   if (!thread && !doneIds().has(id)) thread = await session(START(id));
   for (let n = 1; !doneIds().has(id) && n <= RESUMES && timeLeft(); n++) {
@@ -367,8 +412,9 @@ while (timeLeft()) {
     thread = await session(RESUME(id), thread);
   }
   if (!doneIds().has(id) || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
+  exceptGap(id);
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
-  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
+  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); exceptGap(id); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
   if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); if (fs.existsSync(scopeMark(id))) fs.unlinkSync(scopeMark(id)); continue; }
   // The DONE line moves to INTEGRATED.txt, so a later pass on the same subject starts clean.
   const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
@@ -378,6 +424,7 @@ while (timeLeft()) {
   // The session writes its DONE line before any fix round, so after one its note on validate.js is out of date
   // (trotskyism, 2026-11-23: "still errors on one point ... left in" for an audit that passed in round 1).
   const fixed = rounds ? ` [validate.js passed after ${rounds} fix round${rounds > 1 ? "s" : ""}; the note below is from before]` : "";
+  integrated.add(id);
   log(`done ${id} (${name})${fixed}: ${line.split("|").slice(1).join("|").trim()} | ${placement(id)}`);
   count++;
   if (PEOPLE && count % BOOKS_EVERY === 0) books();
