@@ -28,9 +28,9 @@ words; don't paste long passages.
 - Scholarly reference works (the Stanford and Internet Encyclopedias of Philosophy, Britannica,
   Oxford or Routledge reference works) are scholarship, and count as evidence. Wikipedia,
   OnTheIssues and similar compilations are only a way to find evidence: follow their citations to
-  the original and cite that. An answer whose only source is Wikipedia has no evidence. Wikipedia
-  doesn't decide a subject's scope or what it holds either: it serves for notability (the
-  catalog), the reader's `wikipedia` link and finding leads, and what it says about scope or
+  the original and cite that. Wikipedia is a tertiary source: no answer cites it (validate.js fails one
+  that does). Wikipedia doesn't decide a subject's scope or what it holds either: it serves for notability (the
+  catalog), aliases (its redirects), the reader's `wikipedia` link and finding leads, and what it says about scope or
   membership counts only through the scholarship or data it cites. Read Wikipedia and Wikidata only with
   `node scripts/wiki.js "<title or URL>"` (cached; `--search`, `--wikidata Q123`), never by fetching them
   directly: their rate limits stop runs (a project hook blocks direct fetches). The same goes for YouTube

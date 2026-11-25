@@ -40,6 +40,7 @@ const PROJECT_START = "2026-10-14", REAUDIT_FROM = "2026-11-08";
 const days = (a, b) => (Date.parse(b) - Date.parse(a)) / 864e5;
 const reauditGap = (date) => Math.ceil(days(PROJECT_START, date) / 2);
 // The earliest date a later pass on this audit may carry ("" when there is no earlier pass).
+const isWikipediaUrl = (u) => { try { return /(^|\.)wikipedia\.org$/.test(new URL(u).host); } catch { return false; } };
 // The date of an audit's latest pass ("auditedAt" keeps the first pass's date).
 const lastPassDate = (a) => (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop() || "";
 const nextPassFrom = (a) => { const d = lastPassDate(a); // gap >= (next - start) / 2  <=>  next >= d + (d - start): the earliest next pass waits as long as the project was old at d.
@@ -323,6 +324,7 @@ function validate(id) {
     for (const pr of coatrack.warnings) warnings.push(`sources: ${pr}`);
   }
   const sourceIds = new Set();
+  const sourceById = new Map(sources.map((s) => [s.id, s]));
   for (const s of sources) {
     if (sourceIds.has(s.id)) errors.push(`duplicate source id ${s.id}`);
     sourceIds.add(s.id);
@@ -369,6 +371,12 @@ function validate(id) {
     if (!ans.rationale || ans.rationale.trim().length < 20) errors.push(`${st.id}: rationale missing or too short`);
     if (!Array.isArray(ans.sources) || ans.sources.length === 0) errors.push(`${st.id}: cite at least one source`);
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+    // Wikipedia is a tertiary source (audits/AUDIT_RULES.md section 2; Brandon, 2026-11-25): it finds evidence, it
+    // isn't evidence, so no answer cites it; cite the source it cites. An error from rules 7 on, a warning before.
+    if (Array.isArray(ans.sources)) for (const sid of ans.sources) {
+      const src = sourceById.get(sid);
+      if (src && isWikipediaUrl(src.url)) (AS_CURRENT || (a.rules || 0) >= 7 ? errors : warnings).push(`${st.id}: cites ${sid}, a Wikipedia article: Wikipedia is a tertiary source, so cite the source it cites for this, or answer null`);
+    }
   }
   if (unansweredIds.length) errors.push(`${unansweredIds.length} statements have no answer yet (added since this audit); a pass answers every statement`);
   // A high-confidence answer rests on what a source says about that statement, so its rationale

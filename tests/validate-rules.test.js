@@ -309,6 +309,23 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   assert.deepStrictEqual(warns(dropped("Said in a 2020 interview transcript that this statement is wrong.")), [], "rewritten without the dropped source"); n++;
 }
 
+// Wikipedia is a tertiary source (Brandon, 2026-11-25): an answer citing it fails from rules 7 on and warns before.
+{
+  const wiki = (rules) => {
+    const a = base(); a.rules = rules;
+    a.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "Its Wikipedia article", url: "https://en.wikipedia.org/wiki/Fixture" });
+    a.answers[B] = { ...a.answers[B], sources: ["s2", "s6"] };
+    return a;
+  };
+  fails("an answer citing Wikipedia, rules 7", wiki(7), new RegExp(`^${B}: cites s6, a Wikipedia article`));
+  const w = wiki(4); fs.writeFileSync(tmp, JSON.stringify(w, null, 2)); setCommittedForTests(() => null);
+  const r = validate(subject.id);
+  assert(!r.errors.some((e) => /Wikipedia article/.test(e)) && r.warnings.some((x) => /cites s6, a Wikipedia article/.test(x)), "an older audit citing Wikipedia only warns"); n++;
+  const listed = base(); listed.rules = 7;
+  listed.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "Its Wikipedia article", url: "https://en.wikipedia.org/wiki/Fixture" });
+  assert(!errorsFor(listed).some((e) => /Wikipedia article/.test(e)), "a Wikipedia source listed but cited by no answer is fine"); n++;
+}
+
 setCommittedForTests(null);
 fs.rmSync(path.dirname(tmp), { recursive: true, force: true });
 console.log(`validate rules: ${n} cases passed`);
