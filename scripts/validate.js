@@ -40,7 +40,9 @@ const PROJECT_START = "2026-10-14", REAUDIT_FROM = "2026-11-08";
 const days = (a, b) => (Date.parse(b) - Date.parse(a)) / 864e5;
 const reauditGap = (date) => Math.ceil(days(PROJECT_START, date) / 2);
 // The earliest date a later pass on this audit may carry ("" when there is no earlier pass).
-const nextPassFrom = (a) => { const d = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop(); // gap >= (next - start) / 2  <=>  next >= d + (d - start): the earliest next pass waits as long as the project was old at d.
+// The date of an audit's latest pass ("auditedAt" keeps the first pass's date).
+const lastPassDate = (a) => (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop() || "";
+const nextPassFrom = (a) => { const d = lastPassDate(a); // gap >= (next - start) / 2  <=>  next >= d + (d - start): the earliest next pass waits as long as the project was old at d.
   return d ? new Date(Date.parse(d) + Math.max(0, days(PROJECT_START, d)) * 864e5).toISOString().slice(0, 10) : ""; };
 const BANNED_HOSTS = ["12axes", "8values", "politicalcompass", "idrlabs", "polcompball", "sapplyvalues"];
 
@@ -306,11 +308,13 @@ function validate(id) {
   // "aliases" (required from 2026-11-06); a warning for older audits.
   if (!PEOPLE) {
     // Audits committed before the check (480478e1) only get warnings (adding aliases to one later
-    // doesn't change that); every audit written after it, or dated 2026-11-06 on, is held to it.
-    const strict = AS_CURRENT || (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
+    // doesn't change that); every audit written after it, or with a pass dated 2026-11-06 on, is held to it.
+    // The latest pass decides, not "auditedAt" (the first pass): a later pass is written under today's checks.
+    const recentPass = lastPassDate(a) >= "2026-11-06";
+    const strict = AS_CURRENT || recentPass || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
     // Evidence for aliases, key figures and key works is required from 2026-11-06 on (older audits get it at their next pass).
-    const coatrack = require("./coatrack-check").check(id, a, { strict: AS_CURRENT || (a.auditedAt || "") >= "2026-11-06", pass: AS_CURRENT || !!DIR });
+    const coatrack = require("./coatrack-check").check(id, a, { strict: AS_CURRENT || recentPass, pass: AS_CURRENT || !!DIR });
     const { problems, unchecked } = coatrack;
     const found = problems.map((pr) => `sources: ${pr}`);
     if (unchecked.length) found.push(`sources: ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
