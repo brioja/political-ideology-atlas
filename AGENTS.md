@@ -33,7 +33,7 @@ agents too. This file adds what matters when running audits.
 
 ## Audit rules
 
-- Rules on evidence (sources, answers, uncertainty, research to the end) live once, in
+- Rules on evidence (sources, answers, uncertainty) live once, in
   `audits/AUDIT_RULES.md`, for ideologies and people alike. `PROMPT.md` and `PROMPT_PEOPLE.md` add
   only what is specific to their subject. Put a new evidence rule in AUDIT_RULES.md so both get it.
 - Rules in `audits/*.md` are the maintainer's decisions; check `git log` before changing one. The files

@@ -14,7 +14,6 @@ Audit the id the driver gives you, person or ideology.
 1. Follow `audits/AUDIT_RULES.md` and `audits/PROMPT.md` (ideology) or `audits/PROMPT_PEOPLE.md`
    (person) exactly, with `{{id}}`, `{{name}}` and the other fields taken from the next.js output
    or the catalog. Answer the statements the driver's message lists, from the texts it names.
-   Research to the end (section 4).
 2. `rules`, `auditedAt`, `auditor` and `passes` are the driver's: leave them as they are.
 3. Sources go in `scratchpad/sources/<id>/`; helper scripts in `scratchpad/helpers-<id>/`.
 4. Write to the file the driver's message names; the driver moves the audit into `audits/` once it

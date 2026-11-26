@@ -90,6 +90,19 @@ words; don't paste long passages.
   paraphrase rather than quote more than a short phrase. A text's claims about its own results are
   claims; answer from the positions it states.
 
+**Texts known to exist** (people). Every text by the person that the validator knows
+of is read and cited, or declined in `booksNotUsed` with a reason: Project Gutenberg's whole catalog
+(`node scripts/gutenberg.js --search "<name>"`, then `node scripts/gutenberg.js <id>` fetches it), their
+Miller Center speeches, and their Voteview roll calls if they sat in Congress. `validate.js` names each one
+missing.
+
+**Not found means tried twice**. A source you looked for and couldn't get goes in
+`notFound`: `[{ "work": "Senate speeches, 1827-1836", "tried": [{ "where": "local corpora", "how":
+"crec.js and voteview.js by name" }, { "where": "Library of Congress, A Century of Lawmaking", "how":
+"Register of Debates index" }] }]`, with at least two attempts in different places (a local corpus, a
+library or archive site, a web search, a scholarly edition). Notes that call a source unavailable without
+a `notFound` entry for it fail validation.
+
 ## 3. Answers
 
 Answer every statement with -2 (strongly disagree) to +2 (strongly agree), or `null` (no known
@@ -189,24 +202,3 @@ free trade, not about markets in general.
 Each rationale is one or two plain sentences that explain the answer, not restate it: what the source
 states about this statement, never a stock phrase ("Nationalism rejected."). It cites at least one
 source id from your `sources` list.
-
-## 4. Research to the end
-
-**An audit goes as deep as the record allows**. There is no limit on
-sources. Keep researching before you finish: the statements still null, in new sources (the local
-corpora too). Stop when they are covered or when the record really has nothing
-more, and say in `notes` which themes you searched.
-
-**Texts known to exist** (people). Every text by the person that the validator knows
-of is read and cited, or declined in `booksNotUsed` with a reason: Project Gutenberg's whole catalog
-(`node scripts/gutenberg.js --search "<name>"`, then `node scripts/gutenberg.js <id>` fetches it), their
-Miller Center speeches, and their Voteview roll calls if they sat in Congress. `validate.js` names each one
-missing.
-
-**Not found means tried twice**. A source you looked for and couldn't get goes in
-`notFound`: `[{ "work": "Senate speeches, 1827-1836", "tried": [{ "where": "local corpora", "how":
-"crec.js and voteview.js by name" }, { "where": "Library of Congress, A Century of Lawmaking", "how":
-"Register of Debates index" }] }]`, with at least two attempts in different places (a local corpus, a
-library or archive site, a web search, a scholarly edition). Notes that call a source unavailable without
-a `notFound` entry for it fail validation.
-

@@ -11,7 +11,7 @@ Inputs (filled in by the runner):
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
 run the validator command the runner gives and fix every error.
 
-Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, research to the end)
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers)
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
 is specific to people.
 

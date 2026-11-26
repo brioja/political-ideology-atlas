@@ -35,9 +35,8 @@ if (process.argv.includes("--lane")) {
 
 // Later passes (Brandon, 2026-11-12): the re-audit queue first, then older-rules audits, oldest rules first. Search-traffic
 // pages and their closest matches no longer go first: the old audits had more problems.
-// Audits queued because they applied a rule since found misapplied (audits/reaudit-queue.json, AUDIT_RULES.md
-// section 4), in the order listed. One is due once the re-audit gap allows and done once it has a pass dated on or
-// after its group's queuedAt (Brandon, 2026-11-08).
+// Audits queued because they applied a rule since found misapplied (audits/reaudit-queue.json), in the
+// order listed. One is due once the re-audit gap allows and done once it has a pass dated on or after its group's queuedAt (Brandon, 2026-11-08).
 function reauditQueue() {
   const fs = require("fs"), lib = require("./lib");
   const file = path.join(__dirname, "..", "audits", "reaudit-queue.json");
