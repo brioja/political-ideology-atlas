@@ -334,8 +334,9 @@ function hideSettled(id) {
   writeStatements(id, ids);
   return ids;
 }
-// Only each statement's id and text (Brandon, 2026-11-26): the site's agree/disagree explanations and notes
-// confused Sonnet auditors.
+// Only each statement's id and text (Brandon, 2026-11-26): the site's agree/disagree explanations and notes don't
+// affect audits and confused Sonnet. The model quiz stopped pointing at them during the Sonnet self-checks
+// (855497488, 2026-11-19), the same retake that made "never", hedges and "always" wording errors.
 function writeStatements(id, ids) {
   const set = new Set(ids);
   fs.writeFileSync(statementsFile(id), JSON.stringify({ statements: require("./lib").allStatements().filter((s) => set.has(s.id)).map((s) => ({ id: s.id, text: s.text })) }, null, 2) + "\n");
