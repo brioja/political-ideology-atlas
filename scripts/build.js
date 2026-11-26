@@ -7,6 +7,12 @@
 //                                    puts the dividing lines back in order of size, once; later builds
 //                                    keep that order (see keepLineOrder)
 // Candidate statements (status "candidate") are left out of the test until promoted.
+const FLAGS = ["--status", "--people", "--resort-lines"];
+const unknownFlags = process.argv.slice(2).filter((a) => !FLAGS.includes(a));
+if (unknownFlags.length) {
+  console.error(`build.js: unknown argument(s) ${unknownFlags.join(" ")}; it takes ${FLAGS.join(", ")} (see the top of scripts/build.js)`);
+  process.exit(1);
+}
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
