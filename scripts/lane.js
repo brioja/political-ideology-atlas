@@ -389,10 +389,15 @@ function failure(out, n = 3) {
   return lines.filter((l) => l.trim() && !/^Node\.js v\d/.test(l)).slice(-n).join(" / ");
 }
 // Runs one turn (new session, or resume of `thread`); returns the session id.
+// Sessions are compartmentalized (Brandon, 2026-11-26): no memories and no AGENTS.md, only the driver's message and the
+// files it points to. The maintainer's memory index and AGENTS.md (how to run lanes, costs, pilots) reached every
+// session through the automatic context. Hooks still apply. Codex keeps its global ~/.codex/AGENTS.md.
+const ISOLATED = { CLAUDE_CODE_DISABLE_AUTO_MEMORY: "1", CLAUDE_CODE_DISABLE_CLAUDE_MDS: "1" };
 async function session(prompt, thread, env = {}) {
   let r, id = thread;
+  env = { ...ISOLATED, ...env };
   if (ENGINE === "codex") {
-    const common = ["--json", "--skip-git-repo-check", "--dangerously-bypass-approvals-and-sandbox", ...(MODEL ? ["-m", MODEL] : [])];
+    const common = ["--json", "--skip-git-repo-check", "--dangerously-bypass-approvals-and-sandbox", "-c", "project_doc_max_bytes=0", "-c", "features.memories=false", ...(MODEL ? ["-m", MODEL] : [])];
     r = await runAsync("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt], env);
     for (const line of (r.stdout || "").split("\n")) { try { const e = JSON.parse(line); if (e.type === "thread.started") id = e.thread_id; } catch {} }
   } else {
