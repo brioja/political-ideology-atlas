@@ -274,17 +274,26 @@ function stdoutError(out) {
   return String(errs.pop() || failure(out, 1)).replace(/\s+/g, " ").slice(0, 300);
 }
 
-// --gap-exception: the newest entry in the draft's "passes" gets the maintainer's exception (validate.js), unless it has one.
+// A later pass's entry in "passes" (Brandon, 2026-11-26): a session that dates the draft today but doesn't list the pass
+// (the phased run of 2026-11-26 left it out, so the re-audit gap counted from the pass before) gets it from the driver.
+// Then --gap-exception: the newest entry gets the maintainer's exception (validate.js), unless it has one.
 function exceptGap(id) {
-  if (!GAP_EXCEPTION || !fs.existsSync(draft(id))) return;
+  if (!fs.existsSync(draft(id))) return;
   try {
-    const a = JSON.parse(fs.readFileSync(draft(id), "utf8")), passes = Array.isArray(a.passes) ? a.passes : [];
-    const last = [...passes].sort((x, y) => String(x.auditedAt).localeCompare(String(y.auditedAt))).pop();
-    if (!last || last.gapException || last.auditedAt !== new Date().toISOString().slice(0, 10)) return;
-    last.gapException = GAP_EXCEPTION;
-    fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
-    log(`${id}: gap exception added to the ${last.auditedAt} pass`);
-  } catch (e) { log(`${id}: gap exception not added (${e.message})`); }
+    const a = JSON.parse(fs.readFileSync(draft(id), "utf8")), today = new Date().toISOString().slice(0, 10);
+    const passes = Array.isArray(a.passes) ? a.passes : null;
+    let changed = false;
+    if (passes && a.auditedAt === today && !passes.some((p) => p.auditedAt === today)) {
+      const auditor = [].concat(a.auditor || []).pop();
+      if (auditor) { passes.push({ auditor, auditedAt: today }); changed = true; log(`${id}: driver added the ${today} pass to "passes"`); }
+    }
+    const last = passes && [...passes].sort((x, y) => String(x.auditedAt).localeCompare(String(y.auditedAt))).pop();
+    if (GAP_EXCEPTION && last && !last.gapException && last.auditedAt === today) {
+      last.gapException = GAP_EXCEPTION; changed = true;
+      log(`${id}: gap exception added to the ${last.auditedAt} pass`);
+    }
+    if (changed) fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
+  } catch (e) { log(`${id}: pass entry not checked (${e.message})`); }
 }
 
 // ---- integration ----
