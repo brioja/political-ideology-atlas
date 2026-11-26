@@ -289,13 +289,14 @@ function dropFailing(id, when) {
     return `\n\nThe driver took out of the answers ${[f.untied.length ? `${f.untied.join(", ")} (no tie to the subject was found; scripts/drop-source.js)` : "", w ? "Wikipedia citations (a tertiary source)" : ""].filter(Boolean).join(" and ")}. Answers that rested on them alone are null and open; rewrite any rationale that still repeats their claims from the sources the answer still cites.`;
   } catch (e) { log(`${id}: ${when}, dropping failing sources failed: ${e.message.split("\n")[0]}`); return ""; }
 }
-// Between phases nulls lose their reasons (Brandon, 2026-11-26; scripts/cleanup.js), so the next phase never reads one
-// as settled. Unused sources stay until integration: the scope phase's defining sources aren't cited by answers yet.
+// Between phases the fixes that need no judgment are made (scripts/cleanup.js tidy; Brandon, 2026-11-26): nulls lose
+// their reasons and sources, so the next phase never reads one as settled. Unused sources stay until integration: the
+// scope phase's defining sources aren't cited by answers yet.
 function cleanBetween(id, when) {
   try {
     const lib = require("./lib"), a = JSON.parse(fs.readFileSync(draft(id), "utf8"));
-    const reasons = require("./cleanup").emptyNullReasons(a);
-    if (reasons) { fs.writeFileSync(draft(id), lib.formatAudit(a)); log(`${id}: ${when}, cleanup emptied ${reasons} null reason(s)`); }
+    const c = require("./cleanup"), tidied = c.describe(c.tidy(a, PEOPLE));
+    if (tidied) { fs.writeFileSync(draft(id), lib.formatAudit(a)); log(`${id}: ${when}, cleanup: ${tidied}`); }
   } catch (e) { log(`${id}: ${when}, cleanup failed: ${e.message.split("\n")[0]}`); }
 }
 // The check after the local phase (Brandon, 2026-11-26): full validate.js but for the statements still without an
@@ -444,10 +445,10 @@ function integrate(id) {
     const target = path.join(ROOT, "audits", PEOPLE ? "people" : "profiles", `${id}.json`);
     const name = JSON.parse(fs.readFileSync(draft(id), "utf8")).name || id;
     const before = new Map([target, path.join(ROOT, "audits", "ideology-colors.json")].map((f) => [f, fs.existsSync(f) ? fs.readFileSync(f) : null]));
-    // Null reasons and sources the audit never uses go by script, not by a fix round (scripts/cleanup.js).
+    // Fixes that need no judgment and sources the audit never uses go by script, not by a fix round (scripts/cleanup.js).
     try {
-      const { reasons, dropped, kept } = require("./cleanup").clean(OUT, id, PEOPLE);
-      if (reasons) log(`${id}: cleanup emptied ${reasons} null reason(s)`);
+      const { tidied, dropped, kept } = require("./cleanup").clean(OUT, id, PEOPLE);
+      if (tidied) log(`${id}: cleanup: ${tidied}`);
       if (dropped.length || kept.length) log(`${id}: cleanup dropped ${dropped.length} unused source(s)${dropped.length ? `: ${dropped.join(", ")}` : ""}${kept.length ? `; kept ${kept.join(", ")} (dropping adds a validate.js error)` : ""}`);
     } catch (e) { log(`${id}: cleanup failed, draft integrated as it is: ${e.message.split("\n")[0]}`); }
     // Written in the audits' one format (lib.formatAudit): answers sorted, one per line, for git history.

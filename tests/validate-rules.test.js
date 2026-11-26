@@ -76,12 +76,19 @@ ok("base fixture", base());
 { const a = base(); a.answers[A].sources = ["s1", "s4"]; ok("answer from two actions", a); }
 
 // Silence isn't an answer: a nothing-found null cites nothing.
-{ const a = base(); a.answers[C].sources = ["s2"]; fails("nothing-found null cites words", a, /a null cites nothing/); }
+// cleanup.js empties words next to a null; an action next to one stays an error, since it usually answers the statement.
+{ const a = base(); a.answers[C].sources = ["s2"]; ok("nothing-found null cites words (cleanup.js empties them)", a);
+  const t = require("../scripts/cleanup").tidy(a, true);
+  if (t.nullSources !== 1 || a.answers[C].sources.length) throw new Error("cleanup.js: a null's words not emptied"); }
+{ const a = base(); a.answers[C].sources = ["s1"]; require("../scripts/cleanup").tidy(a, true);
+  if (a.answers[C].sources[0] !== "s1") throw new Error("cleanup.js: a null's action removed"); }
 { const a = base(); a.answers[C].sources = ["s1"]; fails("nothing-found null cites an action", a, /null cites an action \(s1\)/); }
 
-// No answer history in the audit: git keeps earlier versions (Brandon, 2026-11-26).
+// No answer history in the audit: git keeps earlier versions (Brandon, 2026-11-26); cleanup.js removes one.
 { const a = laterPass(base()); a.answers[A].reviewHistory = [{ ...a.answers[A], author: "claude-opus-5-5", date: "2026-11-07" }];
-  fails("reviewHistory present", a, new RegExp(`${A}: remove "reviewHistory"`)); }
+  require("../scripts/cleanup").tidy(a, true);
+  if ("reviewHistory" in a.answers[A]) throw new Error("cleanup.js: reviewHistory not removed");
+  ok("reviewHistory removed by cleanup.js", a); }
 
 // A later pass changes, nulls or reverts answers freely against the committed file; a null still cites nothing.
 { const committed = base(); const a = laterPass(base());
@@ -95,7 +102,9 @@ ok("base fixture", base());
 // Answers only to statements in the bank, and no mention of a dropped one is left.
 { const X = "statement-no-longer-in-the-bank";
   const a = base(); a.answers[X] = { value: 1, rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
-  fails("answer to a statement not in the bank", a, /answers to statements not in the bank: statement-no-longer-in-the-bank/); }
+  ok("answer to a statement not in the bank (cleanup.js removes it)", a);
+  require("../scripts/cleanup").tidy(a, true);
+  if (X in a.answers) throw new Error("cleanup.js: answer to a statement not in the bank not removed"); }
 { const R = require("../scripts/lib").retiredIds()[0];
   if (R) {
     fails("note naming a dropped statement", Object.assign(base(), { notes: `Left ${R} null.` }), new RegExp(`names statements no longer in the bank: ${R}`));
@@ -121,7 +130,10 @@ fails("unknown source kind", E(base(), (a) => { a.sources[2].kind = "blog"; }), 
 fails("source url not http", E(base(), (a) => { a.sources[2].url = "ftp://example.org/x"; }), /source s3: url must be an http\(s\) URL/);
 fails("political-quiz site", E(base(), (a) => { a.sources[2].url = "https://www.politicalcompass.org/x"; }), /political-quiz sites are not allowed/);
 fails("source title missing", E(base(), (a) => { delete a.sources[2].title; }), /source s3: missing title/);
-fails("Wikipedia as primary", E(base(), (a) => { a.sources[2].url = "https://en.wikipedia.org/wiki/Example"; }), /a Wikipedia article is a "reference" source/);
+{ const a = E(base(), (a) => { a.sources[2].url = "https://en.wikipedia.org/wiki/Example"; }); // cleanup.js makes it a reference
+  require("../scripts/cleanup").tidy(a, true);
+  if (a.sources[2].kind !== "reference") throw new Error("cleanup.js: Wikipedia listed as primary not made a reference");
+  ok("Wikipedia as primary, made a reference by cleanup.js", a); }
 ok("no primary-source requirement (one rule for every subject, 2026-11-08)", E(base(), (a) => { for (const x of a.sources) x.kind = "reference"; }));
 ok("no scholarly or reference source needed (people have no scope, 2026-11-26)", E(base(), (a) => { for (const x of a.sources) x.kind = "primary"; }));
 fails("only Wikipedia sources", E(base(), (a) => { a.sources.forEach((x, i) => { x.kind = "reference"; x.url = `https://en.wikipedia.org/wiki/Page_${i}`; }); }), /Wikipedia cannot be the only kind of source/);
@@ -134,7 +146,9 @@ ok("null without a rationale", E(base(), (a) => { a.answers[C].rationale = ""; }
   if (require("../scripts/cleanup").emptyNullReasons(a) !== 1 || a.answers[C].rationale !== "") throw new Error("cleanup.js: a null's reason not emptied");
   ok("null reason emptied by cleanup.js", a); }
 fails("value out of range", E(base(), (a) => { a.answers[A].value = 3; }), /value must be an integer from -2 to 2 or null/);
-fails("an answer that still has a confidence", E(base(), (a) => { a.answers[A].confidence = "high"; }), /no "confidence" field/);
+{ const a = E(base(), (a) => { a.answers[A].confidence = "high"; }); require("../scripts/cleanup").tidy(a, true);
+  if ("confidence" in a.answers[A]) throw new Error("cleanup.js: confidence not removed");
+  ok("confidence removed by cleanup.js", a); }
 fails("rationale too short", E(base(), (a) => { a.answers[A].rationale = "Voted yes."; }), /rationale missing or too short/);
 fails("answer cites nothing", E(base(), (a) => { a.answers[A].sources = []; }), /cite at least one source/);
 fails("answer cites an unknown source", E(base(), (a) => { a.answers[A].sources = ["s9"]; }), /unknown source 's9'/);

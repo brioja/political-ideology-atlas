@@ -1,4 +1,5 @@
-// Empties the reasons of nulls and drops sources an audit lists but never uses (and, with --failing, first takes the sources validate.js fails out
+// Makes the fixes that need no judgment (tidy below: null reasons and sources, retired fields and answers, Wikipedia
+// listed as primary) and drops sources an audit lists but never uses (and, with --failing, first takes the sources validate.js fails out
 // of the answers: Wikipedia citations and sources not tied to the subject; dropFailing below).
 //   node scripts/cleanup.js [--people] <id> [...]   committed audits (audits/profiles, or audits/people)
 //   node scripts/cleanup.js [--people] --all        every committed audit
@@ -54,28 +55,62 @@ function emptyNullReasons(a) {
   return n;
 }
 
-// Cleans `<dir>/<id>.json` in place (lib.formatAudit): nulls lose their reasons, then unused sources go (a null's
-// reason may have been all that mentioned one). Returns { reasons, dropped, kept }: reasons emptied, ids dropped, and
-// unused ids kept because dropping them adds a validate.js error.
+// The fixes that need no judgment, done in place on audit `a` instead of failing validate.js (Brandon, 2026-11-26:
+// a session would spend a fix round on each). Returns how many of each it made:
+// - reasons: nulls' reasons emptied (emptyNullReasons).
+// - nullSources: a null's sources emptied. A null cites nothing: a source next to it reads as evidence of silence. A
+//   null citing a person's action is left to validate.js, since the action usually answers the statement.
+// - confidence, reviewHistory: fields answers no longer have (no confidence: it changed no result; no history: git keeps it).
+// - strays: answers to statements no longer in the bank (as scripts/drop-answers.js does across the repo).
+// - wikiKind: a Wikipedia article listed as "primary" or "program" made "reference": it is about a document, never the document.
+function tidy(a, people = false) {
+  const t = { reasons: emptyNullReasons(a), nullSources: 0, confidence: 0, reviewHistory: 0, strays: 0, wikiKind: 0 };
+  const answers = a.answers && typeof a.answers === "object" ? a.answers : {};
+  const inBank = new Set(lib.allStatements().map((s) => s.id));
+  for (const k of Object.keys(answers)) if (!inBank.has(k)) { delete answers[k]; t.strays++; }
+  const action = new Set(people ? (a.sources || []).filter((s) => s && s.evidence === "action").map((s) => s.id) : []);
+  for (const ans of Object.values(answers)) {
+    if (!ans || typeof ans !== "object") continue;
+    if ("confidence" in ans) { delete ans.confidence; t.confidence++; }
+    if ("reviewHistory" in ans) { delete ans.reviewHistory; t.reviewHistory++; }
+    if (ans.value === null && Array.isArray(ans.sources) && ans.sources.length && !ans.sources.some((sid) => action.has(sid))) { ans.sources = []; t.nullSources++; }
+  }
+  for (const s of Array.isArray(a.sources) ? a.sources : []) {
+    if (s && (s.kind === "primary" || s.kind === "program") && /wikipedia\.org/i.test(s.url || "")) { s.kind = "reference"; t.wikiKind++; }
+  }
+  return t;
+}
+
+// tidy()'s counts as a log line ("" when it changed nothing).
+function describe(t) {
+  const parts = [[t.reasons, "null reason(s) emptied"], [t.nullSources, "null(s) cleared of sources"], [t.confidence, "confidence field(s) removed"],
+    [t.reviewHistory, "reviewHistory field(s) removed"], [t.strays, "answer(s) to statements not in the bank removed"],
+    [t.wikiKind, "Wikipedia source(s) made \"reference\""]].filter(([n]) => n).map(([n, what]) => `${n} ${what}`);
+  return parts.join("; ");
+}
+
+// Cleans `<dir>/<id>.json` in place (lib.formatAudit): tidy() first, then unused sources go (a null's reason or sources
+// may have been all that mentioned one). Returns { tidied, dropped, kept }: tidy()'s description ("" for none), ids
+// dropped, and unused ids kept because dropping them adds a validate.js error.
 function clean(dir, id, people = false) {
   const file = path.join(dir, `${id}.json`);
   let text = fs.readFileSync(file, "utf8"), a = JSON.parse(text);
-  const reasons = emptyNullReasons(a);
-  if (reasons) { text = lib.formatAudit(a); fs.writeFileSync(file, text); }
+  const tidied = describe(tidy(a, people));
+  if (tidied) { text = lib.formatAudit(a); fs.writeFileSync(file, text); }
   const unused = unusedSources(a);
-  if (!unused.length) return { reasons, dropped: [], kept: [] };
+  if (!unused.length) return { tidied, dropped: [], kept: [] };
   const write = (ids) => fs.writeFileSync(file, lib.formatAudit({ ...a, sources: a.sources.filter((s) => !ids.includes(s && s.id)) }));
   const before = errors(dir, id, people);
   const ok = () => [...errors(dir, id, people)].every((e) => before.has(e));
   try {
     write(unused);
-    if (ok()) return { reasons, dropped: unused, kept: [] };
+    if (ok()) return { tidied, dropped: unused, kept: [] };
     // Something unused still matters: drop the rest one at a time.
     const dropped = [];
     for (const sid of unused) { write([...dropped, sid]); if (ok()) dropped.push(sid); }
     write(dropped);
     if (!dropped.length) fs.writeFileSync(file, text);
-    return { reasons, dropped, kept: unused.filter((x) => !dropped.includes(x)) };
+    return { tidied, dropped, kept: unused.filter((x) => !dropped.includes(x)) };
   } catch (e) { fs.writeFileSync(file, text); throw e; }
 }
 
@@ -99,7 +134,7 @@ function dropFailing(dir, id, people = false) {
   return { untied, wikipedia, ...clean(dir, id, people) };
 }
 
-module.exports = { unusedSources, emptyNullReasons, clean, dropFailing };
+module.exports = { unusedSources, emptyNullReasons, tidy, describe, clean, dropFailing };
 
 if (require.main === module) {
   const args = process.argv.slice(2), people = args.includes("--people");
@@ -113,9 +148,9 @@ if (require.main === module) {
       const f = dropFailing(dir, id, people);
       if (f.untied.length || f.wikipedia.kept + f.wikipedia.nulled) console.log(`${id}: untied sources out of the answers: ${f.untied.join(", ") || "none"}; Wikipedia citations dropped: ${f.wikipedia.nulled} answer(s) nulled, ${f.wikipedia.kept} kept on other sources, ${f.wikipedia.requests} missing statement(s) dropped`);
     }
-    const { reasons, dropped, kept } = clean(dir, id, people);
+    const { tidied, dropped, kept } = clean(dir, id, people);
     total += dropped.length;
-    if (reasons) console.log(`${id}: emptied ${reasons} null reason(s)`);
+    if (tidied) console.log(`${id}: ${tidied}`);
     if (dropped.length || kept.length) console.log(`${id}: dropped ${dropped.length ? dropped.join(", ") : "none"}${kept.length ? `; kept ${kept.join(", ")} (dropping adds a validate.js error)` : ""}`);
   }
   console.log(`${ids.length} audit(s) checked; ${total} unused source(s) dropped`);

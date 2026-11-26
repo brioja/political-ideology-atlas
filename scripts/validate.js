@@ -236,7 +236,6 @@ function validate(id) {
 
   // The first check (audits/PROMPT.md): an entry that isn't an ideology the test can place gets a
   // short record instead of an audit. It's finished, and excluded like an uncertainty failure.
-  if (!PEOPLE && a.notAnIdeology !== undefined) errors.push('"notAnIdeology" was renamed "notIdeasOfWhatSocietyShouldBe" (2026-11-20): rename the key');
   if (!PEOPLE && a.notIdeasOfWhatSocietyShouldBe !== undefined) {
     // { "reason": one of NOT_IDEAS_REASONS, "explanation": "..." }.
     const n = a.notIdeasOfWhatSocietyShouldBe;
@@ -330,9 +329,8 @@ function validate(id) {
     else if (BANNED_HOSTS.some((h) => new URL(s.url).host.includes(h))) errors.push(`source ${s.id}: political-quiz sites are not allowed`);
     if (!s.title) errors.push(`source ${s.id}: missing title`);
   }
-  // A Wikipedia article about a document is a reference, never the document itself.
-  const wikiPrimary = sources.filter((s) => (s.kind === "primary" || s.kind === "program") && /wikipedia\.org/i.test(s.url || "")).map((s) => s.id);
-  if (wikiPrimary.length) errors.push(`${wikiPrimary.join(", ")}: a Wikipedia article is a "reference" source, not "primary" or "program"`);
+  // A Wikipedia article about a document is a reference, never the document itself: scripts/cleanup.js makes one listed
+  // as "primary" or "program" a "reference" (Brandon, 2026-11-26), so it is no error here.
   // An ideology's scope rests on a defining source (PROMPT.md sections 1 and 2), checked where the scope is written
   // (--stage scope); later phases only read it. People have no scope: each answer rests on its own sources
   // (Brandon, 2026-11-26).
@@ -345,12 +343,12 @@ function validate(id) {
   const statements = allStatements();
   const active = statements.filter((s) => !isCandidate(s));
   // Answers only to statements in the bank: a dropped or renamed statement's answers are removed
-  // (scripts/drop-answers.js, Brandon, 2026-11-18), and nothing in the audit names it any more (2026-11-19).
+  // (scripts/drop-answers.js, Brandon, 2026-11-18; in a draft scripts/cleanup.js, 2026-11-26, so they are no error
+  // here), and nothing else in the audit names it any more (2026-11-19).
   const inBank = new Set(statements.map((s) => s.id));
-  const strays = Object.keys(answers).filter((k) => !inBank.has(k));
-  if (strays.length) errors.push(`answers to statements not in the bank: ${strays.join(", ")}; remove them with node scripts/drop-answers.js`);
   const retiredRe = lib.retiredRe();
-  const named = retiredRe ? [...new Set(JSON.stringify(a).match(retiredRe) || [])] : [];
+  const inBankOnly = { ...a, answers: Object.fromEntries(Object.entries(answers).filter(([k]) => inBank.has(k))) };
+  const named = retiredRe ? [...new Set(JSON.stringify(inBankOnly).match(retiredRe) || [])] : [];
   if (named.length) errors.push(`names statements no longer in the bank: ${named.join(", ")}; a dropped statement leaves no trace in an audit, so remove each mention (a list item, or the clause about it)`);
   const unansweredIds = [];
   for (const st of statements) {
@@ -358,8 +356,7 @@ function validate(id) {
     // Every statement in the bank gets an answer, candidate or active: promotion only decides what the
     // matching uses, never whether an audit is complete (Brandon, 2026-11-18).
     if (!ans) { if (AS_CURRENT) unansweredIds.push(st.id); else errors.push(`no answer for '${st.id}'`); continue; }
-    // Answers carry no confidence (Brandon, 2026-11-26: it changed no result).
-    if ("confidence" in ans) errors.push(`${st.id}: answers have no "confidence" field any more; remove it`);
+    // Answers carry no confidence (Brandon, 2026-11-26: it changed no result): scripts/cleanup.js removes one.
     // A null carries no reason (Brandon, 2026-11-26): silence is not a position, and a reason for one ("the sources
     // record no position") is a claim about silence that the next pass read as settled. Political moderate's 598 did.
     // Not an error: scripts/cleanup.js empties them before an audit is integrated.
@@ -427,14 +424,13 @@ function validate(id) {
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
   // - A null cites nothing ("sources": []): it is no known position, and a source next to it would read as evidence
-  //   of silence (Brandon, 2026-11-18), and no reason (above).
+  //   of silence (Brandon, 2026-11-18), and no reason (above). scripts/cleanup.js empties a null's sources (2026-11-26);
+  //   one citing an action is an error here, since the action usually answers the statement.
   // - An answer has no "reviewHistory": git keeps every version (Brandon, 2026-11-26: nothing in an audit read it,
-  //   and the audits format answers one per line so `git log` finds a statement's versions).
+  //   and the audits format answers one per line so `git log` finds a statement's versions). scripts/cleanup.js removes it.
   // Only people have a record: an ideology doesn't act, so its sources all count as words (Brandon, 2026-11-23).
   const ev = new Map(sources.map((s) => [s.id, PEOPLE ? s.evidence : "words"]));
   const kinds = (ids, k) => (Array.isArray(ids) ? ids : []).filter((sid) => ev.get(sid) === k);
-  const withHistory = statements.filter((st) => answers[st.id] && answers[st.id].reviewHistory !== undefined).map((st) => st.id);
-  if (withHistory.length) errors.push(`${withHistory.join(", ")}: remove "reviewHistory"; git keeps earlier versions of an answer, so an answer is only its current version`);
   if (a.rules >= 4) {
     if (PEOPLE) for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
     for (const st of statements) {
@@ -448,7 +444,6 @@ function validate(id) {
       }
       const action = kinds(cited, "action");
       if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
-      else if (cited.length) errors.push(`${st.id}: a null cites nothing ("sources": []); evidence that doesn't answer the statement isn't cited here`);
     }
   }
   const nullings = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "nulling");
@@ -532,7 +527,7 @@ function validate(id) {
   if (PEOPLE && a.rules >= 7) {
     const SAID = /\b(said|says|saying|wrote|writes|written|argued|argues|arguing|stated|speech|speeches|praised|critici[sz]ed|denounced|interview|told|essay|pamphlet|called for|calls for|urged|urges|insisted|warned|rhetoric|manifesto|the green book)\b/i;
     const DONE = /\b(voted|votes|signed(?! (?:an? |the )?(?:open )?(?:letter|petition|statement|pledge))|enacted|decreed|decree|vetoed|veto|ordered|nationali[sz]ed|abolished|banned|imprisoned|executed|implemented|appointed|deported|expelled|invaded|annexed|legislated|cosponsored|sponsored|passed (?:a|the) (?:law|bill|act))\b/i;
-    for (const [sid, x] of Object.entries(answers)) {
+    for (const [sid, x] of Object.entries(inBankOnly.answers)) {
       if (!x || x.value !== 0) continue;
       const w = (x.rationale || "").match(SAID), d = (x.rationale || "").match(DONE);
       if (w && d) errors.push(`${sid}: a 0 whose rationale sets words ("${w[0]}") against actions ("${d[0]}"); record over words: that is no split, answer from the actions. (If "${w[0]}" only names what a source says, reword the rationale.)`);
