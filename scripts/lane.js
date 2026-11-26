@@ -16,10 +16,13 @@
 // Per subject:
 //  1. Pick: the lane's own unfinished drafts first, then `next.js --lane`, passing over subjects other lanes have
 //     claimed (scratchpad/lane-out/*/<id>.claim, checked and written under .claim.lock) and any audit with uncommitted changes. Greta Thunberg and Annie Besant were audited twice before this.
-//  2. Audit: a new session with START, resumed with RESUME until the subject has its DONE.txt line. An ideology first
-//     runs a scope phase (SCOPE_START, until <id>.scope exists), checked with validate.js --stage scope and sent back
-//     to fix (SCOPE_FIX), then answers in the same session (ANSWER). The session
-//     ends its turn at natural report points, so the loop lives here.
+//  2. Audit, in phases; sessions end their turns at natural report points, so the loop lives here.
+//     - Ideologies only: a scope phase (SCOPE_START, until <id>.scope exists), checked with validate.js --stage scope
+//       and sent back to fix (SCOPE_FIX).
+//     - Local: answers from local texts only (START for people, ANSWER in the scope session for ideologies), until
+//       <id>.local exists. Claude turns run with AUDIT_PHASE=local, so .claude/hooks/local-only.js refuses the web.
+//     - Web: scripts/phases.js strips the settled answers into <id>.web.json; a fresh session (WEB_START, resumed
+//       with RESUME) answers the open ones there until the subject has its DONE.txt line; phases.js merges them back.
 //  3. Integrate (under a lock shared by all lanes): validate (errors go back to the
 //     session to fix), drop sources the audit never uses (scripts/cleanup.js), move the draft into audits/, merge an ideology's color, build, test, commit with no attribution
 //     line. Pushes go out at most every PUSH_MINUTES across all lanes, and when a driver starts or stops.
@@ -72,9 +75,9 @@ const lineId = (l) => l.split("|")[0].trim().split(/\s+/).pop();
 const doneIds = () => new Set((fs.existsSync(DONE) ? fs.readFileSync(DONE, "utf8") : "").split("\n").map(lineId).filter(Boolean));
 const run = (cmd, args, opts = {}) => spawnSync(cmd, args, { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 28, detached: true, ...opts });
 // Sessions run async, so a Ctrl-C is handled at once rather than when the session ends.
-const runAsync = (cmd, args) => new Promise((resolve) => {
+const runAsync = (cmd, args, env = {}) => new Promise((resolve) => {
   let out = "", err = "";
-  const c = child = spawn(cmd, args, { cwd: ROOT, detached: true, stdio: ["ignore", "pipe", "pipe"] });
+  const c = child = spawn(cmd, args, { cwd: ROOT, detached: true, stdio: ["ignore", "pipe", "pipe"], env: { ...process.env, ...env } });
   c.stdout.setEncoding("utf8").on("data", (d) => { out += d; });
   c.stderr.setEncoding("utf8").on("data", (d) => { err += d; });
   c.on("error", (e) => { child = null; resolve({ status: 1, stdout: out, stderr: String(e) }); });
@@ -97,6 +100,7 @@ function commit(message, paths) {
   return r.status ? `commit failed: ${(r.stderr || r.stdout).trim().split("\n").slice(0, 3).join(" / ")}` : "";
 }
 const draft = (id) => path.join(OUT, `${id}.json`);
+const phases = require("./phases");
 const flag = PEOPLE ? "--people " : "";
 
 // ---- picking ----
@@ -199,7 +203,14 @@ function otherNames(id) {
   if (!names.length) return "";
   return ` Wikipedia redirects these names to the subject's article: ${names.map((n) => `"${n}"`).join(", ")}. Search under them from the start, not only the subject's own name: a source naming the subject by one of them counts as naming it (the coatrack check takes them as aliases, unless another ideology claims the name).`;
 }
-const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer; if that draft exists, carry on from it. When every statement has an answer, validate with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}${laterPassProblems(id)}${GAP_NOTE}`;
+// The answers come in two phases (Brandon, 2026-11-26): local texts only, then a fresh session on the web for what is
+// still open (scripts/phases.js strips the settled answers and merges the web phase's back). The local phase's Claude
+// turns run with AUDIT_PHASE=local, which .claude/hooks/local-only.js reads to refuse web searches and fetches.
+const LOCAL_ENV = { AUDIT_PHASE: "local" };
+const localMark = (id) => path.join(OUT, `${id}.local`), webDraft = (id) => path.join(OUT, `${id}.web.json`);
+const LOCAL_RULE = (id) => `This is the local phase of the answers: answer from local texts only, that is the local corpora (~/.cache/political-ideology-atlas/corpora/, listed in its README.md), the maintainer's reference library, Gutenberg books (\`node scripts/gutenberg.js\`) and books already downloaded for this audit (scratchpad/sources/${id}/${PEOPLE ? "" : `, ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}). No web searches and no page fetches (scripts/get.js, wiki.js, yt.js)${ENGINE === "claude" ? "; a hook refuses them" : ""}. A statement the local texts don't settle stays null for now: a web phase follows in a fresh session and searches the web for every open statement${PEOPLE ? ", and for a record (acts) on each statement you answer from the person's words" : ""}. Save the draft after every statement you answer.${COLOR(id)} When you have gone through every statement, create the empty file scratchpad/lane-out/${LANE}/${id}.local and end your turn; don't validate yet (the driver validates once the web phase is merged in).`;
+const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json; if that draft exists, carry on from it. ${LOCAL_RULE(id)}${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}${laterPassProblems(id)}${GAP_NOTE}`;
+const WEB_START = (id, n) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This is the web phase of its audit: earlier phases answered what local texts (the corpora, the maintainer's library, downloaded books) settle, and they have been searched. scratchpad/lane-out/${LANE}/${id}.web.json is the audit with only the ${n} statement(s) still open in its "answers"; if it has been worked on already, carry on from it. Search the web for each (web search, \`node scripts/get.js\`, scripts/wiki.js, scripts/yt.js) and answer it in that file, saving after every statement.${PEOPLE ? " An open statement that has an answer rests on the person's words only: look for their record (acts) on it, and replace the answer only with one from that record (record over words, audits/AUDIT_RULES.md); with no record, leave it as it is." : ""} Add no answer for any other statement (they are settled, and the driver ignores them), and number new sources on from the existing ones. Don't run validate.js on this file (it lacks the settled answers): the driver merges it into the audit and validates that. When every open statement has an answer, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers this phase found>\`.${otherNames(id)}`;
 const GAP_NOTE = GAP_EXCEPTION ? `\n\nThis pass is exempt from the re-audit gap (the maintainer approved it early): the driver adds "gapException" to its entry in "passes". Date the entry today as usual and leave that field to the driver.` : "";
 // An ideology's audit runs in two phases (Brandon, 2026-11-23): first what PROMPT.md section 2 settles (scope, sources,
 // aliases, key figures, key works), which the driver checks with validate.js --stage scope and sends back to fix, then
@@ -210,7 +221,7 @@ const GAP_NOTE = GAP_EXCEPTION ? `\n\nThis pass is exempt from the re-audit gap 
 const scopeMark = (id) => path.join(OUT, `${id}.scope`);
 const SCOPE_START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This first phase covers audits/PROMPT.md sections 1 and 2 only: find the defining sources and write scratchpad/lane-out/${LANE}/${id}.json with its scope, sources, aliases, key figures and key works (if that draft exists, carry on from it; a later pass keeps the committed answers as they are for now). Don't answer statements yet. When those parts are in the draft, create the empty file scratchpad/lane-out/${LANE}/${id}.scope and end your turn; the driver checks them and then asks for the answers.${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}${laterPassProblems(id)}${GAP_NOTE}`;
 const SCOPE_FIX = (id, problems) => `\`node scripts/validate.js --dir scratchpad/lane-out/${LANE} --stage scope ${id}\` reports these problems with the scope, sources, aliases, key figures and key works of scratchpad/lane-out/${LANE}/${id}.json:\n${problems}\nFix each error, and act on each warning (a person named in a key figure's quote: list them if the defining sources present the ideology as their thought or political legacy). Check again with that command, and end your turn.`;
-const ANSWER = (id, added = "") => `The scope, sources, aliases, key figures and key works of \`${id}\` are checked.${added} Now answer the statements. Audit it into scratchpad/lane-out/${LANE}/${id}.json, saving after every statement you answer. When every statement has an answer, validate with \`node scripts/validate.js --dir scratchpad/lane-out/${LANE} ${id}\` and fix every error.${COLOR(id)} Once it reports no errors, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers>\`.`;
+const ANSWER = (id, added = "") => `The scope, sources, aliases, key figures and key works of \`${id}\` are checked.${added} Now answer the statements in scratchpad/lane-out/${LANE}/${id}.json. ${LOCAL_RULE(id)}`;
 // validate.js --stage scope's errors and warnings for the draft, as "- " lines ("" when clean).
 function scopeProblems(id) {
   exceptGap(id); // the gap check is part of the scope stage, so the maintainer's exception goes in first
@@ -218,6 +229,7 @@ function scopeProblems(id) {
   return (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`).join("\n");
 }
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its line in scratchpad/lane-out/${LANE}/DONE.txt.`;
+const RESUME_LOCAL = (id) => `Go on with the local phase of \`${id}\` where you left off (local texts only), through to creating scratchpad/lane-out/${LANE}/${id}.local.`;
 const FIX = (id, errors) => `validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
 // Why a child process failed, for the log: an uncaught error's message and where it was thrown, not the last lines of
@@ -233,14 +245,14 @@ function failure(out, n = 3) {
   return lines.filter((l) => l.trim() && !/^Node\.js v\d/.test(l)).slice(-n).join(" / ");
 }
 // Runs one turn (new session, or resume of `thread`); returns the session id.
-async function session(prompt, thread) {
+async function session(prompt, thread, env = {}) {
   let r, id = thread;
   if (ENGINE === "codex") {
     const common = ["--json", "--skip-git-repo-check", "--dangerously-bypass-approvals-and-sandbox"];
-    r = await runAsync("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt]);
+    r = await runAsync("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt], env);
     for (const line of (r.stdout || "").split("\n")) { try { const e = JSON.parse(line); if (e.type === "thread.started") id = e.thread_id; } catch {} }
   } else {
-    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])]);
+    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
     try { id = JSON.parse(r.stdout).session_id || id; } catch {}
   }
   if (r.status) log(`${ENGINE} exited ${r.status}: ${failure(r.stderr, 1) || stdoutError(r.stdout)}`);
@@ -360,7 +372,7 @@ function integrate(id) {
     }
     const why = buildAndCommit(PEOPLE ? "Rebuild people data" : "Rebuild site data");
     if (why) log(`${id}: ${why}; audit committed, generated files left for the next build`);
-    for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`), path.join(OUT, `${id}.scope`)]) if (fs.existsSync(f)) fs.unlinkSync(f);
+    for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`), scopeMark(id), localMark(id), webDraft(id)]) if (fs.existsSync(f)) fs.unlinkSync(f);
     return name;
   });
 }
@@ -423,8 +435,10 @@ while (timeLeft()) {
   fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
   log(`start ${id}`);
   let thread = null;
-  if (!PEOPLE && !doneIds().has(id)) startBooks.set(id, (fetchBooks(id) || {}).books || []);
-  if (!PEOPLE && !doneIds().has(id) && !fs.existsSync(scopeMark(id))) {
+  const done = () => doneIds().has(id), local = () => fs.existsSync(localMark(id));
+  // Phase 1, ideologies: scope, sources, aliases, key figures and key works (web and local).
+  if (!PEOPLE && !done() && !local()) startBooks.set(id, (fetchBooks(id) || {}).books || []);
+  if (!PEOPLE && !done() && !local() && !fs.existsSync(scopeMark(id))) {
     thread = await session(SCOPE_START(id));
     for (let n = 1; !fs.existsSync(scopeMark(id)) && n <= RESUMES && timeLeft(); n++) {
       if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(SCOPE_START(id)); continue; }
@@ -433,31 +447,62 @@ while (timeLeft()) {
     }
     if (!fs.existsSync(scopeMark(id))) { log(`${id}: scope phase not done; left for the next start`); tried.add(id); continue; }
   }
-  if (!PEOPLE && !doneIds().has(id)) {
-    let problems = fs.existsSync(draft(id)) ? scopeProblems(id) : "";
-    for (let n = 1; problems && thread && n <= FIX_ROUNDS; n++) {
-      log(`${id}: scope check, fix round ${n} (${problems.split("\n").length} problem(s))`);
-      thread = await session(SCOPE_FIX(id, problems), thread);
-      problems = scopeProblems(id);
+  // Phase 2: answers from local texts only, in the same session as the scope phase.
+  const localStart = (added = "") => PEOPLE ? START(id) : `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`; your subject is \`${id}\`, and its draft exists.${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}${laterPassProblems(id)}${GAP_NOTE} ${ANSWER(id, added)}`;
+  if (!done() && !local()) {
+    let added = "";
+    if (!PEOPLE) {
+      let problems = fs.existsSync(draft(id)) ? scopeProblems(id) : "";
+      for (let n = 1; problems && thread && n <= FIX_ROUNDS; n++) {
+        log(`${id}: scope check, fix round ${n} (${problems.split("\n").length} problem(s))`);
+        thread = await session(SCOPE_FIX(id, problems), thread);
+        problems = scopeProblems(id);
+      }
+      if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again):\n${problems}`);
+      // The books by the key figures and key works the scope phase settled (Brandon, 2026-11-25).
+      const before = new Set((startBooks.get(id) || []).map((b) => b.file));
+      const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
+      added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works your scope phase listed are now downloaded too");
     }
-    if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again):\n${problems}`);
-    // The books by the key figures and key works the scope phase settled (Brandon, 2026-11-25).
-    const before = new Set((startBooks.get(id) || []).map((b) => b.file));
-    const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
-    const added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works your scope phase listed are now downloaded too");
-    thread = await session(thread ? ANSWER(id, added) : `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`; your subject is \`${id}\`, and its draft exists.${booksAtStart(id)} ${ANSWER(id, added)}`, thread);
+    log(`${id}: local phase`);
+    thread = await session(thread ? ANSWER(id, added) : localStart(added), thread, LOCAL_ENV);
+    for (let n = 1; !local() && n <= RESUMES && timeLeft(); n++) {
+      if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(localStart(), null, LOCAL_ENV); continue; }
+      log(`resume ${id} local (${n})`);
+      thread = await session(RESUME_LOCAL(id), thread, LOCAL_ENV);
+    }
+    if (!local() || !fs.existsSync(draft(id))) { log(`${id}: local phase not done; left for the next start`); tried.add(id); continue; }
   }
-  if (!thread && !doneIds().has(id)) thread = await session(START(id));
-  for (let n = 1; !doneIds().has(id) && n <= RESUMES && timeLeft(); n++) {
-    if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(START(id)); continue; }
-    log(`resume ${id} (${n})`);
-    thread = await session(RESUME(id), thread);
+  // Phase 3: a fresh session searches the web for the statements still open (scripts/phases.js).
+  if (!done()) {
+    thread = null;
+    if (!fs.existsSync(webDraft(id))) {
+      const { web, ids } = phases.strip(JSON.parse(fs.readFileSync(draft(id), "utf8")), PEOPLE);
+      if (ids.length) fs.writeFileSync(webDraft(id), require("./lib").formatAudit(web));
+      else fs.appendFileSync(DONE, `${id} | every statement answered from local texts\n`);
+      log(`${id}: web phase, ${ids.length} open statement(s)`);
+    }
+    if (!done()) {
+      const n = Object.keys(JSON.parse(fs.readFileSync(webDraft(id), "utf8")).answers || {}).length;
+      thread = await session(WEB_START(id, n));
+      for (let i = 1; !done() && i <= RESUMES && timeLeft(); i++) {
+        if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(WEB_START(id, n)); continue; }
+        log(`resume ${id} web (${i})`);
+        thread = await session(RESUME(id), thread);
+      }
+    }
   }
-  if (!doneIds().has(id) || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
+  if (!done() || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
+  if (fs.existsSync(webDraft(id))) {
+    const m = phases.merge(JSON.parse(fs.readFileSync(draft(id), "utf8")), JSON.parse(fs.readFileSync(webDraft(id), "utf8")), PEOPLE);
+    fs.writeFileSync(draft(id), require("./lib").formatAudit(m.audit));
+    fs.unlinkSync(webDraft(id));
+    log(`${id}: merged the web phase: ${m.taken.length} answer(s) taken${PEOPLE ? `, ${m.kept.length} words-only answer(s) kept (no record)` : ""}${m.ignored.length ? `, ${m.ignored.length} answer(s) to settled statements ignored` : ""}`);
+  }
   exceptGap(id);
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
   for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); exceptGap(id); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
-  if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); if (fs.existsSync(scopeMark(id))) fs.unlinkSync(scopeMark(id)); continue; }
+  if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); for (const f of [scopeMark(id), localMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f); continue; }
   // The DONE line moves to INTEGRATED.txt, so a later pass on the same subject starts clean.
   const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
   const name = integrate(id);

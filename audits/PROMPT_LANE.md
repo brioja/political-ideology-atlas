@@ -22,10 +22,16 @@ Audit the id the driver gives you, person or ideology.
    The driver's first message lists what the committed audit fails under today's rules
    (`node scripts/validate.js [--people] --as-current <id>`): fix each in your draft.
 3. Sources go in `scratchpad/sources/<id>/`; helper scripts in `scratchpad/<lane>-<id>/`.
-   An ideology is audited in two phases. First its scope, sources, aliases, key figures and key works
-   (PROMPT.md sections 1 and 2), with no answers yet; the driver checks them
-   (`node scripts/validate.js --dir scratchpad/lane-out/<lane> --stage scope <id>`) and sends back what
-   to fix. Then the answers. The driver's messages say when each phase starts.
+   An audit runs in phases; the driver's messages say when each starts.
+   - Ideologies first: scope, sources, aliases, key figures and key works (PROMPT.md sections 1 and 2),
+     from the web and local texts, with no answers yet. The driver checks them
+     (`node scripts/validate.js --dir scratchpad/lane-out/<lane> --stage scope <id>`) and sends back
+     what to fix.
+   - Local: answers from local texts only (the corpora, the maintainer's reference library, Gutenberg,
+     books downloaded for this audit). A statement they don't settle stays null.
+   - Web, in a fresh session: the driver hands over only the statements still open (for a person, also
+     those answered from their words alone, to look for a record) in `<id>.web.json`, and merges the
+     answers back.
 4. Write the audit to `scratchpad/lane-out/<lane>/<id>.json`; the driver moves it into `audits/`
    once it validates. Validate it there:
 
