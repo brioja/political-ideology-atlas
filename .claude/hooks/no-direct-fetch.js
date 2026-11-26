@@ -3,6 +3,7 @@
 //   Wikipedia, Wikidata, Wikimedia -> node scripts/wiki.js       (on-disk cache, waits out 429s)
 //   YouTube                        -> node scripts/yt.js         (captions/search cached, 20 s apart, stops on 429/captcha)
 //   Project Gutenberg              -> node scripts/gutenberg.js  (official catalog + mirror, as its robot policy requires)
+//   marxists.org                   -> the corpus's tools/marxists.js --fetch (pages go into the local corpus; 2026-11-26)
 // Denies WebFetch to those hosts, shell downloads from them (curl, wget, python...), and yt-dlp run directly.
 const RULES = [
   { host: /\b(?:[a-z-]+\.)?(?:m\.)?(wikipedia|wikidata|wikimedia)\.org\b/i, tool: "scripts/wiki.js",
@@ -11,6 +12,8 @@ const RULES = [
     how: 'Use the cached, paced tool: `node scripts/yt.js "<video URL or id>"` (captions) or `node scripts/yt.js --search "<words>" [N]`.' },
   { host: /\b(?:www\.)?gutenberg\.org\b/i, tool: "scripts/gutenberg.js",
     how: 'Gutenberg\'s robot policy allows only its mirror: `node scripts/gutenberg.js --search "<author or title>"`, then `node scripts/gutenberg.js <id>` for the local file path (fetched from the mirror if needed). Cite the book page URL; just don\'t fetch it.' },
+  { host: /\b(?:www\.)?marxists\.org\b/i, tool: "marxists.js",
+    how: 'marxists.org pages go into the local corpus: `node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js --fetch "<URL>" [keyword]` (in an audit\'s web phase, --fetch-if-not-local).' },
 ];
 const DOWNLOADER = /\b(curl|wget|requests|urllib|urlopen|fetch|lynx|w3m|aria2c)\b/i;
 let input = "";

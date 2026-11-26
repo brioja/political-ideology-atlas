@@ -10,7 +10,8 @@ agents too. This file adds what matters when running audits.
   (validate, move into `audits/`, build, test, commit, batched push). Answers come in two phases: local texts only
   (a hook refuses the web in Claude lanes; marxists.org and Gutenberg are read here), then a fresh web session for what
   is still open (`scripts/phases.js`), which a hook keeps off local texts (`.claude/hooks/web-only.js`: a saved page
-  only through `get.js <id> <url> --grep`). Between subjects it runs the books, triage and signal steps. Lanes write only their own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`.
+  only through `get.js <id> <url> --grep`; marxists.org pages and Gutenberg books the corpus
+  lacks through `marxists.js` / `gutenberg.js --fetch-if-not-local`, which add them to the corpus). Between subjects it runs the books, triage and signal steps. Lanes write only their own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`.
   The serial-audits workflow it replaced was removed 2026-11-20 (Brandon): the lanes did all it did, and the subject
   lanes left for it went unaudited while it wasn't running.
 - **Stop lanes on a problem:** any agent may stop a running lane when its audits are going wrong (Ctrl-C twice, or
