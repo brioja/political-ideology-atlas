@@ -26,7 +26,7 @@
 // Between subjects: for people, prefetch-books.js and triage.js every
 // BOOKS_EVERY people; for ideologies, statement-signal.js --apply once, when the lane stops (Brandon, 2026-11-20: it takes
 // about 9 minutes inside the integrate lock, so running it every 5 ideologies slowed both lanes by about a fifth; since
-// 2026-11-23 it takes about half a minute, refits in parallel).
+// 2026-11-23 it takes about half a minute, refits in parallel), skipped when another lane's is already waiting or running.
 // Log: scratchpad/lane-out/<lane>/driver.log, one line per step; integrated subjects in INTEGRATED.txt.
 const { spawn, spawnSync, execFileSync } = require("child_process");
 const fs = require("fs"), path = require("path");
@@ -370,7 +370,21 @@ function books() {
     if (failed) log(`triage: ${failed}`);
   });
 }
+// One signal step at a time across lanes: a lane whose step finds another lane's step already waiting for the lock or
+// running skips its own. That step takes the lock after this lane's last integration, so it covers these audits too.
+// Back-to-back runs on the same audits flip borderline statements back and forth (lanes stopped one after another,
+// 2026-11-25: seven signal commits in 20 minutes). The marker holds the owner's pid; a dead owner's marker is taken over.
+const SIGNAL_MARK = path.join(LANES, ".signal.pending");
+const alive = (pid) => { try { process.kill(pid, 0); return true; } catch (e) { return e.code === "EPERM"; } };
 function signal() {
+  try { fs.writeFileSync(SIGNAL_MARK, String(process.pid), { flag: "wx" }); } catch {
+    const owner = +fs.readFileSync(SIGNAL_MARK, "utf8").trim() || 0;
+    if (owner && alive(owner)) { log(`signal: skipped; another lane's signal step (pid ${owner}) covers these audits`); return; }
+    fs.writeFileSync(SIGNAL_MARK, String(process.pid));
+  }
+  try { signalStep(); } finally { try { if (+fs.readFileSync(SIGNAL_MARK, "utf8") === process.pid) fs.unlinkSync(SIGNAL_MARK); } catch {} }
+}
+function signalStep() {
   locked(() => {
     const r = run("node", ["scripts/statement-signal.js", "--apply"]);
     const tail = (r.stdout || "").trim().split("\n").filter((l) => /^(Promoted|Demoted)/.test(l));
