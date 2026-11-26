@@ -5,6 +5,10 @@
 //   node scripts/get.js <audit id> <url> --refresh   fetch again even if the library already has this url
 //   node scripts/get.js <audit id> <url> --agents=firefox,chrome   try only these agents
 //   node scripts/get.js <audit id> <url> --no-wayback  don't fall back to a Wayback Machine capture
+//   node scripts/get.js <audit id> <url> --grep "<keyword>" [--context N]   also print the passages with the keyword
+//   node scripts/get.js <audit id> <url> --print     also print the whole text
+// An audit's web phase reads pages only this way, one URL at a time (.claude/hooks/web-only.js refuses reading the
+// library's files directly, so the session can't scan what earlier phases saved; Brandon, 2026-11-26).
 // Agents, in order (those not installed are skipped):
 //   curl (the project's own User-Agent), wget, wget2, aria2c (each its own), lynx, w3m (text browsers, their
 //   own), headless Firefox, headless Chrome (real browsers, their own User-Agents).
@@ -15,7 +19,8 @@
 // When no agent gets a good copy (a refusal, a 404, a dead page), the latest good Wayback Machine capture is
 // saved instead (copies elsewhere are fine to cite, Brandon 2026-11-12); its index.json entry has agent "wayback"
 // and the capture's address in `archived`. --no-wayback skips this.
-// Wikipedia/Wikidata, YouTube and Gutenberg are refused here: they have their own cached tools.
+// Wikipedia/Wikidata, YouTube, Gutenberg and marxists.org are refused here: they have their own cached tools (marxists.org
+// pages go into the local corpus, which an audit's local phase reads).
 "use strict";
 const fs = require("fs");
 const os = require("os");
@@ -28,6 +33,7 @@ const OWN_TOOL = [
   [/(^|\.)(wikipedia|wikidata|wikimedia)\.org$/i, 'node scripts/wiki.js "<title or URL>"'],
   [/(^|\.)(youtube\.com|youtu\.be)$/i, 'node scripts/yt.js "<video URL or id>"'],
   [/(^|\.)gutenberg\.org$/i, 'node scripts/gutenberg.js --search "<author or title>"'],
+  [/(^|\.)marxists\.org$/i, 'node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js --fetch "<URL>" [keyword] (the local corpus; an audit\'s local phase reads it)'],
 ];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const has = (cmd) => spawnSync("sh", ["-c", `command -v ${cmd}`]).status === 0;
@@ -259,7 +265,7 @@ module.exports = { get, judge, save, toText };
 
 if (require.main === module) {
   const args = process.argv.slice(2);
-  const [id, url] = args.filter((a) => !a.startsWith("--"));
+  const [id, url] = args.filter((a, i) => !a.startsWith("--") && !["--grep", "--context"].includes(args[i - 1]));
   if (!id || !/^[a-z0-9-]+$/.test(id) || !/^https?:\/\//.test(url || "")) {
     console.error("usage: node scripts/get.js <audit id> <url> [--short-ok] [--refresh] [--agents=curl,wget,...]");
     process.exit(1);
@@ -270,7 +276,18 @@ if (require.main === module) {
     if (r.cached) console.log(`already in the library: ${r.dir}/${r.entry.file}`);
     else if (r.entry?.archived) console.log(`saved from the Wayback Machine (the original refused or is gone): ${r.dir}/${r.entry.file}; cite it as a Wayback copy, ${r.entry.archived}${r.note ? `; ${r.note}` : ""}`);
     else if (r.entry) console.log(`saved by ${r.entry.agent}: ${r.dir}/${r.entry.file} (${words(fs.readFileSync(path.join(__dirname, "..", r.dir, r.entry.file), "utf8"))} words)${r.note ? `; ${r.note}, original ${r.entry.original}` : ""}`);
-    else {
+    if (r.entry && (args.includes("--print") || args.includes("--grep"))) {
+      const t = fs.readFileSync(path.join(__dirname, "..", r.dir, r.entry.file), "utf8"), opt = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : undefined; };
+      if (args.includes("--print")) console.log(t);
+      const kw = opt("--grep"), ctx = +(opt("--context") || 300);
+      if (kw) {
+        const fold = (x) => x.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(), ft = fold(t), k = fold(kw);
+        let i = -1, n = 0;
+        while ((i = ft.indexOf(k, i + 1)) >= 0 && n < 40) { console.log(`  ...${t.slice(Math.max(0, i - ctx), i + k.length + ctx).replace(/\s+/g, " ")}...`); n++; i += k.length; }
+        console.log(`${n} passage(s) with "${kw}"${n >= 40 ? " (first 40)" : ""}`);
+      }
+    }
+    if (!r.entry) {
       console.error("No agent got a good copy and the Wayback Machine has none. Try another copy of the same text (archive.org, a mirror); otherwise name the page in your report (backlog/blocked-sources.md).");
       process.exit(1);
     }

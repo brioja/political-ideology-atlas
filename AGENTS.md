@@ -8,8 +8,9 @@ agents too. This file adds what matters when running audits.
 - **Audits run as lanes:** `node scripts/lane.js --engine codex|claude --kind people|ideologies` runs one session per
   subject following [audits/PROMPT_LANE.md](audits/PROMPT_LANE.md) and integrates each finished audit itself
   (validate, move into `audits/`, build, test, commit, batched push). Answers come in two phases: local texts only
-  (a hook refuses the web in Claude lanes), then a fresh web session for what is still open (`scripts/phases.js`); between subjects it runs the books, triage and
-  signal steps. Lanes write only their own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`.
+  (a hook refuses the web in Claude lanes; marxists.org and Gutenberg are read here), then a fresh web session for what
+  is still open (`scripts/phases.js`), which a hook keeps off local texts (`.claude/hooks/web-only.js`: a saved page
+  only through `get.js <id> <url> --grep`). Between subjects it runs the books, triage and signal steps. Lanes write only their own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`.
   The serial-audits workflow it replaced was removed 2026-11-20 (Brandon): the lanes did all it did, and the subject
   lanes left for it went unaudited while it wasn't running.
 - **Stop lanes on a problem:** any agent may stop a running lane when its audits are going wrong (Ctrl-C twice, or
@@ -17,7 +18,8 @@ agents too. This file adds what matters when running audits.
 - **Give each agent its own scratchpad folder** (`scratchpad/<id>/`). Agents sharing one folder
   overwrite each other's helper scripts.
 - **Fetching goes through cached tools:** pages `node scripts/get.js <id> <url>`, Wikipedia `scripts/wiki.js`,
-  YouTube `scripts/yt.js`, Gutenberg `scripts/gutenberg.js`. Hooks refuse the rest.
+  YouTube `scripts/yt.js`, Gutenberg `scripts/gutenberg.js`, marxists.org the corpus's `tools/marxists.js --fetch`
+  (saved into the local corpus). Hooks refuse the rest.
 - **Local corpora first:** a hook adds a note when a web search or fetch names a source a local corpus holds
   (CNN/NPR, Congress, Hansard, marxists.org, Miller Center, Knesset, UN debates, Davos, Lex Fridman, French laws
   via LEGI): search the corpus instead.

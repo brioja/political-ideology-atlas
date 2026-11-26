@@ -3,6 +3,8 @@
 // the parsed Congressional Record starts in 1873), so the web may still be needed. A lane missed Aung San Suu
 // Kyi's NPR interviews in MediaSum and went to YouTube instead.
 // Tools run from ~/.cache/political-ideology-atlas/corpora (see its README.md).
+// An audit's web phase can't read the corpora (.claude/hooks/web-only.js), so it gets no hints.
+if (process.env.AUDIT_PHASE === "web") process.exit(0);
 const HINTS = [
   { re: /\bcnn\b|\bnpr\b|cnn\.com|npr\.org/i,
     tool: 'CNN/NPR interview transcripts (speaker-labelled, to about 2020): `node tools/mediasum.js "<speaker>" [keyword] [--year YYYY] [--max N]`' },
