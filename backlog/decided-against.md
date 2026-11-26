@@ -133,3 +133,12 @@ principles, the National Secular Society on secularism, the Iranian and Soviet c
 real platforms (the Libertarian Party's for libertarianism, the CPI (Maoist) programme for
 Marxism–Leninism–Maoism). A tie quote can't check that a passage presents tenets, and only 29 rules-7
 audits had answers resting on programmes alone, too few to back-test on.
+
+## Making the web phase search more (2026-11-26)
+
+Political moderate's web phase ran 2 web searches for 593 open statements and stopped; the result (8 answers) was
+accepted, since the fixes of that day got it searching the web at all and the label records little. Ruled out:
+- **Counting a phase's searches** and sending it back below a minimum: sessions work around post checks.
+- **Handing the web phase its statements in themed batches:** piloted on a branch (one-question-audits), it didn't
+  work well either.
+- **A stronger model for the web phase:** Sonnet stays, so answers and statements read as plainly as test takers need.
