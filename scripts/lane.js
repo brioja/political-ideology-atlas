@@ -23,7 +23,8 @@
 //       and sent back to fix (SCOPE_FIX). Sources it still can't tie to the ideology then leave the answers
 //       (scripts/drop-source.js --none-fit), before any answer phase.
 //     - Local: answers from local texts only (START for people, ANSWER in the scope session for ideologies), until
-//       <id>.local exists. Claude turns run with AUDIT_PHASE=local, so .claude/hooks/local-only.js refuses the web.
+//       <id>.local exists, in a fresh session. Claude turns run with AUDIT_PHASE=local, so .claude/hooks/local-only.js
+//       refuses the web. Then validate.js (all but the open statements), fixed in that session (LOCAL_FIX).
 //     - Web: scripts/phases.js strips the settled answers into <id>.web.json; a fresh session (WEB_START, resumed
 //       with RESUME) answers the open ones there until the subject has its DONE.txt line; phases.js merges them back.
 //  3. Integrate (under a lock shared by all lanes): validate (errors go back to the
@@ -225,7 +226,7 @@ const LOCAL_ENV = { AUDIT_PHASE: "local" };
 const localMark = (id) => path.join(OUT, `${id}.local`), webDraft = (id) => path.join(OUT, `${id}.web.json`);
 // 2026-11-26: the first wording ("answer from local texts only; what they don't settle stays null") had later passes
 // null every answer an earlier pass took from the web (Anarcha-feminism 158 known answers to 38).
-const LOCAL_RULE = (id) => `This is the local phase of the answers. Every answer the draft already has (from an earlier pass, whatever its sources) stays as it is: change one only on evidence from a local text (audits/AUDIT_RULES.md section 4), and never null one because local texts are silent on it. Answer the open statements from local texts only, that is the local corpora (~/.cache/political-ideology-atlas/corpora/, listed in its README.md), the maintainer's reference library, Gutenberg books (\`node scripts/gutenberg.js\`) and books already downloaded for this audit (scratchpad/sources/${id}/${PEOPLE ? "" : `, ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}). No web searches and no page fetches (scripts/get.js, wiki.js, yt.js)${ENGINE === "claude" ? "; a hook refuses them" : ""}. An open statement the local texts don't settle stays null for now: a web phase follows in a fresh session and searches the web for every open statement${PEOPLE ? ", and for a record (acts) on each statement you answer from the person's words" : ""}. Save the draft after every statement you answer.${COLOR(id)} When you have gone through every statement, create the empty file scratchpad/lane-out/${LANE}/${id}.local and end your turn; don't validate yet (the driver validates once the web phase is merged in).`;
+const LOCAL_RULE = (id) => `This is the local phase of the answers. Every answer the draft already has (from an earlier pass, whatever its sources) stays as it is: change one only on evidence from a local text (audits/AUDIT_RULES.md section 4), and never null one because local texts are silent on it. Answer the open statements from local texts only, that is the local corpora (~/.cache/political-ideology-atlas/corpora/, listed in its README.md), the maintainer's reference library, Gutenberg books (\`node scripts/gutenberg.js\`) and books already downloaded for this audit (scratchpad/sources/${id}/${PEOPLE ? "" : `, ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}). No web searches and no page fetches (scripts/get.js, wiki.js, yt.js)${ENGINE === "claude" ? "; a hook refuses them" : ""}. An open statement the local texts don't settle stays null for now: a web phase follows in a fresh session and searches the web for every open statement${PEOPLE ? ", and for a record (acts) on each statement you answer from the person's words" : ""}. Save the draft after every statement you answer.${COLOR(id)} When you have gone through every statement, create the empty file scratchpad/lane-out/${LANE}/${id}.local and end your turn; don't validate yet (the driver validates the draft when you're done and sends back what to fix).`;
 const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json; if that draft exists, carry on from it. ${LOCAL_RULE(id)}${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}${laterPassProblems(id)}${GAP_NOTE}`;
 const WEB_START = (id, n) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This is the web phase of its audit: earlier phases answered what local texts (the corpora, the maintainer's library, downloaded books) settle, and they have been searched. scratchpad/lane-out/${LANE}/${id}.web.json is the audit with only the ${n} statement(s) still open in its "answers"; if it has been worked on already, carry on from it. Search the web for each (web search, \`node scripts/get.js\`, scripts/wiki.js, scripts/yt.js) and answer it in that file, saving after every statement.${PEOPLE ? " An open statement that has an answer rests on the person's words only: look for their record (acts) on it, and replace the answer only with one from that record (record over words, audits/AUDIT_RULES.md); with no record, leave it as it is." : ""} Add no answer for any other statement (they are settled, and the driver ignores them), and number new sources on from the existing ones. Don't run validate.js on this file (it lacks the settled answers): the driver merges it into the audit and validates that. When every open statement has an answer, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers this phase found>\`.${otherNames(id)}`;
 const GAP_NOTE = GAP_EXCEPTION ? `\n\nThis pass is exempt from the re-audit gap (the maintainer approved it early): the driver adds "gapException" to its entry in "passes". Date the entry today as usual and leave that field to the driver.` : "";
@@ -247,6 +248,10 @@ function scopeProblems(id) {
 }
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its line in scratchpad/lane-out/${LANE}/DONE.txt.`;
 const RESUME_LOCAL = (id) => `Go on with the local phase of \`${id}\` where you left off (local texts only), through to creating scratchpad/lane-out/${LANE}/${id}.local.`;
+// The check after the local phase (Brandon, 2026-11-26): full validate.js but for the statements still without an
+// answer, which the web phase takes; fixed in the local phase's session, still local-only.
+const LOCAL_FIX = (id, errors) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`; your subject is \`${id}\`. This is still the local phase (local texts only; no web searches or page fetches). validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` (statements without an answer are left to the web phase that follows), and reply.`;
+const localErrors = (id) => errorsIn(["--dir", path.relative(ROOT, OUT)], id).split("\n").filter((l) => l.trim() && !/no answer for '|statements? ha(s|ve) no answer yet/.test(l)).join("\n");
 const FIX = (id, errors) => `validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
 // Why a child process failed, for the log: an uncaught error's message and where it was thrown, not the last lines of
@@ -499,14 +504,25 @@ while (timeLeft()) {
       const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
       added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works your scope phase listed are now downloaded too") + added;
     }
+    // Each phase runs in a fresh session (Brandon, 2026-11-26): what the scope phase found is in the draft.
     log(`${id}: local phase`);
-    thread = await session(thread ? ANSWER(id, added) : localStart(added), thread, LOCAL_ENV);
+    thread = await session(localStart(added), null, LOCAL_ENV);
     for (let n = 1; !local() && n <= RESUMES && timeLeft(); n++) {
       if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(localStart(), null, LOCAL_ENV); continue; }
       log(`resume ${id} local (${n})`);
       thread = await session(RESUME_LOCAL(id), thread, LOCAL_ENV);
     }
     if (!local() || !fs.existsSync(draft(id))) { log(`${id}: local phase not done; left for the next start`); tried.add(id); continue; }
+  }
+  // The local phase's draft, checked in full but for the open statements, and fixed in that session.
+  if (!done() && !fs.existsSync(webDraft(id))) {
+    let errors = localErrors(id);
+    for (let n = 1; errors && n <= FIX_ROUNDS; n++) {
+      log(`${id}: local phase, validator errors, fix round ${n}`);
+      thread = await session(LOCAL_FIX(id, errors), thread, LOCAL_ENV);
+      errors = localErrors(id);
+    }
+    if (errors) log(`${id}: local phase left ${errors.split("\n").length} validator error(s); the final validate checks them again`);
   }
   // Phase 3: a fresh session searches the web for the statements still open (scripts/phases.js).
   if (!done()) {
