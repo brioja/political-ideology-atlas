@@ -177,8 +177,11 @@ function seedLaterPass(id) {
   a.auditedAt = today;
   // The earlier pass's notes go (Brandon, 2026-11-26): Political moderate's web phase read "a positional and
   // methodological label, so most substantive policy answers are low-confidence" from them first, took it as settled
-  // and searched nothing. Each pass writes its own.
+  // and searched nothing. Each pass writes its own. So does the scope (Brandon, 2026-11-26): its rerun carried the
+  // October scope's "many answers are low-confidence" into the new one, and both answer phases took it as leave to
+  // search nothing; the scope phase writes it afresh from the defining sources.
   delete a.notes;
+  delete a.scope;
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
   log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources, ${w.requests} missing statement(s) dropped`);
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--dir", path.relative(ROOT, OUT), id]);
@@ -187,7 +190,7 @@ function seedLaterPass(id) {
   const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`);
   if (lines.length) log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
   const fields = ` The driver sets "rules", "auditedAt", "auditor" and "passes" for this pass; leave them to it.`;
-  const nulled = fields + (w.nulled ? ` The driver started the draft from the committed audit and took out its Wikipedia citations (a tertiary source): ${w.nulled} answer(s) that rested on them alone are null now and open like any other.` : " The driver started the draft from the committed audit.");
+  const nulled = fields + (w.nulled ? ` The driver started the draft from the committed audit without its scope (write it afresh from the defining sources) and took out its Wikipedia citations (a tertiary source): ${w.nulled} answer(s) that rested on them alone are null now and open like any other.` : " The driver started the draft from the committed audit without its scope (write it afresh from the defining sources).");
   laterNotes.set(id, `\n\nThis is a later pass.${nulled}${lines.length ? ` Checked under today's rules (\`node scripts/validate.js ${flag}--as-current --dir scratchpad/lane-out/${LANE} ${id}\`), the draft has these problems; fix each:\n${lines.join("\n")}` : ""}`);
 }
 function laterPassProblems(id) {
