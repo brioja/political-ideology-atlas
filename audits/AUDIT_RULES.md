@@ -96,8 +96,8 @@ Answer every statement with -2 (strongly disagree) to +2 (strongly agree), or `n
 position). Read each statement literally: "Free trade benefits everyone in the long run" is about
 free trade, not about markets in general.
 
-- **No data, no position.** If the sources record nothing on a statement, answer `null`, with a rationale
-  saying so. Silence is not neutrality, so never record it as 0, and
+- **No data, no position.** If the sources record nothing on a statement, answer `null`, with an empty
+  rationale: a reason for a null is a claim about silence. Silence is not neutrality, so never record it as 0, and
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
@@ -218,9 +218,9 @@ says which rule). Build on the existing audit rather than starting over:
 - Keep the subject: no coatracks. Not a broader ideology's (secularism's for
   Jewish secularism, or for a person who holds it), a related one's (secular humanism's for
   secularism), a party's for one of its members, a relative's or employer's for a person.
-- To change an earlier answer (null it, change it or revert it), write the new answer with its reason
-  as the rationale; git keeps the earlier versions. A null cites nothing, since a source next to a null
-  would read as evidence of silence.
+- To change an earlier answer (change it or revert it), write the new answer with its reason as the
+  rationale; git keeps the earlier versions. To null it, leave the rationale empty and cite nothing, since a
+  reason or a source next to a null would read as evidence of silence.
 - Change an answer only on evidence you found and cite. Check every answer
   you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
   stated (cite the source of the position that settles it) or `null`. One deduced from a general

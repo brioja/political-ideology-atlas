@@ -137,7 +137,7 @@ read.
   "notFound": [{ "work": "<a source looked for and not found>", "tried": [{ "where": "<place 1>", "how": "<what you searched>" }, { "where": "<place 2>", "how": "…" }] }],
   "answers": {
     "<statement id>": { "value": 1, "rationale": "…", "sources": ["s1"] },
-    "<statement id>": { "value": null, "rationale": "No recorded position found.", "sources": [] }
+    "<statement id>": { "value": null, "rationale": "", "sources": [] }
   },
   "notes": "Optional: changes of view over time, contested points."
 }

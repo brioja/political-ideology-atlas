@@ -6,7 +6,7 @@
 // auditor has read what it found and none of it ties the source.
 // For each current answer that cites it:
 //   - other sources left: the source leaves "sources"; value and rationale stay as they are.
-//   - it was the only source: the answer is nulled (a null cites nothing), its rationale giving the reason.
+//   - it was the only source: the answer is nulled (a null cites nothing and carries no reason).
 // Missing statements and key figures that rest on it alone go too.
 // The source goes from "sources" once nothing cites it; git keeps the earlier versions. Its claims are what the
 // script can't remove: it lists every rationale that still names it, to rewrite from the sources the answer cites
@@ -39,18 +39,13 @@ if (!NONE_FIT) {
     process.exit(2);
   }
 }
-const passes = Array.isArray(a.passes) ? a.passes : [];
-const laterPass = passes.length > 1;
-const subject = PEOPLE ? "the person" : "the ideology";
-
 let kept = 0, nulled = 0;
 const toRewrite = [];
 for (const [k, x] of Object.entries(a.answers || {})) {
   if (!x || x.value === null || !(x.sources || []).includes(sid)) continue;
   const rest = x.sources.filter((s) => s !== sid);
   if (rest.length) x.sources = rest;
-  else Object.assign(x, { value: null, sources: [],
-    rationale: laterPass ? `Nulled: its only source, ${src.title}, isn't tied to ${subject}.` : `No source tied to ${subject} states a position on this.` });
+  else Object.assign(x, { value: null, sources: [], rationale: "" });
   if (rest.length) {
     kept++;
     const cited = rest.map((s) => a.sources.find((y) => y.id === s)).filter(Boolean);

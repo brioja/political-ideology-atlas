@@ -59,7 +59,7 @@ function dropWikipedia(audit) {
     if (!known(ans) || !(ans.sources || []).some((s) => wiki.has(s))) continue;
     const rest = ans.sources.filter((s) => !wiki.has(s));
     if (rest.length) { ans.sources = rest; kept++; }
-    else { Object.assign(ans, { value: null, sources: [], rationale: "Nulled: its only source was a Wikipedia article, a tertiary source." }); nulled++; }
+    else { Object.assign(ans, { value: null, sources: [], rationale: "" }); nulled++; }
   }
   let requests = 0;
   if (Array.isArray(audit.missingStatements)) {

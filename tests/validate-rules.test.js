@@ -23,7 +23,7 @@ const [A, B, C, D] = st; // A: answered from an action, B: answered from words, 
 
 function base() {
   const answers = {};
-  for (const { id } of lib.allStatements()) answers[id] = { value: null, rationale: "No recorded position found.", sources: [] };
+  for (const { id } of lib.allStatements()) answers[id] = { value: null, rationale: "", sources: [] };
   answers[A] = { value: 1, rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
   answers[B] = { value: -1, rationale: "Said in a 2020 interview that this statement is wrong.", sources: ["s2"] };
   return {
@@ -85,7 +85,7 @@ ok("base fixture", base());
 
 // A later pass changes, nulls or reverts answers freely against the committed file; a null still cites nothing.
 { const committed = base(); const a = laterPass(base());
-  a.answers[A] = { value: null, rationale: "Nulled: the vote was on a different question than this statement.", sources: [] };
+  a.answers[A] = { value: null, rationale: "", sources: [] };
   ok("action nulled by a later pass", a, committed);
   a.answers[A].sources = ["s1"]; fails("nulling citing its reason source", a, /null cites an action/, committed); }
 { const committed = base(); const a = laterPass(base()); a.answers[B] = { value: -2, rationale: "Said in a 2021 speech that this statement is badly wrong.", sources: ["s3"] };
@@ -129,7 +129,8 @@ fails("only Wikipedia sources", E(base(), (a) => { a.sources.forEach((x, i) => {
 fails("active statement unanswered", E(base(), (a) => { delete a.answers[D]; }), new RegExp(`no answer for '${D}'`));
 { const C = lib.allStatements().find(lib.isCandidate)?.id; // a candidate is answered too: promotion never decides that
   if (C) fails("candidate statement unanswered", E(base(), (a) => { delete a.answers[C]; }), new RegExp(`no answer for '${C}'`)); }
-fails("null without a rationale", E(base(), (a) => { a.answers[C].rationale = ""; }), new RegExp(`${C}: say why there is no known position`));
+ok("null without a rationale", E(base(), (a) => { a.answers[C].rationale = ""; }));
+fails("null with a reason (a claim about silence, 2026-11-26)", E(base(), (a) => { a.answers[C].rationale = "The sources record no position on this."; }), new RegExp(`${C}: a null carries no reason`));
 fails("value out of range", E(base(), (a) => { a.answers[A].value = 3; }), /value must be an integer from -2 to 2 or null/);
 fails("an answer that still has a confidence", E(base(), (a) => { a.answers[A].confidence = "high"; }), /no "confidence" field/);
 fails("rationale too short", E(base(), (a) => { a.answers[A].rationale = "Voted yes."; }), /rationale missing or too short/);

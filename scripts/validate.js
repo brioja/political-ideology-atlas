@@ -360,10 +360,10 @@ function validate(id) {
     if (!ans) { if (AS_CURRENT) unansweredIds.push(st.id); else errors.push(`no answer for '${st.id}'`); continue; }
     // Answers carry no confidence (Brandon, 2026-11-26: it changed no result).
     if ("confidence" in ans) errors.push(`${st.id}: answers have no "confidence" field any more; remove it`);
-    // "No known position" (null) needs a reason; for an ideology, that its sources record none
-    // (audits/PROMPT.md).
+    // A null carries no reason (Brandon, 2026-11-26): silence is not a position, and a reason for one ("the sources
+    // record no position") is a claim about silence that the next pass read as settled. Political moderate's 598 did.
     if (ans.value === null) {
-      if (!ans.rationale) errors.push(`${st.id}: say why there is no known position`);
+      if (ans.rationale) errors.push(`${st.id}: a null carries no reason: set "rationale" to ""`);
       continue;
     }
     if (![-2, -1, 0, 1, 2].includes(ans.value)) errors.push(`${st.id}: value must be an integer from -2 to 2 or null`);
@@ -429,7 +429,7 @@ function validate(id) {
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
   // - A null cites nothing ("sources": []): it is no known position, and a source next to it would read as evidence
-  //   of silence (Brandon, 2026-11-18). A nulling gives its reason in the rationale.
+  //   of silence (Brandon, 2026-11-18), and no reason (above).
   // - An answer has no "reviewHistory": git keeps every version (Brandon, 2026-11-26: nothing in an audit read it,
   //   and the audits format answers one per line so `git log` finds a statement's versions).
   // Only people have a record: an ideology doesn't act, so its sources all count as words (Brandon, 2026-11-23).
@@ -450,7 +450,7 @@ function validate(id) {
       }
       const action = kinds(cited, "action");
       if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
-      else if (cited.length) errors.push(`${st.id}: a null cites nothing ("sources": []); evidence that doesn't answer the statement isn't cited here, and a nulling gives its reason in the rationale`);
+      else if (cited.length) errors.push(`${st.id}: a null cites nothing ("sources": []); evidence that doesn't answer the statement isn't cited here`);
     }
   }
   const nullings = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "nulling");

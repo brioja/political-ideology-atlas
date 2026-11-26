@@ -182,16 +182,14 @@ function seedLaterPass(id) {
   // search nothing; the scope phase writes it afresh from the defining sources.
   delete a.notes;
   delete a.scope;
-  // Nulls lose their reasons too (Brandon, 2026-11-26): Political moderate's 598 nulls said "the sources record no
-  // position", an earlier pass's verdict the next would read as settled. A null is open, so it starts empty.
+  // A null carries no reason (Brandon, 2026-11-26; validate.js): one written before that rule goes here.
   for (const [sid, ans] of Object.entries(a.answers || {})) if (!ans || ans.value === null || ans.value === undefined) a.answers[sid] = { value: null, sources: [], rationale: "" };
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
   log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources, ${w.requests} missing statement(s) dropped`);
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--dir", path.relative(ROOT, OUT), id]);
   // Only errors and warnings: an "excluded:" line (not ideas of what society should be) is a
   // finished result, not a problem, and handing it over as one had sessions overturn the record (2026-11-24, Extremism).
-  // Nor the nulls the seed emptied: the answer phases give each its reason.
-  const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l) && !/: say why there is no known position$/.test(l)).map((l) => `- ${l.trim()}`);
+  const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`);
   if (lines.length) log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
   const fields = ` The driver sets "rules", "auditedAt", "auditor" and "passes" for this pass; leave them to it.`;
   const nulled = fields + (w.nulled ? ` The driver started the draft from the committed audit without its scope (write it afresh from the defining sources) and took out its Wikipedia citations (a tertiary source): ${w.nulled} answer(s) that rested on them alone are null now and open like any other.` : " The driver started the draft from the committed audit without its scope (write it afresh from the defining sources).");
@@ -610,7 +608,7 @@ while (timeLeft()) {
     fs.writeFileSync(draft(id), require("./lib").formatAudit(m.audit));
     fs.unlinkSync(webDraft(id));
     const answered = m.taken.filter((s) => m.audit.answers[s] && m.audit.answers[s].value !== null).length;
-    log(`${id}: merged the web phase: ${answered} answer(s) found${m.taken.length > answered ? ` (${m.taken.length - answered} left null with a rationale)` : ""}${PEOPLE ? `, ${m.kept.length} words-only answer(s) kept (no record)` : ""}${m.ignored.length ? `, ${m.ignored.length} answer(s) to settled statements ignored` : ""}`);
+    log(`${id}: merged the web phase: ${answered} answer(s) found${m.taken.length > answered ? ` (${m.taken.length - answered} left null)` : ""}${PEOPLE ? `, ${m.kept.length} words-only answer(s) kept (no record)` : ""}${m.ignored.length ? `, ${m.ignored.length} answer(s) to settled statements ignored` : ""}`);
   }
   exceptGap(id);
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
