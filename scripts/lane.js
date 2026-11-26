@@ -392,7 +392,10 @@ function failure(out, n = 3) {
 // Sessions are compartmentalized (Brandon, 2026-11-26): no memories and no AGENTS.md, only the driver's message and the
 // files it points to. The maintainer's memory index and AGENTS.md (how to run lanes, costs, pilots) reached every
 // session through the automatic context. Hooks still apply. Codex keeps its global ~/.codex/AGENTS.md.
-const ISOLATED = { CLAUDE_CODE_DISABLE_AUTO_MEMORY: "1", CLAUDE_CODE_DISABLE_CLAUDE_MDS: "1" };
+// Nor do they inherit the maintainer's effort level (~/.claude/settings.json, "medium"), and Claude Code's "The user
+// hasn't heard from you in a while" reminder is off: no one waits on a lane. Sessions at medium effort, nudged after
+// about five tool calls, answered the statements a main text states outright and stopped (Brandon, 2026-11-26).
+const ISOLATED = { CLAUDE_CODE_DISABLE_AUTO_MEMORY: "1", CLAUDE_CODE_DISABLE_CLAUDE_MDS: "1", CLAUDE_CODE_SILENT_TURN_REMINDER: "0" };
 async function session(prompt, thread, env = {}) {
   let r, id = thread;
   env = { ...ISOLATED, ...env };
@@ -401,7 +404,7 @@ async function session(prompt, thread, env = {}) {
     r = await runAsync("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt], env);
     for (const line of (r.stdout || "").split("\n")) { try { const e = JSON.parse(line); if (e.type === "thread.started") id = e.thread_id; } catch {} }
   } else {
-    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
+    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--effort", "high", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
     try {
       const out = JSON.parse(r.stdout);
       id = out.session_id || id;
