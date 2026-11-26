@@ -36,7 +36,7 @@ const OWN_TOOL = [
   [/(^|\.)(wikipedia|wikidata|wikimedia)\.org$/i, 'node scripts/wiki.js "<title or URL>"'],
   [/(^|\.)(youtube\.com|youtu\.be)$/i, 'node scripts/yt.js "<video URL or id>"'],
   [/(^|\.)gutenberg\.org$/i, 'node scripts/gutenberg.js --search "<author or title>"'],
-  [/(^|\.)marxists\.org$/i, 'node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js --fetch "<URL>" [keyword] (the local corpus; an audit\'s local phase reads it)'],
+  [/(^|\.)marxists\.org$/i, 'node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js --fetch "<URL>" [keyword] (the local corpus)'],
 ];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const has = (cmd) => spawnSync("sh", ["-c", `command -v ${cmd}`]).status === 0;

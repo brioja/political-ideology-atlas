@@ -13,34 +13,14 @@ Audit the id the driver gives you, person or ideology.
 
 1. Follow `audits/AUDIT_RULES.md` and `audits/PROMPT.md` (ideology) or `audits/PROMPT_PEOPLE.md`
    (person) exactly, with `{{id}}`, `{{name}}` and the other fields taken from the next.js output
-   or the catalog. Answer every statement in statements.json, candidates included, and set `rules`
-   to the current version (`CURRENT_RULES` in scripts/validate.js). Research to the end (section 4).
-2. If the subject already has an audit (or next.js gives a "reason"), this is a later pass: start
-   from the committed file and follow `audits/AUDIT_RULES.md` section 4 (changed answers, `passes`,
-   your model in `auditor`), never rewrite it from scratch. `auditor` is your full model id
-   (e.g. `gpt-6.1-sol`, `claude-opus-5-5`), not a family name.
-   The driver's first message lists what the committed audit fails under today's rules
-   (`node scripts/validate.js [--people] --as-current <id>`): fix each in your draft.
-3. Sources go in `scratchpad/sources/<id>/`; helper scripts in `scratchpad/<lane>-<id>/`.
-   An audit runs in phases; the driver's messages say when each starts.
-   - Ideologies first: scope, sources, aliases, key figures and key works (PROMPT.md sections 1 and 2),
-     from the web and local texts, with no answers yet. The driver checks them
-     (`node scripts/validate.js --dir scratchpad/lane-out/<lane> --stage scope <id>`) and sends back
-     what to fix.
-   - Local: answers from local texts only (the corpora, the maintainer's reference library, Gutenberg,
-     books downloaded for this audit), in `<id>.json`.
-   - Web, in a fresh session: answers from the web only, in `<id>.web.json`, which the driver merges into
-     the audit.
-   Both answer phases follow the same rules; a statement the texts they search don't settle stays null.
-   Each ends when you create the empty file its message names.
-4. Write the audit to `scratchpad/lane-out/<lane>/<id>.json`; the driver moves it into `audits/`
-   once it validates. Validate it there:
-
-       node scripts/validate.js [--people] --dir scratchpad/lane-out/<lane> <id>
-
-   and fix every error. A source you can't tie to the subject leaves the audit with everything
-   taken from it: its id in the answers' `sources` and its claims in their rationales.
+   or the catalog. Answer the statements the driver's message lists, from the texts it names.
+   Research to the end (section 4).
+2. `rules`, `auditedAt`, `auditor` and `passes` are the driver's: leave them as they are.
+3. Sources go in `scratchpad/sources/<id>/`; helper scripts in `scratchpad/helpers-<id>/`.
+4. Write to the file the driver's message names; the driver moves the audit into `audits/` once it
+   validates, and sends back what to fix. A source you can't tie to the subject leaves the audit
+   with everything taken from it: its id in the answers' `sources` and its claims in their rationales.
 5. Edit no other file. Do not build, test, commit or push.
 
 An `excluded:` line or a `notIdeasOfWhatSocietyShouldBe` record from validate.js is a result, not an
-error. `scratchpad/lane-out/<lane>/DONE.txt` is the driver's: don't write to it.
+error. The `DONE.txt` files in `scratchpad/lane-out/` are the driver's: don't write to them.

@@ -8,7 +8,7 @@ are matched against. Getting it wrong puts real people into the wrong ideology.
 
 Inputs (filled in by the runner):
 - Ideology: `{{name}}` (id `{{id}}`)
-- Statements: `statements.json` in the repo root. Answer every statement.
+- Statements: the statements file the runner names (`statements.json` in the repo root if it names none). Answer every statement in it.
 
 Output: write `audits/profiles/{{id}}.json` in the format below. Then run
 `node scripts/validate.js {{id}}` and fix every error it reports until it passes.

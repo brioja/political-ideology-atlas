@@ -1,7 +1,7 @@
 // PreToolUse guard for an audit's web phase (Brandon, 2026-11-26): scripts/lane.js runs that phase's Claude turns with
 // AUDIT_PHASE=web (and AUDIT_SUBJECT=<id>), and this hook then refuses reading local texts: the corpora and their tools
 // (marxists.org and Gutenberg included), the maintainer's library, downloaded books, the files of the source library
-// (scratchpad/sources/), and the subject's local-phase draft and committed audit. Its message says only what is closed,
+// (scratchpad/sources/), and the subject's local-phase draft and committed audit. Its message says only what to do,
 // not what another phase did (2026-11-26: "the local phase already read ... Search the web for each open statement").
 // Political moderate's web phase re-read the scope phase's saved pages instead of searching, and nulled 595 statements
 // from them. A page already in the source library is read through `node scripts/get.js <id> <url> --grep|--print`,
@@ -17,8 +17,18 @@ const LOCAL = new RegExp([
   "scratchpad[/\\\\]sources", "(^|[\\s'\"/])sources/", "ideology-books", "ideology reference", "\\bscripts/gutenberg\\.js\\b",
   // the local-phase draft (<lane>/<id>.json; the web phase's own file is <id>.web.json) and the committed audit
   "lane-out/[^/\\s]+/[a-z0-9-]+\\.json\\b(?!\\.)",
+  // the answers the driver keeps aside while a session runs (scripts/lane.js hideSettled)
+  "lane-out/[^\\s]*\\.settled\\b",
   ...(id ? [`audits/(profiles|people)/${esc(id)}\\.json`] : []),
 ].join("|"), "i");
+// Only the hint that fits what was refused (Brandon, 2026-11-26: the session's prompt no longer lists these tools).
+function hint(t) {
+  const h = [];
+  if (/scratchpad[/\\]sources|(^|[\s'"/])sources\//.test(t)) h.push(' To read a page already saved, name it: `node scripts/get.js <id> <url> --grep "<keyword>"` (or --print).');
+  if (/marxists/i.test(t)) h.push(' A marxists.org page the local corpus lacks: `node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js --fetch-if-not-local "<URL>" "<keyword>"`.');
+  if (/gutenberg/i.test(t)) h.push(' A Project Gutenberg book the local corpus lacks: `node scripts/gutenberg.js <book id> --fetch-if-not-local --grep "<keyword>"` (find ids with `node scripts/gutenberg.js --search "<words>"`).');
+  return h.join("");
+}
 let input = "";
 process.stdin.on("data", (d) => (input += d)).on("end", () => {
   let j; try { j = JSON.parse(input); } catch { return; }
@@ -29,5 +39,5 @@ process.stdin.on("data", (d) => (input += d)).on("end", () => {
   // The web phase's own file passes: scratchpad/lane-out/<lane>/<id>.web.json.
   if (!target || !LOCAL.test(target.replace(/[a-z0-9-]+\.web\.json/gi, "WEBDRAFT"))) return;
   process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: "PreToolUse", permissionDecision: "deny",
-    permissionDecisionReason: "This phase answers from the web only: local texts (the corpora, marxists.org, Gutenberg, the maintainer's library, downloaded books, the source library) and other drafts are closed. To read a page already in the source library, name it: `node scripts/get.js <id> <url> --grep \"<keyword>\"` (or --print). A marxists.org page or Gutenberg book the local corpus lacks: `node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js --fetch-if-not-local \"<URL>\" \"<keyword>\"`, `node scripts/gutenberg.js <id> --fetch-if-not-local --grep \"<keyword>\"` (find ids with --search)." } }));
+    permissionDecisionReason: "Answer from the web only." + hint(target) } }));
 });

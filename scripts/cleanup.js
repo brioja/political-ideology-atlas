@@ -119,9 +119,11 @@ function clean(dir, id, people = false) {
 // (scripts/drop-source.js --none-fit). An answer resting on them alone is nulled; then unused sources go (clean).
 // scripts/lane.js runs it after the scope phase and when the local phase leaves validator errors.
 // Returns { untied, wikipedia: { kept, nulled }, dropped, kept }.
-function dropFailing(dir, id, people = false) {
+// Coatracks too (coatrack-check.js: a defining source that "never names" the subject; Brandon, 2026-11-26). With
+// keepUnused, sources nothing cites stay (a scope's defining sources, before any answer cites them).
+function dropFailing(dir, id, people = false, keepUnused = false) {
   const errs = [...errors(dir, id, people, true)].join("\n"); // under today's rules, whatever the draft's "rules" says
-  const untied = [...new Set([...errs.matchAll(/source (s\d+) \([^)]*\) doesn't name/g)].map((m) => m[1]))];
+  const untied = [...new Set([...errs.matchAll(/source (s\d+) \([^)]*\) (?:doesn't name|never names)/g)].map((m) => m[1]))];
   for (const sid of untied) {
     execFileSync("node", [path.join(__dirname, "drop-source.js"), id, sid, "--dir", dir, "--none-fit", ...(people ? ["--people"] : [])], { stdio: "ignore" });
   }
@@ -131,10 +133,28 @@ function dropFailing(dir, id, people = false) {
     wikipedia = require("./phases").dropWikipedia(a);
     fs.writeFileSync(file, lib.formatAudit(a));
   }
-  return { untied, wikipedia, ...clean(dir, id, people) };
+  return { untied, wikipedia, ...(keepUnused ? { tidied: "", dropped: [], kept: [] } : clean(dir, id, people)) };
 }
 
-module.exports = { unusedSources, emptyNullReasons, tidy, describe, clean, dropFailing };
+// Nulls every answer validate.js fails under today's rules (an error line that starts with its statement id), so
+// the next session answers it afresh rather than repairing it (Brandon, 2026-11-26). Returns the ids nulled.
+function nullFailing(dir, id, people = false) {
+  const bank = new Set(lib.allStatements().map((s) => s.id)), failing = new Set();
+  for (const line of errors(dir, id, people, true)) {
+    const m = /^error:\s*([^:\s][^:]*):/.exec(line);
+    const ids = m ? m[1].split(/,\s*/) : [];
+    if (ids.length && ids.every((x) => bank.has(x))) ids.forEach((x) => failing.add(x));
+  }
+  const file = path.join(dir, `${id}.json`), a = JSON.parse(fs.readFileSync(file, "utf8")), nulled = [];
+  for (const sid of failing) {
+    const ans = (a.answers || {})[sid];
+    if (ans && ans.value !== null && ans.value !== undefined) { a.answers[sid] = { value: null, sources: [], rationale: "" }; nulled.push(sid); }
+  }
+  if (nulled.length) fs.writeFileSync(file, lib.formatAudit(a));
+  return nulled;
+}
+
+module.exports = { unusedSources, emptyNullReasons, tidy, describe, clean, dropFailing, nullFailing };
 
 if (require.main === module) {
   const args = process.argv.slice(2), people = args.includes("--people");

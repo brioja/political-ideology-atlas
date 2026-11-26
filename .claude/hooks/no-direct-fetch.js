@@ -13,7 +13,7 @@ const RULES = [
   { host: /\b(?:www\.)?gutenberg\.org\b/i, tool: "scripts/gutenberg.js",
     how: 'Gutenberg\'s robot policy allows only its mirror: `node scripts/gutenberg.js --search "<author or title>"`, then `node scripts/gutenberg.js <id>` for the local file path (fetched from the mirror if needed). Cite the book page URL; just don\'t fetch it.' },
   { host: /\b(?:www\.)?marxists\.org\b/i, tool: "marxists.js",
-    how: 'marxists.org pages go into the local corpus: `node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js --fetch "<URL>" [keyword]` (in an audit\'s web phase, --fetch-if-not-local).' },
+    how: 'marxists.org pages go into the local corpus: `node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js --fetch "<URL>" [keyword]`.' },
 ];
 const DOWNLOADER = /\b(curl|wget|requests|urllib|urlopen|fetch|lynx|w3m|aria2c)\b/i;
 let input = "";
