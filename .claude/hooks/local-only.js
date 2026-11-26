@@ -14,5 +14,5 @@ process.stdin.on("data", (d) => (input += d)).on("end", () => {
     || (j.tool_name === "Bash" && WEB.test(String((j.tool_input || {}).command || "").replace(/\bmarxists\.js\s+--fetch\b/g, "marxists.js")));
   if (!deny) return;
   process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: "PreToolUse", permissionDecision: "deny",
-    permissionDecisionReason: "This is the local phase: answer from local texts only (the corpora, the maintainer's reference library, books already downloaded for this audit). Leave a statement they don't settle null; the web phase that follows searches the web for it." } }));
+    permissionDecisionReason: "This is the local phase: answer from local texts only (the corpora, the maintainer's reference library, books already downloaded for this audit). Leave a statement they don't settle null." } }));
 });
