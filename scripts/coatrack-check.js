@@ -555,12 +555,13 @@ function check(id, full, { strict = false, pass = false } = {}) {
     }
     figuresOk.push(sur);
   }
-  // "keyFigureClaims": people the defining sources present as the ideology's own whom another ideology lists. Held to
-  // a key figure's bar (named twice in the defining sources, a quote that names them), and never an influence.
+  // "keyFigureClaims": people the defining sources present as the ideology's own whom another ideology lists. A claim
+  // takes a person from another ideology, so it needs more than a key figure: "evidence", two quotes or more from
+  // defining sources (two passages of one source will do), each naming them (Brandon, 2026-11-26), and never an influence.
   if (audit.keyFigureClaims !== undefined && !Array.isArray(audit.keyFigureClaims)) problems.push(`"keyFigureClaims" must be a list`);
   for (const c of Array.isArray(audit.keyFigureClaims) ? audit.keyFigureClaims : []) {
     const au = entryName(c), label = `key figure claim "${au}"`;
-    if (!c || typeof c !== "object" || !c.last || !c.heldBy || !c.role) { problems.push(`${label}: must be { "first", "last", "heldBy", "role", "wikipedia", "source", "quote" }`); continue; }
+    if (!c || typeof c !== "object" || !c.last || !c.heldBy || !c.role || !Array.isArray(c.evidence)) { problems.push(`${label}: must be { "first", "last", "heldBy", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`); continue; }
     const reserving = reservedFor(c).filter((o) => o !== id);
     if (reserving.length) { problems.push(`${label}: ${reserving[0]} is named after them and keeps them; no claim`); continue; }
     const holders = [...(figuresTaken().get(personKey(au)) || [])].filter((o) => o !== id);
@@ -568,10 +569,14 @@ function check(id, full, { strict = false, pass = false } = {}) {
       problems.push(holders.length ? `${label}: ${c.heldBy} doesn't list them; ${holders.join(", ")} ${holders.length === 1 ? "does" : "do"}` : `${label}: no other ideology lists them, so list them in "keyFigures" instead`);
       continue;
     }
-    if (asInfluence(c)) { problems.push(`${label}: its role or quote presents them as an influence on the ideology; claim only a person your defining sources present ${audit.name} as the thought or political legacy of`); continue; }
-    const ev = evidence(id, audit, "key figure claim", c, true, (q) => q.includes(figureKey(c)));
-    problems.push(...ev);
-    if (!ev.length && count(defining.join(" "), [figureKey(c)]) < 2) problems.push(`${label}: named fewer than twice in the defining sources`);
+    if (asInfluence({ role: c.role, quote: c.evidence.map((e) => e && e.quote).join(" ") })) { problems.push(`${label}: its role or a quote presents them as an influence on the ideology; claim only a person your defining sources present ${audit.name} as the thought or political legacy of`); continue; }
+    const passages = new Set(c.evidence.map((e) => norm(e && e.quote).trim()).filter(Boolean));
+    if (passages.size < 2) problems.push(`${label}: needs two quotes or more in "evidence", different passages from defining sources (one source may give both)`);
+    for (const e of c.evidence) {
+      const src = (audit.sources || []).find((s) => e && s.id === e.source);
+      if (src && (!DEFINING.includes(src.kind) || isWikipedia(src))) problems.push(`${label}: ${src.id} is ${isWikipedia(src) ? "Wikipedia" : `a ${src.kind} source`}; the evidence comes from defining sources (reference, scholarly or secondary, never Wikipedia)`);
+      problems.push(...evidence(id, audit, "key figure claim", { first: c.first, last: c.last, ...(e || {}) }, true, (q) => q.includes(figureKey(c))));
+    }
   }
   // A claim this ideology made whose holder has since dropped the person: they are free to list.
   for (const c of claims().filter((c) => c.claimedBy === id)) {

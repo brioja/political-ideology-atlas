@@ -24,9 +24,10 @@ function integrate(id, audit, today = new Date().toISOString().slice(0, 10)) {
   const made = Array.isArray(audit.keyFigureClaims) ? audit.keyFigureClaims : [];
   delete audit.keyFigureClaims;
   for (const c of made) {
-    const src = (audit.sources || []).find((s) => s.id === c.source) || {};
-    const entry = { first: c.first, last: c.last, role: c.role, wikipedia: c.wikipedia, claimedBy: id, heldBy: c.heldBy,
-      source: { title: src.title, url: src.url }, quote: c.quote, date: today };
+    // Each quote with its source's title and URL, so the claim reads on its own if the source later leaves the audit.
+    const evidence = (c.evidence || []).map((e) => { const src = (audit.sources || []).find((s) => s.id === e.source) || {};
+      return { title: src.title, url: src.url, quote: e.quote }; });
+    const entry = { first: c.first, last: c.last, role: c.role, wikipedia: c.wikipedia, claimedBy: id, heldBy: c.heldBy, evidence, date: today };
     j.claims = j.claims.filter((o) => !(o.claimedBy === id && o.heldBy === c.heldBy && C.samePerson(o, who(c))));
     j.claims.push(entry);
     notes.push(`claims ${who(c)}, a key figure of ${c.heldBy}`);
@@ -46,7 +47,7 @@ function integrate(id, audit, today = new Date().toISOString().slice(0, 10)) {
 if (require.main === module) {
   const { claims } = read();
   if (!claims.length) console.log("no open key figure claims");
-  for (const c of claims) console.log(`${who(c)}: claimed by ${c.claimedBy} (${c.date}) from ${c.heldBy}${c.freed ? `, which dropped them ${c.freed}: free to list` : ""}\n  "${c.quote}" (${c.source && c.source.title})`);
+  for (const c of claims) console.log(`${who(c)}: claimed by ${c.claimedBy} (${c.date}) from ${c.heldBy}${c.freed ? `, which dropped them ${c.freed}: free to list` : ""}${(c.evidence || []).map((e) => `\n  "${e.quote}" (${e.title})`).join("")}`);
 }
 
 module.exports = { integrate };

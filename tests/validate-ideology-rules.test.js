@@ -226,11 +226,14 @@ try {
       assert.ok(coatrack.isNamesake("Quentin II", "quentinismo", "Quentinismo") && !coatrack.isNamesake("Quincy Ralph II", "quentinismo", "Quentinismo"), "a regnal name counts only whole"); n++;
       assert.ok(coatrack.isNamesake("Quentin Vexmoor", "vexmoorism", "Vexmoorism") && !coatrack.isNamesake("Q. Vexmoor Jr.", "vexmoorism", "Vexmoorism"), "Jr. is not Sr."); n++;
       // Key figure claims (audits/key-figure-claims.json): a person another ideology lists is claimed, not listed.
-      const claim = (extra = {}) => E(base(), (a) => { a.keyFigureClaims = [{ ...vex(), heldBy: "other-ideology", role: "Founder of the movement", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", ...extra }]; });
+      const quotes = (second = "Vexmoor led it for years") => [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s3", quote: second }];
+      const claim = (extra = {}) => E(base(), (a) => { a.keyFigureClaims = [{ first: "Quentin", last: "Vexmoor", heldBy: "other-ideology", role: "Founder of the movement", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: quotes(), ...extra }]; });
       listedBy("other-ideology", "Other ideology", "2026-11-01");
       ok("claim on another ideology's key figure", claim());
       fails("claim on an ideology that doesn't list them", claim({ heldBy: "third-ideology" }), /key figure claim "Quentin Vexmoor": third-ideology doesn't list them; other-ideology does/);
-      fails("claim on an influence", claim({ role: "An undisputed influence on the movement" }), /key figure claim "Quentin Vexmoor": its role or quote presents them as an influence/);
+      fails("claim with one passage", claim({ evidence: quotes("Quentin Vexmoor wrote its founding text") }), /needs two quotes or more in "evidence"/);
+      fails("claim quoting a primary text", claim({ evidence: [...quotes(), { source: "s2", quote: "The manifesto of Vexmoor" }] }), /s2 is a primary source; the evidence comes from defining sources/);
+      fails("claim on an influence", claim({ role: "An undisputed influence on the movement" }), /key figure claim "Quentin Vexmoor": its role or a quote presents them as an influence/);
       coatrack.setProfilesForTests(new Map(), {});
       fails("claim on a person no one lists", claim(), /no other ideology lists them, so list them in "keyFigures" instead/);
       // The holder is warned of a claim, and loses at once a person its own evidence makes an influence.

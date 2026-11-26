@@ -108,7 +108,8 @@ Both lists show on the ideology's page.
   after for it (Lenin for Leninism).
 - If the defining sources present the ideology as the thought of someone another ideology lists (not as an
   influence on it), claim them instead: `keyFigureClaims`, each `{ "first", "last", "heldBy": "<that ideology's
-  id>", "role", "wikipedia", "source", "quote" }`, held to a key figure's bar. The claim goes to
+  id>", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`, with two quotes or more naming them,
+  different passages from defining sources (one source may give both). The claim goes to
   audits/key-figure-claims.json and the holder's next pass decides. Their texts aren't tied here meanwhile.
 - If validate.js warns that another ideology claims one of yours, keep them only if your defining sources present
   the ideology as their thought or political legacy; one they present as an influence on it, take out.
