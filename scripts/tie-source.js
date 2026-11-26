@@ -8,14 +8,14 @@
 //   1. the source's own saved copy: where it names the subject (twice ties it; once may point to an alias to list);
 //   2. every page saved for this audit (scratchpad/sources/<id>/) and the local text corpora (maintainer reference
 //      books, Marxists Internet Archive, Gutenberg): passages that name the source (its title or author) near a name
-//      of the subject. Such a passage, cited as a source, ties the text by title ("keyWorks") or by author;
-//   3. the defining sources: how often they name the source's author (a key figure needs two mentions), and whether
-//      another ideology already lists or reserves that person;
-//   4. the defining sources: how often they name the source by title, in any of its forms (each part of the title,
+//      of the subject. Such a passage, cited as a source, can tie the text by title ("keyWorks");
+//   3. the defining sources: how often they name the source by title, in any of its forms (each part of the title,
 //      with or without "the", and a document's year forms: "Constitution of Year I (1793)" is also "Constitution of
 //      1793" and "1793 Constitution"). Two mentions tie it by title ("keyWorks", with "work": the source id); a
 //      defining source is about the ideology already, so it needn't name the ideology near the title.
-// It lists what it finds, with quotes; whether a passage really ties the text is the auditor's call.
+// It lists what it finds, with quotes; whether a passage really ties the text is the auditor's call. It never suggests
+// making the author a key figure: key figures come from the defining sources at the start, not from a text that needs
+// a tie (Brandon, 2026-11-25).
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -58,7 +58,7 @@ function findTies(id, sid, { people = false, dir = null } = {}) {
   // corpus "ISO" is mostly something else).
   const srcNames = ct.sourceNames(src).map((n) => n.trim());
   const longNames = srcNames.filter((n) => n.includes(" "));
-  const out = { names, srcNames, self: [], passages: [], author: null };
+  const out = { names, srcNames, self: [], passages: [] };
 
   // 1. The source's own copy.
   const libDir = path.join(lib.ROOT, "scratchpad", "sources", id);
@@ -104,23 +104,7 @@ function findTies(id, sid, { people = false, dir = null } = {}) {
     }
   }
 
-  // 3. A person author in the defining sources (reference and scholarly works, never Wikipedia). An organisation isn't
-  // a key figure.
-  const au = String(src.author || "").replace(/\([^)]*\)/g, " ").trim(), sur = au.split(/\s+/).pop();
-  const ORG = /\b(party|organi[sz]ation|international|league|committee|union|movement|group|congress|front|council|association|federation|society|institute|press|foundation|government|ministry|alliance|network|cent(er|re)|club|convention|assembly|bund|order|brotherhood|army|church|forum|campaign|initiative|wikipedia|contributors|editors|britannica)\b/i;
-  if (sur && sur.length > 2 && au.split(/\s+/).length <= 4 && !ORG.test(au)) {
-    const defining = (a.sources || []).filter((s) => ct.DEFINING.includes(s.kind) && !ct.isWikipedia(s));
-    let n = 0;
-    for (const s of defining) { const t = ct.sourceText(id, s.url); if (t) n += (t.match(new RegExp(` ${esc(ct.norm(sur).trim())} `, "g")) || []).length; }
-    out.author = { name: au, surname: sur, definingMentions: n, listed: (a.keyFigures || []).some((x) => x && ct.norm(x.last || "").trim() === ct.norm(sur).trim()) };
-  }
-  if (out.author) {
-    const person = { first: au.split(/\s+/).slice(0, -1).join(" "), last: sur };
-    out.author.reserved = ct.reservedFor(person).filter((o) => o !== id);
-    out.author.elsewhere = [...(ct.figuresTaken().get(ct.personKey(au)) || [])].filter((o) => o !== id);
-  }
-
-  // 4. The source's title, in its forms, in the defining sources.
+  // 3. The source's title, in its forms, in the defining sources.
   const defining = (a.sources || []).filter((s) => ct.DEFINING.includes(s.kind) && !ct.isWikipedia(s))
     .map((s) => ({ id: s.id, text: ct.sourceText(id, s.url) })).filter((s) => s.text);
   out.titles = titleForms(src.title).map((form) => {
@@ -162,11 +146,6 @@ function report(r, sid) {
   for (const p of own.slice(0, MAX_PER_PLACE)) lines.push(`  ${p.where} (${p.url}): ...${p.quote}...`);
   lines.push(corp.length ? `\nLocal corpora passages that name ${sid} near the subject (read the passage: a tie only if it is about this text):` : `\nNo local corpus passage names ${sid} near the subject.`);
   for (const p of corp.slice(0, MAX_PER_PLACE)) lines.push(`  ${p.where}: ...${p.quote}...`);
-  if (r.author) {
-    const taken = r.author.reserved.length ? `; but ${r.author.reserved.join(", ")} is named after them and reserves them, so they can't be a key figure here`
-      : r.author.elsewhere.length ? `; but they are already a key figure of ${r.author.elsewhere.join(", ")}, and a person is one ideology's key figure` : "";
-    lines.push(`\nAuthor ${r.author.name}: named ${r.author.definingMentions} time(s) in the defining sources${r.author.listed ? "; already a key figure" : ""} (a key figure needs 2, and defining sources that present the ideology as their body of thought)${taken}.`);
-  }
   if (!r.definingChecked.length) lines.push(`\nNo defining source has a saved copy, so titles couldn't be counted there.`);
   else if (!r.titles.length) lines.push(`\nThe defining sources (${r.definingChecked.join(", ")}) never name ${sid} by any form of its title.`);
   else {
