@@ -28,6 +28,7 @@ const TEXTS = {
   "https://example.org/encyclopedia": `${N} is a political doctrine. Its founders set out ${N} in several works, first in the Founding Rescript; the Founding Rescript is its canon.`,
   "https://example.org/manifesto": `The manifesto of ${N}. We hold that ${N} is the way forward for all.`,
   "https://example.org/study": `A study of ${N} and its history, written for students of ${N}. Quentin Vexmoor wrote its founding text; Vexmoor led it for years.`,
+  "https://example.org/history": `A history of ${N}. Its founder was Quentin Vexmoor.`,
   "https://example.org/unrelated": "A text about something else entirely, with no mention of the subject.",
 };
 function writeLibrary() {
@@ -237,12 +238,23 @@ try {
       assert.ok(coatrack.isNamesake("Quentin Vexmoor", "vexmoorism", "Vexmoorism") && !coatrack.isNamesake("Q. Vexmoor Jr.", "vexmoorism", "Vexmoorism"), "Jr. is not Sr."); n++;
       // Key figure claims (audits/key-figure-claims.json): a person another ideology lists is claimed, not listed.
       const quotes = (second = "Vexmoor led it for years") => [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s3", quote: second }];
-      const claim = (extra = {}) => E(base(), (a) => { a.keyFigureClaims = [{ first: "Quentin", last: "Vexmoor", heldBy: "other-ideology", role: "Founder of the movement", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: quotes(), ...extra }]; });
+      const twoSources = () => [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s4", quote: "Its founder was Quentin Vexmoor" }];
+      const claim = (extra = {}) => E(base(), (a) => { a.sources.push({ id: "s4", kind: "secondary", evidence: "words", title: "A history", url: "https://example.org/history" }); a.keyFigureClaims = [{ first: "Quentin", last: "Vexmoor", heldBy: "other-ideology", role: "Founder of the movement", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: twoSources(), ...extra }]; });
       listedBy("other-ideology", "Other ideology", "2026-11-01");
       ok("claim on another ideology's key figure", claim());
       fails("claim on an ideology that doesn't list them", claim({ heldBy: "third-ideology" }), /key figure claim "Quentin Vexmoor": third-ideology doesn't list them; other-ideology does/);
       fails("claim with one passage", claim({ evidence: quotes("Quentin Vexmoor wrote its founding text") }), /needs two quotes or more in "evidence"/);
       fails("claim quoting a primary text", claim({ evidence: [...quotes(), { source: "s2", quote: "The manifesto of Vexmoor" }] }), /s2 is a primary source; the evidence comes from defining sources/);
+      fails("claim from two passages of one source", claim({ evidence: quotes() }), /its quotes come from one source; a claim needs quotes from two different defining sources/);
+      // The holder's defining sources name them as often (3 times, like the claimant's): no claim.
+      const holderLib = path.join(LIBDIR, "other-ideology");
+      try {
+        fs.mkdirSync(holderLib, { recursive: true });
+        fs.writeFileSync(path.join(holderLib, "t0.txt"), "Vexmoor, Vexmoor and again Vexmoor.");
+        fs.writeFileSync(path.join(holderLib, "index.json"), JSON.stringify([{ file: "t0.txt", url: "https://example.org/other" }]));
+        coatrack.setProfilesForTests(new Map([["other-ideology", { name: "Other ideology", auditedAt: "2026-11-01", keyFigures: [vex()], sources: [{ id: "s1", kind: "scholarly", url: "https://example.org/other" }] }]]), {});
+        fails("claim whose sources name them no more than the holder's", claim(), /your defining sources name them 3 times, other-ideology's 3; a claim needs yours to name them more/);
+      } finally { fs.rmSync(holderLib, { recursive: true, force: true }); listedBy("other-ideology", "Other ideology", "2026-11-01"); }
       coatrack.setProfilesForTests(new Map(), {});
       fails("claim on a person no one lists", claim(), /no other ideology lists them, so list them in "keyFigures" instead/);
       // The holder is warned of a claim and decides.

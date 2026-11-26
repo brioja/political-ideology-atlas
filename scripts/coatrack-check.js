@@ -144,6 +144,13 @@ const redirectNames = new Map();
 // The kinds of source that say what an ideology holds: reference works, scholarship, and other reliable sources on it
 // ("secondary": journalism, books from reputable publishers; ideologies only, Brandon 2026-11-23).
 const DEFINING = ["reference", "scholarly", "secondary"];
+// How often a person's surname appears, as a whole word, in an ideology's defining sources (saved, of a DEFINING kind,
+// never Wikipedia). A key figure claim must name them more than the holder's sources do (Brandon, 2026-11-26).
+function personMentions(id, sources, sur) {
+  const re = new RegExp(`(?<![\\p{L}\\p{N}])${sur.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\p{L}\\p{N}])`, "gu");
+  return (sources || []).filter((s) => s && DEFINING.includes(s.kind) && !isWikipedia(s))
+    .reduce((n, s) => n + ((sourceText(id, s.url) || "").match(re) || []).length, 0);
+}
 // How often an ideology's own defining sources (saved, of a DEFINING kind, never Wikipedia) use a
 // name, in any of its forms. Decides who owns a contested alias.
 const usageCache = new Map();
@@ -183,14 +190,14 @@ function namesTaken() {
 }
 
 let takenFigures = null, committed = null, reserved = null;
-// The committed ideology audits' names, dates and key figures (tests pass their own list).
+// The committed ideology audits' names, dates, key figures and sources (tests pass their own list).
 function profiles() {
   if (committed) return committed;
   committed = new Map();
   for (const f of fs.readdirSync(lib.PROFILES_DIR)) {
     if (!f.endsWith(".json")) continue;
     let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
-    committed.set(f.slice(0, -5), { name: a.name, auditedAt: a.auditedAt, keyFigures: a.keyFigures });
+    committed.set(f.slice(0, -5), { name: a.name, auditedAt: a.auditedAt, keyFigures: a.keyFigures, sources: a.sources });
   }
   return committed;
 }
@@ -574,7 +581,8 @@ function check(id, full, { strict = false, pass = false } = {}) {
   }
   // "keyFigureClaims": people the defining sources present as the ideology's own whom another ideology lists. A claim
   // takes a person from another ideology, so it needs more than a key figure: "evidence", two quotes or more from
-  // defining sources (two passages of one source will do), each naming them (Brandon, 2026-11-26).
+  // defining sources, each naming them, from two different sources, which name them more often than the holder's
+// defining sources do (Brandon, 2026-11-26).
   if (audit.keyFigureClaims !== undefined && !Array.isArray(audit.keyFigureClaims)) problems.push(`"keyFigureClaims" must be a list`);
   for (const c of Array.isArray(audit.keyFigureClaims) ? audit.keyFigureClaims : []) {
     const au = entryName(c), label = `key figure claim "${au}"`;
@@ -587,6 +595,12 @@ function check(id, full, { strict = false, pass = false } = {}) {
       continue;
     }
     problems.push(...passages(id, audit, "key figure claim", c, true));
+    // Stronger than the holder's case: quotes from two different sources, so one book can't carry it, and the
+    // defining sources name them more often than the holder's do. The holder's next pass still decides.
+    const from = new Set(c.evidence.map((e) => e && e.source).filter(Boolean));
+    if (from.size < 2) problems.push(`${label}: its quotes come from ${from.size ? "one source" : "no source"}; a claim needs quotes from two different defining sources`);
+    const sur = figureKey(c).trim(), mine = personMentions(id, sources, sur), theirs = personMentions(c.heldBy, (profiles().get(c.heldBy) || {}).sources, sur);
+    if (mine <= theirs) problems.push(`${label}: your defining sources name them ${mine} times, ${c.heldBy}'s ${theirs}; a claim needs yours to name them more`);
   }
   // A claim this ideology made whose holder has since dropped the person: they are free to list.
   for (const c of claims().filter((c) => c.claimedBy === id)) {
