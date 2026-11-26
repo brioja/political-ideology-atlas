@@ -28,10 +28,11 @@ Audit the id the driver gives you, person or ideology.
      (`node scripts/validate.js --dir scratchpad/lane-out/<lane> --stage scope <id>`) and sends back
      what to fix.
    - Local: answers from local texts only (the corpora, the maintainer's reference library, Gutenberg,
-     books downloaded for this audit). A statement they don't settle stays null.
-   - Web, in a fresh session: the driver hands over only the statements still open (for a person, also
-     those answered from their words alone, to look for a record) in `<id>.web.json`, and merges the
-     answers back.
+     books downloaded for this audit), in `<id>.json`.
+   - Web, in a fresh session: answers from the web only, in `<id>.web.json`, which the driver merges into
+     the audit.
+   Both answer phases follow the same rules; a statement the texts they search don't settle stays null.
+   Each ends when you create the empty file its message names.
 4. Write the audit to `scratchpad/lane-out/<lane>/<id>.json`; the driver moves it into `audits/`
    once it validates. Validate it there:
 
@@ -41,6 +42,5 @@ Audit the id the driver gives you, person or ideology.
    taken from it: its id in the answers' `sources` and its claims in their rationales.
 5. Edit no other file. Do not build, test, commit or push.
 
-Once validate.js reports no errors (an `excluded:` line, a `notIdeasOfWhatSocietyShouldBe` record,
-is a result, not an error), add one line to
-`scratchpad/lane-out/<lane>/DONE.txt`: the id alone.
+An `excluded:` line or a `notIdeasOfWhatSocietyShouldBe` record from validate.js is a result, not an
+error. `scratchpad/lane-out/<lane>/DONE.txt` is the driver's: don't write to it.
