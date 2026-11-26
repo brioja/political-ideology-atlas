@@ -1,7 +1,7 @@
 {
   "id": "ho-chi-minh-thought",
   "name": "Ho Chi Minh Thought",
-  "auditedAt": "2026-11-25",
+  "auditedAt": "2026-11-26",
   "auditor": "claude-sonnet-5-5",
   "rules": 7,
   "scope": "Ho Chi Minh Thought as the defining sources state it: the Communist Party of Vietnam's official system of views on the basic problems of the Vietnamese revolution, from national-democratic to socialist revolution, formed by creatively applying Marxism-Leninism to Vietnam and drawing on national tradition and the era's learning (Giáo trình tư tưởng Hồ Chí Minh, ch. 1; Lê Văn Quý, intro). It covers Ho's own texts the Party's course names as its basis (Bản án chế độ thực dân Pháp 1925, Đường Kách mệnh 1927, the 1945 Declaration of Independence, the Testament) and the Party-leadership and party-building teaching of Lê Văn Quý's study. It excludes the Doi Moi market line, Western or dissident readings, and later Party platforms except where the sources present them as Ho Chi Minh Thought.",
@@ -59,9 +59,14 @@
       "authorWikipedia": "https://en.wikipedia.org/wiki/Ho_Chi_Minh",
       "source": "s1",
       "quote": "Hồ Chí Minh để lại Di chúc thiêng"
+    },
+    {
+      "title": "Sửa đổi lối làm việc",
+      "work": "s7",
+      "source": "s1",
+      "quote": "16 lần trong Sửa đổi lối làm việc (tập 5)"
     }
   ],
-  "wikipedia": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_Thought",
   "sources": [
     {
       "id": "s1",
@@ -110,8 +115,43 @@
       "author": "Nguyễn Ái Quốc",
       "url": "https://archive.org/details/ebook_ban_an_che_do_thuc_dan_phap_3394",
       "usedFor": "Ho's own 1925 indictment of French colonial rule."
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "title": "Sửa đổi lối làm việc (1947)",
+      "author": "Hồ Chí Minh",
+      "url": "https://archive.org/details/sua-doi-le-loi-lam-viec",
+      "usedFor": "Ho's own 1947 text on party style of work."
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "title": "Appeal Made on the Occasion of the Founding of the Indochinese Communist Party (1930)",
+      "author": "Ho Chi Minh",
+      "url": "https://www.marxists.org/reference/archive/ho-chi-minh/works/1930/02/18.htm",
+      "usedFor": "Ho's own founding appeal and ten slogans of the Party."
+    },
+    {
+      "id": "s9",
+      "kind": "primary",
+      "title": "Wage Resistance War! An Appeal to the Vietnamese People (1946)",
+      "author": "Ho Chi Minh",
+      "url": "https://www.marxists.org/reference/archive/ho-chi-minh/works/1946/december/19.htm",
+      "usedFor": "Ho's call of 19 December 1946 to resist the French return."
     }
   ],
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-16"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-25"
+    }
+  ],
+  "wikipedia": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_Thought",
   "answers": {
     "abolish-armed-forces": {"value":-2,"rationale":"Giáo trình ch. VI sets out Ho's building of regular, local and militia forces into a modern regular people's army to defend independence.","sources":["s1"]},
     "abolish-central-banks": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
@@ -162,7 +202,7 @@
     "bypass-parties-groups": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "capital-controls": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "capitalism-adapts": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
-    "capitalism-causes-war": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "capitalism-causes-war": {"value":1,"rationale":"Ho's 1930 appeal says imperialist contradictions caused the 1914-1918 war and that a new world war will break out as French imperialism prepares to conquer new colonies.","sources":["s8"]},
     "capitalism-progressive": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "censor-art-for-virtue": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "central-bank-independence": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
@@ -197,7 +237,7 @@
     "confederal-coordination": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "conscription": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "consent-of-governed": {"value":1,"rationale":"Giáo trình ch. VII quotes Ho that officials are the people's servants and that if a government harms the people the people have the right to dismiss it.","sources":["s1"]},
-    "constituent-assembly": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "constituent-assembly": {"value":1,"rationale":"Giáo trình, ch. 5 (p. 274): at the first government session on 3 Sept 1945 Ho called for a democratic constitution through a general election by universal suffrage, to give a state 'hợp hiến do nhân dân bầu ra', with a drafting committee reporting to the elected National Assembly.","sources":["s1"]},
     "constitution-recognises-indigenous-nations": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "constitutional-jury-trial": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "consumerism-harmful": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
@@ -245,11 +285,11 @@
     "divine-source-of-authority": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "divinely-chosen-superior-people": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "domestic-violence-symmetry": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
-    "dominated-front": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "dominated-front": {"value":1,"rationale":"Ho's 1930 appeal describes a revolutionary camp of the oppressed colonial peoples and the exploited working class of the world, led by the Soviet Union, against the camp of international capitalism and imperialism.","sources":["s8"]},
     "domination-women-nature": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "drastic-climate-action": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "duties-before-rights": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
-    "dynastic-succession": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "dynastic-succession": {"value":-2,"rationale":"The 1945 Declaration celebrates that the people overthrew the monarchic regime of many centuries and set up a Democratic Republic, and the 1946 Constitution Art. 1 (Giáo trình ch. VII) places all power in the whole people.","sources":["s5","s1"]},
     "economic-freedom": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "economic-self-sufficiency": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "economy-in-majority-hands": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
@@ -288,8 +328,8 @@
     "force-to-prevent-secession": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "force-without-un": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "foreign-land-ownership": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
-    "foreign-partition-plot": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
-    "foreign-policy-non-interference": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
+    "foreign-partition-plot": {"value":1,"rationale":"Ho's 1956 article makes the struggle for national reunification, against the schemes of the US and the Saigon administration to perpetuate the division of the country, a task of the Party.","sources":["s4"]},
+    "foreign-policy-non-interference": {"value":1,"rationale":"Giáo trình ch. VIII credits Ho with laying the base of a foreign policy built on respect for independence, sovereignty and territorial integrity and on non-interference in each other's internal affairs.","sources":["s1"]},
     "foreign-residents-local-vote": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "foreign-takeover-block": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "former-empire-equal-treatment": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
@@ -333,7 +373,7 @@
     "immigrants-learn-language": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "immigration-favours-shared-culture": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "in-work-tax-credits": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
-    "income-for-work-not-ownership": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "income-for-work-not-ownership": {"value":2,"rationale":"Giáo trình ch. III quotes Ho that in socialism whoever works more receives more, whoever works less receives less and whoever does not work receives nothing, with distribution by labour as the principle.","sources":["s1"]},
     "independence-needs-economic-change": {"value":2,"rationale":"Giáo trình ch. III quotes Ho that independence means nothing if the people enjoy no happiness or freedom, and ties independence to socialism that makes people prosperous and fed.","sources":["s1"]},
     "independent-nuclear-deterrent": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "independent-unions": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
@@ -365,7 +405,7 @@
     "labor-aristocracy": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "labour-priority-over-capital": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "labour-theory-of-value": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
-    "land-redistribution": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "land-redistribution": {"value":2,"rationale":"The 1930 founding appeal commits the Party to confiscate the plantations and property of the imperialists and the Vietnamese reactionary bourgeoisie and distribute them to the poor peasants.","sources":["s8"]},
     "land-use-tenure": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "land-value-tax": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "language-defines-nation": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
@@ -450,7 +490,7 @@
     "occupational-licensing": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "office-by-exam": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "offices-by-lottery": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
-    "one-party-rule": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "one-party-rule": {"value":2,"rationale":"Giáo trình tư tưởng Hồ Chí Minh, ch. 3 (pp. 82-83, on the revolution's principles): it affirms 'vai trò độc quyền lãnh đạo của Đảng của giai cấp công nhân' in the Vietnamese revolution from national liberation to socialism.","sources":["s1"]},
     "one-spouse-at-a-time": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "online-anonymity": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "online-participation": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
@@ -565,7 +605,7 @@
     "reserved-seats-excluded-groups": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "residents-only-property": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "resist-lawless-ruler": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
-    "resist-oppression-despite-death": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
+    "resist-oppression-despite-death": {"value":2,"rationale":"Ho's 1946 appeal calls every Vietnamese to rise against the returning colonialists, saying they would sacrifice everything rather than return to slavery, and to sacrifice to the last drop of blood.","sources":["s9"]},
     "resources-common-ownership": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "restore-past-order": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "restrict-conversion": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
@@ -604,7 +644,7 @@
     "security-forces-accountable": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "self-interest-moral": {"value":0,"rationale":"Giáo trình ch. IV quotes Ho calling individualism the fierce enemy of socialism, while ch. III says he held that legitimate individual interest of workers should be stimulated under socialism.","sources":["s1"]},
     "self-ownership": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
-    "self-reliance-over-aid": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "self-reliance-over-aid": {"value":1,"rationale":"Giáo trình, ch. on independence and self-reliance: Nguyễn Ái Quốc held that a nation waiting for others' help 'không xứng đáng được độc lập tự do' and the slogan 'tự lực cánh sinh, dựa vào sức mình là chính'; he still sought international support, so the lean is toward own resources, not against aid.","sources":["s1"]},
     "separate-church-state": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "separated-powers": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
     "settler-state-colonial": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
@@ -675,7 +715,7 @@
     "unbroken-national-continuity": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "uniform-civil-code": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "uniformed-youth": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
-    "unions-good": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "unions-good": {"value":2,"rationale":"Bản án chế độ thực dân Pháp, ch. VII 'Tổ chức công đoàn ở thuộc địa' (minutes of the Red International of Labour Unions, 1923): organising trade unions in the colonies 'có một tầm quan trọng đặc biệt'; the Giáo trình (ch. 2) also records Nguyễn Ái Quốc joining a union as part of his political life.","sources":["s6"]},
     "unions-run-economy": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "universal-healthcare": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "universal-morality": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
@@ -701,7 +741,7 @@
     "women-must-cover": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "women-organise-apart-from-men": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "women-property-inheritance": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
-    "women-suffrage": {"value":null,"rationale":"Nulled (2026-11-25 later pass): the answer rested on Wikipedia, a tertiary source, or on inference, and the Giáo trình and Ho's own texts read state no position on this statement.","sources":[]},
+    "women-suffrage": {"value":2,"rationale":"Ho's 1930 appeal pledges equality between man and woman, and Giáo trình ch. VII quotes Art. 1 of the 1946 Constitution, drafted under him, that all power belongs to the whole people regardless of sex, after his call for universal suffrage.","sources":["s8","s1"]},
     "work-centre-of-life": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "work-for-welfare": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]},
     "worker-farmer-alliance": {"value":2,"rationale":"Giáo trình ch. VII quotes Ho that the state rests on the alliance of workers and peasants under working-class leadership.","sources":["s1"]},
@@ -715,16 +755,6 @@
     "world-economy-extracts-surplus": {"value":1,"rationale":"Ho's 1924 report says the colonial peoples are unremittingly exploited by imperialist capital, which takes their land and leaves them in famine.","sources":["s3"]},
     "youth-equal-civil-rights": {"value":null,"rationale":"No stated position found in the sources read.","sources":[]}
   },
-  "passes": [
-    {
-      "auditor": "claude-sonnet-5-5",
-      "auditedAt": "2026-10-16"
-    },
-    {
-      "auditor": "claude-sonnet-5-5",
-      "auditedAt": "2026-11-25"
-    }
-  ],
   "summary": "Ho Chi Minh Thought is the Communist Party of Vietnam's official ideology, combining Marxism-Leninism with Vietnamese national liberation. It treats independence, national unity and socialism as one project led by the Party, with the peasantry and the working class as its base. It stresses a state of the people, a strong state sector, anti-colonialism and an ethic of frugal, selfless service by cadres.",
   "furtherReading": [
     {
