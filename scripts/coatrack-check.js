@@ -509,8 +509,10 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // Each evidence quote of a key figure, claim or key work names the ideology (its name or an alias) apart from the
   // person or title, so the source is seen tying them to it: "Frederick Denison Maurice," shows only that the book
   // names him (Brandon, 2026-11-26). A key work's quote from a primary text that names the ideology twice itself is
-  // exempt (the text is tied already).
-  const untied = (field, x, list) => list.filter((e) => e && typeof e.quote === "string" && e.quote.trim())
+  // exempt (the text is tied already). So is a key work whose title names the ideology itself, its eponym included:
+  // "Orbán's constitution" for Hungary's Fundamental Law ties it to Orbánism (Brandon, 2026-11-26).
+  const titleNamesIt = (field, x) => field === "key work" && mentions(norm(entryName(x)), names);
+  const untied = (field, x, list) => titleNamesIt(field, x) ? [] : list.filter((e) => e && typeof e.quote === "string" && e.quote.trim())
     .filter((e) => !separately(norm(e.quote), names, field === "key work" ? [norm(entryName(x))] : [norm(entryName(x)), figureKey(x)]))
     .map((e) => `${field} "${entryName(x)}": the quote "${e.quote.trim()}" doesn't name ${plainName(audit.name)} (or an alias); each quote names both the ideology and ${field === "key work" ? "the work" : "the person"}, so it shows the source tying them`);
   for (const x of Array.isArray(audit.keyFigures) ? audit.keyFigures : []) {
