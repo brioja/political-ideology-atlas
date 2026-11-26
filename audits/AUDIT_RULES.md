@@ -69,7 +69,7 @@ words; don't paste long passages.
 - When the subject's own texts are available as full text (a book, manifesto, programme or speech
   collection), download them and search them for each theme's topics rather than reading
   summaries. Keep downloads in the local source library, `scratchpad/sources/<id>/` (never
-  committed), so later passes reuse them: check its `index.json` first, and list each file you add
+  committed), where they are reused: check its `index.json` first, and list each file you add
   there with its title, url and download date.
 - Bulk public records are kept locally in `~/.cache/political-ideology-atlas/corpora/` (never
   committed; its README.md indexes them and their lookup tools): US Congress roll calls since 1789, US Congress floor speeches since 1873 and committee hearing
@@ -190,7 +190,7 @@ Each rationale is one or two plain sentences that explain the answer, not restat
 states about this statement, never a stock phrase ("Nationalism rejected."). It cites at least one
 source id from your `sources` list.
 
-## 4. Research to the end, and later passes
+## 4. Research to the end
 
 **An audit goes as deep as the record allows**. There is no limit on
 sources. Keep researching before you finish: the statements still null, in new sources (the local
@@ -210,26 +210,3 @@ missing.
 library or archive site, a web search, a scholarly edition). Notes that call a source unavailable without
 a `notFound` entry for it fail validation.
 
-A later pass on a finished audit has one of three reasons: new sources became available (a new corpus, a
-book the maintainer supplies), the audit predates the shared rules (no `"rules"` field) and is brought
-up to them, or it applied a rule the maintainer has since found misapplied (`audits/reaudit-queue.json`
-says which rule). Build on the existing audit rather than starting over:
-- Read its sources and answers. Research the lines the validator names, then the thinnest themes.
-- Keep the subject: no coatracks. Not a broader ideology's (secularism's for
-  Jewish secularism, or for a person who holds it), a related one's (secular humanism's for
-  secularism), a party's for one of its members, a relative's or employer's for a person.
-- To change an earlier answer (change it or revert it), write the new answer with its reason as the
-  rationale; git keeps the earlier versions. To null it, leave the rationale empty and cite nothing, since a
-  reason or a source next to a null would read as evidence of silence.
-- Change an answer only on evidence you found and cite. Check every answer
-  you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
-  stated (cite the source of the position that settles it) or `null`. One deduced from a general
-  value is `null`.
-- A later pass comes at least half the project's age (days since its first commit, 2026-10-14) after the previous one, so the gap grows over time (`validate.js` enforces it).
-- Add your model id to `auditor` if it isn't there yet (a list, the
-  first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
-  "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
-  the date of your pass. Set `"rules": 7` and bring the whole file up to it, older answers
-  and sources included (`validate.js` says what is missing).
-- Research until the record is covered or really has nothing more, and say in `notes` which themes
-  you searched.
