@@ -8,6 +8,7 @@ not only in conversation, and move an item to `decided-against.md` when it is ru
 - [catalog.md](catalog.md): which ideologies the catalog includes
 - [ideology-candidates.md](ideology-candidates.md): ideologies not yet in the catalog that a source turned up
 - [audits.md](audits.md): audit passes and reviews not yet run
+- [Future-deepening-after-all-audits-are-valid.md](Future-deepening-after-all-audits-are-valid.md): extra passes of valid audits, only once every audit is valid
 - [blocked-sources.md](blocked-sources.md): audits held back by sources we couldn't reach, for a retry
 - [results.md](results.md): results page ideas (uncertainty display, parked; error bars; far-edge distance, parked; Compare page follow-ups)
 - [people.md](people.md): people catalog beyond public figures (AI models, fictional characters)
