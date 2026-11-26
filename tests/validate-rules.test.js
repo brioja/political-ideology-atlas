@@ -123,7 +123,7 @@ fails("political-quiz site", E(base(), (a) => { a.sources[2].url = "https://www.
 fails("source title missing", E(base(), (a) => { delete a.sources[2].title; }), /source s3: missing title/);
 fails("Wikipedia as primary", E(base(), (a) => { a.sources[2].url = "https://en.wikipedia.org/wiki/Example"; }), /a Wikipedia article is a "reference" source/);
 ok("no primary-source requirement (one rule for every subject, 2026-11-08)", E(base(), (a) => { for (const x of a.sources) x.kind = "reference"; }));
-fails("no scholarly or reference source", E(base(), (a) => { a.sources[4].kind = "primary"; }), /needs at least one scholarly or reference source/);
+ok("no scholarly or reference source needed (people have no scope, 2026-11-26)", E(base(), (a) => { for (const x of a.sources) x.kind = "primary"; }));
 fails("only Wikipedia sources", E(base(), (a) => { a.sources.forEach((x, i) => { x.kind = "reference"; x.url = `https://en.wikipedia.org/wiki/Page_${i}`; }); }), /Wikipedia cannot be the only kind of source/);
 // Answers.
 fails("active statement unanswered", E(base(), (a) => { delete a.answers[D]; }), new RegExp(`no answer for '${D}'`));

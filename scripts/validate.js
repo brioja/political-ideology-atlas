@@ -333,7 +333,10 @@ function validate(id) {
   // A Wikipedia article about a document is a reference, never the document itself.
   const wikiPrimary = sources.filter((s) => (s.kind === "primary" || s.kind === "program") && /wikipedia\.org/i.test(s.url || "")).map((s) => s.id);
   if (wikiPrimary.length) errors.push(`${wikiPrimary.join(", ")}: a Wikipedia article is a "reference" source, not "primary" or "program"`);
-  if (!sources.some((s) => s.kind === "scholarly" || s.kind === "reference" || (!PEOPLE && s.kind === "secondary"))) errors.push(`needs at least one ${PEOPLE ? "scholarly or reference" : "scholarly, reference or secondary"} source`);
+  // An ideology's scope rests on a defining source (PROMPT.md sections 1 and 2), checked where the scope is written
+  // (--stage scope); later phases only read it. People have no scope: each answer rests on its own sources
+  // (Brandon, 2026-11-26).
+  if (!PEOPLE && STAGE_SCOPE && !sources.some((s) => ["scholarly", "reference", "secondary"].includes(s.kind))) errors.push("needs at least one scholarly, reference or secondary source");
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
 
   // --stage scope stops here: the draft has its scope, sources, aliases, key figures and key works but no answers yet.
