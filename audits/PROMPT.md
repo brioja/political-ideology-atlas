@@ -103,7 +103,8 @@ Both lists show on the ideology's page.
 `keyFigures`: the people the defining sources present the ideology as the thought or political legacy of
 (Clinton for Clintonism).
 - People only, no organisations.
-- Named at least twice by the defining sources: in two of them, or twice in one.
+- Named at least twice by the defining sources: two quotes in its `evidence` (below), from two of them or two
+  passages of one.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
   after for it (Lenin for Leninism).
 - If the defining sources present the ideology as the thought of someone another ideology lists (not as an
@@ -120,7 +121,9 @@ Both lists show on the ideology's page.
 
 `keyWorks`: the texts the defining sources make canonical (founding texts, manifestos, programmes, a thinker's
 major works).
-- By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform").
+- By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform"), named at least twice:
+  two quotes in its `evidence` (below), from the defining sources or primary texts that name the ideology twice
+  themselves.
 - With `"work": "<source id>"` when you cite the text itself.
 - Unless you cite it, give it two fields for the page, as for key figures: `author`, as the sources name it
   ("Pierre-Joseph Proudhon"; an organisation for a programme), and `wikipedia`, the URL of the work's own English
@@ -128,15 +131,15 @@ major works).
   open the work: the page links the copy you cite, else the work's article, else the author.
 
 Primary texts (`primary` or `program`) are the ideology's own texts: founding documents, manifestos,
-programmes, writings and speeches. One is tied to the ideology when it is a key work (the defining sources
-name it twice between them, by its own title or a key work's), when its author is a key figure, or when it
-names the ideology twice itself.
+programmes, writings and speeches. One is tied to the ideology when it is a key work (with `"work"` and its two
+quotes), when the sources that discuss the ideology name it twice by its own title, when its author is a key figure,
+or when it names the ideology twice itself.
 
 ### Evidence
 
-Give each alias, key figure and key work its evidence: `{ "name" (a key figure: "first" and "last"; a key
-work: "title"), "source": "<source id>", "quote": "<verbatim passage>" }`, a passage from that source's saved
-copy that uses the name; validate.js checks the quote is there and contains it (a `REDIRECT` or `TRANSLATION`
+Give each alias its evidence: `{ "name", "source": "<source id>", "quote": "<verbatim passage>" }`, a passage from
+that source's saved copy that uses the name. A key figure or key work gives two passages or more instead, different
+ones (one source may give both): `"evidence": [{ "source": "<source id>", "quote": "<verbatim passage>" }, ...]`; validate.js checks the quote is there and contains it (a `REDIRECT` or `TRANSLATION`
 alias needs none). Save every source you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so
 the check can read it.
 
@@ -209,8 +212,8 @@ captures, even loosely. List only those; often there are none, and the list is e
   "notFound": [{ "work": "<a source looked for and not found>", "tried": [{ "where": "<place 1>", "how": "<what you searched>" }, { "where": "<place 2>", "how": "…" }] }],
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
   "aliases": [{ "name": "Another name for it", "reason": "SUPPORTED", "source": "s3", "quote": "verbatim passage from s3 that uses it" }],
-  "keyFigures": [{ "first": "Chantal", "last": "Mouffe", "role": "Theorist of agonistic pluralism", "wikipedia": "https://en.wikipedia.org/wiki/Chantal_Mouffe", "source": "s3", "quote": "verbatim passage from s3 that names them" }],
-  "keyWorks": [{ "title": "Hegemony and Socialist Strategy", "work": "s4", "source": "s3", "quote": "verbatim passage from s3 that names it" }],
+  "keyFigures": [{ "first": "Chantal", "last": "Mouffe", "role": "Theorist of agonistic pluralism", "wikipedia": "https://en.wikipedia.org/wiki/Chantal_Mouffe", "evidence": [{ "source": "s3", "quote": "verbatim passage from s3 that names them" }, { "source": "s5", "quote": "another passage, from s5 or s3, that names them" }] }],
+  "keyWorks": [{ "title": "Hegemony and Socialist Strategy", "work": "s4", "evidence": [{ "source": "s3", "quote": "verbatim passage from s3 that names it" }, { "source": "s3", "quote": "another passage that names it" }] }],
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
     { "title": "Readable title", "url": "https://…", "note": "One line on why it's worth reading" }

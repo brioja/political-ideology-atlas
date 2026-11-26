@@ -65,7 +65,12 @@ if (Array.isArray(a.missingStatements)) a.missingStatements = a.missingStatement
   if (m.sources.length) return true;
   requests++; return false;
 });
-if (Array.isArray(a.keyFigures)) a.keyFigures = a.keyFigures.filter((f) => !(f && f.source === sid) || (figures++, false));
+// A key figure with "evidence" loses the passages from the source and goes once none are left (validate.js then asks for
+// a second passage if one is left).
+if (Array.isArray(a.keyFigures)) a.keyFigures = a.keyFigures.filter((f) => {
+  if (f && Array.isArray(f.evidence)) { f.evidence = f.evidence.filter((e) => !(e && e.source === sid)); return f.evidence.length > 0 || (figures++, false); }
+  return !(f && f.source === sid) || (figures++, false);
+});
 
 // The source entry stays while anything cites it (a key figure's or alias's quote).
 const citesIt = (o) => Array.isArray(o) ? o.some(citesIt) : o && typeof o === "object"

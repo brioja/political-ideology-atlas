@@ -175,13 +175,13 @@ function keyFigureChecks(a, id, sources, errors, warnings) {
   const WIKI = /^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/;
   if (!PEOPLE) for (const key of ["keyFigures", "keyWorks"]) if (a[key] !== undefined && !Array.isArray(a[key])) errors.push(`"${key}" must be a list`);
   if (!PEOPLE && Array.isArray(a.keyFigures)) for (const [i, f] of a.keyFigures.entries()) {
-    if (!f || typeof f !== "object") { errors.push(`keyFigures[${i}]: must be { "first", "last", "role", "wikipedia", "source", "quote" }`); continue; }
+    if (!f || typeof f !== "object") { errors.push(`keyFigures[${i}]: must be { "first", "last", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`); continue; }
     if (f.wikipedia !== undefined && !WIKI.test(f.wikipedia)) errors.push(`keyFigures[${i}]: wikipedia must be an en.wikipedia.org article URL`);
     if (AS_CURRENT || DIR) { if (!f.role) errors.push(`keyFigures[${i}]: needs a one-line "role"`); if (!f.wikipedia) errors.push(`keyFigures[${i}]: needs its "wikipedia" article`); }
     // One entry per person (the page lists each entry); one quote is evidence enough.
     const who = (x) => [x.first, x.last].map((t) => String(t || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()).join("|");
     const j = a.keyFigures.findIndex((x) => x && typeof x === "object" && who(x) === who(f));
-    if (j < i) errors.push(`keyFigures[${i}]: ${f.first} ${f.last} is already keyFigures[${j}]; list each person once, with one quote`);
+    if (j < i) errors.push(`keyFigures[${i}]: ${f.first} ${f.last} is already keyFigures[${j}]; list each person once`);
   }
   // A person a key figure's quote names who isn't a key figure is likely one the audit missed (Brandon, 2026-11-23:
   // Assadism listed Hafez but not Bashar al-Assad, named in the same quote, and so left his speeches untied). People
@@ -194,7 +194,7 @@ function keyFigureChecks(a, id, sources, errors, warnings) {
     const page = (u) => { try { return decodeURIComponent(String(u || "").replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "")).replace(/ /g, "_"); } catch { return ""; } };
     const figs = a.keyFigures.filter((f) => f && typeof f === "object" && f.last);
     const listed = (p) => figs.some((f) => C.samePerson(f, p.name) || (f.wikipedia && page(f.wikipedia) === page(p.wikipedia)));
-    const quotes = figs.map((f) => plain(f.quote)).join(" | ");
+    const quotes = figs.flatMap((f) => [f.quote, ...(Array.isArray(f.evidence) ? f.evidence.map((e) => e && e.quote) : [])]).map(plain).join(" | ");
     const named = new Set();
     for (const p of lib.peopleCatalog()) {
       const n = plain(p.name);
@@ -205,7 +205,7 @@ function keyFigureChecks(a, id, sources, errors, warnings) {
     for (const name of named) warnings.push(`keyFigures: ${name} is named in a key figure's quote but isn't a key figure; add them if the defining sources present ${a.name || id} as their thought or political legacy`);
   }
   if (!PEOPLE && Array.isArray(a.keyWorks)) for (const [i, w] of a.keyWorks.entries()) {
-    if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "author", "wikipedia", "source", "quote" } (and "authorWikipedia" if the author has an article, "work" if you cite it)`); continue; }
+    if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "author", "wikipedia", "evidence": [{ "source", "quote" }, ...] } (and "authorWikipedia" if the author has an article, "work" if you cite it)`); continue; }
     const src = w.work === undefined ? null : sources.find((s) => s.id === w.work);
     if (w.work !== undefined && !src) errors.push(`keyWorks[${i}]: unknown source '${w.work}' in "work"`);
     else if (src && src.kind !== "primary" && src.kind !== "program") errors.push(`keyWorks[${i}]: "work" must be the work itself, a primary or program source (${w.work} is ${src.kind})`);

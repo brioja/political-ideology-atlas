@@ -78,7 +78,7 @@ try {
   // Key figures: no limit, people only, each with a Wikipedia article URL when given (and a role and article in a pass).
   ok("key figures left out", E(base(), (a) => { delete a.keyFigures; }));
   ok("a secondary source stands in for a reference one", E(base(), (a) => { a.sources[0].kind = "secondary"; }));
-  const fig = () => ({ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" });
+  const fig = () => ({ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s3", quote: "Vexmoor led it for years" }] });
   fails("key figures not a list", E(base(), (a) => { a.keyFigures = "Quentin Vexmoor"; }), /"keyFigures" must be a list/);
   fails("key figure with a bad Wikipedia article", E(base(), (a) => { a.keyFigures = [{ ...fig(), wikipedia: "https://example.org/x" }]; }), /keyFigures\[0\]: wikipedia must be an en\.wikipedia\.org article URL/);
   fails("organisation as a key figure", E(base(), (a) => { a.keyFigures = [{ organisation: "Vexmoor League", source: "s3", quote: "Quentin Vexmoor wrote its founding text" }]; }), /an organisation isn't a key figure/);
@@ -115,6 +115,16 @@ try {
     const bare = errsFor(work());
     assert(bare.some((l) => /needs its "author"/.test(l)) && bare.some((l) => /needs "wikipedia"/.test(l)), `--dir: expected a bare key work to need its author and article, got:\n${bare.join("\n")}`);
     assert.deepStrictEqual(errsFor(work({ author: "Quentin Vexmoor", wikipedia: null })), [], "--dir: an author and a null article are enough"); n += 2; }
+  // "Named twice" in a pass (Brandon, 2026-11-26): "evidence" with two passages, for key works and key figures; an older
+  // audit's one "source" and "quote" is counted as before.
+  { const passProblems = (a, re) => coatrack.check(subject.id, a, { strict: true, pass: true }).problems.filter((p) => re.test(p));
+    const twice = [{ source: "s1", quote: "first in the Founding Rescript" }, { source: "s1", quote: "the Founding Rescript is its canon" }];
+    assert.deepStrictEqual(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title: "Founding Rescript", work: "s4", evidence: twice }]; }), /s4|key work/), [], "a pass ties a key work by two passages"); n++;
+    assert.ok(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [work({ work: "s4" })]; }), /key work "Founding Rescript": needs two quotes or more/).length, "a pass's key work needs two passages"); n++;
+    assert.ok(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title: "Founding Rescript", work: "s4", evidence: [twice[0], twice[0]] }]; }), /source s4 \(primary\)/).length, "one passage twice doesn't tie the work"); n++;
+    assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" }]; }), /key figure "Quentin Vexmoor": needs two quotes or more/).length, "a pass's key figure needs two passages"); n++;
+    assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", evidence: [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s2", quote: "We hold that Vexmoor" }] }]; }), /s2 is a primary source; the evidence comes from defining sources/).length, "a key figure's evidence comes from defining sources"); n++;
+  }
   fails("key work whose work is scholarship", E(base(), (a) => { a.keyWorks = [work({ work: "s3" })]; }), /keyWorks\[0\]: "work" must be the work itself/);
   // Missing statements: text, value, rationale, sources, and the rule of two quotes.
   warns("missing statements absent", E(base(), (a) => { delete a.missingStatements; }), /no "missingStatements"/);

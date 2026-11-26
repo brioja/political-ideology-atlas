@@ -149,7 +149,7 @@ function report(r, sid) {
   if (!r.definingChecked.length) lines.push(`\nNo defining source has a saved copy, so titles couldn't be counted there.`);
   else if (!r.titles.length) lines.push(`\nThe defining sources (${r.definingChecked.join(", ")}) never name ${sid} by any form of its title.`);
   else {
-    lines.push(`\nThe defining sources name ${sid} by title (two mentions tie it: list that form in "keyWorks" with "work": "${sid}" and a quote):`);
+    lines.push(`\nThe defining sources name ${sid} by title (two mentions tie it: list that form in "keyWorks" with "work": "${sid}" and a quote naming it from each, in "evidence"):`);
     for (const t of r.titles.sort((x, y) => y.total - x.total).slice(0, MAX_PER_PLACE)) lines.push(`  "${t.form}": ${t.total} (${t.per.map(([i, n]) => `${i} ${n}`).join(", ")}) ${t.quote}`);
   }
   return lines.join("\n");
