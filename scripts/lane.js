@@ -47,11 +47,12 @@ const tmuxWindow = () => {
   const r = spawnSync("tmux", ["display-message", "-p", "-t", process.env.TMUX_PANE, "#I"], { encoding: "utf8" });
   return r.status === 0 && /^\d+$/.test(r.stdout.trim()) ? r.stdout.trim() : null;
 };
-// The model each engine runs, named exactly (Brandon, 2026-11-26): the driver records it as a pass's auditor, so the
-// model that runs and the one recorded can't differ. Codex runs the model its config sets, read here.
-const MODEL = arg("--engine") === "codex"
+// The model a pass ran on, recorded as its auditor by the driver (Brandon, 2026-11-26). Claude runs the latest Sonnet
+// (the "sonnet" alias), and each session's output names the model it resolved to, kept here; Codex runs the model its
+// config sets, read here and passed explicitly.
+let MODEL = arg("--engine") === "codex"
   ? ((() => { try { return /^model\s*=\s*"([^"]+)"/m.exec(fs.readFileSync(path.join(require("os").homedir(), ".codex", "config.toml"), "utf8"))[1]; } catch { return null; } })())
-  : "claude-sonnet-5-5";
+  : null;
 const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane") || tmuxWindow() || `${ENGINE}-${KIND}`, RESUMES = +arg("--resumes", 6);
 const UNTIL = arg("--until"), DRY = process.argv.includes("--dry");
 const SUBJECTS = arg("--subjects") ? arg("--subjects").split(",").filter(Boolean) : null, GAP_EXCEPTION = arg("--gap-exception");
@@ -168,17 +169,12 @@ function seedLaterPass(id) {
   // The pass's own fields are the driver's, not the session's (Brandon, 2026-11-26: the first seeded pass, of
   // Anarcha-feminism, was carried on as earlier work and kept its old date, no "rules" and no "passes"): today's
   // rules, so every check judges the draft by them; today's date; the earlier passes listed (an audit with one pass
-  // lists it from its "auditor" and "auditedAt"), and today's under the lane's model (MODEL), added to "auditor" too.
+  // lists it from its "auditor" and "auditedAt"). Today's entry and the model in "auditor" go in once a session has run
+  // (exceptGap), when the model is known.
   const today = new Date().toISOString().slice(0, 10);
   if (!Array.isArray(a.passes) || !a.passes.length) a.passes = [{ auditor: [].concat(a.auditor || [])[0], auditedAt: a.auditedAt }];
   a.rules = require("./validate").CURRENT_RULES;
   a.auditedAt = today;
-  if (MODEL) {
-    const auditors = [].concat(a.auditor || []);
-    if (!auditors.includes(MODEL)) auditors.push(MODEL);
-    a.auditor = auditors.length === 1 ? auditors[0] : auditors;
-    a.passes.push({ auditor: MODEL, auditedAt: today });
-  }
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
   log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources`);
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--dir", path.relative(ROOT, OUT), id]);
@@ -186,7 +182,7 @@ function seedLaterPass(id) {
   // finished result, not a problem, and handing it over as one had sessions overturn the record (2026-11-24, Extremism).
   const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`);
   if (lines.length) log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
-  const fields = ` The driver has set "rules", "auditedAt", "auditor" and "passes" for this pass; leave them as they are.`;
+  const fields = ` The driver sets "rules", "auditedAt", "auditor" and "passes" for this pass; leave them to it.`;
   const nulled = fields + (w.nulled ? ` The driver started the draft from the committed audit and took out its Wikipedia citations (a tertiary source): ${w.nulled} answer(s) that rested on them alone are null now and open like any other.` : " The driver started the draft from the committed audit.");
   laterNotes.set(id, `\n\nThis is a later pass.${nulled}${lines.length ? ` Checked under today's rules (\`node scripts/validate.js ${flag}--as-current --dir scratchpad/lane-out/${LANE} ${id}\`), the draft has these problems; fix each:\n${lines.join("\n")}` : ""}`);
 }
@@ -306,8 +302,12 @@ async function session(prompt, thread, env = {}) {
     r = await runAsync("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt], env);
     for (const line of (r.stdout || "").split("\n")) { try { const e = JSON.parse(line); if (e.type === "thread.started") id = e.thread_id; } catch {} }
   } else {
-    r = await runAsync("claude", ["-p", prompt, "--model", MODEL, "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
-    try { id = JSON.parse(r.stdout).session_id || id; } catch {}
+    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
+    try {
+      const out = JSON.parse(r.stdout);
+      id = out.session_id || id;
+      MODEL = Object.keys(out.modelUsage || {}).find((m) => /sonnet/.test(m)) || MODEL;
+    } catch {}
   }
   if (r.status) log(`${ENGINE} exited ${r.status}: ${failure(r.stderr, 1) || stdoutError(r.stdout)}`);
   return id;
@@ -337,7 +337,12 @@ function exceptGap(id) {
     let changed = false;
     if (passes && a.auditedAt === today && !passes.some((p) => p.auditedAt === today)) {
       const auditor = MODEL || [].concat(a.auditor || []).pop();
-      if (auditor) { passes.push({ auditor, auditedAt: today }); changed = true; log(`${id}: driver added the ${today} pass to "passes"`); }
+      if (auditor) {
+        passes.push({ auditor, auditedAt: today });
+        const auditors = [].concat(a.auditor || []);
+        if (!auditors.includes(auditor)) { auditors.push(auditor); a.auditor = auditors.length === 1 ? auditors[0] : auditors; }
+        changed = true; log(`${id}: driver added the ${today} pass by ${auditor} to "passes"`);
+      }
     }
     const last = passes && [...passes].sort((x, y) => String(x.auditedAt).localeCompare(String(y.auditedAt))).pop();
     if (GAP_EXCEPTION && last && !last.gapException && last.auditedAt === today) {
