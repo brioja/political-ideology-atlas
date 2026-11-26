@@ -75,8 +75,9 @@ async function fromAudit(file) {
   try { a = lib.readJson(file); } catch { return []; }
   const src = new Map((a.sources || []).map((s) => [s.id, s]));
   const out = (a.keyWorks || []).map((k) => {
-    const s = src.get(k.work) || {}, author = s.author || "";
-    return { title: k.title, author, surname: author.split(" ").pop() || "", year: "", from: `audit key work (${s.title || k.work})` };
+    // A key work names its author itself; "work" (the source holding its text) is optional.
+    const s = src.get(k.work) || {}, author = k.author || s.author || "";
+    return { title: k.title, author, surname: author.split(" ").pop() || "", year: "", from: `audit key work${s.title ? ` (${s.title})` : ""}` };
   });
   const { bibliography } = require("./books-to-look-for");
   for (const f of a.keyFigures || []) {
