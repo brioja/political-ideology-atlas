@@ -40,7 +40,7 @@ const days = (a, b) => (Date.parse(b) - Date.parse(a)) / 864e5;
 const reauditGap = (date) => Math.ceil(days(PROJECT_START, date) / 2);
 // The earliest date a later pass on this audit may carry ("" when there is no earlier pass).
 const isWikipediaUrl = (u) => { try { return /(^|\.)wikipedia\.org$/.test(new URL(u).host); } catch { return false; } };
-// The date of an audit's latest pass ("auditedAt" keeps the first pass's date).
+// The date of an audit's latest pass ("auditedAt" holds the same date).
 const lastPassDate = (a) => (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop() || "";
 const nextPassFrom = (a) => { const d = lastPassDate(a); // gap >= (next - start) / 2  <=>  next >= d + (d - start): the earliest next pass waits as long as the project was old at d.
   return d ? new Date(Date.parse(d) + Math.max(0, days(PROJECT_START, d)) * 864e5).toISOString().slice(0, 10) : ""; };
@@ -306,7 +306,7 @@ function validate(id) {
   if (!PEOPLE) {
     // Audits committed before the check (480478e1) only get warnings (adding aliases to one later
     // doesn't change that); every audit written after it, or with a pass dated 2026-11-06 on, is held to it.
-    // The latest pass decides, not "auditedAt" (the first pass): a later pass is written under today's checks.
+    // The latest pass decides: a later pass is written under today's checks.
     const recentPass = lastPassDate(a) >= "2026-11-06";
     const strict = AS_CURRENT || recentPass || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');

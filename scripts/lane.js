@@ -112,6 +112,8 @@ function commit(message, paths) {
   return r.status ? `commit failed: ${(r.stderr || r.stdout).trim().split("\n").slice(0, 3).join(" / ")}` : "";
 }
 const draft = (id) => path.join(OUT, `${id}.json`);
+// validate.js's re-audit gap error (scripts/validate.js "passes").
+const GAP_ERROR = /"passes": a later pass comes at least \d+ days/;
 const phases = require("./phases");
 const flag = PEOPLE ? "--people " : "";
 
@@ -120,7 +122,20 @@ const tried = new Set(); // subjects this run already gave up on (not done after
 const integrated = new Set(); // subjects this run integrated (--subjects)
 function nextSubject() {
   const done = doneIds(), lib = require("./lib");
-  if (SUBJECTS) return SUBJECTS.find((id) => !tried.has(id) && !integrated.has(id)) || null;
+  if (SUBJECTS) {
+    for (const id of SUBJECTS) {
+      if (tried.has(id) || integrated.has(id)) continue;
+      // The queue (pending.js) waits out the re-audit gap; --subjects did not, and three passes ran that weren't due
+      // (Brandon, 2026-11-26). A subject not yet due needs --gap-exception; a draft already started is carried on.
+      const committed = PEOPLE ? lib.personPath(id) : lib.profilePath(id), today = new Date().toISOString().slice(0, 10);
+      if (!GAP_EXCEPTION && !fs.existsSync(draft(id)) && fs.existsSync(committed)) {
+        const due = require("./validate").nextPassFrom(JSON.parse(fs.readFileSync(committed, "utf8")));
+        if (due > today) { log(`${id}: not due for a later pass until ${due} (the re-audit gap); skipped. --gap-exception "<why> (<maintainer>, <date>)" runs it early`); tried.add(id); continue; }
+      }
+      return id;
+    }
+    return null;
+  }
   const people = new Set(lib.peopleCatalog().map((p) => p.id));
   for (const f of fs.readdirSync(OUT)) {
     const id = f.endsWith(".claim") ? f.slice(0, -6) : null;
@@ -351,13 +366,26 @@ function stdoutError(out) {
 
 // A later pass's entry in "passes" (Brandon, 2026-11-26): a session that dates the draft today but doesn't list the pass
 // (the phased run of 2026-11-26 left it out, so the re-audit gap counted from the pass before) gets it from the driver.
+// The pass's date and the earlier passes are the driver's too: a fix session met the gap error by taking out today's
+// entry and dating the draft back to the previous pass (Economic liberalism, 2026-11-26), so the earlier passes are
+// put back from the committed audit and a draft dated on or before the last of them is dated today.
 // Then --gap-exception: the newest entry gets the maintainer's exception (validate.js), unless it has one.
 function exceptGap(id) {
   if (!fs.existsSync(draft(id))) return;
   try {
     const a = JSON.parse(fs.readFileSync(draft(id), "utf8")), today = new Date().toISOString().slice(0, 10);
-    const passes = Array.isArray(a.passes) ? a.passes : null;
     let changed = false;
+    const committedFile = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
+    if (fs.existsSync(committedFile)) {
+      const c = JSON.parse(fs.readFileSync(committedFile, "utf8"));
+      const earlier = Array.isArray(c.passes) && c.passes.length ? c.passes : [{ auditor: [].concat(c.auditor || [])[0], auditedAt: c.auditedAt }];
+      if (!Array.isArray(a.passes)) a.passes = [];
+      const missing = earlier.filter((p) => p && p.auditedAt && !a.passes.some((q) => q && q.auditedAt === p.auditedAt));
+      if (missing.length) { a.passes.unshift(...missing); changed = true; log(`${id}: driver put back the earlier pass(es) ${missing.map((p) => p.auditedAt).join(", ")} in "passes"`); }
+      const prev = earlier.map((p) => p && p.auditedAt).filter(Boolean).sort().pop() || "";
+      if (!a.auditedAt || a.auditedAt <= prev) { log(`${id}: draft dated ${a.auditedAt || "(none)"}, not after the last pass (${prev}); driver dated it ${today}`); a.auditedAt = today; changed = true; }
+    }
+    const passes = Array.isArray(a.passes) ? a.passes : null;
     if (passes && a.auditedAt === today && !passes.some((p) => p.auditedAt === today)) {
       const auditor = MODEL || [].concat(a.auditor || []).pop();
       if (auditor) {
@@ -566,6 +594,8 @@ while (timeLeft()) {
     let added = "";
     if (!PEOPLE) {
       let problems = fs.existsSync(draft(id)) ? scopeProblems(id) : "";
+      // A pass the re-audit gap doesn't allow has no fix a session can make: it stops here, its draft kept.
+      if (GAP_ERROR.test(problems)) { log(`${id}: the re-audit gap doesn't allow this pass yet; stopped, draft kept:\n${problems.split("\n").filter((l) => GAP_ERROR.test(l)).join("\n")}`); tried.add(id); continue; }
       for (let n = 1; problems && thread && n <= FIX_ROUNDS; n++) {
         log(`${id}: scope check, fix round ${n} (${problems.split("\n").length} problem(s))`);
         thread = await session(SCOPE_FIX(id, problems), thread);
@@ -639,6 +669,7 @@ while (timeLeft()) {
   }
   exceptGap(id);
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
+  if (GAP_ERROR.test(errors)) { log(`${id}: the re-audit gap doesn't allow this pass yet; no fix rounds, draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); for (const f of [scopeMark(id), localMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f); continue; }
   for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); exceptGap(id); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
   if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); for (const f of [scopeMark(id), localMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f); continue; }
   // The DONE line is only the session's "finished" mark: the driver counts the answers and the placement itself.
