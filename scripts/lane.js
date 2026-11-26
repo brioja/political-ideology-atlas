@@ -24,7 +24,9 @@
 //       (scripts/drop-source.js --none-fit), before any answer phase.
 //     - Local: answers from local texts only (START for people, ANSWER in the scope session for ideologies), until
 //       <id>.local exists, in a fresh session. Claude turns run with AUDIT_PHASE=local, so .claude/hooks/local-only.js
-//       refuses the web. Then validate.js (all but the open statements), fixed in that session (LOCAL_FIX).
+//       refuses the web. Then validate.js (all but the open statements): failing sources go by script
+//       (scripts/cleanup.js dropFailing), the session fixes the rest (LOCAL_FIX), and a draft still invalid stops
+//       there (<id>.invalid.json, no web phase).
 //     - Web: scripts/phases.js strips the settled answers into <id>.web.json; a fresh session (WEB_START, resumed
 //       with RESUME) answers the open ones there until the subject has its DONE.txt line; phases.js merges them back.
 //  3. Integrate (under a lock shared by all lanes): validate (errors go back to the
@@ -248,6 +250,16 @@ function scopeProblems(id) {
 }
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to its line in scratchpad/lane-out/${LANE}/DONE.txt.`;
 const RESUME_LOCAL = (id) => `Go on with the local phase of \`${id}\` where you left off (local texts only), through to creating scratchpad/lane-out/${LANE}/${id}.local.`;
+// The sources validate.js fails, out of the answers (scripts/cleanup.js dropFailing): logged, and returned as a note
+// for the next session.
+function dropFailing(id, when) {
+  try {
+    const f = require("./cleanup").dropFailing(OUT, id, PEOPLE), w = f.wikipedia.kept + f.wikipedia.nulled;
+    if (!f.untied.length && !w) return "";
+    log(`${id}: ${when}, the driver took out of the answers${f.untied.length ? ` untied source(s) ${f.untied.join(", ")}` : ""}${w ? `${f.untied.length ? " and" : ""} Wikipedia citations (${f.wikipedia.nulled} answer(s) nulled)` : ""}`);
+    return `\n\nThe driver took out of the answers ${[f.untied.length ? `${f.untied.join(", ")} (no tie to the subject was found; scripts/drop-source.js)` : "", w ? "Wikipedia citations (a tertiary source)" : ""].filter(Boolean).join(" and ")}. Answers that rested on them alone are null and open; rewrite any rationale that still repeats their claims from the sources the answer still cites.`;
+  } catch (e) { log(`${id}: ${when}, dropping failing sources failed: ${e.message.split("\n")[0]}`); return ""; }
+}
 // The check after the local phase (Brandon, 2026-11-26): full validate.js but for the statements still without an
 // answer, which the web phase takes; fixed in the local phase's session, still local-only.
 const LOCAL_FIX = (id, errors) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`; your subject is \`${id}\`. This is still the local phase (local texts only; no web searches or page fetches). validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` (statements without an answer are left to the web phase that follows), and reply.`;
@@ -493,12 +505,7 @@ while (timeLeft()) {
       if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again):\n${problems}`);
       // Sources the scope phase couldn't tie to the ideology leave the answers before the local phase (Brandon,
       // 2026-11-26): an answer resting on one alone is nulled and open to both answer phases.
-      const untied = [...new Set([...problems.matchAll(/source (s\d+) \([^)]*\) doesn't name/g)].map((m) => m[1]))];
-      for (const sid of untied) {
-        const r = run("node", ["scripts/drop-source.js", id, sid, "--dir", path.relative(ROOT, OUT), "--none-fit"]);
-        log(`${id}: untied source dropped after the scope phase: ${(r.stdout || r.stderr).split("\n")[0]}`);
-      }
-      if (untied.length) added += `\n\nThe driver took ${untied.join(", ")} out of the answers: the scope phase found no tie to the ideology for them (\`scripts/drop-source.js\`). Answers that rested on them alone are null and open; rewrite any rationale that still repeats their claims from the sources the answer still cites.`;
+      if (/doesn't name/.test(problems)) added += dropFailing(id, "after the scope phase");
       // The books by the key figures and key works the scope phase settled (Brandon, 2026-11-25).
       const before = new Set((startBooks.get(id) || []).map((b) => b.file));
       const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
@@ -514,15 +521,22 @@ while (timeLeft()) {
     }
     if (!local() || !fs.existsSync(draft(id))) { log(`${id}: local phase not done; left for the next start`); tried.add(id); continue; }
   }
-  // The local phase's draft, checked in full but for the open statements, and fixed in that session.
+  // The local phase's draft, checked in full but for the open statements (Brandon, 2026-11-26). Sources that fail
+  // go by script first (cleanup.js), then the local session fixes the rest; the web phase starts only on a clean draft.
   if (!done() && !fs.existsSync(webDraft(id))) {
-    let errors = localErrors(id);
+    let errors = localErrors(id), note = "";
+    if (errors) { note = dropFailing(id, "after the local phase"); errors = localErrors(id); }
     for (let n = 1; errors && n <= FIX_ROUNDS; n++) {
       log(`${id}: local phase, validator errors, fix round ${n}`);
-      thread = await session(LOCAL_FIX(id, errors), thread, LOCAL_ENV);
+      thread = await session(LOCAL_FIX(id, errors) + (n === 1 ? note : ""), thread, LOCAL_ENV);
       errors = localErrors(id);
     }
-    if (errors) log(`${id}: local phase left ${errors.split("\n").length} validator error(s); the final validate checks them again`);
+    if (errors) {
+      log(`${id}: still invalid after the local phase's ${FIX_ROUNDS} fix rounds; no web phase, draft left for review:\n${errors}`);
+      fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`));
+      for (const f of [scopeMark(id), localMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f);
+      tried.add(id); continue;
+    }
   }
   // Phase 3: a fresh session searches the web for the statements still open (scripts/phases.js).
   if (!done()) {
