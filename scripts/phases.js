@@ -10,13 +10,19 @@
 //   node scripts/phases.js strip  <draft.json> <web.json> [--people]   writes the web phase's draft, prints the open count
 //   node scripts/phases.js merge  <draft.json> <web.json> [--people]   writes the merged audit over <draft.json>
 // The web phase's draft keeps everything but the settled answers (sources, so new ones continue the ids; scope, key
-// figures). The merge takes the web draft as the base (its sources, notes, passes) with the local phase's answers.
+// figures) and the local phase's account of its own search ("notes", "notFound", "booksNotUsed"): Phyllis Schlafly's
+// local notes left the rest to the web phase, and the web session read the search as mostly done (Brandon,
+// 2026-11-26). The merge takes the web draft as the base (its sources, passes) with the local phase's answers, and
+// joins both phases' notes, notFound and booksNotUsed.
 const fs = require("fs");
 const lib = require("./lib");
 
 const actionIds = (audit) => new Set((audit.sources || []).filter((s) => s.evidence === "action").map((s) => s.id));
 const citesAction = (ans, actions) => (ans.sources || []).some((s) => actions.has(s));
 const known = (ans) => ans && ans.value !== null && ans.value !== undefined;
+
+// What the local phase writes about its own search; kept out of the web phase's draft.
+const LOCAL_ONLY = ["notes", "notFound", "booksNotUsed"];
 
 // Statement ids the web phase gets: unanswered, and for a person answers without a record.
 function open(audit, people) {
@@ -27,6 +33,7 @@ function open(audit, people) {
 function strip(audit, people) {
   const ids = open(audit, people), answers = audit.answers || {};
   const web = { ...audit, answers: {} };
+  for (const k of LOCAL_ONLY) delete web[k];
   // A statement with no entry at all (added since the audit, or skipped) gets an empty one, so the web phase sees it.
   // A null goes over without the local phase's reason (a null carries none: scripts/cleanup.js).
   for (const id of ids) web.answers[id] = known(answers[id]) ? answers[id] : { value: null, sources: [], rationale: "" };
@@ -43,7 +50,13 @@ function merge(local, web, people) {
     if (!known(before) || citesAction(ans, actions)) { answers[id] = ans; if (JSON.stringify(ans) !== JSON.stringify(before)) taken.push(id); }
     else kept.push(id);
   }
-  return { audit: { ...web, answers }, taken, kept, ignored };
+  const audit = { ...web, answers };
+  for (const k of LOCAL_ONLY) {
+    const both = [local[k], web[k]].filter((v) => v !== undefined && v !== null && v !== "" && !(Array.isArray(v) && !v.length));
+    if (!both.length) delete audit[k];
+    else audit[k] = k === "notes" ? both.map(String).join("\n\n") : both.flatMap((v) => (Array.isArray(v) ? v : [v]));
+  }
+  return { audit, taken, kept, ignored };
 }
 
 // Before a later pass (Brandon, 2026-11-26): answers lose their Wikipedia citations, which validate.js refuses
