@@ -12,6 +12,8 @@ agents too. This file adds what matters when running audits.
   signal steps. Lanes write only their own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`.
   The serial-audits workflow it replaced was removed 2026-11-20 (Brandon): the lanes did all it did, and the subject
   lanes left for it went unaudited while it wasn't running.
+- **Stop lanes on a problem:** any agent may stop a running lane when its audits are going wrong (Ctrl-C twice, or
+  `kill -INT` the driver twice: it quits at once and keeps the draft), then report why. Brandon, 2026-11-26.
 - **Give each agent its own scratchpad folder** (`scratchpad/<id>/`). Agents sharing one folder
   overwrite each other's helper scripts.
 - **Fetching goes through cached tools:** pages `node scripts/get.js <id> <url>`, Wikipedia `scripts/wiki.js`,
