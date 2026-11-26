@@ -80,6 +80,16 @@ if (!stillCited) a.sources = a.sources.filter((s) => s.id !== sid);
 
 fs.writeFileSync(file, lib.formatAudit(a));
 console.log(`${sid} (${src.title}) dropped from ${kept + nulled} answer(s) in ${path.relative(process.cwd(), file)}: ${kept} kept on their other sources, ${nulled} nulled; ${stillCited ? "the source stays listed for what still cites it" : "nothing cites it now, so it is no longer listed"}`);
+// During a lane session the answers not being worked on are kept aside in <dir>/.settled/<id>.json (scripts/lane.js),
+// so the file above shows only part of what cites the source (2026-11-26: two scope sessions dropped sources that 58
+// and 79 kept-aside answers cited, after this script reported "dropped from 0 answer(s)").
+if (DIR) {
+  let aside = {};
+  try { aside = JSON.parse(fs.readFileSync(path.resolve(DIR, ".settled", `${id}.json`), "utf8")); } catch {}
+  const cite = Object.values(aside).filter((x) => x && x.value !== null && (x.sources || []).includes(sid));
+  const alone = cite.filter((x) => x.sources.length === 1).length;
+  if (cite.length) console.log(`${cite.length} more answer(s) cite ${sid}: they are kept aside while you work, and lose it when they come back (${alone} rest on it alone and become null)`);
+}
 if (requests || figures) console.log(`also dropped: ${requests} missing statement(s) and ${figures} key figure(s) that rested on ${sid} alone`);
 const others = ["aliases", "keyFigures", "keyWorks"].filter((k) => citesIt(a[k]));
 if (others.length) console.log(`still cited in ${others.join(", ")}: take out the entries that rest on ${sid}`);
