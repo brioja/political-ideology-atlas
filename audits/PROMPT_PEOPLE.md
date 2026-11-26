@@ -11,7 +11,7 @@ Inputs (filled in by the runner):
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
 run the validator command the runner gives and fix every error.
 
-Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, research to the end)
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, research to the end)
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
 is specific to people.
 
@@ -64,14 +64,13 @@ null unless they spoke to them.
 Where the person has a record on a statement, answer from the record alone and leave their words
 on it out (AUDIT_RULES.md, "Record over words"): elections they rigged or cancelled, term limits
 they wrote themselves out of, a single party they kept in power while praising pluralism. A record
-that itself points both ways is 0 at `low`. The record answers even where they were silent: what a ruler did with power themselves (inheriting and keeping
+that itself points both ways is 0. The record answers even where they were silent: what a ruler did with power themselves (inheriting and keeping
 office within a family, a cult of their own portraits, arming groups abroad, a security apparatus
 drawn from one sect) answers the matching statement from the record even if they never spoke to it.
 A repudiation (in court, in exile, late in life) is words and does not change a record. The same
 goes for campaign promises: for someone who then governed, their time in office answers the
 statement and the pledge is left out (balanced budgets with debt tripled, free trade with new
-tariffs, civil liberties with indefinite detention signed into law); a pledge alone, with no
-record, is never `high`.
+tariffs, civil liberties with indefinite detention signed into law).
 
 A state's use of force (war, counter-insurgency, executions) is not "political violence":
 `political-violence-never` is about violence for political ends outside lawful authority (coups,
@@ -82,8 +81,8 @@ Words someone delivered as their own count as theirs, whoever drafted them (a sp
 ghostwritten book). Endorsing a candidate, attending a march or hosting an event is not a position on any statement.
 A relative's or employer's positions are never theirs.
 
-Contested or mixed evidence is still evidence: answer it at `low` confidence (or 0 if it points
-both ways), never null. A person's best-known positions and controversies (what their record is
+Contested or mixed evidence is still evidence: answer it (0 if it points both ways), never
+null. A person's best-known positions and controversies (what their record is
 famous or criticised for, e.g. a policy of segregation, a military intervention, a signature law)
 must be answered whenever the record exists; check them before finishing. Read the whole statement
 list, not just its first part: before finishing, go through every statement still null once and
@@ -96,27 +95,25 @@ position there. Judging whether a secondhand outlet is reliable or biased is not
 on, so evidence is ranked by kind. Answer from the highest tier that has evidence; where tiers
 disagree, the higher tier wins.
 1. **Primary record:** laws signed, votes, orders, official acts, court records, cited from the
-   document itself. Can be `high`.
+   document itself.
 2. **Own words:** speeches, interview transcripts, books, letters, op-eds, posts, party programmes
-   they led, cited from the original. Can be `high`. Used only where tiers 1 and 3 have no record on
+   they led, cited from the original. Used only where tiers 1 and 3 have no record on
    the statement (record over words, above).
 3. **Secondhand report of the record:** a press, NGO or scholarly report (a secondary source) stating
-   that a vote, law, arrest, election result or other act happened. `medium` at most, but where it exists tier 2 is left out:
+   that a vote, law, arrest, election result or other act happened. Where it exists, tier 2 is left out:
    a ruler's pro-democracy speeches don't outweigh reported arrests of opponents. A scholarly
    reference work or biography stating their views (AUDIT_RULES.md, section 2) is tier 3 too.
 4. **Ancient or attributed accounts:** for figures whose own words and records don't survive, the
    oldest surviving source reporting what they said or did (Plato, Suetonius, the sutras,
    collected sayings, a contemporary biographer), cited as that source, not a modern summary.
-   `medium` at most, `low` where the account is late or disputed.
 5. **Secondhand account of views, and tertiary compilations:** a reporter's paraphrase of what
    someone thinks; and Wikipedia, OnTheIssues and similar compilations, for views and record alike.
    Never evidence on its own: use it only to find tiers 1-4 (follow its citations to the report or
    document and cite that, checking the original as AUDIT_RULES.md, section 2 says). If nothing
    better turns up, the answer is null.
 
-Confidence follows AUDIT_RULES.md, section 4: `high` is tier 1 or 2 on that specific statement,
-cited from the primary source; tiers 3 and 4 are `medium` at most. Cosponsoring or voting for a bill
-alone is `medium`: it shows support for the bill, not for every way a statement could be read.
+Cosponsoring or voting for a bill shows support for the bill, not for every way a statement could be
+read.
 
 ## 3. Output format
 
@@ -139,8 +136,8 @@ alone is `medium`: it shows support for the bill, not for every way a statement 
     { "gutenberg": ["<id>"], "reason": "…" }, { "urls": ["<Miller Center speech URL>"], "reason": "…" }, { "corpus": "voteview", "reason": "…" }],
   "notFound": [{ "work": "<a source looked for and not found>", "tried": [{ "where": "<place 1>", "how": "<what you searched>" }, { "where": "<place 2>", "how": "…" }] }],
   "answers": {
-    "<statement id>": { "value": 1, "confidence": "high | medium | low", "rationale": "…", "sources": ["s1"] },
-    "<statement id>": { "value": null, "confidence": "low", "rationale": "No recorded position found.", "sources": [] }
+    "<statement id>": { "value": 1, "rationale": "…", "sources": ["s1"] },
+    "<statement id>": { "value": null, "rationale": "No recorded position found.", "sources": [] }
   },
   "notes": "Optional: changes of view over time, contested points."
 }

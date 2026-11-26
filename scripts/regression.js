@@ -2,9 +2,6 @@
 // repo), each one's top 5 recorded as a baseline, so a change shows whose results it moves.
 //   node scripts/regression.js                      compare today's matching with the baseline
 //   node scripts/regression.js --save               record today's results as the baseline
-//   node scripts/regression.js --variant nulls [--ids a,b]
-//                                                   the same takers, with those ideologies' stock
-//                                                   "no doctrine" zeros left out of matching (all if no ids)
 // Real links: one "label<TAB>link" per line in ~/work/regression-links.txt (not in the repo, since they
 // hold people's answers); their baseline is kept next to that file.
 // Simulated takers are drawn once, from a fixed seed over the ideologies shown, and the ideologies
@@ -13,15 +10,13 @@
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
-const { ROOT, readJson, profilePath, activeStatements, silentZeros } = require("./lib");
+const { ROOT, readJson, profilePath, activeStatements } = require("./lib");
 const { QUESTIONS, IDEOLOGIES, MODEL, PLACEMENT } = require(path.join(ROOT, "data.js"));
 const { decodeShare, modelFromParts, locate, fitTo, matchPeople } = require(path.join(ROOT, "pca.js"));
 // The shipped lines, as the page places everyone on them.
 const shipped = modelFromParts(IDEOLOGIES, MODEL, PLACEMENT);
 
 const arg = (name) => { const i = process.argv.indexOf(name); return i < 0 ? null : process.argv[i + 1]; };
-const variant = arg("--variant") || "current";
-const onlyIds = arg("--ids") ? new Set(arg("--ids").split(",")) : null;
 const BASELINE = path.join(ROOT, "audits", "regression-baseline.json");
 const LINKS = path.join(os.homedir(), "work", "regression-links.txt");
 const REAL_BASELINE = path.join(os.homedir(), "work", "regression-baseline-real.json");
@@ -31,20 +26,8 @@ if (activeStatements().map((s) => s.id).join() !== QUESTIONS.map((q) => q.id).jo
   process.exit(1);
 }
 
-// The "nulls" variant leaves silence out of matching: answers already null, and the low zeros
-// scripts/lib.js silentZeros() reads as silence in audits written before null existed.
-function profiles() {
-  return IDEOLOGIES.map((ideo) => {
-    if (variant !== "nulls" || (onlyIds && !onlyIds.has(ideo.id))) return ideo;
-    const audit = readJson(profilePath(ideo.id));
-    const silent = silentZeros(audit);
-    const profile = QUESTIONS.map((q, j) => (audit.answers[q.id].value === null || silent.has(q.id) ? null : ideo.profile[j]));
-    return { ...ideo, profile };
-  });
-}
-
 // Ranks by fit (pca.js's fit measure, as match() does): distance on the real lines, each ideology
-// located from its (variant's) profile. Positions are worked out once per set of profiles.
+// located from its profile. Positions are worked out once per set of profiles.
 const positions = new WeakMap();
 function rank(ideos, answers) {
   if (!positions.has(ideos)) positions.set(ideos, ideos.map((i) => locate(shipped, i.profile)));
@@ -58,11 +41,12 @@ const reseed = (k) => { seed = 20261029 + k; };
 const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
 const pick = (arr, k) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a.slice(0, k); };
 const clamp = (v) => Math.max(-2, Math.min(2, v));
-const firm = (id) => { const a = readJson(profilePath(id)).answers; return QUESTIONS.map((q) => (a[q.id].confidence !== "low" ? a[q.id].value : null)); };
+// An ideology's positions (a statement it hasn't answered yet counts as null).
+const firm = (id) => { const a = readJson(profilePath(id)).answers; return QUESTIONS.map((q) => (a[q.id] ? a[q.id].value : null)); };
 
-// The cases. An adherent answers 60 of its ideology's firm positions, a fifth nudged one notch; a mild
+// The cases. An adherent answers 60 of its ideology's known positions, a fifth nudged one notch; a mild
 // adherent answers the same, but strong answers soften and a third become "Neither"; a mixed taker
-// answers 30 firm positions of each of two ideologies; a mostly-neutral taker answers 60 random
+// answers 30 known positions of each of two ideologies; a mostly-neutral taker answers 60 random
 // statements, mostly 0 and ±1.
 const shownIds = new Set(IDEOLOGIES.map((i) => i.id));
 function cases(drawn) {
@@ -99,7 +83,7 @@ function cases(drawn) {
     for (const j of pick([...Array(n).keys()], 60)) { const r = rand(); answers[j] = r < 0.5 ? 0 : r < 0.75 ? -1 : r < 0.95 ? 1 : (rand() < 0.5 ? -2 : 2); }
     out.push({ suite: "neutral", label: `mostly-neutral taker ${k + 1}`, expect: null, answers });
   }
-  // A secular-only taker: Secularism's firm positions (it isn't shown) and 25 "Neither" answers.
+  // A secular-only taker: Secularism's known positions (it isn't shown) and 25 "Neither" answers.
   reseed(5);
   const sec = firm("secularism");
   for (let k = 0; k < 5; k++) {
@@ -121,13 +105,8 @@ function cases(drawn) {
   return out;
 }
 
-const ideos = profiles();
+const ideos = IDEOLOGIES;
 const savedBase = fs.existsSync(BASELINE) ? readJson(BASELINE) : null;
-if (variant === "nulls") {
-  const left = ideos.reduce((t, i) => t + i.profile.filter((v) => v == null).length, 0);
-  const zeros = IDEOLOGIES.reduce((t, i) => t + i.profile.filter((v) => v === 0).length, 0);
-  console.log(`Silence left out: ${left} of ${zeros} zeros${onlyIds ? " in all ideologies" : ""}.`);
-}
 const name = Object.fromEntries(IDEOLOGIES.map((i) => [i.id, i.name]));
 const drawnCases = cases(process.argv.includes("--save") ? null : savedBase && savedBase.drawn);
 // People: each taker's closest people, as the results page ranks them (matchPeople on the shipped lines).
@@ -149,7 +128,6 @@ if (arg("--rank")) {
 }
 
 const suites = [...new Set(results.map((r) => r.suite))];
-console.log(`Matching: ${variant}${onlyIds ? ` (${[...onlyIds].join(", ")})` : ""}`);
 for (const s of suites) {
   const rs = results.filter((r) => r.suite === s);
   const scored = rs.filter((r) => r.expect);
@@ -164,7 +142,6 @@ if (arg("--answers")) fs.writeFileSync(arg("--answers"), JSON.stringify(Object.f
 const save = (file, rs, drawn) => fs.writeFileSync(file, JSON.stringify({ ...(drawn ? { drawn } : {}),
   tops: Object.fromEntries(rs.map((r) => [r.label, r.top])), people: Object.fromEntries(rs.map((r) => [r.label, r.people])) }, null, 1) + "\n");
 if (process.argv.includes("--save")) {
-  if (variant !== "current") { console.error("Save the baseline from today's matching only."); process.exit(1); }
   save(BASELINE, results.filter((r) => r.suite !== "real"), drawnCases.drawn);
   if (results.some((r) => r.suite === "real")) save(REAL_BASELINE, results.filter((r) => r.suite === "real"));
   console.log(`Baseline saved (${results.length} takers).`);

@@ -31,7 +31,6 @@ const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the s
 // Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_IDEAS_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATES", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
-const CONFIDENCE = ["high", "medium", "low"];
 // The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT.md, PROMPT_PEOPLE.md).
 const CURRENT_RULES = 7;
 // Minimum gap between audit passes: half the project's age (days since PROJECT_START, the first commit) on the date
@@ -356,15 +355,15 @@ function validate(id) {
     // Every statement in the bank gets an answer, candidate or active: promotion only decides what the
     // matching uses, never whether an audit is complete (Brandon, 2026-11-18).
     if (!ans) { if (AS_CURRENT) unansweredIds.push(st.id); else errors.push(`no answer for '${st.id}'`); continue; }
+    // Answers carry no confidence (Brandon, 2026-11-26: it changed no result).
+    if ("confidence" in ans) errors.push(`${st.id}: answers have no "confidence" field any more; remove it`);
     // "No known position" (null) needs a reason; for an ideology, that its sources record none
-    // (audits/PROMPT.md), at low confidence.
+    // (audits/PROMPT.md).
     if (ans.value === null) {
       if (!ans.rationale) errors.push(`${st.id}: say why there is no known position`);
-      if (ans.confidence !== "low") errors.push(`${st.id}: a "no known position" answer is low confidence`);
       continue;
     }
     if (![-2, -1, 0, 1, 2].includes(ans.value)) errors.push(`${st.id}: value must be an integer from -2 to 2 or null`);
-    if (!CONFIDENCE.includes(ans.confidence)) errors.push(`${st.id}: confidence must be high, medium or low`);
     if (!ans.rationale || ans.rationale.trim().length < 20) errors.push(`${st.id}: rationale missing or too short`);
     if (!Array.isArray(ans.sources) || ans.sources.length === 0) errors.push(`${st.id}: cite at least one source`);
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
@@ -376,35 +375,16 @@ function validate(id) {
     }
   }
   if (unansweredIds.length) errors.push(`${unansweredIds.length} statements have no answer yet (added since this audit); a pass answers every statement`);
-  // A high-confidence answer rests on what a source says about that statement, so its rationale
-  // can't be one stock phrase shared with other high answers (lower the confidence instead).
-  const highs = new Map();
-  for (const st of statements) {
-    const ans = answers[st.id];
-    if (ans?.confidence !== "high" || !ans.rationale) continue;
-    const r = ans.rationale.trim().toLowerCase();
-    highs.set(r, [...(highs.get(r) || []), st.id]);
-  }
-  for (const ids of highs.values()) if (ids.length > 1) errors.push(`${ids.join(", ")}: high-confidence answers share one rationale; say what the source states for each, or lower the confidence`);
-  // A rationale that calls its own answer an inference, split or anachronistic is describing a low
-  // answer, and one that says the sources don't address it can't be high (audits/PROMPT.md).
-  const SELF_LOW = /\b(inferred|by inference|an inference|(adherents|supporters|members|followers|strands?) (are |were )?(split|divided)|(is|are|was|were|remains?) (split|divided|contested)|contested among|anachronis\w*|speculative)\b/i;
-  const NOT_LOW = /\bnot (contested|speculative)\b/i;
   // Rules 3 has no inferences, so a rationale has no reason to mention one, not even to deny it: it states the evidence
   // (Brandon, 2026-11-08, after "rather than an inference" read as a confession).
   const INFERENCE = /\b(inferred|inferring|by inference|an inference|inferences?)\b/i;
   const mentionsInference = [];
-  const UNADDRESSED = /\b(not addressed|never address\w*|not discussed|no documented position|sources? (do|does) not (discuss|address|mention))\b/i;
-  const selfLow = [], unaddressedHigh = [];
   for (const st of statements) {
     const ans = answers[st.id];
     if (!ans?.rationale) continue;
     if (a.rules >= 3 && ans.value !== null && INFERENCE.test(ans.rationale)) mentionsInference.push(st.id);
-    else if (ans.confidence === "medium" && SELF_LOW.test(ans.rationale) && !NOT_LOW.test(ans.rationale)) selfLow.push(st.id);
-    if (ans.confidence === "high" && UNADDRESSED.test(ans.rationale)) unaddressedHigh.push(st.id);
   }
   if (mentionsInference.length) errors.push(`${mentionsInference.join(", ")}: rationale mentions inference; rules 3 has none: state the evidence that settles the statement, and don't say whether it is an inference (or answer null if there is none)`);
-  if (selfLow.length) errors.push(`${selfLow.join(", ")}: rationale says inferred, split, contested or anachronistic, so the confidence is low`);
   // Every answer needs evidence (no inferences, for every subject since rules 3; Brandon 2026-11-08, after the check
   // had covered living people only): an answer whose rationale says it is inferred, or that nothing records the
   // position, is "no known position" instead.
@@ -413,13 +393,12 @@ function validate(id) {
     const guessed = statements.filter((st) => answers[st.id] && answers[st.id].value !== null && NO_EVIDENCE.test(answers[st.id].rationale || "")).map((st) => st.id);
     if (guessed.length) errors.push(`${guessed.join(", ")}: the rationale says there's no evidence of this position, so answer null (no known position)`);
   }
-  if (unaddressedHigh.length) errors.push(`${unaddressedHigh.join(", ")}: rationale says the sources don't address it, so the confidence is at most medium`);
   // Audits under the shared rules (audits/AUDIT_RULES.md, "rules": 2): an inference is marked, so
   // the uncertainty rule can leave it out, and Wikipedia alone is no evidence.
   if (a.rules >= lib.RULES) {
     const INFERRED = /\b(inferred|by inference|an inference)\b/i;
     const unmarked = statements.filter((st) => answers[st.id] && answers[st.id].value !== null
-      && INFERRED.test(answers[st.id].rationale || "") && !NOT_LOW.test(answers[st.id].rationale)
+      && INFERRED.test(answers[st.id].rationale || "") && !/\bnot (contested|speculative)\b/i.test(answers[st.id].rationale)
       && !/^Inferred:/.test(answers[st.id].rationale)).map((st) => st.id);
     if (unmarked.length) errors.push(`${unmarked.join(", ")}: an inferred answer's rationale begins "Inferred:"`);
     // Wikipedia, OnTheIssues and similar compilations are only a way to find evidence (AUDIT_RULES.md).
@@ -487,7 +466,7 @@ function validate(id) {
       const cited = (x.sources || []).map((sid) => byId.get(sid)).filter(Boolean);
       for (const sid of old.sources.filter((sid) => !(x.sources || []).includes(sid) && byId.has(sid))) {
         const left = require("./coatrack-check").namesLeft(x.rationale, byId.get(sid), cited);
-        if (left.length) errors.push(`${st.id}: source ${sid} was dropped but the rationale still names it ("${left.join('", "')}"), word for word as before: rewrite it from the sources it cites, without ${sid}'s claims, and change the value or confidence if they rested on it`);
+        if (left.length) errors.push(`${st.id}: source ${sid} was dropped but the rationale still names it ("${left.join('", "')}"), word for word as before: rewrite it from the sources it cites, without ${sid}'s claims, and change the value if it rested on them`);
       }
     }
   }
@@ -580,9 +559,7 @@ function validate(id) {
   // Not errors, but signs of a lazy audit worth a look.
   const vals = active.map((s) => answers[s.id]).filter(Boolean);
   const zeros = vals.filter((x) => x.value === 0).length;
-  const lows = vals.filter((x) => x.confidence === "low" && x.value !== null).length;
   if (zeros > active.length * 0.3) warnings.push(`${zeros} neutral answers (over 30%)`);
-  if (lows > active.length * 0.5) warnings.push(`${lows} low-confidence answers (over 50%)`);
   return { errors, warnings, excluded, coatrack: coatrackErrors, sources: [...sources, ...reading.map((r, i) => ({ id: `reading${i + 1}`, url: r.url })),
     ...(a.wikipedia ? [{ id: "wikipedia", url: a.wikipedia }] : [])] };
 }

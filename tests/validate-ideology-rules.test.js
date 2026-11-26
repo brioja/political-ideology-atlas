@@ -41,8 +41,8 @@ const st = lib.activeStatements().map((s) => s.id);
 const [A] = st;
 function base() {
   const answers = {};
-  for (const { id } of lib.allStatements()) answers[id] = { value: null, confidence: "low", rationale: "The sources record no position on this.", sources: [] };
-  answers[A] = { value: 1, confidence: "medium", rationale: "The manifesto states this position in its first section.", sources: ["s2"] };
+  for (const { id } of lib.allStatements()) answers[id] = { value: null, rationale: "The sources record no position on this.", sources: [] };
+  answers[A] = { value: 1, rationale: "The manifesto states this position in its first section.", sources: ["s2"] };
   return {
     id: subject.id, name: N, auditedAt: "2026-11-07", auditor: "claude-sonnet-5-5", rules: 4,
     summary: `A fixture audit of ${N} for the validator's rule tests.`, scope: "The doctrine as its defining sources set it out.",
@@ -75,8 +75,6 @@ try {
   fails("too little further reading", E(base(), (a) => { a.furtherReading.pop(); }), /"furtherReading" needs 2 to 4 items, has 1/);
   fails("too much further reading", E(base(), (a) => { for (let i = 0; i < 3; i++) a.furtherReading.push({ title: `More ${i}`, url: `https://example.org/more${i}` }); }), /"furtherReading" needs 2 to 4 items, has 5/);
   fails("further reading without a url", E(base(), (a) => { a.furtherReading[0].url = "not a url"; }), /furtherReading item needs a title and an http\(s\) url/);
-  // An ideology's null is low confidence.
-  fails("null at medium confidence", E(base(), (a) => { a.answers[st[1]].confidence = "medium"; }), /a "no known position" answer is low confidence/);
   // Key figures: no limit, people only, each with a Wikipedia article URL when given (and a role and article in a pass).
   ok("key figures left out", E(base(), (a) => { delete a.keyFigures; }));
   ok("a secondary source stands in for a reference one", E(base(), (a) => { a.sources[0].kind = "secondary"; }));
@@ -232,7 +230,7 @@ try {
   // A source behind a stated answer is tied to the ideology like any other.
   fails("a source behind a stated answer is tied", E(base(), (a) => {
     a.sources.push({ id: "s4", kind: "primary", evidence: "words", title: "An unrelated old text", url: "https://example.org/unrelated" });
-    a.answers[st[1]] = { value: 1, confidence: "medium", rationale: "Answered from the unrelated old text.", sources: ["s4"] };
+    a.answers[st[1]] = { value: 1, rationale: "Answered from the unrelated old text.", sources: ["s4"] };
   }), /source s4 \(primary\)/);
   // Rules 4 is shared with people: one case to show it runs for ideologies too.
   // Only people have a record: an ideology's sources need no "evidence" tag, and the record checks don't apply.

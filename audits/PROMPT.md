@@ -13,7 +13,7 @@ Inputs (filled in by the runner):
 Output: write `audits/profiles/{{id}}.json` in the format below. Then run
 `node scripts/validate.js {{id}}` and fix every error it reports until it passes.
 
-Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, research to the end)
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, research to the end)
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
 is specific to ideologies.
 
@@ -146,7 +146,7 @@ general remark that its content varies answers no particular statement (`null`).
 
 ## 4. Answering for an ideology
 
-- Where its sources take opposite positions on a statement, it is a split: 0 at `low`, a
+- Where its sources take opposite positions on a statement, it is a split: 0, a
   real position. Silence is `null`.
 - The ideology's stated position settles a statement only where the statement couldn't be true
   without contradicting it: a 19th-century ideology's stated view on industry doesn't settle nuclear
@@ -221,13 +221,11 @@ captures, even loosely. List only those; often there are none, and the list is e
   "answers": {
     "<statement id>": {
       "value": 2,
-      "confidence": "high | medium | low",
       "rationale": "What the ideology's sources state on this.",
       "sources": ["s1"]
     },
     "<statement id>": {
       "value": null,
-      "confidence": "low",
       "rationale": "The sources record no position on this, and no stated principle bears on it.",
       "sources": []
     }
@@ -247,7 +245,7 @@ captures, even loosely. List only those; often there are none, and the list is e
 
 ## 8. Research to the end
 
-Follow audits/AUDIT_RULES.md, section 5. For an ideology, keep its `scope`: research what the
+Follow audits/AUDIT_RULES.md, section 4. For an ideology, keep its `scope`: research what the
 ideology itself states (its defining sources, key works and key figures' texts: sections 1–3), not a
 related movement's positions. For a thin theme, search its key works and key figures' texts for that
 topic.

@@ -96,8 +96,8 @@ Answer every statement with -2 (strongly disagree) to +2 (strongly agree), or `n
 position). Read each statement literally: "Free trade benefits everyone in the long run" is about
 free trade, not about markets in general.
 
-- **No data, no position.** If the sources record nothing on a statement, answer `null`, at `low`
-  confidence, with a rationale saying so. Silence is not neutrality, so never record it as 0, and
+- **No data, no position.** If the sources record nothing on a statement, answer `null`, with a rationale
+  saying so. Silence is not neutrality, so never record it as 0, and
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
@@ -108,8 +108,7 @@ free trade, not about markets in general.
   whole claim.
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
-  doctrine). Mixed evidence is `low`. A 0 cites the evidence for each
-  side, which one source may hold, of the same kind: actions against actions or words against words.
+  doctrine). A 0 cites the evidence for each side, which one source may hold, of the same kind: actions against actions or words against words.
   Words against actions is not a split, even inside one source; answer from the actions (`validate.js`
   checks the cited sources' tags and the rationale's wording). Adherents
   disagreeing among themselves while the sources take no side is silence: `null`.
@@ -162,7 +161,7 @@ free trade, not about markets in general.
   proposed measure, a current campaign or an organisational choice doesn't become one by appearing in a
   declaration or an article about what the ideology is. Only the subject's own sources
   answer, and without them the answer is `null`. Where the subject's own sources take opposite positions on the same question, it
-  is a split (0, `low`).
+  is a split (0).
 - **Sources count by what they are, not by who publishes them.** Anyone's account of what the subject
   thinks is a way to find evidence, not evidence. A quotation of the subject, whoever publishes it,
   counts only once checked in the primary source with its context (section 2); a full transcript is a
@@ -172,7 +171,7 @@ free trade, not about markets in general.
   from the record alone and leave their words on it out entirely, whether they agree with it or not
   (elections rigged or cancelled while praising pluralism; deficits signed into law while condemning
   them). Words answer a statement only where there is no record on it. A record that itself points
-  both ways is 0 at `low`. Only people have a record; an ideology answers from what its sources say it holds
+  both ways is 0. Only people have a record; an ideology answers from what its sources say it holds
   (PROMPT.md section 3).
   Words never set aside an action. Tag each of a person's sources as their actions or words; a source
   holding both (a biography with a speech and a law, a day of the Congressional Record with a speech
@@ -184,29 +183,19 @@ free trade, not about markets in general.
   Later words never override a record, not even an explicit repudiation (speeches praising peace or
   tolerance after a campaign of conquest or repression change nothing); only a later record does.
   Say in the rationale when a position changed.
-- **Fix the answer.** When the validator rejects an answer, change the answer to fit the evidence: if it
-  says contested evidence must be `low`, lower the confidence. A rationale states only the evidence.
+- **Fix the answer.** When the validator rejects an answer, change the answer to fit the evidence. A
+  rationale states only the evidence.
 
-Each rationale is one or two plain sentences that explain the answer, not restate it, and cites at
-least one source id from your `sources` list.
+Each rationale is one or two plain sentences that explain the answer, not restate it: what the source
+states about this statement, never a stock phrase ("Nationalism rejected."). It cites at least one
+source id from your `sources` list.
 
-## 4. Confidence
-
-- `high`: stated directly on this statement in a primary source or shown by the record, cited from
-  that source, or (for an ideology) settled in the scholarship. The rationale says what the source
-  states about this statement; a stock phrase ("Nationalism rejected.") or a position the sources
-  never discuss is at most `medium`.
-- `medium`: clearly implied by what the subject said or did on this statement's topic, or reported
-  by a secondary or scholarly source.
-- `low`: mixed or contested. If the rationale has to say that the evidence is split, the answer is
-  `low`.
-
-## 5. Research to the end, and later passes
+## 4. Research to the end, and later passes
 
 **An audit goes as deep as the record allows**. There is no limit on
 sources. Keep researching before you finish: the statements still null, in new sources (the local
 corpora too). Stop when they are covered or when the record really has nothing
-more, and say in `notes` which themes you searched. Each confidence stays what its evidence supports (section 4).
+more, and say in `notes` which themes you searched.
 
 **Texts known to exist** (people). Every text by the person that the validator knows
 of is read and cited, or declined in `booksNotUsed` with a reason: Project Gutenberg's whole catalog
@@ -232,7 +221,7 @@ says which rule). Build on the existing audit rather than starting over:
 - To change an earlier answer (null it, change it or revert it), write the new answer with its reason
   as the rationale; git keeps the earlier versions. A null cites nothing, since a source next to a null
   would read as evidence of silence.
-- Change an answer or raise its confidence only on evidence you found and cite. Check every answer
+- Change an answer only on evidence you found and cite. Check every answer
   you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
   stated (cite the source of the position that settles it) or `null`. One deduced from a general
   value is `null`.

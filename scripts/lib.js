@@ -141,21 +141,6 @@ const judgeParts = (ctx) => ({
 });
 // `ids`: the statement ids, in the order of the parts' vectors.
 const judgeFrom = (parts, ids) => ({ ctx: require(path.join(ROOT, "pca.js")).placementFromParts(parts), ids });
-// Silence in ideology audits written before "no known position" existed for them, when it was recorded
-// as 0 (audits/AUDIT_RULES.md: silence is null): a low zero whose rationale the audit repeats 3+ times
-// (a stock "no doctrine" line), or that says in words there is no position and mentions no split,
-// difference or balance. Checked by hand on samples: about 95% of what it finds is silence; about a
-// third of what it leaves (silence with a "but" clause) is too, for re-audits to pick up.
-const SILENT = /\b(no (position|stance|view|doctrine|line|record|programme|program|documented|stated|known|clear|specific|explicit|common|shared|source (takes|decides|addresses|records|documents|covers|states|says))|not (address|discuss|mention|take|cover|state|applicable|part of|relevant|an? (issue|question|theme|concern|topic|matter|feature))\w*|(does|do|did)n.t (address|discuss|take|mention)|never (address|discuss|took|take)\w*|silent|nothing in|outside (its|the)|takes no|left neutral|offers? no|anachronis\w*|post-?dates?|pre-?dates?|irrelevant|beside the point|n\/a|undocumented|no counterpart|no \w+ (stance|position|view) (is )?(stated|recorded|documented)|not in (its|the) (documented )?(program|programme|platform|sources))\b/i;
-const SPLIT = /\b(split|divided|mixed|balanc\w*|varie[ds]|vary|differ\w*|both (sides|ways)|compromise|tension|while|but\b|yet\b)\b/i;
-function silentZeros(audit) {
-  const uses = new Map();
-  for (const a of Object.values(audit.answers || {})) uses.set(a.rationale, (uses.get(a.rationale) || 0) + 1);
-  return new Set(Object.entries(audit.answers || {})
-    .filter(([, a]) => a.value === 0 && a.confidence === "low"
-      && (uses.get(a.rationale) >= 3 || (SILENT.test(a.rationale || "") && !SPLIT.test(a.rationale || ""))))
-    .map(([id]) => id));
-}
 // An ideology audit's answers as the model takes them. "No known position" stays null: matching leaves
 // it out, like a person's or a taker's (pca.js).
 // A statement the audit hasn't answered yet (promoted after the audit was written) counts as null,
@@ -179,22 +164,15 @@ const shippedJudge = () => {
 // The uncertainty rule (pca.js), from audit answers.
 const judged = (answers, judge) =>
   require(path.join(ROOT, "pca.js")).uncertainty(judge.ctx, judge.ids.map((id) => (answers[id] ? answers[id].value : null)));
-// Uncertainty counts every answer with a position, whatever its confidence (README, "Uncertainty");
-// "no known position" (null) doesn't count.
+// Uncertainty counts every answer with a position (README, "Uncertainty"); "no known position" (null)
+// doesn't count. (Ideology audits from before the shared rules had their low-confidence answers, silence
+// recorded as 0 and inferences, set to null when confidence was dropped: Brandon, 2026-11-26.)
 const RULES = 2;
 const personUncertainty = (answers, judge = shippedJudge()) => judged(answers, judge);
-
-// Ideology audits written before the shared rules (no "rules": 2) recorded silence as 0 and inferences
-// unmarked, so only their medium and high answers count until they are re-audited.
-const mediumOrHigh = (answers) => Object.fromEntries(Object.entries(answers)
-  .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
-// The statements an ideology audit has a stated position on, as its uncertainty counts them (in audits
-// from before the shared rules, medium or high only); never null.
-const counted = (audit) => (audit.rules >= RULES ? audit.answers : mediumOrHigh(audit.answers));
-const statedPositions = (audit) => new Set(Object.entries(counted(audit))
+// The statements an ideology audit has a stated position on; never null.
+const statedPositions = (audit) => new Set(Object.entries(audit.answers)
   .filter(([, a]) => a.value != null).map(([id]) => id));
-const ideologyUncertainty = (audit, judge = shippedJudge()) =>
-  judged(counted(audit), judge);
+const ideologyUncertainty = (audit, judge = shippedJudge()) => judged(audit.answers, judge);
 
 // The inputs of the real-line count (build.js, audits/lines.json): pca.js and the answers of the
 // ideologies it is counted on (`id` and `profile`, in catalog order).
@@ -384,4 +362,4 @@ function formatAudit(a) {
 
 module.exports = { saturation, onlyNeutralColors, slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, personViews, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
-  RULES, formatAudit, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };
+  RULES, formatAudit, statedPositions, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

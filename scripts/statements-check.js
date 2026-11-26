@@ -90,7 +90,7 @@ const statements = allStatements();
 const audits = fs.readdirSync(PROFILES_DIR).filter((f) => f.endsWith(".json"))
   .map((f) => readJson(path.join(PROFILES_DIR, f))).filter((a) => a.answers);
 
-const stated = (a, id) => a.answers[id] && a.answers[id].confidence !== "low";
+const stated = (a, id) => a.answers[id] && a.answers[id].value != null;
 const rows = statements.map((q) => {
   const agree = audits.filter((a) => stated(a, q.id) && a.answers[q.id].value > 0).length;
   const disagree = audits.filter((a) => stated(a, q.id) && a.answers[q.id].value < 0).length;

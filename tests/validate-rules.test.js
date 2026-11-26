@@ -23,9 +23,9 @@ const [A, B, C, D] = st; // A: answered from an action, B: answered from words, 
 
 function base() {
   const answers = {};
-  for (const { id } of lib.allStatements()) answers[id] = { value: null, confidence: "low", rationale: "No recorded position found.", sources: [] };
-  answers[A] = { value: 1, confidence: "medium", rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
-  answers[B] = { value: -1, confidence: "medium", rationale: "Said in a 2020 interview that this statement is wrong.", sources: ["s2"] };
+  for (const { id } of lib.allStatements()) answers[id] = { value: null, rationale: "No recorded position found.", sources: [] };
+  answers[A] = { value: 1, rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
+  answers[B] = { value: -1, rationale: "Said in a 2020 interview that this statement is wrong.", sources: ["s2"] };
   return {
     id: subject.id, name: subject.name, auditedAt: "2026-11-07", auditor: "claude-sonnet-5-5", rules: 4, living: true,
     role: "Fixture subject", summary: "A fixture audit for the validator's rule tests.", wikipedia: null,
@@ -85,16 +85,16 @@ ok("base fixture", base());
 
 // A later pass changes, nulls or reverts answers freely against the committed file; a null still cites nothing.
 { const committed = base(); const a = laterPass(base());
-  a.answers[A] = { value: null, confidence: "low", rationale: "Nulled: the vote was on a different question than this statement.", sources: [] };
+  a.answers[A] = { value: null, rationale: "Nulled: the vote was on a different question than this statement.", sources: [] };
   ok("action nulled by a later pass", a, committed);
   a.answers[A].sources = ["s1"]; fails("nulling citing its reason source", a, /null cites an action/, committed); }
-{ const committed = base(); const a = laterPass(base()); a.answers[B] = { value: -2, confidence: "medium", rationale: "Said in a 2021 speech that this statement is badly wrong.", sources: ["s3"] };
+{ const committed = base(); const a = laterPass(base()); a.answers[B] = { value: -2, rationale: "Said in a 2021 speech that this statement is badly wrong.", sources: ["s3"] };
   ok("sourced answer changed", a, committed); }
-{ const committed = base(); const a = laterPass(base()); a.answers[C] = { value: 1, confidence: "medium", rationale: "Voted for the second bill, which settles this.", sources: ["s4"] };
+{ const committed = base(); const a = laterPass(base()); a.answers[C] = { value: 1, rationale: "Voted for the second bill, which settles this.", sources: ["s4"] };
   ok("nothing-found null replaced", a, committed); }
 // Answers only to statements in the bank, and no mention of a dropped one is left.
 { const X = "statement-no-longer-in-the-bank";
-  const a = base(); a.answers[X] = { value: 1, confidence: "medium", rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
+  const a = base(); a.answers[X] = { value: 1, rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
   fails("answer to a statement not in the bank", a, /answers to statements not in the bank: statement-no-longer-in-the-bank/); }
 { const R = require("../scripts/lib").retiredIds()[0];
   if (R) {
@@ -131,25 +131,22 @@ fails("active statement unanswered", E(base(), (a) => { delete a.answers[D]; }),
   if (C) fails("candidate statement unanswered", E(base(), (a) => { delete a.answers[C]; }), new RegExp(`no answer for '${C}'`)); }
 fails("null without a rationale", E(base(), (a) => { a.answers[C].rationale = ""; }), new RegExp(`${C}: say why there is no known position`));
 fails("value out of range", E(base(), (a) => { a.answers[A].value = 3; }), /value must be an integer from -2 to 2 or null/);
-fails("confidence not in the list", E(base(), (a) => { a.answers[A].confidence = "certain"; }), /confidence must be high, medium or low/);
+fails("an answer that still has a confidence", E(base(), (a) => { a.answers[A].confidence = "high"; }), /no "confidence" field/);
 fails("rationale too short", E(base(), (a) => { a.answers[A].rationale = "Voted yes."; }), /rationale missing or too short/);
 fails("answer cites nothing", E(base(), (a) => { a.answers[A].sources = []; }), /cite at least one source/);
 fails("answer cites an unknown source", E(base(), (a) => { a.answers[A].sources = ["s9"]; }), /unknown source 's9'/);
-fails("high answers share one rationale", E(base(), (a) => { a.answers[A].confidence = "high"; a.answers[C] = { ...a.answers[A] }; }), /high-confidence answers share one rationale/);
-fails("medium answer that calls itself contested", E(base(), (a) => { a.answers[A].rationale = "His record on this is contested among historians and writers."; }), /so the confidence is low/);
 ok("'not contested' is not self-low", E(base(), (a) => { a.answers[A].rationale = "His vote here is not contested by anyone who studied it."; }));
 fails("answer with no evidence", E(base(), (a) => { a.answers[A].rationale = "There is no record of his view, but the bill he voted for fits."; }), /no evidence of this position/);
 { const a = base(); a.living = false; a.answers[A].rationale = "No record of his view, but the bill he voted for fits."; fails("historical person's answer with no evidence (every subject)", a, /no evidence of this position/); }
 fails("historical person: 'no record of' fails like anyone's (state the evidence)", E(base(), (a) => { a.living = false; a.answers[A].rationale = "Voted for the bill; there is no record of a later change of view."; }), /no evidence of this position/);
-fails("high answer the sources don't address", E(base(), (a) => { a.answers[A].confidence = "high"; a.answers[A].rationale = "The sources do not address this, but the vote settles it."; }), /at most medium/);
-fails("rules 2: unmarked inference", E(base(), (a) => { a.rules = 2; a.answers[A].confidence = "low"; a.answers[A].rationale = "By inference from the bill he voted for on this statement."; for (const x of a.sources) delete x.evidence; }), /an inferred answer's rationale begins "Inferred:"/);
-fails("rules 3: no inferences at all", E(base(), (a) => { a.answers[A].confidence = "low"; a.answers[A].rationale = "Inferred: from the bill he voted for on this statement."; }), /rules 3 has no inferences/);
+fails("rules 2: unmarked inference", E(base(), (a) => { a.rules = 2; a.answers[A].rationale = "By inference from the bill he voted for on this statement."; for (const x of a.sources) delete x.evidence; }), /an inferred answer's rationale begins "Inferred:"/);
+fails("rules 3: no inferences at all", E(base(), (a) => { a.answers[A].rationale = "Inferred: from the bill he voted for on this statement."; }), /rules 3 has no inferences/);
 fails("answer resting only on Wikipedia", E(base(), (a) => { a.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "Wikipedia", url: "https://en.wikipedia.org/wiki/Example" }); a.answers[B].sources = ["s6"]; }), /Wikipedia is only a way to find evidence/);
 fails("answer resting only on OnTheIssues", E(base(), (a) => { a.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "OnTheIssues", url: "https://www.ontheissues.org/x.htm" }); a.answers[B].sources = ["s6"]; }), /OnTheIssues is only a way to find evidence/);
 { const a = laterPass(base()); a.reviews = [{ kind: "nulling", reviewer: "claude-opus-5-5", reviewedAt: "today", nulled: 1 }]; fails("nulling review malformed", a, /a "nulling" review is/); }
 // Warnings.
-{ const w = warningsFor(E(base(), (a) => { const ids = st.slice(4, 4 + Math.ceil(st.length * 0.31)); for (const id of ids) a.answers[id] = { value: 0, confidence: "low", rationale: `Mixed record on this statement (${id}).`, sources: ["s1"] }; }));
-  assert(w.some((x) => /neutral answers \(over 30%\)/.test(x)) && w.some((x) => /low-confidence answers \(over 50%\)/.test(x)) || w.some((x) => /neutral answers/.test(x)), `expected the neutral-answers warning, got ${w}`); n++; }
+{ const w = warningsFor(E(base(), (a) => { const ids = st.slice(4, 4 + Math.ceil(st.length * 0.31)); for (const id of ids) a.answers[id] = { value: 0, rationale: `Mixed record on this statement (${id}).`, sources: ["s1"] }; }));
+  assert(w.some((x) => /neutral answers \(over 30%\)/.test(x)), `expected the neutral-answers warning, got ${w}`); n++; }
 
 // Rules 5: every one of the person's own books in the local library is cited (a source with "library") or declined
 // in "booksNotUsed" with a reason. A stand-in library: one reference book with their full name, one critic's book
@@ -195,9 +192,9 @@ fails("answer resting only on OnTheIssues", E(base(), (a) => { a.sources.push({ 
   ok("rules 6: notFound with two places tried", r6((a) => { all(a); a.notes = "His Senate speeches were not available."; a.notFound = [{ work: "Senate speeches 1827-1836", tried: [
     { where: "local corpora", how: "crec.js and voteview.js by name" }, { where: "Library of Congress, A Century of Lawmaking", how: "searched the Register of Debates index for him" }] }]; }));
   ok("rules 5: no rules-6 checks", E(base(), (a) => { a.rules = 5; }));
-  ok("rules 7: a 0 on one source", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "The roll calls show votes both for and against it.", sources: ["s1"] }; }));
-  fails("rules 7: a 0 splitting actions against words", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "Voted for it once and spoke against it in 2021.", sources: ["s1", "s3"] }; }), /record over words/);
-  fails("rules 7: a 0 setting words against actions inside one source", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "His memoir records that he said it was wrong but signed it into law anyway.", sources: ["s5"] }; }), /sets words \("said"\) against actions \("signed"\)/);
+  ok("rules 7: a 0 on one source", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, rationale: "The roll calls show votes both for and against it.", sources: ["s1"] }; }));
+  fails("rules 7: a 0 splitting actions against words", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, rationale: "Voted for it once and spoke against it in 2021.", sources: ["s1", "s3"] }; }), /record over words/);
+  fails("rules 7: a 0 setting words against actions inside one source", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, rationale: "His memoir records that he said it was wrong but signed it into law anyway.", sources: ["s5"] }; }), /sets words \("said"\) against actions \("signed"\)/);
   setTextsForTests(null); setLibraryForTests(null);
 }
 
@@ -221,14 +218,14 @@ fails("answer resting only on OnTheIssues", E(base(), (a) => { a.sources.push({ 
 // Rules 3 has no inferences, so a rationale doesn't mention one, not even to deny it (Brandon, 2026-11-08).
 { const a = base(); a.answers[B].rationale = "His own stated rule rather than an inference from law enforcement."; fails("rationale denies an inference", a, /mentions inference; rules 3 has none/); }
 { const a = base(); a.answers[B].rationale = "Said so in a 2020 interview; not inferred."; fails("'not inferred' is no exception", a, /mentions inference/); }
-{ const a = base(); a.answers[B].confidence = "high"; a.answers[B].rationale = "Said in a 2020 interview that this statement is wrong."; ok("rationale that states the evidence", a); }
-{ const a = base(); a.rules = 2; a.answers[B].rationale = "Said so; not inferred."; fails("older audits: no 'not inferred' exception either", a, /so the confidence is low/); }
+{ const a = base(); a.answers[B].rationale = "Said in a 2020 interview that this statement is wrong."; ok("rationale that states the evidence", a); }
+{ const a = base(); a.rules = 2; a.answers[B].rationale = "Said so; not inferred."; fails("older audits: no 'not inferred' exception either", a, /so answer null/); }
 
 // A source dropped from an answer takes its claims with it: a rationale kept word for word from the committed answer
 // that still names the dropped source is an error (trotskyism, 2026-11-23).
 {
   const committed = laterPass(base());
-  committed.answers[B] = { value: -1, confidence: "medium", rationale: "Said in a 2020 interview transcript and the 2021 speech that this statement is wrong.", sources: ["s2", "s3"] };
+  committed.answers[B] = { value: -1, rationale: "Said in a 2020 interview transcript and the 2021 speech that this statement is wrong.", sources: ["s2", "s3"] };
   const dropped = (rationale) => { const a = JSON.parse(JSON.stringify(committed)); a.answers[B] = { ...a.answers[B], sources: ["s2"], rationale: rationale || a.answers[B].rationale }; return a; };
   fails("a dropped source still named in an unchanged rationale", dropped(), /source s3 was dropped but the rationale still names it \("2021 speech"\)/, committed);
   ok("rewritten without the dropped source", dropped("Said in a 2020 interview transcript that this statement is wrong."), committed);

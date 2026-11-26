@@ -8,7 +8,7 @@ ideology's local source library and (2) propose the defining statements the bank
 ## Read first
 - `audits/statements/STANDARD.md`: the whole file. Every statement you propose must pass test 3
   (all seven checks) and the Explanations rules for `agree`/`disagree`.
-- `audits/AUDIT_RULES.md`: sections 1-3 (sources, the local source library, no inferences, confidence).
+- `audits/AUDIT_RULES.md`: sections 1-3 (sources, the local source library, no inferences).
 - `audits/PROMPT.md` section 6 (missing statements) and `audits/IDEOLOGY_STANDARD.md` for scope.
 - `statements.json`: the bank (490 active plus candidates). You must compare against it.
 
@@ -55,7 +55,7 @@ ideology's local source library and (2) propose the defining statements the bank
   - a condition in the nearest statement doesn't fit ("a minority seen as hostile", "leave the
     country"), so the ideology's case falls outside it.
 - For each defining position no statement captures, propose a statement only if this ideology answers
-  it **-2 or +2 at high confidence** (a direct statement in a source you opened, AUDIT_RULES section 3).
+  it **-2 or +2** from a direct statement in a source you opened (AUDIT_RULES section 3).
   Usually 0-3 per ideology, often none.
 - Write it in the bank's form and hold it to every check in STANDARD.md test 3: plain words, one
   reading, not trivially true, no unstated context, not relative to the status quo, general (other
@@ -97,7 +97,7 @@ Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpa
     {
       "statement": { "id": "kebab-id", "theme": "economy|government|society|world|liberty|culture|ecology|technology|means|globalism",
                      "text": "…", "agree": "…", "disagree": "…", "note": "One line on what the question is about.", "icon": "one emoji" },
-      "value": 2, "confidence": "high",
+      "value": 2,
       "rationale": "Why this defines the ideology and how it answers, naming the passage.",
       "quotes": [{ "text": "verbatim passage", "source": "title", "where": "file and line, or page" }],
       "sources": [{ "title": "…", "url": "https://…", "file": "scratchpad/sources/<id>/… or null" }],

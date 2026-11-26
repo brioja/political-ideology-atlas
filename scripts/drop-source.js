@@ -5,7 +5,7 @@
 // It first runs scripts/tie-source.js and, if that finds anything, shows it and stops; --none-fit goes on once the
 // auditor has read what it found and none of it ties the source.
 // For each current answer that cites it:
-//   - other sources left: the source leaves "sources"; value, confidence and rationale stay as they are.
+//   - other sources left: the source leaves "sources"; value and rationale stay as they are.
 //   - it was the only source: the answer is nulled (a null cites nothing), its rationale giving the reason.
 // The source goes from "sources" once nothing cites it; git keeps the earlier versions. Its claims are what the
 // script can't remove: it lists every rationale that still names it, to rewrite from the sources the answer cites
@@ -48,7 +48,7 @@ for (const [k, x] of Object.entries(a.answers || {})) {
   if (!x || x.value === null || !(x.sources || []).includes(sid)) continue;
   const rest = x.sources.filter((s) => s !== sid);
   if (rest.length) x.sources = rest;
-  else Object.assign(x, { value: null, confidence: "low", sources: [],
+  else Object.assign(x, { value: null, sources: [],
     rationale: laterPass ? `Nulled: its only source, ${src.title}, isn't tied to ${subject}.` : `No source tied to ${subject} states a position on this.` });
   if (rest.length) {
     kept++;
@@ -68,4 +68,4 @@ fs.writeFileSync(file, lib.formatAudit(a));
 console.log(`${sid} (${src.title}) dropped from ${kept + nulled} answer(s) in ${path.relative(process.cwd(), file)}: ${kept} kept on their other sources, ${nulled} nulled; ${stillCited ? "the source stays listed for what still cites it" : "nothing cites it now, so it is no longer listed"}`);
 const others = ["aliases", "keyFigures", "keyWorks"].filter((k) => citesIt(a[k]));
 if (others.length) console.log(`still cited in ${others.join(", ")}: take out the entries that rest on ${sid}`);
-if (toRewrite.length) console.log(`Rewrite these rationales from the sources each answer still cites, without ${sid}'s claims (and change the value or confidence if they rested on it):\n${toRewrite.join("\n")}`);
+if (toRewrite.length) console.log(`Rewrite these rationales from the sources each answer still cites, without ${sid}'s claims (and change the value if it rested on them):\n${toRewrite.join("\n")}`);

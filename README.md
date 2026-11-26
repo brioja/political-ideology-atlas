@@ -24,9 +24,8 @@ A political ideology test where the axes come from the data. You don't choose th
 Adding a statement or an ideology means adding its audit data and rebuilding. The lines and how
 many are kept update on their own.
 
-Ideologies get the uncertainty rule (see below, the same one as people), counting only their **stated**
-positions (high or medium confidence). An ideology whose answers are mostly inferred is left out of
-both the results and the dividing lines.
+Ideologies get the uncertainty rule (see below, the same one as people), counting their stated
+positions ("no known position" doesn't count). An ideology it can't place is left out of the results.
 
 ## Sharing results
 
@@ -44,7 +43,7 @@ is accepted; stable links are a release concern.
 ## Ideology audits
 
 `audits/IDEOLOGY_STANDARD.md` says what counts as an ideology. Each one in `audits/catalog.json` gets a sourced audit at `audits/profiles/<id>.json`:
-its answer to every statement with a rationale, confidence and citations, plus a Wikipedia link
+its answer to every statement with a rationale and citations, plus a Wikipedia link
 and further reading. `audits/PROMPT.md` holds the exact research instructions, so any audit can
 be re-run.
 

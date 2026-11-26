@@ -5,6 +5,8 @@ explicit decision from the maintainer.
 
 - **Scoring silence** in matching, as "Neither", as an average answer or as an expected distance.
   Silence is never scored unless the maintainer reopens it for an explicit reason (2026-10-29).
+- **A confidence level on answers** (high/medium/low; dropped 2026-11-26): it changed no result once
+  inferences were gone, and old audits' low answers were silence or inferences, now null.
 - **Tuned weights** in matching (distance or confidence weights; reverted 2026-10-28) and
   **adjusting a bar to include or exclude one person or ideology.**
 - **Grouping place twins** (Quebec / Catalan nationalism) on the page: no source defines a group

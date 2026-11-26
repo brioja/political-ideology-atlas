@@ -1941,10 +1941,9 @@ function lineStrips(scores, { selfId = null, other = null, spread = null, otherS
 // Topic emoji for a statement; decorative (the sentence carries the meaning), so hidden from screen readers.
 const topicIcon = (q) => `<span class="topic" aria-hidden="true">${q.icon || "•"}</span>`;
 
-// Key positions: the strongly held ones (or the leanings, if there are none), best-sourced first,
+// Key positions: the strongly held ones (or the leanings, if there are none), most distinctive first,
 // each with its topic emoji; reasoning and sources are added once the audit loads. The milder ones
 // sit in a collapsed list below, and unknown statements are counted with a link to the full audit.
-const CONF_RANK = { high: 0, medium: 1, low: 2 };
 // `key` (the compare key of whoever holds these positions) links each statement to the test, with
 // their answer marked.
 function positionsList(profile, audit, auditUrl = null, key = null) {
@@ -1952,9 +1951,8 @@ function positionsList(profile, audit, auditUrl = null, key = null) {
   const all = QUESTIONS.map((_, j) => j);
   const unknown = all.filter((j) => profile[j] == null);
   const strongest = Math.max(...all.map((j) => Math.abs(profile[j] ?? 0)));
-  const byConfidence = (x, y) => (CONF_RANK[answerOf(x)?.confidence] ?? 1) - (CONF_RANK[answerOf(y)?.confidence] ?? 1) || x - y;
   // Most distinctive first (distance from the average ideology's answer, as in "what it stands for").
-  const byDistinct = (x, y) => distinctiveness(model.mean, profile, y) - distinctiveness(model.mean, profile, x) || byConfidence(x, y);
+  const byDistinct = (x, y) => distinctiveness(model.mean, profile, y) - distinctiveness(model.mean, profile, x) || x - y;
   const known = all.filter((j) => profile[j] != null && strongest > 0 && Math.abs(profile[j]) === strongest).sort(byDistinct);
   const milder = all.filter((j) => profile[j] != null && !known.includes(j))
     .sort((x, y) => Math.abs(profile[y]) - Math.abs(profile[x]) || byDistinct(x, y));
@@ -1970,7 +1968,7 @@ function positionsList(profile, audit, auditUrl = null, key = null) {
         <p class="stance">${statementLink(QUESTIONS[j], v === 0 ? QUESTIONS[j].text : stance(QUESTIONS[j], v).text, key)}</p>
         ${v === 0 && strongest > 0 ? `<p class="muted small">Neither agrees nor disagrees.</p>` : ""}
         ${a && (a.rationale || a.reason) ? `<p class="muted small">${esc(a.rationale || a.reason)}
-          ${a.confidence ? `<span class="conf">${esc(a.confidence)} confidence${a.sources && a.sources.length ? ` · sources ${a.sources.map(sourceLink).join(", ")}` : ""}</span>` : ""}</p>` : ""}
+          ${a.sources && a.sources.length ? `<span class="conf">sources ${a.sources.map(sourceLink).join(", ")}</span>` : ""}</p>` : ""}
       </div></li>`;
   };
   const mild = milder.length ? `<details class="milder"><summary>${milder.length} milder position${milder.length === 1 ? "" : "s"}</summary>

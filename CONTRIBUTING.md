@@ -1,8 +1,8 @@
 # Contributing
 
 Thanks for helping make Political Ideology Atlas more accurate. Every ideology and person in the
-test is backed by a public audit, a JSON file listing their answer to each statement, the reasoning,
-a confidence level, and the sources. Corrections to those audits are the most valuable
+test is backed by a public audit, a JSON file listing their answer to each statement, the reasoning
+and the sources. Corrections to those audits are the most valuable
 contributions.
 
 ## Inclusion standard
@@ -21,8 +21,7 @@ If you think an ideology or person is placed wrong on a statement:
 1. Find their audit: `audits/profiles/<id>.json` for ideologies, `audits/people/<id>.json` for people.
 2. Either **open an issue** quoting the statement, the current answer, what you think it should be,
    and a source that shows it; or **edit the file** yourself:
-   - change `value` (-2 to +2, or `null` for a person with no known position), `confidence` and
-     `rationale`;
+   - change `value` (-2 to +2, or `null` for a person with no known position) and `rationale`;
    - add your source to `sources` and cite its `id` in the answer;
    - cite a page you actually read. Primary sources (the ideology's founding texts, or the person's
      own words, votes and actions) beat commentary about them.
