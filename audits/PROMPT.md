@@ -104,13 +104,14 @@ Both lists show on the ideology's page.
 (Clinton for Clintonism).
 - People only, no organisations.
 - Named at least twice by the defining sources: two quotes in its `evidence` (below), from two of them or two
-  passages of one.
+  passages of one. Each quote names both the person and the ideology (its name, an alias or a word form:
+  "zapatista"), so it shows the source tying them; a bare mention of the person doesn't.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
   after for it (Lenin for Leninism).
 - If the defining sources present the ideology as the thought of someone another ideology lists (not as an
   influence on it), claim them instead: `keyFigureClaims`, each `{ "first", "last", "heldBy": "<that ideology's
-  id>", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`, with two quotes or more naming them,
-  from two different defining sources; your defining sources must also name them more often than the holder's do.
+  id>", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`, with two quotes or more naming them and
+  the ideology, from two different defining sources; your defining sources must also name them more often than the holder's do.
   The claim goes to audits/key-figure-claims.json and the holder's next pass decides. Their texts aren't tied here
   meanwhile.
 - If validate.js warns that another ideology claims one of yours, keep them only if your defining sources present
@@ -124,7 +125,7 @@ Both lists show on the ideology's page.
 major works).
 - By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform"), named at least twice:
   two quotes in its `evidence` (below), from the defining sources or primary texts that name the ideology twice
-  themselves.
+  themselves. A quote from a defining source names the ideology too, as for key figures.
 - With `"work": "<source id>"` when you cite the text itself.
 - Unless you cite it, give it two fields for the page, as for key figures: `author`, as the sources name it
   ("Pierre-Joseph Proudhon"; an organisation for a programme), and `wikipedia`, the URL of the work's own English

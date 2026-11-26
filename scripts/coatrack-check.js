@@ -58,6 +58,9 @@ function forms(n) {
   const out = [t, `${t}s`];
   const m = t.match(/^(.*?)ism$/);
   if (m && m[1].length >= 3) for (const e of ["isms", "ist", "ists", "istic", "ian", "ians", "i"]) out.push(m[1] + e);
+  // Spanish, Italian, Portuguese, French and German names: "zapatismo", "zapatista" (Brandon, 2026-11-26).
+  const r = t.match(/^(.*?)(ismo|isme|ismus)$/);
+  if (r && r[1].length >= 3) for (const e of { ismo: ["ismos", "ista", "istas", "isti"], isme: ["ismes", "iste", "istes"], ismus: ["ismen", "ist", "isten", "istisch"] }[r[2]]) out.push(r[1] + e);
   return out.map((f) => ` ${f} `);
 }
 // Where a text names something: the [start, end) spans of every form of every name.
@@ -503,6 +506,17 @@ function check(id, full, { strict = false, pass = false } = {}) {
   }
   // The name without Wikipedia's disambiguator ("Jacobin (politics)" is written "Jacobin"), as for other names above.
   const names = [...new Set([audit.name, plainName(audit.name), ...kept])].map(norm);
+  // Each evidence quote of a key figure, claim or key work names the ideology (its name or an alias) apart from the
+  // person or title, so the source is seen tying them to it: "Frederick Denison Maurice," shows only that the book
+  // names him (Brandon, 2026-11-26). A key work's quote from a primary text that names the ideology twice itself is
+  // exempt (the text is tied already).
+  const untied = (field, x, list) => list.filter((e) => e && typeof e.quote === "string" && e.quote.trim())
+    .filter((e) => !separately(norm(e.quote), names, field === "key work" ? [norm(entryName(x))] : [norm(entryName(x)), figureKey(x)]))
+    .map((e) => `${field} "${entryName(x)}": the quote "${e.quote.trim()}" doesn't name ${audit.name} (or an alias); each quote names both the ideology and ${field === "key work" ? "the work" : "the person"}, so it shows the source tying them`);
+  for (const x of Array.isArray(audit.keyFigures) ? audit.keyFigures : []) {
+    if (!x || typeof x !== "object" || (namesakes()[id] && samePerson(x, namesakes()[id]))) continue;
+    if (pass || Array.isArray(x.evidence)) problems.push(...untied("key figure", x, Array.isArray(x.evidence) ? x.evidence : []));
+  }
   const cited = (o, where, acc) => {
     if (Array.isArray(o)) { o.forEach((x, i) => cited(x, `${where}[${i}]`, acc)); return acc; }
     if (o && typeof o === "object") for (const [k, v] of Object.entries(o)) {
@@ -595,6 +609,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
       continue;
     }
     problems.push(...passages(id, audit, "key figure claim", c, true));
+    problems.push(...untied("key figure claim", c, c.evidence));
     // Stronger than the holder's case: quotes from two different sources, so one book can't carry it, and the
     // defining sources name them more often than the holder's do. The holder's next pass still decides.
     const from = new Set(c.evidence.map((e) => e && e.source).filter(Boolean));
@@ -620,7 +635,8 @@ function check(id, full, { strict = false, pass = false } = {}) {
   const worksOk = new Set();
   for (const x of Array.isArray(audit.keyWorks) ? audit.keyWorks : []) {
     if (!x || typeof x !== "object" || (!pass && !Array.isArray(x.evidence))) continue;
-    const pr = passages(id, audit, "key work", x, true, (src) => vouchers.has(src.id));
+    const pr = [...passages(id, audit, "key work", x, true, (src) => vouchers.has(src.id)),
+      ...untied("key work", x, (Array.isArray(x.evidence) ? x.evidence : []).filter((e) => !(e && vouchers.has(e.source))))];
     problems.push(...pr);
     if (!pr.length) worksOk.add(x);
   }

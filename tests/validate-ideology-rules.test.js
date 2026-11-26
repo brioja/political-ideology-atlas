@@ -25,10 +25,10 @@ setCommittedForTests(() => null);
 const libDir = path.join(LIBDIR, subject.id);
 const N = subject.name;
 const TEXTS = {
-  "https://example.org/encyclopedia": `${N} is a political doctrine. Its founders set out ${N} in several works, first in the Founding Rescript; the Founding Rescript is its canon.`,
+  "https://example.org/encyclopedia": `${N} is a political doctrine. Its founders set out ${N} in several works, first in the Founding Rescript; the Founding Rescript is the canon of ${N}.`,
   "https://example.org/manifesto": `The manifesto of ${N}. We hold that ${N} is the way forward for all.`,
-  "https://example.org/study": `A study of ${N} and its history, written for students of ${N}. Quentin Vexmoor wrote its founding text; Vexmoor led it for years.`,
-  "https://example.org/history": `A history of ${N}. Its founder was Quentin Vexmoor.`,
+  "https://example.org/study": `A study of ${N} and its history, written for students of ${N}. Quentin Vexmoor wrote the founding text of ${N}; Vexmoor led ${N} for years.`,
+  "https://example.org/history": `A history of ${N}. The founder of ${N} was Quentin Vexmoor.`,
   "https://example.org/unrelated": "A text about something else entirely, with no mention of the subject.",
 };
 function writeLibrary() {
@@ -79,10 +79,10 @@ try {
   // Key figures: no limit, people only, each with a Wikipedia article URL when given (and a role and article in a pass).
   ok("key figures left out", E(base(), (a) => { delete a.keyFigures; }));
   ok("a secondary source stands in for a reference one", E(base(), (a) => { a.sources[0].kind = "secondary"; }));
-  const fig = () => ({ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s3", quote: "Vexmoor led it for years" }] });
+  const fig = () => ({ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: `Vexmoor led ${N} for years` }] });
   fails("key figures not a list", E(base(), (a) => { a.keyFigures = "Quentin Vexmoor"; }), /"keyFigures" must be a list/);
   fails("key figure with a bad Wikipedia article", E(base(), (a) => { a.keyFigures = [{ ...fig(), wikipedia: "https://example.org/x" }]; }), /keyFigures\[0\]: wikipedia must be an en\.wikipedia\.org article URL/);
-  fails("organisation as a key figure", E(base(), (a) => { a.keyFigures = [{ organisation: "Vexmoor League", source: "s3", quote: "Quentin Vexmoor wrote its founding text" }]; }), /an organisation isn't a key figure/);
+  fails("organisation as a key figure", E(base(), (a) => { a.keyFigures = [{ organisation: "Vexmoor League", source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }]; }), /an organisation isn't a key figure/);
   // A person a key figure's quote names (from the people catalog) is likely a missed key figure: a warning.
   { const person = lib.peopleCatalog().find((p) => /^[A-Z][a-z]+ [A-Z][a-z]+$/.test(p.name) && !coatrack.reservedFor(p.name).length);
     const pair = (q) => E(base(), (a) => { a.keyFigures = [{ ...fig(), quote: q }]; });
@@ -119,12 +119,18 @@ try {
   // "Named twice" in a pass (Brandon, 2026-11-26): "evidence" with two passages, for key works and key figures; an older
   // audit's one "source" and "quote" is counted as before.
   { const passProblems = (a, re) => coatrack.check(subject.id, a, { strict: true, pass: true }).problems.filter((p) => re.test(p));
-    const twice = [{ source: "s1", quote: "first in the Founding Rescript" }, { source: "s1", quote: "the Founding Rescript is its canon" }];
+    const twice = [{ source: "s1", quote: `set out ${N} in several works, first in the Founding Rescript` }, { source: "s1", quote: `the Founding Rescript is the canon of ${N}` }];
     assert.deepStrictEqual(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title: "Founding Rescript", work: "s4", evidence: twice }]; }), /s4|key work/), [], "a pass ties a key work by two passages"); n++;
     assert.ok(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [work({ work: "s4" })]; }), /key work "Founding Rescript": needs two quotes or more/).length, "a pass's key work needs two passages"); n++;
     assert.ok(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title: "Founding Rescript", work: "s4", evidence: [twice[0], twice[0]] }]; }), /source s4 \(primary\)/).length, "one passage twice doesn't tie the work"); n++;
-    assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" }]; }), /key figure "Quentin Vexmoor": needs two quotes or more/).length, "a pass's key figure needs two passages"); n++;
-    assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", evidence: [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s2", quote: "We hold that Vexmoor" }] }]; }), /s2 is a primary source; the evidence comes from defining sources/).length, "a key figure's evidence comes from defining sources"); n++;
+    assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }]; }), /key figure "Quentin Vexmoor": needs two quotes or more/).length, "a pass's key figure needs two passages"); n++;
+    assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s2", quote: "We hold that Vexmoor" }] }]; }), /s2 is a primary source; the evidence comes from defining sources/).length, "a key figure's evidence comes from defining sources"); n++;
+    // Each quote names the ideology as well as the person or title (Brandon, 2026-11-26): a bare mention ties nothing.
+    const untied = /doesn't name .* \(or an alias\); each quote names both/;
+    assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: "Quentin Vexmoor wrote the founding text" }, { source: "s3", quote: `Vexmoor led ${N} for years` }] }]; }), untied).length === 1, "a key figure's quote that doesn't name the ideology"); n++;
+    assert.ok(passProblems(E(base(), (a) => { a.keyWorks = [{ title: "Founding Rescript", evidence: [twice[0], { source: "s1", quote: "first in the Founding Rescript" }] }]; }), untied).length === 1, "a key work's quote that doesn't name the ideology"); n++;
+    assert.deepStrictEqual(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: `Vexmoor led ${N} for years` }] }]; }), untied), [], "quotes naming both pass"); n++;
+    assert.ok(coatrack.forms("zapatismo").includes(" zapatista ") && coatrack.forms("anarchisme").includes(" anarchiste ") && coatrack.forms("marxismus").includes(" marxist "), "Romance and German forms of an -ism"); n++;
   }
   fails("key work whose work is scholarship", E(base(), (a) => { a.keyWorks = [work({ work: "s3" })]; }), /keyWorks\[0\]: "work" must be the work itself/);
   // Missing statements: text, value, rationale, sources, and the rule of two quotes.
@@ -210,7 +216,7 @@ try {
   // A key figure belongs to one ideology; the one named after them (Vexmoorism) takes them from any other,
   // which is an error at once, committed or not.
   {
-    const vex = () => ({ first: "Quentin", last: "Vexmoor", source: "s3", quote: "Quentin Vexmoor wrote its founding text" });
+    const vex = () => ({ first: "Quentin", last: "Vexmoor", source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` });
     const listedBy = (id, name, auditedAt) => coatrack.setProfilesForTests(new Map([[id, { name, auditedAt, keyFigures: [vex()] }]]), {});
     const withVex = (auditedAt) => E(base(), (a) => { a.keyFigures = [vex()]; a.auditedAt = auditedAt; });
     try {
@@ -237,15 +243,16 @@ try {
       assert.ok(coatrack.isNamesake("Quentin II", "quentinismo", "Quentinismo") && !coatrack.isNamesake("Quincy Ralph II", "quentinismo", "Quentinismo"), "a regnal name counts only whole"); n++;
       assert.ok(coatrack.isNamesake("Quentin Vexmoor", "vexmoorism", "Vexmoorism") && !coatrack.isNamesake("Q. Vexmoor Jr.", "vexmoorism", "Vexmoorism"), "Jr. is not Sr."); n++;
       // Key figure claims (audits/key-figure-claims.json): a person another ideology lists is claimed, not listed.
-      const quotes = (second = "Vexmoor led it for years") => [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s3", quote: second }];
-      const twoSources = () => [{ source: "s3", quote: "Quentin Vexmoor wrote its founding text" }, { source: "s4", quote: "Its founder was Quentin Vexmoor" }];
+      const quotes = (second = `Vexmoor led ${N} for years`) => [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: second }];
+      const twoSources = () => [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s4", quote: `The founder of ${N} was Quentin Vexmoor` }];
       const claim = (extra = {}) => E(base(), (a) => { a.sources.push({ id: "s4", kind: "secondary", evidence: "words", title: "A history", url: "https://example.org/history" }); a.keyFigureClaims = [{ first: "Quentin", last: "Vexmoor", heldBy: "other-ideology", role: "Founder of the movement", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: twoSources(), ...extra }]; });
       listedBy("other-ideology", "Other ideology", "2026-11-01");
       ok("claim on another ideology's key figure", claim());
       fails("claim on an ideology that doesn't list them", claim({ heldBy: "third-ideology" }), /key figure claim "Quentin Vexmoor": third-ideology doesn't list them; other-ideology does/);
-      fails("claim with one passage", claim({ evidence: quotes("Quentin Vexmoor wrote its founding text") }), /needs two quotes or more in "evidence"/);
+      fails("claim with one passage", claim({ evidence: quotes(`Quentin Vexmoor wrote the founding text of ${N}`) }), /needs two quotes or more in "evidence"/);
       fails("claim quoting a primary text", claim({ evidence: [...quotes(), { source: "s2", quote: "The manifesto of Vexmoor" }] }), /s2 is a primary source; the evidence comes from defining sources/);
       fails("claim from two passages of one source", claim({ evidence: quotes() }), /its quotes come from one source; a claim needs quotes from two different defining sources/);
+      fails("claim quote that doesn't name the ideology", claim({ evidence: [twoSources()[0], { source: "s4", quote: "was Quentin Vexmoor" }] }), /key figure claim "Quentin Vexmoor": the quote "was Quentin Vexmoor" doesn't name/);
       // The holder's defining sources name them as often (3 times, like the claimant's): no claim.
       const holderLib = path.join(LIBDIR, "other-ideology");
       try {
