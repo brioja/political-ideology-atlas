@@ -28,7 +28,8 @@ function strip(audit, people) {
   const ids = open(audit, people), answers = audit.answers || {};
   const web = { ...audit, answers: {} };
   // A statement with no entry at all (added since the audit, or skipped) gets an empty one, so the web phase sees it.
-  for (const id of ids) web.answers[id] = answers[id] || { value: null, sources: [], rationale: "" };
+  // A null goes over without the local phase's reason (a null carries none: scripts/cleanup.js).
+  for (const id of ids) web.answers[id] = known(answers[id]) ? answers[id] : { value: null, sources: [], rationale: "" };
   return { web, ids };
 }
 

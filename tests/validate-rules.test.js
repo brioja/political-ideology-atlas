@@ -130,7 +130,9 @@ fails("active statement unanswered", E(base(), (a) => { delete a.answers[D]; }),
 { const C = lib.allStatements().find(lib.isCandidate)?.id; // a candidate is answered too: promotion never decides that
   if (C) fails("candidate statement unanswered", E(base(), (a) => { delete a.answers[C]; }), new RegExp(`no answer for '${C}'`)); }
 ok("null without a rationale", E(base(), (a) => { a.answers[C].rationale = ""; }));
-fails("null with a reason (a claim about silence, 2026-11-26)", E(base(), (a) => { a.answers[C].rationale = "The sources record no position on this."; }), new RegExp(`${C}: a null carries no reason`));
+{ const a = E(base(), (a) => { a.answers[C].rationale = "The sources record no position on this."; }); // cleanup.js empties it
+  if (require("../scripts/cleanup").emptyNullReasons(a) !== 1 || a.answers[C].rationale !== "") throw new Error("cleanup.js: a null's reason not emptied");
+  ok("null reason emptied by cleanup.js", a); }
 fails("value out of range", E(base(), (a) => { a.answers[A].value = 3; }), /value must be an integer from -2 to 2 or null/);
 fails("an answer that still has a confidence", E(base(), (a) => { a.answers[A].confidence = "high"; }), /no "confidence" field/);
 fails("rationale too short", E(base(), (a) => { a.answers[A].rationale = "Voted yes."; }), /rationale missing or too short/);

@@ -362,10 +362,8 @@ function validate(id) {
     if ("confidence" in ans) errors.push(`${st.id}: answers have no "confidence" field any more; remove it`);
     // A null carries no reason (Brandon, 2026-11-26): silence is not a position, and a reason for one ("the sources
     // record no position") is a claim about silence that the next pass read as settled. Political moderate's 598 did.
-    if (ans.value === null) {
-      if (ans.rationale) errors.push(`${st.id}: a null carries no reason: set "rationale" to ""`);
-      continue;
-    }
+    // Not an error: scripts/cleanup.js empties them before an audit is integrated.
+    if (ans.value === null) continue;
     if (![-2, -1, 0, 1, 2].includes(ans.value)) errors.push(`${st.id}: value must be an integer from -2 to 2 or null`);
     if (!ans.rationale || ans.rationale.trim().length < 20) errors.push(`${st.id}: rationale missing or too short`);
     if (!Array.isArray(ans.sources) || ans.sources.length === 0) errors.push(`${st.id}: cite at least one source`);

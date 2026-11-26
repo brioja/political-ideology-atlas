@@ -435,9 +435,10 @@ function integrate(id) {
     const target = path.join(ROOT, "audits", PEOPLE ? "people" : "profiles", `${id}.json`);
     const name = JSON.parse(fs.readFileSync(draft(id), "utf8")).name || id;
     const before = new Map([target, path.join(ROOT, "audits", "ideology-colors.json")].map((f) => [f, fs.existsSync(f) ? fs.readFileSync(f) : null]));
-    // Sources the audit never uses are dropped by script, not by a fix round (scripts/cleanup.js).
+    // Null reasons and sources the audit never uses go by script, not by a fix round (scripts/cleanup.js).
     try {
-      const { dropped, kept } = require("./cleanup").clean(OUT, id, PEOPLE);
+      const { reasons, dropped, kept } = require("./cleanup").clean(OUT, id, PEOPLE);
+      if (reasons) log(`${id}: cleanup emptied ${reasons} null reason(s)`);
       if (dropped.length || kept.length) log(`${id}: cleanup dropped ${dropped.length} unused source(s)${dropped.length ? `: ${dropped.join(", ")}` : ""}${kept.length ? `; kept ${kept.join(", ")} (dropping adds a validate.js error)` : ""}`);
     } catch (e) { log(`${id}: cleanup failed, draft integrated as it is: ${e.message.split("\n")[0]}`); }
     // Written in the audits' one format (lib.formatAudit): answers sorted, one per line, for git history.

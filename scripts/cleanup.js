@@ -1,4 +1,4 @@
-// Drops sources an audit lists but never uses (and, with --failing, first takes the sources validate.js fails out
+// Empties the reasons of nulls and drops sources an audit lists but never uses (and, with --failing, first takes the sources validate.js fails out
 // of the answers: Wikipedia citations and sources not tied to the subject; dropFailing below).
 //   node scripts/cleanup.js [--people] <id> [...]   committed audits (audits/profiles, or audits/people)
 //   node scripts/cleanup.js [--people] --all        every committed audit
@@ -46,24 +46,36 @@ function errors(dir, id, people, asCurrent = false) {
   return new Set(out.split("\n").filter((l) => /^\s*error:/.test(l)).map((l) => l.trim()));
 }
 
-// Cleans `<dir>/<id>.json` in place (lib.formatAudit). Returns { dropped, kept }: ids dropped, and unused ids
-// kept because dropping them adds a validate.js error.
+// Empties the rationale of every null in audit `a` (Brandon, 2026-11-26: a null carries no reason, since a reason for
+// one is a claim about silence that the next pass reads as settled). Returns how many it emptied.
+function emptyNullReasons(a) {
+  let n = 0;
+  for (const ans of Object.values(a.answers || {})) if (ans && ans.value === null && ans.rationale) { ans.rationale = ""; n++; }
+  return n;
+}
+
+// Cleans `<dir>/<id>.json` in place (lib.formatAudit): nulls lose their reasons, then unused sources go (a null's
+// reason may have been all that mentioned one). Returns { reasons, dropped, kept }: reasons emptied, ids dropped, and
+// unused ids kept because dropping them adds a validate.js error.
 function clean(dir, id, people = false) {
-  const file = path.join(dir, `${id}.json`), text = fs.readFileSync(file, "utf8"), a = JSON.parse(text);
+  const file = path.join(dir, `${id}.json`);
+  let text = fs.readFileSync(file, "utf8"), a = JSON.parse(text);
+  const reasons = emptyNullReasons(a);
+  if (reasons) { text = lib.formatAudit(a); fs.writeFileSync(file, text); }
   const unused = unusedSources(a);
-  if (!unused.length) return { dropped: [], kept: [] };
+  if (!unused.length) return { reasons, dropped: [], kept: [] };
   const write = (ids) => fs.writeFileSync(file, lib.formatAudit({ ...a, sources: a.sources.filter((s) => !ids.includes(s && s.id)) }));
   const before = errors(dir, id, people);
   const ok = () => [...errors(dir, id, people)].every((e) => before.has(e));
   try {
     write(unused);
-    if (ok()) return { dropped: unused, kept: [] };
+    if (ok()) return { reasons, dropped: unused, kept: [] };
     // Something unused still matters: drop the rest one at a time.
     const dropped = [];
     for (const sid of unused) { write([...dropped, sid]); if (ok()) dropped.push(sid); }
     write(dropped);
     if (!dropped.length) fs.writeFileSync(file, text);
-    return { dropped, kept: unused.filter((x) => !dropped.includes(x)) };
+    return { reasons, dropped, kept: unused.filter((x) => !dropped.includes(x)) };
   } catch (e) { fs.writeFileSync(file, text); throw e; }
 }
 
@@ -87,7 +99,7 @@ function dropFailing(dir, id, people = false) {
   return { untied, wikipedia, ...clean(dir, id, people) };
 }
 
-module.exports = { unusedSources, clean, dropFailing };
+module.exports = { unusedSources, emptyNullReasons, clean, dropFailing };
 
 if (require.main === module) {
   const args = process.argv.slice(2), people = args.includes("--people");
@@ -101,8 +113,9 @@ if (require.main === module) {
       const f = dropFailing(dir, id, people);
       if (f.untied.length || f.wikipedia.kept + f.wikipedia.nulled) console.log(`${id}: untied sources out of the answers: ${f.untied.join(", ") || "none"}; Wikipedia citations dropped: ${f.wikipedia.nulled} answer(s) nulled, ${f.wikipedia.kept} kept on other sources, ${f.wikipedia.requests} missing statement(s) dropped`);
     }
-    const { dropped, kept } = clean(dir, id, people);
+    const { reasons, dropped, kept } = clean(dir, id, people);
     total += dropped.length;
+    if (reasons) console.log(`${id}: emptied ${reasons} null reason(s)`);
     if (dropped.length || kept.length) console.log(`${id}: dropped ${dropped.length ? dropped.join(", ") : "none"}${kept.length ? `; kept ${kept.join(", ")} (dropping adds a validate.js error)` : ""}`);
   }
   console.log(`${ids.length} audit(s) checked; ${total} unused source(s) dropped`);
