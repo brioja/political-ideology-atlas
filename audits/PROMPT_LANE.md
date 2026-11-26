@@ -43,4 +43,4 @@ Audit the id the driver gives you, person or ideology.
 
 Once validate.js reports no errors (an `excluded:` line, a `notIdeasOfWhatSocietyShouldBe` record,
 is a result, not an error), add one line to
-`scratchpad/lane-out/<lane>/DONE.txt`: id, kind and known answers.
+`scratchpad/lane-out/<lane>/DONE.txt`: the id alone.
