@@ -90,8 +90,8 @@ the agree, disagree and note texts are the integrator's call. Don't spend long m
 and audits keep changing.
 
 - **Apply in place** (Brandon, 2026-11-10): the reviewer's wording, with the id kept, in `statements.json` and
-  `audits/statements/texts.json`; keep each file's indent and line style. Null the clear conflicts, each with a
-  new nulling review appended to its history; rows marked "evidence follow-up" are needs evidence and stay.
+  `audits/statements/texts.json`; keep each file's indent and line style. Null the clear conflicts, each giving its
+  reason in the rationale; rows marked "evidence follow-up" are needs evidence and stay.
   When the answer's evidence fits another statement that has no answer from that subject yet, move it there
   instead of nulling.
 - **Stop and ask the maintainer** when a review proposes a new id, changes the claim's meaning or subject, adds
@@ -100,7 +100,7 @@ and audits keep changing.
   new candidate only if it fills a real gap. Check first that it doesn't correlate with an existing statement,
   and that the moved answers aren't copies of one joint rationale.
 - **Dropping a statement:** remove it from `statements.json`, run `node scripts/drop-answers.js` (it removes
-  its answers from every audit and records that in their `reviews`; validate.js requires it), and record it in
+  its answers from every audit), and record it in
   `backlog/decided-against.md`. A new id does the same for the old one once its answers have moved.
 - **Sending a review back** with guidance: write `scratchpad/statement-review/<id>-maintainer.md` and move the
   `<id>-results.md` aside. The note goes into the next brief and queues the statement even if it passes the

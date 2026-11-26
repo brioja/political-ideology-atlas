@@ -1,6 +1,5 @@
 // Unit tests for the audit rules validate.js enforces on people audits under "rules": 4 (Brandon, 2026-11-07):
-// action/words tags, nothing-found nulls, the talk-page reviewHistory (WP:BRD), nulling reviews, and edits
-// checked against the committed file. The same code runs for ideologies.
+// action/words tags, nothing-found nulls, and edits checked against the committed file. The same code runs for ideologies.
 //   node tests/validate-rules.test.js        (also run by test.js)
 // Each case writes a fixture audit to a temp file for a catalog person who has no audit yet, so no real
 // audit is read or changed; the "committed" copy is supplied through setCommittedForTests.
@@ -40,17 +39,10 @@ function base() {
     answers,
   };
 }
-// A later pass: two passes and, for nullings, a nulling review.
-function laterPass(a, nulled = 0) {
+// A later pass: two passes.
+function laterPass(a) {
   a.auditor = ["claude-sonnet-5-5", "claude-opus-5-5"];
   a.passes = [{ auditor: "claude-sonnet-5-5", auditedAt: "2026-11-01" }, { auditor: "claude-opus-5-5", auditedAt: "2026-11-07" }];
-  if (nulled) a.reviews = [{ kind: "nulling", reviewer: "claude-opus-5-5", reviewedAt: "2026-11-07", nulled }];
-  return a;
-}
-const version = (x, author, date) => ({ value: x.value, confidence: x.confidence, rationale: x.rationale, sources: x.sources, author, date });
-// The current answer, recorded as the last talk-page entry.
-function withHistory(a, id, earlier) {
-  a.answers[id].reviewHistory = [...earlier, version(a.answers[id], "claude-opus-5-5", "2026-11-07")];
   return a;
 }
 
@@ -84,91 +76,32 @@ ok("base fixture", base());
 { const a = base(); a.answers[A].sources = ["s1", "s4"]; ok("answer from two actions", a); }
 
 // Silence isn't an answer: a nothing-found null cites nothing.
-{ const a = base(); a.answers[C].sources = ["s2"]; fails("nothing-found null cites words", a, /a null found nothing, so it cites nothing/); }
+{ const a = base(); a.answers[C].sources = ["s2"]; fails("nothing-found null cites words", a, /a null cites nothing/); }
 { const a = base(); a.answers[C].sources = ["s1"]; fails("nothing-found null cites an action", a, /null cites an action \(s1\)/); }
 
-// A first audit has no talk page.
-{ const a = withHistory(base(), A, [version({ value: -1, confidence: "low", rationale: "An earlier reading of the roll call.", sources: ["s1"] }, "claude-sonnet-5-5", "2026-11-01")]);
-  fails("history in a first audit", a, /"reviewHistory" in a first audit/); }
+// No answer history in the audit: git keeps earlier versions (Brandon, 2026-11-26).
+{ const a = laterPass(base()); a.answers[A].reviewHistory = [{ ...a.answers[A], author: "claude-opus-5-5", date: "2026-11-07" }];
+  fails("reviewHistory present", a, new RegExp(`${A}: remove "reviewHistory"`)); }
 
-// The talk page: at least 2 sourced versions, starting at the first answer, the last one the current answer.
-const earlierA = version({ value: -1, confidence: "low", rationale: "An earlier reading of the roll call.", sources: ["s1"] }, "claude-sonnet-5-5", "2026-11-01");
-ok("history with an earlier version", withHistory(laterPass(base()), A, [earlierA]));
-{ const a = laterPass(base()); a.answers[A].reviewHistory = []; fails("empty history", a, /2 or more entries/); }
-{ const a = laterPass(base()); a.answers[A].reviewHistory = [version(a.answers[A], "claude-opus-5-5", "2026-11-07")]; fails("one-entry history", a, /2 or more entries/); }
-{ const a = withHistory(laterPass(base()), A, [{ ...earlierA, sources: [] }]); fails("unsourced version in history", a, /signed, sourced version/); }
-{ const a = withHistory(laterPass(base()), A, [{ ...earlierA, author: undefined }]); fails("unsigned version in history", a, /signed, sourced version/); }
-{ const a = withHistory(laterPass(base()), A, [version({ value: null, confidence: "low", rationale: "No recorded position found.", sources: ["s1"] }, "claude-sonnet-5-5", "2026-11-01")]);
-  fails("history starting with a null", a, /starts at the first answer/); }
-{ const a = withHistory(laterPass(base()), A, [earlierA]); a.answers[A].rationale = "A different current wording of the answer."; fails("last entry differs from the answer", a, /last reviewHistory entry is the current answer/); }
-
-// Nullings: words never null an action; the reason cites its source; reviews count them.
-function nulled(reasonSources) {
-  const a = laterPass(base(), 1);
-  const was = version(a.answers[A], "claude-sonnet-5-5", "2026-11-01");
-  a.answers[A] = { value: null, confidence: "low", rationale: "The vote was on a different question than this statement.", sources: reasonSources };
-  const r = withHistory(a, A, [was]);
-  r.answers[A].sources = []; // the reason's sources stay in the history entry only
-  return r;
-}
-ok("action nulled on an action (the vote itself)", nulled(["s1"]));
-fails("action nulled on words", nulled(["s2"]), /words \(s2\) can't null an action \(s1\)/);
-fails("nulling without a reason source", nulled([]), /signed, sourced version/);
-{ const a = nulled(["s1"]); a.answers[A].sources = ["s1"]; fails("current null citing a source", a, /a null cites nothing/); }
-{ const a = nulled(["s1"]); delete a.reviews; fails("nulling without a nulling review", a, /"reviews" count 0 nulled answer\(s\) but "reviewHistory" holds 1/); }
-{ const a = nulled(["s1"]); a.reviews[0].nulled = 2; fails("nulling count mismatch", a, /"reviews" count 2 nulled answer\(s\) but "reviewHistory" holds 1/); }
-
-// Reverts are allowed under the same rules: back on the same action passes, back on words fails.
-function restored(sources, rationale) {
-  const a = nulled(["s1"]);
-  const x = a.answers[A];
-  a.answers[A] = { value: 1, confidence: "medium", rationale, sources };
-  a.answers[A].reviewHistory = [...x.reviewHistory, version(a.answers[A], "claude-opus-5-5", "2026-11-08")];
-  return a;
-}
-ok("revert on the same action", restored(["s1"], "Voted for the bill that settles this statement directly, after all."));
-ok("back on a new action", restored(["s4"], "Voted again for a later bill that settles this statement."));
-fails("back on words after an action was nulled", restored(["s3"], "Said in a 2021 speech that he supports this statement."), /needs an action too/);
-
-// Against the committed file: history is append-only, reviews too, and no sourced answer is edited away.
-{ const committed = withHistory(laterPass(base()), A, [earlierA]);
-  const a = JSON.parse(JSON.stringify(committed)); a.answers[A].reviewHistory[0].rationale = "Rewritten history.";
-  fails("history entry rewritten", a, /"reviewHistory" was changed or shortened/, committed);
-  const b = JSON.parse(JSON.stringify(committed)); delete b.answers[A].reviewHistory;
-  fails("history dropped", b, /"reviewHistory" was changed or shortened/, committed); }
-{ const committed = nulled(["s1"]); const a = JSON.parse(JSON.stringify(committed)); a.reviews = [];
-  fails("nulling review dropped", a, /committed "nulling" review was changed or removed/, committed); }
-{ const committed = base(); const a = laterPass(base()); a.answers[B].value = -2; a.answers[B].rationale = "Changed by a later pass with no record kept.";
-  fails("sourced answer changed without history", a, /changed without a talk-page record/, committed); }
-{ const committed = base(); const a = laterPass(base()); delete a.answers[B];
-  fails("sourced answer removed", a, /a sourced answer was removed/, committed); }
-// Answers only to statements in the bank; a dropped statement's answers go with their history, the nulling
-// reviews lowered by the nullings removed, and no mention of it is left.
+// A later pass changes, nulls or reverts answers freely against the committed file; a null still cites nothing.
+{ const committed = base(); const a = laterPass(base());
+  a.answers[A] = { value: null, confidence: "low", rationale: "Nulled: the vote was on a different question than this statement.", sources: [] };
+  ok("action nulled by a later pass", a, committed);
+  a.answers[A].sources = ["s1"]; fails("nulling citing its reason source", a, /null cites an action/, committed); }
+{ const committed = base(); const a = laterPass(base()); a.answers[B] = { value: -2, confidence: "medium", rationale: "Said in a 2021 speech that this statement is badly wrong.", sources: ["s3"] };
+  ok("sourced answer changed", a, committed); }
+{ const committed = base(); const a = laterPass(base()); a.answers[C] = { value: 1, confidence: "medium", rationale: "Voted for the second bill, which settles this.", sources: ["s4"] };
+  ok("nothing-found null replaced", a, committed); }
+// Answers only to statements in the bank, and no mention of a dropped one is left.
 { const X = "statement-no-longer-in-the-bank";
   const a = base(); a.answers[X] = { value: 1, confidence: "medium", rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"] };
-  fails("answer to a statement not in the bank", a, /answers to statements not in the bank: statement-no-longer-in-the-bank/);
-  // Committed: X was nulled by a later pass, and the nulling review counted it.
-  const committed = laterPass(base(), 1);
-  const stated = { value: 1, confidence: "medium", rationale: "Voted for the bill that settles this statement directly.", sources: ["s1"], author: "claude-sonnet-5-5", date: "2026-11-01" };
-  committed.answers[X] = { value: null, confidence: "low", rationale: "Nulled: the bill turned out to be about something else.", sources: [],
-    reviewHistory: [stated, { value: null, confidence: "low", rationale: "Nulled: the bill turned out to be about something else.", sources: ["s4"], author: "claude-opus-5-5", date: "2026-11-07" }] };
-  const dropped = (lowered) => { const b = JSON.parse(JSON.stringify(committed)); delete b.answers[X];
-    if (lowered) b.reviews = b.reviews.filter((r) => r.kind !== "nulling"); return b; };
-  ok("dropped statement's answer removed, its nulling taken off the review", dropped(true), committed);
-  fails("dropped statement's nulling still counted", dropped(false), /"reviews" count 1 nulled answer\(s\) but "reviewHistory" holds 0/, committed);
-  const c = JSON.parse(JSON.stringify(committed)); c.reviews = c.reviews.filter((r) => r.kind !== "nulling");
-  fails("nulling review lowered without a drop", c, /committed "nulling" review was changed or removed/, committed); }
+  fails("answer to a statement not in the bank", a, /answers to statements not in the bank: statement-no-longer-in-the-bank/); }
 { const R = require("../scripts/lib").retiredIds()[0];
   if (R) {
     fails("note naming a dropped statement", Object.assign(base(), { notes: `Left ${R} null.` }), new RegExp(`names statements no longer in the bank: ${R}`));
     const committed = base(); committed.answers[B].rationale += ` (Carried over from ${R}.)`;
     ok("mention of a dropped statement removed from a sourced answer", laterPass(base()), committed);
   } }
-{ const committed = base(); const a = laterPass(base()); const was = version(a.answers[B], "claude-sonnet-5-5", "2026-11-01");
-  a.answers[B] = { value: -2, confidence: "medium", rationale: "Said in a 2021 speech that this statement is badly wrong.", sources: ["s3"] };
-  ok("sourced answer changed with its committed version kept", withHistory(a, B, [was]), committed); }
-{ const committed = base(); const a = laterPass(base()); a.answers[C] = { value: 1, confidence: "medium", rationale: "Voted for the second bill, which settles this.", sources: ["s4"] };
-  ok("nothing-found null replaced freely", a, committed); }
 
 // ---- The rest of the people rules (audits/AUDIT_RULES.md, audits/PROMPT_PEOPLE.md) ----
 const E = (a, f) => { f(a); return a; };
@@ -213,9 +146,7 @@ fails("rules 2: unmarked inference", E(base(), (a) => { a.rules = 2; a.answers[A
 fails("rules 3: no inferences at all", E(base(), (a) => { a.answers[A].confidence = "low"; a.answers[A].rationale = "Inferred: from the bill he voted for on this statement."; }), /rules 3 has no inferences/);
 fails("answer resting only on Wikipedia", E(base(), (a) => { a.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "Wikipedia", url: "https://en.wikipedia.org/wiki/Example" }); a.answers[B].sources = ["s6"]; }), /Wikipedia is only a way to find evidence/);
 fails("answer resting only on OnTheIssues", E(base(), (a) => { a.sources.push({ id: "s6", kind: "reference", evidence: "words", title: "OnTheIssues", url: "https://www.ontheissues.org/x.htm" }); a.answers[B].sources = ["s6"]; }), /OnTheIssues is only a way to find evidence/);
-// Review history details.
-fails("nulling review malformed", E(nulled(["s1"]), (a) => { a.reviews[0].reviewedAt = "today"; }), /a "nulling" review is/);
-fails("history entry cites an unknown source", withHistory(laterPass(base()), A, [{ ...earlierA, sources: ["s9"] }]), /reviewHistory\[0\]: unknown source 's9'/);
+{ const a = laterPass(base()); a.reviews = [{ kind: "nulling", reviewer: "claude-opus-5-5", reviewedAt: "today", nulled: 1 }]; fails("nulling review malformed", a, /a "nulling" review is/); }
 // Warnings.
 { const w = warningsFor(E(base(), (a) => { const ids = st.slice(4, 4 + Math.ceil(st.length * 0.31)); for (const id of ids) a.answers[id] = { value: 0, confidence: "low", rationale: `Mixed record on this statement (${id}).`, sources: ["s1"] }; }));
   assert(w.some((x) => /neutral answers \(over 30%\)/.test(x)) && w.some((x) => /low-confidence answers \(over 50%\)/.test(x)) || w.some((x) => /neutral answers/.test(x)), `expected the neutral-answers warning, got ${w}`); n++; }
@@ -293,20 +224,14 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
 { const a = base(); a.answers[B].confidence = "high"; a.answers[B].rationale = "Said in a 2020 interview that this statement is wrong."; ok("rationale that states the evidence", a); }
 { const a = base(); a.rules = 2; a.answers[B].rationale = "Said so; not inferred."; fails("older audits: no 'not inferred' exception either", a, /so the confidence is low/); }
 
-// A source dropped from an answer takes its claims with it: kept word for word, a rationale that still names the
-// dropped source is flagged (an error for drafts and --as-current, a warning here; trotskyism, 2026-11-23).
+// A source dropped from an answer takes its claims with it: a rationale kept word for word from the committed answer
+// that still names the dropped source is an error (trotskyism, 2026-11-23).
 {
-  const dropped = (rationale) => {
-    const a = laterPass(base());
-    a.answers[B] = { value: -1, confidence: "medium", rationale: "Said in a 2020 interview transcript and the 2021 speech that this statement is wrong.", sources: ["s2", "s3"] };
-    const earlier = version(a.answers[B], "claude-sonnet-5-5", "2026-11-01");
-    a.answers[B] = { ...a.answers[B], sources: ["s2"], rationale: rationale || a.answers[B].rationale };
-    return withHistory(a, B, [earlier]);
-  };
-  const warns = (a) => { fs.writeFileSync(tmp, JSON.stringify(a, null, 2)); setCommittedForTests(() => null); return validate(subject.id).warnings.filter((w) => /was dropped but/.test(w)); };
-  assert.deepStrictEqual(warns(dropped()).length, 1, "a dropped source still named in an unchanged rationale"); n++;
-  assert.match(warns(dropped())[0], /source s3 was dropped but the rationale still names it \("2021 speech"\)/); n++;
-  assert.deepStrictEqual(warns(dropped("Said in a 2020 interview transcript that this statement is wrong.")), [], "rewritten without the dropped source"); n++;
+  const committed = laterPass(base());
+  committed.answers[B] = { value: -1, confidence: "medium", rationale: "Said in a 2020 interview transcript and the 2021 speech that this statement is wrong.", sources: ["s2", "s3"] };
+  const dropped = (rationale) => { const a = JSON.parse(JSON.stringify(committed)); a.answers[B] = { ...a.answers[B], sources: ["s2"], rationale: rationale || a.answers[B].rationale }; return a; };
+  fails("a dropped source still named in an unchanged rationale", dropped(), /source s3 was dropped but the rationale still names it \("2021 speech"\)/, committed);
+  ok("rewritten without the dropped source", dropped("Said in a 2020 interview transcript that this statement is wrong."), committed);
 }
 
 // Wikipedia is a tertiary source (Brandon, 2026-11-25): an answer citing it fails from rules 7 on and warns before.

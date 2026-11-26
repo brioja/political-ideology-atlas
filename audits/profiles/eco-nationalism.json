@@ -1,3286 +1,599 @@
 {
- "id": "eco-nationalism",
- "name": "Eco-nationalism",
- "auditedAt": "2026-10-20",
- "auditor": "claude-sonnet-5-5",
- "summary": "Eco-nationalism joins nationalism with environmental politics: the nation and its citizens are held to have a special duty to protect their own land, species and landscapes, which become part of national identity and a ground for self-rule. It spans left and right, from civic versions (Scottish, Catalan, Baltic, Taiwanese, Norwegian) to the nativist 'patriotic ecology' of the French National Rally, so it agrees on nation, land and localism but splits on immigration, ethnicity, nuclear power and economics.",
- "scope": "The cross-strand core described by the scholarship (Jane Dawson, Conversi and Posocco, Bivar): environmental stewardship framed as a national task, including sub-state movements such as the Ogoni (MOSOP) and civic green-nation states, and nativist cases such as the RN. Where ethnic and civic strands disagree the profile gives 0 with a note; unaddressed statements are low-confidence inferences or 0. It excludes eco-fascist extremes and non-nationalist green politics.",
- "wikipedia": "https://en.wikipedia.org/wiki/Eco-nationalism",
- "furtherReading": [
-  {
-   "title": "Eco-nationalism (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Eco-nationalism",
-   "note": "Overview of the civic and ethnic strands, bioregionalism and case studies."
-  },
-  {
-   "title": "Which Nationalism for the Anthropocene? A Comparative Study of Exemplary Green Nation-States",
-   "url": "https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2022.857597/full",
-   "note": "Open-access study of green nationalism in Norway, Germany, Switzerland and Sweden."
-  },
-  {
-   "title": "The Patriot Ecology of the French Far Right",
-   "url": "https://eprints.whiterose.ac.uk/id/eprint/195344/",
-   "note": "Short essay on the National Rally's nativist environmental policy."
-  },
-  {
-   "title": "Ogoni Bill of Rights (MOSOP)",
-   "url": "https://www.mosop.org/2015/10/10/ogoni-bill-of-rights/",
-   "note": "Founding document of an environmental self-determination movement."
-  }
- ],
- "sources": [
-  {
-   "id": "s1",
-   "kind": "reference",
-   "title": "Eco-nationalism",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Eco-nationalism",
-   "usedFor": "Definition, strands, case studies and topic positions."
-  },
-  {
-   "id": "s2",
-   "kind": "scholarly",
-   "title": "Which Nationalism for the Anthropocene? A Comparative Study of Exemplary Green Nation-States",
-   "author": "Daniele Conversi and Luca Posocco, Frontiers in Political Science",
-   "url": "https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2022.857597/full",
-   "usedFor": "Green nationalism's stance on growth, taxes, localism, cities, democracy and cooperation."
-  },
-  {
-   "id": "s3",
-   "kind": "scholarly",
-   "title": "The Patriot Ecology of the French Far Right",
-   "author": "Venus Bivar, Environmental History",
-   "url": "https://eprints.whiterose.ac.uk/id/eprint/195344/",
-   "usedFor": "RN nativist ecology: localism, immigration, nuclear, referendum, populism."
-  },
-  {
-   "id": "s4",
-   "kind": "primary",
-   "title": "Ogoni Bill of Rights (foreword)",
-   "author": "Movement for the Survival of the Ogoni People",
-   "url": "https://www.mosop.org/2015/10/10/ogoni-bill-of-rights/",
-   "usedFor": "Claims of self-determination, control of resources, representation and protection of land and ecology."
-  }
- ],
- "answers": {
-  "universal-healthcare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "raise-minimum-wage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "markets-allocate-better": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Conversi and Posocco blame infinite capital expansion for the Anthropocene and want environmental rules and taxes imposed on markets, so adherents distrust unregulated allocation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "public-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "tax-the-wealthy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unions-good": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "property-fundamental": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "regulate-corporations": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Conversi favors environmental rules that bind firms, and the RN referendum proposal makes parent companies liable for their subsidiaries' ecological damage.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "worker-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "surveillance-ok": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "legalize-drugs": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-hate-speech": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "strong-leader": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Wikipedia notes both democratic cases (Taiwan, Scotland) and party-state cases (China), so adherents do not share a view on strong leaders.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-harmful": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Conversi and Posocco keep the nation-state as the basic unit of environmental action and Wikipedia describes eco-nationalism as state-legitimating, so abolishing the state is rejected.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "limit-guns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "legalize-sex-work": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "decide-locally": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rehabilitation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "traditional-family": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "same-sex-marriage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abortion-legal": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No documented position and the strands would split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "more-religion-public": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Some strands draw on nature spirituality (Anastasianism, Sarna) but none argues for religion in public life as such.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "correct-racial-injustice": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gender-social-construct": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "preserve-national-culture": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Eco-nationalism fuses environmentalism with national identity: Norway's friluftsliv, Wordsworth and the Group of Seven, and the RN's concern with national heritage all treat nature as part of national culture.",
-   "sources": [
-    "s1",
-    "s2",
-    "s3"
-   ]
-  },
-  "gradual-change": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "reduce-immigration": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Ethnic eco-nationalists and the RN favour restriction while civic eco-nationalists are open; the strands differ.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "empower-international-orgs": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Le Pen says a globalist cannot be an environmentalist, while Conversi argues cosmopolitanism alone is insufficient; adherents lean toward national rather than supranational authority.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "free-trade": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The RN stresses short supply chains and local sourcing, and Conversi criticizes capital expansion and resource nationalism, so free trade is viewed skeptically.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "nation-first": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Eco-nationalism assigns the nation a special duty to its own environment and the RN's French-first stance links it to ecology, though Conversi stresses achievements that can be shared across borders.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "open-borders": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Le Pen calls open borders anti-ecological and ethnic eco-nationalists want closed borders; even civic strands keep national borders, so this is rejected.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "limit-growth": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Conversi blames infinite capital expansion, but China and Norway pursue green growth with continued oil drilling, so only a mild inference.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "drastic-climate-action": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The SNP and Catalan ERC declared climate emergencies and Wikipedia quotes a Hungarian nationalist saying no real nationalist is a climate denialist, though the RN favors different measures.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "tech-solves-problems": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Conversi cites green technology (electric vehicles, eco-labels) while romantic strands distrust industrial modernity; no shared view.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "expand-nuclear": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Baltic, Taiwanese and German eco-nationalists campaigned against nuclear plants while the RN wants new reactors; the strands differ.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "experts-over-public": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The RN framed its environmental referendum as taking ecology from the ideologues, and Norway's committee system gives citizens a role, so rule by experts is disfavored.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "central-planning": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "socialized-markets": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Economic structure is not a shared eco-nationalist position.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "land-value-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "tax-inheritance": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "basic-income": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "tariffs-protect-industry": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "RN localism and French-first nativism support protecting domestic production, though other strands do not discuss tariffs.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "state-directs-investment": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Conversi notes green subsidies and state-backed projects in Switzerland and Norway, but strands differ on state economic direction.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "widespread-small-property": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-money-wages": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-central-banks": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "corporatist-bargaining": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "one-party-rule": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "China's ecological civilization is a party-state case, but Taiwan, Baltic and Scottish cases arose from democratization, so the typical adherent does not endorse one-party rule.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "monarchy-legitimate": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "democracy-best": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Eco-nationalist protest was tied to democratization in Taiwan and the Eastern Bloc and Norway's model is participatory, though China is an exception.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "direct-votes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "workers-councils": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "right-to-secede": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The Ogoni, ERC and SNP pair ecology with self-rule, but the RN in the scope opposes secession; the family is divided.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "natural-rulers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "war-builds-character": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Conversi contrasts peaceful environmental nationalism with violent Volkisch and Nazi forms, implying war is not valued.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "separate-church-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "laws-from-scripture": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Nature spirituality appears but no strand grounds law in scripture.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "private-courts-defense": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "military-superiority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The RN stresses national security, but other strands do not address military policy.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "ethnic-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The ethnic and civic strands of eco-nationalism disagree on this.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "class-struggle-history": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "equal-outcomes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "indigenous-land-authority": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The Ogoni claimed control over their land and ecology, but Wikipedia notes critics say eco-nationalism rarely engages indigenous knowledge.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "colonial-reparations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "civilizational-union": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The nation-state is the basic unit in the sources, so supranational civilizational union is not favored.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "self-interest-moral": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Environmental duty and national pride are framed as collective, so a self-interest ethic is disfavored.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "duties-before-rights": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "nature-intrinsic-value": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "limit-population": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "industrial-civilization-disaster": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Agro-romantic strands reject modernity, but mainstream cases such as Norway and Switzerland embrace modern industrial societies.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "accelerate-technology": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Conversi describes nature-loving nationalism coexisting with mechanization, but disruption of institutions is not a goal.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "human-enhancement": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "algorithmic-government": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unbreakable-encryption": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restore-past-order": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Agro-romantic and nativist strands look backward while civic green-state strands look forward.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "results-over-ideology": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Eco-nationalists are ideologically committed to nation and environment, but sources give no view on judging policy by results.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "direct-action": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Anti-nuclear protests (Wyhl, Chernobyl-era, Lungmen) and Ogoni mobilization were central to eco-nationalist movements.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "means-match-ends": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "return-to-foraging": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-division-of-labor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "distribute-by-need": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "production-for-use": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "profit-exploitation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "dictatorship-of-proletariat": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "collective-farming": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "RN localism supports individual farmers and compensation for carbon-sequestering farmers.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "capitalism-causes-war": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Conversi criticizes capital expansion but does not argue that capitalism causes war.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "taxation-theft": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Conversi cites Norway's high CO2 taxes as effective policy, so taxation for environmental ends is accepted.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "harm-principle": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "individual-rights-only": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The Ogoni Bill of Rights claims rights as a people, including control of resources and self-determination, so group rights are central.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "conscription": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "exit-over-voice": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Eco-nationalism emphasizes rootedness in land and a national home, which sits badly with exit as the main check.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-as-business": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The state is treated as a steward of the national environment, not a firm.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "positive-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "media-academia-power": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "hereditarian-race": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Bivar says the RN-linked Nouvelle Droite shifted from racial hierarchy to the language of diversity, and civic strands reject it.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "organic-representation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "total-state": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "China's party-state is an outlier; typical adherents want a state that protects the environment, not one directing all life.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-rebirth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "territorial-expansion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Conversi contrasts peaceful green nationalism with expansionist forms; Ogoni and Baltic movements seek self-rule, not expansion.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "personal-loyalty-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "bound-labor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "universal-morality": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "single-common-good": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "jewish-state-israel": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "diaspora-return-right": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "revive-national-language": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "workplace-democracy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "school-vouchers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "avoid-deficit-stimulus": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "economic-freedom": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rule-by-example": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-self-determination": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The Ogoni Bill of Rights claims political control over Ogoni affairs and independence as a people, and Wikipedia ties eco-nationalism to independence movements in the Baltics, Scotland and Catalonia.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "force-without-un": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "reason-over-faith": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "welfare-for-citizens": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The RN national-priority principle applies, but civic strands would not restrict welfare; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "work-for-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "class-collaboration": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sacrifice-heritage": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Heritage protection (Heimatschutz, Lebensreform) is part of nature-loving nationalism, and national heritage is central to eco-nationalist identity.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "dominated-front": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "workers-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "distinct-gender-roles": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ban-interest": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "racial-segregation-law": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Even the nativist RN avoids hierarchy-of-races language and civic strands are multicultural, so legal racial segregation is not eco-nationalist.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "state-class-instrument": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "expand-fossil-fuels": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The RN wants a moratorium on wind and solar but backs nuclear, and the Ogoni cause arose from oil pollution; mainstream strands oppose fossil expansion, though China and Norway show resource-nationalist exceptions.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "assimilate-immigrants": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Ethnic strands favor assimilation and civic strands accept multiculture; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "elite-replacement": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Bivar's RN account is nativist but does not state a replacement conspiracy; mainstream civic strands reject it.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "proportional-representation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-mission": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Conversi describes pride in achievements shared across borders, not a mission to impose a form of government.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "patriarchy-structural": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "political-elite-corrupt": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "heritable-defect-limits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "security-forces-accountable": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "night-watchman-state": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Eco-nationalism relies on state environmental regulation, taxes and subsidies, so a minimal state is rejected.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "discourage-race-mixing": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Bivar shows the RN speaks of cultural, not racial, preservation; ethnic strands could differ.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "equal-moral-worth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "socialism-one-country": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "settler-state-colonial": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "uniform-civil-code": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-conversion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ban-cattle-slaughter": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-religion-state-schools": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "state-strengthens-encirclement": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "consent-of-governed": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Democratization-linked movements in Taiwan and the Eastern Bloc support consent-based legitimacy, though China is an exception.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "trade-surplus": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "population-transfer": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Wikipedia describes ethnic strands as nativist but documents no expulsion program.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "competition-drives-progress": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ban-extremist-parties": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "freedom-as-non-domination": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "separated-powers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "vanguard-party": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "priority-to-poor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "right-to-buy-council-homes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-strikes-picketing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "population-causes-poverty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The Ogoni case locates poverty in resource extraction and political exclusion, not population.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "diversity-weakens-cohesion": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Ethnic strands and the RN see diversity as a threat while civic strands are multicultural; the strands differ.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "offices-by-lottery": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Sortition appears nowhere in the sources, although Norway's citizen committees show some participatory leanings.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "emergency-suspend-protections": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "price-controls-essentials": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "party-controls-media": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "China restricts environmental criticism, but this is an outlier among strands.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "party-commands-army": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "long-naturalization-wait": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Strands split on immigration, so no shared view.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "representatives-worker-pay": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "party-discipline-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "pool-sovereignty": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The SNP and ERC tend to be pro-EU while the RN criticizes EU environmental rules; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "head-commands-forces": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "church-by-bishops": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "clerical-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "defeat-own-government-war": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "censor-art-for-virtue": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unlimited-reelection": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "recall-officials": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "end-foreign-alliances": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-rental-housing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "people-in-arms": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rural-life-healthier": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "German agro-romanticism and RN land attachment value rural rootedness, though Conversi also praises green cities, so the view is mild.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "reunify-divided-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Reunification of divided nations is not part of the documented eco-nationalist agenda.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "educated-out-of-touch": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Bivar says RN voters see themselves as left behind by the white-collar professional elite and the patriot ecology answers that grievance.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "cultures-equal-different": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Civic strands agree, ethnic strands do not; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "death-penalty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sex-ed-in-schools": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "creationism-in-schools": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-private-adult-pornography-access": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Pornography is not an eco-nationalist topic in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "citizenship-by-descent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Ethnic strands favor descent while civic strands favor territory.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "minority-language-support": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religious-exemptions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "encourage-eccentricity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sovereign-debt-cancellation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "independence-needs-economic-change": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The Ogoni bill ties political self-determination to control of economic resources, though not a full property transformation.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "constituent-assembly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-freedoms-for-growth": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "China's resource nationalism put growth first, but green strands reject that tradeoff.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "rich-countries-aid-poor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "independent-nuclear-deterrent": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "direct-election-head-of-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "central-bank-independence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-land-for-peace": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "property-serves-common-good": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The Ogoni claim resources for community development and Conversi supports regulation for environment, implying property serves collective ends.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "soviet-state-capitalist": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "precautionary-principle": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "collective-defense": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "annexed-territory-occupation": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Baltic and Soviet-era independence movements treated annexation as illegitimate, though only loosely tied to the statement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "subordinate-church-to-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "nonpartisan-head-of-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "force-to-prevent-secession": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Sub-state eco-nationalists (Catalonia, Scotland) oppose forced union while state versions (China) differ.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "region-keeps-system": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sacred-ruler": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "flat-income-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "character-from-environment": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sovereign-above-law": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "space-expansion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "mixed-constitution": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "leader-cult": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "equal-parenting": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "class-struggle-under-socialism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "land-redistribution": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "refugee-return": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "co-ethnic-territorial-claim": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Conversi contrasts peaceful green nationalism with irredentist ethnic forms.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "apostasy-punishable": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-must-cover": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "common-currency": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Pro-EU and anti-EU strands split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "kin-peoples-union": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-cultural-autonomy": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Ogoni sought autonomy within Nigeria for their own affairs and Baltic minority environmentalism is described as green citizenship, though not exactly this model.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "rights-where-you-live": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "material-conditions-drive-history": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ban-cartels": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-bailouts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "courts-bound-by-majority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Spain's Supreme Court vetoed Catalonia's climate law, which sub-state nationalists oppose, but RN populists differ; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "gender-parity-bodies": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "economic-self-sufficiency": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "RN localism favors domestic production but not a closed bloc, and civic strands trade.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "trade-labor-env-standards": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "moral-incentives": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "armed-group-creates-revolution": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-hereditary-privilege": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "history-own-civilization": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Cultural eco-nationalism teaches national landscapes and heritage as identity.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "civilizing-tutelage": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Wikipedia notes critics tie eco-nationalism to colonial dichotomies, but adherents do not endorse tutelage.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "patriotic-education": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Taiwan's cycling ritual is framed as patriotism and eco-nationalism treats environmental pride as national identity.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "end-racial-preferences": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "public-money-creation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "capitalism-adapts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "delink-world-market": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Conversi praises global environmental rankings and RN localism does not call for delinking.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "labor-aristocracy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "freedom-to-discriminate": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "entrenched-bill-of-rights": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "colonial-treaties-void": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "elective-rulers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "minority-veto": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "resist-lawless-ruler": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "parliament-supreme": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "animal-suffering-matters": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "animal-use-humane": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "noblesse-oblige": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "withdraw-from-politics": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "mass-culture-pacifies": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ruling-class-consent": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "world-economy-extracts-surplus": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "native-born-offices": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "party-own-road": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "An intra-communist question with no eco-nationalist counterpart.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "self-reliance-over-aid": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "RN localism favors self-reliance but the statement concerns poor countries.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "return-lost-territory": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "indigenous-political-leadership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "antifascism-founding-value": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "totalitarianisms-equivalent": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "slavery-not-civil-war-cause": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "An American historical dispute with no connection to eco-nationalism in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "preserve-contested-monuments": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "male-disadvantage-attention": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "domestic-violence-symmetry": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "institutions-fit-civilization": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "China invokes traditional ecological wisdom as an authentic alternative to Western liberal democracy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "military-guardian-role": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "paid-care-work": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "filial-duty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "office-by-exam": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "foreign-takeover-block": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "RN sovereigntist localism favors protecting national assets.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "no-fault-divorce": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "recallable-delegates": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "individual-pension-accounts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "land-use-tenure": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "budget-needs-parliament": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "single-official-language": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "foreign-land-ownership": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Bivar describes RN sovereignty over native lands as the route to protecting them from outsiders.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "disparate-impact-discrimination": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "consumerism-harmful": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "arm-foreign-insurgents": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "intervene-in-bloc": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "corporate-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-foreign-funding": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Sovereigntist nativism favors restricting outside influence.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "pronatalist-incentives": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "residents-only-property": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Bivar presents local sovereignty over native lands as central to RN ecology.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "job-guarantee": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "democratic-peace": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-duty-to-obey": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "industrial-unions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "minority-conspiracy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-legal-marriage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "public-access-to-information": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "local-production": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "The RN calls localism and short supply chains the ecological alternative to globalism and Conversi highlights local grassroots action.",
-   "sources": [
-    "s1",
-    "s2",
-    "s3"
-   ]
-  },
-  "informal-organisation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-law-over-international": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religious-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "deference-to-leading-power": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "regional-revenue-retention": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The Ogoni claim control of Ogoni resources for Ogoni development and Wikipedia notes Westminster, Nigerian redistribution grievances.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "personal-possessions-private": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "defeat-communism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "mixed-public-service-providers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religion-illusion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Nature spirituality appears in some strands (Anastasianism, Sarna).",
-   "sources": [
-    "s1"
-   ]
-  },
-  "capitalism-progressive": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-equality-needs-economic-change": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "socialized-care": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "purge-loanwords": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "treaties-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "cooperative-communities": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Intentional communities appear in Switzerland's Monte Verita and Vauban examples, but not as a program of the ideology.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "majority-settlement": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "neither-capitalism-nor-communism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "historical-land-claim": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Eco-nationalism roots nation in its landscape.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "holocaust-denial": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Bivar notes Marine Le Pen distanced the party from her father's Holocaust denial.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "criminalize-homosexuality": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "suppress-opposition": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "China is an outlier.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "punish-blasphemy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "colonies-serve-metropole": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The Ogoni case is a protest against extraction for the benefit of a distant centre.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "defensive-jihad-duty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unreligious-rulers-fought": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "participatory-democracy": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Grassroots and committee model.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "intersecting-oppressions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gender-identity-recognition": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "assisted-dying": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "left-right-obsolete": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Wikipedia says adherents span the left-right spectrum but share nation-and-environment focus.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "alienated-labor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "islam-incompatible": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "divine-source-of-authority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religious-dress-in-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "social-market-economy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-armed-forces": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rich-first": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "stay-neutral-between-blocs": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "dynastic-succession": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "interest-free-mutual-credit": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "refuse-lender-austerity": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Sovereigntist strands oppose outside conditions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "property-franchise": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "domination-women-nature": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "reification": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "press-owned-by-wealth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "promulgated-standing-laws": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "racial-franchise": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "online-participation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "open-government-data": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "interfaith-marriage-restriction": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "boycott-minority-shops": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "citizens-assembly": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Norway's committee model.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "reinterpret-religion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "wealth-concentration-endangers-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "open-lgbt-military-service": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "state-promotes-atheism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-police-prisons": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "power-sharing-divided-societies": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "charity-over-state-aid": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "State environmental action is central.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "term-limits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "vote-delegation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "existential-risk-priority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-in-religious-leadership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "shared-marital-authority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "foreign-residents-local-vote": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rent-control": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-ip": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "uniformed-youth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-nuclear-weapons-on-territory": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-foreign-bases": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "recognise-genocide": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "income-for-work-not-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "never-kill-self-defence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unbroken-national-continuity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sex-socially-constructed": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-fixed-category-of-women": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "martyrs-honoured": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "politics-spiritual-struggle": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "homeland-cultural-centre": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "culture-before-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "god-not-male": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "scripture-judged-by-women": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "economy-in-majority-hands": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Ogoni want Ogoni control, but statement concerns majority groups.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "single-unit-for-people": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "independent-unions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "socialism-needs-workers-power": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "A Marxist definition of socialism with no eco-nationalist counterpart.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "local-essentials-public": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "second-chamber": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "municipal-property": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "confederal-coordination": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "family-wage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ageing-research-funding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "anonymous-payments": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "online-anonymity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "person-over-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "spiritual-nature": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Anastasianism, Sarna and harmony between humanity and nature.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "regional-powers-revocable": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Spain's Supreme Court vetoed Catalonia's climate law and sub-state eco-nationalists oppose revocable autonomy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "gm-crops": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "German far-right publications discussed genetically modified food critically, and RN opposes GMOs, but not a documented unified position.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "dense-cities": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Conversi praises car-free Vauban and Oslo but agro-romantic strands favor countryside.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "racial-group-interests": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "RN language emphasizes cultural not racial interests.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "racial-pride": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "language-defines-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "communal-electorates": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "foreign-partition-plot": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "free-public-college": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "pollution-taxes": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Conversi cites Norway's high CO2 taxes as effective environmental policy.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "future-generations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-distinct-values": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "arms-reduction": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "capital-controls": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Localism and sovereigntism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "soldiers-refuse-war": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "collective-bargaining": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "in-work-tax-credits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "fiscal-rules-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restructure-world-economy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "smash-state-machine": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "free-economic-experiment": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "nature-as-capital": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Conversi cites environmental rules aligned with profit and Wikipedia notes ecotourism benefits.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "sacred-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "student-debt-relief": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "internal-colonialism": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Ogoni and Scottish cases frame the center as extracting resources or dumping waste on a region.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "shared-human-nature": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "public-service-media": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religions-one-truth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "farm-price-support": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "keep-nuclear-weapons": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "workers-own-party": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-property-inheritance": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "pollution-tort-liability": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "customary-chiefs-lawmaking": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "environment-over-liberty": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Its strands treat protecting the national land and species as a duty that can limit individual freedoms.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "mandatory-sentences": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "immigrants-learn-language": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "voter-id": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
-   "sources": [],
-   "reviewHistory": [
+  "id": "eco-nationalism",
+  "name": "Eco-nationalism",
+  "auditedAt": "2026-10-20",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Eco-nationalism joins nationalism with environmental politics: the nation and its citizens are held to have a special duty to protect their own land, species and landscapes, which become part of national identity and a ground for self-rule. It spans left and right, from civic versions (Scottish, Catalan, Baltic, Taiwanese, Norwegian) to the nativist 'patriotic ecology' of the French National Rally, so it agrees on nation, land and localism but splits on immigration, ethnicity, nuclear power and economics.",
+  "scope": "The cross-strand core described by the scholarship (Jane Dawson, Conversi and Posocco, Bivar): environmental stewardship framed as a national task, including sub-state movements such as the Ogoni (MOSOP) and civic green-nation states, and nativist cases such as the RN. Where ethnic and civic strands disagree the profile gives 0 with a note; unaddressed statements are low-confidence inferences or 0. It excludes eco-fascist extremes and non-nationalist green politics.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Eco-nationalism",
+  "furtherReading": [
     {
-     "value": 0,
-     "confidence": "low",
-     "rationale": "The nativist RN strand favours citizenship checks while civic green-nation movements do not; the sources give no shared position.",
-     "sources": [
-      "s1",
-      "s3"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-20"
+      "title": "Eco-nationalism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eco-nationalism",
+      "note": "Overview of the civic and ethnic strands, bioregionalism and case studies."
     },
     {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
-     "sources": [
-      "s1",
-      "s3"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-12"
+      "title": "Which Nationalism for the Anthropocene? A Comparative Study of Exemplary Green Nation-States",
+      "url": "https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2022.857597/full",
+      "note": "Open-access study of green nationalism in Norway, Germany, Switzerland and Sweden."
+    },
+    {
+      "title": "The Patriot Ecology of the French Far Right",
+      "url": "https://eprints.whiterose.ac.uk/id/eprint/195344/",
+      "note": "Short essay on the National Rally's nativist environmental policy."
+    },
+    {
+      "title": "Ogoni Bill of Rights (MOSOP)",
+      "url": "https://www.mosop.org/2015/10/10/ogoni-bill-of-rights/",
+      "note": "Founding document of an environmental self-determination movement."
     }
-   ]
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "reference",
+      "title": "Eco-nationalism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Eco-nationalism",
+      "usedFor": "Definition, strands, case studies and topic positions."
+    },
+    {
+      "id": "s2",
+      "kind": "scholarly",
+      "title": "Which Nationalism for the Anthropocene? A Comparative Study of Exemplary Green Nation-States",
+      "author": "Daniele Conversi and Luca Posocco, Frontiers in Political Science",
+      "url": "https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2022.857597/full",
+      "usedFor": "Green nationalism's stance on growth, taxes, localism, cities, democracy and cooperation."
+    },
+    {
+      "id": "s3",
+      "kind": "scholarly",
+      "title": "The Patriot Ecology of the French Far Right",
+      "author": "Venus Bivar, Environmental History",
+      "url": "https://eprints.whiterose.ac.uk/id/eprint/195344/",
+      "usedFor": "RN nativist ecology: localism, immigration, nuclear, referendum, populism."
+    },
+    {
+      "id": "s4",
+      "kind": "primary",
+      "title": "Ogoni Bill of Rights (foreword)",
+      "author": "Movement for the Survival of the Ogoni People",
+      "url": "https://www.mosop.org/2015/10/10/ogoni-bill-of-rights/",
+      "usedFor": "Claims of self-determination, control of resources, representation and protection of land and ecology."
+    }
+  ],
+  "answers": {
+    "abolish-armed-forces": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-central-banks": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-division-of-labor": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-hereditary-privilege": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-ip": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-legal-marriage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-money-wages": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-police-prisons": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-rental-housing": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abortion-legal": {"value":0,"confidence":"low","rationale":"No documented position and the strands would split.","sources":["s1"]},
+    "accelerate-technology": {"value":-1,"confidence":"low","rationale":"Conversi describes nature-loving nationalism coexisting with mechanization, but disruption of institutions is not a goal.","sources":["s2"]},
+    "ageing-research-funding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "algorithmic-government": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "alienated-labor": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "animal-suffering-matters": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "animal-use-humane": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "annexed-territory-occupation": {"value":1,"confidence":"low","rationale":"Baltic and Soviet-era independence movements treated annexation as illegitimate, though only loosely tied to the statement.","sources":["s1"]},
+    "anonymous-payments": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "antifascism-founding-value": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "apostasy-punishable": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "arm-foreign-insurgents": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "armed-group-creates-revolution": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "arms-reduction": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "assimilate-immigrants": {"value":0,"confidence":"low","rationale":"Ethnic strands favor assimilation and civic strands accept multiculture; split.","sources":["s1"]},
+    "assisted-dying": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "automate-paid-work": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "avoid-deficit-stimulus": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ban-cartels": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ban-cattle-slaughter": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ban-extremist-parties": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ban-interest": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "basic-income": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "bound-labor": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "boycott-minority-shops": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "budget-needs-parliament": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "bypass-parties-groups": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "capital-controls": {"value":1,"confidence":"low","rationale":"Localism and sovereigntism.","sources":["s3"]},
+    "capitalism-adapts": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "capitalism-causes-war": {"value":0,"confidence":"low","rationale":"Conversi criticizes capital expansion but does not argue that capitalism causes war.","sources":["s2"]},
+    "capitalism-progressive": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "censor-art-for-virtue": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "central-bank-independence": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "central-planning": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "character-from-environment": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "charity-over-state-aid": {"value":-1,"confidence":"low","rationale":"State environmental action is central.","sources":["s2"]},
+    "church-by-bishops": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "citizens-assembly": {"value":1,"confidence":"low","rationale":"Norway's committee model.","sources":["s2"]},
+    "citizenship-by-descent": {"value":0,"confidence":"low","rationale":"Ethnic strands favor descent while civic strands favor territory.","sources":["s1"]},
+    "civilizational-union": {"value":-1,"confidence":"low","rationale":"The nation-state is the basic unit in the sources, so supranational civilizational union is not favored.","sources":["s2"]},
+    "civilizing-tutelage": {"value":-1,"confidence":"low","rationale":"Wikipedia notes critics tie eco-nationalism to colonial dichotomies, but adherents do not endorse tutelage.","sources":["s1"]},
+    "class-collaboration": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "class-struggle-history": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "class-struggle-under-socialism": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "clerical-rule": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "close-ties-china": {"value":0,"confidence":"low","rationale":"Eco-nationalism takes no documented line on great-power alignment, and its strands split between sub-state movements and nativist sovereignty parties that would answer differently.","sources":["s1"]},
+    "co-ethnic-territorial-claim": {"value":-1,"confidence":"low","rationale":"Conversi contrasts peaceful green nationalism with irredentist ethnic forms.","sources":["s2"]},
+    "collective-bargaining": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "collective-defense": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "collective-farming": {"value":-1,"confidence":"low","rationale":"RN localism supports individual farmers and compensation for carbon-sequestering farmers.","sources":["s3"]},
+    "colonial-reparations": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "colonial-treaties-void": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "colonies-serve-metropole": {"value":-1,"confidence":"medium","rationale":"The Ogoni case is a protest against extraction for the benefit of a distant centre.","sources":["s1","s4"]},
+    "common-currency": {"value":0,"confidence":"low","rationale":"Pro-EU and anti-EU strands split.","sources":["s3"]},
+    "communal-electorates": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "competition-drives-progress": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "confederal-coordination": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "conscription": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "consent-of-governed": {"value":1,"confidence":"low","rationale":"Democratization-linked movements in Taiwan and the Eastern Bloc support consent-based legitimacy, though China is an exception.","sources":["s1"]},
+    "constituent-assembly": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "consumerism-harmful": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "cooperative-communities": {"value":0,"confidence":"low","rationale":"Intentional communities appear in Switzerland's Monte Verita and Vauban examples, but not as a program of the ideology.","sources":["s1"]},
+    "corporate-influence": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "corporatist-bargaining": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "correct-racial-injustice": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "courts-bound-by-majority": {"value":0,"confidence":"low","rationale":"Spain's Supreme Court vetoed Catalonia's climate law, which sub-state nationalists oppose, but RN populists differ; split.","sources":["s1"]},
+    "creationism-in-schools": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "criminalize-homosexuality": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "culture-before-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "cultures-equal-different": {"value":0,"confidence":"low","rationale":"Civic strands agree, ethnic strands do not; split.","sources":["s1"]},
+    "customary-chiefs-lawmaking": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "cut-consumption-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "death-penalty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "decide-locally": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "defeat-communism": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "defeat-own-government-war": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "defend-planned-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "defensive-jihad-duty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "deference-to-leading-power": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "delink-world-market": {"value":-1,"confidence":"low","rationale":"Conversi praises global environmental rankings and RN localism does not call for delinking.","sources":["s2"]},
+    "democracy-best": {"value":1,"confidence":"low","rationale":"Eco-nationalist protest was tied to democratization in Taiwan and the Eastern Bloc and Norway's model is participatory, though China is an exception.","sources":["s1","s2"]},
+    "democracy-is-procedure": {"value":0,"confidence":"low","rationale":"Green nationalists value democratic self-rule, but RN-style populism and ecological priorities push some toward substantive tests; the sources leave it split.","sources":["s2","s3"]},
+    "democratic-peace": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "dense-cities": {"value":0,"confidence":"low","rationale":"Conversi praises car-free Vauban and Oslo but agro-romantic strands favor countryside.","sources":["s2"]},
+    "diaspora-return-right": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "dictatorship-of-proletariat": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "direct-action": {"value":1,"confidence":"low","rationale":"Anti-nuclear protests (Wyhl, Chernobyl-era, Lungmen) and Ogoni mobilization were central to eco-nationalist movements.","sources":["s1"]},
+    "direct-election-head-of-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "direct-votes": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "discourage-race-mixing": {"value":-1,"confidence":"low","rationale":"Bivar shows the RN speaks of cultural, not racial, preservation; ethnic strands could differ.","sources":["s3"]},
+    "disparate-impact-discrimination": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "disputed-territory-plebiscite": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "distinct-gender-roles": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "distribute-by-need": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "distribution-by-process": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "diversity-weakens-cohesion": {"value":0,"confidence":"low","rationale":"Ethnic strands and the RN see diversity as a threat while civic strands are multicultural; the strands differ.","sources":["s1","s3"]},
+    "divine-source-of-authority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "domestic-violence-symmetry": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "dominated-front": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "domination-women-nature": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "drastic-climate-action": {"value":1,"confidence":"medium","rationale":"The SNP and Catalan ERC declared climate emergencies and Wikipedia quotes a Hungarian nationalist saying no real nationalist is a climate denialist, though the RN favors different measures.","sources":["s1","s2"]},
+    "duties-before-rights": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "dynastic-succession": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "economic-freedom": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "economic-self-sufficiency": {"value":-1,"confidence":"low","rationale":"RN localism favors domestic production but not a closed bloc, and civic strands trade.","sources":["s3"]},
+    "economy-in-majority-hands": {"value":0,"confidence":"low","rationale":"Ogoni want Ogoni control, but statement concerns majority groups.","sources":["s4"]},
+    "educated-out-of-touch": {"value":1,"confidence":"low","rationale":"Bivar says RN voters see themselves as left behind by the white-collar professional elite and the patriot ecology answers that grievance.","sources":["s3"]},
+    "elective-rulers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "elite-replacement": {"value":-1,"confidence":"low","rationale":"Bivar's RN account is nativist but does not state a replacement conspiracy; mainstream civic strands reject it.","sources":["s3"]},
+    "emergency-suspend-protections": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "empower-international-orgs": {"value":-1,"confidence":"low","rationale":"Le Pen says a globalist cannot be an environmentalist, while Conversi argues cosmopolitanism alone is insufficient; adherents lean toward national rather than supranational authority.","sources":["s2","s3"]},
+    "encourage-eccentricity": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "end-foreign-alliances": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "end-racial-preferences": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "entrenched-bill-of-rights": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "environment-over-liberty": {"value":1,"confidence":"medium","rationale":"Its strands treat protecting the national land and species as a duty that can limit individual freedoms.","sources":["s1","s2"]},
+    "equal-conscription": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "equal-moral-worth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "equal-outcomes": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "equal-parenting": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ethnic-nation": {"value":0,"confidence":"low","rationale":"The ethnic and civic strands of eco-nationalism disagree on this.","sources":["s1"]},
+    "existential-risk-priority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "exit-over-voice": {"value":-1,"confidence":"low","rationale":"Eco-nationalism emphasizes rootedness in land and a national home, which sits badly with exit as the main check.","sources":["s1"]},
+    "expand-fossil-fuels": {"value":-1,"confidence":"medium","rationale":"The RN wants a moratorium on wind and solar but backs nuclear, and the Ogoni cause arose from oil pollution; mainstream strands oppose fossil expansion, though China and Norway show resource-nationalist exceptions.","sources":["s1","s3"]},
+    "expand-nuclear": {"value":0,"confidence":"low","rationale":"Baltic, Taiwanese and German eco-nationalists campaigned against nuclear plants while the RN wants new reactors; the strands differ.","sources":["s1","s3"]},
+    "experts-over-public": {"value":-1,"confidence":"low","rationale":"The RN framed its environmental referendum as taking ecology from the ideologues, and Norway's committee system gives citizens a role, so rule by experts is disfavored.","sources":["s3"]},
+    "extrajudicial-killing": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "family-wage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "farm-price-support": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "filial-duty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "financial-transactions-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "fiscal-rules-binding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "flat-income-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "force-to-prevent-secession": {"value":-1,"confidence":"low","rationale":"Sub-state eco-nationalists (Catalonia, Scotland) oppose forced union while state versions (China) differ.","sources":["s1"]},
+    "force-without-un": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "foreign-land-ownership": {"value":1,"confidence":"low","rationale":"Bivar describes RN sovereignty over native lands as the route to protecting them from outsiders.","sources":["s3"]},
+    "foreign-partition-plot": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "foreign-residents-local-vote": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "foreign-takeover-block": {"value":1,"confidence":"low","rationale":"RN sovereigntist localism favors protecting national assets.","sources":["s3"]},
+    "free-economic-experiment": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "free-public-college": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "free-trade": {"value":-1,"confidence":"medium","rationale":"The RN stresses short supply chains and local sourcing, and Conversi criticizes capital expansion and resource nationalism, so free trade is viewed skeptically.","sources":["s2","s3"]},
+    "freedom-as-non-domination": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "freedom-to-discriminate": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "future-generations": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gender-equality-agencies": {"value":0,"confidence":"low","rationale":"Support follows the left-right split among adherents, and the sources record no stance on gender-equality bodies.","sources":["s1"]},
+    "gender-identity-recognition": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gender-parity-bodies": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gender-social-construct": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gendered-self-government": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gm-crops": {"value":-1,"confidence":"low","rationale":"German far-right publications discussed genetically modified food critically, and RN opposes GMOs, but not a documented unified position.","sources":["s1"]},
+    "god-not-male": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gradual-change": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "harm-principle": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "head-commands-forces": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "hereditarian-race": {"value":-1,"confidence":"medium","rationale":"Bivar says the RN-linked Nouvelle Droite shifted from racial hierarchy to the language of diversity, and civic strands reject it.","sources":["s3"]},
+    "heritable-defect-limits": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "historical-land-claim": {"value":1,"confidence":"low","rationale":"Eco-nationalism roots nation in its landscape.","sources":["s1"]},
+    "history-own-civilization": {"value":1,"confidence":"low","rationale":"Cultural eco-nationalism teaches national landscapes and heritage as identity.","sources":["s1"]},
+    "holocaust-denial": {"value":-2,"confidence":"low","rationale":"Bivar notes Marine Le Pen distanced the party from her father's Holocaust denial.","sources":["s3"]},
+    "homeland-cultural-centre": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "homeland-spiritual-bond": {"value":2,"confidence":"high","rationale":"The definition of eco-nationalism rests on the nation's special duty to protect its own land, which becomes part of national identity, and the Ogoni Bill of Rights asserts the same tie to ancestral land.","sources":["s1","s4"]},
+    "homestead-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "human-enhancement": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "immigrants-learn-language": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "in-work-tax-credits": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "income-for-work-not-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "independence-needs-economic-change": {"value":1,"confidence":"low","rationale":"The Ogoni bill ties political self-determination to control of economic resources, though not a full property transformation.","sources":["s4"]},
+    "independent-nuclear-deterrent": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "independent-unions": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "indigenous-land-authority": {"value":1,"confidence":"low","rationale":"The Ogoni claimed control over their land and ecology, but Wikipedia notes critics say eco-nationalism rarely engages indigenous knowledge.","sources":["s1","s4"]},
+    "indigenous-political-leadership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "indirect-election": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "individual-pension-accounts": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "individual-rights-only": {"value":-1,"confidence":"medium","rationale":"The Ogoni Bill of Rights claims rights as a people, including control of resources and self-determination, so group rights are central.","sources":["s4"]},
+    "industrial-civilization-disaster": {"value":-1,"confidence":"low","rationale":"Agro-romantic strands reject modernity, but mainstream cases such as Norway and Switzerland embrace modern industrial societies.","sources":["s2"]},
+    "industrial-unions": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "informal-organisation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "institutions-fit-civilization": {"value":1,"confidence":"low","rationale":"China invokes traditional ecological wisdom as an authentic alternative to Western liberal democracy.","sources":["s1"]},
+    "interest-free-mutual-credit": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "interfaith-marriage-restriction": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "internal-colonialism": {"value":1,"confidence":"medium","rationale":"Ogoni and Scottish cases frame the center as extracting resources or dumping waste on a region.","sources":["s1","s4"]},
+    "international-criminal-courts": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "internet-shutdowns": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "intersecting-oppressions": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "intervene-in-bloc": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "islam-incompatible": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "jewish-state-israel": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "job-guarantee": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "keep-colonial-borders": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "keep-nuclear-weapons": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "kin-peoples-union": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "labor-aristocracy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "labour-theory-of-value": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "land-redistribution": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "land-use-tenure": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "land-value-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "language-defines-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "laws-from-scripture": {"value":-1,"confidence":"low","rationale":"Nature spirituality appears but no strand grounds law in scripture.","sources":["s1"]},
+    "leader-cult": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "left-right-obsolete": {"value":1,"confidence":"low","rationale":"Wikipedia says adherents span the left-right spectrum but share nation-and-environment focus.","sources":["s1"]},
+    "legalize-drugs": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "legalize-sex-work": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "limit-growth": {"value":1,"confidence":"low","rationale":"Conversi blames infinite capital expansion, but China and Norway pursue green growth with continued oil drilling, so only a mild inference.","sources":["s2"]},
+    "limit-guns": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "limit-population": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "local-essentials-public": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "local-production": {"value":2,"confidence":"medium","rationale":"The RN calls localism and short supply chains the ecological alternative to globalism and Conversi highlights local grassroots action.","sources":["s1","s2","s3"]},
+    "long-naturalization-wait": {"value":0,"confidence":"low","rationale":"Strands split on immigration, so no shared view.","sources":["s1"]},
+    "majority-settlement": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "male-disadvantage-attention": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "mandatory-sentences": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "market-under-party-rule": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "markets-allocate-better": {"value":-1,"confidence":"low","rationale":"Conversi and Posocco blame infinite capital expansion for the Anthropocene and want environmental rules and taxes imposed on markets, so adherents distrust unregulated allocation.","sources":["s2"]},
+    "martyrs-honoured": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "mass-culture-pacifies": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "material-conditions-drive-history": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "material-over-identity": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "means-match-ends": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "media-academia-power": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "military-guardian-role": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "military-superiority": {"value":0,"confidence":"low","rationale":"The RN stresses national security, but other strands do not address military policy.","sources":["s3"]},
+    "minority-conspiracy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "minority-language-support": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "minority-territorial-autonomy": {"value":1,"confidence":"medium","rationale":"Eco-nationalism treats land-based self-rule as a core claim, as in the sub-state cases (Scottish, Catalan, Ogoni) the scholarship documents.","sources":["s2","s4"]},
+    "minority-veto": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "mixed-constitution": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "mixed-public-service-providers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "monarchy-legitimate": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "moral-incentives": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "more-religion-public": {"value":0,"confidence":"low","rationale":"Some strands draw on nature spirituality (Anastasianism, Sarna) but none argues for religion in public life as such.","sources":["s1"]},
+    "multipolar-world": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "municipal-property": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "nation-first": {"value":1,"confidence":"medium","rationale":"Eco-nationalism assigns the nation a special duty to its own environment and the RN's French-first stance links it to ecology, though Conversi stresses achievements that can be shared across borders.","sources":["s1","s3"]},
+    "national-church-status": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "national-cultural-autonomy": {"value":1,"confidence":"low","rationale":"Ogoni sought autonomy within Nigeria for their own affairs and Baltic minority environmentalism is described as green citizenship, though not exactly this model.","sources":["s1","s4"]},
+    "national-law-over-international": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "national-mission": {"value":-1,"confidence":"low","rationale":"Conversi describes pride in achievements shared across borders, not a mission to impose a form of government.","sources":["s2"]},
+    "national-rebirth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "national-resource-control": {"value":2,"confidence":"high","rationale":"The Ogoni Bill of Rights demands control of the people's own resources and the eco-nationalist case frames protecting national land and resources as a ground for self-rule.","sources":["s4","s1"]},
+    "national-self-determination": {"value":2,"confidence":"high","rationale":"The Ogoni Bill of Rights claims political control over Ogoni affairs and independence as a people, and Wikipedia ties eco-nationalism to independence movements in the Baltics, Scotland and Catalonia.","sources":["s1","s4"]},
+    "native-born-offices": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "natural-rulers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "nature-as-capital": {"value":1,"confidence":"low","rationale":"Conversi cites environmental rules aligned with profit and Wikipedia notes ecotourism benefits.","sources":["s2"]},
+    "nature-intrinsic-value": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "negative-income-tax": {"value":0,"confidence":"low","rationale":"The sources document no welfare-design stance, and adherents range from social-democratic to market-friendly nationalists.","sources":["s1"]},
+    "neither-capitalism-nor-communism": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "never-kill-self-defence": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "night-watchman-state": {"value":-2,"confidence":"medium","rationale":"Eco-nationalism relies on state environmental regulation, taxes and subsidies, so a minimal state is rejected.","sources":["s2"]},
+    "no-bailouts": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-business-privileges": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-denominational-politics": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-duty-to-obey": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-fault-divorce": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-fixed-category-of-women": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-foreign-bases": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-land-for-peace": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-nuclear-weapons-on-territory": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-religion-state-schools": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "noblesse-oblige": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "nonpartisan-head-of-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "office-by-exam": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "offices-by-lottery": {"value":0,"confidence":"low","rationale":"Sortition appears nowhere in the sources, although Norway's citizen committees show some participatory leanings.","sources":["s1"]},
+    "one-party-rule": {"value":-1,"confidence":"low","rationale":"China's ecological civilization is a party-state case, but Taiwan, Baltic and Scottish cases arose from democratization, so the typical adherent does not endorse one-party rule.","sources":["s1"]},
+    "online-anonymity": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "online-participation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "open-borders": {"value":-1,"confidence":"medium","rationale":"Le Pen calls open borders anti-ecological and ethnic eco-nationalists want closed borders; even civic strands keep national borders, so this is rejected.","sources":["s1","s3"]},
+    "open-government-data": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "open-lgbt-military-service": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "organic-representation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "paid-care-work": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "parliament-supreme": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "participatory-democracy": {"value":1,"confidence":"low","rationale":"Grassroots and committee model.","sources":["s2"]},
+    "party-commands-army": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "party-controls-media": {"value":-1,"confidence":"low","rationale":"China restricts environmental criticism, but this is an outlier among strands.","sources":["s1"]},
+    "party-discipline-binding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "party-own-road": {"value":0,"confidence":"low","rationale":"An intra-communist question with no eco-nationalist counterpart.","sources":["s1"]},
+    "patriarchy-structural": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "patriotic-education": {"value":1,"confidence":"low","rationale":"Taiwan's cycling ritual is framed as patriotism and eco-nationalism treats environmental pride as national identity.","sources":["s1"]},
+    "patriotism-serves-workers": {"value":0,"confidence":"low","rationale":"Left civic strands link patriotism and workers while the nativist RN strand frames it around the native population; the sources show no common answer.","sources":["s1","s3"]},
+    "people-in-arms": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "person-over-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "personal-loyalty-rule": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "personal-possessions-private": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "political-elite-corrupt": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "politics-spiritual-struggle": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "pollution-taxes": {"value":1,"confidence":"medium","rationale":"Conversi cites Norway's high CO2 taxes as effective environmental policy.","sources":["s2"]},
+    "pollution-tort-liability": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "pool-sovereignty": {"value":0,"confidence":"low","rationale":"The SNP and ERC tend to be pro-EU while the RN criticizes EU environmental rules; split.","sources":["s3"]},
+    "population-causes-poverty": {"value":-1,"confidence":"low","rationale":"The Ogoni case locates poverty in resource extraction and political exclusion, not population.","sources":["s4"]},
+    "population-transfer": {"value":-2,"confidence":"low","rationale":"Wikipedia describes ethnic strands as nativist but documents no expulsion program.","sources":["s1"]},
+    "positive-liberty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "power-sharing-divided-societies": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "precautionary-principle": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "premarital-sex": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "preserve-contested-monuments": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "preserve-national-culture": {"value":2,"confidence":"medium","rationale":"Eco-nationalism fuses environmentalism with national identity: Norway's friluftsliv, Wordsworth and the Group of Seven, and the RN's concern with national heritage all treat nature as part of national culture.","sources":["s1","s2","s3"]},
+    "press-owned-by-wealth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "price-controls-essentials": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "priority-to-poor": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "private-courts-defense": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "production-for-use": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "profit-exploitation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "promulgated-standing-laws": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "pronatalist-incentives": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "property-franchise": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "property-fundamental": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "property-serves-common-good": {"value":1,"confidence":"low","rationale":"The Ogoni claim resources for community development and Conversi supports regulation for environment, implying property serves collective ends.","sources":["s2","s4"]},
+    "proportional-representation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "protect-kin-minorities": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "public-access-to-information": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "public-money-creation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "public-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "public-service-media": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "punish-blasphemy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "purge-loanwords": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "race-social-construct": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "racial-franchise": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "racial-group-interests": {"value":-1,"confidence":"low","rationale":"RN language emphasizes cultural not racial interests.","sources":["s3"]},
+    "racial-pride": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "racial-segregation-law": {"value":-2,"confidence":"medium","rationale":"Even the nativist RN avoids hierarchy-of-races language and civic strands are multicultural, so legal racial segregation is not eco-nationalist.","sources":["s1","s3"]},
+    "racism-not-main-obstacle": {"value":0,"confidence":"low","rationale":"Civic and nativist strands split on race and ethnicity, and the sources take no position on this question.","sources":["s1"]},
+    "raise-minimum-wage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "reason-over-faith": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "recall-officials": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "recallable-delegates": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "recognise-genocide": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "reduce-immigration": {"value":0,"confidence":"low","rationale":"Ethnic eco-nationalists and the RN favour restriction while civic eco-nationalists are open; the strands differ.","sources":["s1","s3"]},
+    "refugee-return": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "refuse-lender-austerity": {"value":1,"confidence":"low","rationale":"Sovereigntist strands oppose outside conditions.","sources":["s1"]},
+    "region-keeps-system": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "regional-powers-revocable": {"value":-1,"confidence":"low","rationale":"Spain's Supreme Court vetoed Catalonia's climate law and sub-state eco-nationalists oppose revocable autonomy.","sources":["s1"]},
+    "regional-revenue-retention": {"value":1,"confidence":"medium","rationale":"The Ogoni claim control of Ogoni resources for Ogoni development and Wikipedia notes Westminster, Nigerian redistribution grievances.","sources":["s1","s4"]},
+    "regulate-corporations": {"value":1,"confidence":"medium","rationale":"Conversi favors environmental rules that bind firms, and the RN referendum proposal makes parent companies liable for their subsidiaries' ecological damage.","sources":["s2","s3"]},
+    "rehabilitation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "reification": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "reinterpret-religion": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religion-illusion": {"value":-1,"confidence":"low","rationale":"Nature spirituality appears in some strands (Anastasianism, Sarna).","sources":["s1"]},
+    "religion-oppresses-women": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religions-one-truth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religious-dress-in-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religious-equal-recognition": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religious-exemptions": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religious-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rent-control": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "representatives-worker-pay": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "residents-only-property": {"value":1,"confidence":"low","rationale":"Bivar presents local sovereignty over native lands as central to RN ecology.","sources":["s3"]},
+    "resist-lawless-ruler": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "resources-common-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restore-past-order": {"value":0,"confidence":"low","rationale":"Agro-romantic and nativist strands look backward while civic green-state strands look forward.","sources":["s1"]},
+    "restrict-conversion": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-foreign-funding": {"value":1,"confidence":"low","rationale":"Sovereigntist nativism favors restricting outside influence.","sources":["s3"]},
+    "restrict-freedoms-for-growth": {"value":-1,"confidence":"low","rationale":"China's resource nationalism put growth first, but green strands reject that tradeoff.","sources":["s1"]},
+    "restrict-hate-speech": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-indigenous-settlement": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-private-adult-pornography-access": {"value":0,"confidence":"low","rationale":"Pornography is not an eco-nationalist topic in the sources.","sources":["s1"]},
+    "restrict-strikes-picketing": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restructure-world-economy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "results-over-ideology": {"value":0,"confidence":"low","rationale":"Eco-nationalists are ideologically committed to nation and environment, but sources give no view on judging policy by results.","sources":["s1"]},
+    "return-lost-territory": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "return-to-foraging": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "reunify-divided-nation": {"value":0,"confidence":"low","rationale":"Reunification of divided nations is not part of the documented eco-nationalist agenda.","sources":["s1"]},
+    "revive-national-language": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rich-countries-aid-poor": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rich-first": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "right-to-buy-council-homes": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "right-to-secede": {"value":1,"confidence":"low","rationale":"The Ogoni, ERC and SNP pair ecology with self-rule, but the RN in the scope opposes secession; the family is divided.","sources":["s1","s4"]},
+    "rights-where-you-live": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rule-by-example": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ruling-class-consent": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rural-life-healthier": {"value":1,"confidence":"low","rationale":"German agro-romanticism and RN land attachment value rural rootedness, though Conversi also praises green cities, so the view is mild.","sources":["s1","s2"]},
+    "sacred-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sacred-ruler": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sacrifice-heritage": {"value":-2,"confidence":"medium","rationale":"Heritage protection (Heimatschutz, Lebensreform) is part of nature-loving nationalism, and national heritage is central to eco-nationalist identity.","sources":["s2"]},
+    "same-sex-marriage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "school-vouchers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "scripture-inerrant": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "scripture-judged-by-women": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "second-chamber": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "security-forces-accountable": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "self-interest-moral": {"value":-1,"confidence":"low","rationale":"Environmental duty and national pride are framed as collective, so a self-interest ethic is disfavored.","sources":["s2"]},
+    "self-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "self-reliance-over-aid": {"value":0,"confidence":"low","rationale":"RN localism favors self-reliance but the statement concerns poor countries.","sources":["s3"]},
+    "separate-church-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "separated-powers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "settler-state-colonial": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sex-ed-in-schools": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sex-socially-constructed": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "shared-human-nature": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "shared-marital-authority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "simple-living": {"value":0,"confidence":"low","rationale":"The sources link nationalism to ecological stewardship and criticise endless growth, but also include states that pursue prosperity; no common view.","sources":["s2"]},
+    "single-common-good": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "single-official-language": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "single-unit-for-people": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "slavery-not-civil-war-cause": {"value":0,"confidence":"low","rationale":"An American historical dispute with no connection to eco-nationalism in the sources.","sources":["s1"]},
+    "smash-state-machine": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "social-market-economy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "socialism-needs-workers-power": {"value":0,"confidence":"low","rationale":"A Marxist definition of socialism with no eco-nationalist counterpart.","sources":["s1"]},
+    "socialism-one-country": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "socialized-care": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "socialized-markets": {"value":0,"confidence":"low","rationale":"Economic structure is not a shared eco-nationalist position.","sources":["s1"]},
+    "soldiers-refuse-war": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sovereign-above-law": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sovereign-debt-cancellation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "soviet-state-capitalist": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "space-expansion": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "spiritual-nature": {"value":1,"confidence":"low","rationale":"Anastasianism, Sarna and harmony between humanity and nature.","sources":["s1"]},
+    "state-arms-monopoly": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "state-as-business": {"value":-1,"confidence":"low","rationale":"The state is treated as a steward of the national environment, not a firm.","sources":["s2"]},
+    "state-class-instrument": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "state-directs-investment": {"value":0,"confidence":"low","rationale":"Conversi notes green subsidies and state-backed projects in Switzerland and Norway, but strands differ on state economic direction.","sources":["s2"]},
+    "state-harmful": {"value":-2,"confidence":"medium","rationale":"Conversi and Posocco keep the nation-state as the basic unit of environmental action and Wikipedia describes eco-nationalism as state-legitimating, so abolishing the state is rejected.","sources":["s2"]},
+    "state-promotes-atheism": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "state-strengthens-encirclement": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "stay-neutral-between-blocs": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "strong-leader": {"value":0,"confidence":"low","rationale":"Wikipedia notes both democratic cases (Taiwan, Scotland) and party-state cases (China), so adherents do not share a view on strong leaders.","sources":["s1"]},
+    "student-debt-relief": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "subordinate-church-to-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "suppress-opposition": {"value":-1,"confidence":"low","rationale":"China is an outlier.","sources":["s1"]},
+    "surveillance-ok": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "targeted-social-spending": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "tariffs-protect-industry": {"value":1,"confidence":"low","rationale":"RN localism and French-first nativism support protecting domestic production, though other strands do not discuss tariffs.","sources":["s3"]},
+    "tax-inheritance": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "tax-the-wealthy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "taxation-theft": {"value":-2,"confidence":"medium","rationale":"Conversi cites Norway's high CO2 taxes as effective policy, so taxation for environmental ends is accepted.","sources":["s2"]},
+    "tech-solves-problems": {"value":0,"confidence":"low","rationale":"Conversi cites green technology (electric vehicles, eco-labels) while romantic strands distrust industrial modernity; no shared view.","sources":["s2"]},
+    "tech-with-ancestral-values": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "term-limits": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "territorial-expansion": {"value":-1,"confidence":"low","rationale":"Conversi contrasts peaceful green nationalism with expansionist forms; Ogoni and Baltic movements seek self-rule, not expansion.","sources":["s2"]},
+    "total-state": {"value":-1,"confidence":"low","rationale":"China's party-state is an outlier; typical adherents want a state that protects the environment, not one directing all life.","sources":["s1"]},
+    "totalitarianisms-equivalent": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "trade-labor-env-standards": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "trade-surplus": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "traditional-family": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "treaties-binding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unbreakable-encryption": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unbroken-national-continuity": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "uniform-civil-code": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "uniformed-youth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unions-good": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "universal-healthcare": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "universal-morality": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unjust-law-not-binding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unlimited-reelection": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unreligious-rulers-fought": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "vanguard-party": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "vote-delegation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "voter-id": {"value":null,"confidence":"low","rationale":"Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.","sources":[]},
+    "war-builds-character": {"value":-1,"confidence":"low","rationale":"Conversi contrasts peaceful environmental nationalism with violent Volkisch and Nazi forms, implying war is not valued.","sources":["s2"]},
+    "wealth-concentration-endangers-liberty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "welfare-for-citizens": {"value":0,"confidence":"low","rationale":"The RN national-priority principle applies, but civic strands would not restrict welfare; split.","sources":["s3"]},
+    "widespread-small-property": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "wife-divorce-without-consent": {"value":0,"confidence":"low","rationale":"Divorce law is outside eco-nationalism; civic strands are liberal while some nativist and traditional strands are conservative, so the sources give no common answer.","sources":["s1"]},
+    "withdraw-from-politics": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-distinct-values": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-equality-needs-economic-change": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-in-religious-leadership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-must-cover": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-property-inheritance": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-suffrage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "work-for-welfare": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "worker-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "workers-councils": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "workers-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "workers-own-party": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "workplace-democracy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "world-economy-extracts-surplus": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]}
   },
-  "religious-equal-recognition": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "democracy-is-procedure": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Green nationalists value democratic self-rule, but RN-style populism and ecological priorities push some toward substantive tests; the sources leave it split.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "premarital-sex": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "internet-shutdowns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "negative-income-tax": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources document no welfare-design stance, and adherents range from social-democratic to market-friendly nationalists.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "women-suffrage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religion-oppresses-women": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "race-social-construct": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gender-equality-agencies": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Support follows the left-right split among adherents, and the sources record no stance on gender-equality bodies.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "homestead-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "international-criminal-courts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "scripture-inerrant": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gendered-self-government": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "defend-planned-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "indirect-election": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-church-status": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "minority-territorial-autonomy": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Eco-nationalism treats land-based self-rule as a core claim, as in the sub-state cases (Scottish, Catalan, Ogoni) the scholarship documents.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "disputed-territory-plebiscite": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "keep-colonial-borders": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "simple-living": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources link nationalism to ecological stewardship and criticise endless growth, but also include states that pursue prosperity; no common view.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "restrict-indigenous-settlement": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "equal-conscription": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "homeland-spiritual-bond": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The definition of eco-nationalism rests on the nation's special duty to protect its own land, which becomes part of national identity, and the Ogoni Bill of Rights asserts the same tie to ancestral land.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "extrajudicial-killing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "close-ties-china": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Eco-nationalism takes no documented line on great-power alignment, and its strands split between sub-state movements and nativist sovereignty parties that would answer differently.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "protect-kin-minorities": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "resources-common-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "self-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "cut-consumption-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "targeted-social-spending": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "bypass-parties-groups": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-business-privileges": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-denominational-politics": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "tech-with-ancestral-values": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "wife-divorce-without-consent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Divorce law is outside eco-nationalism; civic strands are liberal while some nativist and traditional strands are conservative, so the sources give no common answer.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-resource-control": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The Ogoni Bill of Rights demands control of the people's own resources and the eco-nationalist case frames protecting national land and resources as a ground for self-rule.",
-   "sources": [
-    "s4",
-    "s1"
-   ]
-  },
-  "distribution-by-process": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "financial-transactions-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "racism-not-main-obstacle": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Civic and nativist strands split on race and ethnicity, and the sources take no position on this question.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "unjust-law-not-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "automate-paid-work": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "multipolar-world": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "labour-theory-of-value": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "patriotism-serves-workers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Left civic strands link patriotism and workers while the nativist RN strand frames it around the native population; the sources show no common answer.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "material-over-identity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "market-under-party-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  }
- },
- "missingStatements": [
-  {
-   "text": "A nation has a special duty to protect its own land, wildlife and landscapes.",
-   "value": 2,
-   "rationale": "Wikipedia's definition of eco-nationalism rests on this duty, and no existing statement captures it.",
-   "sources": [
-    "s1"
-   ],
-   "declined": "Defining claim of eco-nationalism only; no other ideology would take a clear side, and adding it would force every future audit to answer a statement that does not discriminate. Partly covered by preserve-national-culture and nature-intrinsic-value."
-  },
-  {
-   "text": "A community should be able to protect its land and ecology from damage by outside developers or companies.",
-   "value": 2,
-   "rationale": "The Ogoni Bill of Rights asserts the right to protect Ogoni land and ecology from further degradation.",
-   "sources": [
-    "s4"
-   ],
-   "declined": "Covered by existing statements on local decision-making and indigenous authority over land (decide-locally, indigenous-land-authority); too close to them to earn its own statement."
-  },
-  {
-   "text": "Preserving the cultural distinctiveness of each people is comparable to protecting biodiversity.",
-   "value": 1,
-   "rationale": "RN strategist Hervé Juvin applies the logic of species diversity to human cultural diversity.",
-   "sources": [
-    "s3"
-   ],
-   "addedAs": "preserve-national-culture"
-  }
- ],
- "notes": "Immigration, ethnicity and nuclear power split the family. The RN backs nuclear and opposes wind, while Baltic, Taiwanese and German movements opposed nuclear. Eco-fascism is not represented.",
- "reviews": [
-  {
-   "kind": "silence",
-   "reviewer": "scripts/silence-to-null.js",
-   "reviewedAt": "2026-10-29",
-   "nulled": 164
-  },
-  {
-   "kind": "inference",
-   "reviewer": "scripts/inference-to-null.js",
-   "reviewedAt": "2026-10-30",
-   "nulled": 187
-  },
-  {
-   "kind": "unsourced",
-   "reviewer": "scripts/unsourced-to-null.js",
-   "reviewedAt": "2026-11-02",
-   "nulled": 10
-  },
-  {
-   "kind": "nulling",
-   "reviewer": "claude-opus-5-5",
-   "reviewedAt": "2026-11-12",
-   "nulled": 1
-  }
- ]
+  "missingStatements": [
+    {
+      "text": "A nation has a special duty to protect its own land, wildlife and landscapes.",
+      "value": 2,
+      "rationale": "Wikipedia's definition of eco-nationalism rests on this duty, and no existing statement captures it.",
+      "sources": [
+        "s1"
+      ],
+      "declined": "Defining claim of eco-nationalism only; no other ideology would take a clear side, and adding it would force every future audit to answer a statement that does not discriminate. Partly covered by preserve-national-culture and nature-intrinsic-value."
+    },
+    {
+      "text": "A community should be able to protect its land and ecology from damage by outside developers or companies.",
+      "value": 2,
+      "rationale": "The Ogoni Bill of Rights asserts the right to protect Ogoni land and ecology from further degradation.",
+      "sources": [
+        "s4"
+      ],
+      "declined": "Covered by existing statements on local decision-making and indigenous authority over land (decide-locally, indigenous-land-authority); too close to them to earn its own statement."
+    },
+    {
+      "text": "Preserving the cultural distinctiveness of each people is comparable to protecting biodiversity.",
+      "value": 1,
+      "rationale": "RN strategist Hervé Juvin applies the logic of species diversity to human cultural diversity.",
+      "sources": [
+        "s3"
+      ],
+      "addedAs": "preserve-national-culture"
+    }
+  ],
+  "notes": "Immigration, ethnicity and nuclear power split the family. The RN backs nuclear and opposes wind, while Baltic, Taiwanese and German movements opposed nuclear. Eco-fascism is not represented.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 164
+    },
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 187
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

@@ -1,3344 +1,609 @@
 {
- "id": "neopopulism",
- "name": "Neopopulism",
- "auditedAt": "2026-10-21",
- "auditor": "claude-sonnet-5-5",
- "summary": "Neopopulism, in its best-documented scholarly sense, is a political strategy in which a personalistic leader wins direct, unmediated support from large numbers of mostly unorganised followers while enacting market-oriented reform. Its leaders cast themselves as outsiders rescuing the country from crisis, attack established elites and organised interests such as unions, and pair drastic liberalisation and privatisation with targeted anti-poverty programmes. The label is also applied more loosely to 21st-century right-wing anti-establishment movements.",
- "scope": "The profile represents Latin American neoliberal neopopulism of the late 1980s and 1990s as analysed by Kurt Weyland and Kenneth Roberts, centred on Carlos Menem in Argentina, Alberto Fujimori in Peru and Fernando Collor in Brazil, with Argentina's State Reform Law 23.696 as the programmatic anchor. Where the sources describe later right-wing neopopulism (Meloni, Orban, Trump, Bolsonaro), that is used only for social and immigration questions and marked low confidence. It excludes classical populism (Peron, Vargas) and left-wing Pink Tide populism.",
- "wikipedia": "https://en.wikipedia.org/wiki/Neopopulism",
- "furtherReading": [
-  {
-   "title": "Neopopulism (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Neopopulism",
-   "note": "Overview of the term as applied to 21st-century populist movements in Europe, the Americas and Latin America."
-  },
-  {
-   "title": "Neo-populism and neoliberal populism (Populism Studies glossary)",
-   "url": "https://www.populismstudies.org/?p=2689",
-   "note": "Short glossary entry on how scholars use the two terms."
-  },
-  {
-   "title": "Neopopulism and Neoliberalism in Latin America: how much affinity? (Weyland)",
-   "url": "https://library.fes.de/libalt/journals/swetsfulltext/18502013.pdf",
-   "note": "Readable scholarly argument for why market reform and personalist populism fit together."
-  },
-  {
-   "title": "Economic policy of the Alberto Fujimori administration (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Economic_policy_of_the_Alberto_Fujimori_administration",
-   "note": "A concrete case of neoliberal neopopulist policy in office."
-  }
- ],
- "sources": [
-  {
-   "id": "s1",
-   "kind": "scholarly",
-   "title": "Neopopulism and Neoliberalism in Latin America: how much affinity?",
-   "author": "Kurt Weyland, Third World Quarterly 24(6), 2003",
-   "url": "https://library.fes.de/libalt/journals/swetsfulltext/18502013.pdf",
-   "usedFor": "Definition of neopopulism, its affinities with neoliberalism, anti-organisational bent, treatment of unions, relief programmes, concentration of power."
-  },
-  {
-   "id": "s2",
-   "kind": "reference",
-   "title": "Neo-populism / neoliberal populism (Populism Studies glossary)",
-   "author": "European Center for Populism Studies",
-   "url": "https://www.populismstudies.org/?p=2689",
-   "usedFor": "Two usages of the term, anti-organisational character, nationalism in developed-country usage."
-  },
-  {
-   "id": "s3",
-   "kind": "reference",
-   "title": "Neopopulism",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Neopopulism",
-   "usedFor": "Broader 21st-century usage, leaders, anti-establishment and anti-immigration traits, rejection of left-right labels."
-  },
-  {
-   "id": "s4",
-   "kind": "reference",
-   "title": "Economic policy of the Alberto Fujimori administration",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Economic_policy_of_the_Alberto_Fujimori_administration",
-   "usedFor": "Privatisation, trade liberalisation, tariff simplification, subsidy and price-control cuts, relief fund."
-  },
-  {
-   "id": "s5",
-   "kind": "primary",
-   "title": "Ley 23.696, Reforma del Estado (1989)",
-   "author": "Argentine Congress, via Presidencia de la Nacion",
-   "url": "https://www.argentina.gob.ar/normativa/nacional/ley-23696-98/texto",
-   "usedFor": "Programme of the Menem government: emergency declaration, privatisation of utilities and state firms, worker share programme."
-  }
- ],
- "answers": {
-  "universal-healthcare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neopopulist reformers paired adjustment with targeted anti-poverty programmes rather than universal entitlements, and nothing in the sources addresses health coverage, so the answer is a split inference.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "raise-minimum-wage": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Fujimori quadrupled the minimum wage at the start of his term while neoliberal advisers held wages down elsewhere, so adherents are split and the sources do not settle it.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "markets-allocate-better": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Neopopulist leaders such as Menem and Fujimori embraced drastic market reform, and Argentina's Law 23.696 puts state enterprises up for sale to private capital.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "public-ownership": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Law 23.696 declares utilities and energy firms such as YPF, Gas del Estado and SEGBA subject to privatisation, and Fujimori sold hundreds of state enterprises.",
-   "sources": [
-    "s4",
-    "s5"
-   ]
-  },
-  "tax-the-wealthy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unions-good": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Weyland says neopopulists keep distance from trade unions as fetters on presidential autonomy and weaken them through labour flexibilisation.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "property-fundamental": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Privatisation and the market model rest on secure private property, though personalistic leaders were willing to override rules when convenient.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "regulate-corporations": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Market reform meant deregulation, removal of price controls and easing limits on investment, so tighter corporate regulation runs against the programme.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "worker-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "surveillance-ok": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "legalize-drugs": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-hate-speech": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "strong-leader": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Weyland defines neopopulism as a personalistic leader with direct, unmediated support who concentrates power and shows limited respect for institutional rules.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "state-harmful": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Neopopulists shrank the state and attacked rent-seeking, but still used concentrated state power to push reform, so they stop short of calling it harmful in itself.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "limit-guns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "legalize-sex-work": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "decide-locally": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Neopopulism is plebiscitary and anti-organisational, concentrating power in the national leader rather than devolving it.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "rehabilitation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "traditional-family": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "same-sex-marriage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abortion-legal": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "more-religion-public": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "correct-racial-injustice": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gender-social-construct": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "preserve-national-culture": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The glossary notes developed-country neopopulism leans on nationalism, and the Wikipedia article links it to anti-immigrant nativism.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "gradual-change": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Neopopulists favoured bold, transformative shock reform and bypassed institutions, so gradualism respecting institutions is disfavoured.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reduce-immigration": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The Wikipedia article describes xenophobic, anti-immigration policies among neopopulist parties, though the Latin American 1990s core says little about it.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "empower-international-orgs": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "They accepted IMF and World Bank adjustment programmes but also rely on nationalist rhetoric, so adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "free-trade": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Fujimori abandoned protectionism and import substitution and radically simplified tariffs, a typical neoliberal neopopulist programme.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "nation-first": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neopopulism pairs nationalist rhetoric with openness to global markets and finance, so adherents are split.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "open-borders": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulist parties are described as hostile to immigration, which is incompatible with eventual open borders.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "limit-growth": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulism is organised around restoring growth and exports through market reform, so limiting growth is contrary to it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "drastic-climate-action": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "tech-solves-problems": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "expand-nuclear": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "experts-over-public": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Weyland describes an alliance of neoliberal technocrats with plebiscitary leaders: expert advice drives economics while legitimacy comes from the mass, so adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "central-planning": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The whole project is to dismantle state-led development and sell state enterprises.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "socialized-markets": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Law 23.696 allowed worker share programmes inside privatised firms but treated private capital as the main route; public or worker ownership as the condition for markets is not their position.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "land-value-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "tax-inheritance": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "basic-income": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "tariffs-protect-industry": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Fujimori's government abandoned protectionism and simplified tariffs; though Trump-style neopopulists differ, the core profile opposes protective tariffs.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "state-directs-investment": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Neoliberal neopopulism rejects state-led development in favour of private investment and market signals.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "widespread-small-property": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Fujimori drew on De Soto's property-titling ideas but privatisation also favoured large business groups; adherents are split.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "abolish-money-wages": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulism sits inside market capitalism and does not question wage labour; the answer is a strong inference from its market programme.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-central-banks": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "corporatist-bargaining": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Weyland says neopopulists bypass and marginalise unions and organised interest groups rather than negotiate through state-recognised bodies.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "one-party-rule": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Leaders relied on personal vehicles, not a guiding-ideology party, and Weyland notes low institutionalisation; they still ran in elections.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "monarchy-legitimate": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "democracy-best": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "They won through elections but often bypassed institutions, Fujimori closed Congress, and Wikipedia notes attacks on democracy by some; adherents are split.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "direct-votes": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Plebiscitary support and direct appeal to the people are defining features, though the sources frame it as a leader-centred strategy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workers-councils": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulists marginalise organised labour and rely on unorganised followers, so council-based rule is contrary to them.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "right-to-secede": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "natural-rulers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "war-builds-character": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "separate-church-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "laws-from-scripture": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "private-courts-defense": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "military-superiority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ethnic-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Right-wing neopopulists in Europe lean toward it while Latin American cases appeal to a heterogeneous mass; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "class-struggle-history": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Weyland describes neopopulism as appealing to a heterogeneous mass of people against elites, not as a class-conflict theory.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "equal-outcomes": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Market-oriented programmes with only targeted relief do not aim at equal outcomes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "indigenous-land-authority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "colonial-reparations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "civilizational-union": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "self-interest-moral": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "duties-before-rights": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "nature-intrinsic-value": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "limit-population": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "industrial-civilization-disaster": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulism is organised around modernising through market reform and exports.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "accelerate-technology": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "human-enhancement": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "algorithmic-government": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unbreakable-encryption": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restore-past-order": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "European right neopopulists invoke it while 1990s Latin American cases promised modernisation, so split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "results-over-ideology": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Weyland shows leaders abandoned campaign promises and adopted market reform when it worked, a pragmatic stance that treats results as the test.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "direct-action": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "means-match-ends": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "return-to-foraging": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to a modernising market programme.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-division-of-labor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "distribute-by-need": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Market allocation with targeted relief, not need-based distribution.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "production-for-use": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Market economy with profit, as in reform programmes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "profit-exploitation": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulist neoliberalism treats profit as legitimate returns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "dictatorship-of-proletariat": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to leader-centred plebiscitary politics aimed at a heterogeneous mass.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "collective-farming": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "capitalism-causes-war": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Rejected by market-embracing leaders.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "taxation-theft": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "harm-principle": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "individual-rights-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "conscription": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "exit-over-voice": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "state-as-business": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "positive-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "media-academia-power": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "hereditarian-race": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "organic-representation": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Weyland says neopopulists bypass organised bodies in favour of direct support.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "total-state": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Neoliberal neopopulism aims to shrink the state and privatise.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "national-rebirth": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Leaders presented themselves as saviours rescuing the country from crisis, which Weyland ties to proving charisma.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "territorial-expansion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "personal-loyalty-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "bound-labor": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Binding farmers to land contradicts the liberalised labour and land markets these reforms created.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "universal-morality": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "single-common-good": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "jewish-state-israel": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "diaspora-return-right": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Diaspora return rights do not feature in the neopopulism sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "revive-national-language": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "workplace-democracy": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulists marginalise worker organisations and favour business-friendly corporate governance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "school-vouchers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "avoid-deficit-stimulus": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Fujimori's programme aimed to hold spending to current revenue, and adjustment was fiscally orthodox.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "economic-freedom": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rule-by-example": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-self-determination": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "force-without-un": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Foreign policy is barely mentioned in the sources; neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reason-over-faith": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "welfare-for-citizens": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "European neopopulists support welfare chauvinism; weak inference elsewhere.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "work-for-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "class-collaboration": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Neopopulism rejects class conflict, appealing to the unified people and also courting business sectors.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sacrifice-heritage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "dominated-front": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Neoliberal leaders aligned with international financial institutions and the West.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workers-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "distinct-gender-roles": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ban-interest": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulist leaders such as Menem and Fujimori ran market stabilisation programmes that liberalised finance and depended on credit markets, which excludes banning interest.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "racial-segregation-law": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "state-class-instrument": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulism denies a class-instrument state, seeing the state as a tool for the leader and the people.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "expand-fossil-fuels": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "assimilate-immigrants": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "elite-replacement": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Some right neopopulists voice it; Latin American core does not. Split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "proportional-representation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-mission": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Spreading a national model abroad is not a neopopulist theme in the sources; neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "patriarchy-structural": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "political-elite-corrupt": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Anti-elite, anti-establishment discourse is a defining feature, with outsider leaders attacking cronies and traditional parties.",
-   "sources": [
-    "s1",
-    "s2",
-    "s3"
-   ]
-  },
-  "heritable-defect-limits": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "No support in sources; contrary to equal citizenship appeals.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "security-forces-accountable": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "night-watchman-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Shrunk the state strongly but kept social emergency programmes; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "discourage-race-mixing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "equal-moral-worth": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Citizens counted as equal (\"one citizen, one vote\") per the glossary, though less central.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "socialism-one-country": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Irrelevant and opposed to socialism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "settler-state-colonial": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "uniform-civil-code": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-conversion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ban-cattle-slaughter": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-religion-state-schools": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "state-strengthens-encirclement": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "A Marxist-Leninist doctrine opposed to the market-capitalist stance of neoliberal neopopulists.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "consent-of-governed": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Leaders sought legitimacy through direct popular support and elections.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "trade-surplus": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "population-transfer": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "competition-drives-progress": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ban-extremist-parties": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "freedom-as-non-domination": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "separated-powers": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Weyland describes limited respect for institutional rules and concentration of power in the president; Fujimori closed Congress.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "vanguard-party": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Leaders are anti-organisational and distrust disciplined parties.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "priority-to-poor": {
-   "value": 0,
-   "confidence": "medium",
-   "rationale": "They courted the unorganised poor with targeted programmes but did not make poor-first law a principle.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "right-to-buy-council-homes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-strikes-picketing": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Labour flexibilisation weakened unions and the presidents curtailed strikes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "population-causes-poverty": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources frame poverty as crisis and adjustment effects, and do not blame population growth; neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "diversity-weakens-cohesion": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Some right neopopulists claim so; Latin American core does not. Split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "offices-by-lottery": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to plebiscitary leader-centred politics.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "emergency-suspend-protections": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Fujimori's 1992 self-coup and emergency measures drew mass support.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "price-controls-essentials": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Fujimori relaxed price controls.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "party-controls-media": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "party-commands-army": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "long-naturalization-wait": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "representatives-worker-pay": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "party-discipline-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "pool-sovereignty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "European neopopulists oppose EU integration; weak inference.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "head-commands-forces": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Strong executive concentrating power.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "church-by-bishops": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "clerical-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "defeat-own-government-war": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Revolutionary defeatism has no place in the neopopulist sources and clashes with leaders' nationalist appeals.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "censor-art-for-virtue": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unlimited-reelection": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Menem and Fujimori sought re-election and constitutional changes to allow it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "recall-officials": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "end-foreign-alliances": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-rental-housing": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Banning rentals contradicts the market-reform housing and property logic.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "people-in-arms": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rural-life-healthier": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Appealed to the rural poor but no moral claim; neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reunify-divided-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "educated-out-of-touch": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "cultures-equal-different": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "death-penalty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sex-ed-in-schools": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "creationism-in-schools": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-private-adult-pornography-access": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "citizenship-by-descent": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "minority-language-support": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religious-exemptions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "encourage-eccentricity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sovereign-debt-cancellation": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "They accepted IMF and creditor obligations and sought to restore creditworthiness.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "independence-needs-economic-change": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "constituent-assembly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "restrict-freedoms-for-growth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rich-countries-aid-poor": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aid duties are not covered by the sources; Weyland notes international lenders funded relief programmes, but no stance is stated.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independent-nuclear-deterrent": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "direct-election-head-of-state": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Plebiscitary personalistic leaders are elected directly.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "central-bank-independence": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neoliberal reformers favoured sound money, while personalistic leaders resist constraints; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-land-for-peace": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "property-serves-common-good": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "soviet-state-capitalist": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "A Marxist debate unrelated to neopopulism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "precautionary-principle": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "collective-defense": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "annexed-territory-occupation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "subordinate-church-to-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "nonpartisan-head-of-state": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Personalistic leaders are partisan political figures.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "force-to-prevent-secession": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "region-keeps-system": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sacred-ruler": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Divine descent for a ruler has no place in plebiscitary politics based on popular votes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "flat-income-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "character-from-environment": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sovereign-above-law": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Weyland says leaders limited respect for rules but not as doctrine.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "space-expansion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "mixed-constitution": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "leader-cult": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "equal-parenting": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "class-struggle-under-socialism": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Irrelevant to market ideologies.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "land-redistribution": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "refugee-return": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Refugee return is outside what the neopopulism literature discusses, so there is no basis for a side.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "co-ethnic-territorial-claim": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "apostasy-punishable": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-must-cover": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "common-currency": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "kin-peoples-union": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-cultural-autonomy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rights-where-you-live": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "material-conditions-drive-history": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ban-cartels": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-bailouts": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neoliberal austerity favours it but personalist leaders favoured crony business sectors, as Weyland notes with privatisation; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "courts-bound-by-majority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gender-parity-bodies": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "economic-self-sufficiency": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Fujimori's government abandoned import substitution and reintegrated Peru into world trade.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "trade-labor-env-standards": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "moral-incentives": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Market reform relies on material incentives and a capitalist model.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "armed-group-creates-revolution": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "These leaders fought armed insurgents and sought change through elections.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-hereditary-privilege": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "history-own-civilization": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "civilizing-tutelage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "patriotic-education": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "end-racial-preferences": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "public-money-creation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "capitalism-adapts": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Weyland shows neoliberal neopopulists regarded market reform as the way out of crisis, implying capitalism can adapt.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "delink-world-market": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Fujimori's government reintegrated Peru into world trade and finance and removed exchange controls.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "labor-aristocracy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "freedom-to-discriminate": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "entrenched-bill-of-rights": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neopopulists were willing to override constitutional rules but also promulgated constitutions; split and undocumented.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "colonial-treaties-void": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "elective-rulers": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Neopopulist leaders gained office through elections and drew legitimacy from them.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "minority-veto": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Plebiscitary, majoritarian leaders bypass organised minorities and veto players.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "resist-lawless-ruler": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "parliament-supreme": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Weyland describes leaders concentrating power in the president, and Fujimori closed Congress in 1992.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "animal-suffering-matters": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "animal-use-humane": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "noblesse-oblige": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "withdraw-from-politics": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulism mobilises people directly behind a leader.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "mass-culture-pacifies": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ruling-class-consent": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "A critical theory these leaders do not hold.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "world-economy-extracts-surplus": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Fujimori and Menem integrated their countries into the world economy and rejected dependency framing.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "native-born-offices": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "party-own-road": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "self-reliance-over-aid": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Weyland notes international financial institutions funded social emergency programmes, which these leaders welcomed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "return-lost-territory": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "indigenous-political-leadership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "antifascism-founding-value": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "totalitarianisms-equivalent": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "slavery-not-civil-war-cause": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No bearing on neopopulist doctrine.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "preserve-contested-monuments": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "male-disadvantage-attention": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "domestic-violence-symmetry": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "institutions-fit-civilization": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "military-guardian-role": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Fujimori relied on the armed forces after 1992 but the literature does not make this doctrine; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "paid-care-work": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "filial-duty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "office-by-exam": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "foreign-takeover-block": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Fujimori eased limits on investment and capital flows and privatised to attract foreign buyers.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "no-fault-divorce": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Divorce law is not covered; neutral since leaders such as Menem were publicly Catholic yet divorced.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "recallable-delegates": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "individual-pension-accounts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "land-use-tenure": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Market reform and property titling favour individual tenure.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "budget-needs-parliament": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "single-official-language": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "foreign-land-ownership": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Investment-friendly liberalisation opposes restrictions on foreign ownership.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "disparate-impact-discrimination": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "consumerism-harmful": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "arm-foreign-insurgents": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "intervene-in-bloc": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "corporate-influence": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Weyland notes privatisation gave benefits to powerful business sectors, so these leaders did not see lobbying as a problem.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-foreign-funding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "pronatalist-incentives": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "residents-only-property": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "job-guarantee": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Market reform shrank state employment, per Fujimori's cuts to public employment.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "democratic-peace": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-duty-to-obey": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "industrial-unions": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Weyland says neopopulists marginalise unions, so they would not promote a particular union structure.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "minority-conspiracy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Right neopopulists sometimes scapegoat groups; not a defining feature of the core.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "abolish-legal-marriage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "public-access-to-information": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "local-production": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Export promotion and integration into world trade oppose localism.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "informal-organisation": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulists are anti-organisational and personal-vehicle based, which differs from informal affinity groups.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-law-over-international": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religious-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "deference-to-leading-power": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "regional-revenue-retention": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "personal-possessions-private": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.",
-   "sources": [],
-   "reviewHistory": [
+  "id": "neopopulism",
+  "name": "Neopopulism",
+  "auditedAt": "2026-10-21",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Neopopulism, in its best-documented scholarly sense, is a political strategy in which a personalistic leader wins direct, unmediated support from large numbers of mostly unorganised followers while enacting market-oriented reform. Its leaders cast themselves as outsiders rescuing the country from crisis, attack established elites and organised interests such as unions, and pair drastic liberalisation and privatisation with targeted anti-poverty programmes. The label is also applied more loosely to 21st-century right-wing anti-establishment movements.",
+  "scope": "The profile represents Latin American neoliberal neopopulism of the late 1980s and 1990s as analysed by Kurt Weyland and Kenneth Roberts, centred on Carlos Menem in Argentina, Alberto Fujimori in Peru and Fernando Collor in Brazil, with Argentina's State Reform Law 23.696 as the programmatic anchor. Where the sources describe later right-wing neopopulism (Meloni, Orban, Trump, Bolsonaro), that is used only for social and immigration questions and marked low confidence. It excludes classical populism (Peron, Vargas) and left-wing Pink Tide populism.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Neopopulism",
+  "furtherReading": [
     {
-     "value": 1,
-     "confidence": "low",
-     "rationale": "Trivially accepted within a market society.",
-     "sources": [
-      "s1"
-     ],
-     "author": "claude-sonnet-5-5",
-     "date": "2026-10-21"
+      "title": "Neopopulism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Neopopulism",
+      "note": "Overview of the term as applied to 21st-century populist movements in Europe, the Americas and Latin America."
     },
     {
-     "value": null,
-     "confidence": "low",
-     "rationale": "Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.",
-     "sources": [
-      "s1"
-     ],
-     "author": "claude-opus-5-5",
-     "date": "2026-11-12"
+      "title": "Neo-populism and neoliberal populism (Populism Studies glossary)",
+      "url": "https://www.populismstudies.org/?p=2689",
+      "note": "Short glossary entry on how scholars use the two terms."
+    },
+    {
+      "title": "Neopopulism and Neoliberalism in Latin America: how much affinity? (Weyland)",
+      "url": "https://library.fes.de/libalt/journals/swetsfulltext/18502013.pdf",
+      "note": "Readable scholarly argument for why market reform and personalist populism fit together."
+    },
+    {
+      "title": "Economic policy of the Alberto Fujimori administration (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Economic_policy_of_the_Alberto_Fujimori_administration",
+      "note": "A concrete case of neoliberal neopopulist policy in office."
     }
-   ]
-  },
-  "defeat-communism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "mixed-public-service-providers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religion-illusion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "capitalism-progressive": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Market capitalism was embraced as the route out of crisis and to growth, per Weyland.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "women-equality-needs-economic-change": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "socialized-care": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "purge-loanwords": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "treaties-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "majority-settlement": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "cooperative-communities": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contradicts the market reform and anti-organisational character.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "neither-capitalism-nor-communism": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Neopopulist neoliberals accept capitalism; a third way is not their stance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "historical-land-claim": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "holocaust-denial": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "criminalize-homosexuality": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "suppress-opposition": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Weyland records autocratic acts, such as Fujimori's closing of Congress, but adherents mostly claimed popular mandate; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "punish-blasphemy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "colonies-serve-metropole": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "defensive-jihad-duty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unreligious-rulers-fought": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Religious-law rebellion is irrelevant to the secular electoral strategy of neopopulism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "participatory-democracy": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Neopopulism is plebiscitary but anti-organisational, not participatory in this sense.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "intersecting-oppressions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gender-identity-recognition": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "assisted-dying": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "left-right-obsolete": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The Wikipedia article says neopopulist movements sometimes reject the left-right label, and Weyland shows leaders combining policies across it.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "alienated-labor": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Not a theme of market reformers.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "islam-incompatible": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anti-Muslim policy appears in some neopopulist parties, but not the Latin American core; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "divine-source-of-authority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religious-dress-in-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "social-market-economy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neopopulists combined market reform with targeted social programmes but never endorsed a social market framework, so the answer is unclear.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-armed-forces": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Security-minded leaders relied on the armed forces.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "rich-first": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "stay-neutral-between-blocs": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "dynastic-succession": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "interest-free-mutual-credit": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Market finance and stabilisation packages rely on interest-bearing credit, contradicting mutual interest-free banks.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "refuse-lender-austerity": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Menem and Fujimori adopted IMF-backed adjustment and Weyland says international financial institutions pushed these reforms.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "property-franchise": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Neopopulists seek mass support; a property franchise would cut against it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "domination-women-nature": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "reification": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "A critical theory outside the programme.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "press-owned-by-wealth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "promulgated-standing-laws": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Leaders exceeded rules at times but also governed by decree; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "racial-franchise": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulism seeks mass support among all.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "online-participation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "open-government-data": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "interfaith-marriage-restriction": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "boycott-minority-shops": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "citizens-assembly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "reinterpret-religion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "wealth-concentration-endangers-liberty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Weyland notes leaders benefited powerful business sectors, which cuts against this claim.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "open-lgbt-military-service": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "state-promotes-atheism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-police-prisons": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Leaders relied on state security forces.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "power-sharing-divided-societies": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "charity-over-state-aid": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neoliberal states relied partly on private effort, but the emergency programmes were state-run; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "term-limits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "vote-delegation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "existential-risk-priority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-in-religious-leadership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "shared-marital-authority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "foreign-residents-local-vote": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "rent-control": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "abolish-ip": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "uniformed-youth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-nuclear-weapons-on-territory": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-foreign-bases": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "recognise-genocide": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "income-for-work-not-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "never-kill-self-defence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unbroken-national-continuity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sex-socially-constructed": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-fixed-category-of-women": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "martyrs-honoured": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "politics-spiritual-struggle": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of a pragmatic reform strategy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "homeland-cultural-centre": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "culture-before-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "god-not-male": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "scripture-judged-by-women": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "economy-in-majority-hands": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "single-unit-for-people": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "independent-unions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "socialism-needs-workers-power": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "local-essentials-public": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Law 23.696 names water and sanitation (Obras Sanitarias) among enterprises subject to privatisation.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "second-chamber": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "municipal-property": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to private property and market model.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "confederal-coordination": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to centralising plebiscitary rule.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "family-wage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "ageing-research-funding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "anonymous-payments": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "online-anonymity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "person-over-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "spiritual-nature": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "regional-powers-revocable": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gm-crops": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "dense-cities": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "racial-group-interests": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "racial-pride": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "language-defines-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "communal-electorates": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "foreign-partition-plot": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "free-public-college": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "pollution-taxes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "future-generations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-distinct-values": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "arms-reduction": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "capital-controls": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Fujimori's reforms removed exchange controls and eased limits on capital flows.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "soldiers-refuse-war": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not covered; refusal of war orders is contrary to leaders who relied on armed forces.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "collective-bargaining": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Weyland says labour flexibilisation weakened unions and neopopulists kept away from them.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "in-work-tax-credits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "fiscal-rules-binding": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Fiscal discipline yes; binding rules limit leaders; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restructure-world-economy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "smash-state-machine": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neoliberal neopopulists used the state to push reform.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "free-economic-experiment": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "nature-as-capital": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "sacred-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "student-debt-relief": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "internal-colonialism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "shared-human-nature": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "public-service-media": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religions-one-truth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "farm-price-support": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Fujimori removed subsidies and price controls.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "keep-nuclear-weapons": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "workers-own-party": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulists marginalise worker organisations.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "women-property-inheritance": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "pollution-tort-liability": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "customary-chiefs-lawmaking": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "environment-over-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "mandatory-sentences": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "immigrants-learn-language": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "voter-id": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religious-equal-recognition": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "democracy-is-procedure": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "premarital-sex": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "internet-shutdowns": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "negative-income-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "women-suffrage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "religion-oppresses-women": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "race-social-construct": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gender-equality-agencies": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "homestead-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "international-criminal-courts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "scripture-inerrant": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "gendered-self-government": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "defend-planned-state": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Planned economies are opposed by neoliberal neopopulists.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "indirect-election": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Plebiscitary leaders favour direct appeals.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-church-status": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "minority-territorial-autonomy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "disputed-territory-plebiscite": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "keep-colonial-borders": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "simple-living": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Neopopulist reform aims at growth, consumption and investment, which contradicts voluntary simplicity.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-indigenous-settlement": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "equal-conscription": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "targeted-social-spending": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Weyland documents emergency anti-poverty programmes aimed at the unorganised poor as the neopopulist substitute for universal or union-mediated welfare.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "bypass-parties-groups": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Weyland defines neopopulism as direct, unmediated support from unorganised followers and says leaders marginalise unions, parties and other organisations.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "homeland-spiritual-bond": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "extrajudicial-killing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "close-ties-china": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "protect-kin-minorities": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "resources-common-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "self-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "cut-consumption-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-business-privileges": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "no-denominational-politics": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "tech-with-ancestral-values": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "wife-divorce-without-consent": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "national-resource-control": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The programme privatised state firms and utilities and welcomed foreign capital, which runs against national control of resources.",
-   "sources": [
-    "s5",
-    "s4"
-   ]
-  },
-  "distribution-by-process": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "financial-transactions-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "racism-not-main-obstacle": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "unjust-law-not-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "automate-paid-work": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "multipolar-world": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "labour-theory-of-value": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "patriotism-serves-workers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "material-over-identity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "market-under-party-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No stated position found.",
-   "sources": []
-  },
-  "decent-living-guarantee": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Adherents shrank the state but also funded targeted emergency anti-poverty programmes to hold mass support, so they are split on cutting welfare and the sources give no direct line.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-opus-5-5"
-  }
- },
- "missingStatements": [
-  {
-   "text": "Social spending should be targeted at the poorest rather than provided universally.",
-   "value": 1,
-   "rationale": "Weyland documents emergency anti-poverty programmes aimed at the unorganised poor as the neopopulist substitute for universal or union-mediated welfare.",
-   "sources": [
-    "s1"
-   ],
-   "addedAs": "targeted-social-spending"
-  },
-  {
-   "text": "A president facing a political crisis may close the legislature and rule directly.",
-   "value": 1,
-   "rationale": "Weyland reports that Fujimori's April 1992 closing of Congress drew his highest popular support, and that plebiscitary leaders show limited respect for institutional rules.",
-   "sources": [
-    "s1"
-   ],
-   "addedAs": "strong-leader"
-  },
-  {
-   "text": "Political parties and interest groups stand between the people and their leader and should be bypassed.",
-   "value": 2,
-   "rationale": "Weyland defines neopopulism as direct, unmediated support from unorganised followers and says leaders marginalise unions, parties and other organisations.",
-   "sources": [
-    "s1",
-    "s2"
-   ],
-   "addedAs": "bypass-parties-groups"
-  }
- ],
- "notes": "The term is contested: Latin American critics dispute that Menem and Fujimori were populists at all (the bait-and-switch reading), and the Wikipedia usage covers right-wing movements whose economics Wikipedia describes as contested. The profile follows Weyland's political definition. Most answers outside economics, labour and leadership are low-confidence inferences.",
- "reviews": [
-  {
-   "kind": "silence",
-   "reviewer": "scripts/silence-to-null.js",
-   "reviewedAt": "2026-10-29",
-   "nulled": 116
-  },
-  {
-   "kind": "inference",
-   "reviewer": "scripts/inference-to-null.js",
-   "reviewedAt": "2026-10-31",
-   "nulled": 213
-  },
-  {
-   "kind": "unsourced",
-   "reviewer": "scripts/unsourced-to-null.js",
-   "reviewedAt": "2026-11-02",
-   "nulled": 7
-  },
-  {
-   "kind": "nulling",
-   "reviewer": "claude-opus-5-5",
-   "reviewedAt": "2026-11-12",
-   "nulled": 1
-  }
- ]
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "scholarly",
+      "title": "Neopopulism and Neoliberalism in Latin America: how much affinity?",
+      "author": "Kurt Weyland, Third World Quarterly 24(6), 2003",
+      "url": "https://library.fes.de/libalt/journals/swetsfulltext/18502013.pdf",
+      "usedFor": "Definition of neopopulism, its affinities with neoliberalism, anti-organisational bent, treatment of unions, relief programmes, concentration of power."
+    },
+    {
+      "id": "s2",
+      "kind": "reference",
+      "title": "Neo-populism / neoliberal populism (Populism Studies glossary)",
+      "author": "European Center for Populism Studies",
+      "url": "https://www.populismstudies.org/?p=2689",
+      "usedFor": "Two usages of the term, anti-organisational character, nationalism in developed-country usage."
+    },
+    {
+      "id": "s3",
+      "kind": "reference",
+      "title": "Neopopulism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Neopopulism",
+      "usedFor": "Broader 21st-century usage, leaders, anti-establishment and anti-immigration traits, rejection of left-right labels."
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Economic policy of the Alberto Fujimori administration",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Economic_policy_of_the_Alberto_Fujimori_administration",
+      "usedFor": "Privatisation, trade liberalisation, tariff simplification, subsidy and price-control cuts, relief fund."
+    },
+    {
+      "id": "s5",
+      "kind": "primary",
+      "title": "Ley 23.696, Reforma del Estado (1989)",
+      "author": "Argentine Congress, via Presidencia de la Nacion",
+      "url": "https://www.argentina.gob.ar/normativa/nacional/ley-23696-98/texto",
+      "usedFor": "Programme of the Menem government: emergency declaration, privatisation of utilities and state firms, worker share programme."
+    }
+  ],
+  "answers": {
+    "abolish-armed-forces": {"value":-2,"confidence":"medium","rationale":"Security-minded leaders relied on the armed forces.","sources":["s1"]},
+    "abolish-central-banks": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-division-of-labor": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-hereditary-privilege": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-ip": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-legal-marriage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "abolish-money-wages": {"value":-2,"confidence":"medium","rationale":"Neopopulism sits inside market capitalism and does not question wage labour; the answer is a strong inference from its market programme.","sources":["s1"]},
+    "abolish-police-prisons": {"value":-2,"confidence":"medium","rationale":"Leaders relied on state security forces.","sources":["s1"]},
+    "abolish-rental-housing": {"value":-2,"confidence":"medium","rationale":"Banning rentals contradicts the market-reform housing and property logic.","sources":["s1"]},
+    "abortion-legal": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "accelerate-technology": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ageing-research-funding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "algorithmic-government": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "alienated-labor": {"value":-2,"confidence":"medium","rationale":"Not a theme of market reformers.","sources":["s1"]},
+    "animal-suffering-matters": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "animal-use-humane": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "annexed-territory-occupation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "anonymous-payments": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "antifascism-founding-value": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "apostasy-punishable": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "arm-foreign-insurgents": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "armed-group-creates-revolution": {"value":-2,"confidence":"medium","rationale":"These leaders fought armed insurgents and sought change through elections.","sources":["s1"]},
+    "arms-reduction": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "assimilate-immigrants": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "assisted-dying": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "automate-paid-work": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "avoid-deficit-stimulus": {"value":1,"confidence":"medium","rationale":"Fujimori's programme aimed to hold spending to current revenue, and adjustment was fiscally orthodox.","sources":["s4"]},
+    "ban-cartels": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ban-cattle-slaughter": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ban-extremist-parties": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ban-interest": {"value":-2,"confidence":"medium","rationale":"Neopopulist leaders such as Menem and Fujimori ran market stabilisation programmes that liberalised finance and depended on credit markets, which excludes banning interest.","sources":["s1","s4"]},
+    "basic-income": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "bound-labor": {"value":-2,"confidence":"medium","rationale":"Binding farmers to land contradicts the liberalised labour and land markets these reforms created.","sources":["s1"]},
+    "boycott-minority-shops": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "budget-needs-parliament": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "bypass-parties-groups": {"value":2,"confidence":"high","rationale":"Weyland defines neopopulism as direct, unmediated support from unorganised followers and says leaders marginalise unions, parties and other organisations.","sources":["s1","s2"]},
+    "capital-controls": {"value":-2,"confidence":"high","rationale":"Fujimori's reforms removed exchange controls and eased limits on capital flows.","sources":["s4"]},
+    "capitalism-adapts": {"value":1,"confidence":"medium","rationale":"Weyland shows neoliberal neopopulists regarded market reform as the way out of crisis, implying capitalism can adapt.","sources":["s1"]},
+    "capitalism-causes-war": {"value":-2,"confidence":"medium","rationale":"Rejected by market-embracing leaders.","sources":["s1"]},
+    "capitalism-progressive": {"value":1,"confidence":"medium","rationale":"Market capitalism was embraced as the route out of crisis and to growth, per Weyland.","sources":["s1"]},
+    "censor-art-for-virtue": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "central-bank-independence": {"value":0,"confidence":"low","rationale":"Neoliberal reformers favoured sound money, while personalistic leaders resist constraints; split.","sources":["s1"]},
+    "central-planning": {"value":-2,"confidence":"high","rationale":"The whole project is to dismantle state-led development and sell state enterprises.","sources":["s1","s5"]},
+    "character-from-environment": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "charity-over-state-aid": {"value":0,"confidence":"low","rationale":"Neoliberal states relied partly on private effort, but the emergency programmes were state-run; split.","sources":["s1"]},
+    "church-by-bishops": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "citizens-assembly": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "citizenship-by-descent": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "civilizational-union": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "civilizing-tutelage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "class-collaboration": {"value":1,"confidence":"medium","rationale":"Neopopulism rejects class conflict, appealing to the unified people and also courting business sectors.","sources":["s1"]},
+    "class-struggle-history": {"value":-2,"confidence":"medium","rationale":"Weyland describes neopopulism as appealing to a heterogeneous mass of people against elites, not as a class-conflict theory.","sources":["s1"]},
+    "class-struggle-under-socialism": {"value":-2,"confidence":"medium","rationale":"Irrelevant to market ideologies.","sources":["s1"]},
+    "clerical-rule": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "close-ties-china": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "co-ethnic-territorial-claim": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "collective-bargaining": {"value":-1,"confidence":"medium","rationale":"Weyland says labour flexibilisation weakened unions and neopopulists kept away from them.","sources":["s1"]},
+    "collective-defense": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "collective-farming": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "colonial-reparations": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "colonial-treaties-void": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "colonies-serve-metropole": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "common-currency": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "communal-electorates": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "competition-drives-progress": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "confederal-coordination": {"value":-2,"confidence":"medium","rationale":"Contrary to centralising plebiscitary rule.","sources":["s1"]},
+    "conscription": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "consent-of-governed": {"value":1,"confidence":"medium","rationale":"Leaders sought legitimacy through direct popular support and elections.","sources":["s1"]},
+    "constituent-assembly": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "consumerism-harmful": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "cooperative-communities": {"value":-2,"confidence":"medium","rationale":"Contradicts the market reform and anti-organisational character.","sources":["s1"]},
+    "corporate-influence": {"value":-1,"confidence":"low","rationale":"Weyland notes privatisation gave benefits to powerful business sectors, so these leaders did not see lobbying as a problem.","sources":["s1"]},
+    "corporatist-bargaining": {"value":-2,"confidence":"medium","rationale":"Weyland says neopopulists bypass and marginalise unions and organised interest groups rather than negotiate through state-recognised bodies.","sources":["s1"]},
+    "correct-racial-injustice": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "courts-bound-by-majority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "creationism-in-schools": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "criminalize-homosexuality": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "culture-before-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "cultures-equal-different": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "customary-chiefs-lawmaking": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "cut-consumption-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "death-penalty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "decent-living-guarantee": {"value":0,"confidence":"low","rationale":"Adherents shrank the state but also funded targeted emergency anti-poverty programmes to hold mass support, so they are split on cutting welfare and the sources give no direct line.","sources":["s1"],"auditor":"claude-opus-5-5"},
+    "decide-locally": {"value":-1,"confidence":"medium","rationale":"Neopopulism is plebiscitary and anti-organisational, concentrating power in the national leader rather than devolving it.","sources":["s1","s2"]},
+    "defeat-communism": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "defeat-own-government-war": {"value":-2,"confidence":"medium","rationale":"Revolutionary defeatism has no place in the neopopulist sources and clashes with leaders' nationalist appeals.","sources":["s1"]},
+    "defend-planned-state": {"value":-2,"confidence":"low","rationale":"Planned economies are opposed by neoliberal neopopulists.","sources":["s1"]},
+    "defensive-jihad-duty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "deference-to-leading-power": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "delink-world-market": {"value":-2,"confidence":"high","rationale":"Fujimori's government reintegrated Peru into world trade and finance and removed exchange controls.","sources":["s4"]},
+    "democracy-best": {"value":0,"confidence":"low","rationale":"They won through elections but often bypassed institutions, Fujimori closed Congress, and Wikipedia notes attacks on democracy by some; adherents are split.","sources":["s1","s3"]},
+    "democracy-is-procedure": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "democratic-peace": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "dense-cities": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "diaspora-return-right": {"value":0,"confidence":"low","rationale":"Diaspora return rights do not feature in the neopopulism sources.","sources":["s1"]},
+    "dictatorship-of-proletariat": {"value":-2,"confidence":"medium","rationale":"Contrary to leader-centred plebiscitary politics aimed at a heterogeneous mass.","sources":["s1"]},
+    "direct-action": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "direct-election-head-of-state": {"value":1,"confidence":"medium","rationale":"Plebiscitary personalistic leaders are elected directly.","sources":["s1"]},
+    "direct-votes": {"value":1,"confidence":"medium","rationale":"Plebiscitary support and direct appeal to the people are defining features, though the sources frame it as a leader-centred strategy.","sources":["s1"]},
+    "discourage-race-mixing": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "disparate-impact-discrimination": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "disputed-territory-plebiscite": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "distinct-gender-roles": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "distribute-by-need": {"value":-2,"confidence":"medium","rationale":"Market allocation with targeted relief, not need-based distribution.","sources":["s1"]},
+    "distribution-by-process": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "diversity-weakens-cohesion": {"value":0,"confidence":"low","rationale":"Some right neopopulists claim so; Latin American core does not. Split.","sources":["s3"]},
+    "divine-source-of-authority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "domestic-violence-symmetry": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "dominated-front": {"value":-1,"confidence":"low","rationale":"Neoliberal leaders aligned with international financial institutions and the West.","sources":["s1"]},
+    "domination-women-nature": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "drastic-climate-action": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "duties-before-rights": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "dynastic-succession": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "economic-freedom": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "economic-self-sufficiency": {"value":-2,"confidence":"medium","rationale":"Fujimori's government abandoned import substitution and reintegrated Peru into world trade.","sources":["s4"]},
+    "economy-in-majority-hands": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "educated-out-of-touch": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "elective-rulers": {"value":1,"confidence":"medium","rationale":"Neopopulist leaders gained office through elections and drew legitimacy from them.","sources":["s1"]},
+    "elite-replacement": {"value":0,"confidence":"low","rationale":"Some right neopopulists voice it; Latin American core does not. Split.","sources":["s3"]},
+    "emergency-suspend-protections": {"value":1,"confidence":"medium","rationale":"Fujimori's 1992 self-coup and emergency measures drew mass support.","sources":["s1"]},
+    "empower-international-orgs": {"value":0,"confidence":"low","rationale":"They accepted IMF and World Bank adjustment programmes but also rely on nationalist rhetoric, so adherents are split.","sources":["s1"]},
+    "encourage-eccentricity": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "end-foreign-alliances": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "end-racial-preferences": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "entrenched-bill-of-rights": {"value":0,"confidence":"low","rationale":"Neopopulists were willing to override constitutional rules but also promulgated constitutions; split and undocumented.","sources":["s1"]},
+    "environment-over-liberty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "equal-conscription": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "equal-moral-worth": {"value":1,"confidence":"low","rationale":"Citizens counted as equal (\"one citizen, one vote\") per the glossary, though less central.","sources":["s1"]},
+    "equal-outcomes": {"value":-2,"confidence":"medium","rationale":"Market-oriented programmes with only targeted relief do not aim at equal outcomes.","sources":["s1"]},
+    "equal-parenting": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ethnic-nation": {"value":0,"confidence":"low","rationale":"Right-wing neopopulists in Europe lean toward it while Latin American cases appeal to a heterogeneous mass; split.","sources":["s3"]},
+    "existential-risk-priority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "exit-over-voice": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "expand-fossil-fuels": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "expand-nuclear": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "experts-over-public": {"value":0,"confidence":"low","rationale":"Weyland describes an alliance of neoliberal technocrats with plebiscitary leaders: expert advice drives economics while legitimacy comes from the mass, so adherents are split.","sources":["s1"]},
+    "extrajudicial-killing": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "family-wage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "farm-price-support": {"value":-1,"confidence":"medium","rationale":"Fujimori removed subsidies and price controls.","sources":["s4"]},
+    "filial-duty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "financial-transactions-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "fiscal-rules-binding": {"value":0,"confidence":"low","rationale":"Fiscal discipline yes; binding rules limit leaders; split.","sources":["s1"]},
+    "flat-income-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "force-to-prevent-secession": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "force-without-un": {"value":0,"confidence":"low","rationale":"Foreign policy is barely mentioned in the sources; neutral.","sources":["s1"]},
+    "foreign-land-ownership": {"value":-2,"confidence":"medium","rationale":"Investment-friendly liberalisation opposes restrictions on foreign ownership.","sources":["s4"]},
+    "foreign-partition-plot": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "foreign-residents-local-vote": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "foreign-takeover-block": {"value":-2,"confidence":"medium","rationale":"Fujimori eased limits on investment and capital flows and privatised to attract foreign buyers.","sources":["s4"]},
+    "free-economic-experiment": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "free-public-college": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "free-trade": {"value":2,"confidence":"high","rationale":"Fujimori abandoned protectionism and import substitution and radically simplified tariffs, a typical neoliberal neopopulist programme.","sources":["s4"]},
+    "freedom-as-non-domination": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "freedom-to-discriminate": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "future-generations": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gender-equality-agencies": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gender-identity-recognition": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gender-parity-bodies": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gender-social-construct": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gendered-self-government": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gm-crops": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "god-not-male": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "gradual-change": {"value":-1,"confidence":"medium","rationale":"Neopopulists favoured bold, transformative shock reform and bypassed institutions, so gradualism respecting institutions is disfavoured.","sources":["s1"]},
+    "harm-principle": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "head-commands-forces": {"value":1,"confidence":"medium","rationale":"Strong executive concentrating power.","sources":["s1"]},
+    "hereditarian-race": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "heritable-defect-limits": {"value":-2,"confidence":"medium","rationale":"No support in sources; contrary to equal citizenship appeals.","sources":["s1"]},
+    "historical-land-claim": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "history-own-civilization": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "holocaust-denial": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "homeland-cultural-centre": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "homeland-spiritual-bond": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "homestead-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "human-enhancement": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "immigrants-learn-language": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "in-work-tax-credits": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "income-for-work-not-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "independence-needs-economic-change": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "independent-nuclear-deterrent": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "independent-unions": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "indigenous-land-authority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "indigenous-political-leadership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "indirect-election": {"value":-2,"confidence":"medium","rationale":"Plebiscitary leaders favour direct appeals.","sources":["s1"]},
+    "individual-pension-accounts": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "individual-rights-only": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "industrial-civilization-disaster": {"value":-2,"confidence":"medium","rationale":"Neopopulism is organised around modernising through market reform and exports.","sources":["s1"]},
+    "industrial-unions": {"value":-1,"confidence":"medium","rationale":"Weyland says neopopulists marginalise unions, so they would not promote a particular union structure.","sources":["s1"]},
+    "informal-organisation": {"value":-2,"confidence":"medium","rationale":"Neopopulists are anti-organisational and personal-vehicle based, which differs from informal affinity groups.","sources":["s1"]},
+    "institutions-fit-civilization": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "interest-free-mutual-credit": {"value":-2,"confidence":"medium","rationale":"Market finance and stabilisation packages rely on interest-bearing credit, contradicting mutual interest-free banks.","sources":["s1"]},
+    "interfaith-marriage-restriction": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "internal-colonialism": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "international-criminal-courts": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "internet-shutdowns": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "intersecting-oppressions": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "intervene-in-bloc": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "islam-incompatible": {"value":0,"confidence":"low","rationale":"Anti-Muslim policy appears in some neopopulist parties, but not the Latin American core; split.","sources":["s3"]},
+    "jewish-state-israel": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "job-guarantee": {"value":-2,"confidence":"medium","rationale":"Market reform shrank state employment, per Fujimori's cuts to public employment.","sources":["s1","s4"]},
+    "keep-colonial-borders": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "keep-nuclear-weapons": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "kin-peoples-union": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "labor-aristocracy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "labour-theory-of-value": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "land-redistribution": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "land-use-tenure": {"value":-2,"confidence":"medium","rationale":"Market reform and property titling favour individual tenure.","sources":["s4"]},
+    "land-value-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "language-defines-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "laws-from-scripture": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "leader-cult": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "left-right-obsolete": {"value":1,"confidence":"medium","rationale":"The Wikipedia article says neopopulist movements sometimes reject the left-right label, and Weyland shows leaders combining policies across it.","sources":["s3"]},
+    "legalize-drugs": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "legalize-sex-work": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "limit-growth": {"value":-2,"confidence":"medium","rationale":"Neopopulism is organised around restoring growth and exports through market reform, so limiting growth is contrary to it.","sources":["s1"]},
+    "limit-guns": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "limit-population": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "local-essentials-public": {"value":-2,"confidence":"medium","rationale":"Law 23.696 names water and sanitation (Obras Sanitarias) among enterprises subject to privatisation.","sources":["s5"]},
+    "local-production": {"value":-2,"confidence":"medium","rationale":"Export promotion and integration into world trade oppose localism.","sources":["s4"]},
+    "long-naturalization-wait": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "majority-settlement": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "male-disadvantage-attention": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "mandatory-sentences": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "market-under-party-rule": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "markets-allocate-better": {"value":2,"confidence":"high","rationale":"Neopopulist leaders such as Menem and Fujimori embraced drastic market reform, and Argentina's Law 23.696 puts state enterprises up for sale to private capital.","sources":["s1","s5"]},
+    "martyrs-honoured": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "mass-culture-pacifies": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "material-conditions-drive-history": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "material-over-identity": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "means-match-ends": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "media-academia-power": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "military-guardian-role": {"value":0,"confidence":"low","rationale":"Fujimori relied on the armed forces after 1992 but the literature does not make this doctrine; split.","sources":["s1"]},
+    "military-superiority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "minority-conspiracy": {"value":0,"confidence":"low","rationale":"Right neopopulists sometimes scapegoat groups; not a defining feature of the core.","sources":["s3"]},
+    "minority-language-support": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "minority-territorial-autonomy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "minority-veto": {"value":-2,"confidence":"medium","rationale":"Plebiscitary, majoritarian leaders bypass organised minorities and veto players.","sources":["s1"]},
+    "mixed-constitution": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "mixed-public-service-providers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "monarchy-legitimate": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "moral-incentives": {"value":-2,"confidence":"medium","rationale":"Market reform relies on material incentives and a capitalist model.","sources":["s1"]},
+    "more-religion-public": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "multipolar-world": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "municipal-property": {"value":-2,"confidence":"medium","rationale":"Contrary to private property and market model.","sources":["s1"]},
+    "nation-first": {"value":0,"confidence":"low","rationale":"Neopopulism pairs nationalist rhetoric with openness to global markets and finance, so adherents are split.","sources":["s2"]},
+    "national-church-status": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "national-cultural-autonomy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "national-law-over-international": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "national-mission": {"value":0,"confidence":"low","rationale":"Spreading a national model abroad is not a neopopulist theme in the sources; neutral.","sources":["s1"]},
+    "national-rebirth": {"value":1,"confidence":"medium","rationale":"Leaders presented themselves as saviours rescuing the country from crisis, which Weyland ties to proving charisma.","sources":["s1"]},
+    "national-resource-control": {"value":-1,"confidence":"medium","rationale":"The programme privatised state firms and utilities and welcomed foreign capital, which runs against national control of resources.","sources":["s5","s4"]},
+    "national-self-determination": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "native-born-offices": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "natural-rulers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "nature-as-capital": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "nature-intrinsic-value": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "negative-income-tax": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "neither-capitalism-nor-communism": {"value":-1,"confidence":"low","rationale":"Neopopulist neoliberals accept capitalism; a third way is not their stance.","sources":["s1"]},
+    "never-kill-self-defence": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "night-watchman-state": {"value":0,"confidence":"low","rationale":"Shrunk the state strongly but kept social emergency programmes; split.","sources":["s1"]},
+    "no-bailouts": {"value":0,"confidence":"low","rationale":"Neoliberal austerity favours it but personalist leaders favoured crony business sectors, as Weyland notes with privatisation; split.","sources":["s1"]},
+    "no-business-privileges": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-denominational-politics": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-duty-to-obey": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-fault-divorce": {"value":0,"confidence":"low","rationale":"Divorce law is not covered; neutral since leaders such as Menem were publicly Catholic yet divorced.","sources":["s1"]},
+    "no-fixed-category-of-women": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-foreign-bases": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-land-for-peace": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-nuclear-weapons-on-territory": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "no-religion-state-schools": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "noblesse-oblige": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "nonpartisan-head-of-state": {"value":-1,"confidence":"medium","rationale":"Personalistic leaders are partisan political figures.","sources":["s1"]},
+    "office-by-exam": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "offices-by-lottery": {"value":-2,"confidence":"medium","rationale":"Contrary to plebiscitary leader-centred politics.","sources":["s1"]},
+    "one-party-rule": {"value":-1,"confidence":"medium","rationale":"Leaders relied on personal vehicles, not a guiding-ideology party, and Weyland notes low institutionalisation; they still ran in elections.","sources":["s1"]},
+    "online-anonymity": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "online-participation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "open-borders": {"value":-2,"confidence":"medium","rationale":"Neopopulist parties are described as hostile to immigration, which is incompatible with eventual open borders.","sources":["s3"]},
+    "open-government-data": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "open-lgbt-military-service": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "organic-representation": {"value":-2,"confidence":"medium","rationale":"Weyland says neopopulists bypass organised bodies in favour of direct support.","sources":["s1"]},
+    "paid-care-work": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "parliament-supreme": {"value":-1,"confidence":"medium","rationale":"Weyland describes leaders concentrating power in the president, and Fujimori closed Congress in 1992.","sources":["s1"]},
+    "participatory-democracy": {"value":-1,"confidence":"low","rationale":"Neopopulism is plebiscitary but anti-organisational, not participatory in this sense.","sources":["s1"]},
+    "party-commands-army": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "party-controls-media": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "party-discipline-binding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "party-own-road": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "patriarchy-structural": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "patriotic-education": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "patriotism-serves-workers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "people-in-arms": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "person-over-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "personal-loyalty-rule": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "personal-possessions-private": {"value":null,"confidence":"low","rationale":"Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.","sources":[]},
+    "political-elite-corrupt": {"value":2,"confidence":"high","rationale":"Anti-elite, anti-establishment discourse is a defining feature, with outsider leaders attacking cronies and traditional parties.","sources":["s1","s2","s3"]},
+    "politics-spiritual-struggle": {"value":-1,"confidence":"low","rationale":"Not part of a pragmatic reform strategy.","sources":["s1"]},
+    "pollution-taxes": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "pollution-tort-liability": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "pool-sovereignty": {"value":-1,"confidence":"low","rationale":"European neopopulists oppose EU integration; weak inference.","sources":["s3"]},
+    "population-causes-poverty": {"value":0,"confidence":"low","rationale":"The sources frame poverty as crisis and adjustment effects, and do not blame population growth; neutral.","sources":["s1"]},
+    "population-transfer": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "positive-liberty": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "power-sharing-divided-societies": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "precautionary-principle": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "premarital-sex": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "preserve-contested-monuments": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "preserve-national-culture": {"value":1,"confidence":"medium","rationale":"The glossary notes developed-country neopopulism leans on nationalism, and the Wikipedia article links it to anti-immigrant nativism.","sources":["s2","s3"]},
+    "press-owned-by-wealth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "price-controls-essentials": {"value":-1,"confidence":"medium","rationale":"Fujimori relaxed price controls.","sources":["s4"]},
+    "priority-to-poor": {"value":0,"confidence":"medium","rationale":"They courted the unorganised poor with targeted programmes but did not make poor-first law a principle.","sources":["s1"]},
+    "private-courts-defense": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "production-for-use": {"value":-2,"confidence":"medium","rationale":"Market economy with profit, as in reform programmes.","sources":["s1"]},
+    "profit-exploitation": {"value":-2,"confidence":"medium","rationale":"Neopopulist neoliberalism treats profit as legitimate returns.","sources":["s1"]},
+    "promulgated-standing-laws": {"value":0,"confidence":"low","rationale":"Leaders exceeded rules at times but also governed by decree; split.","sources":["s1"]},
+    "pronatalist-incentives": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "property-franchise": {"value":-2,"confidence":"low","rationale":"Neopopulists seek mass support; a property franchise would cut against it.","sources":["s1"]},
+    "property-fundamental": {"value":1,"confidence":"medium","rationale":"Privatisation and the market model rest on secure private property, though personalistic leaders were willing to override rules when convenient.","sources":["s1","s5"]},
+    "property-serves-common-good": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "proportional-representation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "protect-kin-minorities": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "public-access-to-information": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "public-money-creation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "public-ownership": {"value":-2,"confidence":"high","rationale":"Law 23.696 declares utilities and energy firms such as YPF, Gas del Estado and SEGBA subject to privatisation, and Fujimori sold hundreds of state enterprises.","sources":["s4","s5"]},
+    "public-service-media": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "punish-blasphemy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "purge-loanwords": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "race-social-construct": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "racial-franchise": {"value":-2,"confidence":"medium","rationale":"Neopopulism seeks mass support among all.","sources":["s1"]},
+    "racial-group-interests": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "racial-pride": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "racial-segregation-law": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "racism-not-main-obstacle": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "raise-minimum-wage": {"value":0,"confidence":"low","rationale":"Fujimori quadrupled the minimum wage at the start of his term while neoliberal advisers held wages down elsewhere, so adherents are split and the sources do not settle it.","sources":["s4"]},
+    "reason-over-faith": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "recall-officials": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "recallable-delegates": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "recognise-genocide": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "reduce-immigration": {"value":1,"confidence":"medium","rationale":"The Wikipedia article describes xenophobic, anti-immigration policies among neopopulist parties, though the Latin American 1990s core says little about it.","sources":["s3"]},
+    "refugee-return": {"value":0,"confidence":"low","rationale":"Refugee return is outside what the neopopulism literature discusses, so there is no basis for a side.","sources":["s1"]},
+    "refuse-lender-austerity": {"value":-2,"confidence":"high","rationale":"Menem and Fujimori adopted IMF-backed adjustment and Weyland says international financial institutions pushed these reforms.","sources":["s1","s4"]},
+    "region-keeps-system": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "regional-powers-revocable": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "regional-revenue-retention": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "regulate-corporations": {"value":-1,"confidence":"medium","rationale":"Market reform meant deregulation, removal of price controls and easing limits on investment, so tighter corporate regulation runs against the programme.","sources":["s1","s4"]},
+    "rehabilitation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "reification": {"value":-2,"confidence":"low","rationale":"A critical theory outside the programme.","sources":["s1"]},
+    "reinterpret-religion": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religion-illusion": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religion-oppresses-women": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religions-one-truth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religious-dress-in-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religious-equal-recognition": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religious-exemptions": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "religious-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rent-control": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "representatives-worker-pay": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "residents-only-property": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "resist-lawless-ruler": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "resources-common-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restore-past-order": {"value":0,"confidence":"low","rationale":"European right neopopulists invoke it while 1990s Latin American cases promised modernisation, so split.","sources":["s3"]},
+    "restrict-conversion": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-foreign-funding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-freedoms-for-growth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-hate-speech": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-indigenous-settlement": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-private-adult-pornography-access": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "restrict-strikes-picketing": {"value":1,"confidence":"medium","rationale":"Labour flexibilisation weakened unions and the presidents curtailed strikes.","sources":["s1"]},
+    "restructure-world-economy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "results-over-ideology": {"value":1,"confidence":"medium","rationale":"Weyland shows leaders abandoned campaign promises and adopted market reform when it worked, a pragmatic stance that treats results as the test.","sources":["s1"]},
+    "return-lost-territory": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "return-to-foraging": {"value":-2,"confidence":"medium","rationale":"Contrary to a modernising market programme.","sources":["s1"]},
+    "reunify-divided-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "revive-national-language": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rich-countries-aid-poor": {"value":0,"confidence":"low","rationale":"Aid duties are not covered by the sources; Weyland notes international lenders funded relief programmes, but no stance is stated.","sources":["s1"]},
+    "rich-first": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "right-to-buy-council-homes": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "right-to-secede": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rights-where-you-live": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "rule-by-example": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "ruling-class-consent": {"value":-1,"confidence":"low","rationale":"A critical theory these leaders do not hold.","sources":["s1"]},
+    "rural-life-healthier": {"value":0,"confidence":"low","rationale":"Appealed to the rural poor but no moral claim; neutral.","sources":["s1"]},
+    "sacred-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sacred-ruler": {"value":-2,"confidence":"medium","rationale":"Divine descent for a ruler has no place in plebiscitary politics based on popular votes.","sources":["s1"]},
+    "sacrifice-heritage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "same-sex-marriage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "school-vouchers": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "scripture-inerrant": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "scripture-judged-by-women": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "second-chamber": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "security-forces-accountable": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "self-interest-moral": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "self-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "self-reliance-over-aid": {"value":-1,"confidence":"low","rationale":"Weyland notes international financial institutions funded social emergency programmes, which these leaders welcomed.","sources":["s1"]},
+    "separate-church-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "separated-powers": {"value":-1,"confidence":"medium","rationale":"Weyland describes limited respect for institutional rules and concentration of power in the president; Fujimori closed Congress.","sources":["s1"]},
+    "settler-state-colonial": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sex-ed-in-schools": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "sex-socially-constructed": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "shared-human-nature": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "shared-marital-authority": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "simple-living": {"value":-2,"confidence":"medium","rationale":"Neopopulist reform aims at growth, consumption and investment, which contradicts voluntary simplicity.","sources":["s1"]},
+    "single-common-good": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "single-official-language": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "single-unit-for-people": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "slavery-not-civil-war-cause": {"value":0,"confidence":"low","rationale":"No bearing on neopopulist doctrine.","sources":["s1"]},
+    "smash-state-machine": {"value":-2,"confidence":"medium","rationale":"Neoliberal neopopulists used the state to push reform.","sources":["s1"]},
+    "social-market-economy": {"value":0,"confidence":"low","rationale":"Neopopulists combined market reform with targeted social programmes but never endorsed a social market framework, so the answer is unclear.","sources":["s1"]},
+    "socialism-needs-workers-power": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "socialism-one-country": {"value":-2,"confidence":"medium","rationale":"Irrelevant and opposed to socialism.","sources":["s1"]},
+    "socialized-care": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "socialized-markets": {"value":-1,"confidence":"medium","rationale":"Law 23.696 allowed worker share programmes inside privatised firms but treated private capital as the main route; public or worker ownership as the condition for markets is not their position.","sources":["s5"]},
+    "soldiers-refuse-war": {"value":-2,"confidence":"low","rationale":"Not covered; refusal of war orders is contrary to leaders who relied on armed forces.","sources":["s1"]},
+    "sovereign-above-law": {"value":-1,"confidence":"low","rationale":"Weyland says leaders limited respect for rules but not as doctrine.","sources":["s1"]},
+    "sovereign-debt-cancellation": {"value":-2,"confidence":"medium","rationale":"They accepted IMF and creditor obligations and sought to restore creditworthiness.","sources":["s1","s4"]},
+    "soviet-state-capitalist": {"value":0,"confidence":"low","rationale":"A Marxist debate unrelated to neopopulism.","sources":["s1"]},
+    "space-expansion": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "spiritual-nature": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "state-arms-monopoly": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "state-as-business": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "state-class-instrument": {"value":-2,"confidence":"medium","rationale":"Neopopulism denies a class-instrument state, seeing the state as a tool for the leader and the people.","sources":["s1"]},
+    "state-directs-investment": {"value":-1,"confidence":"medium","rationale":"Neoliberal neopopulism rejects state-led development in favour of private investment and market signals.","sources":["s1","s4"]},
+    "state-harmful": {"value":-1,"confidence":"medium","rationale":"Neopopulists shrank the state and attacked rent-seeking, but still used concentrated state power to push reform, so they stop short of calling it harmful in itself.","sources":["s1","s3"]},
+    "state-promotes-atheism": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "state-strengthens-encirclement": {"value":-2,"confidence":"medium","rationale":"A Marxist-Leninist doctrine opposed to the market-capitalist stance of neoliberal neopopulists.","sources":["s1"]},
+    "stay-neutral-between-blocs": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "strong-leader": {"value":2,"confidence":"high","rationale":"Weyland defines neopopulism as a personalistic leader with direct, unmediated support who concentrates power and shows limited respect for institutional rules.","sources":["s1","s2"]},
+    "student-debt-relief": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "subordinate-church-to-state": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "suppress-opposition": {"value":0,"confidence":"low","rationale":"Weyland records autocratic acts, such as Fujimori's closing of Congress, but adherents mostly claimed popular mandate; split.","sources":["s1"]},
+    "surveillance-ok": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "targeted-social-spending": {"value":1,"confidence":"medium","rationale":"Weyland documents emergency anti-poverty programmes aimed at the unorganised poor as the neopopulist substitute for universal or union-mediated welfare.","sources":["s1"]},
+    "tariffs-protect-industry": {"value":-1,"confidence":"medium","rationale":"Fujimori's government abandoned protectionism and simplified tariffs; though Trump-style neopopulists differ, the core profile opposes protective tariffs.","sources":["s4"]},
+    "tax-inheritance": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "tax-the-wealthy": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "taxation-theft": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "tech-solves-problems": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "tech-with-ancestral-values": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "term-limits": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "territorial-expansion": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "total-state": {"value":-2,"confidence":"high","rationale":"Neoliberal neopopulism aims to shrink the state and privatise.","sources":["s1","s5"]},
+    "totalitarianisms-equivalent": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "trade-labor-env-standards": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "trade-surplus": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "traditional-family": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "treaties-binding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unbreakable-encryption": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unbroken-national-continuity": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "uniform-civil-code": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "uniformed-youth": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unions-good": {"value":-2,"confidence":"medium","rationale":"Weyland says neopopulists keep distance from trade unions as fetters on presidential autonomy and weaken them through labour flexibilisation.","sources":["s1","s2"]},
+    "universal-healthcare": {"value":0,"confidence":"low","rationale":"Neopopulist reformers paired adjustment with targeted anti-poverty programmes rather than universal entitlements, and nothing in the sources addresses health coverage, so the answer is a split inference.","sources":["s1"]},
+    "universal-morality": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unjust-law-not-binding": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "unlimited-reelection": {"value":1,"confidence":"medium","rationale":"Menem and Fujimori sought re-election and constitutional changes to allow it.","sources":["s1"]},
+    "unreligious-rulers-fought": {"value":-2,"confidence":"low","rationale":"Religious-law rebellion is irrelevant to the secular electoral strategy of neopopulism.","sources":["s1"]},
+    "vanguard-party": {"value":-2,"confidence":"medium","rationale":"Leaders are anti-organisational and distrust disciplined parties.","sources":["s1"]},
+    "vote-delegation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "voter-id": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "war-builds-character": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "wealth-concentration-endangers-liberty": {"value":-1,"confidence":"low","rationale":"Weyland notes leaders benefited powerful business sectors, which cuts against this claim.","sources":["s1"]},
+    "welfare-for-citizens": {"value":1,"confidence":"low","rationale":"European neopopulists support welfare chauvinism; weak inference elsewhere.","sources":["s3"]},
+    "widespread-small-property": {"value":0,"confidence":"low","rationale":"Fujimori drew on De Soto's property-titling ideas but privatisation also favoured large business groups; adherents are split.","sources":["s4"]},
+    "wife-divorce-without-consent": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "withdraw-from-politics": {"value":-2,"confidence":"medium","rationale":"Neopopulism mobilises people directly behind a leader.","sources":["s1"]},
+    "women-distinct-values": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-equality-needs-economic-change": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-in-religious-leadership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-must-cover": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-property-inheritance": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "women-suffrage": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "work-for-welfare": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "worker-ownership": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "workers-councils": {"value":-2,"confidence":"medium","rationale":"Neopopulists marginalise organised labour and rely on unorganised followers, so council-based rule is contrary to them.","sources":["s1"]},
+    "workers-nation": {"value":null,"confidence":"low","rationale":"No stated position found.","sources":[]},
+    "workers-own-party": {"value":-2,"confidence":"medium","rationale":"Neopopulists marginalise worker organisations.","sources":["s1"]},
+    "workplace-democracy": {"value":-2,"confidence":"medium","rationale":"Neopopulists marginalise worker organisations and favour business-friendly corporate governance.","sources":["s1"]},
+    "world-economy-extracts-surplus": {"value":-2,"confidence":"medium","rationale":"Fujimori and Menem integrated their countries into the world economy and rejected dependency framing.","sources":["s4"]}
+  },
+  "missingStatements": [
+    {
+      "text": "Social spending should be targeted at the poorest rather than provided universally.",
+      "value": 1,
+      "rationale": "Weyland documents emergency anti-poverty programmes aimed at the unorganised poor as the neopopulist substitute for universal or union-mediated welfare.",
+      "sources": [
+        "s1"
+      ],
+      "addedAs": "targeted-social-spending"
+    },
+    {
+      "text": "A president facing a political crisis may close the legislature and rule directly.",
+      "value": 1,
+      "rationale": "Weyland reports that Fujimori's April 1992 closing of Congress drew his highest popular support, and that plebiscitary leaders show limited respect for institutional rules.",
+      "sources": [
+        "s1"
+      ],
+      "addedAs": "strong-leader"
+    },
+    {
+      "text": "Political parties and interest groups stand between the people and their leader and should be bypassed.",
+      "value": 2,
+      "rationale": "Weyland defines neopopulism as direct, unmediated support from unorganised followers and says leaders marginalise unions, parties and other organisations.",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "addedAs": "bypass-parties-groups"
+    }
+  ],
+  "notes": "The term is contested: Latin American critics dispute that Menem and Fujimori were populists at all (the bait-and-switch reading), and the Wikipedia usage covers right-wing movements whose economics Wikipedia describes as contested. The profile follows Weyland's political definition. Most answers outside economics, labour and leadership are low-confidence inferences.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 116
+    },
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-31",
+      "nulled": 213
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

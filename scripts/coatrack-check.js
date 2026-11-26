@@ -368,17 +368,7 @@ function evidence(id, audit, field, x, strict, contains) {
 // `pass`: the audit is a pass's draft (validate.js --dir) or checked as one (--as-current), not a committed audit.
 function check(id, full, { strict = false, pass = false } = {}) {
   const problems = [], unchecked = [], warnings = [];
-  // A source cited only on talk pages (reviewHistory) or as the reason for a nulling documents a replaced version,
-  // often the very source it was replaced for (Wikipedia, another subject's text): it isn't evidence of a current
-  // position, so the check skips it.
-  const citedNow = new Set([
-    ...Object.values(full.answers || {}).flatMap((x) => (x && x.value !== null && Array.isArray(x.sources) ? x.sources : [])),
-    ...(Array.isArray(full.missingStatements) ? full.missingStatements : []).flatMap((m) => [...(m.sources || []), ...(m.quotes || []).map((q) => q.source)]),
-    ...["aliases", "keyFigures", "keyWorks"].flatMap((k) => (Array.isArray(full[k]) ? full[k] : []).flatMap((x) => (x ? [x.source, x.work] : []))),
-  ].filter(Boolean));
-  const historyOnly = new Set(Object.values(full.answers || {}).flatMap((x) => (x && Array.isArray(x.reviewHistory) ? x.reviewHistory : []))
-    .flatMap((e) => (e && Array.isArray(e.sources) ? e.sources : [])).filter((sid) => !citedNow.has(sid)));
-  const audit = historyOnly.size ? { ...full, sources: (full.sources || []).filter((s) => !historyOnly.has(s.id)) } : full;
+  const audit = full;
   if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || audit.aliases.some((x) => !entryName(x).trim()))) {
     problems.push('"aliases" must be a list of names (use [] for none)');
   }
@@ -469,25 +459,21 @@ function check(id, full, { strict = false, pass = false } = {}) {
   }
   // The name without Wikipedia's disambiguator ("Jacobin (politics)" is written "Jacobin"), as for other names above.
   const names = [...new Set([audit.name, plainName(audit.name), ...kept])].map(norm);
-  // A source only past answers cite (reviewHistory, the talk page) stays listed so those entries keep their meaning
-  // and its id isn't reused, but it supports nothing current, so it isn't checked and can't vouch for another text
-  // (Brandon, 2026-11-21: Savarkar's Essentials of Hindutva in Akhand Bharat, kept after its answers were nulled).
-  const cited = (o, where, inHistory, acc) => {
-    if (Array.isArray(o)) { o.forEach((x, i) => cited(x, `${where}[${i}]`, inHistory, acc)); return acc; }
+  const cited = (o, where, acc) => {
+    if (Array.isArray(o)) { o.forEach((x, i) => cited(x, `${where}[${i}]`, acc)); return acc; }
     if (o && typeof o === "object") for (const [k, v] of Object.entries(o)) {
-      if (k === "reviewHistory") cited(v, where, true, acc);
-      else if (k === "sources" || k === "source") for (const sid of [v].flat()) {
+      if (k === "sources" || k === "source") for (const sid of [v].flat()) {
         if (typeof sid !== "string") continue;
-        if (inHistory) acc.past.add(sid); else (acc.now[sid] = acc.now[sid] || new Set()).add(where);
+        (acc[sid] = acc[sid] || new Set()).add(where);
       }
-      else cited(v, where ? `${where}.${k}` : k, inHistory, acc);
+      else cited(v, where ? `${where}.${k}` : k, acc);
     }
     return acc;
   };
-  const use = cited({ ...audit, sources: undefined }, "", false, { now: {}, past: new Set() });
-  // Where a failing source is still cited: if nothing current should rest on it, citing it only in history is the fix.
-  const citedBy = (sid) => use.now[sid] ? `; it is cited by ${[...use.now[sid]].slice(0, 4).join(", ")}${use.now[sid].size > 4 ? ` and ${use.now[sid].size - 4} more` : ""}: if none of these should rest on it, stop citing it there and keep it listed for the answer histories that cite it` : "";
-  const sources = (Array.isArray(audit.sources) ? audit.sources : []).filter((s) => !(use.past.has(s.id) && !use.now[s.id]));
+  const use = cited({ ...audit, sources: undefined }, "", {});
+  // Where a failing source is still cited: if nothing should rest on it, stop citing it (scripts/cleanup.js then drops it).
+  const citedBy = (sid) => use[sid] ? `; it is cited by ${[...use[sid]].slice(0, 4).join(", ")}${use[sid].size > 4 ? ` and ${use[sid].size - 4} more` : ""}: if none of these should rest on it, stop citing it there` : "";
+  const sources = Array.isArray(audit.sources) ? audit.sources : [];
   // A source may discuss the ideology under another name: an alias the audit doesn't list yet (Brandon, 2026-11-21).
   const ALIAS_HINT = `; if it names the ideology another way, list that name in "aliases" with its reason (${ALIAS_REASONS.join(", ")}) and quote, as audits/PROMPT.md says`;
   const defining = [];

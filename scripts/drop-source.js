@@ -6,16 +6,13 @@
 // auditor has read what it found and none of it ties the source.
 // For each current answer that cites it:
 //   - other sources left: the source leaves "sources"; value, confidence and rationale stay as they are.
-//   - it was the only source: the answer is nulled, citing it in the nulling's reviewHistory entry, and the pass's
-//     "nulling" review counts it.
-// In a later pass each change is a reviewHistory reply signed by the pass (the last "passes" entry); a version this
-// pass already wrote is amended in place instead. The source stays listed while a history entry cites it, and goes
-// when nothing does. Its claims are what the script can't remove: it lists every rationale that still names it, to
-// rewrite from the sources the answer cites (validate.js errors on one left word for word).
+//   - it was the only source: the answer is nulled (a null cites nothing), its rationale giving the reason.
+// The source goes from "sources" once nothing cites it; git keeps the earlier versions. Its claims are what the
+// script can't remove: it lists every rationale that still names it, to rewrite from the sources the answer cites
+// (validate.js errors on one left word for word).
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const cp = require("child_process");
 const lib = require("./lib");
 const { namesLeft } = require("./coatrack-check");
 
@@ -41,50 +38,18 @@ if (!NONE_FIT) {
     process.exit(2);
   }
 }
-const indent = (text.match(/^\{\n([ \t]+)"/) || [, 2])[1];
-
 const passes = Array.isArray(a.passes) ? a.passes : [];
-const pass = passes[passes.length - 1];
-const laterPass = passes.length > 1 || (a.reviews || []).some((r) => r && r.kind === "nulling");
-if (laterPass && !(pass && pass.auditor && pass.auditedAt)) { console.error('a later pass signs its changes: the last "passes" entry needs "auditor" and "auditedAt"'); process.exit(1); }
-const sign = laterPass ? { author: pass.auditor, date: pass.auditedAt } : null;
+const laterPass = passes.length > 1;
 const subject = PEOPLE ? "the person" : "the ideology";
-
-// Who wrote a version with no history yet: the pass of the first commit whose copy of the audit has its rationale
-// (that version was never replaced, so it is the original). Falls back to the first pass.
-const rel = path.relative(lib.ROOT, (PEOPLE ? lib.personPath : lib.profilePath)(id));
-function writtenBy(rationale) {
-  const git = (...g) => { try { return cp.execFileSync("git", g, { cwd: lib.ROOT, stdio: ["ignore", "pipe", "ignore"], maxBuffer: 1 << 26 }).toString(); } catch { return ""; } };
-  const first = git("log", "--reverse", "--format=%H", "-S", rationale, "--", rel).split("\n")[0];
-  let p = null;
-  if (first) { try { const old = JSON.parse(git("show", `${first}:${rel}`)); p = (old.passes || []).slice(-1)[0] || (old.auditor && { auditor: [].concat(old.auditor).slice(-1)[0], auditedAt: old.auditedAt }); } catch {} }
-  p = p && p.auditor ? p : passes[0];
-  return { author: p.auditor, date: p.auditedAt };
-}
-const version = (x) => ({ value: x.value, confidence: x.confidence, rationale: x.rationale, sources: [...(x.sources || [])] });
-const signed = (e) => !!sign && e.author === sign.author && e.date === sign.date;
 
 let kept = 0, nulled = 0;
 const toRewrite = [];
 for (const [k, x] of Object.entries(a.answers || {})) {
   if (!x || x.value === null || !(x.sources || []).includes(sid)) continue;
   const rest = x.sources.filter((s) => s !== sid);
-  const next = rest.length ? { ...version(x), sources: rest }
-    : { value: null, confidence: "low", rationale: `Nulled: its only source, ${sid} (${src.title}), isn't tied to ${subject}.`, sources: [sid] };
-  if (!laterPass) {
-    // A first audit is the original text: no history. A null with nothing left found nothing, so it cites nothing.
-    Object.assign(x, rest.length ? next : { ...next, rationale: `No source tied to ${subject} states a position on this.`, sources: [] });
-  } else {
-    let h = Array.isArray(x.reviewHistory) ? x.reviewHistory.slice() : [{ ...version(x), ...writtenBy(x.rationale) }];
-    if (signed(h[h.length - 1])) h[h.length - 1] = { ...next, ...sign }; else h.push({ ...next, ...sign });
-    // An amended version that now repeats the one before it isn't a reply: it goes.
-    const same = (p, q) => JSON.stringify(version(p)) === JSON.stringify(version(q));
-    if (h.length > 1 && same(h[h.length - 1], h[h.length - 2])) h.pop();
-    const cur = h[h.length - 1];
-    for (const f of ["value", "confidence", "rationale"]) x[f] = cur[f];
-    x.sources = cur.value === null ? [] : [...cur.sources];
-    if (h.length > 1) x.reviewHistory = h; else delete x.reviewHistory;
-  }
+  if (rest.length) x.sources = rest;
+  else Object.assign(x, { value: null, confidence: "low", sources: [],
+    rationale: laterPass ? `Nulled: its only source, ${src.title}, isn't tied to ${subject}.` : `No source tied to ${subject} states a position on this.` });
   if (rest.length) {
     kept++;
     const cited = rest.map((s) => a.sources.find((y) => y.id === s)).filter(Boolean);
@@ -93,25 +58,14 @@ for (const [k, x] of Object.entries(a.answers || {})) {
   } else nulled++;
 }
 
-// The nulling review counts the nullings in the history, recounted for this pass's signature.
-if (laterPass) {
-  let n = 0;
-  for (const x of Object.values(a.answers || {})) {
-    const h = Array.isArray(x.reviewHistory) ? x.reviewHistory : [];
-    for (let i = 1; i < h.length; i++) if (h[i - 1].value !== null && h[i].value === null && signed(h[i])) n++;
-  }
-  a.reviews = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => !(r && r.kind === "nulling" && r.reviewer === sign.author && r.reviewedAt === sign.date));
-  if (n) a.reviews.push({ kind: "nulling", reviewer: sign.author, reviewedAt: sign.date, nulled: n });
-  if (!a.reviews.length) delete a.reviews;
-}
-// The source entry stays while anything cites it (a history entry, a key figure's or alias's quote).
+// The source entry stays while anything cites it (a key figure's or alias's quote).
 const citesIt = (o) => Array.isArray(o) ? o.some(citesIt) : o && typeof o === "object"
   ? Object.entries(o).some(([key, v]) => ((key === "sources" || key === "source" || key === "work") && [v].flat().includes(sid)) || citesIt(v)) : false;
 const stillCited = citesIt({ ...a, sources: undefined });
 if (!stillCited) a.sources = a.sources.filter((s) => s.id !== sid);
 
-fs.writeFileSync(file, JSON.stringify(a, null, indent) + (text.endsWith("\n") ? "\n" : ""));
-console.log(`${sid} (${src.title}) dropped from ${kept + nulled} answer(s) in ${path.relative(process.cwd(), file)}: ${kept} kept on their other sources, ${nulled} nulled; ${stillCited ? "the source stays listed for the history that cites it" : "nothing cites it now, so it is no longer listed"}`);
+fs.writeFileSync(file, lib.formatAudit(a));
+console.log(`${sid} (${src.title}) dropped from ${kept + nulled} answer(s) in ${path.relative(process.cwd(), file)}: ${kept} kept on their other sources, ${nulled} nulled; ${stillCited ? "the source stays listed for what still cites it" : "nothing cites it now, so it is no longer listed"}`);
 const others = ["aliases", "keyFigures", "keyWorks"].filter((k) => citesIt(a[k]));
 if (others.length) console.log(`still cited in ${others.join(", ")}: take out the entries that rest on ${sid}`);
 if (toRewrite.length) console.log(`Rewrite these rationales from the sources each answer still cites, without ${sid}'s claims (and change the value or confidence if they rested on it):\n${toRewrite.join("\n")}`);

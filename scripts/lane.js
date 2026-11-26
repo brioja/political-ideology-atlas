@@ -268,7 +268,7 @@ function exceptGap(id) {
     const last = [...passes].sort((x, y) => String(x.auditedAt).localeCompare(String(y.auditedAt))).pop();
     if (!last || last.gapException || last.auditedAt !== new Date().toISOString().slice(0, 10)) return;
     last.gapException = GAP_EXCEPTION;
-    fs.writeFileSync(draft(id), JSON.stringify(a, null, 2) + "\n");
+    fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
     log(`${id}: gap exception added to the ${last.auditedAt} pass`);
   } catch (e) { log(`${id}: gap exception not added (${e.message})`); }
 }
@@ -340,7 +340,8 @@ function integrate(id) {
       const { dropped, kept } = require("./cleanup").clean(OUT, id, PEOPLE);
       if (dropped.length || kept.length) log(`${id}: cleanup dropped ${dropped.length} unused source(s)${dropped.length ? `: ${dropped.join(", ")}` : ""}${kept.length ? `; kept ${kept.join(", ")} (dropping adds a validate.js error)` : ""}`);
     } catch (e) { log(`${id}: cleanup failed, draft integrated as it is: ${e.message.split("\n")[0]}`); }
-    fs.copyFileSync(draft(id), target);
+    // Written in the audits' one format (lib.formatAudit): answers sorted, one per line, for git history.
+    fs.writeFileSync(target, require("./lib").formatAudit(JSON.parse(fs.readFileSync(draft(id), "utf8"))));
     const colorFile = path.join(OUT, `${id}.color.json`);
     const files = [target];
     if (!PEOPLE && fs.existsSync(colorFile)) {

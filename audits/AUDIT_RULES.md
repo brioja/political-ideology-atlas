@@ -230,9 +230,8 @@ says which rule). Build on the existing audit rather than starting over:
   Jewish secularism, or for a person who holds it), a related one's (secular humanism's for
   secularism), a party's for one of its members, a relative's or employer's for a person.
 - To change an earlier answer (null it, change it or revert it), write the new answer with its reason
-  as the rationale and add it, signed, to the statement's `reviewHistory`, the talk page that keeps
-  every version (`validate.js` says how). A null cites nothing: a nulling's sources go in its history
-  entry only, since a source next to a null would read as evidence of silence. Words never overturn an action.
+  as the rationale; git keeps the earlier versions. A null cites nothing, since a source next to a null
+  would read as evidence of silence.
 - Change an answer or raise its confidence only on evidence you found and cite. Check every answer
   you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
   stated (cite the source of the position that settles it) or `null`. One deduced from a general

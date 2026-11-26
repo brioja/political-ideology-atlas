@@ -44,14 +44,13 @@ function errors(dir, id, people) {
   return new Set(out.split("\n").filter((l) => /^\s*error:/.test(l)).map((l) => l.trim()));
 }
 
-// Cleans `<dir>/<id>.json` in place, keeping its indentation. Returns { dropped, kept }: ids dropped, and unused ids
+// Cleans `<dir>/<id>.json` in place (lib.formatAudit). Returns { dropped, kept }: ids dropped, and unused ids
 // kept because dropping them adds a validate.js error.
 function clean(dir, id, people = false) {
   const file = path.join(dir, `${id}.json`), text = fs.readFileSync(file, "utf8"), a = JSON.parse(text);
   const unused = unusedSources(a);
   if (!unused.length) return { dropped: [], kept: [] };
-  const indent = (text.match(/\n([ \t]+)"/) || [, 2])[1];
-  const write = (ids) => fs.writeFileSync(file, JSON.stringify({ ...a, sources: a.sources.filter((s) => !ids.includes(s && s.id)) }, null, indent) + "\n");
+  const write = (ids) => fs.writeFileSync(file, lib.formatAudit({ ...a, sources: a.sources.filter((s) => !ids.includes(s && s.id)) }));
   const before = errors(dir, id, people);
   const ok = () => [...errors(dir, id, people)].every((e) => before.has(e));
   try {

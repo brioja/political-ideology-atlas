@@ -1981,7 +1981,7 @@ function positionsList(profile, audit, auditUrl = null, key = null) {
   return `<ul class="positions">${known.map(item).join("")}</ul>${mild}${more}`;
 }
 
-// Sources behind a current position first; the rest (cited only by earlier versions in reviewHistory) folded
+// Sources behind a current position first; the rest (behind candidate answers, aliases or key figures only) folded
 // below, so a reader doesn't take them for evidence of a position.
 function sourcesList(audit) {
   if (!audit || !audit.sources || !audit.sources.length) return "";

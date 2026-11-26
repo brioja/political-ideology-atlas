@@ -16,7 +16,7 @@ Audit the id the driver gives you, person or ideology.
    or the catalog. Answer every statement in statements.json, candidates included, and set `rules`
    to the current version (`CURRENT_RULES` in scripts/validate.js). Research to the end (section 5).
 2. If the subject already has an audit (or next.js gives a "reason"), this is a later pass: start
-   from the committed file and follow `audits/AUDIT_RULES.md` section 5 (reviewHistory, `passes`,
+   from the committed file and follow `audits/AUDIT_RULES.md` section 5 (changed answers, `passes`,
    your model in `auditor`), never rewrite it from scratch. `auditor` is your full model id
    (e.g. `gpt-6.1-sol`, `claude-opus-5-5`), not a family name.
    The driver's first message lists what the committed audit fails under today's rules

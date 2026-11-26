@@ -371,6 +371,17 @@ const saturation = (hex) => {
   return mx === mn ? 0 : (mx - mn) / (255 - Math.abs(mx + mn - 255));
 };
 const onlyNeutralColors = (entry) => entry.colors.length > 0 && !entry.colors.some((c) => saturation(c.hex) >= 0.15);
+// An audit file's one format (Brandon, 2026-11-26): two-space JSON, with "answers" sorted by statement id and one
+// answer per line, so git shows one statement's history with `git log -L '/"<id>":/,+1:<file>'` or
+// `git log -G '"<id>":'`, and a diff lists exactly the answers that changed. Git is the answers' history.
+function formatAudit(a) {
+  const answers = a && a.answers;
+  if (!answers || typeof answers !== "object" || Array.isArray(answers)) return JSON.stringify(a, null, 2) + "\n";
+  const mark = "\u0000answers\u0000", keys = Object.keys(answers).sort();
+  const body = keys.length ? `{\n${keys.map((k) => `    ${JSON.stringify(k)}: ${JSON.stringify(answers[k])}`).join(",\n")}\n  }` : "{}";
+  return JSON.stringify({ ...a, answers: mark }, null, 2).replace(JSON.stringify(mark), () => body) + "\n";
+}
+
 module.exports = { saturation, onlyNeutralColors, slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, personViews, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
-  RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };
+  RULES, formatAudit, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

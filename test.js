@@ -309,6 +309,15 @@ const colorFile = lib.readJson(require("path").join(__dirname, "audits", "ideolo
 const dull = Object.entries(colorFile).filter(([, v]) => lib.onlyNeutralColors(v)).map(([id]) => id);
 assert(!dull.length, `ideology colors are only grey, black or white (add a real color): ${dull.join(", ")}`);
 
+// 4c. Audit files are in their one format (lib.formatAudit: answers sorted, one per line), so git history of one
+// statement's answer is one line. Fix: node -e 'const lib=require("./scripts/lib"),fs=require("fs");for(const f of process.argv.slice(1))fs.writeFileSync(f,lib.formatAudit(JSON.parse(fs.readFileSync(f,"utf8"))))' <files>
+{
+  const fs = require("fs"), path = require("path");
+  const unformatted = [lib.PROFILES_DIR, lib.PEOPLE_DIR, lib.CONTROLS_DIR].flatMap((d) => fs.readdirSync(d).filter((f) => f.endsWith(".json"))
+    .map((f) => path.join(d, f)).filter((f) => { const t = fs.readFileSync(f, "utf8"); return t !== lib.formatAudit(JSON.parse(t)); }));
+  assert(!unformatted.length, `audits not in lib.formatAudit's format (answers sorted, one per line): ${unformatted.slice(0, 5).map((f) => path.relative(__dirname, f)).join(", ")}${unformatted.length > 5 ? ` and ${unformatted.length - 5} more` : ""}`);
+}
+
 // 5. people.js (people and AI models) lines up with the statements.
 const { PEOPLE } = require("./people.js");
 for (const p of PEOPLE) assert.strictEqual(p.profile.length, QUESTIONS.length, `${p.name}: profile doesn't match the statements; rebuild people.js`);

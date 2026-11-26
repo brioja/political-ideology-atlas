@@ -61,18 +61,16 @@ function grandfathered() {
   return grandfatheredIds;
 }
 
-// The committed copy of an audit, to check a later pass's edits against it (append-only history, no sourced
-// answer changed without a talk-page record). Read only when the audit can differ from it: a draft checked from
-// elsewhere, a file with uncommitted changes, or one with a committed history (one git call each per run).
-let withHistory, modified, committedForTests = null;
+// The committed copy of an audit, to check a pass's edits against it. Read only when the audit can differ from it: a
+// draft checked from elsewhere, or a file with uncommitted changes (one git call each per run).
+let modified, committedForTests = null;
 function committedVersion(id, readFrom) {
   if (committedForTests) return committedForTests(id);
   const path = require("path"), cp = require("child_process");
   const canonical = path.join(PROFILES_DIR, `${id}.json`), rel = path.relative(lib.ROOT, canonical);
-  const git = (args) => { try { return cp.execFileSync("git", args, { cwd: lib.ROOT, stdio: ["ignore", "pipe", "ignore"] }).toString(); } catch { return ""; } };
-  if (!withHistory) withHistory = new Set(git(["grep", "-l", '"reviewHistory"', "HEAD", "--", "audits/"]).split("\n").filter(Boolean).map((l) => l.replace(/^HEAD:/, "")));
+  const git = (args) => { try { return cp.execFileSync("git", args, { cwd: lib.ROOT, stdio: ["ignore", "pipe", "ignore"], maxBuffer: 1 << 28 }).toString(); } catch { return ""; } };
   if (!modified) modified = new Set(git(["diff", "--name-only", "HEAD", "--", "audits/"]).split("\n").filter(Boolean));
-  if (path.resolve(readFrom) === canonical && !modified.has(rel) && !withHistory.has(rel)) return null;
+  if (path.resolve(readFrom) === canonical && !modified.has(rel)) return null;
   const text = git(["show", `HEAD:${rel}`]);
   try { return text ? JSON.parse(text) : null; } catch { return null; }
 }
@@ -344,9 +342,8 @@ function validate(id) {
   const answers = a.answers || {};
   const statements = allStatements();
   const active = statements.filter((s) => !isCandidate(s));
-  // Answers only to statements in the bank: a dropped or renamed statement's answers are removed with their
-  // history (scripts/drop-answers.js, Brandon, 2026-11-18), and nothing in the audit names it any more: the review
-  // history guards current answers against improper nulling, and an old statement's guards nothing (2026-11-19).
+  // Answers only to statements in the bank: a dropped or renamed statement's answers are removed
+  // (scripts/drop-answers.js, Brandon, 2026-11-18), and nothing in the audit names it any more (2026-11-19).
   const inBank = new Set(statements.map((s) => s.id));
   const strays = Object.keys(answers).filter((k) => !inBank.has(k));
   if (strays.length) errors.push(`answers to statements not in the bank: ${strays.join(", ")}; remove them with node scripts/drop-answers.js`);
@@ -450,27 +447,14 @@ function validate(id) {
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
   // - A null cites nothing ("sources": []): it is no known position, and a source next to it would read as evidence
-  //   of silence (Brandon, 2026-11-18). An audit never overturns its own answers: if its own evidence doesn't
-  //   answer a statement, it doesn't cite it there. A nulling by a later pass cites the source behind its reason
-  //   in its reviewHistory entry, so it can be reviewed; the current answer repeats that entry without the sources.
-  // - "reviewHistory" is a statement's talk page (WP:BRD): every version of the answer, oldest first, each signed
-  //   { "value", "confidence", "rationale", "sources", "author", "date" }. The first entry is the first sourced
-  //   version; each later entry is a reply that changed it (bold or revert), signed by the pass that wrote it.
-  //   An unsourced version, or a null before the first answer (nothing found), has nothing to review and is left out; a statement with fewer than 2 sourced versions
-  //   has no history (the field is absent). The last entry is the current answer (what people see), word for word,
-  //   except that a current null leaves out the entry's sources.
-  // - Words never overturn an action: an answer resting on an action can be nulled only on an action (e.g. the
-  //   vote itself shows it was on another question), and a nulled answer that rested on an action comes back
-  //   only on an action.
-  // - A nulled answer can come back (a revert included, no label needed) under the same rules as any change.
-  // - The history is append-only (checked against the committed file).
-  // - Each review that nulls adds { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews"; their
-  //   counts add up to the nullings in the history. A first audit (one pass, no nulling review) has no history.
-  // - Removing the answers to statements dropped from the bank removes their history too, and lowers the nulling
-  //   reviews by the nullings that went with it (scripts/drop-answers.js).
+  //   of silence (Brandon, 2026-11-18). A nulling gives its reason in the rationale.
+  // - An answer has no "reviewHistory": git keeps every version (Brandon, 2026-11-26: nothing in an audit read it,
+  //   and the audits format answers one per line so `git log` finds a statement's versions).
   // Only people have a record: an ideology doesn't act, so its sources all count as words (Brandon, 2026-11-23).
   const ev = new Map(sources.map((s) => [s.id, PEOPLE ? s.evidence : "words"]));
   const kinds = (ids, k) => (Array.isArray(ids) ? ids : []).filter((sid) => ev.get(sid) === k);
+  const withHistory = statements.filter((st) => answers[st.id] && answers[st.id].reviewHistory !== undefined).map((st) => st.id);
+  if (withHistory.length) errors.push(`${withHistory.join(", ")}: remove "reviewHistory"; git keeps earlier versions of an answer, so an answer is only its current version`);
   if (a.rules >= 4) {
     if (PEOPLE) for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
     for (const st of statements) {
@@ -482,126 +466,30 @@ function validate(id) {
         if (action.length && words.length) errors.push(`${st.id}: cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
         continue;
       }
-      // A null cites nothing. A nulling (a later pass, with a reviewHistory) cites the source behind its reason in
-      // its reviewHistory entry only.
-      if (x.reviewHistory === undefined) {
-        const action = kinds(cited, "action");
-        if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
-        else if (cited.length) errors.push(`${st.id}: a null found nothing, so it cites nothing ("sources": []); evidence that doesn't answer the statement isn't cited here`);
-      } else if (cited.length) errors.push(`${st.id}: a null cites nothing ("sources": []); a nulling's sources go in its reviewHistory entry only`);
+      const action = kinds(cited, "action");
+      if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
+      else if (cited.length) errors.push(`${st.id}: a null cites nothing ("sources": []); evidence that doesn't answer the statement isn't cited here, and a nulling gives its reason in the rationale`);
     }
   }
   const nullings = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "nulling");
   for (const r of nullings) if (!isId(r.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(r.reviewedAt || "") || !(Number.isInteger(r.nulled) && r.nulled > 0)) {
     errors.push('a "nulling" review is { "kind": "nulling", "reviewer": who nulled, "reviewedAt": "YYYY-MM-DD", "nulled": how many answers }');
   }
-  let nulledCount = 0;
-  const historyIds = [];
-  const sameAnswer = (p, q) => JSON.stringify([p.value, p.confidence, p.rationale, p.sources || []]) === JSON.stringify([q.value, q.confidence, q.rationale, q.sources || []]);
-  // The current answer is the last entry word for word, except that a null leaves out the entry's sources.
-  const isCurrent = (e, x) => (x.value === null ? sameAnswer({ ...e, sources: [] }, x) : sameAnswer(e, x));
-  for (const st of statements) {
-    const x = answers[st.id], h = x && x.reviewHistory;
-    if (h === undefined) continue;
-    historyIds.push(st.id);
-    if (!Array.isArray(h) || h.length < 2) { errors.push(`${st.id}: "reviewHistory" has the original answer and at least one reply that changed it (2 or more entries)`); continue; }
-    let ok = true;
-    for (const [i, e] of h.entries()) {
-      const where = `${st.id}: reviewHistory[${i}]`;
-      if (!e || typeof e !== "object" || !(e.value === null || [-2, -1, 0, 1, 2].includes(e.value)) || !CONFIDENCE.includes(e.confidence)
-        || typeof e.rationale !== "string" || !e.rationale.trim() || !Array.isArray(e.sources) || !e.sources.length
-        || !isId(e.author) || !/^\d{4}-\d{2}-\d{2}$/.test(e.date || "")) {
-        errors.push(`${where} is a signed, sourced version of the answer { "value", "confidence", "rationale", "sources" (not empty: an unsourced version has nothing to review, leave it out), "author", "date" }`);
-        ok = false; continue;
-      }
-      for (const sid of e.sources) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
-    }
-    if (!ok) continue;
-    if (h[0].value === null) errors.push(`${st.id}: reviewHistory starts at the first answer: a null before it found nothing and has nothing to review, so leave it out`);
-    if (!isCurrent(h[h.length - 1], x)) errors.push(`${st.id}: the last reviewHistory entry is the current answer, word for word (a null leaves out its sources)`);
-    // A source dropped from an answer takes its claims with it: a pass that drops one and keeps the rationale word for
-    // word, still naming it, left the claims in (trotskyism, 2026-11-23: the ISO programme, untied, dropped from 59
-    // answers whose rationales still gave its position). An error for drafts and --as-current; committed audits get a
-    // warning until their next pass.
-    const before1 = h[h.length - 2];
-    if (x.value !== null && before1.value !== null && before1.rationale === x.rationale) {
-      const byId = new Map(sources.map((s) => [s.id, s])), cited = (x.sources || []).map((sid) => byId.get(sid)).filter(Boolean);
-      for (const sid of before1.sources.filter((sid) => !(x.sources || []).includes(sid) && byId.has(sid))) {
-        const left = require("./coatrack-check").namesLeft(x.rationale, byId.get(sid), cited);
-        if (left.length) (DIR || AS_CURRENT ? errors : warnings).push(`${st.id}: source ${sid} was dropped but the rationale still names it ("${left.join('", "')}"), word for word as before: rewrite it from the sources it cites, without ${sid}'s claims, and change the value or confidence if they rested on it`);
-      }
-    }
-    // Walk the versions in order and check each change.
-    let lastNulled = null;
-    for (let i = 1; i < h.length; i++) {
-      const prev = h[i - 1], next = h[i], where = `${st.id}: reviewHistory[${i}]`;
-      if (prev.value !== null && next.value === null) {
-        nulledCount++;
-        lastNulled = prev;
-        const act = kinds(prev.sources, "action"), why = kinds(next.sources, "words");
-        // A statement-review nulling changes the question, not the evidence: it cites the answer's own sources,
-        // so the words-against-action rule doesn't apply to it.
-        const reworded = /^Nulled \(statement review/.test(String(next.rationale || ""));
-        if (act.length && why.length && !reworded) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
-      } else if (prev.value === null && next.value !== null && lastNulled) {
-        if (kinds(lastNulled.sources, "action").length && !kinds(next.sources, "action").length) errors.push(`${where}: the nulled answer rested on an action, so a new answer needs an action too (words can't overturn it)`);
-      }
-    }
-  }
-  const reviewed = nullings.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
-  // A first audit (one pass, no nulling review) is the original text: it has no review history.
-  const firstAudit = !(Array.isArray(a.passes) && a.passes.length > 1) && !nullings.length;
-  if (historyIds.length && firstAudit) errors.push(`${historyIds.join(", ")}: "reviewHistory" in a first audit: its answers are the original text and have no history; only a later pass or review (recorded in "passes" or "reviews") replaces answers`);
-  else if (reviewed !== nulledCount) errors.push(`"reviews" count ${reviewed} nulled answer(s) but "reviewHistory" holds ${nulledCount} nulling(s); each nulling review records how many it nulled`);
-  // Append-only: the committed history must still be there, unchanged, at the start of each list.
+  // A source dropped from an answer takes its claims with it: a pass that drops one and keeps the rationale word for
+  // word, still naming it, left the claims in (trotskyism, 2026-11-23: the ISO programme, untied, dropped from 59
+  // answers whose rationales still gave its position). Checked against the committed answer.
   const before = committedVersion(id, p);
   if (before && before.answers) {
-    // A dropped statement's answer goes with its history. A committed text that names a dropped statement may be
-    // reworded to remove the mention: compared without its rationale.
-    const gone = (sid) => !inBank.has(sid) && !answers[sid];
-    const namesRetired = (e) => !!retiredRe && String(e && e.rationale).search(retiredRe) >= 0;
-    const key = (e) => JSON.stringify(namesRetired(e) ? { ...e, rationale: undefined } : e);
-    const keyLike = (e, like) => JSON.stringify(namesRetired(like) ? { ...e, rationale: undefined } : e);
-    for (const [sid, old] of Object.entries(before.answers)) {
-      if (gone(sid)) continue;
-      const prev = old && Array.isArray(old.reviewHistory) ? old.reviewHistory : [];
-      if (!prev.length) continue;
-      const cur = answers[sid] && Array.isArray(answers[sid].reviewHistory) ? answers[sid].reviewHistory : [];
-      if (cur.length < prev.length || prev.some((e, i) => key(e) !== keyLike(cur[i], e))) errors.push(`${sid}: "reviewHistory" was changed or shortened; it is append-only`);
+    const byId = new Map(sources.map((s) => [s.id, s]));
+    for (const st of statements) {
+      const x = answers[st.id], old = before.answers[st.id];
+      if (!x || !old || x.value === null || old.value === null || old.rationale !== x.rationale || !Array.isArray(old.sources)) continue;
+      const cited = (x.sources || []).map((sid) => byId.get(sid)).filter(Boolean);
+      for (const sid of old.sources.filter((sid) => !(x.sources || []).includes(sid) && byId.has(sid))) {
+        const left = require("./coatrack-check").namesLeft(x.rationale, byId.get(sid), cited);
+        if (left.length) errors.push(`${st.id}: source ${sid} was dropped but the rationale still names it ("${left.join('", "')}"), word for word as before: rewrite it from the sources it cites, without ${sid}'s claims, and change the value or confidence if they rested on it`);
+      }
     }
-    // A later pass never edits a sourced answer away: a committed answer with sources that is now changed or gone
-    // must be in that statement's reviewHistory, word for word (an unsourced one has nothing to review).
-    const same = (p, q) => { const r = namesRetired(p) ? null : p.rationale, rq = namesRetired(p) ? null : q.rationale;
-      return JSON.stringify([p.value, p.confidence, r, p.sources || []]) === JSON.stringify([q.value, q.confidence, rq, q.sources || []]); };
-    for (const [sid, old] of Object.entries(before.answers)) {
-      if (gone(sid)) continue;
-      if (!old || !Array.isArray(old.sources) || !old.sources.length) continue;
-      // An original null (nothing found) has nothing to review either: a later pass replaces it freely.
-      if (old.value === null && !(Array.isArray(old.reviewHistory) && old.reviewHistory.length)) continue;
-      const cur = answers[sid];
-      if (cur && same(old, cur)) continue;
-      if (!cur) { errors.push(`${sid}: a sourced answer was removed; change it instead, keeping the old version in its "reviewHistory"`); continue; }
-      if (!(Array.isArray(cur.reviewHistory) && cur.reviewHistory.some((e) => e && same(e, old)))) errors.push(`${sid}: a sourced answer was changed without a talk-page record: add the committed version, word for word, to its "reviewHistory"`);
-    }
-    // Nulling reviews are append-only, except that a drop lowers them (or removes one at 0) by the nullings in the
-    // removed answers' history.
-    const removedNullings = Object.entries(before.answers).filter(([sid]) => gone(sid)).reduce((n, [, x]) => {
-      const h = x && Array.isArray(x.reviewHistory) ? x.reviewHistory : [];
-      for (let i = 1; i < h.length; i++) if (h[i - 1] && h[i] && h[i - 1].value !== null && h[i].value === null) n++;
-      return n;
-    }, 0)
-      // Drops before 2026-11-19 recorded their nullings in a "dropped" review; removing it releases them.
-      + (before.reviews || []).filter((r) => r && r.kind === "dropped" && Number.isInteger(r.nulled)).reduce((n, r) => n + r.nulled, 0);
-    const left = nullings.map((r) => ({ ...r }));
-    let lowered = 0, changed = false;
-    for (const r of (before.reviews || []).filter((r) => r && r.kind === "nulling")) {
-      const i = left.findIndex((x) => JSON.stringify(x) === JSON.stringify(r));
-      if (i >= 0) { left.splice(i, 1); continue; }
-      const j = left.findIndex((x) => x.reviewer === r.reviewer && x.reviewedAt === r.reviewedAt && Number.isInteger(x.nulled) && x.nulled < r.nulled
-        && JSON.stringify({ ...x, nulled: 0 }) === JSON.stringify({ ...r, nulled: 0 }));
-      if (j >= 0) { lowered += r.nulled - left[j].nulled; left.splice(j, 1); } else if (Number.isInteger(r.nulled)) lowered += r.nulled; else changed = true;
-    }
-    if (changed || lowered > removedNullings) errors.push('a committed "nulling" review was changed or removed; reviews are append-only (a drop lowers them only by the nullings removed with its answers)');
   }
   // Rules 5, people: every one of the person's own books in the local library is read and cited (a source with
   // "library": its file name) or declined in "booksNotUsed": [{ "file", "reason" }] (e.g. a critic's book that

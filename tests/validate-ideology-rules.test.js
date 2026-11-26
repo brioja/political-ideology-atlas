@@ -229,23 +229,11 @@ try {
       assert.ok(coatrack.isNamesake("Quentin Vexmoor", "vexmoorism", "Vexmoorism") && !coatrack.isNamesake("Q. Vexmoor Jr.", "vexmoorism", "Vexmoorism"), "Jr. is not Sr."); n++;
     } finally { coatrack.setProfilesForTests(null); }
   }
-  // A source cited only on talk pages (reviewHistory) or as a nulling's reason documents what was replaced: the
-  // tie check skips it. The same source behind a stated answer is still checked.
-  {
-    const withOld = (stated) => E(base(), (a) => {
-      a.sources.push({ id: "s4", kind: "primary", evidence: "words", title: "An unrelated old text", url: "https://example.org/unrelated" });
-      a.auditor = ["claude-sonnet-5-5", "claude-opus-5-5"];
-      a.passes = [{ auditor: "claude-sonnet-5-5", auditedAt: "2026-10-21" }, { auditor: "claude-opus-5-5", auditedAt: "2026-11-07" }];
-      const B = st[1], was = { value: 1, confidence: "medium", rationale: "Answered from an unrelated old text, now set aside.", sources: ["s4"], author: "claude-sonnet-5-5", date: "2026-10-21" };
-      const now = stated ? { value: 1, confidence: "medium", rationale: "Still answered from the unrelated old text.", sources: ["s4"] }
-        : { value: null, confidence: "low", rationale: "Nulled: the old text is not a source of this ideology.", sources: ["s4"] };
-      a.answers[B] = { ...now, reviewHistory: [was, { ...now, author: "claude-opus-5-5", date: "2026-11-07" }] };
-      if (!stated) a.answers[B].sources = []; // a current null cites nothing; its history entry keeps the source
-      if (!stated) a.reviews = [{ kind: "nulling", reviewer: "claude-opus-5-5", reviewedAt: "2026-11-07", nulled: 1 }];
-    });
-    ok("source cited only on a talk page and as a nulling's reason", withOld(false));
-    fails("the same source behind a stated answer is still tied", withOld(true), /source s4 \(primary\)/);
-  }
+  // A source behind a stated answer is tied to the ideology like any other.
+  fails("a source behind a stated answer is tied", E(base(), (a) => {
+    a.sources.push({ id: "s4", kind: "primary", evidence: "words", title: "An unrelated old text", url: "https://example.org/unrelated" });
+    a.answers[st[1]] = { value: 1, confidence: "medium", rationale: "Answered from the unrelated old text.", sources: ["s4"] };
+  }), /source s4 \(primary\)/);
   // Rules 4 is shared with people: one case to show it runs for ideologies too.
   // Only people have a record: an ideology's sources need no "evidence" tag, and the record checks don't apply.
   { const e = errorsOf(E(base(), (a) => { for (const s of a.sources) delete s.evidence; a.sources.push({ id: "s4", kind: "primary", evidence: "action", title: "Regime decree", url: "https://example.org/manifesto" }); a.answers[A].sources = ["s2", "s4"]; }));
