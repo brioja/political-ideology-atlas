@@ -175,6 +175,10 @@ function seedLaterPass(id) {
   if (!Array.isArray(a.passes) || !a.passes.length) a.passes = [{ auditor: [].concat(a.auditor || [])[0], auditedAt: a.auditedAt }];
   a.rules = require("./validate").CURRENT_RULES;
   a.auditedAt = today;
+  // The earlier pass's notes go (Brandon, 2026-11-26): Political moderate's web phase read "a positional and
+  // methodological label, so most substantive policy answers are low-confidence" from them first, took it as settled
+  // and searched nothing. Each pass writes its own.
+  delete a.notes;
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
   log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources, ${w.requests} missing statement(s) dropped`);
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--dir", path.relative(ROOT, OUT), id]);
