@@ -245,12 +245,16 @@ function otherNames(id) {
 // still open (scripts/phases.js strips the settled answers and merges the web phase's back). The local phase's Claude
 // turns run with AUDIT_PHASE=local, which .claude/hooks/local-only.js reads to refuse web searches and fetches.
 const LOCAL_ENV = { AUDIT_PHASE: "local" };
+// The web phase's turns run with AUDIT_PHASE=web, and .claude/hooks/web-only.js refuses reading local texts (the corpora,
+// marxists.org and Gutenberg included, the library, downloaded books, the source library's files, the local draft): the
+// local phase read them, and Political moderate's web phase re-read them instead of searching (Brandon, 2026-11-26).
+const webEnv = (id) => ({ AUDIT_PHASE: "web", AUDIT_SUBJECT: id });
 const localMark = (id) => path.join(OUT, `${id}.local`), webDraft = (id) => path.join(OUT, `${id}.web.json`);
 // 2026-11-26: the first wording ("answer from local texts only; what they don't settle stays null") had later passes
 // null every answer an earlier pass took from the web (Anarcha-feminism 158 known answers to 38).
-const LOCAL_RULE = (id) => `This is the local phase of the answers. Every answer the draft already has (from an earlier pass, whatever its sources) stays as it is: change one only on evidence from a local text (audits/AUDIT_RULES.md section 4), and never null one because local texts are silent on it. Answer the open statements from local texts only, that is the local corpora (~/.cache/political-ideology-atlas/corpora/, listed in its README.md), the maintainer's reference library, Gutenberg books (\`node scripts/gutenberg.js\`) and books already downloaded for this audit (scratchpad/sources/${id}/${PEOPLE ? "" : `, ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}). No web searches and no page fetches (scripts/get.js, wiki.js, yt.js)${ENGINE === "claude" ? "; a hook refuses them" : ""}. An open statement the local texts don't settle stays null for now: a web phase follows in a fresh session and searches the web for every open statement${PEOPLE ? ", and for a record (acts) on each statement you answer from the person's words" : ""}. Save the draft after every statement you answer.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT.md, Aliases)."}${COLOR(id)} When you have gone through every statement, create the empty file scratchpad/lane-out/${LANE}/${id}.local and end your turn; don't validate yet (the driver validates the draft when you're done and sends back what to fix).`;
+const LOCAL_RULE = (id) => `This is the local phase of the answers. Every answer the draft already has (from an earlier pass, whatever its sources) stays as it is: change one only on evidence from a local text (audits/AUDIT_RULES.md section 4), and never null one because local texts are silent on it. Answer the open statements from local texts only, that is the local corpora (~/.cache/political-ideology-atlas/corpora/, listed in its README.md), the maintainer's reference library, Gutenberg books (\`node scripts/gutenberg.js\`), marxists.org (the corpus's \`tools/marxists.js\`; \`--fetch "<URL>"\` adds a page it lacks, so search the archive here: the web phase can't read it) and books already downloaded for this audit (scratchpad/sources/${id}/${PEOPLE ? "" : `, ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}). No web searches and no page fetches (scripts/get.js, wiki.js, yt.js)${ENGINE === "claude" ? "; a hook refuses them" : ""}. An open statement the local texts don't settle stays null for now: a web phase follows in a fresh session and searches the web for every open statement${PEOPLE ? ", and for a record (acts) on each statement you answer from the person's words" : ""}. Save the draft after every statement you answer.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT.md, Aliases)."}${COLOR(id)} When you have gone through every statement, create the empty file scratchpad/lane-out/${LANE}/${id}.local and end your turn; don't validate yet (the driver validates the draft when you're done and sends back what to fix).`;
 const START = (id) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. Audit it into scratchpad/lane-out/${LANE}/${id}.json; if that draft exists, carry on from it. ${LOCAL_RULE(id)}${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}${laterPassProblems(id)}${GAP_NOTE}`;
-const WEB_START = (id, n) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This is the web phase of its audit: earlier phases answered what local texts (the corpora, the maintainer's library, downloaded books) settle, and they have been searched. scratchpad/lane-out/${LANE}/${id}.web.json is the audit with only the ${n} statement(s) still open in its "answers"; if it has been worked on already, carry on from it. Search the web for each (web search, \`node scripts/get.js\`, scripts/wiki.js, scripts/yt.js) and answer it in that file, saving after every statement.${PEOPLE ? " An open statement that has an answer rests on the person's words only: look for their record (acts) on it, and replace the answer only with one from that record (record over words, audits/AUDIT_RULES.md); with no record, leave it as it is." : ""} Add no answer for any other statement (they are settled, and the driver ignores them), and number new sources on from the existing ones.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT.md, Aliases)."} Don't run validate.js on this file (it lacks the settled answers): the driver merges it into the audit and validates that. When every open statement has an answer, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers this phase found>\`.${otherNames(id)}`;
+const WEB_START = (id, n) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`. Your subject is \`${id}\`. This is the web phase of its audit: earlier phases answered what local texts (the corpora, the maintainer's library, downloaded books) settle, and they have been searched. scratchpad/lane-out/${LANE}/${id}.web.json is the audit with only the ${n} statement(s) still open in its "answers"; if it has been worked on already, carry on from it. Search the web for each (web search, \`node scripts/get.js\`, scripts/wiki.js, scripts/yt.js) and answer it in that file, saving after every statement. Local texts are closed in this phase (the corpora, marxists.org, Gutenberg, the maintainer's library, downloaded books, the files in scratchpad/sources/): read a page, new or already saved, with \`node scripts/get.js ${id} <url> --grep "<keyword>"\` (or --print).${PEOPLE ? " An open statement that has an answer rests on the person's words only: look for their record (acts) on it, and replace the answer only with one from that record (record over words, audits/AUDIT_RULES.md); with no record, leave it as it is." : ""} Add no answer for any other statement (they are settled, and the driver ignores them), and number new sources on from the existing ones.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT.md, Aliases)."} Don't run validate.js on this file (it lacks the settled answers): the driver merges it into the audit and validates that. When every open statement has an answer, add one line to scratchpad/lane-out/${LANE}/DONE.txt: \`${id} | <known answers this phase found>\`.${otherNames(id)}`;
 const GAP_NOTE = GAP_EXCEPTION ? `\n\nThis pass is exempt from the re-audit gap (the maintainer approved it early): the driver adds "gapException" to its entry in "passes". Date the entry today as usual and leave that field to the driver.` : "";
 // An ideology's audit runs in two phases (Brandon, 2026-11-23): first what PROMPT.md section 2 settles (scope, sources,
 // aliases, key figures, key works), which the driver checks with validate.js --stage scope and sends back to fix, then
@@ -413,6 +417,13 @@ function placement(id) {
     console.log(!u ? "not ideas of what society should be" : u.placed ? "placed on every line (shown)" : "not placed on every line (not shown)");`;
   const r = run("node", ["-e", code]);
   return r.status ? "placement unknown" : r.stdout.trim();
+}
+// Answers with a value in the integrated audit, for the log.
+function knownAnswers(id) {
+  try {
+    const lib = require("./lib"), a = lib.readJson(PEOPLE ? lib.personPath(id) : lib.profilePath(id));
+    return Object.values(a.answers || {}).filter((v) => v && v.value !== null && v.value !== undefined).length;
+  } catch { return "?"; }
 }
 function integrate(id) {
   return locked(() => {
@@ -578,11 +589,11 @@ while (timeLeft()) {
     }
     if (!done()) {
       const n = Object.keys(JSON.parse(fs.readFileSync(webDraft(id), "utf8")).answers || {}).length;
-      thread = await session(WEB_START(id, n));
+      thread = await session(WEB_START(id, n), null, webEnv(id));
       for (let i = 1; !done() && i <= RESUMES && timeLeft(); i++) {
-        if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(WEB_START(id, n)); continue; }
+        if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(WEB_START(id, n), null, webEnv(id)); continue; }
         log(`resume ${id} web (${i})`);
-        thread = await session(RESUME(id), thread);
+        thread = await session(RESUME(id), thread, webEnv(id));
       }
     }
   }
@@ -605,10 +616,12 @@ while (timeLeft()) {
   fs.writeFileSync(DONE, lines.filter((l) => l !== line).join("\n"));
   fs.appendFileSync(path.join(OUT, "INTEGRATED.txt"), `${new Date().toISOString().slice(0, 10)} ${line}\n`);
   // The session writes its DONE line before any fix round, so after one its note on validate.js is out of date
-  // (trotskyism, 2026-11-23: "still errors on one point ... left in" for an audit that passed in round 1).
-  const fixed = rounds ? ` [validate.js passed after ${rounds} fix round${rounds > 1 ? "s" : ""}; the note below is from before]` : "";
+  // (trotskyism, 2026-11-23: "still errors on one point ... left in" for an audit that passed in round 1). The note is
+  // the last phase's own: a web session counts only what it found (council-communism, 2026-11-26: "30" for an audit
+  // of 82), so the driver counts the integrated audit's answers itself.
+  const fixed = rounds ? ` [validate.js passed after ${rounds} fix round${rounds > 1 ? "s" : ""}; the session's note is from before]` : "";
   integrated.add(id);
-  log(`done ${id} (${name})${fixed}: ${line.split("|").slice(1).join("|").trim()} | ${placement(id)}`);
+  log(`done ${id} (${name})${fixed}: ${knownAnswers(id)} known answers | session's note: ${line.split("|").slice(1).join("|").trim()} | ${placement(id)}`);
   count++;
   if (PEOPLE && count % BOOKS_EVERY === 0) books();
   locked(() => push(false));
