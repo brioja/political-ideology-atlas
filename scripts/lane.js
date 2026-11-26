@@ -17,8 +17,11 @@
 //  1. Pick: the lane's own unfinished drafts first, then `next.js --lane`, passing over subjects other lanes have
 //     claimed (scratchpad/lane-out/*/<id>.claim, checked and written under .claim.lock) and any audit with uncommitted changes. Greta Thunberg and Annie Besant were audited twice before this.
 //  2. Audit, in phases; sessions end their turns at natural report points, so the loop lives here.
+//     - A later pass starts from a draft the driver seeds from the committed audit, without Wikipedia citations
+//       (seedLaterPass): answers resting on them alone are nulled and open.
 //     - Ideologies only: a scope phase (SCOPE_START, until <id>.scope exists), checked with validate.js --stage scope
-//       and sent back to fix (SCOPE_FIX).
+//       and sent back to fix (SCOPE_FIX). Sources it still can't tie to the ideology then leave the answers
+//       (scripts/drop-source.js --none-fit), before any answer phase.
 //     - Local: answers from local texts only (START for people, ANSWER in the scope session for ideologies), until
 //       <id>.local exists. Claude turns run with AUDIT_PHASE=local, so .claude/hooks/local-only.js refuses the web.
 //     - Web: scripts/phases.js strips the settled answers into <id>.web.json; a fresh session (WEB_START, resumed
@@ -146,16 +149,28 @@ const COLOR = (id) => PEOPLE ? "" : ` If audits/ideology-colors.json has no entr
 // A later pass with no draft yet starts from what the committed audit fails under today's rules (validate.js
 // --as-current), so the session knows which answers and sources to fix before it researches (Brandon, 2026-11-21:
 // "run validate at the start of an audit"; it learned them only when validating its finished draft).
-function laterPassProblems(id) {
+// A later pass starts from a draft the driver seeds from the committed audit, without its Wikipedia citations
+// (scripts/phases.js dropWikipedia; Brandon, 2026-11-26). The session is handed the problems validate.js still finds
+// under today's rules, once, in its first prompt.
+const laterNotes = new Map();
+function seedLaterPass(id) {
   const committed = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
-  if (fs.existsSync(draft(id)) || !fs.existsSync(committed)) return "";
-  const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", id]);
+  if (fs.existsSync(draft(id)) || !fs.existsSync(committed)) return;
+  const a = JSON.parse(fs.readFileSync(committed, "utf8")), w = phases.dropWikipedia(a);
+  fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
+  log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources`);
+  const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--dir", path.relative(ROOT, OUT), id]);
   // Only errors and warnings: an "excluded:" line (not ideas of what society should be) is a
   // finished result, not a problem, and handing it over as one had sessions overturn the record (2026-11-24, Extremism).
   const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`);
-  if (!lines.length) return "";
-  log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
-  return `\n\nThis is a later pass. The committed audit, checked under today's rules (\`node scripts/validate.js ${flag}--as-current ${id}\`), has these problems; fix each in your draft:\n${lines.join("\n")}`;
+  if (lines.length) log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
+  const nulled = w.nulled ? ` The driver started the draft from the committed audit and took out its Wikipedia citations (a tertiary source): ${w.nulled} answer(s) that rested on them alone are null now and open like any other.` : " The driver started the draft from the committed audit.";
+  laterNotes.set(id, `\n\nThis is a later pass.${nulled}${lines.length ? ` Checked under today's rules (\`node scripts/validate.js ${flag}--as-current --dir scratchpad/lane-out/${LANE} ${id}\`), the draft has these problems; fix each:\n${lines.join("\n")}` : ""}`);
+}
+function laterPassProblems(id) {
+  const note = laterNotes.get(id) || "";
+  laterNotes.delete(id);
+  return note;
 }
 // An eponymous ideology (audits/namesakes.json: Leninism, Stalinism, Trumpism) is handed the maintainer's reference
 // books by its namesake and about them (biographies, named "<title> (about <Person>, by <author>).txt"): a biography
@@ -447,6 +462,7 @@ while (timeLeft()) {
   log(`start ${id}`);
   let thread = null;
   const done = () => doneIds().has(id), local = () => fs.existsSync(localMark(id));
+  if (!done() && !local()) seedLaterPass(id);
   // Phase 1, ideologies: scope, sources, aliases, key figures and key works (web and local).
   if (!PEOPLE && !done() && !local()) startBooks.set(id, (fetchBooks(id) || {}).books || []);
   if (!PEOPLE && !done() && !local() && !fs.existsSync(scopeMark(id))) {
@@ -470,10 +486,18 @@ while (timeLeft()) {
         problems = scopeProblems(id);
       }
       if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again):\n${problems}`);
+      // Sources the scope phase couldn't tie to the ideology leave the answers before the local phase (Brandon,
+      // 2026-11-26): an answer resting on one alone is nulled and open to both answer phases.
+      const untied = [...new Set([...problems.matchAll(/source (s\d+) \([^)]*\) doesn't name/g)].map((m) => m[1]))];
+      for (const sid of untied) {
+        const r = run("node", ["scripts/drop-source.js", id, sid, "--dir", path.relative(ROOT, OUT), "--none-fit"]);
+        log(`${id}: untied source dropped after the scope phase: ${(r.stdout || r.stderr).split("\n")[0]}`);
+      }
+      if (untied.length) added += `\n\nThe driver took ${untied.join(", ")} out of the answers: the scope phase found no tie to the ideology for them (\`scripts/drop-source.js\`). Answers that rested on them alone are null and open; rewrite any rationale that still repeats their claims from the sources the answer still cites.`;
       // The books by the key figures and key works the scope phase settled (Brandon, 2026-11-25).
       const before = new Set((startBooks.get(id) || []).map((b) => b.file));
       const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
-      added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works your scope phase listed are now downloaded too");
+      added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works your scope phase listed are now downloaded too") + added;
     }
     log(`${id}: local phase`);
     thread = await session(thread ? ANSWER(id, added) : localStart(added), thread, LOCAL_ENV);

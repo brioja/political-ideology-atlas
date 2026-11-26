@@ -45,7 +45,24 @@ function merge(local, web, people) {
   return { audit: { ...web, answers }, taken, kept, ignored };
 }
 
-module.exports = { open, strip, merge };
+// Before a later pass (Brandon, 2026-11-26): answers lose their Wikipedia citations, which validate.js refuses
+// (Wikipedia is a tertiary source, audits/AUDIT_RULES.md section 2) and only a new source can fix. An answer with other
+// sources keeps its value on them; one with none left is nulled, so the phases research it like any open statement.
+// The source entries stay (an alias or a key figure may cite them); the final cleanup drops unused ones.
+const isWikipedia = (u) => { try { return /(^|\.)wikipedia\.org$/.test(new URL(u).host); } catch { return false; } };
+function dropWikipedia(audit) {
+  const wiki = new Set((audit.sources || []).filter((s) => isWikipedia(s.url)).map((s) => s.id));
+  let kept = 0, nulled = 0;
+  for (const ans of Object.values(audit.answers || {})) {
+    if (!known(ans) || !(ans.sources || []).some((s) => wiki.has(s))) continue;
+    const rest = ans.sources.filter((s) => !wiki.has(s));
+    if (rest.length) { ans.sources = rest; kept++; }
+    else { Object.assign(ans, { value: null, sources: [], rationale: "Nulled: its only source was a Wikipedia article, a tertiary source." }); nulled++; }
+  }
+  return { kept, nulled };
+}
+
+module.exports = { open, strip, merge, dropWikipedia };
 
 if (require.main === module) {
   const [cmd, draftFile, webFile] = process.argv.slice(2), people = process.argv.includes("--people");
