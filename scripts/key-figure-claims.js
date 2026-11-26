@@ -4,8 +4,7 @@
 // as the thought of someone another ideology lists, the pass records them in its draft's "keyFigureClaims" (checked by
 // coatrack-check.js) and the lane driver moves them here when it integrates the audit (integrate below). The holder's
 // next pass is warned and decides: it keeps the person, or drops them and the claimant's next pass lists them. A
-// holder whose own role or quote presents the person as an influence on it loses them at once (an error, not a
-// warning). A claim leaves the file when the claimant lists the person, or when the holder's next pass keeps them.
+// claim leaves the file when the claimant lists the person, or when the holder's next pass keeps them.
 //
 //   node scripts/key-figure-claims.js        list the open claims
 "use strict";

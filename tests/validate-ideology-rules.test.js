@@ -243,13 +243,11 @@ try {
       fails("claim on an ideology that doesn't list them", claim({ heldBy: "third-ideology" }), /key figure claim "Quentin Vexmoor": third-ideology doesn't list them; other-ideology does/);
       fails("claim with one passage", claim({ evidence: quotes("Quentin Vexmoor wrote its founding text") }), /needs two quotes or more in "evidence"/);
       fails("claim quoting a primary text", claim({ evidence: [...quotes(), { source: "s2", quote: "The manifesto of Vexmoor" }] }), /s2 is a primary source; the evidence comes from defining sources/);
-      fails("claim on an influence", claim({ role: "An undisputed influence on the movement" }), /key figure claim "Quentin Vexmoor": its role or a quote presents them as an influence/);
       coatrack.setProfilesForTests(new Map(), {});
       fails("claim on a person no one lists", claim(), /no other ideology lists them, so list them in "keyFigures" instead/);
-      // The holder is warned of a claim, and loses at once a person its own evidence makes an influence.
+      // The holder is warned of a claim and decides.
       coatrack.setClaimsForTests([{ first: "Quentin", last: "Vexmoor", claimedBy: "other-ideology", heldBy: subject.id, date: "2026-11-26" }]);
       warns("key figure another ideology claims", withVex("2026-11-07"), /key figure "Quentin Vexmoor" is claimed by other-ideology/);
-      fails("claimed key figure presented as an influence", E(withVex("2026-11-07"), (a) => { a.keyFigures[0].role = "An influence on the movement"; }), /key figure "Quentin Vexmoor" is claimed by other-ideology .*influence on the ideology/);
       coatrack.setClaimsForTests([{ first: "Quentin", last: "Vexmoor", claimedBy: subject.id, heldBy: "other-ideology", date: "2026-11-26" }]);
       warns("claimed person the holder dropped", base(), /key figure claim "Quentin Vexmoor" .*other-ideology no longer lists them/);
     } finally { coatrack.setProfilesForTests(null); coatrack.setClaimsForTests(null); }
