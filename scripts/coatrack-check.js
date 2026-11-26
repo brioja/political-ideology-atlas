@@ -451,7 +451,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
     // the party, and "the Tea Party movement" never says "Tea Party" is another name, while "the Tea Party movement, or
     // the Tea Party" does (Brandon, 2026-11-20: a supported name has to be supported).
     if ((reason === "SUPPORTED" || reason === undefined) && typeof x.quote === "string" && !separately(norm(x.quote), [norm(al)], ideologyNames.map(norm)))
-      problems.push(`alias "${al}": its quote doesn't name "${audit.name}" and the alias as separate phrases, so it doesn't show the source equating them`);
+      problems.push(`alias "${al}": its quote doesn't name "${plainName(audit.name)}" and the alias as separate phrases, so it doesn't show the source equating them`);
     if (isSupported(x) || isSpellingAlias(x)) { const pr = aliasPageProblem(id, al); if (pr) problems.push(pr); }
   }
   for (const x of Array.isArray(audit.keyFigures) ? audit.keyFigures : []) {
@@ -512,7 +512,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // exempt (the text is tied already).
   const untied = (field, x, list) => list.filter((e) => e && typeof e.quote === "string" && e.quote.trim())
     .filter((e) => !separately(norm(e.quote), names, field === "key work" ? [norm(entryName(x))] : [norm(entryName(x)), figureKey(x)]))
-    .map((e) => `${field} "${entryName(x)}": the quote "${e.quote.trim()}" doesn't name ${audit.name} (or an alias); each quote names both the ideology and ${field === "key work" ? "the work" : "the person"}, so it shows the source tying them`);
+    .map((e) => `${field} "${entryName(x)}": the quote "${e.quote.trim()}" doesn't name ${plainName(audit.name)} (or an alias); each quote names both the ideology and ${field === "key work" ? "the work" : "the person"}, so it shows the source tying them`);
   for (const x of Array.isArray(audit.keyFigures) ? audit.keyFigures : []) {
     if (!x || typeof x !== "object" || (namesakes()[id] && samePerson(x, namesakes()[id]))) continue;
     if (pass || Array.isArray(x.evidence)) problems.push(...untied("key figure", x, Array.isArray(x.evidence) ? x.evidence : []));
@@ -659,7 +659,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
     if (t == null) { unchecked.push(s.id); continue; }
     // The message names all three ways to tie a primary text, each with its evidence (audits/PROMPT.md);
     // Brandon, 2026-11-21.
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of two ways, with evidence, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}" and two quotes that name it), or another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}). Its author's texts are tied only if the defining sources already make them a key figure; key figures come from those sources, never from a text that needs a tie. \`node scripts/tie-source.js ${id} ${s.id}\` searches the saved pages and local corpora for a tie; if none fits, \`node scripts/drop-source.js ${id} ${s.id}\` takes it out of the answers and lists the rationales to rewrite${citedBy(s.id)}`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${plainName(audit.name)}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of two ways, with evidence, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}" and two quotes that name it), or another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}). Its author's texts are tied only if the defining sources already make them a key figure; key figures come from those sources, never from a text that needs a tie. \`node scripts/tie-source.js ${id} ${s.id}\` searches the saved pages and local corpora for a tie; if none fits, \`node scripts/drop-source.js ${id} ${s.id}\` takes it out of the answers and lists the rationales to rewrite${citedBy(s.id)}`);
   }
   return { problems, unchecked, warnings };
 }
