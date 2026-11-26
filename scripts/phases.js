@@ -48,6 +48,8 @@ function merge(local, web, people) {
 // Before a later pass (Brandon, 2026-11-26): answers lose their Wikipedia citations, which validate.js refuses
 // (Wikipedia is a tertiary source, audits/AUDIT_RULES.md section 2) and only a new source can fix. An answer with other
 // sources keeps its value on them; one with none left is nulled, so the phases research it like any open statement.
+// Missing statements are treated the same way (Brandon, 2026-11-26), since a request added to the candidate bank seeds
+// that statement's answer: a request loses its Wikipedia citations and is dropped when none of its sources is left.
 // The source entries stay (an alias or a key figure may cite them); the final cleanup drops unused ones.
 const isWikipedia = (u) => { try { return /(^|\.)wikipedia\.org$/.test(new URL(u).host); } catch { return false; } };
 function dropWikipedia(audit) {
@@ -59,7 +61,16 @@ function dropWikipedia(audit) {
     if (rest.length) { ans.sources = rest; kept++; }
     else { Object.assign(ans, { value: null, sources: [], rationale: "Nulled: its only source was a Wikipedia article, a tertiary source." }); nulled++; }
   }
-  return { kept, nulled };
+  let requests = 0;
+  if (Array.isArray(audit.missingStatements)) {
+    audit.missingStatements = audit.missingStatements.filter((m) => {
+      if (!(m.sources || []).some((s) => wiki.has(s))) return true;
+      m.sources = m.sources.filter((s) => !wiki.has(s));
+      if (m.sources.length) return true;
+      requests++; return false;
+    });
+  }
+  return { kept, nulled, requests };
 }
 
 module.exports = { open, strip, merge, dropWikipedia };

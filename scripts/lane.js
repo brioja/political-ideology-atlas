@@ -176,7 +176,7 @@ function seedLaterPass(id) {
   a.rules = require("./validate").CURRENT_RULES;
   a.auditedAt = today;
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
-  log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources`);
+  log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources, ${w.requests} missing statement(s) dropped`);
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--dir", path.relative(ROOT, OUT), id]);
   // Only errors and warnings: an "excluded:" line (not ideas of what society should be) is a
   // finished result, not a problem, and handing it over as one had sessions overturn the record (2026-11-24, Extremism).

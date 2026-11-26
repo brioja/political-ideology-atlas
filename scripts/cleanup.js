@@ -78,7 +78,7 @@ function dropFailing(dir, id, people = false) {
   for (const sid of untied) {
     execFileSync("node", [path.join(__dirname, "drop-source.js"), id, sid, "--dir", dir, "--none-fit", ...(people ? ["--people"] : [])], { stdio: "ignore" });
   }
-  let wikipedia = { kept: 0, nulled: 0 };
+  let wikipedia = { kept: 0, nulled: 0, requests: 0 };
   if (/, a Wikipedia article: Wikipedia is a tertiary source/.test(errs)) {
     const file = path.join(dir, `${id}.json`), a = JSON.parse(fs.readFileSync(file, "utf8"));
     wikipedia = require("./phases").dropWikipedia(a);
@@ -99,7 +99,7 @@ if (require.main === module) {
   for (const id of ids) {
     if (args.includes("--failing")) {
       const f = dropFailing(dir, id, people);
-      if (f.untied.length || f.wikipedia.kept + f.wikipedia.nulled) console.log(`${id}: untied sources out of the answers: ${f.untied.join(", ") || "none"}; Wikipedia citations dropped: ${f.wikipedia.nulled} answer(s) nulled, ${f.wikipedia.kept} kept on other sources`);
+      if (f.untied.length || f.wikipedia.kept + f.wikipedia.nulled) console.log(`${id}: untied sources out of the answers: ${f.untied.join(", ") || "none"}; Wikipedia citations dropped: ${f.wikipedia.nulled} answer(s) nulled, ${f.wikipedia.kept} kept on other sources, ${f.wikipedia.requests} missing statement(s) dropped`);
     }
     const { dropped, kept } = clean(dir, id, people);
     total += dropped.length;
