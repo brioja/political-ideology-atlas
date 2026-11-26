@@ -289,6 +289,15 @@ function dropFailing(id, when) {
     return `\n\nThe driver took out of the answers ${[f.untied.length ? `${f.untied.join(", ")} (no tie to the subject was found; scripts/drop-source.js)` : "", w ? "Wikipedia citations (a tertiary source)" : ""].filter(Boolean).join(" and ")}. Answers that rested on them alone are null and open; rewrite any rationale that still repeats their claims from the sources the answer still cites.`;
   } catch (e) { log(`${id}: ${when}, dropping failing sources failed: ${e.message.split("\n")[0]}`); return ""; }
 }
+// Between phases nulls lose their reasons (Brandon, 2026-11-26; scripts/cleanup.js), so the next phase never reads one
+// as settled. Unused sources stay until integration: the scope phase's defining sources aren't cited by answers yet.
+function cleanBetween(id, when) {
+  try {
+    const lib = require("./lib"), a = JSON.parse(fs.readFileSync(draft(id), "utf8"));
+    const reasons = require("./cleanup").emptyNullReasons(a);
+    if (reasons) { fs.writeFileSync(draft(id), lib.formatAudit(a)); log(`${id}: ${when}, cleanup emptied ${reasons} null reason(s)`); }
+  } catch (e) { log(`${id}: ${when}, cleanup failed: ${e.message.split("\n")[0]}`); }
+}
 // The check after the local phase (Brandon, 2026-11-26): full validate.js but for the statements still without an
 // answer, which the web phase takes; fixed in the local phase's session, still local-only.
 const LOCAL_FIX = (id, errors) => `Follow audits/PROMPT_LANE.md as lane \`${LANE}\`; your subject is \`${id}\`. This is still the local phase (local texts only; no web searches or page fetches). validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` (statements without an answer are left to the web phase that follows), and reply.`;
@@ -557,6 +566,7 @@ while (timeLeft()) {
       const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
       added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works your scope phase listed are now downloaded too") + added;
     }
+    if (fs.existsSync(draft(id))) cleanBetween(id, "after the scope phase");
     // Each phase runs in a fresh session (Brandon, 2026-11-26): what the scope phase found is in the draft.
     log(`${id}: local phase`);
     thread = await session(localStart(added), null, LOCAL_ENV);
@@ -588,6 +598,7 @@ while (timeLeft()) {
   if (!done()) {
     thread = null;
     if (!fs.existsSync(webDraft(id))) {
+      cleanBetween(id, "after the local phase");
       const { web, ids } = phases.strip(JSON.parse(fs.readFileSync(draft(id), "utf8")), PEOPLE);
       if (ids.length) fs.writeFileSync(webDraft(id), require("./lib").formatAudit(web));
       else fs.appendFileSync(DONE, `${id}\n`);
@@ -608,6 +619,7 @@ while (timeLeft()) {
     const m = phases.merge(JSON.parse(fs.readFileSync(draft(id), "utf8")), JSON.parse(fs.readFileSync(webDraft(id), "utf8")), PEOPLE);
     fs.writeFileSync(draft(id), require("./lib").formatAudit(m.audit));
     fs.unlinkSync(webDraft(id));
+    cleanBetween(id, "after the web phase");
     const answered = m.taken.filter((s) => m.audit.answers[s] && m.audit.answers[s].value !== null).length;
     log(`${id}: merged the web phase: ${answered} answer(s) found${m.taken.length > answered ? ` (${m.taken.length - answered} left null)` : ""}${PEOPLE ? `, ${m.kept.length} words-only answer(s) kept (no record)` : ""}${m.ignored.length ? `, ${m.ignored.length} answer(s) to settled statements ignored` : ""}`);
   }
