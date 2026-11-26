@@ -286,7 +286,7 @@ try {
   // A rationale states the evidence; it never mentions inference, not even to deny it.
   fails("ideology rationale denies an inference", E(base(), (a) => { a.answers[A].rationale = "The manifesto states it, rather than an inference from its aims."; }), /mentions inference/);
   // An audit under an older rules version says so, with the date its later pass may carry.
-  warns("old rules version", E(base(), (a) => { a.rules = 3; a.auditedAt = "2026-10-30"; }), /^old audit: written under rules 3 \(current \d+\).*from 2026-11-15/);
+  warns("old rules version", E(base(), (a) => { a.rules = 3; a.auditedAt = "2026-10-30"; }), /^old audit: written under rules 3 \(current \d+\), so later rules aren.t checked here$/);
   // The current version is the one the prompts tell audits to write.
   for (const f of ["audits/AUDIT_RULES.md", "audits/PROMPT.md", "audits/PROMPT_PEOPLE.md"]) {
     const v = [...fs.readFileSync(path.join(lib.ROOT, f), "utf8").matchAll(/"rules": (\d+)/g)].map((m) => +m[1]);

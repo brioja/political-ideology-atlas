@@ -63,7 +63,7 @@ words; don't paste long passages.
   wiki and similar) as sources: a site's guess at where someone stands isn't evidence.
 - Research theme by theme. Each statement has a `theme` (economy, government, society, world,
   liberty, culture, ecology, technology, means, globalism); an overview covers only a few statements
-  per theme. After a first pass, count your known positions per theme and search specifically for
+  per theme. Then count your known positions per theme and search specifically for
   the thin ones. Government (elections, courts, executive power, federalism) and world (wars,
   alliances, aid, the UN) are the themes most often left thin.
 - When the subject's own texts are available as full text (a book, manifesto, programme or speech

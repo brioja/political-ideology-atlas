@@ -258,8 +258,7 @@ function validate(id) {
   // An old audit passes the checks of the rules it was written under, not the current ones (a pass at "rules" 3
   // predates the coatrack rule and the source-tie check): say so first, so a pass isn't read as meeting today's rules.
   if ((a.rules || 0) < CURRENT_RULES) {
-    let from = ""; try { from = nextPassFrom(a); } catch { /* an invalid date is reported by its own check */ }
-    warnings.push(`old audit: written under ${a.rules ? `rules ${a.rules}` : "no rules version"} (current ${CURRENT_RULES}), so later rules aren't checked here; a later pass brings it up to rules ${CURRENT_RULES}${from ? ` (from ${from})` : ""}`);
+    warnings.push(`old audit: written under ${a.rules ? `rules ${a.rules}` : "no rules version"} (current ${CURRENT_RULES}), so later rules aren't checked here`);
   }
   for (const f of PEOPLE ? ["name", "auditedAt", "summary", "role"] : STAGE_SCOPE ? ["name", "scope"] : ["name", "auditedAt", "summary", "scope"]) {
     if (typeof a[f] !== "string" || !a[f].trim()) errors.push(`"${f}" must be a non-empty string`);
@@ -372,7 +371,7 @@ function validate(id) {
       if (src && isWikipediaUrl(src.url)) (AS_CURRENT || (a.rules || 0) >= 7 ? errors : warnings).push(`${st.id}: cites ${sid}, a Wikipedia article: Wikipedia is a tertiary source, so cite the source it cites for this, or answer null`);
     }
   }
-  if (unansweredIds.length) errors.push(`${unansweredIds.length} statements have no answer yet (added since this audit); a pass answers every statement`);
+  if (unansweredIds.length) errors.push(`${unansweredIds.length} statements have no answer yet (added since this audit); an audit answers every statement`);
   // Rules 3 has no inferences, so a rationale has no reason to mention one, not even to deny it: it states the evidence
   // (Brandon, 2026-11-08, after "rather than an inference" read as a confession).
   const INFERENCE = /\b(inferred|inferring|by inference|an inference|inferences?)\b/i;

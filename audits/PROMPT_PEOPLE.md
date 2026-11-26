@@ -142,11 +142,3 @@ read.
   "notes": "Optional: changes of view over time, contested points."
 }
 ```
-
-A merged audit (two models researched independently, combined by the integrator) lists both
-model ids in `auditor`, e.g. `["claude-sonnet-5-5", "claude-haiku-5-5"]`, and tags each answer
-with the `auditor` that found it. A single-model audit uses one id and no per-answer tag.
-A merged audit also lists every independent pass in `passes`, e.g.
-`[{ "auditor": "claude-sonnet-5-5", "auditedAt": "2026-10-23" }, { "auditor": "claude-haiku-5-5", "auditedAt": "2026-10-24" }]`;
-the same model appears twice if it audited the person twice.
-

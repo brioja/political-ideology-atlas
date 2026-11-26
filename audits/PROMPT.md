@@ -112,8 +112,7 @@ Both lists show on the ideology's page.
   influence on it), claim them instead: `keyFigureClaims`, each `{ "first", "last", "heldBy": "<that ideology's
   id>", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`, with two quotes or more naming them and
   the ideology, from two different defining sources; your defining sources must also name them more often than the holder's do.
-  The claim goes to audits/key-figure-claims.json and the holder's next pass decides. Their texts aren't tied here
-  meanwhile.
+  The claim goes to audits/key-figure-claims.json, and their texts aren't tied here.
 - If validate.js warns that another ideology claims one of yours, keep them only if your defining sources present
   the ideology as their thought or political legacy; one they present as an influence on it, take out.
 - Never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's
