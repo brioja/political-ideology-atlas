@@ -19,5 +19,5 @@ process.stdin.on("data", (d) => (input += d)).on("end", () => {
   const site = /marxists\.org/i.test(asked) ? ' A marxists.org page: `node ~/.cache/political-ideology-atlas/corpora/tools/marxists.js "<path, e.g. lenin/works/1917>" "<keyword>"` (`--fetch "<URL>"` adds a page the corpus lacks).'
     : /gutenberg\.org/i.test(asked) ? ' A Project Gutenberg book: `node scripts/gutenberg.js --search "<author or title>"`.' : "";
   process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: "PreToolUse", permissionDecision: "deny",
-    permissionDecisionReason: `Answer from local texts only (the corpora, the maintainer's reference library, books already downloaded for this audit).${site}` } }));
+    permissionDecisionReason: `Answer from local texts only (the corpora, the maintainer's reference library, books already downloaded on the subject).${site}` } }));
 });

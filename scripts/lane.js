@@ -236,7 +236,7 @@ function bookList(books, id, intro) {
   const dir = `~/.cache/political-ideology-atlas/corpora/ideology-books/${id}`;
   return `\n\n${intro} (full text, local, in ${dir}/):\n${books.map((b) => `- ${b.file} (${b.url}; ${b.from})`).join("\n")}\n${BOOKS_NOTE(dir)}`;
 }
-const booksAtStart = (id) => bookList(startBooks.get(id), id, `Books on \`${id}\` are downloaded for this audit`);
+const booksAtStart = (id) => bookList(startBooks.get(id), id, `Books on \`${id}\` are downloaded`);
 const startBooks = new Map();
 // An ideology's other names (the Wikipedia redirects to its article) go in the first message, so the session searches
 // under them from the start instead of finding them late (Brandon, 2026-11-23). The coatrack check already accepts
@@ -266,7 +266,7 @@ const localMark = (id) => path.join(OUT, `${id}.local`), webDraft = (id) => path
 // print the tool to use when a session reaches for such a site.
 const PHASE_FILE = (id, phase) => `scratchpad/lane-out/${LANE}/${id}${phase === "web" ? ".web" : ""}.json`;
 const SEARCH = (id, phase) => phase === "local"
-  ? `local texts: the local corpora (~/.cache/political-ideology-atlas/corpora/, listed in its README.md), the maintainer's reference library and the books downloaded for this audit (scratchpad/sources/${id}/${PEOPLE ? "" : `, ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}).`
+  ? `local texts: the local corpora (~/.cache/political-ideology-atlas/corpora/, listed in its README.md), the maintainer's reference library and the books downloaded on the subject (scratchpad/sources/${id}/${PEOPLE ? "" : `, ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}).`
   : `the web: web searches, \`node scripts/get.js ${id} <url>\`, scripts/wiki.js and scripts/yt.js.`;
 // The statements a session answers are listed in <id>.statements.json, and its file holds only their answers
 // (prepare() and phases.strip): the answers that pass today's rules are kept aside, so there is nothing to carry on
@@ -282,7 +282,7 @@ const WEB_START = (id) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}
 // marks the first phase done by creating <id>.scope; a draft alone can't say so, since a later pass starts as a copy
 // of the committed audit.
 const scopeMark = (id) => path.join(OUT, `${id}.scope`);
-const SCOPE_START = (id) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. Do audits/PROMPT.md sections 1 and 2: find the defining sources and write scratchpad/lane-out/${LANE}/${id}.json with its scope, sources, aliases, key figures and key works (completing what the file already has, if it exists). Answering statements is not part of this task. When those parts are in the file, create the empty file scratchpad/lane-out/${LANE}/${id}.scope and end your turn.${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}`;
+const SCOPE_START = (id) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. Do audits/PROMPT.md sections 1 and 2: find the defining sources and write scratchpad/lane-out/${LANE}/${id}.json with its scope, sources, aliases, key figures and key works (completing what the file already has, if it exists). Don't answer statements. When those parts are in the file, create the empty file scratchpad/lane-out/${LANE}/${id}.scope and end your turn.${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}`;
 const SCOPE_FIX = (id, problems) => `\`node scripts/validate.js --dir scratchpad/lane-out/${LANE} --stage scope ${id}\` reports these problems with the scope, sources, aliases, key figures and key works of scratchpad/lane-out/${LANE}/${id}.json:\n${problems}\nFix each error, and act on each warning (a person named in a key figure's quote: list them if the defining sources present the ideology as their thought or political legacy). Check again with that command, and end your turn.`;
 // validate.js --stage scope's errors and warnings for the draft, as "- " lines ("" when clean).
 function scopeProblems(id) {
@@ -659,7 +659,7 @@ while (timeLeft()) {
       // The books by the key figures and key works the scope phase settled (Brandon, 2026-11-25).
       const before = new Set((startBooks.get(id) || []).map((b) => b.file));
       const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
-      added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works are downloaded for this audit too");
+      added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works are downloaded too");
     }
     if (fs.existsSync(draft(id))) cleanBetween(id, "after the scope phase");
     prepare(id, "before the local phase");
