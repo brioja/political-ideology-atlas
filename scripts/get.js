@@ -14,6 +14,9 @@
 //   own), headless Firefox, headless Chrome (real browsers, their own User-Agents).
 // Any refusal (403, 429, a bot check) moves on to the next agent (Brandon, 2026-11-14: "move on for any
 // refusals"). What stays out: posing as a browser from a script, reusing cookies, solving a captcha.
+// Certificates aren't checked (Brandon, 2026-11-26): a server that leaves out part of its certificate chain (UNAM's
+// journal site) failed every agent, and a session then dropped the source with the answers resting on it. The
+// requests carry no cookies or logins, so nothing private goes over an unchecked connection. lynx has no switch for it.
 // A good copy is a 2xx PDF with text, or a page with at least 300 words of text that isn't a bot check or a
 // JavaScript shell. The index.json entry records which agent got it.
 // When no agent gets a good copy (a refusal, a 404, a dead page), the latest good Wayback Machine capture is
@@ -76,21 +79,21 @@ function run(cmd, args, timeoutMs = 90000) {
 // Each agent writes the response body to `out` and returns { status? } (status where the agent can tell it).
 const AGENTS = [
   { name: "curl", cmd: "curl", get(url, out) {
-    const r = run("curl", ["-sSL", "--compressed", "--max-time", "60", "-A", USER_AGENT, "-o", out, "-w", "%{http_code}", url]);
+    const r = run("curl", ["-sSLk", "--compressed", "--max-time", "60", "-A", USER_AGENT, "-o", out, "-w", "%{http_code}", url]);
     return { status: Number(r.out.trim()) || 0, err: r.err };
   } },
   { name: "wget", cmd: "wget", get(url, out) {
-    const r = run("wget", ["--server-response", "--timeout=60", "--tries=1", "-O", out, url]);
+    const r = run("wget", ["--server-response", "--no-check-certificate", "--timeout=60", "--tries=1", "-O", out, url]);
     const codes = [...r.err.matchAll(/HTTP\/[\d.]+ (\d{3})/g)];
     return { status: codes.length ? Number(codes.at(-1)[1]) : 0, err: r.code ? r.err.split("\n").slice(-3).join(" ") : "" };
   } },
   { name: "wget2", cmd: "wget2", get(url, out) {
-    const r = run("wget2", ["--server-response", "--timeout=60", "--tries=1", "-O", out, url]);
+    const r = run("wget2", ["--server-response", "--check-certificate=off", "--timeout=60", "--tries=1", "-O", out, url]);
     const codes = [...(r.err + r.out).matchAll(/(?:HTTP\/[\d.]+ |:status: )(\d{3})/g)];
     return { status: codes.length ? Number(codes.at(-1)[1]) : r.code === 0 ? 200 : 0, err: r.code ? r.err.split("\n").slice(-3).join(" ") : "" };
   } },
   { name: "aria2c", cmd: "aria2c", get(url, out) {
-    const r = run("aria2c", ["-q", "--allow-overwrite=true", "--auto-file-renaming=false", "--timeout=60", "--max-tries=1",
+    const r = run("aria2c", ["-q", "--check-certificate=false", "--allow-overwrite=true", "--auto-file-renaming=false", "--timeout=60", "--max-tries=1",
       "-d", path.dirname(out), "-o", path.basename(out), url]);
     const m = r.err.match(/status=(\d{3})/) || r.out.match(/status=(\d{3})/);
     return { status: r.code === 0 ? 200 : m ? Number(m[1]) : 0, err: r.code ? (r.err || r.out).split("\n").slice(-3).join(" ") : "" };
@@ -102,7 +105,7 @@ const AGENTS = [
     return { err: r.code ? r.err : "" };
   } },
   { name: "w3m", cmd: "w3m", get(url, out) {
-    const r = run("w3m", ["-dump", "-o", "accept_cookie=0", url]);
+    const r = run("w3m", ["-dump", "-o", "accept_cookie=0", "-o", "ssl_verify_server=0", url]);
     fs.writeFileSync(out, r.out);
     return { err: r.code ? r.err : "" };
   } },
@@ -110,7 +113,7 @@ const AGENTS = [
   { name: "chrome", cmd: "google-chrome", alt: "chromium", get(url, out, cmd) {
     const profile = fs.mkdtempSync(path.join(os.tmpdir(), "pit-get-chrome-"));
     try {
-      const r = run(cmd, ["--headless=new", "--disable-gpu", "--no-first-run", `--user-data-dir=${profile}`,
+      const r = run(cmd, ["--headless=new", "--disable-gpu", "--no-first-run", "--ignore-certificate-errors", `--user-data-dir=${profile}`,
         "--virtual-time-budget=15000", "--dump-dom", url], 120000);
       fs.writeFileSync(out, r.out);
       return { err: r.out ? "" : r.err.split("\n").slice(-3).join(" ") };
@@ -150,7 +153,7 @@ async function firefox(url, out, cmd) {
       if (r.type === "exception") throw new Error(r.exceptionDetails?.text || "script error");
       return r.result.value;
     };
-    await send("session.new", { capabilities: {} });
+    await send("session.new", { capabilities: { alwaysMatch: { acceptInsecureCerts: true } } });
     const ctx = (await send("browsingContext.getTree")).contexts[0].context;
     let navErr = null;
     let timer;
