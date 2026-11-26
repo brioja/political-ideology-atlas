@@ -491,11 +491,12 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // A source may discuss the ideology under another name: an alias the audit doesn't list yet (Brandon, 2026-11-21).
   const ALIAS_HINT = `; if it names the ideology another way, list that name in "aliases" with its reason (${ALIAS_REASONS.join(", ")}) and quote, as audits/PROMPT.md says`;
   const defining = [];
+  const offTopic = []; // [source id, text] of defining-kind sources that never name the ideology, so don't count
   for (const s of sources.filter((s) => DEFINING.includes(s.kind) && !isWikipedia(s))) {
     const t = sourceText(id, s.url);
     if (t == null) { unchecked.push(s.id); continue; }
     if (mentions(t, names)) defining.push(t);
-    else problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology${ALIAS_HINT}${citedBy(s.id)}`);
+    else offTopic.push([s.id, t]), problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology${ALIAS_HINT}${citedBy(s.id)}`);
   }
   // Primary texts. A text that names the ideology twice passes on its own. Any other passes if the
   // sources that discuss the ideology (defining sources, and primary texts that passed on their own;
@@ -524,7 +525,24 @@ function check(id, full, { strict = false, pass = false } = {}) {
         : `key figure "${au}" is also a key figure of ${others.join(", ")}`);
       continue;
     }
-    if (count(defining.join(" "), [sur]) < 2) { problems.push(`key figure "${au}" is named fewer than twice in the defining sources`); continue; }
+    if (count(defining.join(" "), [sur]) < 2) {
+      // Say why the count fell short, so the fix isn't sought in the wrong place: unsaved sources can't be counted,
+      // and sources that name the person but never the ideology don't count.
+      const unsaved = [...unchecked];
+      const elsewhere = offTopic.filter(([, t]) => count(t, [sur]) >= 1).map(([sid]) => sid);
+      const are = (l) => `${l.join(", ")} ${l.length === 1 ? "has" : "have"}`;
+      const why = [
+        unsaved.length ? `${are(unsaved)} no saved copy, so ${unsaved.length === 1 ? "it" : "they"} couldn't be counted (save and check again)` : "",
+        elsewhere.length ? `${elsewhere.join(", ")} ${elsewhere.length === 1 ? "names" : "name"} them but ${elsewhere.length === 1 ? "doesn't" : "don't"} count, never naming the ideology` : "",
+      ].filter(Boolean).join("; ");
+      const anyDefining = defining.length || unsaved.length || offTopic.length;
+      problems.push(!anyDefining
+        ? `key figure "${au}" can't be checked: the audit has no defining source (reference, scholarly or secondary, never Wikipedia) to name them; add one that presents the ideology as their thought`
+        : !defining.length && unsaved.length && !elsewhere.length
+        ? `key figure "${au}" can't be checked: none of the defining sources has a saved copy (${unsaved.join(", ")}); save them and check again`
+        : `key figure "${au}" is named fewer than twice in the defining sources${why ? `: ${why}` : ""}`);
+      continue;
+    }
     figuresOk.push(sur);
   }
   const primaries = sources.filter((s) => s.kind === "primary" || s.kind === "program");
@@ -556,4 +574,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { DEFINING, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
+module.exports = { DEFINING, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
