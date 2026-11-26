@@ -444,22 +444,35 @@ function integrate(id) {
   return locked(() => {
     const target = path.join(ROOT, "audits", PEOPLE ? "people" : "profiles", `${id}.json`);
     const name = JSON.parse(fs.readFileSync(draft(id), "utf8")).name || id;
-    const before = new Map([target, path.join(ROOT, "audits", "ideology-colors.json")].map((f) => [f, fs.existsSync(f) ? fs.readFileSync(f) : null]));
+    const claimsFile = require("./coatrack-check").CLAIMS_FILE;
+    const before = new Map([target, path.join(ROOT, "audits", "ideology-colors.json"), claimsFile].map((f) => [f, fs.existsSync(f) ? fs.readFileSync(f) : null]));
     // Fixes that need no judgment and sources the audit never uses go by script, not by a fix round (scripts/cleanup.js).
     try {
       const { tidied, dropped, kept } = require("./cleanup").clean(OUT, id, PEOPLE);
       if (tidied) log(`${id}: cleanup: ${tidied}`);
       if (dropped.length || kept.length) log(`${id}: cleanup dropped ${dropped.length} unused source(s)${dropped.length ? `: ${dropped.join(", ")}` : ""}${kept.length ? `; kept ${kept.join(", ")} (dropping adds a validate.js error)` : ""}`);
     } catch (e) { log(`${id}: cleanup failed, draft integrated as it is: ${e.message.split("\n")[0]}`); }
-    // Written in the audits' one format (lib.formatAudit): answers sorted, one per line, for git history.
-    fs.writeFileSync(target, require("./lib").formatAudit(JSON.parse(fs.readFileSync(draft(id), "utf8"))));
-    const colorFile = path.join(OUT, `${id}.color.json`);
+    // Key figure claims go from the draft into audits/key-figure-claims.json, and the claims this audit settles leave it
+    // (scripts/key-figure-claims.js; Brandon, 2026-11-26).
+    const audit = JSON.parse(fs.readFileSync(draft(id), "utf8"));
     const files = [target];
+    let claimNotes = [];
+    if (!PEOPLE) {
+      try {
+        const k = require("./key-figure-claims").integrate(id, audit);
+        claimNotes = k.notes;
+        if (k.changed) files.push(claimsFile);
+        if (k.notes.length) log(`${id}: key figure claims: ${k.notes.join("; ")}`);
+      } catch (e) { log(`${id}: key figure claims failed, left in the audit: ${e.message.split("\n")[0]}`); }
+    }
+    // Written in the audits' one format (lib.formatAudit): answers sorted, one per line, for git history.
+    fs.writeFileSync(target, require("./lib").formatAudit(audit));
+    const colorFile = path.join(OUT, `${id}.color.json`);
     if (!PEOPLE && fs.existsSync(colorFile)) {
       const colorsPath = path.join(ROOT, "audits", "ideology-colors.json"), colors = JSON.parse(fs.readFileSync(colorsPath, "utf8"));
       if (!colors[id]) { const c = JSON.parse(fs.readFileSync(colorFile, "utf8")); colors[id] = c[id] || c; fs.writeFileSync(colorsPath, JSON.stringify(colors, null, 2) + "\n"); files.push(colorsPath); }
     }
-    const failed = commit(`Audit ${name}`, files);
+    const failed = commit(`Audit ${name}${claimNotes.length ? `\n\nKey figure claims: ${claimNotes.join("; ")}.` : ""}`, files);
     // A failed audit commit is undone in audits/ and the draft, claim and DONE line kept, so the next start integrates
     // it again: the picker passes over audits with uncommitted changes, so one left in audits/ was never committed.
     if (failed) {

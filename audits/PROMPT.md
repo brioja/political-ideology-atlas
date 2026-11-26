@@ -106,6 +106,12 @@ Both lists show on the ideology's page.
 - Named at least twice by the defining sources: in two of them, or twice in one.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
   after for it (Lenin for Leninism).
+- If the defining sources present the ideology as the thought of someone another ideology lists (not as an
+  influence on it), claim them instead: `keyFigureClaims`, each `{ "first", "last", "heldBy": "<that ideology's
+  id>", "role", "wikipedia", "source", "quote" }`, held to a key figure's bar. The claim goes to
+  audits/key-figure-claims.json and the holder's next pass decides. Their texts aren't tied here meanwhile.
+- If validate.js warns that another ideology claims one of yours, keep them only if your defining sources present
+  the ideology as their thought or political legacy; one they present as an influence on it, take out.
 - Never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's
   other views aren't part of it: tie their texts by title instead (Monroe's 1823 annual message).
 - Give each two fields for the page: `role`, one line on how the sources connect them to the ideology

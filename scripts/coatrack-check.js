@@ -245,6 +245,23 @@ const isNamesake = (x, id, name) => (namesakes()[id] ? samePerson(x, namesakes()
 const reservedFor = (x) => Object.entries(namesakes()).filter(([, person]) => samePerson(x, person)).map(([o]) => o);
 const ideologyName = (o) => (profiles().get(o) || {}).name || (lib.catalog().find((e) => e.id === o) || {}).name;
 
+// Key figure claims (Brandon, 2026-11-26): a pass whose defining sources present the ideology as the thought of a
+// person another ideology already lists records them in "keyFigureClaims" instead of dropping them; the lane driver
+// moves the claims into audits/key-figure-claims.json (scripts/key-figure-claims.js), and the holder's next pass
+// decides. Traditionalist conservatism's sources made Russell Kirk the leading figure of the New Conservatism, but
+// paleoconservatism, whose one source counted him only as an influence on it, had listed him first.
+const CLAIMS_FILE = path.join(lib.ROOT, "audits", "key-figure-claims.json");
+let claimsForTests = null;
+function claims() {
+  if (claimsForTests) return claimsForTests;
+  try { return JSON.parse(fs.readFileSync(CLAIMS_FILE, "utf8")).claims || []; } catch { return []; }
+}
+function setClaimsForTests(c) { claimsForTests = c; }
+// A role or quote that presents the person as an influence on the ideology ("an undisputed influence on
+// paleoconservatives", "influenced by"), not its own thinker. Only weighed where a claim is made.
+const INFLUENCE = /\binfluences?\s+(on|upon)\b|\binfluenced\s+by\b/i;
+const asInfluence = (x) => !!x && typeof x === "object" && INFLUENCE.test(`${x.role || ""} ${x.quote || ""}`);
+
 // Why an alias is another name for the ideology (Brandon, 2026-11-20): every alias gives one "reason", and each is
 // checked here.
 //   REDIRECT     a Wikipedia redirect to the ideology's article (resolve-articles.js otherNames); needs no quote.
@@ -511,6 +528,13 @@ function check(id, full, { strict = false, pass = false } = {}) {
         : `key figure "${au}" is also a key figure of ${others.join(", ")}`);
       continue;
     }
+    // Claimed by another ideology (audits/key-figure-claims.json): an influence goes at once; otherwise this pass decides.
+    const against = claims().filter((c) => c.heldBy === id && samePerson(x, entryName(c))).map((c) => c.claimedBy);
+    if (against.length && asInfluence(x)) {
+      problems.push(`key figure "${au}" is claimed by ${against.join(", ")} (audits/key-figure-claims.json), and your role or quote presents them as an influence on the ideology, not its own thinker: take them out of "keyFigures"`);
+      continue;
+    }
+    if (against.length) warnings.push(`key figure "${au}" is claimed by ${against.join(", ")} (audits/key-figure-claims.json, with its source and quote): keep them only if your defining sources present ${audit.name} as their thought or political legacy, not as an influence on it; otherwise take them out of "keyFigures"`);
     if (count(defining.join(" "), [sur]) < 2) {
       // Say why the count fell short, so the fix isn't sought in the wrong place: unsaved sources can't be counted,
       // and sources that name the person but never the ideology don't count.
@@ -530,6 +554,30 @@ function check(id, full, { strict = false, pass = false } = {}) {
       continue;
     }
     figuresOk.push(sur);
+  }
+  // "keyFigureClaims": people the defining sources present as the ideology's own whom another ideology lists. Held to
+  // a key figure's bar (named twice in the defining sources, a quote that names them), and never an influence.
+  if (audit.keyFigureClaims !== undefined && !Array.isArray(audit.keyFigureClaims)) problems.push(`"keyFigureClaims" must be a list`);
+  for (const c of Array.isArray(audit.keyFigureClaims) ? audit.keyFigureClaims : []) {
+    const au = entryName(c), label = `key figure claim "${au}"`;
+    if (!c || typeof c !== "object" || !c.last || !c.heldBy || !c.role) { problems.push(`${label}: must be { "first", "last", "heldBy", "role", "wikipedia", "source", "quote" }`); continue; }
+    const reserving = reservedFor(c).filter((o) => o !== id);
+    if (reserving.length) { problems.push(`${label}: ${reserving[0]} is named after them and keeps them; no claim`); continue; }
+    const holders = [...(figuresTaken().get(personKey(au)) || [])].filter((o) => o !== id);
+    if (!holders.includes(c.heldBy)) {
+      problems.push(holders.length ? `${label}: ${c.heldBy} doesn't list them; ${holders.join(", ")} ${holders.length === 1 ? "does" : "do"}` : `${label}: no other ideology lists them, so list them in "keyFigures" instead`);
+      continue;
+    }
+    if (asInfluence(c)) { problems.push(`${label}: its role or quote presents them as an influence on the ideology; claim only a person your defining sources present ${audit.name} as the thought or political legacy of`); continue; }
+    const ev = evidence(id, audit, "key figure claim", c, true, (q) => q.includes(figureKey(c)));
+    problems.push(...ev);
+    if (!ev.length && count(defining.join(" "), [figureKey(c)]) < 2) problems.push(`${label}: named fewer than twice in the defining sources`);
+  }
+  // A claim this ideology made whose holder has since dropped the person: they are free to list.
+  for (const c of claims().filter((c) => c.claimedBy === id)) {
+    const held = (figuresTaken().get(personKey(entryName(c))) || new Set()).has(c.heldBy);
+    const listed = (Array.isArray(audit.keyFigures) ? audit.keyFigures : []).some((x) => samePerson(x, entryName(c)));
+    if (!held && !listed) warnings.push(`key figure claim "${entryName(c)}" (audits/key-figure-claims.json): ${c.heldBy} no longer lists them; list them in "keyFigures" if your defining sources still present ${audit.name} as their thought or political legacy`);
   }
   const primaries = sources.filter((s) => s.kind === "primary" || s.kind === "program");
   const vouching = [...defining];
@@ -560,4 +608,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { DEFINING, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
+module.exports = { DEFINING, claims, setClaimsForTests, asInfluence, CLAIMS_FILE, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };

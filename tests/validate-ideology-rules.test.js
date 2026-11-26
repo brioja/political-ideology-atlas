@@ -225,7 +225,21 @@ try {
       coatrack.setProfilesForTests(new Map(), { quentinismo: "Quentin II", vexmoorism: "Quentin Vexmoor Sr." });
       assert.ok(coatrack.isNamesake("Quentin II", "quentinismo", "Quentinismo") && !coatrack.isNamesake("Quincy Ralph II", "quentinismo", "Quentinismo"), "a regnal name counts only whole"); n++;
       assert.ok(coatrack.isNamesake("Quentin Vexmoor", "vexmoorism", "Vexmoorism") && !coatrack.isNamesake("Q. Vexmoor Jr.", "vexmoorism", "Vexmoorism"), "Jr. is not Sr."); n++;
-    } finally { coatrack.setProfilesForTests(null); }
+      // Key figure claims (audits/key-figure-claims.json): a person another ideology lists is claimed, not listed.
+      const claim = (extra = {}) => E(base(), (a) => { a.keyFigureClaims = [{ ...vex(), heldBy: "other-ideology", role: "Founder of the movement", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", ...extra }]; });
+      listedBy("other-ideology", "Other ideology", "2026-11-01");
+      ok("claim on another ideology's key figure", claim());
+      fails("claim on an ideology that doesn't list them", claim({ heldBy: "third-ideology" }), /key figure claim "Quentin Vexmoor": third-ideology doesn't list them; other-ideology does/);
+      fails("claim on an influence", claim({ role: "An undisputed influence on the movement" }), /key figure claim "Quentin Vexmoor": its role or quote presents them as an influence/);
+      coatrack.setProfilesForTests(new Map(), {});
+      fails("claim on a person no one lists", claim(), /no other ideology lists them, so list them in "keyFigures" instead/);
+      // The holder is warned of a claim, and loses at once a person its own evidence makes an influence.
+      coatrack.setClaimsForTests([{ first: "Quentin", last: "Vexmoor", claimedBy: "other-ideology", heldBy: subject.id, date: "2026-11-26" }]);
+      warns("key figure another ideology claims", withVex("2026-11-07"), /key figure "Quentin Vexmoor" is claimed by other-ideology/);
+      fails("claimed key figure presented as an influence", E(withVex("2026-11-07"), (a) => { a.keyFigures[0].role = "An influence on the movement"; }), /key figure "Quentin Vexmoor" is claimed by other-ideology .*influence on the ideology/);
+      coatrack.setClaimsForTests([{ first: "Quentin", last: "Vexmoor", claimedBy: subject.id, heldBy: "other-ideology", date: "2026-11-26" }]);
+      warns("claimed person the holder dropped", base(), /key figure claim "Quentin Vexmoor" .*other-ideology no longer lists them/);
+    } finally { coatrack.setProfilesForTests(null); coatrack.setClaimsForTests(null); }
   }
   // A source behind a stated answer is tied to the ideology like any other.
   fails("a source behind a stated answer is tied", E(base(), (a) => {
