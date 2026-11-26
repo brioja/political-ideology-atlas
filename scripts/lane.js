@@ -21,7 +21,7 @@
 //     to fix (SCOPE_FIX), then answers in the same session (ANSWER). The session
 //     ends its turn at natural report points, so the loop lives here.
 //  3. Integrate (under a lock shared by all lanes): validate (errors go back to the
-//     session to fix), move the draft into audits/, merge an ideology's color, build, test, commit with no attribution
+//     session to fix), drop sources the audit never uses (scripts/cleanup.js), move the draft into audits/, merge an ideology's color, build, test, commit with no attribution
 //     line. Pushes go out at most every PUSH_MINUTES across all lanes, and when a driver starts or stops.
 // Between subjects: for people, prefetch-books.js and triage.js every
 // BOOKS_EVERY people; for ideologies, statement-signal.js --apply once, when the lane stops (Brandon, 2026-11-20: it takes
@@ -335,6 +335,11 @@ function integrate(id) {
     const target = path.join(ROOT, "audits", PEOPLE ? "people" : "profiles", `${id}.json`);
     const name = JSON.parse(fs.readFileSync(draft(id), "utf8")).name || id;
     const before = new Map([target, path.join(ROOT, "audits", "ideology-colors.json")].map((f) => [f, fs.existsSync(f) ? fs.readFileSync(f) : null]));
+    // Sources the audit never uses are dropped by script, not by a fix round (scripts/cleanup.js).
+    try {
+      const { dropped, kept } = require("./cleanup").clean(OUT, id, PEOPLE);
+      if (dropped.length || kept.length) log(`${id}: cleanup dropped ${dropped.length} unused source(s)${dropped.length ? `: ${dropped.join(", ")}` : ""}${kept.length ? `; kept ${kept.join(", ")} (dropping adds a validate.js error)` : ""}`);
+    } catch (e) { log(`${id}: cleanup failed, draft integrated as it is: ${e.message.split("\n")[0]}`); }
     fs.copyFileSync(draft(id), target);
     const colorFile = path.join(OUT, `${id}.color.json`);
     const files = [target];
