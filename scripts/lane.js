@@ -160,6 +160,15 @@ function seedLaterPass(id) {
   const committed = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
   if (fs.existsSync(draft(id)) || !fs.existsSync(committed)) return;
   const a = JSON.parse(fs.readFileSync(committed, "utf8")), w = phases.dropWikipedia(a);
+  // The pass's own fields are the driver's, not the session's (Brandon, 2026-11-26: the first seeded pass, of
+  // Anarcha-feminism, was carried on as earlier work and kept its old date, no "rules" and no "passes"): today's
+  // rules, so every check judges the draft by them; today's date; the earlier passes listed (an audit with one pass
+  // lists it from its "auditor" and "auditedAt"). Today's entry goes in before validating (exceptGap), under the last
+  // id in "auditor", which the session adds itself to (audits/AUDIT_RULES.md section 4).
+  const today = new Date().toISOString().slice(0, 10);
+  if (!Array.isArray(a.passes) || !a.passes.length) a.passes = [{ auditor: [].concat(a.auditor || [])[0], auditedAt: a.auditedAt }];
+  a.rules = require("./validate").CURRENT_RULES;
+  a.auditedAt = today;
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
   log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources`);
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--dir", path.relative(ROOT, OUT), id]);
@@ -167,7 +176,8 @@ function seedLaterPass(id) {
   // finished result, not a problem, and handing it over as one had sessions overturn the record (2026-11-24, Extremism).
   const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`);
   if (lines.length) log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
-  const nulled = w.nulled ? ` The driver started the draft from the committed audit and took out its Wikipedia citations (a tertiary source): ${w.nulled} answer(s) that rested on them alone are null now and open like any other.` : " The driver started the draft from the committed audit.";
+  const fields = ` The driver has set "rules", "auditedAt" and "passes" for this pass; add your model id to "auditor" if it isn't there (a list, the first auditor first).`;
+  const nulled = fields + (w.nulled ? ` The driver started the draft from the committed audit and took out its Wikipedia citations (a tertiary source): ${w.nulled} answer(s) that rested on them alone are null now and open like any other.` : " The driver started the draft from the committed audit.");
   laterNotes.set(id, `\n\nThis is a later pass.${nulled}${lines.length ? ` Checked under today's rules (\`node scripts/validate.js ${flag}--as-current --dir scratchpad/lane-out/${LANE} ${id}\`), the draft has these problems; fix each:\n${lines.join("\n")}` : ""}`);
 }
 function laterPassProblems(id) {
@@ -562,7 +572,8 @@ while (timeLeft()) {
     const m = phases.merge(JSON.parse(fs.readFileSync(draft(id), "utf8")), JSON.parse(fs.readFileSync(webDraft(id), "utf8")), PEOPLE);
     fs.writeFileSync(draft(id), require("./lib").formatAudit(m.audit));
     fs.unlinkSync(webDraft(id));
-    log(`${id}: merged the web phase: ${m.taken.length} answer(s) taken${PEOPLE ? `, ${m.kept.length} words-only answer(s) kept (no record)` : ""}${m.ignored.length ? `, ${m.ignored.length} answer(s) to settled statements ignored` : ""}`);
+    const answered = m.taken.filter((s) => m.audit.answers[s] && m.audit.answers[s].value !== null).length;
+    log(`${id}: merged the web phase: ${answered} answer(s) found${m.taken.length > answered ? ` (${m.taken.length - answered} left null with a rationale)` : ""}${PEOPLE ? `, ${m.kept.length} words-only answer(s) kept (no record)` : ""}${m.ignored.length ? `, ${m.ignored.length} answer(s) to settled statements ignored` : ""}`);
   }
   exceptGap(id);
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
