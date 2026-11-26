@@ -6,7 +6,7 @@ alive, so accuracy matters more than completeness: never guess at a real person'
 
 Inputs (filled in by the runner):
 - Person: `{{name}}` (id `{{id}}`), Wikipedia: `{{wikipedia}}`, born `{{born}}`
-- Statements: the statements file the runner names (`statements.json` in the repo root if it names none). Answer every statement in it, including the ones marked `"status": "candidate"`.
+- Statements: the statements file the runner names (`statements.json` in the repo root if it names none). Answer every statement in it.
 
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
 run the validator command the runner gives and fix every error.
@@ -87,7 +87,7 @@ famous or criticised for, e.g. a policy of segregation, a military intervention,
 must be answered whenever the record exists; check them before finishing. Read the whole statement
 list, not just its first part: before finishing, go through every statement still null once and
 check it against the evidence you gathered. Before deciding a topic "matches no statement", search
-the statement texts for its keywords (`grep -i <word> statements.json`). For a living person,
+the statement texts for its keywords (`grep -i <word>` in the statements file). For a living person,
 "suggests" or "seems to" is not evidence: answer only from what they said or did.
 
 **Source priority.** Every answer must be traceable: a reader can open the cited source and see the

@@ -334,9 +334,11 @@ function hideSettled(id) {
   writeStatements(id, ids);
   return ids;
 }
+// Only each statement's id and text (Brandon, 2026-11-26): the site's agree/disagree explanations and notes
+// confused Sonnet auditors.
 function writeStatements(id, ids) {
   const set = new Set(ids);
-  fs.writeFileSync(statementsFile(id), JSON.stringify({ statements: require("./lib").allStatements().filter((s) => set.has(s.id)) }, null, 2) + "\n");
+  fs.writeFileSync(statementsFile(id), JSON.stringify({ statements: require("./lib").allStatements().filter((s) => set.has(s.id)).map((s) => ({ id: s.id, text: s.text })) }, null, 2) + "\n");
 }
 // Before the answers: failing sources and answers out, the rest kept aside. What validate.js still reports that no
 // script fixes goes in the first message (prepNote), as problems in the file to fix.
