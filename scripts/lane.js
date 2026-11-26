@@ -159,7 +159,7 @@ const COLOR = (id) => PEOPLE ? "" : ` If audits/ideology-colors.json has no entr
 // --as-current), so the session knows which answers and sources to fix before it researches (Brandon, 2026-11-21:
 // "run validate at the start of an audit"; it learned them only when validating its finished draft).
 // A later pass starts from a draft the driver seeds from the committed audit, without its Wikipedia citations
-// (scripts/phases.js dropWikipedia; Brandon, 2026-11-26). The session is handed the problems validate.js still finds
+// (scripts/phases.js dropWikipedia; Brandon, 2026-11-26), notes, scope or reasons for its nulls. The session is handed the problems validate.js still finds
 // under today's rules, once, in its first prompt.
 const laterNotes = new Map();
 function seedLaterPass(id) {
@@ -182,12 +182,16 @@ function seedLaterPass(id) {
   // search nothing; the scope phase writes it afresh from the defining sources.
   delete a.notes;
   delete a.scope;
+  // Nulls lose their reasons too (Brandon, 2026-11-26): Political moderate's 598 nulls said "the sources record no
+  // position", an earlier pass's verdict the next would read as settled. A null is open, so it starts empty.
+  for (const [sid, ans] of Object.entries(a.answers || {})) if (!ans || ans.value === null || ans.value === undefined) a.answers[sid] = { value: null, sources: [], rationale: "" };
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
   log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources, ${w.requests} missing statement(s) dropped`);
   const r = run("node", ["scripts/validate.js", ...(PEOPLE ? ["--people"] : []), "--as-current", "--dir", path.relative(ROOT, OUT), id]);
   // Only errors and warnings: an "excluded:" line (not ideas of what society should be) is a
   // finished result, not a problem, and handing it over as one had sessions overturn the record (2026-11-24, Extremism).
-  const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`);
+  // Nor the nulls the seed emptied: the answer phases give each its reason.
+  const lines = (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l) && !/: say why there is no known position$/.test(l)).map((l) => `- ${l.trim()}`);
   if (lines.length) log(`${id}: later pass starts with ${lines.length} problem(s) from validate.js --as-current`);
   const fields = ` The driver sets "rules", "auditedAt", "auditor" and "passes" for this pass; leave them to it.`;
   const nulled = fields + (w.nulled ? ` The driver started the draft from the committed audit without its scope (write it afresh from the defining sources) and took out its Wikipedia citations (a tertiary source): ${w.nulled} answer(s) that rested on them alone are null now and open like any other.` : " The driver started the draft from the committed audit without its scope (write it afresh from the defining sources).");
