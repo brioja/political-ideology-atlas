@@ -1,13 +1,20 @@
 // The evidence quotes for key works and key figures, collected as they come up (scripts/coatrack-check.js; Brandon,
 // 2026-11-27). Each quote names the work or person and the ideology:
-// - a work by its title or the title's head (before a colon or bracket): a nickname the title doesn't contain
-//   ("Orbán's Constitution" for the Fundamental Law of Hungary) doesn't name it;
+// - a work by its title, the title's head (before a colon or bracket), or its Wikipedia article's title and the
+//   redirects to it (not to a section): a nickname none of them contain ("Orbán's Constitution" for the Fundamental
+//   Law of Hungary) doesn't name it;
 // - a person by their surname;
 // - the ideology by its name, an alias or a form of it ("Islamic modernist"), anywhere in the quote.
 // Add each quote an audit gets wrong or right that the list doesn't cover yet, with `work`/`ideology` saying whether
 // the quote names them. Whether the quote is in the saved copy is tested in validate-ideology-rules.test.js.
 const assert = require("assert");
 const c = require("../scripts/coatrack-check");
+// Wikipedia's redirects to the works' articles, as the API gives them (fetched 2026-11-27).
+const HUNGARY = "https://en.wikipedia.org/wiki/Fundamental_Law_of_Hungary";
+c.setWorkRedirectsForTests({ [HUNGARY]: { query: { pages: [{ title: "Fundamental Law of Hungary", redirects: [
+  { title: "Hungarian Constitution" }, { title: "Constitution of hungary" }, { title: "Hungary’s constitution" },
+  { title: "2013 amendments to the Constitution of Hungary", fragment: "2013 amendments" }, { title: "Constitution of Hungary" },
+  { title: "2012 Constitution of Hungary" }] }] } } });
 
 const CASES = [
   { ideology: "Illiberal democracy", work: { title: "Fundamental Law of Hungary" }, quotes: [
@@ -16,6 +23,15 @@ const CASES = [
     { quote: "The Fundamental Law of Hungary was adopted in April 2011", work: true, ideology: false },
     { quote: "Orbán declared in 2014 that Hungary would be an illiberal democracy", work: false, ideology: true },
     { quote: "Orbán's Constitution entrenched illiberal democracy in Hungary", work: false, ideology: true, why: "a nickname the title doesn't contain" },
+  ] },
+  { ideology: "Illiberal democracy", work: { title: "The Fundamental Law of Hungary", wikipedia: HUNGARY }, quotes: [
+    { quote: "Orbán's Fundamental Law of Hungary set out illiberal democracy", work: true, ideology: true, why: "the article's title, without \"The\"" },
+    { quote: "the Hungarian Constitution entrenched illiberal democracy", work: true, ideology: true, why: "a redirect to the article" },
+    { quote: "Hungary's constitution was rewritten for an illiberal democracy", work: true, ideology: true, why: "a redirect, apostrophes aside" },
+    { quote: "Orbán's Constitution entrenched illiberal democracy in Hungary", work: false, ideology: true, why: "not a redirect either" },
+  ] },
+  { ideology: "Illiberal democracy", work: { title: "The Fundamental Law of Hungary" }, quotes: [
+    { quote: "Orbán's Fundamental Law of Hungary set out illiberal democracy", work: false, ideology: true, why: "no article, so only the title" },
   ] },
   { ideology: "Illiberal democracy", work: { title: "Fundamental Law of Hungary: The 2011 Text" }, quotes: [
     { quote: "the Fundamental Law of Hungary set out illiberal democracy", work: true, ideology: true, why: "the title's head" },

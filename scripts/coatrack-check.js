@@ -309,6 +309,7 @@ const langLinksUrl = (title) => require("./wiki").apiUrl({ action: "query", titl
 async function prefetchAliasPages(id, audit) {
   const aliases = lib.aliasEntries(audit && audit.aliases);
   for (const x of aliases) if (pageChecked(x)) await lib.cachedJson(aliasPageUrl(entryName(x)));
+  for (const w of Array.isArray(audit && audit.keyWorks) ? audit.keyWorks : []) if (w && isArticleUrl(w.wikipedia)) await lib.cachedJson(workRedirectsUrl(w.wikipedia));
   const own = lib.articleTitle({ id });
   if (own && aliases.some(isTranslation)) { await lib.cachedJson(langLinksUrl(own)); await lib.fetchArticle({ id }); }
 }
@@ -404,8 +405,25 @@ function evidence(id, audit, field, x, strict, contains) {
 // defining sources; a key work may also quote a primary text that names the ideology itself (`vouches`).
 const figureEvidence = (x) => Array.isArray(x && x.evidence) ? x.evidence
   : x && typeof x === "object" && (x.source !== undefined || x.quote !== undefined) ? [{ source: x.source, quote: x.quote }] : [];
-// The names a key work's quotes may use: its title and the title's head (before a colon or bracket, two words or more).
-const workNames = (x) => [...new Set([norm(entryName(x)), ...titleHeads(x && x.title)])];
+// The names a key work's quotes may use: its title, the title's head (before a colon or bracket, two words or more),
+// and, when it has a Wikipedia article, the article's title and the redirects to it that aren't to a section, its
+// disambiguator dropped (Brandon, 2026-11-27: "Fundamental Law of Hungary" for "The Fundamental Law of Hungary",
+// "Hungarian Constitution"). validate.js fetches the redirects first (prefetchAliasPages); not fetched, they're left out.
+const workRedirectsUrl = (url) => require("./wiki").apiUrl({ action: "query", redirects: "1", titles: require("./wiki").titleOf(url), prop: "redirects", rdprop: "title|fragment", rdlimit: "max" });
+const isArticleUrl = (u) => typeof u === "string" && /^https?:\/\/en\.(m\.)?wikipedia\.org\/wiki\/./.test(u);
+let workRedirectsForTests = null;
+function setWorkRedirectsForTests(map) { workRedirectsForTests = map; }
+function workRedirects(x) {
+  const url = x && x.wikipedia;
+  if (!isArticleUrl(url)) return [];
+  let q;
+  if (workRedirectsForTests) q = workRedirectsForTests[url];
+  else { const f = require("./fetch").cacheFile(workRedirectsUrl(url)); if (!fs.existsSync(f)) return []; q = JSON.parse(fs.readFileSync(f, "utf8")); }
+  const page = q && q.query && (q.query.pages || [])[0];
+  if (!page || page.missing || page.invalid) return [];
+  return [page.title, ...(page.redirects || []).filter((r) => !r.fragment).map((r) => r.title)].map(plainName);
+}
+const workNames = (x) => [...new Set([norm(entryName(x)), ...titleHeads(x && x.title), ...workRedirects(x).map(norm)])].filter((n) => n.trim());
 const namesWork = (x, quote) => workNames(x).some((n) => norm(quote).includes(n));
 const namesFigure = (x, quote) => norm(quote).includes(figureKey(x));
 function passages(id, audit, field, x, strict, vouches = () => false) {
@@ -687,4 +705,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { DEFINING, ideologyUnnamed, workNames, namesWork, namesFigure, figureEvidence, claims, setClaimsForTests, CLAIMS_FILE, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
+module.exports = { DEFINING, ideologyUnnamed, workNames, namesWork, namesFigure, setWorkRedirectsForTests, workRedirectsUrl, figureEvidence, claims, setClaimsForTests, CLAIMS_FILE, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
