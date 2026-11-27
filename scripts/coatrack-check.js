@@ -408,6 +408,7 @@ const figureEvidence = (x) => Array.isArray(x && x.evidence) ? x.evidence
 // the shorthand the sources use for it, listed in "shortNames" (Brandon, 2026-11-27: "Orbán's Constitution" for the
 // Fundamental Law of Hungary).
 const workNames = (x) => [...new Set([norm(entryName(x)), ...titleHeads(x && x.title), ...(Array.isArray(x && x.shortNames) ? x.shortNames : []).filter((n) => typeof n === "string" && n.trim()).map(norm)])];
+const namesWork = (x, quote) => workNames(x).some((n) => norm(quote).includes(n));
 function passages(id, audit, field, x, strict, vouches = () => false) {
   const work = field === "key work", label = `${field} "${entryName(x)}"`, list = Array.isArray(x.evidence) ? x.evidence : [], out = [];
   const from = work ? "defining sources or primary texts that name the ideology themselves" : "defining sources";
@@ -417,7 +418,7 @@ function passages(id, audit, field, x, strict, vouches = () => false) {
     const src = (audit.sources || []).find((s) => e && s.id === e.source);
     if (src && !vouches(src) && (!DEFINING.includes(src.kind) || isWikipedia(src))) out.push(`${label}: ${src.id} is ${isWikipedia(src) ? "Wikipedia" : `a ${src.kind} source`}; the evidence comes from ${from}${work ? "" : " (reference, scholarly or secondary, never Wikipedia)"}`);
     const who = work ? { title: x.title } : { first: x.first, last: x.last, name: x.name };
-    out.push(...evidence(id, audit, field, { ...who, ...(e || {}) }, strict, (q) => work ? workNames(x).some((n) => q.includes(n)) : q.includes(figureKey(x))));
+    out.push(...evidence(id, audit, field, { ...who, ...(e || {}) }, strict, (q) => work ? namesWork(x, q) : q.includes(figureKey(x))));
   }
   return out;
 }
@@ -687,4 +688,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { DEFINING, ideologyUnnamed, figureEvidence, claims, setClaimsForTests, CLAIMS_FILE, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
+module.exports = { DEFINING, ideologyUnnamed, workNames, namesWork, figureEvidence, claims, setClaimsForTests, CLAIMS_FILE, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
