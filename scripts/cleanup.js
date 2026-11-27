@@ -114,13 +114,42 @@ function clean(dir, id, people = false) {
   } catch (e) { fs.writeFileSync(file, text); throw e; }
 }
 
+const known = (ans) => ans && ans.value !== null && ans.value !== undefined;
+// Before a later pass (Brandon, 2026-11-26): answers lose their Wikipedia citations, which validate.js refuses
+// (Wikipedia is a tertiary source, audits/AUDIT_RULES.md section 2) and only a new source can fix. An answer with other
+// sources keeps its value on them; one with none left is nulled, so the session researches it like any open statement.
+// Missing statements are treated the same way (Brandon, 2026-11-26), since a request added to the candidate bank seeds
+// that statement's answer: a request loses its Wikipedia citations and is dropped when none of its sources is left.
+// The source entries stay (an alias or a key figure may cite them); the final cleanup drops unused ones.
+const isWikipedia = (u) => { try { return /(^|\.)wikipedia\.org$/.test(new URL(u).host); } catch { return false; } };
+function dropWikipedia(audit) {
+  const wiki = new Set((audit.sources || []).filter((s) => isWikipedia(s.url)).map((s) => s.id));
+  let kept = 0, nulled = 0;
+  for (const ans of Object.values(audit.answers || {})) {
+    if (!known(ans) || !(ans.sources || []).some((s) => wiki.has(s))) continue;
+    const rest = ans.sources.filter((s) => !wiki.has(s));
+    if (rest.length) { ans.sources = rest; kept++; }
+    else { Object.assign(ans, { value: null, sources: [], rationale: "" }); nulled++; }
+  }
+  let requests = 0;
+  if (Array.isArray(audit.missingStatements)) {
+    audit.missingStatements = audit.missingStatements.filter((m) => {
+      if (!(m.sources || []).some((s) => wiki.has(s))) return true;
+      m.sources = m.sources.filter((s) => !wiki.has(s));
+      if (m.sources.length) return true;
+      requests++; return false;
+    });
+  }
+  return { kept, nulled, requests };
+}
+
 // Takes out of the answers the sources validate.js fails and only a new source could fix (Brandon, 2026-11-26):
-// Wikipedia citations (a tertiary source; scripts/phases.js dropWikipedia) and sources not tied to the subject
+// Wikipedia citations (a tertiary source; dropWikipedia above) and sources not tied to the subject
 // (scripts/drop-source.js --none-fit). An answer resting on them alone is nulled; then unused sources go (clean).
-// scripts/lane.js runs it after the scope phase and when the local phase leaves validator errors.
+// scripts/lane.js runs it on a draft before its session.
 // Returns { untied, wikipedia: { kept, nulled }, dropped, kept }.
 // Coatracks too (coatrack-check.js: a defining source that "never names" the subject; Brandon, 2026-11-26). With
-// keepUnused, sources nothing cites stay (a scope's defining sources, before any answer cites them).
+// keepUnused, sources nothing cites stay (defining sources no answer cites yet).
 function dropFailing(dir, id, people = false, keepUnused = false) {
   const errs = [...errors(dir, id, people, true)].join("\n"); // under today's rules, whatever the draft's "rules" says
   const untied = [...new Set([...errs.matchAll(/source (s\d+) \([^)]*\) (?:doesn't name|never names)/g)].map((m) => m[1]))];
@@ -130,7 +159,7 @@ function dropFailing(dir, id, people = false, keepUnused = false) {
   let wikipedia = { kept: 0, nulled: 0, requests: 0 };
   if (/, a Wikipedia article: Wikipedia is a tertiary source/.test(errs)) {
     const file = path.join(dir, `${id}.json`), a = JSON.parse(fs.readFileSync(file, "utf8"));
-    wikipedia = require("./phases").dropWikipedia(a);
+    wikipedia = dropWikipedia(a);
     fs.writeFileSync(file, lib.formatAudit(a));
   }
   return { untied, wikipedia, ...(keepUnused ? { tidied: "", dropped: [], kept: [] } : clean(dir, id, people)) };
@@ -156,7 +185,7 @@ function nullFailing(dir, id, people = false) {
   return nulled;
 }
 
-module.exports = { unusedSources, emptyNullReasons, tidy, describe, clean, dropFailing, nullFailing };
+module.exports = { unusedSources, emptyNullReasons, tidy, describe, clean, dropWikipedia, dropFailing, nullFailing };
 
 if (require.main === module) {
   const args = process.argv.slice(2), people = args.includes("--people");

@@ -5,7 +5,7 @@
 // Where the wanted books come from:
 //   - the ideology's Wikipedia article: book citations in its Further reading / Bibliography / Works cited / Sources
 //     sections and the items of a "Notable works" list (Wikipedia is for leads only: the book is the source);
-//   - the committed audit's key works and its key figures' own books (and the draft's, after the scope phase);
+//   - the committed audit's key works and its key figures' own books;
 //   - archive.org books whose title names the ideology (its name or a Wikipedia redirect to it of two words or more).
 // Each wanted book is looked up on archive.org (title words + author surname). A copy whose full text is open is
 // downloaded (its OCR text, _djvu.txt) into corpora/ideology-books/<id>/; a lending-only copy, or none, goes into the
@@ -13,8 +13,6 @@
 // Found by title only: whether a book is scholarship defining the subject is the auditor's call (AUDIT_RULES.md).
 // scripts/lane.js runs it at the start of every ideology and hands the session the downloaded books.
 //   node scripts/ideology-books.js <id> [<id> ...] [--refresh]   before the pass (skipped when already looked up)
-//   node scripts/ideology-books.js <id> --draft <draft.json>      after the scope phase: adds the draft's key works and
-//                                                                  key figures' books
 "use strict";
 const fs = require("fs"), os = require("os"), path = require("path");
 const lib = require("./lib");
@@ -67,8 +65,7 @@ async function wikipediaBooks(id) {
   return out;
 }
 // The audit's key works (each with its source's author) and its key figures' own books (their Wikipedia
-// bibliography, as books-to-look-for.js reads it; the first FIGURE_BOOKS listed). From the committed audit before the
-// pass, and from the draft once its scope phase is checked (Brandon, 2026-11-25: key figures are settled in phase 1).
+// bibliography, as books-to-look-for.js reads it; the first FIGURE_BOOKS listed), from the committed audit.
 const FIGURE_BOOKS = 8;
 async function fromAudit(file) {
   let a;
@@ -139,15 +136,14 @@ async function fullText(identifier) {
 }
 
 // ---- one ideology ----
-// Incremental: what index.json already looked up is not looked up again, so the run after the scope phase only adds
-// the draft's new key works and key figures. --refresh starts over.
-async function run(id, { refresh = false, draft = null } = {}) {
+// Looked up once: a run finds index.json and returns it. --refresh starts over.
+async function run(id, { refresh = false } = {}) {
   const out = path.join(DIR, id), indexFile = path.join(out, "index.json");
   const old = !refresh && fs.existsSync(indexFile) ? lib.readJson(indexFile) : null;
-  if (old && !draft) return old;
+  if (old) return old;
   const entry = lib.catalog().find((e) => e.id === id);
   if (!entry) throw new Error(`${id}: not in the ideology catalog`);
-  const index = old || { id, retrieved: null, books: [], lending: [], missing: [], looked: [] };
+  const index = { id, retrieved: null, books: [], lending: [], missing: [], looked: [] };
   const seen = new Set(index.looked), added = { books: 0, lending: 0, missing: 0 };
   const key = (title) => words(title).slice(0, 5).join(" ");
   fs.mkdirSync(out, { recursive: true });
@@ -171,7 +167,7 @@ async function run(id, { refresh = false, draft = null } = {}) {
     added.books++;
     return true;
   };
-  const wanted = old ? await fromAudit(draft) : [...await wikipediaBooks(id), ...await fromAudit(lib.profilePath(id)), ...(draft ? await fromAudit(draft) : [])];
+  const wanted = [...await wikipediaBooks(id), ...await fromAudit(lib.profilePath(id))];
   for (const book of wanted) {
     const k = key(book.title);
     if (!k || seen.has(k)) continue;
@@ -222,11 +218,10 @@ function writeWanted() {
 
 module.exports = { run, DIR };
 if (require.main === module) (async () => {
-  const arg = (k) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : null; };
-  const draft = arg("--draft"), ids = process.argv.slice(2).filter((a, i, all) => !a.startsWith("--") && all[i - 1] !== "--draft");
-  if (!ids.length || (draft && ids.length > 1)) { console.error("usage: node scripts/ideology-books.js <id> [<id> ...] [--refresh] | <id> --draft <draft.json>"); process.exit(1); }
+  const ids = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+  if (!ids.length) { console.error("usage: node scripts/ideology-books.js <id> [<id> ...] [--refresh]"); process.exit(1); }
   for (const id of ids) {
-    const ix = await run(id, { refresh: process.argv.includes("--refresh"), draft });
+    const ix = await run(id, { refresh: process.argv.includes("--refresh") });
     const a = ix.added ? ` (this run: +${ix.added.books}, +${ix.added.lending}, +${ix.added.missing})` : " (already looked up)";
     console.log(`${id}: ${ix.books.length} book(s) downloaded, ${ix.lending.length} lending-only, ${ix.missing.length} not on archive.org${a}`);
   }

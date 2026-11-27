@@ -4,11 +4,13 @@ These rules apply to every audit: ideologies (`audits/PROMPT.md`) and people (`a
 Those prompts add only what is specific to their subject and never loosen a rule here. A change to
 how evidence is judged goes in this file, so both kinds of audit get it.
 
-"The subject" below is the ideology or the person being audited. Write `"rules": 7` in the audit
+"The subject" below is the ideology or the person being audited. Write `"rules": 8` in the audit
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
 rules 4 tags every source as actions or words; rules 5 accounts for every one of a person's own books
 in the local library; rules 6 accounts for every text known to exist by a person and lists every source
-not found, with two places tried; rules 7: a 0 is a split within actions or within words, never words against actions.)
+not found, with two places tried; rules 7: a 0 is a split within actions or within words, never words against actions; rules 8: an
+ideology's primary text is tied only by its own naming of the ideology, a key work with its quotes, or a key
+figure's authorship, never by counting its title in other sources.)
 
 ## 1. Standard
 

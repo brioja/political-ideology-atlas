@@ -8,17 +8,12 @@
 //   add --as-current to check an audit as if it were written under today's rules (every rules-gated and strict
 //   check, statements it has no answer for in one line): what its next pass has to fix. scripts/lane.js puts this in
 //   a later pass's first prompt (Brandon, 2026-11-21: "run validate at the start of an audit").
-//   add --stage scope to check only what an ideology's draft settles before answering (audits/PROMPT.md section 2):
-//   scope, sources and their ties, aliases, key figures and key works, under today's rules. A lane session runs it
-//   once those are in its draft (audits/PROMPT_LANE.md; Brandon, 2026-11-23, so a missed key figure shows up before
-//   the answers are researched rather than after).
 const fs = require("fs");
 const lib = require("./lib");
 const { readJson, allStatements, isCandidate } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
-const STAGE_SCOPE = process.argv.includes("--stage") && process.argv[process.argv.indexOf("--stage") + 1] === "scope";
-const AS_CURRENT = STAGE_SCOPE || process.argv.includes("--as-current");
+const AS_CURRENT = process.argv.includes("--as-current");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
 const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : lib.catalog;
 const DIR = process.argv.includes("--dir") ? process.argv[process.argv.indexOf("--dir") + 1] : null;
@@ -32,7 +27,7 @@ const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the s
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_IDEAS_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATES", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 // The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT.md, PROMPT_PEOPLE.md).
-const CURRENT_RULES = 7;
+const CURRENT_RULES = 8;
 // Minimum gap between audit passes: half the project's age (days since PROJECT_START, the first commit) on the date
 // of the later pass, so it grows by a day every two days. REAUDIT_FROM: the date the rule applies from.
 const PROJECT_START = "2026-10-14", REAUDIT_FROM = "2026-11-08";
@@ -166,7 +161,7 @@ function colorErrors(id) {
   return [];
 }
 
-// Key figures and key works (audits/PROMPT.md section 2), checked in a full validation and in --stage scope.
+// Key figures and key works (audits/PROMPT.md section 2), checked in a full validation.
 function keyFigureChecks(a, id, sources, errors, warnings) {
   // People most associated with the ideology, shown as "Key figures".
   // Key figures and key works (audits/PROMPT.md): their names and evidence are checked by coatrack-check.js; here,
@@ -254,13 +249,13 @@ function validate(id) {
     return { errors, warnings, excluded: errors.length ? [] : [`not ideas of what society should be: ${n.reason}: ${n.explanation}`], coatrack: [] };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
-  if (!PEOPLE && !STAGE_SCOPE) errors.push(...colorErrors(id));
+  if (!PEOPLE) errors.push(...colorErrors(id));
   // An old audit passes the checks of the rules it was written under, not the current ones (a pass at "rules" 3
   // predates the coatrack rule and the source-tie check): say so first, so a pass isn't read as meeting today's rules.
   if ((a.rules || 0) < CURRENT_RULES) {
     warnings.push(`old audit: written under ${a.rules ? `rules ${a.rules}` : "no rules version"} (current ${CURRENT_RULES}), so later rules aren't checked here`);
   }
-  for (const f of PEOPLE ? ["name", "auditedAt", "summary", "role"] : STAGE_SCOPE ? ["name", "scope"] : ["name", "auditedAt", "summary", "scope"]) {
+  for (const f of PEOPLE ? ["name", "auditedAt", "summary", "role"] : ["name", "auditedAt", "summary", "scope"]) {
     if (typeof a[f] !== "string" || !a[f].trim()) errors.push(`"${f}" must be a non-empty string`);
   }
   // A merged audit (two models researched independently) lists every model id.
@@ -294,7 +289,7 @@ function validate(id) {
     errors.push('"wikipedia" must be an en.wikipedia.org article URL or null');
   }
   const reading = Array.isArray(a.furtherReading) ? a.furtherReading : [];
-  if (!PEOPLE && !STAGE_SCOPE && (reading.length < 2 || reading.length > 4)) errors.push(`"furtherReading" needs 2 to 4 items, has ${reading.length}`);
+  if (!PEOPLE && (reading.length < 2 || reading.length > 4)) errors.push(`"furtherReading" needs 2 to 4 items, has ${reading.length}`);
   for (const r of reading) {
     if (!r.title || !/^https?:\/\/\S+$/.test(r.url || "")) errors.push(`furtherReading item needs a title and an http(s) url`);
   }
@@ -330,14 +325,11 @@ function validate(id) {
   }
   // A Wikipedia article about a document is a reference, never the document itself: scripts/cleanup.js makes one listed
   // as "primary" or "program" a "reference" (Brandon, 2026-11-26), so it is no error here.
-  // An ideology's scope rests on a defining source (PROMPT.md sections 1 and 2), checked where the scope is written
-  // (--stage scope); later phases only read it. People have no scope: each answer rests on its own sources
-  // (Brandon, 2026-11-26).
-  if (!PEOPLE && STAGE_SCOPE && !sources.some((s) => ["scholarly", "reference", "secondary"].includes(s.kind))) errors.push("needs at least one scholarly, reference or secondary source");
+  // An ideology's scope rests on a defining source (PROMPT.md sections 1 and 2). People have no scope: each answer
+  // rests on its own sources (Brandon, 2026-11-26).
+  if (!PEOPLE && !sources.some((s) => ["scholarly", "reference", "secondary"].includes(s.kind))) errors.push("needs at least one scholarly, reference or secondary source");
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
 
-  // --stage scope stops here: the draft has its scope, sources, aliases, key figures and key works but no answers yet.
-  if (STAGE_SCOPE) { if (!PEOPLE) keyFigureChecks(a, id, sources, errors, warnings); return { errors, warnings, excluded: [], coatrack: coatrackErrors, sources }; }
   const answers = a.answers || {};
   const statements = allStatements();
   const active = statements.filter((s) => !isCandidate(s));
@@ -576,7 +568,7 @@ async function checkLinks(sources) {
 async function main() {
   const args = process.argv.slice(2);
   const links = args.includes("--links");
-  let ids = args.filter((x, i) => !x.startsWith("--") && args[i - 1] !== "--dir" && args[i - 1] !== "--stage");
+  let ids = args.filter((x, i) => !x.startsWith("--") && args[i - 1] !== "--dir");
   const dir = DIR || PROFILES_DIR;
   if (ids.length === 0) ids = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)) : [];
 

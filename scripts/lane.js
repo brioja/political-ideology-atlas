@@ -16,22 +16,18 @@
 // Per subject:
 //  1. Pick: the lane's own unfinished drafts first, then `next.js --lane`, passing over subjects other lanes have
 //     claimed (scratchpad/lane-out/*/<id>.claim, checked and written under .claim.lock) and any audit with uncommitted changes. Greta Thunberg and Annie Besant were audited twice before this.
-//  2. Audit, in phases; sessions end their turns at natural report points, so the loop lives here.
+//  2. Audit, in one session (Brandon, 2026-11-27; sessions end their turns at natural report points, so the loop
+//     lives here).
 //     - A later pass starts from a draft the driver seeds from the committed audit, without Wikipedia citations
 //       (seedLaterPass): answers resting on them alone are nulled and open.
-//     - Ideologies only: a scope phase (SCOPE_START, until <id>.scope exists), checked with validate.js --stage scope
-//       and sent back to fix (SCOPE_FIX), with the answers kept aside.
-//     - Before the answers (prepare): sources validate.js can't tie to the subject (coatracks included) and Wikipedia
-//       leave them (scripts/cleanup.js dropFailing), answers validate.js fails are nulled (nullFailing), and the
+//     - Before the session (prepare): sources validate.js can't tie to the subject (coatracks included) and Wikipedia
+//       leave the answers (scripts/cleanup.js dropFailing), answers validate.js fails are nulled (nullFailing), and the
 //       answers left are kept aside in .settled/<id>.json; the draft holds the open statements only, listed in
-//       <id>.statements.json.
-//     - Local: answers from local texts only (START), until <id>.local exists, in a fresh session. Claude turns run
-//       with AUDIT_PHASE=local, so .claude/hooks/local-only.js refuses the web. The answers kept aside go back, failing
-//       sources and answers go by script, the session fixes the rest (LOCAL_FIX), and a draft still invalid stops
-//       there (<id>.invalid.json, no web phase).
-//     - Web: scripts/phases.js strips the settled answers into <id>.web.json; a fresh session (WEB_START, resumed
-//       with RESUME) answers the open ones there until it creates <id>.web, which the driver turns into the subject's
-//       DONE.txt line; phases.js merges them back. Both answer phases get the same rules (ANSWER_RULE).
+//       <id>.statements.json with each statement's id and text alone.
+//     - One session (START, resumed with RESUME) does an ideology's scope, sources, aliases, key figures and key works
+//       (audits/PROMPT.md sections 1 and 2) and answers the open statements from local texts and the web, until it
+//       creates <id>.done, which the driver turns into the subject's DONE.txt line. The answers kept aside go back,
+//       and validate.js errors go back to the same session to fix (FIX).
 //  3. Integrate (under a lock shared by all lanes): validate (errors go back to the
 //     session to fix), drop sources the audit never uses (scripts/cleanup.js), move the draft into audits/, merge an ideology's color, build, test, commit with no attribution
 //     line. Pushes go out at most every PUSH_MINUTES across all lanes, and when a driver starts or stops.
@@ -117,7 +113,6 @@ function commit(message, paths) {
 const draft = (id) => path.join(OUT, `${id}.json`);
 // validate.js's re-audit gap error (scripts/validate.js "passes").
 const GAP_ERROR = /"passes": a later pass comes at least \d+ days/;
-const phases = require("./phases");
 const flag = PEOPLE ? "--people " : "";
 
 // ---- picking ----
@@ -174,12 +169,12 @@ function nextSubject() {
 // ---- sessions ----
 const COLOR = (id) => PEOPLE ? "" : ` If audits/ideology-colors.json has no entry for \`${id}\`, write one to scratchpad/lane-out/${LANE}/${id}.color.json following CONTRIBUTING.md "Ideology colors" (the format of that file's entries).`;
 // A later pass starts from a draft the driver seeds from the committed audit, without its Wikipedia citations
-// (scripts/phases.js dropWikipedia; Brandon, 2026-11-26), notes, scope or reasons for its nulls; prepare() below then
+// (scripts/cleanup.js dropWikipedia; Brandon, 2026-11-26), notes, scope or reasons for its nulls; prepare() below then
 // takes out what fails today's rules and keeps the remaining answers from the session.
 function seedLaterPass(id) {
   const committed = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
   if (fs.existsSync(draft(id)) || !fs.existsSync(committed)) return;
-  const a = JSON.parse(fs.readFileSync(committed, "utf8")), w = phases.dropWikipedia(a);
+  const a = JSON.parse(fs.readFileSync(committed, "utf8")), w = require("./cleanup").dropWikipedia(a);
   // The pass's own fields are the driver's, not the session's (Brandon, 2026-11-26: the first seeded pass, of
   // Anarcha-feminism, was carried on as earlier work and kept its old date, no "rules" and no "passes"): today's
   // rules, so every check judges the draft by them; today's date; the earlier passes listed (an audit with one pass
@@ -189,11 +184,11 @@ function seedLaterPass(id) {
   if (!Array.isArray(a.passes) || !a.passes.length) a.passes = [{ auditor: [].concat(a.auditor || [])[0], auditedAt: a.auditedAt }];
   a.rules = require("./validate").CURRENT_RULES;
   a.auditedAt = today;
-  // The earlier pass's notes go (Brandon, 2026-11-26): Political moderate's web phase read "a positional and
+  // The earlier pass's notes go (Brandon, 2026-11-26): Political moderate's session read "a positional and
   // methodological label, so most substantive policy answers are low-confidence" from them first, took it as settled
   // and searched nothing. Each pass writes its own. So does the scope (Brandon, 2026-11-26): its rerun carried the
-  // October scope's "many answers are low-confidence" into the new one, and both answer phases took it as leave to
-  // search nothing; the scope phase writes it afresh from the defining sources.
+  // October scope's "many answers are low-confidence" into the new one, and the sessions took it as leave to search
+  // nothing; each pass writes it afresh from the defining sources.
   delete a.notes;
   delete a.scope;
   // A null carries no reason (Brandon, 2026-11-26; validate.js): one written before that rule goes here.
@@ -221,13 +216,12 @@ function namesakeBooks(id) {
 }
 // Books on the ideology (scripts/ideology-books.js, Brandon 2026-11-25): before the pass, the books its Wikipedia
 // article lists (further reading, bibliography, notable works), the committed audit's key works and key figures' own
-// books, and archive.org books named after it, wherever archive.org has the full text open; after the scope phase,
-// again with the draft's key works and key figures. Re-audits had nulled what no defining source tied without opening
+// books, and archive.org books named after it, wherever archive.org has the full text open. Re-audits had nulled what no defining source tied without opening
 // the scholarship that would tie it (Libertarian socialism, Monarchism).
-function fetchBooks(id, draftFile) {
+function fetchBooks(id) {
   if (PEOPLE) return null;
-  const r = run("node", ["scripts/ideology-books.js", id, ...(draftFile ? ["--draft", draftFile] : [])], { timeout: 30 * 60000 });
-  log(`${id}: books${draftFile ? " (key figures and works from the scope phase)" : ""}: ${r.status ? `failed: ${failure(r.stdout + r.stderr)}` : r.stdout.trim().split("\n").pop()}`);
+  const r = run("node", ["scripts/ideology-books.js", id], { timeout: 30 * 60000 });
+  log(`${id}: books: ${r.status ? `failed: ${failure(r.stdout + r.stderr)}` : r.stdout.trim().split("\n").pop()}`);
   try { return JSON.parse(fs.readFileSync(path.join(require("./ideology-books").DIR, id, "index.json"), "utf8")); } catch { return null; }
 }
 const BOOKS_NOTE = (dir) => `They were found by title, not read: open each, and whether it is the subject's own text or scholarship defining it (audits/AUDIT_RULES.md) is your call, as for any source. Search each for the statements' topics (\`grep -i -n\` in ${dir}/, in the book's language), cite it by its archive.org page (the url given), and name the chapter or page in each rationale that rests on it. Books listed under its "lending" and "missing" in index.json are leads you may look for elsewhere.`;
@@ -240,58 +234,35 @@ const booksAtStart = (id) => bookList(startBooks.get(id), id, `Books on \`${id}\
 const startBooks = new Map();
 // An ideology's other names (the Wikipedia redirects to its article) go in the first message, so the session searches
 // under them from the start instead of finding them late (Brandon, 2026-11-23). The coatrack check already accepts
-// them as aliases. Only the scope task gets them, as plain other names (Brandon, 2026-11-26: the Wikipedia mechanics
-// were clutter); the answering sessions have the draft's "aliases".
+// them as aliases. Plain other names (Brandon, 2026-11-26: the Wikipedia mechanics were clutter).
 function otherNames(id) {
   if (PEOPLE) return "";
   const names = require("./lib").wikipediaOtherNames(id);
   if (!names.length) return "";
   return ` Other names for it: ${names.map((n) => `"${n}"`).join(", ")}; search under them too.`;
 }
-// The answers come in two phases (Brandon, 2026-11-26): local texts only, then a fresh session on the web for what is
-// still open (scripts/phases.js strips the settled answers and merges the web phase's back). The local phase's Claude
-// turns run with AUDIT_PHASE=local, which .claude/hooks/local-only.js reads to refuse web searches and fetches.
-const LOCAL_ENV = { AUDIT_PHASE: "local" };
-// The web phase's turns run with AUDIT_PHASE=web, and .claude/hooks/web-only.js refuses reading local texts (the corpora,
-// marxists.org and Gutenberg included, the library, downloaded books, the source library's files, the local draft): the
-// local phase read them, and Political moderate's web phase re-read them instead of searching (Brandon, 2026-11-26).
-const webEnv = (id) => ({ AUDIT_PHASE: "web", AUDIT_SUBJECT: id });
-const localMark = (id) => path.join(OUT, `${id}.local`), webDraft = (id) => path.join(OUT, `${id}.web.json`), webMark = (id) => path.join(OUT, `${id}.web`);
+// Lane sessions run with AUDIT_LANE=1: .claude/hooks/statement-text-only.js then refuses statements.json, so a session
+// sees each statement's text alone (writeStatements), never the site's agree/disagree explanations and notes.
+const LANE_ENV = { AUDIT_LANE: "1" };
+const doneMark = (id) => path.join(OUT, `${id}.done`);
 // A session is told only its task: the statements to answer, the file, where to search and how it ends; never what
-// another session did or will do, that other answers exist, or which phase it is (Brandon, 2026-11-26: "this phase"
-// breaks encapsulation; "the web phase follows" and "earlier phases have been searched" let sessions quit before the
-// end, and "if it has been worked on already, carry on from it" had them repair answers instead of researching).
-// Neither what a session can't search nor the special tools for particular sites are listed (Brandon, 2026-11-26:
-// clutter that confuses the task): the hooks refuse what is closed, and get.js, no-direct-fetch.js and the phase hooks
-// print the tool to use when a session reaches for such a site.
-const PHASE_FILE = (id, phase) => `scratchpad/lane-out/${LANE}/${id}${phase === "web" ? ".web" : ""}.json`;
-const SEARCH = (id, phase) => phase === "local"
-  ? `local texts: the local corpora (~/.cache/political-ideology-atlas/corpora/, listed in its README.md), the maintainer's reference library and the books downloaded on the subject (scratchpad/sources/${id}/${PEOPLE ? "" : `, ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}).`
-  : `the web: web searches, \`node scripts/get.js ${id} <url>\`, scripts/wiki.js and scripts/yt.js.`;
+// another session did or will do, or that other answers exist (Brandon, 2026-11-26: "earlier phases have been
+// searched" let sessions quit before the end, and "if it has been worked on already, carry on from it" had them repair
+// answers instead of researching). Neither what a session can't search nor the special tools for particular sites are
+// listed (Brandon, 2026-11-26: clutter that confuses the task): get.js and no-direct-fetch.js print the tool to use
+// when a session reaches for such a site.
+const SEARCH = (id) => `local texts (the local corpora, ~/.cache/political-ideology-atlas/corpora/, listed in its README.md; the maintainer's reference library; the books downloaded on the subject, scratchpad/sources/${id}/${PEOPLE ? "" : ` and ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}) and the web (web searches, \`node scripts/get.js ${id} <url>\`, scripts/wiki.js and scripts/yt.js).`;
 // The statements a session answers are listed in <id>.statements.json, and its file holds only their answers
-// (prepare() and phases.strip): the answers that pass today's rules are kept aside, so there is nothing to carry on
-// from (Brandon, 2026-11-26). Each statement is searched for, and the end condition names that (Brandon, 2026-11-26:
-// with "When the audit is done" the sessions answered what the main texts state outright and stopped).
+// (prepare): the answers that pass today's rules are kept aside, so there is nothing to carry on from (Brandon,
+// 2026-11-26). Each statement is searched for, and the end condition names that (Brandon, 2026-11-26: with "When the
+// audit is done" the sessions answered what the main texts state outright and stopped).
 const statementsFile = (id) => path.join(OUT, `${id}.statements.json`);
-const ANSWER_RULE = (id, phase) => `Answer the statements listed in scratchpad/lane-out/${LANE}/${id}.statements.json, in ${PHASE_FILE(id, phase)}, from ${SEARCH(id, phase)}${PEOPLE ? " A listed statement that already has an answer rests on the person's words alone: their record (acts) on that statement outweighs it (record over words, audits/AUDIT_RULES.md); look for one, and with no record leave the answer as it is." : ""} Number new sources on from the existing ones.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT.md, Aliases)."} Search for an answer to every statement in the statements file, one by one. When you have searched for every statement in the file, create the empty file scratchpad/lane-out/${LANE}/${id}.${phase} and end your turn; don't run validate.js (the driver validates the file and sends back what to fix).`;
-const START = (id, added = "") => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. ${ANSWER_RULE(id, "local")}${COLOR(id)}${namesakeBooks(id)}${booksAtStart(id)}${added}${prepNote(id)}`;
-const WEB_START = (id) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. ${ANSWER_RULE(id, "web")}`;
-// An ideology's audit runs in two phases (Brandon, 2026-11-23): first what PROMPT.md section 2 settles (scope, sources,
-// aliases, key figures, key works), which the driver checks with validate.js --stage scope and sends back to fix, then
-// the answers. Assadism had listed Hafez but not Bashar al-Assad as a key figure, which left Bashar's speeches untied;
-// the final validate found it only after the answers were done, and a warning there sent nothing back. The session
-// marks the first phase done by creating <id>.scope; a draft alone can't say so, since a later pass starts as a copy
-// of the committed audit.
-const scopeMark = (id) => path.join(OUT, `${id}.scope`);
-const SCOPE_START = (id) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. Do audits/PROMPT.md sections 1 and 2: find the defining sources and write scratchpad/lane-out/${LANE}/${id}.json with its scope, sources, aliases, key figures and key works (completing what the file already has, if it exists). Don't answer statements. When those parts are in the file, create the empty file scratchpad/lane-out/${LANE}/${id}.scope and end your turn.${otherNames(id)}${namesakeBooks(id)}${booksAtStart(id)}`;
-const SCOPE_FIX = (id, problems) => `\`node scripts/validate.js --dir scratchpad/lane-out/${LANE} --stage scope ${id}\` reports these problems with the scope, sources, aliases, key figures and key works of scratchpad/lane-out/${LANE}/${id}.json:\n${problems}\nFix each error, and act on each warning (a person named in a key figure's quote: list them if the defining sources present the ideology as their thought or political legacy). Check again with that command, and end your turn.`;
-// validate.js --stage scope's errors and warnings for the draft, as "- " lines ("" when clean).
-function scopeProblems(id) {
-  exceptGap(id); // the gap check is part of the scope stage, so the maintainer's exception goes in first
-  const r = run("node", ["scripts/validate.js", "--dir", path.relative(ROOT, OUT), "--stage", "scope", id]);
-  return (r.stdout + r.stderr).split("\n").filter((l) => /^\s+(error|warning):/.test(l)).map((l) => `- ${l.trim()}`).join("\n");
-}
-const RESUME = (id, phase) => `Go on with \`${id}\` where you left off (${phase === "local" ? "local texts" : "the web"} only), through to creating scratchpad/lane-out/${LANE}/${id}.${phase}.`;
+const ANSWER_RULE = (id) => `Answer the statements listed in scratchpad/lane-out/${LANE}/${id}.statements.json, in scratchpad/lane-out/${LANE}/${id}.json, from ${SEARCH(id)}${PEOPLE ? " A listed statement that already has an answer rests on the person's words alone: their record (acts) on that statement outweighs it (record over words, audits/AUDIT_RULES.md); look for one, and with no record leave the answer as it is." : ""} Number new sources on from the existing ones.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT.md, Aliases)."} Search for an answer to every statement in the statements file, one by one. When you have searched for every statement in the file, create the empty file scratchpad/lane-out/${LANE}/${id}.done and end your turn; don't run validate.js (the driver validates the file and sends back what to fix).`;
+// An ideology's session first does what PROMPT.md section 2 settles (scope, sources, aliases, key figures, key works),
+// then the answers, in the same session (Brandon, 2026-11-27).
+const SCOPE = (id) => PEOPLE ? "" : `First do audits/PROMPT.md sections 1 and 2: find the defining sources and write the scope, sources, aliases, key figures and key works into scratchpad/lane-out/${LANE}/${id}.json (completing what the file already has).${otherNames(id)} Then: `;
+const START = (id) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. ${SCOPE(id)}${ANSWER_RULE(id)}${COLOR(id)}${namesakeBooks(id)}${booksAtStart(id)}${prepNote(id)}`;
+const RESUME = (id) => `Go on with \`${id}\` where you left off, through to creating scratchpad/lane-out/${LANE}/${id}.done.`;
 // The sources validate.js fails, out of the answers (scripts/cleanup.js dropFailing): logged, and returned as a note
 // for the next session.
 function dropFailing(id, when, keepUnused = false) {
@@ -320,11 +291,19 @@ function restoreSettled(id) {
   }
   fs.unlinkSync(settledFile(id));
 }
-// Keeps every answer but the open ones (phases.js open: no answer yet, and for a person words-only ones) aside, gives
-// each open statement an empty entry, and lists them in <id>.statements.json. Returns their ids.
+// The open statements: no answer yet, and for a person an answer that cites no action source (words only): a record
+// found replaces their words (audits/AUDIT_RULES.md, "Record over words").
+const known = (ans) => ans && ans.value !== null && ans.value !== undefined;
+function openStatements(a) {
+  const actions = new Set((a.sources || []).filter((s) => s.evidence === "action").map((s) => s.id)), answers = a.answers || {};
+  return require("./lib").allStatements().map((s) => s.id)
+    .filter((sid) => !known(answers[sid]) || (PEOPLE && !(answers[sid].sources || []).some((x) => actions.has(x))));
+}
+// Keeps every answer but the open ones aside, gives each open statement an empty entry, and lists them in
+// <id>.statements.json. Returns their ids.
 function hideSettled(id) {
   restoreSettled(id);
-  const a = JSON.parse(fs.readFileSync(draft(id), "utf8")), ids = phases.open(a, PEOPLE), open = new Set(ids);
+  const a = JSON.parse(fs.readFileSync(draft(id), "utf8")), ids = openStatements(a), open = new Set(ids);
   const settled = {}, answers = {};
   for (const [sid, ans] of Object.entries(a.answers || {})) (open.has(sid) ? answers : settled)[sid] = ans;
   for (const sid of ids) if (!answers[sid]) answers[sid] = { value: null, sources: [], rationale: "" };
@@ -336,18 +315,19 @@ function hideSettled(id) {
   return ids;
 }
 // Only each statement's id and text (Brandon, 2026-11-26): the site's agree/disagree explanations and notes don't
-// affect audits and confused Sonnet. The model quiz stopped pointing at them during the Sonnet self-checks
+// affect audits and confused Sonnet; statement-text-only.js keeps the session off statements.json. The model quiz stopped pointing at them during the Sonnet self-checks
 // (855497488, 2026-11-19), the same retake that made "never", hedges and "always" wording errors.
 function writeStatements(id, ids) {
   const set = new Set(ids);
   fs.writeFileSync(statementsFile(id), JSON.stringify({ statements: require("./lib").allStatements().filter((s) => set.has(s.id)).map((s) => ({ id: s.id, text: s.text })) }, null, 2) + "\n");
 }
-// Before the answers: failing sources and answers out, the rest kept aside. What validate.js still reports that no
-// script fixes goes in the first message (prepNote), as problems in the file to fix.
+// Before the session: failing sources and answers out, the rest kept aside. What validate.js still reports that no
+// script fixes goes in the first message (prepNote), as problems in the file to fix. Returns the re-audit gap's error
+// lines, if any: a pass the gap doesn't allow has no fix a session can make.
 const prepNotes = new Map();
 function prepare(id, when) {
   restoreSettled(id);
-  // A first audit (a person, who has no scope phase) starts from a draft with the catalog's id, name and article: the
+  // A first audit starts from a draft with the catalog's id, name and article: the
   // session got no statements file and no draft, and said it couldn't start (neil-kinnock, 2026-11-26).
   if (!fs.existsSync(draft(id))) {
     const lib = require("./lib"), entry = (PEOPLE ? lib.peopleCatalog() : lib.catalog()).find((x) => x.id === id) || {};
@@ -359,30 +339,21 @@ function prepare(id, when) {
   }
   dropFailing(id, when, true);
   nullFailing(id, when);
-  const lines = localErrors(id).split("\n").filter(Boolean).map((l) => `- ${l.replace(/^error:\s*/, "")}`);
+  const all = otherErrors(id).split("\n").filter(Boolean), gap = all.filter((l) => GAP_ERROR.test(l));
+  if (gap.length) return gap.join("\n");
+  const lines = all.map((l) => `- ${l.replace(/^error:\s*/, "")}`);
   const ids = hideSettled(id);
   prepNotes.set(id, lines.length ? `\n\n\`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` reports these problems in the file; fix each:\n${lines.join("\n")}` : "");
   log(`${id}: ${when}, ${ids.length} statement(s) to answer${lines.length ? `, ${lines.length} other problem(s) handed over` : ""}`);
+  return "";
 }
 function prepNote(id) {
   const note = prepNotes.get(id) || "";
   prepNotes.delete(id);
   return note;
 }
-// Between phases the fixes that need no judgment are made (scripts/cleanup.js tidy; Brandon, 2026-11-26): nulls lose
-// their reasons and sources, so the next phase never reads one as settled. Unused sources stay until integration: the
-// scope phase's defining sources aren't cited by answers yet.
-function cleanBetween(id, when) {
-  try {
-    const lib = require("./lib"), a = JSON.parse(fs.readFileSync(draft(id), "utf8"));
-    const c = require("./cleanup"), tidied = c.describe(c.tidy(a, PEOPLE));
-    if (tidied) { fs.writeFileSync(draft(id), lib.formatAudit(a)); log(`${id}: ${when}, cleanup: ${tidied}`); }
-  } catch (e) { log(`${id}: ${when}, cleanup failed: ${e.message.split("\n")[0]}`); }
-}
-// The check after the local phase (Brandon, 2026-11-26): full validate.js but for the statements still without an
-// answer, which the web phase takes; fixed in the local phase's session, still local-only.
-const LOCAL_FIX = (id, errors) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
-const localErrors = (id) => errorsIn(["--dir", path.relative(ROOT, OUT)], id).split("\n").filter((l) => l.trim() && !/no answer for '|statements? ha(s|ve) no answer yet/.test(l)).join("\n");
+// Validator errors but for statements without an answer (the session answers those).
+const otherErrors = (id) => errorsIn(["--dir", path.relative(ROOT, OUT)], id).split("\n").filter((l) => l.trim() && !/no answer for '|statements? ha(s|ve) no answer yet/.test(l)).join("\n");
 const FIX = (id, errors) => `validate.js reports these errors in scratchpad/lane-out/${LANE}/${id}.json:\n${errors}\nFix them, validate again with \`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\`, and reply.`;
 
 // Why a child process failed, for the log: an uncaught error's message and where it was thrown, not the last lines of
@@ -592,7 +563,7 @@ function integrate(id) {
     }
     const why = buildAndCommit(PEOPLE ? "Rebuild people data" : "Rebuild site data");
     if (why) log(`${id}: ${why}; audit committed, generated files left for the next build`);
-    for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`), scopeMark(id), localMark(id), webDraft(id), webMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f);
+    for (const f of [draft(id), colorFile, path.join(OUT, `${id}.claim`), doneMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f);
     return name;
   });
 }
@@ -655,108 +626,33 @@ while (timeLeft()) {
   fs.writeFileSync(path.join(OUT, `${id}.claim`), `${new Date().toISOString()}\n`);
   log(`start ${id}`);
   let thread = null;
-  const done = () => doneIds().has(id), local = () => fs.existsSync(localMark(id));
-  if (!done() && !local()) seedLaterPass(id);
-  // The scope session works with the answers kept aside too.
-  if (!PEOPLE && !done() && !local() && !fs.existsSync(scopeMark(id)) && fs.existsSync(draft(id))) hideSettled(id);
-  // Phase 1, ideologies: scope, sources, aliases, key figures and key works (web and local).
-  if (!PEOPLE && !done() && !local()) startBooks.set(id, (fetchBooks(id) || {}).books || []);
-  if (!PEOPLE && !done() && !local() && !fs.existsSync(scopeMark(id))) {
-    thread = await session(SCOPE_START(id));
-    for (let n = 1; !fs.existsSync(scopeMark(id)) && n <= RESUMES && timeLeft(); n++) {
-      if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(SCOPE_START(id)); continue; }
-      log(`resume ${id} scope (${n})`);
-      thread = await session(`Go on with \`${id}\` where you left off, through to creating scratchpad/lane-out/${LANE}/${id}.scope.`, thread);
+  const done = () => doneIds().has(id);
+  if (!done()) {
+    seedLaterPass(id);
+    if (!PEOPLE) startBooks.set(id, (fetchBooks(id) || {}).books || []);
+    exceptGap(id); // the gap check runs in prepare, so the maintainer's exception goes in first
+    const gap = prepare(id, "before the session");
+    if (gap) { restoreSettled(id); log(`${id}: the re-audit gap doesn't allow this pass yet; stopped, draft kept:\n${gap}`); tried.add(id); continue; }
+    // The session marks its work done with <id>.done; the driver turns it into the subject's DONE.txt line.
+    const marked = () => fs.existsSync(doneMark(id));
+    if (!marked()) thread = await session(START(id), null, LANE_ENV);
+    for (let n = 1; !marked() && n <= RESUMES && timeLeft(); n++) {
+      if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(START(id), null, LANE_ENV); continue; }
+      log(`resume ${id} (${n})`);
+      thread = await session(RESUME(id), thread, LANE_ENV);
     }
-    if (!fs.existsSync(scopeMark(id))) { log(`${id}: scope phase not done; left for the next start`); tried.add(id); continue; }
-  }
-  // Phase 2: answers from local texts only, in the same session as the scope phase.
-  const localStart = (added = "") => START(id, added);
-  if (!done() && !local()) {
-    let added = "";
-    if (!PEOPLE) {
-      let problems = fs.existsSync(draft(id)) ? scopeProblems(id) : "";
-      // A pass the re-audit gap doesn't allow has no fix a session can make: it stops here, its draft kept.
-      if (GAP_ERROR.test(problems)) { log(`${id}: the re-audit gap doesn't allow this pass yet; stopped, draft kept:\n${problems.split("\n").filter((l) => GAP_ERROR.test(l)).join("\n")}`); tried.add(id); continue; }
-      for (let n = 1; problems && thread && n <= FIX_ROUNDS; n++) {
-        log(`${id}: scope check, fix round ${n} (${problems.split("\n").length} problem(s))`);
-        thread = await session(SCOPE_FIX(id, problems), thread);
-        problems = scopeProblems(id);
-      }
-      if (problems) log(`${id}: scope check left ${problems.split("\n").length} problem(s); answering anyway (the final validate checks the errors again):\n${problems}`);
-      // The books by the key figures and key works the scope phase settled (Brandon, 2026-11-25).
-      const before = new Set((startBooks.get(id) || []).map((b) => b.file));
-      const after = fs.existsSync(draft(id)) ? (fetchBooks(id, draft(id)) || {}).books || [] : [];
-      added = bookList(after.filter((b) => !before.has(b.file)), id, "Books by the key figures and key works are downloaded too");
-    }
-    if (fs.existsSync(draft(id))) cleanBetween(id, "after the scope phase");
-    prepare(id, "before the local phase");
-    // Each phase runs in a fresh session (Brandon, 2026-11-26): what the scope phase found is in the draft.
-    log(`${id}: local phase`);
-    thread = await session(localStart(added), null, LOCAL_ENV);
-    for (let n = 1; !local() && n <= RESUMES && timeLeft(); n++) {
-      if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(localStart(), null, LOCAL_ENV); continue; }
-      log(`resume ${id} local (${n})`);
-      thread = await session(RESUME(id, "local"), thread, LOCAL_ENV);
-    }
-    if (!local() || !fs.existsSync(draft(id))) { restoreSettled(id); log(`${id}: local phase not done; left for the next start`); tried.add(id); continue; }
+    restoreSettled(id);
+    if (marked()) { fs.appendFileSync(DONE, `${id}\n`); fs.unlinkSync(doneMark(id)); }
   }
   restoreSettled(id);
-  // The local phase's draft, checked in full but for the open statements (Brandon, 2026-11-26). Sources that fail
-  // go by script first (cleanup.js), then the local session fixes the rest; the web phase starts only on a clean draft.
-  if (!done() && !fs.existsSync(webDraft(id))) {
-    let errors = localErrors(id);
-    if (errors) { dropFailing(id, "after the local phase", true); nullFailing(id, "after the local phase"); errors = localErrors(id); }
-    for (let n = 1; errors && n <= FIX_ROUNDS; n++) {
-      log(`${id}: local phase, validator errors, fix round ${n}`);
-      thread = await session(LOCAL_FIX(id, errors), thread, LOCAL_ENV);
-      errors = localErrors(id);
-    }
-    if (errors) {
-      log(`${id}: still invalid after the local phase's ${FIX_ROUNDS} fix rounds; no web phase, draft left for review:\n${errors}`);
-      fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`));
-      for (const f of [scopeMark(id), localMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f);
-      tried.add(id); continue;
-    }
-  }
-  // Phase 3: a fresh session searches the web for the statements still open (scripts/phases.js).
-  if (!done()) {
-    thread = null;
-    if (!fs.existsSync(webDraft(id))) {
-      cleanBetween(id, "after the local phase");
-      const { web, ids } = phases.strip(JSON.parse(fs.readFileSync(draft(id), "utf8")), PEOPLE);
-      if (ids.length) { fs.writeFileSync(webDraft(id), require("./lib").formatAudit(web)); writeStatements(id, ids); }
-      else fs.appendFileSync(DONE, `${id}\n`);
-      log(`${id}: web phase, ${ids.length} open statement(s)`);
-    }
-    if (!done()) {
-      // The session marks the web phase done with <id>.web; the driver turns it into the subject's DONE.txt line.
-      const web = () => fs.existsSync(webMark(id));
-      if (!web()) thread = await session(WEB_START(id), null, webEnv(id));
-      for (let i = 1; !web() && i <= RESUMES && timeLeft(); i++) {
-        if (!thread) { log(`${id}: no session id; starting a new session`); thread = await session(WEB_START(id), null, webEnv(id)); continue; }
-        log(`resume ${id} web (${i})`);
-        thread = await session(RESUME(id, "web"), thread, webEnv(id));
-      }
-      if (web()) { fs.appendFileSync(DONE, `${id}\n`); fs.unlinkSync(webMark(id)); }
-    }
-  }
   if (!done() || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
-  if (fs.existsSync(webDraft(id))) {
-    const m = phases.merge(JSON.parse(fs.readFileSync(draft(id), "utf8")), JSON.parse(fs.readFileSync(webDraft(id), "utf8")), PEOPLE);
-    fs.writeFileSync(draft(id), require("./lib").formatAudit(m.audit));
-    fs.unlinkSync(webDraft(id));
-    cleanBetween(id, "after the web phase");
-    const answered = m.taken.filter((s) => m.audit.answers[s] && m.audit.answers[s].value !== null).length;
-    log(`${id}: merged the web phase: ${answered} answer(s) found${m.taken.length > answered ? ` (${m.taken.length - answered} left null)` : ""}${PEOPLE ? `, ${m.kept.length} words-only answer(s) kept (no record)` : ""}${m.ignored.length ? `, ${m.ignored.length} answer(s) to settled statements ignored` : ""}`);
-  }
   if (fs.existsSync(statementsFile(id))) fs.unlinkSync(statementsFile(id));
   exceptGap(id);
-  nullFailing(id, "after the web phase");
+  nullFailing(id, "after the session");
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
-  if (GAP_ERROR.test(errors)) { log(`${id}: the re-audit gap doesn't allow this pass yet; no fix rounds, draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); for (const f of [scopeMark(id), localMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f); continue; }
-  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread); exceptGap(id); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
-  if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); for (const f of [scopeMark(id), localMark(id)]) if (fs.existsSync(f)) fs.unlinkSync(f); continue; }
+  if (GAP_ERROR.test(errors)) { log(`${id}: the re-audit gap doesn't allow this pass yet; no fix rounds, draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); continue; }
+  for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread, LANE_ENV); exceptGap(id); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
+  if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); continue; }
   // The DONE line is only the session's "finished" mark: the driver counts the answers and the placement itself.
   const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
   const name = integrate(id);

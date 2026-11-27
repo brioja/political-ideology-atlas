@@ -40,7 +40,7 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id>",
-  "rules": 7,
+  "rules": 8,
   "notIdeasOfWhatSocietyShouldBe": { "reason": "PERSON | PARTY | ORGANIZATION | STATES | GOVERNMENT_BODY | EVENT | DOES_NOT_INCLUDE_IDEAS", "explanation": "One or two sentences on why." },
   "sources": [{ "id": "s1", "kind": "reference", "title": "…", "url": "https://… (a page you opened)" }]
 }
@@ -133,7 +133,7 @@ major works).
 
 Primary texts (`primary` or `program`) are the ideology's own texts: founding documents, manifestos,
 programmes, writings and speeches. One is tied to the ideology when it is a key work (with `"work"` and its two
-quotes), when the sources that discuss the ideology name it twice by its own title, when its author is a key figure,
+quotes), when its author is a key figure,
 or when it names the ideology twice itself.
 
 ### Evidence
@@ -208,7 +208,7 @@ captures, even loosely. List only those; often there are none, and the list is e
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id that did the research>",
-  "rules": 7,
+  "rules": 8,
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "notFound": [{ "work": "<a source looked for and not found>", "tried": [{ "where": "<place 1>", "how": "<what you searched>" }, { "where": "<place 2>", "how": "…" }] }],
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",

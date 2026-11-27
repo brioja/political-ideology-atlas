@@ -7,8 +7,6 @@
 //   node scripts/get.js <audit id> <url> --no-wayback  don't fall back to a Wayback Machine capture
 //   node scripts/get.js <audit id> <url> --grep "<keyword>" [--context N]   also print the passages with the keyword
 //   node scripts/get.js <audit id> <url> --print     also print the whole text
-// An audit's web phase reads pages only this way, one URL at a time (.claude/hooks/web-only.js refuses reading the
-// library's files directly, so the session can't scan what earlier phases saved; Brandon, 2026-11-26).
 // Agents, in order (those not installed are skipped):
 //   curl (the project's own User-Agent), wget, wget2, aria2c (each its own), lynx, w3m (text browsers, their
 //   own), headless Firefox, headless Chrome (real browsers, their own User-Agents).
@@ -23,7 +21,7 @@
 // saved instead (copies elsewhere are fine to cite, Brandon 2026-11-12); its index.json entry has agent "wayback"
 // and the capture's address in `archived`. --no-wayback skips this.
 // Wikipedia/Wikidata, YouTube, Gutenberg and marxists.org are refused here: they have their own cached tools (marxists.org
-// pages go into the local corpus, which an audit's local phase reads).
+// pages go into the local corpus).
 "use strict";
 const fs = require("fs");
 const os = require("os");

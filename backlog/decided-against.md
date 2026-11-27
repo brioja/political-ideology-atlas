@@ -142,3 +142,10 @@ accepted, since the fixes of that day got it searching the web at all and the la
 - **Handing the web phase its statements in themed batches:** piloted on a branch (one-question-audits), it didn't
   work well either.
 - **A stronger model for the web phase:** Sonnet stays, so answers and statements read as plainly as test takers need.
+
+## Audit phases (removed 2026-11-27)
+
+From 2026-11-23 an audit ran as a scope phase, then a local-texts-only phase, then a fresh web-only session for what
+was still open (scripts/phases.js, hooks local-only.js and web-only.js). They were added while audits kept ending
+short; once that cause was found, the phases were removed and one session does the whole audit (Brandon). Kept from
+them: dropping Wikipedia citations and untied sources before the session, and sessions seeing statement text only.

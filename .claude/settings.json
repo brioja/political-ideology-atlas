@@ -28,11 +28,6 @@
             "type": "command",
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/local-corpus-hint.js\"",
             "timeout": 10
-          },
-          {
-            "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/local-only.js\"",
-            "timeout": 10
           }
         ]
       },
@@ -64,7 +59,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/web-only.js\"",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/statement-text-only.js\"",
             "timeout": 10
           }
         ]

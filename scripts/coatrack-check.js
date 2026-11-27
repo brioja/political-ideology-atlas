@@ -3,9 +3,9 @@
 // check's logic lives here.
 //   - A defining source (kind "reference", "scholarly" or "secondary") must contain the ideology's name or one of
 //     its `aliases` in its saved text.
-//   - A primary source ("primary" or "program") passes if its own text names the ideology twice, or if
-//     the sources that discuss the ideology (defining sources and primary texts that passed on their
-//     own) name it twice by the head of its title (two words or more): one mention may be in passing.
+//   - A primary source ("primary" or "program") passes if its own text names the ideology twice, if it is a key
+//     work with two quotes naming it by title from the sources that discuss the ideology, or if its author is a
+//     key figure. Audits under rules 7 and before also tie one by counting its title in those sources (below).
 //   - Wikipedia is never a defining source. An alias must be a name (a coined word counts), not an everyday word.
 //   - Aliases are liberal (Brandon, 2026-11-05): any name for the ideology, as long as it is a name
 //     (not an everyday word) and no other ideology's name or alias.
@@ -20,6 +20,8 @@ const lib = require("./lib");
 // A Wikipedia title without its trailing disambiguator ("Radical right (Europe)" -> "Radical right").
 const plainName = (t) => String(t).replace(/\s*\([^)]*\)\s*$/, "").trim();
 
+// The rules version from which a title count no longer ties a primary text (validate.js CURRENT_RULES).
+const TITLE_COUNT_UNTIL = 8;
 const LIB_DIR = path.join(lib.ROOT, "scratchpad", "sources");
 const norm = (s) => ` ${String(s || "").replace(/ß/g, "ss").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()} `;
 const sameUrl = (a, b) => String(a || "").replace(/[#?].*$/, "").replace(/\/+$/, "").replace(/^http:/, "https:") ===
@@ -544,10 +546,12 @@ function check(id, full, { strict = false, pass = false } = {}) {
     if (mentions(t, names)) defining.push(t);
     else offTopic.push([s.id, t]), problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology${ALIAS_HINT}${citedBy(s.id)}`);
   }
-  // Primary texts. A text that names the ideology twice passes on its own. Any other passes if the
-  // sources that discuss the ideology (defining sources, and primary texts that passed on their own;
-  // never Wikipedia) name it by title twice between them. One mention may be in passing; a source
-  // that never names the ideology can't vouch for a text (the World communism case).
+  // Primary texts. A text that names the ideology twice passes on its own. Any other passes as a key work whose
+  // evidence quotes the sources that discuss the ideology (defining sources, and primary texts that passed on their
+  // own; never Wikipedia) naming it by title, or as a key figure's text. Counting its title in those sources no longer
+  // ties it from rules 8 (Brandon, 2026-11-27): a leftover from before key works, it was a key work without the
+  // quotes. Older audits keep the ties it made until their next pass, since key works now need quotes and the counts
+  // can't be converted into them.
   // Key figures ("keyFigures"): the ideology's own thinkers, as its defining sources name them. Each
   // must be named (by surname) at least twice in the defining sources and belong to no other
   // ideology's "keyFigures". A primary text by one of them is tied to the ideology.
@@ -647,13 +651,15 @@ function check(id, full, { strict = false, pass = false } = {}) {
     // ("Hatt-ı Hümayun" for the Rescript of Reform).
     const titles = (Array.isArray(audit.keyWorks) ? audit.keyWorks : []).filter((w) => w && w.work === s.id);
     if (titles.some((w) => worksOk.has(w))) continue;
-    // Counted: the text's own title, and an older audit's key work titles (a pass's key works tie by "evidence" above).
-    const counted = titles.filter((w) => !pass && !Array.isArray(w.evidence));
-    const heads = [...titleHeads(s.title), ...list(counted).map(norm).filter((h) => h.trim().split(" ").length >= 2)];
-    const own = t || "";
-    const others = vouching.filter((v) => v !== own).join(" ");
-    const named = heads.some((h) => count(others, [h]) >= 2);
-    if (named) continue;
+    // Rules 7 and before (Brandon, 2026-11-27): the text also passed when the sources that discuss the ideology named it
+    // twice by the head of its title, or by an older key work's title (one "source" and "quote", no "evidence"). From
+    // rules 8 a count ties nothing: a key work with its quotes does.
+    if ((audit.rules || 0) < TITLE_COUNT_UNTIL) {
+      const counted = titles.filter((w) => !pass && !Array.isArray(w.evidence));
+      const heads = [...titleHeads(s.title), ...list(counted).map(norm).filter((h) => h.trim().split(" ").length >= 2)];
+      const others = vouching.filter((v) => v !== (t || "")).join(" ");
+      if (heads.some((h) => count(others, [h]) >= 2)) continue;
+    }
     // A key figure's text: its author is one the audit lists in "keyFigures" (see above).
     if (figuresOk.length && s.author && figuresOk.some((sur) => norm(s.author).includes(sur))) continue;
     // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
@@ -661,7 +667,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
     if (t == null) { unchecked.push(s.id); continue; }
     // The message names all three ways to tie a primary text, each with its evidence (audits/PROMPT.md);
     // Brandon, 2026-11-21.
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${plainName(audit.name)}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology. Tie it one of two ways, with evidence, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}" and two quotes that name it), or another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}). Its author's texts are tied only if the defining sources already make them a key figure; key figures come from those sources, never from a text that needs a tie. \`node scripts/tie-source.js ${id} ${s.id}\` searches the saved pages and local corpora for a tie. If none fits, look for scholarship defining the ideology that names the text by title (a new defining source can tie it as a key work); only when none does, \`node scripts/drop-source.js ${id} ${s.id}\` takes it out of the answers and lists the rationales to rewrite${citedBy(s.id)}`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${plainName(audit.name)}" twice and isn't a key work with its quotes or a key figure's text: it isn't tied to the ideology. Tie it one of two ways, with evidence, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}" and two quotes that name it), or another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}). Its author's texts are tied only if the defining sources already make them a key figure; key figures come from those sources, never from a text that needs a tie. \`node scripts/tie-source.js ${id} ${s.id}\` searches the saved pages and local corpora for a tie. If none fits, look for scholarship defining the ideology that names the text by title (a new defining source can tie it as a key work); only when none does, \`node scripts/drop-source.js ${id} ${s.id}\` takes it out of the answers and lists the rationales to rewrite${citedBy(s.id)}`);
   }
   return { problems, unchecked, warnings };
 }

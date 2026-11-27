@@ -56,7 +56,7 @@ for (const [k, x] of Object.entries(a.answers || {})) {
 
 // Missing statements and key figures rest on the subject's sources too (Brandon, 2026-11-26): the source leaves a
 // missing statement's "sources", and the request goes once none are left; a key figure resting on it goes (key figures
-// come from the defining sources, so after the scope phase one that cites an untied text isn't one). Aliases and key
+// come from the defining sources, so one that cites an untied text isn't one). Aliases and key
 // works aren't touched: one that cites the source is what ties it.
 let requests = 0, figures = 0;
 if (Array.isArray(a.missingStatements)) a.missingStatements = a.missingStatements.filter((m) => {
