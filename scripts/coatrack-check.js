@@ -495,6 +495,11 @@ function check(id, full, { strict = false, pass = false } = {}) {
       problems.push(`alias "${al}": its quote doesn't name "${plainName(audit.name)}" and the alias as separate phrases, so it doesn't show the source equating them`);
     if (isSupported(x) || isSpellingAlias(x)) { const pr = aliasPageProblem(id, al); if (pr) problems.push(pr); }
   }
+  // One key figure at most, counting a claim: the ideology's most influential or primary thinker; others' texts go
+  // in "keyWorks" (Brandon, 2026-11-27: each figure's two quotes cost tokens to find). Older audits keep theirs until
+  // their next pass.
+  const figureCount = (Array.isArray(audit.keyFigures) ? audit.keyFigures.length : 0) + (Array.isArray(audit.keyFigureClaims) ? audit.keyFigureClaims.length : 0);
+  if (pass && figureCount > 1) problems.push(`key figures: one at most (has ${figureCount}, counting "keyFigureClaims"): keep the ideology's most influential or primary thinker, and list the others' texts in "keyWorks"`);
   for (const x of Array.isArray(audit.keyFigures) ? audit.keyFigures : []) {
     const key = figureKey(x);
     if (x && typeof x === "object" && x.organisation) { problems.push(`key figure "${x.organisation}": an organisation isn't a key figure; list its texts in "keyWorks"`); continue; }

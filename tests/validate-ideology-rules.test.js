@@ -76,20 +76,13 @@ try {
   fails("too little further reading", E(base(), (a) => { a.furtherReading.pop(); }), /"furtherReading" needs 2 to 4 items, has 1/);
   fails("too much further reading", E(base(), (a) => { for (let i = 0; i < 3; i++) a.furtherReading.push({ title: `More ${i}`, url: `https://example.org/more${i}` }); }), /"furtherReading" needs 2 to 4 items, has 5/);
   fails("further reading without a url", E(base(), (a) => { a.furtherReading[0].url = "not a url"; }), /furtherReading item needs a title and an http\(s\) url/);
-  // Key figures: no limit, people only, each with a Wikipedia article URL when given (and a role and article in a pass).
+  // Key figures: one at most, people only, each with a Wikipedia article URL when given (and a role and article in a pass).
   ok("key figures left out", E(base(), (a) => { delete a.keyFigures; }));
   ok("a secondary source stands in for a reference one", E(base(), (a) => { a.sources[0].kind = "secondary"; }));
   const fig = () => ({ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: `Vexmoor led ${N} for years` }] });
   fails("key figures not a list", E(base(), (a) => { a.keyFigures = "Quentin Vexmoor"; }), /"keyFigures" must be a list/);
   fails("key figure with a bad Wikipedia article", E(base(), (a) => { a.keyFigures = [{ ...fig(), wikipedia: "https://example.org/x" }]; }), /keyFigures\[0\]: wikipedia must be an en\.wikipedia\.org article URL/);
   fails("organisation as a key figure", E(base(), (a) => { a.keyFigures = [{ organisation: "Vexmoor League", source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }]; }), /an organisation isn't a key figure/);
-  // A person a key figure's quote names (from the people catalog) is likely a missed key figure: a warning.
-  { const person = lib.peopleCatalog().find((p) => /^[A-Z][a-z]+ [A-Z][a-z]+$/.test(p.name) && !coatrack.reservedFor(p.name).length);
-    const pair = (q) => E(base(), (a) => { a.keyFigures = [{ ...fig(), quote: q }]; });
-    warns("person named in a key figure's quote", pair(`Quentin Vexmoor and ${person.name} wrote its founding text`), new RegExp(`keyFigures: ${person.name} is named in a key figure's quote`));
-    const quiet = (name, a) => { const w = result(a).warnings.filter((x) => /named in a key figure's quote/.test(x)); assert.deepStrictEqual(w, [], `${name}: ${w.join("; ")}`); n++; };
-    quiet("person in the quote who is a key figure", E(pair(`Quentin Vexmoor and ${person.name} wrote its founding text`), (a) => { const [first, last] = person.name.split(" "); a.keyFigures.push({ ...fig(), first, last, wikipedia: person.wikipedia }); }));
-    quiet("name only in lower case", pair(`Quentin Vexmoor and ${person.name.toLowerCase()} wrote its founding text`)); }
   // Key works: a title with its evidence; "work" is the cited text itself, which the title then ties to the ideology.
   const work = (extra = {}) => ({ title: "Founding Rescript", source: "s1", quote: "first in the Founding Rescript", ...extra });
   const unnamed = (a) => { a.sources.push({ id: "s4", kind: "primary", evidence: "words", title: "Imperial edict", url: "https://example.org/unrelated" }); a.answers[A].sources.push("s4"); };
@@ -125,6 +118,11 @@ try {
     assert.deepStrictEqual(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: `Vexmoor led ${N} for years` }] }]; }), /Quentin Vexmoor/), [], "a key figure's two quotes each name them and the ideology, from one source or two"); n++;
     assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: "Vexmoor led" }] }]; }), /key figure "Quentin Vexmoor": the quote "Vexmoor led" doesn't name/).length, "each of a key figure's quotes names the ideology"); n++;
     assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s2", quote: "We hold that Vexmoor" }] }]; }), /s2 is a primary source; the evidence comes from defining sources/).length, "a key figure's evidence comes from defining sources"); n++;
+    { const two = (a) => { const f = { first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: `Vexmoor led ${N} for years` }] };
+        a.keyFigures = [f, { ...f, first: "Ottilie", last: "Vexmoor", wikipedia: "https://en.wikipedia.org/wiki/Ottilie_Vexmoor" }]; };
+      assert.ok(passProblems(E(base(), two), /key figures: one at most \(has 2/).length, "a pass lists one key figure at most"); n++;
+      assert.ok(coatrack.check(subject.id, E(base(), two), { strict: true }).problems.every((p) => !/one at most/.test(p)), "older audits keep their key figures until their next pass"); n++;
+      assert.deepStrictEqual(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: `Vexmoor led ${N} for years` }] }]; }), /one at most/), [], "one key figure is fine"); n++; }
     assert.ok(coatrack.forms("zapatismo").includes(" zapatista ") && coatrack.forms("anarchisme").includes(" anarchiste ") && coatrack.forms("marxismus").includes(" marxist "), "Romance and German forms of an -ism"); n++;
   }
   fails("key work whose work is scholarship", E(base(), (a) => { a.keyWorks = [work({ work: "s3" })]; }), /keyWorks\[0\]: "work" must be the work itself/);

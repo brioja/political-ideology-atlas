@@ -178,27 +178,6 @@ function keyFigureChecks(a, id, sources, errors, warnings) {
     const j = a.keyFigures.findIndex((x) => x && typeof x === "object" && who(x) === who(f));
     if (j < i) errors.push(`keyFigures[${i}]: ${f.first} ${f.last} is already keyFigures[${j}]; list each person once`);
   }
-  // A person a key figure's quote names who isn't a key figure is likely one the audit missed (Brandon, 2026-11-23:
-  // Assadism listed Hafez but not Bashar al-Assad, named in the same quote, and so left his speeches untied). People
-  // from the people catalog only, matched as written (capitalised, whole words, so the Italian "sulla" is not Sulla);
-  // a listed figure counts by name or Wikipedia article, and a namesake another ideology reserves can't be one here.
-  // A warning: a quote may name someone only in passing ("Althusius, like Aristotle").
-  if (!PEOPLE && Array.isArray(a.keyFigures) && a.keyFigures.length) {
-    const C = require("./coatrack-check");
-    const plain = (t) => ` ${String(t || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Za-z0-9]+/g, " ").trim()} `;
-    const page = (u) => { try { return decodeURIComponent(String(u || "").replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "")).replace(/ /g, "_"); } catch { return ""; } };
-    const figs = a.keyFigures.filter((f) => f && typeof f === "object" && f.last);
-    const listed = (p) => figs.some((f) => C.samePerson(f, p.name) || (f.wikipedia && page(f.wikipedia) === page(p.wikipedia)));
-    const quotes = figs.flatMap((f) => [f.quote, ...(Array.isArray(f.evidence) ? f.evidence.map((e) => e && e.quote) : [])]).map(plain).join(" | ");
-    const named = new Set();
-    for (const p of lib.peopleCatalog()) {
-      const n = plain(p.name);
-      if (n.trim().length < 3 || !quotes.includes(n) || listed(p)) continue;
-      if (C.reservedFor(p.name).some((o) => o !== id)) continue;
-      named.add(p.name);
-    }
-    for (const name of named) warnings.push(`keyFigures: ${name} is named in a key figure's quote but isn't a key figure; add them if the defining sources present ${a.name || id} as their thought or political legacy`);
-  }
   if (!PEOPLE && Array.isArray(a.keyWorks)) for (const [i, w] of a.keyWorks.entries()) {
     if (!w || typeof w !== "object" || !w.title) { errors.push(`keyWorks[${i}]: must be { "title", "author", "wikipedia", "evidence": [{ "source", "quote" }, ...] } (and "authorWikipedia" if the author has an article, "work" if you cite it)`); continue; }
     const src = w.work === undefined ? null : sources.find((s) => s.id === w.work);

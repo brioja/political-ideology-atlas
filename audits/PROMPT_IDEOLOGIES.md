@@ -99,19 +99,21 @@ An alias's quote may name the ideology by any of its redirects.
 
 Both lists show on the ideology's page.
 
-`keyFigures`: the people the defining sources present the ideology as the thought or political legacy of
+`keyFigures`: the one person the defining sources present the ideology as the thought or political legacy of
 (Clinton for Clintonism).
+- One at most, counting a claim (below): its most influential or primary thinker. List other thinkers' texts in
+  `keyWorks` instead.
 - People only, no organisations.
 - With `evidence` (below): two quotes or more, different passages, from the defining sources presenting the ideology
   as theirs, each naming both the person and the ideology; a bare mention of the person doesn't.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
   after for it (Lenin for Leninism).
 - If the defining sources present the ideology as the thought of someone another ideology lists (not as an
-  influence on it), claim them instead: `keyFigureClaims`, each `{ "first", "last", "heldBy": "<that ideology's
+  influence on it), claim them instead of listing them: `keyFigureClaims`, each `{ "first", "last", "heldBy": "<that ideology's
   id>", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`, with three quotes or more naming them and
   the ideology, from two different defining sources or more; your defining sources must also name them more often than the holder's do.
   The claim goes to audits/key-figure-claims.json, and their texts aren't tied here.
-- If validate.js warns that another ideology claims one of yours, keep them only if your defining sources present
+- If validate.js warns that another ideology claims yours, keep them only if your defining sources present
   the ideology as their thought or political legacy; one they present as an influence on it, take out.
 - Never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose namesake's
   other views aren't part of it: tie their texts by title instead (Monroe's 1823 annual message).
@@ -149,9 +151,9 @@ the check can read it.
 These answer for an ideology:
 
 - Its defining sources (section 1).
-- Its `keyWorks` and its `keyFigures`' texts (section 2).
+- Its `keyWorks` and its key figure's texts (section 2).
 
-Outside key works and key figures' texts, an adherent's or organisation's own platform doesn't answer, since they hold more opinions than
+Outside key works and key figure's texts, an adherent's or organisation's own platform doesn't answer, since they hold more opinions than
 just the ideology; their account of what the ideology holds does (section 1). Critics don't answer. A
 general remark that its content varies answers no particular statement (`null`).
 
@@ -257,6 +259,6 @@ captures, even loosely. List only those; often there are none, and the list is e
 ## 8. Research to the end
 
 For an ideology, keep its `scope`: research what the
-ideology itself states (its defining sources, key works and key figures' texts: sections 1–3), not a
-related movement's positions. For a thin theme, search its key works and key figures' texts for that
+ideology itself states (its defining sources, key works and key figure's texts: sections 1–3), not a
+related movement's positions. For a thin theme, search its key works and key figure's texts for that
 topic.
