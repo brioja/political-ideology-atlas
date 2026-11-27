@@ -73,6 +73,11 @@ Open gaps, to revisit (Brandon: "could be problematic, but it can be revisited")
   ideology is involved). Animal rights' racial-segregation-law and racial-franchise answers (−2, medium) rest on
   Regan's apartheid premise against contractarianism, which AUDIT_RULES section 3 now says is not a
   position ("a premise is not a position", 2026-11-05): null them on the audit's next pass.
+- **Rules-8 ties can still be loose (2026-11-27).** Without title counts, a primary text is tied by naming the
+  ideology itself, by a key work's evidence quotes, or by a key figure's authorship. These ties can still be loose too.
+  A key work's quotes show that a source links the text to the ideology, not that the text sets out the ideology's
+  tenets. "Orbán's constitution" is enough to make Hungary's Fundamental Law a key work, and then every article in
+  it can answer for the ideology.
 - **A passing mention is enough (defining sources).** A defining source passes if it names the ideology once. A two-mentions
   floor for defining sources would filter this; primary texts got one on 2026-11-05.
 - **The saved copy is trusted.** The check reads the agent's saved text, not the live page.
