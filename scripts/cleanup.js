@@ -139,16 +139,18 @@ function dropFailing(dir, id, people = false, keepUnused = false) {
 // Nulls every answer validate.js fails under today's rules (an error line that starts with its statement id), so
 // the next session answers it afresh rather than repairing it (Brandon, 2026-11-26). Returns the ids nulled.
 function nullFailing(dir, id, people = false) {
-  const bank = new Set(lib.allStatements().map((s) => s.id)), failing = new Set();
+  const bank = new Set(lib.allStatements().map((s) => s.id)), failing = new Map();
   for (const line of errors(dir, id, people, true)) {
     const m = /^error:\s*([^:\s][^:]*):/.exec(line);
     const ids = m ? m[1].split(/,\s*/) : [];
-    if (ids.length && ids.every((x) => bank.has(x))) ids.forEach((x) => failing.add(x));
+    if (ids.length && ids.every((x) => bank.has(x))) ids.forEach((x) => failing.set(x, line.replace(/^error:\s*/, "")));
   }
   const file = path.join(dir, `${id}.json`), a = JSON.parse(fs.readFileSync(file, "utf8")), nulled = [];
-  for (const sid of failing) {
+  // The validator's error for each nulled answer is kept as nulled.reasons, so the log says why.
+  nulled.reasons = {};
+  for (const [sid, why] of failing) {
     const ans = (a.answers || {})[sid];
-    if (ans && ans.value !== null && ans.value !== undefined) { a.answers[sid] = { value: null, sources: [], rationale: "" }; nulled.push(sid); }
+    if (ans && ans.value !== null && ans.value !== undefined) { a.answers[sid] = { value: null, sources: [], rationale: "" }; nulled.push(sid); nulled.reasons[sid] = why; }
   }
   if (nulled.length) fs.writeFileSync(file, lib.formatAudit(a));
   return nulled;
