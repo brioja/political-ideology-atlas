@@ -73,6 +73,10 @@ Open gaps, to revisit (Brandon: "could be problematic, but it can be revisited")
   ideology is involved). Animal rights' racial-segregation-law and racial-franchise answers (−2, medium) rest on
   Regan's apartheid premise against contractarianism, which AUDIT_RULES section 3 now says is not a
   position ("a premise is not a position", 2026-11-05): null them on the audit's next pass.
+- **Self-naming once (2026-11-27, watch).** A primary text that names the ideology once ties itself (it was twice).
+  This is a lower count, not a switch to evidence quotes as for key works and key figures. Keep it unless primary
+  texts tied by a passing mention start carrying answers that aren't the ideology's. If they do, the fix would be a
+  quote from the text itself.
 - **A passing mention is enough (defining sources).** A defining source passes if it names the ideology once. A two-mentions
   floor for defining sources would filter this; primary texts got one on 2026-11-05.
 - **The saved copy is trusted.** The check reads the agent's saved text, not the live page.
