@@ -55,9 +55,21 @@ let MODEL = arg("--engine") === "codex"
 const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane") || tmuxWindow() || `${ENGINE}-${KIND}`, RESUMES = +arg("--resumes", 6);
 const UNTIL = arg("--until"), DRY = process.argv.includes("--dry");
 const SUBJECTS = arg("--subjects") ? arg("--subjects").split(",").filter(Boolean) : null, GAP_EXCEPTION = arg("--gap-exception");
+// Every argument is checked, and --help prints this file's header (Brandon, 2026-11-27: a mistyped "--ideology" fell
+// back to the default kind and started a people lane).
+const HELP = () => { const l = fs.readFileSync(__filename, "utf8").split("\n"); return l.slice(0, l.findIndex((x) => x.startsWith("// Per subject:"))).map((x) => x.replace(/^\/\/ ?/, "")).join("\n"); };
+{
+  const VALUED = ["--engine", "--kind", "--lane", "--until", "--resumes", "--subjects", "--gap-exception"], a = process.argv.slice(2), bad = [];
+  for (let i = 0; i < a.length; i++) {
+    if (VALUED.includes(a[i])) { if (a[i + 1] === undefined || a[i + 1].startsWith("--")) bad.push(`${a[i]} needs a value`); else i++; }
+    else if (!["--dry", "--help", "-h"].includes(a[i])) bad.push(`unknown argument "${a[i]}"`);
+  }
+  if (a.includes("--help") || a.includes("-h")) { console.log(HELP()); process.exit(0); }
+  if (bad.length) { console.error(`${bad.join("\n")}\n\n${HELP()}`); process.exit(1); }
+}
 if (GAP_EXCEPTION && GAP_EXCEPTION.trim().length < 10) { console.error("--gap-exception: say why, and who approved it"); process.exit(1); }
 if (!["codex", "claude"].includes(ENGINE) || !["people", "ideologies"].includes(KIND) || (UNTIL && !/^\d\d:\d\d$/.test(UNTIL))) {
-  console.error("usage: node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane name] [--until HH:MM] [--resumes 6]");
+  console.error(HELP());
   process.exit(1);
 }
 const PEOPLE = KIND === "people", PUSH_MINUTES = 60, BOOKS_EVERY = 5, FIX_ROUNDS = 3;
