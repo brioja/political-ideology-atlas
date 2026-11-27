@@ -36,6 +36,7 @@
 // about 9 minutes inside the integrate lock, so running it every 5 ideologies slowed both lanes by about a fifth; since
 // 2026-11-23 it takes about half a minute, refits in parallel), skipped when another lane's is already waiting or running.
 // Log: scratchpad/lane-out/<lane>/driver.log, one line per step; integrated subjects in INTEGRATED.txt.
+// What a session sees and doesn't is listed in SESSION.md: change it with any change to what a session gets.
 const { spawn, spawnSync, execFileSync } = require("child_process");
 const fs = require("fs"), path = require("path");
 const ROOT = path.join(__dirname, "..");
