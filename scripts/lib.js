@@ -52,6 +52,13 @@ const fetchArticle = async (e) => { const t = articleTitle(e); return t ? htmlOf
 // Notability by Wikipedia, decided by data: an article of its own (resolve-articles.js). Entries not yet
 // resolved count as notable until the file says otherwise.
 // Other names for an entry's article: redirects Wikipedia files as another name for it (resolve-articles.js).
+// An audit's "aliases": each entry gives one name or a list of names sharing a reason and quote
+// ({ "name": ["Anti-capitalist", "Anticapitalist"], "reason": "SPELLING", ... }; Brandon, 2026-11-27: one quote
+// often names several). aliasEntries gives one entry per name; aliasNames the names alone. Older audits may give a
+// bare string.
+const aliasEntries = (aliases) => (Array.isArray(aliases) ? aliases : []).flatMap((x) =>
+  x && typeof x === "object" && Array.isArray(x.name) ? x.name.map((n) => ({ ...x, name: n })) : [x]);
+const aliasNames = (aliases) => aliasEntries(aliases).map((x) => (typeof x === "string" ? x : x && x.name)).filter((n) => typeof n === "string" && n.trim());
 const wikipediaOtherNames = (id) => { const a = wikipediaArticles()[id]; return (a && a.otherNames) || []; };
 const notable = (id) => { const a = wikipediaArticles()[id]; return !a || a.notable; };
 // An entry on one person's views, by its title ("Political positions of …", "Religious views of …"): that person's
@@ -360,6 +367,6 @@ function formatAudit(a) {
   return JSON.stringify({ ...a, answers: mark }, null, 2).replace(JSON.stringify(mark), () => body) + "\n";
 }
 
-module.exports = { saturation, onlyNeutralColors, slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, personViews, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
+module.exports = { aliasEntries, aliasNames, saturation, onlyNeutralColors, slug, restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, articleKey, notable, personViews, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, retiredIds, retiredRe, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, formatAudit, statedPositions, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

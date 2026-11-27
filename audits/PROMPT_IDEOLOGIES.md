@@ -73,10 +73,9 @@ no defining source states.
 **Every source has to discuss the ideology** (the coatrack check, `scripts/coatrack-check.js`, run by
 validate.js). A defining source (`reference`, `scholarly` or `secondary`) must name the ideology, by its
 name or an alias; primary texts are tied to it as the next subsection says. List in `aliases` the other
-names the defining sources use for it, liberally, each with its `reason` (validate.js checks each):
-- `REDIRECT`: a Wikipedia redirect to the article; word forms such as "Gaullist" and other names come in
-  this way. Every redirect to the article counts automatically, unless Wikipedia files it as a section,
-  subtopic, related topic or former name (a related word counts). Needs no quote.
+names the defining sources use for it, liberally, each with its `reason` (validate.js checks each).
+Wikipedia's redirects to the article (word forms such as "Gaullist", other names) are aliases already,
+unless Wikipedia files one as a section, subtopic, related topic or former name; don't list them.
 - `SUPPORTED`: a source says they are the same. Quote the passage where it equates them ("often referred
   to as 'green liberalism', 'eco-liberalism', or 'liberal ecology'"). To find that source, look the alias up
   from its own side (a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias usually
@@ -136,9 +135,10 @@ quotes), when its author is a key figure, or when it names the ideology itself.
 
 ### Evidence
 
-Give each alias its evidence: `{ "name", "source": "<source id>", "quote": "<verbatim passage>" }`, a passage from
-that source's saved copy that uses the name. A key figure or key work gives one passage or more instead:
-`"evidence": [{ "source": "<source id>", "quote": "<verbatim passage>" }, ...]`; validate.js checks the quote is there and contains it (a `REDIRECT` or `TRANSLATION`
+Give each alias its evidence: `{ "name": ["<alias>", ...], "reason", "source": "<source id>", "quote": "<verbatim
+passage>" }`, a passage from that source's saved copy that uses each name. Names with the same reason and quote
+share one entry. A key figure or key work gives one passage or more instead:
+`"evidence": [{ "source": "<source id>", "quote": "<verbatim passage>" }, ...]`; validate.js checks the quote is there and contains it (a `TRANSLATION`
 alias needs none). Save every source you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so
 the check can read it.
 

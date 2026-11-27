@@ -39,7 +39,7 @@ const snippet = (t, i, j) => t.slice(Math.max(0, i - 160), Math.min(t.length, j 
 
 function subjectNames(id, a) {
   const plain = (n) => ct.norm(n).trim();
-  const names = [a.name, ct.plainName(a.name), ...(Array.isArray(a.aliases) ? a.aliases : []).map((x) => (typeof x === "string" ? x : x && (x.alias || x.name)))];
+  const names = [a.name, ct.plainName(a.name), ...lib.aliasNames(a.aliases)];
   for (const raw of lib.wikipediaOtherNames ? lib.wikipediaOtherNames(id) : []) names.push(ct.plainName(raw));
   const eponyms = (Array.isArray(a.keyFigures) ? a.keyFigures : []).filter((x) => x && x.last && ct.isEponym(x, a.name)).map((x) => plain(x.last));
   return { names: [...new Set([...names, ...eponyms].filter((n) => n && plain(n)).map(plain))], eponyms };

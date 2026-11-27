@@ -187,7 +187,7 @@ function namesTaken() {
     if (!f.endsWith(".json")) continue;
     let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
     const id = f.slice(0, -5);
-    for (const n of [a.name, ...list(a.aliases)]) {
+    for (const n of [a.name, ...lib.aliasNames(a.aliases)]) {
       if (!n) continue;
       const k = norm(n);
       if (!taken.has(k)) taken.set(k, new Set());
@@ -276,7 +276,6 @@ function setClaimsForTests(c) { claimsForTests = c; }
 
 // Why an alias is another name for the ideology (Brandon, 2026-11-20): every alias gives one "reason", and each is
 // checked here.
-//   REDIRECT     a Wikipedia redirect to the ideology's article (resolve-articles.js otherNames); needs no quote.
 //   SUPPORTED    a source says they are the same: the quote names both the alias and the ideology. Acronyms go here,
 //                found by looking the acronym up ("TERF" in a dictionary): initials alone can mean several things.
 //                Not a name Wikipedia files under another topic (aliasPage below).
@@ -286,9 +285,13 @@ function setClaimsForTests(c) { claimsForTests = c; }
 //   SPELLING     the same name spelled differently: s/z, case, accents, spacing and hyphens aside, at most two letters
 //                differ and the ending is the same ("Austro-Marxism", "communisation"), or the same words reordered
 //                ("Jihadi-Salafism"). Not a name Wikipedia files under another topic (aliasPage below): "modern liberalism"
-//                is two letters off "Modern U.S. liberalism" but a disambiguation page. A word form ("Bolshevik", "Gaullist") or another name is a REDIRECT, or SUPPORTED.
+//                is two letters off "Modern U.S. liberalism" but a disambiguation page. A word form ("Bolshevik", "Gaullist") or another name is a Wikipedia redirect, or SUPPORTED.
 //   EPONYM       the person the "-ism" is named after ("Fortuyn" for Fortuynism).
-const ALIAS_REASONS = ["REDIRECT", "SUPPORTED", "TRANSLATION", "SPELLING", "EPONYM"];
+// An entry's "name" may be a list of names with that reason and quote (lib.aliasEntries checks each name alone).
+// Wikipedia's redirects to the article are not listed: they are aliases by themselves (resolve-articles.js otherNames,
+// read below), so the former REDIRECT reason is refused (Brandon, 2026-11-27: a copy of a list the scripts already
+// have, which went stale when Wikipedia changed).
+const ALIAS_REASONS = ["SUPPORTED", "TRANSLATION", "SPELLING", "EPONYM"];
 
 // Where Wikipedia files a SUPPORTED, TRANSLATION or SPELLING alias. A name Wikipedia gives to another topic (its own article, a disambiguation
 // page, a redirect to another article or to a section of one) would bring that topic's sources in with it ("Committee of
@@ -304,7 +307,7 @@ const isSpellingAlias = (x) => x && typeof x === "object" && x.reason === "SPELL
 const pageChecked = (x) => isSupported(x) || isTranslation(x) || isSpellingAlias(x);
 const langLinksUrl = (title) => require("./wiki").apiUrl({ action: "query", titles: title, prop: "langlinks", lllimit: "max", redirects: "1" });
 async function prefetchAliasPages(id, audit) {
-  const aliases = Array.isArray(audit && audit.aliases) ? audit.aliases : [];
+  const aliases = lib.aliasEntries(audit && audit.aliases);
   for (const x of aliases) if (pageChecked(x)) await lib.cachedJson(aliasPageUrl(entryName(x)));
   const own = lib.articleTitle({ id });
   if (own && aliases.some(isTranslation)) { await lib.cachedJson(langLinksUrl(own)); await lib.fetchArticle({ id }); }
@@ -419,8 +422,10 @@ function check(id, full, { strict = false, pass = false } = {}) {
   const audit = full;
   // Evidence only, no counts: a pass, or an audit written under rules 8 or later.
   const quoted = pass || (audit.rules || 0) >= COUNTS_UNTIL;
-  if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || audit.aliases.some((x) => !entryName(x).trim()))) {
-    problems.push('"aliases" must be a list of names (use [] for none)');
+  const okName = (n) => typeof n === "string" && n.trim();
+  if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || audit.aliases.some((x) => typeof x === "string" ? !x.trim()
+    : !x || typeof x !== "object" || !(Array.isArray(x.name) ? x.name.length && x.name.every(okName) : okName(x.name))))) {
+    problems.push('"aliases" must be a list of entries, each with a "name" or a list of names (use [] for none)');
   }
   // Each alias gives its "reason" (ALIAS_REASONS above). A SUPPORTED alias's quote names both the alias and the
   // ideology itself, so the source is seen equating them ("'trans-exclusionary radical feminism', or TERFism")
@@ -428,13 +433,14 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // A name Wikipedia redirects to the article is already connected by the redirect (Brandon, 2026-11-20), so a quote
   // may name the subject by any of those names (a renamed entry's old name among them).
   const ideologyNames = [audit.name, plainName(audit.name), ...lib.wikipediaOtherNames(id).map(plainName)];
-  for (const x of Array.isArray(audit.aliases) ? audit.aliases : []) {
+  for (const x of lib.aliasEntries(audit.aliases)) {
     // Wikidata no longer connects an alias (Brandon, 2026-11-14: a poor source; of the 17 it connected, Wikipedia sent two
     // elsewhere and seven were labeled redirects anyway). Its "wikidata": true marker is refused, so an alias needs a quote.
     if (x && typeof x === "object" && "wikidata" in x) problems.push(`alias "${entryName(x)}": Wikidata no longer connects aliases; give a source and quote`);
     if (!x || typeof x !== "object") { problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))]))); continue; }
     const al = entryName(x), reason = x.reason;
     if ("type" in x) problems.push(`alias "${al}": "type" is replaced by "reason" (${ALIAS_REASONS.join(", ")})`);
+    if (reason === "REDIRECT") { problems.push(`alias "${al}": take it out; Wikipedia's redirects to the article count as aliases by themselves and aren't listed`); continue; }
     if (reason !== undefined && !ALIAS_REASONS.includes(reason)) { problems.push(`alias "${al}": "reason" must be one of ${ALIAS_REASONS.join(", ")}`); continue; }
     if (reason === undefined && strict) problems.push(`alias "${al}" needs a "reason": one of ${ALIAS_REASONS.join(", ")}`);
     if (reason === "TRANSLATION") {
@@ -442,11 +448,6 @@ function check(id, full, { strict = false, pass = false } = {}) {
       if (names && !names.some((n) => sameTranslation(al, n)))
         problems.push(`alias "${al}": not a name Wikipedia gives the ideology in another language (a language link of "${lib.articleTitle({ id })}", or a name its lead tags with a language), so it isn't a TRANSLATION`);
       const pr = aliasPageProblem(id, al); if (pr) problems.push(pr);
-      continue;
-    }
-    if (reason === "REDIRECT") {
-      if (!lib.wikipediaOtherNames(id).some((t) => norm(plainName(t)) === norm(al)))
-        problems.push(`alias "${al}": not a Wikipedia redirect to the ideology's article (scripts/resolve-articles.js otherNames)`);
       continue;
     }
     problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(al)])));
@@ -481,7 +482,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
   // The name it is built from, which may be the first (Saddam for Saddamism).
   const eponyms = (Array.isArray(audit.keyFigures) ? audit.keyFigures : []).filter((x) => isEponym(x, audit.name))
     .map((x) => [x.last, x.first].find((w) => w && isEponym({ last: w }, audit.name)));
-  const aliases = [...list(audit.aliases), ...eponyms];
+  const aliases = [...lib.aliasNames(audit.aliases), ...eponyms];
   for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, a coined word, or a spelling variant of the name)`);
   // Uniqueness. An ideology's own name is never another's alias. An alias two ideologies claim belongs
   // to the one whose defining sources use it most (the sources decide, Brandon 2026-11-05); the others
@@ -543,7 +544,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
     const t = sourceText(id, s.url);
     if (t == null) { unchecked.push(s.id); continue; }
     if (mentions(t, names)) defining.push(t);
-    else offTopic.push([s.id, t]), problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology${ALIAS_HINT}${citedBy(s.id)}`);
+    else offTopic.push([s.id, t]), problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${kept.length ? " or an alias" : ""}: a defining source has to discuss the ideology${ALIAS_HINT}${citedBy(s.id)}`);
   }
   // Primary texts. A text that names the ideology passes on its own (once since 2026-11-27; twice before). Any other
   // passes as a key work whose evidence quotes the sources that discuss the ideology (defining sources, and primary

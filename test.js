@@ -46,7 +46,7 @@ for (const s of allStatements()) {
   const unresolved = lib.catalog().filter((e) => !W[e.id]).map((e) => e.id);
   assert(!unresolved.length, `catalog entries not yet checked against Wikipedia (run node scripts/resolve-articles.js): ${unresolved.join(", ")}`);
   // Every entry's names: its own, the redirects to its article (resolve-articles.js) and its audit's aliases.
-  const aliasesOf = (e) => { const p = lib.profilePath(e.id); return require("fs").existsSync(p) ? (lib.readJson(p).aliases || []).map((a) => (typeof a === "string" ? a : a && a.name)).filter(Boolean) : []; };
+  const aliasesOf = (e) => { const p = lib.profilePath(e.id); return require("fs").existsSync(p) ? lib.aliasNames(lib.readJson(p).aliases) : []; };
   const notTitle = lib.catalog().filter((e) => W[e.id].title && e.name !== W[e.id].title).map((e) => `${e.id} ("${e.name}", article "${W[e.id].title}")`);
   assert(!notTitle.length, `catalog entries not named after their article's title: ${notTitle.join(", ")}`);
   const sharedNames = holders(lib.catalog().map((e) => [e.name, e.id]));

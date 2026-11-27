@@ -196,6 +196,11 @@ try {
       fails("TRANSLATION Wikipedia files under another topic", tr("Zorblattismus"), /alias "Zorblattismus": Wikipedia files it as its own article/);
     } finally { coatrack.setAliasPagesForTests(null); coatrack.setTranslationNamesForTests(null); }
   }
+  // Names sharing a reason and quote share an entry ("name": [...]); each is checked alone. Wikipedia's redirects
+  // to the article are aliases by themselves, so a REDIRECT entry is refused.
+  fails("alias list with a name its quote lacks", E(base(), (a) => { a.aliases = [{ name: [`${N}ists`, "Qwyrbism"], reason: "SUPPORTED", source: "s1", quote: `${N}ists, or ${N}` }]; }), /alias "Qwyrbism": its quote doesn't contain it/);
+  fails("alias list with an empty name", E(base(), (a) => { a.aliases = [{ name: [], reason: "SUPPORTED", source: "s1", quote: `${N}ists, or ${N}` }]; }), /"aliases" must be a list of entries/);
+  fails("REDIRECT alias", E(base(), (a) => { a.aliases = [{ name: [`${N}ists`], reason: "REDIRECT" }]; }), /take it out; Wikipedia's redirects to the article count as aliases by themselves/);
   fails("alias from a source not in the audit", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s9", quote: `${N}ists and ${N}` }]; }), /source "s9" is not in the audit/);
   fails("key figure not named twice in the defining sources", E(base(), (a) => { a.keyFigures = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /key figure "Imaginary Zorblatt"/);
   fails("key figure without a last name", E(base(), (a) => { a.keyFigures = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "last"/);

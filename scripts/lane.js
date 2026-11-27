@@ -239,7 +239,7 @@ function otherNames(id) {
   if (PEOPLE) return "";
   const names = require("./lib").wikipediaOtherNames(id);
   if (!names.length) return "";
-  return ` Other names for it: ${names.map((n) => `"${n}"`).join(", ")}; search under them too.`;
+  return ` Other names for it: ${names.map((n) => `"${n}"`).join(", ")}; search under them too. They count as aliases already: don't list them in "aliases".`;
 }
 // Lane sessions run with AUDIT_LANE=1: .claude/hooks/statement-text-only.js then refuses statements.json, so a session
 // sees each statement's text alone (writeStatements), never the site's agree/disagree explanations and notes.
