@@ -194,7 +194,7 @@ function seedLaterPass(id) {
   // A null carries no reason (Brandon, 2026-11-26; validate.js): one written before that rule goes here.
   for (const [sid, ans] of Object.entries(a.answers || {})) if (!ans || ans.value === null || ans.value === undefined) a.answers[sid] = { value: null, sources: [], rationale: "" };
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
-  log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.kept} kept on other sources, ${w.requests} missing statement(s) dropped`);
+  log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.requests} missing statement(s) dropped`);
 }
 // An eponymous ideology (audits/namesakes.json: Leninism, Stalinism, Trumpism) is handed the maintainer's reference
 // books by its namesake and about them (biographies, named "<title> (about <Person>, by <author>).txt"): a biography
@@ -267,7 +267,7 @@ const RESUME = (id) => `Go on with \`${id}\` where you left off, through to crea
 // for the next session.
 function dropFailing(id, when, keepUnused = false) {
   try {
-    const f = require("./cleanup").dropFailing(OUT, id, PEOPLE, keepUnused), w = f.wikipedia.kept + f.wikipedia.nulled;
+    const f = require("./cleanup").dropFailing(OUT, id, PEOPLE, keepUnused), w = f.wikipedia.nulled + f.wikipedia.requests;
     if (f.untied.length || w) log(`${id}: ${when}, the driver took out of the answers${f.untied.length ? ` untied source(s) ${f.untied.join(", ")}` : ""}${w ? `${f.untied.length ? " and" : ""} Wikipedia citations (${f.wikipedia.nulled} answer(s) nulled)` : ""}`);
   } catch (e) { log(`${id}: ${when}, dropping failing sources failed: ${e.message.split("\n")[0]}`); }
 }

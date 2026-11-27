@@ -116,38 +116,35 @@ function clean(dir, id, people = false) {
 
 const known = (ans) => ans && ans.value !== null && ans.value !== undefined;
 // Before a later pass (Brandon, 2026-11-26): answers lose their Wikipedia citations, which validate.js refuses
-// (Wikipedia is a tertiary source, audits/AUDIT_RULES.md section 2) and only a new source can fix. An answer with other
-// sources keeps its value on them; one with none left is nulled, so the session researches it like any open statement.
-// Missing statements are treated the same way (Brandon, 2026-11-26), since a request added to the candidate bank seeds
-// that statement's answer: a request loses its Wikipedia citations and is dropped when none of its sources is left.
+// (Wikipedia is a tertiary source, audits/AUDIT_RULES.md section 2) and only a new source can fix. An answer citing
+// Wikipedia is nulled even when it cites other sources too, so the session researches it like any open statement
+// (Brandon, 2026-11-27: kept on its other sources, its value and rationale stayed, and nothing checked that those
+// sources alone carry it). Missing statements are treated the same way (Brandon, 2026-11-26), since a request added to
+// the candidate bank seeds that statement's answer: a request citing Wikipedia is dropped.
 // The source entries stay (an alias or a key figure may cite them); the final cleanup drops unused ones.
 const isWikipedia = (u) => { try { return /(^|\.)wikipedia\.org$/.test(new URL(u).host); } catch { return false; } };
 function dropWikipedia(audit) {
   const wiki = new Set((audit.sources || []).filter((s) => isWikipedia(s.url)).map((s) => s.id));
-  let kept = 0, nulled = 0;
+  let nulled = 0;
   for (const ans of Object.values(audit.answers || {})) {
     if (!known(ans) || !(ans.sources || []).some((s) => wiki.has(s))) continue;
-    const rest = ans.sources.filter((s) => !wiki.has(s));
-    if (rest.length) { ans.sources = rest; kept++; }
-    else { Object.assign(ans, { value: null, sources: [], rationale: "" }); nulled++; }
+    Object.assign(ans, { value: null, sources: [], rationale: "" }); nulled++;
   }
   let requests = 0;
   if (Array.isArray(audit.missingStatements)) {
     audit.missingStatements = audit.missingStatements.filter((m) => {
       if (!(m.sources || []).some((s) => wiki.has(s))) return true;
-      m.sources = m.sources.filter((s) => !wiki.has(s));
-      if (m.sources.length) return true;
       requests++; return false;
     });
   }
-  return { kept, nulled, requests };
+  return { nulled, requests };
 }
 
 // Takes out of the answers the sources validate.js fails and only a new source could fix (Brandon, 2026-11-26):
 // Wikipedia citations (a tertiary source; dropWikipedia above) and sources not tied to the subject
 // (scripts/drop-source.js --none-fit). An answer resting on them alone is nulled; then unused sources go (clean).
 // scripts/lane.js runs it on a draft before its session.
-// Returns { untied, wikipedia: { kept, nulled }, dropped, kept }.
+// Returns { untied, wikipedia: { nulled, requests }, dropped, kept }.
 // Coatracks too (coatrack-check.js: a defining source that "never names" the subject; Brandon, 2026-11-26). With
 // keepUnused, sources nothing cites stay (defining sources no answer cites yet).
 function dropFailing(dir, id, people = false, keepUnused = false) {
@@ -156,7 +153,7 @@ function dropFailing(dir, id, people = false, keepUnused = false) {
   for (const sid of untied) {
     execFileSync("node", [path.join(__dirname, "drop-source.js"), id, sid, "--dir", dir, "--none-fit", ...(people ? ["--people"] : [])], { stdio: "ignore" });
   }
-  let wikipedia = { kept: 0, nulled: 0, requests: 0 };
+  let wikipedia = { nulled: 0, requests: 0 };
   if (/, a Wikipedia article: Wikipedia is a tertiary source/.test(errs)) {
     const file = path.join(dir, `${id}.json`), a = JSON.parse(fs.readFileSync(file, "utf8"));
     wikipedia = dropWikipedia(a);
@@ -197,7 +194,7 @@ if (require.main === module) {
   for (const id of ids) {
     if (args.includes("--failing")) {
       const f = dropFailing(dir, id, people);
-      if (f.untied.length || f.wikipedia.kept + f.wikipedia.nulled) console.log(`${id}: untied sources out of the answers: ${f.untied.join(", ") || "none"}; Wikipedia citations dropped: ${f.wikipedia.nulled} answer(s) nulled, ${f.wikipedia.kept} kept on other sources, ${f.wikipedia.requests} missing statement(s) dropped`);
+      if (f.untied.length || f.wikipedia.nulled + f.wikipedia.requests) console.log(`${id}: untied sources out of the answers: ${f.untied.join(", ") || "none"}; Wikipedia citations dropped: ${f.wikipedia.nulled} answer(s) nulled, ${f.wikipedia.requests} missing statement(s) dropped`);
     }
     const { tidied, dropped, kept } = clean(dir, id, people);
     total += dropped.length;
