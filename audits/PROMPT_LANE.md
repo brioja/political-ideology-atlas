@@ -28,6 +28,7 @@ Audit the id the driver gives you, person or ideology.
   at a time (`--page 2`); `--files` counts matches per file. Use it to find passages instead of reading whole texts.
 - `node scripts/set-answers.js <draft> <file | ->` writes answers into the draft, one per line:
   `id<TAB>value<TAB>s1,s2<TAB>rationale` (value -2..2 or null). It checks each line and writes nothing if one fails.
+  Each statement it writes, null included, leaves the statements file, so that file lists what is left to search.
 
 An `excluded:` line or a `notIdeasOfWhatSocietyShouldBe` record from validate.js is a result, not an
 error. The `DONE.txt` files in `scratchpad/lane-out/` are the driver's: don't write to them.
