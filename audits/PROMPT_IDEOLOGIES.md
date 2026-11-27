@@ -103,7 +103,7 @@ Both lists show on the ideology's page.
 (Clinton for Clintonism).
 - People only, no organisations.
 - With `evidence` (below): two quotes or more, different passages, from the defining sources presenting the ideology
-  as theirs; a bare mention of the person doesn't.
+  as theirs, at least one of them naming the ideology; a bare mention of the person doesn't.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
   after for it (Lenin for Leninism).
 - If the defining sources present the ideology as the thought of someone another ideology lists (not as an
