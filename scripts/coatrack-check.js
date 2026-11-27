@@ -518,8 +518,8 @@ function check(id, full, { strict = false, pass = false } = {}) {
   const names = [...new Set([audit.name, plainName(audit.name), ...kept])].map(norm);
   // Each evidence quote of a key figure claim names the ideology (its name or an alias) apart from the person, so the
   // source is seen tying them to it (Brandon, 2026-11-26): a claim takes a person from another ideology. Key works
-  // need only be named (2026-11-27: a check, not the rules), and a key figure needs the ideology named in one quote
-  // only (below): their quotes come from sources that discuss the ideology, and whether such a source presents them
+  // need only be named (2026-11-27: a check, not the rules), and a key figure's quotes name the ideology anywhere
+  // (below): their quotes come from sources that discuss the ideology, and whether such a source presents them
   // as its own is the auditor's call.
   const untied = (field, x, list) => list.filter((e) => e && typeof e.quote === "string" && e.quote.trim())
     .filter((e) => !separately(norm(e.quote), names, field === "key work" ? [norm(entryName(x))] : [norm(entryName(x)), figureKey(x)]))
@@ -581,12 +581,11 @@ function check(id, full, { strict = false, pass = false } = {}) {
     // Claimed by another ideology (audits/key-figure-claims.json): this pass decides.
     const against = claims().filter((c) => c.heldBy === id && samePerson(x, entryName(c))).map((c) => c.claimedBy);
     if (against.length) warnings.push(`key figure "${au}" is claimed by ${against.join(", ")} (audits/key-figure-claims.json, with its source and quote): keep them only if your defining sources present ${audit.name} as their thought or political legacy, not as an influence on it; otherwise take them out of "keyFigures"`);
-    // Loose: one of a key figure's quotes names the ideology (any name, alias or form, anywhere in the quote), so a
-    // sentence that only names the person in a source about the ideology doesn't count (Brandon, 2026-11-27:
-    // "established the Sadiqiyya college" passed for Islamic modernism).
-    const quotes = (x && Array.isArray(x.evidence) ? x.evidence : []).filter((e) => e && typeof e.quote === "string" && e.quote.trim());
-    if (quotes.length && !quotes.some((e) => mentions(norm(e.quote), names)))
-      problems.push(`key figure "${au}": none of its quotes names ${plainName(audit.name)} (or an alias); at least one has to, so the source is seen tying them to it`);
+    // Loose: each of a key figure's quotes names the ideology (any name, alias or form, anywhere in the quote) as well
+    // as the person, so a sentence that only names the person in a source about the ideology doesn't count (Brandon,
+    // 2026-11-27: "established the Sadiqiyya college" passed for Islamic modernism).
+    for (const e of (x && Array.isArray(x.evidence) ? x.evidence : []).filter((e) => e && typeof e.quote === "string" && e.quote.trim()))
+      if (!mentions(norm(e.quote), names)) problems.push(`key figure "${au}": the quote "${e.quote.trim()}" doesn't name ${plainName(audit.name)} (or an alias); each quote names both the person and the ideology, so it shows the source tying them`);
     // Quoted ("evidence", checked above), or in an older audit the surname counted twice.
     if (!quoted && !(x && Array.isArray(x.evidence)) && count(defining.join(" "), [sur]) < 2) {
       // Say why the count fell short, so the fix isn't sought in the wrong place: unsaved sources can't be counted,
