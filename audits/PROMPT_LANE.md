@@ -26,6 +26,10 @@ Audit the id the driver gives you, person or ideology.
 - `node scripts/passages.js <id> <regex> [--in <dir-or-file>]` prints the paragraphs that match in the subject's
   saved sources and downloaded books (and in each `--in` path, such as a corpus folder), with file and line, a page
   at a time (`--page 2`); `--files` counts matches per file. Use it to find passages instead of reading whole texts.
+  In `.jsonl` records (speech dumps) `--from`/`--to YYYY` keep a date range. `--counts <file>` takes one
+  `label: regex` per line (one per statement, say) and prints how often each matches, to choose what to search first.
+- `node scripts/wiki.js --redirects "<article>"` lists the redirects to an article with their categories
+  (alternative name, subtopic and so on).
 - `node scripts/set-answers.js <draft> <file | ->` writes answers into the draft, one per line:
   `id<TAB>value<TAB>s1,s2<TAB>rationale` (value -2..2 or null). It checks each line and writes nothing if one fails.
   Each statement it writes, null included, leaves the statements file, so that file lists what is left to search.

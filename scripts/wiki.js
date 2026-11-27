@@ -7,6 +7,9 @@
 //   node scripts/wiki.js --info "<title>|<title>|..."              canonical title, infobox types, disambiguation, Wikidata id
 //   node scripts/wiki.js --wikidata Q12345                         the Wikidata item (labels, aliases, claims) as JSON
 //   node scripts/wiki.js --search "<words>"                        article titles matching the words
+//   node scripts/wiki.js --redirects "<title or URL>"              every redirect to the article, with the section it
+//                                                                  points to and its "R from …" categories (alternative
+//                                                                  name, subtopic, misspelling…), to judge which are other names
 //   node scripts/wiki.js --commons "File:<name>"                   a Commons file: where it redirects, and its log
 //                                                                  (renames, deletions), as JSON
 // Wikipedia is for leads only (audits/AUDIT_RULES.md section 2): follow its citations to the originals.
@@ -83,7 +86,7 @@ module.exports = { apiUrl, titleOf, articleHtml, htmlToText, linkTitles, seeAlso
 
 async function main() {
   const [flag, arg] = process.argv[2] && process.argv[2].startsWith("--") ? [process.argv[2], process.argv[3]] : [null, process.argv[2]];
-  if (!arg) { console.error("usage: node scripts/wiki.js [--html | --links | --info | --wikidata | --search | --commons] <title, URL, Q-id, words or File:name>"); process.exit(1); }
+  if (!arg) { console.error("usage: node scripts/wiki.js [--html | --links | --info | --redirects | --wikidata | --search | --commons] <title, URL, Q-id, words or File:name>"); process.exit(1); }
   if (flag === "--commons") {
     const t = String(arg).replace(/^https?:\/\/commons\.wikimedia\.org\/wiki\//, "").replace(/_/g, " ");
     const page = await cached(apiUrl({ action: "query", redirects: "1", titles: t, prop: "imageinfo", iiprop: "url" }, "commons.wikimedia.org"));
@@ -100,6 +103,26 @@ async function main() {
   if (flag === "--search") {
     const r = await cached(apiUrl({ action: "query", list: "search", srsearch: arg, srlimit: "20" }));
     for (const s of r.query.search) console.log(s.title);
+    return;
+  }
+  // One call instead of each session's own redirect-and-category script (Brandon, 2026-11-27: redircats.js, rc.js).
+  if (flag === "--redirects") {
+    const reds = [];
+    let cont = {};
+    do {
+      const r = await cached(apiUrl({ action: "query", redirects: "1", titles: titleOf(arg), prop: "redirects", rdprop: "title|fragment", rdlimit: "max", ...cont }));
+      const page = r.query && r.query.pages && r.query.pages[0];
+      if (!page || page.missing) { console.error(`no article: ${titleOf(arg)}`); process.exit(1); }
+      if (!reds.length) console.log(`${page.title}: ${(page.redirects || []).length}${r.continue ? "+" : ""} redirect(s)`);
+      reds.push(...(page.redirects || []));
+      cont = r.continue || null;
+    } while (cont);
+    const cats = new Map();
+    for (let i = 0; i < reds.length; i += 50) {
+      const r = await cached(apiUrl({ action: "query", titles: reds.slice(i, i + 50).map((x) => x.title).join("|"), prop: "categories", cllimit: "max" }));
+      for (const p of (r.query && r.query.pages) || []) cats.set(p.title, (p.categories || []).map((c) => c.title.replace(/^Category:/, "")).filter((c) => /^Redirects? (from|to) /.test(c)).map((c) => c.replace(/^Redirects? from /, "R from ").replace(/^Redirects? to /, "R to ")));
+    }
+    for (const x of reds) console.log(`${x.title}${x.fragment ? ` → #${x.fragment}` : ""}${(cats.get(x.title) || []).length ? `	${cats.get(x.title).join("; ")}` : ""}`);
     return;
   }
   if (flag === "--info") {
