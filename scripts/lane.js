@@ -20,7 +20,7 @@
 //     lives here).
 //     - A later pass starts from a draft the driver seeds from the committed audit, without Wikipedia citations
 //       (seedLaterPass): answers resting on them alone are nulled and open.
-//     - Before the session (prepare): sources validate.js can't tie to the subject (coatracks included) and Wikipedia
+//     - Before the session (prepare): cited sources with no saved copy are saved (scripts/save-sources.js); sources validate.js can't tie to the subject (coatracks included) and Wikipedia
 //       leave the answers (scripts/cleanup.js dropFailing), answers validate.js fails are nulled (nullFailing), and the
 //       answers left are kept aside in .settled/<id>.json; the draft holds the open statements only, listed in
 //       <id>.statements.txt with each statement's id and text alone.
@@ -277,6 +277,13 @@ const ANSWER_RULE = (id) => `Answer the statements listed in scratchpad/lane-out
 const SCOPE = (id) => PEOPLE ? "" : `First do audits/PROMPT_IDEOLOGIES.md sections 1 and 2: find the defining sources and write the scope, sources, aliases, key figures and key works into scratchpad/lane-out/${LANE}/${id}.json (completing what the file already has).${otherNames(id)} Then: `;
 const START = (id) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. ${SCOPE(id)}${ANSWER_RULE(id)}${COLOR(id)}${namesakeBooks(id)}${booksAtStart(id)}${prepNote(id)}`;
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to creating scratchpad/lane-out/${LANE}/${id}.done.`;
+// A saved copy of each cited source that has none (scripts/save-sources.js), so the check below can run on it rather
+// than the session getting "no saved copy to check" (Brandon, 2026-11-27: fidelismo).
+function saveSources(id, when) {
+  try {
+    for (const r of require("./save-sources").saveSources(id, draft(id))) log(`${id}:${when} ${r.source} had no saved copy: ${r.result}`);
+  } catch (e) { log(`${id}:${when} saving sources failed: ${e.message.split("\n")[0]}`); }
+}
 // The sources validate.js fails, out of the answers (scripts/cleanup.js dropFailing): logged, and returned as a note
 // for the next session.
 function dropFailing(id, when, keepUnused = false) {
@@ -361,6 +368,7 @@ function prepare(id, when) {
     fs.writeFileSync(draft(id), lib.formatAudit({ id, name: entry.name || id, auditedAt: new Date().toISOString().slice(0, 10),
       auditor: MODEL || ENGINE, rules: require("./validate").CURRENT_RULES, wikipedia: entry.wikipedia || null, sources: [], answers: {} }));
   }
+  saveSources(id, when);
   dropFailing(id, when, true);
   nullFailing(id, when);
   const all = otherErrors(id).split("\n").filter(Boolean), gap = all.filter((l) => GAP_ERROR.test(l));
