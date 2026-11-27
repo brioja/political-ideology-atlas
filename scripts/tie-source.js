@@ -5,13 +5,13 @@
 //   node scripts/tie-source.js <id> <source id> [--people] [--dir <folder>]
 // Searches, by every name of the subject (its name, its aliases, Wikipedia's other names for it and an eponymous key
 // figure's surname, each in its word forms: "Trotskyism|Trotskyist|Trotskyite|Bolshevik-Leninism|Trotsky ..."):
-//   1. the source's own saved copy: where it names the subject (twice ties it; once may point to an alias to list);
+//   1. the source's own saved copy: where it names the subject (naming it ties it; a name not yet listed may be an alias);
 //   2. every page saved for this audit (scratchpad/sources/<id>/) and the local text corpora (maintainer reference
 //      books, Marxists Internet Archive, Gutenberg): passages that name the source (its title or author) near a name
 //      of the subject. Such a passage, cited as a source, can tie the text by title ("keyWorks");
 //   3. the defining sources: how often they name the source by title, in any of its forms (each part of the title,
 //      with or without "the", and a document's year forms: "Constitution of Year I (1793)" is also "Constitution of
-//      1793" and "1793 Constitution"). Two mentions tie it by title ("keyWorks", with "work": the source id); a
+//      1793" and "1793 Constitution"). A mention, quoted, ties it by title ("keyWorks", with "work": the source id); a
 //      defining source is about the ideology already, so it needn't name the ideology near the title.
 // It lists what it finds, with quotes; whether a passage really ties the text is the auditor's call. It never suggests
 // making the author a key figure: key figures come from the defining sources at the start, not from a text that needs
@@ -133,12 +133,12 @@ function titleForms(title) {
 }
 
 // What a run found that could tie the source, for drop-source.js: its own copy naming the subject, a passage, or a
-// title the defining sources name twice.
-const candidates = (r) => r.self.length + r.passages.length + r.titles.filter((t) => t.total >= 2).length;
+// title the defining sources name.
+const candidates = (r) => r.self.length + r.passages.length + r.titles.filter((t) => t.total >= 1).length;
 
 function report(r, sid) {
   const lines = [`Names searched for the subject: ${r.names.join(" | ")}`, `Names of ${sid}: ${r.srcNames.join(" | ")}`];
-  lines.push(r.self.length ? `\n${sid}'s own copy names the subject ${r.self.length} time(s) (twice ties it; a name not yet in "aliases" may belong there, with its reason and quote):`
+  lines.push(r.self.length ? `\n${sid}'s own copy names the subject ${r.self.length} time(s) (that ties it; a name not yet in "aliases" may belong there, with its reason and quote):`
     : `\n${sid}'s own copy never names the subject.`);
   for (const h of r.self.slice(0, MAX_PER_PLACE)) lines.push(`  "${h.name}" (${h.where}): ...${h.quote}...`);
   const own = r.passages.filter((p) => p.where.startsWith("scratchpad/")), corp = r.passages.filter((p) => !p.where.startsWith("scratchpad/"));

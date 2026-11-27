@@ -103,9 +103,8 @@ Both lists show on the ideology's page.
 `keyFigures`: the people the defining sources present the ideology as the thought or political legacy of
 (Clinton for Clintonism).
 - People only, no organisations.
-- Named at least twice by the defining sources: two quotes in its `evidence` (below), from two of them or two
-  passages of one. Each quote names both the person and the ideology (its name, an alias or a word form:
-  "zapatista"), so it shows the source tying them; a bare mention of the person doesn't.
+- With `evidence` (below): quotes from the defining sources presenting the ideology as theirs; a bare mention of
+  the person doesn't.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
   after for it (Lenin for Leninism).
 - If the defining sources present the ideology as the thought of someone another ideology lists (not as an
@@ -122,9 +121,9 @@ Both lists show on the ideology's page.
 
 `keyWorks`: the texts the defining sources make canonical (founding texts, manifestos, programmes, a thinker's
 major works).
-- By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform"), named at least twice:
-  two quotes in its `evidence` (below), from the defining sources or primary texts that name the ideology twice
-  themselves. A quote from a defining source names the ideology too, as for key figures.
+- By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform"), with `evidence`
+  (below): quotes from the defining sources, or from primary texts that name the ideology themselves, presenting it
+  as the ideology's own.
 - With `"work": "<source id>"` when you cite the text itself.
 - Unless you cite it, give it two fields for the page, as for key figures: `author`, as the sources name it
   ("Pierre-Joseph Proudhon"; an organisation for a programme), and `wikipedia`, the URL of the work's own English
@@ -132,15 +131,14 @@ major works).
   open the work: the page links the copy you cite, else the work's article, else the author.
 
 Primary texts (`primary` or `program`) are the ideology's own texts: founding documents, manifestos,
-programmes, writings and speeches. One is tied to the ideology when it is a key work (with `"work"` and its two
-quotes), when its author is a key figure,
-or when it names the ideology twice itself.
+programmes, writings and speeches. One is tied to the ideology when it is a key work (with `"work"` and its
+quotes), when its author is a key figure, or when it names the ideology itself.
 
 ### Evidence
 
 Give each alias its evidence: `{ "name", "source": "<source id>", "quote": "<verbatim passage>" }`, a passage from
-that source's saved copy that uses the name. A key figure or key work gives two passages or more instead, different
-ones (one source may give both): `"evidence": [{ "source": "<source id>", "quote": "<verbatim passage>" }, ...]`; validate.js checks the quote is there and contains it (a `REDIRECT` or `TRANSLATION`
+that source's saved copy that uses the name. A key figure or key work gives one passage or more instead:
+`"evidence": [{ "source": "<source id>", "quote": "<verbatim passage>" }, ...]`; validate.js checks the quote is there and contains it (a `REDIRECT` or `TRANSLATION`
 alias needs none). Save every source you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so
 the check can read it.
 

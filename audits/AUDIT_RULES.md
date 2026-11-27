@@ -8,9 +8,9 @@ how evidence is judged goes in this file, so both kinds of audit get it.
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
 rules 4 tags every source as actions or words; rules 5 accounts for every one of a person's own books
 in the local library; rules 6 accounts for every text known to exist by a person and lists every source
-not found, with two places tried; rules 7: a 0 is a split within actions or within words, never words against actions; rules 8: an
-ideology's primary text is tied only by its own naming of the ideology, a key work with its quotes, or a key
-figure's authorship, never by counting its title in other sources.)
+not found, with two places tried; rules 7: a 0 is a split within actions or within words, never words against
+actions; rules 8: key figures and key works rest on evidence quotes, never on counting a name or title in the
+sources.)
 
 ## 1. Standard
 
