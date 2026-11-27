@@ -335,6 +335,15 @@ function validate(id) {
     if (!ans.rationale || ans.rationale.trim().length < 20) errors.push(`${st.id}: rationale missing or too short`);
     if (!Array.isArray(ans.sources) || ans.sources.length === 0) errors.push(`${st.id}: cite at least one source`);
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+    // A rationale that names a source the answer doesn't cite rested on it unchecked (Brandon, 2026-11-27: four
+    // socialist-oriented-market-economy answers named a Wikipedia article only in their rationales, so the Wikipedia
+    // check, which reads "sources", passed them for six weeks). Ids with a digit only: people audits use words such as
+    // "family" as ids. An error in a draft, so scripts/cleanup.js nullFailing nulls the answer before a lane session; a
+    // warning on published audits until their next pass.
+    if (Array.isArray(ans.sources)) {
+      const named = [...sourceIds].filter((sid) => /\d/.test(sid) && !ans.sources.includes(sid) && new RegExp(`(?<![\\w-])${sid.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\w-])`).test(ans.rationale || ""));
+      if (named.length) (AS_CURRENT || DIR ? errors : warnings).push(`${st.id}: rationale names ${named.join(", ")}, which the answer doesn't cite: add ${named.length > 1 ? "them" : "it"} to "sources" if the answer rests on ${named.length > 1 ? "them" : "it"}, or take ${named.length > 1 ? "them" : "it"} out of the rationale`);
+    }
     // Wikipedia is a tertiary source (audits/AUDIT_RULES.md section 2; Brandon, 2026-11-25): it finds evidence, it
     // isn't evidence, so no answer cites it; cite the source it cites. An error from rules 7 on, a warning before.
     if (Array.isArray(ans.sources)) for (const sid of ans.sources) {

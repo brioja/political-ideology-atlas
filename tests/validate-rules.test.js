@@ -265,6 +265,22 @@ fails("answer resting only on OnTheIssues", E(base(), (a) => { a.sources.push({ 
   assert(!errorsFor(listed).some((e) => /Wikipedia article/.test(e)), "a Wikipedia source listed but cited by no answer is fine"); n++;
 }
 
+// A rationale naming a source the answer doesn't cite (Brandon, 2026-11-27): an error in a draft (--dir or --as-current,
+// so scripts/cleanup.js nullFailing nulls it before a lane session), a warning on a published audit, as here.
+{
+  const warns = (rationale, sources = ["s2"], extra) => {
+    const a = base(); a.answers[B] = { ...a.answers[B], rationale, sources }; if (extra) extra(a);
+    fs.writeFileSync(tmp, JSON.stringify(a, null, 2)); setCommittedForTests(() => null);
+    return validate(subject.id).warnings.filter((w) => /rationale names/.test(w));
+  };
+  const said = "Said in a 2020 interview that this statement is wrong";
+  assert.deepStrictEqual(warns(`${said} (s2, s3).`), [`${B}: rationale names s3, which the answer doesn't cite: add it to "sources" if the answer rests on it, or take it out of the rationale`], "names an uncited source"); n++;
+  assert.deepStrictEqual(warns(`${said} (s3 Gini).`).length, 1, "names it with other words in the brackets"); n++;
+  assert.deepStrictEqual(warns(`${said} (s2, s3).`, ["s2", "s3"]), [], "names only cited sources"); n++;
+  assert.deepStrictEqual(warns(`${said} (s2; see s30 and s3-b).`), [], "a longer id isn't the source"); n++;
+  assert.deepStrictEqual(warns(`${said}, and his family agreed (s2).`, ["s2"], (a) => a.sources.push({ id: "family", kind: "primary", evidence: "words", title: "Family letters", url: "https://example.org/family" })), [], "a word id (people audits) isn't checked"); n++;
+}
+
 setCommittedForTests(null);
 fs.rmSync(path.dirname(tmp), { recursive: true, force: true });
 console.log(`validate rules: ${n} cases passed`);

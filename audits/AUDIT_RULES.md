@@ -203,4 +203,5 @@ free trade, not about markets in general.
 
 Each rationale is one or two plain sentences that explain the answer, not restate it: what the source
 states about this statement, never a stock phrase ("Nationalism rejected."). It cites at least one
-source id from your `sources` list.
+source id from your `sources` list, and names only sources the answer cites: a source it draws on goes in the
+answer's `sources`.
