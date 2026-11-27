@@ -15,8 +15,7 @@ a later pass's draft is not a copy of it.
     key works);
   - then answer the statements in `<id>.statements.txt`, from the local texts and the web (`SEARCH`).
 - **Added to the first message when they apply:**
-  - the ideology's other names, to search under (`otherNames`). The session isn't told where they come from (the
-    Wikipedia redirects to its article), only that they count as aliases already;
+  - the ideology's other names, to search under, which count as aliases already (`otherNames`);
   - books downloaded on it (`fetchBooks`, `booksAtStart`);
   - the namesake's reference books (`namesakeBooks`);
   - a request for its color (`COLOR`);
