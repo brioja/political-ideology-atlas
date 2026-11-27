@@ -102,14 +102,14 @@ Both lists show on the ideology's page.
 `keyFigures`: the people the defining sources present the ideology as the thought or political legacy of
 (Clinton for Clintonism).
 - People only, no organisations.
-- With `evidence` (below): quotes from the defining sources presenting the ideology as theirs; a bare mention of
-  the person doesn't.
+- With `evidence` (below): two quotes or more, different passages, from the defining sources presenting the ideology
+  as theirs; a bare mention of the person doesn't.
 - No other ideology's key figure or namesake: audits/namesakes.json reserves each person an ideology is named
   after for it (Lenin for Leninism).
 - If the defining sources present the ideology as the thought of someone another ideology lists (not as an
   influence on it), claim them instead: `keyFigureClaims`, each `{ "first", "last", "heldBy": "<that ideology's
-  id>", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`, with two quotes or more naming them and
-  the ideology, from two different defining sources; your defining sources must also name them more often than the holder's do.
+  id>", "role", "wikipedia", "evidence": [{ "source", "quote" }, ...] }`, with three quotes or more naming them and
+  the ideology, from two different defining sources or more; your defining sources must also name them more often than the holder's do.
   The claim goes to audits/key-figure-claims.json, and their texts aren't tied here.
 - If validate.js warns that another ideology claims one of yours, keep them only if your defining sources present
   the ideology as their thought or political legacy; one they present as an influence on it, take out.
@@ -137,7 +137,7 @@ quotes), when its author is a key figure, or when it names the ideology itself.
 
 Give each alias its evidence: `{ "name": ["<alias>", ...], "reason", "source": "<source id>", "quote": "<verbatim
 passage>" }`, a passage from that source's saved copy that uses each name. Names with the same reason and quote
-share one entry. A key figure or key work gives one passage or more instead:
+share one entry. A key work gives one passage or more instead, a key figure two or more (a claim three):
 `"evidence": [{ "source": "<source id>", "quote": "<verbatim passage>" }, ...]`; validate.js checks the quote is there and contains it (a `TRANSLATION`
 alias needs none). Save every source you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so
 the check can read it.

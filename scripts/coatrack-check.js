@@ -398,15 +398,17 @@ function evidence(id, audit, field, x, strict, contains) {
 }
 
 // A key figure's, claim's or key work's "evidence": quotes naming them from sources that discuss the ideology. It
-// replaced counting the name twice in those sources (Brandon, 2026-11-26); one quote is enough (2026-11-27: a check,
-// not the rules). Older audits keep one "source" and "quote" until their next pass. Key figures and claims quote
+// replaced counting the name twice in those sources (Brandon, 2026-11-26). A key work needs one quote (2026-11-27: a
+// check, not the rules); a key figure two, different passages (one source may give both), and a claim three
+// (Brandon, 2026-11-27: one quote let a "forerunner" in as a key figure). Older audits keep one "source" and "quote" until their next pass. Key figures and claims quote
 // defining sources; a key work may also quote a primary text that names the ideology itself (`vouches`).
 const figureEvidence = (x) => Array.isArray(x && x.evidence) ? x.evidence
   : x && typeof x === "object" && (x.source !== undefined || x.quote !== undefined) ? [{ source: x.source, quote: x.quote }] : [];
 function passages(id, audit, field, x, strict, vouches = () => false) {
   const work = field === "key work", label = `${field} "${entryName(x)}"`, list = Array.isArray(x.evidence) ? x.evidence : [], out = [];
   const from = work ? "defining sources or primary texts that name the ideology themselves" : "defining sources";
-  if (!list.some((e) => e && norm(e.quote).trim())) out.push(`${label}: needs a quote in "evidence" ([{ "source", "quote" }, ...]) naming ${work ? "it by that title" : "them"}, from ${from}`);
+  const need = work ? 1 : field === "key figure claim" ? 3 : 2, have = new Set(list.map((e) => norm(e && e.quote).trim()).filter(Boolean)).size;
+  if (have < need) out.push(`${label}: needs ${need === 1 ? "a quote" : `${need === 2 ? "two" : "three"} quotes or more, different passages,`} in "evidence" ([{ "source", "quote" }, ...]) naming ${work ? "it by that title" : "them"}, from ${from}${have ? ` (has ${have})` : ""}`);
   for (const e of list) {
     const src = (audit.sources || []).find((s) => e && s.id === e.source);
     if (src && !vouches(src) && (!DEFINING.includes(src.kind) || isWikipedia(src))) out.push(`${label}: ${src.id} is ${isWikipedia(src) ? "Wikipedia" : `a ${src.kind} source`}; the evidence comes from ${from}${work ? "" : " (reference, scholarly or secondary, never Wikipedia)"}`);
