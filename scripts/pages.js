@@ -109,7 +109,7 @@ function ideologyBody(ideo) {
     ${ideo.summary ? `<p>${esc(ideo.summary)}</p>` : ""}
     ${ideo.wikipedia ? `<p class="small"><a href="${esc(ideo.wikipedia)}">Wikipedia</a></p>` : ""}
     <h2>What it stands for</h2>${beliefs(ideo, 6)}
-    ${figures.length ? `<h2>Key figures</h2><ul>${figures.map((f) => `<li>${esc(f.name)}${f.role ? `: ${esc(f.role)}` : ""}</li>`).join("")}</ul>` : ""}
+    ${figures.length ? `<h2>Key figure${figures.length > 1 ? "s" : ""}</h2><ul>${figures.map((f) => `<li>${esc(f.name)}${f.role ? `: ${esc(f.role)}` : ""}</li>`).join("")}</ul>` : ""}
     ${works.length ? `<h2>Key works</h2><ul>${works.map((w) => `<li>${w.url ? `<a href="${esc(w.url)}">${esc(w.title)}</a>` : esc(w.title)}${w.author ? `, ${esc(w.author)}` : ""}</li>`).join("")}</ul>` : ""}
     <h2>Closest ideologies</h2>${ideologyLinks(neighbors)}
     ${closest.length ? `<h2>People closest to it</h2>${personLinks(closest)}` : ""}

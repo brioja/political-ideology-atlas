@@ -163,7 +163,7 @@ function colorErrors(id) {
 
 // The key figure and key works (audits/PROMPT_IDEOLOGIES.md section 2), checked in a full validation.
 function keyFigureChecks(a, id, sources, errors, warnings) {
-  // People most associated with the ideology, shown as "Key figures".
+  // The person most associated with the ideology, shown as "Key figure" ("Key figures" on an older audit that lists several).
   // The key figure and key works (audits/PROMPT_IDEOLOGIES.md): their names and evidence are checked by coatrack-check.js; here,
   // what the ideology page shows. A pass gives each figure a role and Wikipedia article; figures moved over from the
   // old "authors" list (2026-11-21) get theirs at their next pass.

@@ -2041,7 +2041,7 @@ function keyWorkRow(w) {
     `<span class="match-name"><span class="stack-tight"><span>${esc(w.title)}</span>${w.author ? `<span class="muted small">${esc(w.author)}</span>` : ""}</span></span>`);
 }
 const keyFiguresAndWorks = (ideo) => (ideo.keyFigures && ideo.keyFigures.length
-  ? `<section class="stack"><h2>Key figures</h2><ul class="matches">${ideo.keyFigures.map(keyFigureRow).join("")}</ul></section>` : "")
+  ? `<section class="stack"><h2>Key figure${ideo.keyFigures.length > 1 ? "s" : ""}</h2><ul class="matches">${ideo.keyFigures.map(keyFigureRow).join("")}</ul></section>` : "")
   + (ideo.keyWorks && ideo.keyWorks.length
   ? `<section class="stack"><h2>Key works</h2><ul class="matches">${ideo.keyWorks.map(keyWorkRow).join("")}</ul></section>` : "");
 

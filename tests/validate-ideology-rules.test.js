@@ -76,7 +76,7 @@ try {
   fails("too little further reading", E(base(), (a) => { a.furtherReading.pop(); }), /"furtherReading" needs 2 to 4 items, has 1/);
   fails("too much further reading", E(base(), (a) => { for (let i = 0; i < 3; i++) a.furtherReading.push({ title: `More ${i}`, url: `https://example.org/more${i}` }); }), /"furtherReading" needs 2 to 4 items, has 5/);
   fails("further reading without a url", E(base(), (a) => { a.furtherReading[0].url = "not a url"; }), /furtherReading item needs a title and an http\(s\) url/);
-  // Key figures: one at most, people only, each with a Wikipedia article URL when given (and a role and article in a pass).
+  // Key figure: one at most, people only, each with a Wikipedia article URL when given (and a role and article in a pass).
   ok("key figures left out", E(base(), (a) => { delete a.keyFigures; }));
   ok("a secondary source stands in for a reference one", E(base(), (a) => { a.sources[0].kind = "secondary"; }));
   const fig = () => ({ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: `Vexmoor led ${N} for years` }] });
