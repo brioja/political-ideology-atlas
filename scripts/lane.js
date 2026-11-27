@@ -23,7 +23,7 @@
 //     - Before the session (prepare): sources validate.js can't tie to the subject (coatracks included) and Wikipedia
 //       leave the answers (scripts/cleanup.js dropFailing), answers validate.js fails are nulled (nullFailing), and the
 //       answers left are kept aside in .settled/<id>.json; the draft holds the open statements only, listed in
-//       <id>.statements.json with each statement's id and text alone.
+//       <id>.statements.txt with each statement's id and text alone.
 //     - One session (START, resumed with RESUME) does an ideology's scope, sources, aliases, key figures and key works
 //       (audits/PROMPT.md sections 1 and 2) and answers the open statements from local texts and the web, until it
 //       creates <id>.done, which the driver turns into the subject's DONE.txt line. The answers kept aside go back,
@@ -252,12 +252,12 @@ const doneMark = (id) => path.join(OUT, `${id}.done`);
 // listed (Brandon, 2026-11-26: clutter that confuses the task): get.js and no-direct-fetch.js print the tool to use
 // when a session reaches for such a site.
 const SEARCH = (id) => `local texts (the local corpora, ~/.cache/political-ideology-atlas/corpora/, listed in its README.md; the maintainer's reference library; the books downloaded on the subject, scratchpad/sources/${id}/${PEOPLE ? "" : ` and ~/.cache/political-ideology-atlas/corpora/ideology-books/${id}/`}) and the web (web searches, \`node scripts/get.js ${id} <url>\`, scripts/wiki.js and scripts/yt.js).`;
-// The statements a session answers are listed in <id>.statements.json, and its file holds only their answers
+// The statements a session answers are listed in <id>.statements.txt, and its file holds only their answers
 // (prepare): the answers that pass today's rules are kept aside, so there is nothing to carry on from (Brandon,
 // 2026-11-26). Each statement is searched for, and the end condition names that (Brandon, 2026-11-26: with "When the
 // audit is done" the sessions answered what the main texts state outright and stopped).
-const statementsFile = (id) => path.join(OUT, `${id}.statements.json`);
-const ANSWER_RULE = (id) => `Answer the statements listed in scratchpad/lane-out/${LANE}/${id}.statements.json, in scratchpad/lane-out/${LANE}/${id}.json, from ${SEARCH(id)}${PEOPLE ? " A listed statement that already has an answer rests on the person's words alone: their record (acts) on that statement outweighs it (record over words, audits/AUDIT_RULES.md); look for one, and with no record leave the answer as it is." : ""} Number new sources on from the existing ones.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT.md, Aliases)."} Search for an answer to every statement in the statements file, one by one. When you have searched for every statement in the file, create the empty file scratchpad/lane-out/${LANE}/${id}.done and end your turn; don't run validate.js (the driver validates the file and sends back what to fix).`;
+const statementsFile = (id) => path.join(OUT, `${id}.statements.txt`);
+const ANSWER_RULE = (id) => `Answer the statements listed in scratchpad/lane-out/${LANE}/${id}.statements.txt, in scratchpad/lane-out/${LANE}/${id}.json, from ${SEARCH(id)}${PEOPLE ? " A listed statement that already has an answer rests on the person's words alone: their record (acts) on that statement outweighs it (record over words, audits/AUDIT_RULES.md); look for one, and with no record leave the answer as it is." : ""} Number new sources on from the existing ones.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT.md, Aliases)."} Search for an answer to every statement in the statements file, one by one. When you have searched for every statement in the file, create the empty file scratchpad/lane-out/${LANE}/${id}.done and end your turn; don't run validate.js (the driver validates the file and sends back what to fix).`;
 // An ideology's session first does what PROMPT.md section 2 settles (scope, sources, aliases, key figures, key works),
 // then the answers, in the same session (Brandon, 2026-11-27).
 const SCOPE = (id) => PEOPLE ? "" : `First do audits/PROMPT.md sections 1 and 2: find the defining sources and write the scope, sources, aliases, key figures and key works into scratchpad/lane-out/${LANE}/${id}.json (completing what the file already has).${otherNames(id)} Then: `;
@@ -300,7 +300,7 @@ function openStatements(a) {
     .filter((sid) => !known(answers[sid]) || (PEOPLE && !(answers[sid].sources || []).some((x) => actions.has(x))));
 }
 // Keeps every answer but the open ones aside, gives each open statement an empty entry, and lists them in
-// <id>.statements.json. Returns their ids.
+// <id>.statements.txt. Returns their ids.
 function hideSettled(id) {
   restoreSettled(id);
   const a = JSON.parse(fs.readFileSync(draft(id), "utf8")), ids = openStatements(a), open = new Set(ids);
@@ -319,7 +319,16 @@ function hideSettled(id) {
 // (855497488, 2026-11-19), the same retake that made "never", hedges and "always" wording errors.
 function writeStatements(id, ids) {
   const set = new Set(ids);
-  fs.writeFileSync(statementsFile(id), JSON.stringify({ statements: require("./lib").allStatements().filter((s) => set.has(s.id)).map((s) => ({ id: s.id, text: s.text })) }, null, 2) + "\n");
+  // Plain text, one "id: text" line per statement under its theme (Brandon, 2026-11-27): every session wrote a script to
+  // turn the JSON into such a list and printed it, often twice, about 7k tokens carried on every later turn.
+  const byTheme = new Map();
+  for (const s of require("./lib").allStatements().filter((s) => set.has(s.id))) {
+    if (!byTheme.has(s.theme)) byTheme.set(s.theme, []);
+    byTheme.get(s.theme).push(`${s.id}: ${s.text}`);
+  }
+  fs.writeFileSync(statementsFile(id), `${set.size} statements, by theme.\n` + [...byTheme].map(([t, l]) => `\n## ${t || "Other"}\n${l.join("\n")}`).join("\n") + "\n");
+  const old = statementsFile(id).replace(/\.txt$/, ".json");
+  if (fs.existsSync(old)) fs.unlinkSync(old);
 }
 // Before the session: failing sources and answers out, the rest kept aside. What validate.js still reports that no
 // script fixes goes in the first message (prepNote), as problems in the file to fix. Returns the re-audit gap's error

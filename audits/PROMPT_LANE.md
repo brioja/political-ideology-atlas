@@ -21,5 +21,13 @@ Audit the id the driver gives you, person or ideology.
    with everything taken from it: its id in the answers' `sources` and its claims in their rationales.
 5. Edit no other file. Do not build, test, commit or push.
 
+## Tools
+
+- `node scripts/passages.js <id> <regex> [--in <dir-or-file>]` prints the paragraphs that match in the subject's
+  saved sources and downloaded books (and in each `--in` path, such as a corpus folder), with file and line, a page
+  at a time (`--page 2`); `--files` counts matches per file. Use it to find passages instead of reading whole texts.
+- `node scripts/set-answers.js <draft> <file | ->` writes answers into the draft, one per line:
+  `id<TAB>value<TAB>s1,s2<TAB>rationale` (value -2..2 or null). It checks each line and writes nothing if one fails.
+
 An `excluded:` line or a `notIdeasOfWhatSocietyShouldBe` record from validate.js is a result, not an
 error. The `DONE.txt` files in `scratchpad/lane-out/` are the driver's: don't write to them.

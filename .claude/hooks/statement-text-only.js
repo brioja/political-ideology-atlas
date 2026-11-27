@@ -1,7 +1,7 @@
 // PreToolUse guard for audit sessions (Brandon, 2026-11-27): scripts/lane.js runs its Claude sessions with
 // AUDIT_LANE=1, and this hook then refuses reading the files that carry the site's agree/disagree explanations and
 // notes for the statements: the root statements.json and the built data.js. A session sees each statement's text
-// alone, in the statements file the driver names (<id>.statements.json, which passes), as Sonnet runs were tested
+// alone, in the statements file the driver names (<id>.statements.txt), as Sonnet runs were tested
 // for understanding that way. Scripts the session runs (validate.js and the like) still read the bank themselves.
 // No env var, no effect. Codex doesn't read these hooks.
 if (process.env.AUDIT_LANE !== "1") process.exit(0);
