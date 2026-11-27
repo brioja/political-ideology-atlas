@@ -95,7 +95,7 @@ and Progress", "radical left") isn't a `SUPPORTED`, `TRANSLATION` or `SPELLING` 
 ("modern liberalism" is a disambiguation page); a redirect to a section of the ideology's own article is fine.
 An alias's quote may name the ideology by any of its redirects.
 
-### Key figures and key works
+### Key figure and key works
 
 Both lists show on the ideology's page.
 
@@ -128,7 +128,7 @@ major works).
   names the work by its title, the title's head (before a colon or bracket), or, when the work has a `wikipedia`
   article, the article's title or a Wikipedia redirect to it.
 - With `"work": "<source id>"` when you cite the text itself.
-- Unless you cite it, give it two fields for the page, as for key figures: `author`, as the sources name it
+- Unless you cite it, give it two fields for the page, as for the key figure: `author`, as the sources name it
   ("Pierre-Joseph Proudhon"; an organisation for a programme), and `wikipedia`, the URL of the work's own English
   Wikipedia article, or `null` if it has none. Add `authorWikipedia`, the author's article, when there is one. You needn't
   open the work: the page links the copy you cite, else the work's article, else the author.

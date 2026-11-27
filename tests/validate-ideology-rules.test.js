@@ -152,7 +152,7 @@ try {
   // Source check: defining sources must discuss the ideology; every source needs a saved copy.
   fails("defining source never names the ideology", E(base(), (a) => { a.sources[2].url = "https://example.org/unrelated"; }), /source s3 \(scholarly\) never names/);
   fails("defining source with no saved copy", E(base(), (a) => { a.sources[2].url = "https://example.org/not-saved"; }), /sources: s3 have no saved copy/);
-  // Aliases, key figures and key works need evidence quoted from a saved source.
+  // Aliases, the key figure and key works need evidence quoted from a saved source.
   fails("alias as a bare string", E(base(), (a) => { a.aliases = [`${N} Doctrine`]; }), /alias ".*" needs evidence/);
   fails("alias quote not in the source", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s1", quote: `${N}ists believe in ${N} entirely` }]; }), /the quote isn't in s1's saved copy|its quote doesn't contain it/);
   {

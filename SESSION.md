@@ -11,7 +11,7 @@ a later pass's draft is not a copy of it.
 
 - **The driver's first message** (`START`):
   - follow `audits/PROMPT_LANE.md`;
-  - for an ideology, first do `audits/PROMPT_IDEOLOGIES.md` sections 1 and 2 (scope, sources, aliases, key figures,
+  - for an ideology, first do `audits/PROMPT_IDEOLOGIES.md` sections 1 and 2 (scope, sources, aliases, key figure,
     key works);
   - then answer the statements in `<id>.statements.txt`, from the local texts and the web (`SEARCH`).
 - **Added to the first message when they apply:**
@@ -24,7 +24,7 @@ a later pass's draft is not a copy of it.
   - `RESUME` ("go on where you left off");
   - `FIX`, with the validate.js errors left once the session marks the draft done.
 - **Its draft**, `scratchpad/lane-out/<lane>/<id>.json`:
-  - the audit's sources, aliases, key figures and key works;
+  - the audit's sources, aliases, key figure and key works;
   - an empty entry for each open statement, and no other answers.
 - **`<id>.statements.txt`**: each open statement's id and text, by theme (`writeStatements`).
 - **The files its messages point to**: `audits/PROMPT_LANE.md`, `audits/AUDIT_RULES.md`,

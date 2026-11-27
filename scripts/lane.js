@@ -24,7 +24,7 @@
 //       leave the answers (scripts/cleanup.js dropFailing), answers validate.js fails are nulled (nullFailing), and the
 //       answers left are kept aside in .settled/<id>.json; the draft holds the open statements only, listed in
 //       <id>.statements.txt with each statement's id and text alone.
-//     - One session (START, resumed with RESUME) does an ideology's scope, sources, aliases, key figures and key works
+//     - One session (START, resumed with RESUME) does an ideology's scope, sources, aliases, key figure and key works
 //       (audits/PROMPT_IDEOLOGIES.md sections 1 and 2) and answers the open statements from local texts and the web, until it
 //       creates <id>.done, which the driver turns into the subject's DONE.txt line. The answers kept aside go back,
 //       and validate.js errors go back to the same session to fix (FIX).
@@ -228,7 +228,7 @@ function namesakeBooks(id) {
   return `\n\nThe maintainer's reference library (~/.cache/political-ideology-atlas/corpora/reference/text/) holds these books by or about ${person}, whom \`${id}\` is named after. Search each for the statements' topics: the namesake's own books are primary sources, and books about them (biographies) are scholarship defining the ideology (audits/AUDIT_RULES.md on supplied texts):\n${files.map((f) => `- ${f}`).join("\n")}`;
 }
 // Books on the ideology (scripts/ideology-books.js, Brandon 2026-11-25): before the pass, the books its Wikipedia
-// article lists (further reading, bibliography, notable works), the committed audit's key works and key figures' own
+// article lists (further reading, bibliography, notable works), the committed audit's key works and key figure's own
 // books, and archive.org books named after it, wherever archive.org has the full text open. Re-audits had nulled what no defining source tied without opening
 // the scholarship that would tie it (Libertarian socialism, Monarchism).
 function fetchBooks(id) {
@@ -273,9 +273,9 @@ const SEARCH = (id) => `local texts (the local corpora, ~/.cache/political-ideol
 // audit is done" the sessions answered what the main texts state outright and stopped).
 const statementsFile = (id) => path.join(OUT, `${id}.statements.txt`);
 const ANSWER_RULE = (id) => `Answer the statements listed in scratchpad/lane-out/${LANE}/${id}.statements.txt, in scratchpad/lane-out/${LANE}/${id}.json, from ${SEARCH(id)}${PEOPLE ? " A listed statement that already has an answer rests on the person's words alone: their record (acts) on that statement outweighs it (record over words, audits/AUDIT_RULES.md); look for one, and with no record leave the answer as it is." : ""} Number new sources on from the existing ones.${PEOPLE ? "" : " If a text gives another name for the ideology that \"aliases\" lacks, add it with its reason and evidence (audits/PROMPT_IDEOLOGIES.md, Aliases)."} Search for an answer to every statement in the statements file, one by one. When you have searched for every statement in the file, create the empty file scratchpad/lane-out/${LANE}/${id}.done and end your turn; don't run validate.js (the driver validates the file and sends back what to fix).`;
-// An ideology's session first does what PROMPT_IDEOLOGIES.md section 2 settles (scope, sources, aliases, key figures, key works),
+// An ideology's session first does what PROMPT_IDEOLOGIES.md section 2 settles (scope, sources, aliases, key figure, key works),
 // then the answers, in the same session (Brandon, 2026-11-27).
-const SCOPE = (id) => PEOPLE ? "" : `First do audits/PROMPT_IDEOLOGIES.md sections 1 and 2: find the defining sources and write the scope, sources, aliases, key figures and key works into scratchpad/lane-out/${LANE}/${id}.json (completing what the file already has).${otherNames(id)} Then: `;
+const SCOPE = (id) => PEOPLE ? "" : `First do audits/PROMPT_IDEOLOGIES.md sections 1 and 2: find the defining sources and write the scope, sources, aliases, key figure and key works into scratchpad/lane-out/${LANE}/${id}.json (completing what the file already has).${otherNames(id)} Then: `;
 const START = (id) => `Follow audits/PROMPT_LANE.md. Your subject is \`${id}\`. ${SCOPE(id)}${ANSWER_RULE(id)}${COLOR(id)}${namesakeBooks(id)}${booksAtStart(id)}${prepNote(id)}`;
 const RESUME = (id) => `Go on with \`${id}\` where you left off, through to creating scratchpad/lane-out/${LANE}/${id}.done.`;
 // A saved copy of each cited source that has none (scripts/save-sources.js), so the check below can run on it rather

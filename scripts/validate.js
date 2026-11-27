@@ -161,10 +161,10 @@ function colorErrors(id) {
   return [];
 }
 
-// Key figures and key works (audits/PROMPT_IDEOLOGIES.md section 2), checked in a full validation.
+// The key figure and key works (audits/PROMPT_IDEOLOGIES.md section 2), checked in a full validation.
 function keyFigureChecks(a, id, sources, errors, warnings) {
   // People most associated with the ideology, shown as "Key figures".
-  // Key figures and key works (audits/PROMPT_IDEOLOGIES.md): their names and evidence are checked by coatrack-check.js; here,
+  // The key figure and key works (audits/PROMPT_IDEOLOGIES.md): their names and evidence are checked by coatrack-check.js; here,
   // what the ideology page shows. A pass gives each figure a role and Wikipedia article; figures moved over from the
   // old "authors" list (2026-11-21) get theirs at their next pass.
   const WIKI = /^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/;
@@ -283,7 +283,7 @@ function validate(id) {
     const recentPass = lastPassDate(a) >= "2026-11-06";
     const strict = AS_CURRENT || recentPass || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
-    // Evidence for aliases, key figures and key works is required from 2026-11-06 on (older audits get it at their next pass).
+    // Evidence for aliases, the key figure and key works is required from 2026-11-06 on (older audits get it at their next pass).
     const coatrack = require("./coatrack-check").check(id, a, { strict: AS_CURRENT || recentPass, pass: AS_CURRENT || !!DIR });
     const { problems, unchecked } = coatrack;
     const found = problems.map((pr) => `sources: ${pr}`);

@@ -9,7 +9,7 @@ file, to record that it follows these rules. (Rules 2 allowed marked inferences;
 rules 4 tags every source as actions or words; rules 5 accounts for every one of a person's own books
 in the local library; rules 6 accounts for every text known to exist by a person and lists every source
 not found, with two places tried; rules 7: a 0 is a split within actions or within words, never words against
-actions; rules 8: key figures and key works rest on evidence quotes, never on counting a name or title in the
+actions; rules 8: the key figure and key works rest on evidence quotes, never on counting a name or title in the
 sources.)
 
 ## 1. Standard
