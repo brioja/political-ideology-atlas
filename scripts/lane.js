@@ -347,7 +347,16 @@ function writeStatements(id, ids) {
 const prepNotes = new Map();
 function prepare(id, when) {
   restoreSettled(id);
-  if (!fs.existsSync(draft(id))) return;
+  // A first audit (a person, who has no scope phase) starts from a draft with the catalog's id, name and article: the
+  // session got no statements file and no draft, and said it couldn't start (neil-kinnock, 2026-11-26).
+  if (!fs.existsSync(draft(id))) {
+    const lib = require("./lib"), entry = (PEOPLE ? lib.peopleCatalog() : lib.catalog()).find((x) => x.id === id) || {};
+    fs.mkdirSync(path.dirname(draft(id)), { recursive: true });
+    // The pass's own fields are the driver's, as for a later pass (seedLaterPass); "auditor" gets the model once a
+    // session has run.
+    fs.writeFileSync(draft(id), lib.formatAudit({ id, name: entry.name || id, auditedAt: new Date().toISOString().slice(0, 10),
+      auditor: MODEL || ENGINE, rules: require("./validate").CURRENT_RULES, wikipedia: entry.wikipedia || null, sources: [], answers: {} }));
+  }
   dropFailing(id, when, true);
   nullFailing(id, when);
   const lines = localErrors(id).split("\n").filter(Boolean).map((l) => `- ${l.replace(/^error:\s*/, "")}`);
@@ -449,6 +458,8 @@ function exceptGap(id) {
       const prev = earlier.map((p) => p && p.auditedAt).filter(Boolean).sort().pop() || "";
       if (!a.auditedAt || a.auditedAt <= prev) { log(`${id}: draft dated ${a.auditedAt || "(none)"}, not after the last pass (${prev}); driver dated it ${today}`); a.auditedAt = today; changed = true; }
     }
+    // A first audit's draft names the engine until a session has run (prepare); then the model.
+    if (MODEL && a.auditor === ENGINE) { a.auditor = MODEL; changed = true; }
     const passes = Array.isArray(a.passes) ? a.passes : null;
     if (passes && a.auditedAt === today && !passes.some((p) => p.auditedAt === today)) {
       const auditor = MODEL || [].concat(a.auditor || []).pop();
