@@ -3,7 +3,7 @@
 //   node scripts/next.js [--ideologies | --people] [--by-views]   (--ideologies / --people: only that kind, so lanes
 //   can split the kinds; default: the kind with fewer live on the site, most viewed first; --skip id,id,...: pass
 //   over those, e.g. people waiting for books; --lane: also pass over every id with a draft or claim in scratchpad/lane-out/*/, so a
-//   lane takes one subject at a time and calls next.js again for the next). Later passes and new audits alternate (see lastWasNew below).
+//   lane takes one subject at a time and calls next.js again for the next). A later pass due comes before any new audit (see below).
 const { execFileSync } = require("child_process");
 const path = require("path");
 const skipArg = process.argv.indexOf("--skip");
@@ -89,21 +89,11 @@ function olderRules() {
   return { kind, id, name, wikipedia, wikipediaMatch, born, living, scopeNote, views12m: entry.views12m || 0,
     reason: `audit under rules v${rules}, later pass to current rules` };
 }
-// Later passes and new audits take turns (Brandon, 2026-11-10: "reaudit then someone new"). Stateless: if the last
-// "Audit <name>" commit added its audit file it was a new audit, so a later pass is next; if it modified one, a new
-// audit is next. Either kind falls back to the other when it has nothing due.
-function lastWasNew() {
-  try {
-    const out = execFileSync("git", ["-C", path.join(__dirname, ".."), "log", "-1", "--format=", "--name-status",
-      "--grep=^Audit ", "--", "audits/people", "audits/profiles"]).toString().trim();
-    return !out || out.startsWith("A");
-  } catch { return true; }
-}
-const reaudit = () => reauditQueue() || olderRules();
-if (lastWasNew()) {
-  const priority = reaudit();
-  if (priority) { console.log(JSON.stringify(priority)); process.exit(0); }
-}
+// Later passes first: a new audit only when no later pass is due (Brandon, 2026-11-27: every audit before rules 8 lacks
+// its fixes, and an old audit on the site can mislead while a subject with none can't; replaces taking turns with new
+// audits, 2026-11-10).
+const priority = reauditQueue() || olderRules();
+if (priority) { console.log(JSON.stringify(priority)); process.exit(0); }
 
 const person = IDEOLOGIES_ONLY ? null : firstNew(pending(["--people", TRIAGE ? "--triage" : "--by-views"], Infinity), "person");
 const ideology = PEOPLE_ONLY ? null : firstNew(pending(["--by-views"], Infinity), "ideology");
@@ -120,4 +110,4 @@ else {
   const order = live.person < live.ideology ? [p, i] : [i, p];
   pick = order.find(Boolean);
 }
-console.log(JSON.stringify(pick || (lastWasNew() ? null : reaudit()) || null));
+console.log(JSON.stringify(pick || null));
