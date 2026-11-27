@@ -304,7 +304,7 @@ function dropFailing(id, when, keepUnused = false) {
 function nullFailing(id, when) {
   try {
     const n = require("./cleanup").nullFailing(OUT, id, PEOPLE);
-    if (n.length) log(`${id}: ${when}, nulled ${n.length} failing answer(s):\n${n.map((s) => `  ${n.reasons[s]}`).join("\n")}`);
+    if (n.length) log(`${id}: ${when}, nulled ${n.length} failing answer(s):\n${[...new Set(n.map((s) => n.reasons[s]))].map((r) => `  ${r}`).join("\n")}`);
   } catch (e) { log(`${id}: ${when}, nulling failing answers failed: ${e.message.split("\n")[0]}`); }
 }
 // The answers a session doesn't work on are kept aside in OUT/.settled/<id>.json while it runs (Brandon, 2026-11-26:
