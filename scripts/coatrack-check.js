@@ -404,21 +404,20 @@ function evidence(id, audit, field, x, strict, contains) {
 // defining sources; a key work may also quote a primary text that names the ideology itself (`vouches`).
 const figureEvidence = (x) => Array.isArray(x && x.evidence) ? x.evidence
   : x && typeof x === "object" && (x.source !== undefined || x.quote !== undefined) ? [{ source: x.source, quote: x.quote }] : [];
-// The names a key work's quotes may use: its title, the title's head (before a colon or bracket, two words or more) and
-// the shorthand the sources use for it, listed in "shortNames" (Brandon, 2026-11-27: "Orbán's Constitution" for the
-// Fundamental Law of Hungary).
-const workNames = (x) => [...new Set([norm(entryName(x)), ...titleHeads(x && x.title), ...(Array.isArray(x && x.shortNames) ? x.shortNames : []).filter((n) => typeof n === "string" && n.trim()).map(norm)])];
+// The names a key work's quotes may use: its title and the title's head (before a colon or bracket, two words or more).
+const workNames = (x) => [...new Set([norm(entryName(x)), ...titleHeads(x && x.title)])];
 const namesWork = (x, quote) => workNames(x).some((n) => norm(quote).includes(n));
+const namesFigure = (x, quote) => norm(quote).includes(figureKey(x));
 function passages(id, audit, field, x, strict, vouches = () => false) {
   const work = field === "key work", label = `${field} "${entryName(x)}"`, list = Array.isArray(x.evidence) ? x.evidence : [], out = [];
   const from = work ? "defining sources or primary texts that name the ideology themselves" : "defining sources";
   const need = field === "key figure claim" ? 3 : 2, have = new Set(list.map((e) => norm(e && e.quote).trim()).filter(Boolean)).size;
-  if (have < need) out.push(`${label}: needs ${need === 2 ? "two" : "three"} quotes or more, different passages, in "evidence" ([{ "source", "quote" }, ...]) naming ${work ? "it (its title, or a short name in \"shortNames\")" : "them"}, from ${from}${have ? ` (has ${have})` : ""}`);
+  if (have < need) out.push(`${label}: needs ${need === 2 ? "two" : "three"} quotes or more, different passages, in "evidence" ([{ "source", "quote" }, ...]) naming ${work ? "it by its title" : "them"}, from ${from}${have ? ` (has ${have})` : ""}`);
   for (const e of list) {
     const src = (audit.sources || []).find((s) => e && s.id === e.source);
     if (src && !vouches(src) && (!DEFINING.includes(src.kind) || isWikipedia(src))) out.push(`${label}: ${src.id} is ${isWikipedia(src) ? "Wikipedia" : `a ${src.kind} source`}; the evidence comes from ${from}${work ? "" : " (reference, scholarly or secondary, never Wikipedia)"}`);
     const who = work ? { title: x.title } : { first: x.first, last: x.last, name: x.name };
-    out.push(...evidence(id, audit, field, { ...who, ...(e || {}) }, strict, (q) => work ? namesWork(x, q) : q.includes(figureKey(x))));
+    out.push(...evidence(id, audit, field, { ...who, ...(e || {}) }, strict, (q) => work ? namesWork(x, q) : namesFigure(x, q)));
   }
   return out;
 }
@@ -688,4 +687,4 @@ function check(id, full, { strict = false, pass = false } = {}) {
   return { problems, unchecked, warnings };
 }
 
-module.exports = { DEFINING, ideologyUnnamed, workNames, namesWork, figureEvidence, claims, setClaimsForTests, CLAIMS_FILE, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };
+module.exports = { DEFINING, ideologyUnnamed, workNames, namesWork, namesFigure, figureEvidence, claims, setClaimsForTests, CLAIMS_FILE, figuresTaken, personKey, entryName, setProfilesForTests, setAliasPagesForTests, setTranslationNamesForTests, translationNames, sameTranslation, prefetchAliasPages, aliasPage, namesakeOf, isNamesake, samePerson, reservedFor, check, norm, separately, forms, mentions, sourceText, isWikipedia, isName, namesTaken, isSpelling, isEponym, isEponymAlias, ALIAS_REASONS, plainName, sourceNames, namesLeft };

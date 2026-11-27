@@ -122,9 +122,8 @@ Both lists show on the ideology's page.
 major works).
 - By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform"), with `evidence`
   (below): two quotes or more, different passages, from the defining sources, or from primary texts that name the
-  ideology themselves, presenting it as the ideology's own, each naming both the work and the ideology. A quote may
-  name the work by its title, the title's head (before a colon or bracket), or a short name the sources use for it
-  ("Orbán's Constitution"), listed in `"shortNames": [...]`.
+  ideology themselves, presenting it as the ideology's own, each naming both the work and the ideology. A quote
+  names the work by its title or the title's head (before a colon or bracket).
 - With `"work": "<source id>"` when you cite the text itself.
 - Unless you cite it, give it two fields for the page, as for key figures: `author`, as the sources name it
   ("Pierre-Joseph Proudhon"; an organisation for a programme), and `wikipedia`, the URL of the work's own English
