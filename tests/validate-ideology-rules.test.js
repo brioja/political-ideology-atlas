@@ -97,6 +97,7 @@ try {
   ok("primary text tied by its key work title", E(base(), (a) => { unnamed(a); a.keyWorks = [work({ work: "s4" })]; }));
   ok("key work not cited as a source", E(base(), (a) => { a.keyWorks = [work()]; }));
   fails("key work quote not in the source", E(base(), (a) => { a.keyWorks = [work({ quote: "the Founding Rescript, a forgery" })]; }), /key work "Founding Rescript": the quote isn't in s1's saved copy/);
+  fails("key work with bad short names", E(base(), (a) => { a.keyWorks = [work({ shortNames: "Rescript" })]; }), /keyWorks\[0\]: "shortNames" must be a list/);
   fails("key work whose work is unknown", E(base(), (a) => { a.keyWorks = [work({ work: "s9" })]; }), /keyWorks\[0\]: unknown source 's9'/);
   ok("key work with its author and no article", E(base(), (a) => { a.keyWorks = [work({ author: "Quentin Vexmoor", wikipedia: null, authorWikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor" })]; }));
   fails("key work with a bad Wikipedia article", E(base(), (a) => { a.keyWorks = [work({ author: "Quentin Vexmoor", wikipedia: "https://example.org/x" })]; }), /keyWorks\[0\]: wikipedia must be an en\.wikipedia\.org article URL/);
@@ -108,12 +109,19 @@ try {
     assert(bare.some((l) => /needs its "author"/.test(l)) && bare.some((l) => /needs "wikipedia"/.test(l)), `--dir: expected a bare key work to need its author and article, got:\n${bare.join("\n")}`);
     assert.deepStrictEqual(errsFor(work({ author: "Quentin Vexmoor", wikipedia: null })), [], "--dir: an author and a null article are enough"); n += 2; }
   // Evidence in a pass (Brandon, 2026-11-26), for key works and key figures; an older audit's one "source" and "quote"
-  // is counted as before. One quote naming the work is enough (2026-11-27: a check, not the rules); a key figure needs two
-  // passages and a claim three (Brandon, 2026-11-27).
+  // is counted as before. A key work or key figure needs two passages, each naming it and the ideology, and a claim
+  // three (Brandon, 2026-11-27).
   { const passProblems = (a, re) => coatrack.check(subject.id, a, { strict: true, pass: true }).problems.filter((p) => re.test(p));
-    const one = [{ source: "s1", quote: "first in the Founding Rescript" }];
-    assert.deepStrictEqual(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title: "Founding Rescript", work: "s4", evidence: one }]; }), /s4|key work/), [], "a pass ties a key work by one passage naming its title"); n++;
-    assert.ok(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [work({ work: "s4" })]; }), /key work "Founding Rescript": needs a quote in "evidence"/).length, "a pass's key work needs evidence"); n++;
+    const two = [{ source: "s1", quote: `set out ${N} in several works, first in the Founding Rescript` }, { source: "s1", quote: `the Founding Rescript is the canon of ${N}` }];
+    assert.deepStrictEqual(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title: "Founding Rescript", work: "s4", evidence: two }]; }), /s4|key work/), [], "a pass ties a key work by two passages naming its title and the ideology"); n++;
+    assert.ok(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title: "Founding Rescript", work: "s4", evidence: two.slice(0, 1) }]; }), /key work "Founding Rescript": needs two quotes or more, different passages, .*\(has 1\)/).length, "one quote doesn't make a key work"); n++;
+    assert.ok(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title: "Founding Rescript", work: "s4", evidence: [two[0], { source: "s1", quote: "first in the Founding Rescript" }] }]; }), /key work "Founding Rescript": the quote "first in the Founding Rescript" doesn't name/).length, "each of a key work's quotes names the ideology"); n++;
+    assert.ok(passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [work({ work: "s4" })]; }), /key work "Founding Rescript": needs two quotes or more/).length, "a pass's key work needs evidence"); n++;
+    // A quote may name the work by its title's head or by a short name the sources use (Brandon, 2026-11-27).
+    const kw = (title, extra = {}) => passProblems(E(base(), (a) => { unnamed(a); a.keyWorks = [{ title, work: "s4", evidence: two, ...extra }]; }), /key work/);
+    assert.deepStrictEqual(kw("Founding Rescript: The Canon of the Movement"), [], "the head of the title names the work"); n++;
+    assert.deepStrictEqual(kw("Imperial Charter of the Realm", { shortNames: ["Founding Rescript"] }), [], "a short name names the work"); n++;
+    { const p = kw("Imperial Charter of the Realm"); assert.ok(p.some((x) => /key work "Imperial Charter of the Realm"/.test(x)), `without the short name the quotes don't name the work: ${p.join("; ")}`); n++; }
     assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }]; }), /key figure "Quentin Vexmoor": needs two quotes or more/).length, "a pass's key figure needs evidence"); n++;
     assert.ok(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: "Quentin Vexmoor wrote the founding text" }] }]; }), /key figure "Quentin Vexmoor": needs two quotes or more, different passages, .*\(has 1\)/).length, "one quote doesn't make a key figure"); n++;
     assert.deepStrictEqual(passProblems(E(base(), (a) => { a.keyFigures = [{ first: "Quentin", last: "Vexmoor", role: "Founder", wikipedia: "https://en.wikipedia.org/wiki/Quentin_Vexmoor", evidence: [{ source: "s3", quote: `Quentin Vexmoor wrote the founding text of ${N}` }, { source: "s3", quote: `Vexmoor led ${N} for years` }] }]; }), /Quentin Vexmoor/), [], "a key figure's two quotes each name them and the ideology, from one source or two"); n++;

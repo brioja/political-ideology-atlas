@@ -121,8 +121,10 @@ Both lists show on the ideology's page.
 `keyWorks`: the texts the defining sources make canonical (founding texts, manifestos, programmes, a thinker's
 major works).
 - By the title those sources use ("the 1856 Imperial Rescript" for the "Rescript of Reform"), with `evidence`
-  (below): quotes from the defining sources, or from primary texts that name the ideology themselves, presenting it
-  as the ideology's own.
+  (below): two quotes or more, different passages, from the defining sources, or from primary texts that name the
+  ideology themselves, presenting it as the ideology's own, each naming both the work and the ideology. A quote may
+  name the work by its title, the title's head (before a colon or bracket), or a short name the sources use for it
+  ("Orbán's Constitution"), listed in `"shortNames": [...]`.
 - With `"work": "<source id>"` when you cite the text itself.
 - Unless you cite it, give it two fields for the page, as for key figures: `author`, as the sources name it
   ("Pierre-Joseph Proudhon"; an organisation for a programme), and `wikipedia`, the URL of the work's own English
@@ -137,7 +139,7 @@ quotes), when its author is a key figure, or when it names the ideology itself.
 
 Give each alias its evidence: `{ "name": ["<alias>", ...], "reason", "source": "<source id>", "quote": "<verbatim
 passage>" }`, a passage from that source's saved copy that uses each name. Names with the same reason and quote
-share one entry. A key work gives one passage or more instead, a key figure two or more (a claim three):
+share one entry. A key figure or key work gives two passages or more instead (a claim three):
 `"evidence": [{ "source": "<source id>", "quote": "<verbatim passage>" }, ...]`; validate.js checks the quote is there and contains it (a `TRANSLATION`
 alias needs none). Save every source you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so
 the check can read it.
