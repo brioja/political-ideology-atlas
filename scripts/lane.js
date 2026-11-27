@@ -206,7 +206,7 @@ function seedLaterPass(id) {
   // A null carries no reason (Brandon, 2026-11-26; validate.js): one written before that rule goes here.
   for (const [sid, ans] of Object.entries(a.answers || {})) if (!ans || ans.value === null || ans.value === undefined) a.answers[sid] = { value: null, sources: [], rationale: "" };
   fs.writeFileSync(draft(id), require("./lib").formatAudit(a));
-  log(`${id}: later pass seeded from the committed audit; Wikipedia citations dropped: ${w.nulled} answer(s) nulled, ${w.requests} missing statement(s) dropped`);
+  log(`${id}: later pass; ${w.nulled} answer(s) citing Wikipedia nulled${w.requests ? `, ${w.requests} missing statement(s) dropped` : ""}`);
 }
 // An eponymous ideology (audits/namesakes.json: Leninism, Stalinism, Trumpism) is handed the maintainer's reference
 // books by its namesake and about them (biographies, named "<title> (about <Person>, by <author>).txt"): a biography
@@ -233,8 +233,10 @@ function namesakeBooks(id) {
 function fetchBooks(id) {
   if (PEOPLE) return null;
   const r = run("node", ["scripts/ideology-books.js", id], { timeout: 30 * 60000 });
-  log(`${id}: books: ${r.status ? `failed: ${failure(r.stdout + r.stderr)}` : r.stdout.trim().split("\n").pop()}`);
-  try { return JSON.parse(fs.readFileSync(path.join(require("./ideology-books").DIR, id, "index.json"), "utf8")); } catch { return null; }
+  let ix = null;
+  try { ix = JSON.parse(fs.readFileSync(path.join(require("./ideology-books").DIR, id, "index.json"), "utf8")); } catch {}
+  log(`${id}: books: ${r.status ? `failed: ${failure(r.stdout + r.stderr)}` : ix ? `${ix.books.length} downloaded, ${ix.lending.length} lending-only, ${ix.missing.length} not on archive.org` : r.stdout.trim().split("\n").pop()}`);
+  return ix;
 }
 const BOOKS_NOTE = (dir) => `They were found by title, not read: open each, and whether it is the subject's own text or scholarship defining it (audits/AUDIT_RULES.md) is your call, as for any source. Search each for the statements' topics (\`grep -i -n\` in ${dir}/, in the book's language), cite it by its archive.org page (the url given), and name the chapter or page in each rationale that rests on it. Books listed under its "lending" and "missing" in index.json are leads you may look for elsewhere.`;
 function bookList(books, id, intro) {
@@ -280,15 +282,16 @@ const RESUME = (id) => `Go on with \`${id}\` where you left off, through to crea
 function dropFailing(id, when, keepUnused = false) {
   try {
     const f = require("./cleanup").dropFailing(OUT, id, PEOPLE, keepUnused), w = f.wikipedia.nulled + f.wikipedia.requests;
-    if (f.untied.length || w) log(`${id}: ${when}, the driver took out of the answers${f.untied.length ? ` untied source(s) ${f.untied.join(", ")}` : ""}${w ? `${f.untied.length ? " and" : ""} Wikipedia citations (${f.wikipedia.nulled} answer(s) nulled)` : ""}`);
-  } catch (e) { log(`${id}: ${when}, dropping failing sources failed: ${e.message.split("\n")[0]}`); }
+    if (f.untied.length) log(`${id}:${when} untied source(s) ${f.untied.join(", ")} taken out of the answers`);
+    if (f.wikipedia.nulled) log(`${id}:${when} ${f.wikipedia.nulled} answer(s) citing Wikipedia nulled`);
+  } catch (e) { log(`${id}:${when} dropping failing sources failed: ${e.message.split("\n")[0]}`); }
 }
 // Answers validate.js fails under today's rules are nulled, to be answered afresh (scripts/cleanup.js nullFailing).
 function nullFailing(id, when) {
   try {
     const n = require("./cleanup").nullFailing(OUT, id, PEOPLE);
-    if (n.length) log(`${id}: ${when}, nulled ${n.length} failing answer(s):\n${[...new Set(n.map((s) => n.reasons[s]))].map((r) => `  ${r}`).join("\n")}`);
-  } catch (e) { log(`${id}: ${when}, nulling failing answers failed: ${e.message.split("\n")[0]}`); }
+    if (n.length) log(`${id}:${when} nulled ${n.length} failing answer(s):\n${[...new Set(n.map((s) => n.reasons[s]))].map((r) => `  ${r}`).join("\n")}`);
+  } catch (e) { log(`${id}:${when} nulling failing answers failed: ${e.message.split("\n")[0]}`); }
 }
 // The answers a session doesn't work on are kept aside in OUT/.settled/<id>.json while it runs (Brandon, 2026-11-26:
 // feed only the unanswered statements). restoreSettled puts them back (they win over the draft's) before anything
@@ -365,7 +368,7 @@ function prepare(id, when) {
   const lines = all.map((l) => `- ${l.replace(/^error:\s*/, "")}`);
   const ids = hideSettled(id);
   prepNotes.set(id, lines.length ? `\n\n\`node scripts/validate.js ${flag}--dir scratchpad/lane-out/${LANE} ${id}\` reports these problems in the file; fix each:\n${lines.join("\n")}` : "");
-  log(`${id}: ${when}, ${ids.length} statement(s) to answer${lines.length ? `, ${lines.length} other problem(s) handed over` : ""}`);
+  log(`${id}:${when} ${ids.length} statement(s) to answer${lines.length ? `, ${lines.length} other problem(s) for the session to fix` : ""}`);
   return "";
 }
 function prepNote(id) {
@@ -464,7 +467,7 @@ function exceptGap(id) {
         passes.push({ auditor, auditedAt: today });
         const auditors = [].concat(a.auditor || []);
         if (!auditors.includes(auditor)) { auditors.push(auditor); a.auditor = auditors.length === 1 ? auditors[0] : auditors; }
-        changed = true; log(`${id}: driver added the ${today} pass by ${auditor} to "passes"`);
+        changed = true;
       }
     }
     const last = passes && [...passes].sort((x, y) => String(x.auditedAt).localeCompare(String(y.auditedAt))).pop();
@@ -652,7 +655,7 @@ while (timeLeft()) {
     seedLaterPass(id);
     if (!PEOPLE) startBooks.set(id, (fetchBooks(id) || {}).books || []);
     exceptGap(id); // the gap check runs in prepare, so the maintainer's exception goes in first
-    const gap = prepare(id, "before the session");
+    const gap = prepare(id, "");
     if (gap) { restoreSettled(id); log(`${id}: the re-audit gap doesn't allow this pass yet; stopped, draft kept:\n${gap}`); tried.add(id); continue; }
     // The session marks its work done with <id>.done; the driver turns it into the subject's DONE.txt line.
     const marked = () => fs.existsSync(doneMark(id));
@@ -669,7 +672,7 @@ while (timeLeft()) {
   if (!done() || !fs.existsSync(draft(id))) { log(`${id}: not done; left for the next start`); tried.add(id); continue; }
   if (fs.existsSync(statementsFile(id))) fs.unlinkSync(statementsFile(id));
   exceptGap(id);
-  nullFailing(id, "after the session");
+  nullFailing(id, " after the session,");
   let errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id), rounds = 0;
   if (GAP_ERROR.test(errors)) { log(`${id}: the re-audit gap doesn't allow this pass yet; no fix rounds, draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); continue; }
   for (let n = 1; errors && n <= FIX_ROUNDS; n++) { log(`${id}: validator errors, fix round ${n}`); thread = await session(FIX(id, errors), thread, LANE_ENV); exceptGap(id); errors = errorsIn(["--dir", path.relative(ROOT, OUT)], id); rounds = n; }
