@@ -29,7 +29,7 @@ If you think an ideology or person is placed wrong on a statement:
 4. Open a pull request saying what you changed and why.
 
 Please keep to the audit rules in `audits/AUDIT_RULES.md`, which apply to every audit, and the
-subject-specific instructions in `audits/PROMPT.md` (ideologies) and `audits/PROMPT_PEOPLE.md`
+subject-specific instructions in `audits/PROMPT_IDEOLOGIES.md` (ideologies) and `audits/PROMPT_PEOPLE.md`
 (people). In particular, never infer a living person's view from their party or ideology. Leave it
 `null` instead.
 
@@ -42,7 +42,7 @@ indentation so the diff shows only what changed.
 ## Suggest an ideology or person
 
 - **Ideology:** check it meets `audits/IDEOLOGY_STANDARD.md` (it needs its own Wikipedia article),
-  add an entry to `audits/catalog.json`, then write its audit following `audits/PROMPT.md`.
+  add an entry to `audits/catalog.json`, then write its audit following `audits/PROMPT_IDEOLOGIES.md`.
 - **Person:** the people catalog is everyone above a Wikipedia page-views cutoff
   (`scripts/candidate-filter.js`, the only filter); whose views get checked comes from Wikidata
   labels (`scripts/candidate-triage.js`), which are triage, not a filter. If someone above the

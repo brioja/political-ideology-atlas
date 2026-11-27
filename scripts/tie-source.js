@@ -142,7 +142,7 @@ function report(r, sid) {
     : `\n${sid}'s own copy never names the subject.`);
   for (const h of r.self.slice(0, MAX_PER_PLACE)) lines.push(`  "${h.name}" (${h.where}): ...${h.quote}...`);
   const own = r.passages.filter((p) => p.where.startsWith("scratchpad/")), corp = r.passages.filter((p) => !p.where.startsWith("scratchpad/"));
-  lines.push(own.length ? `\nPages saved for this audit that name ${sid} near the subject (cite one as a defining source and add the tie with its quote, as audits/PROMPT.md says):` : `\nNo page saved for this audit names ${sid} near the subject.`);
+  lines.push(own.length ? `\nPages saved for this audit that name ${sid} near the subject (cite one as a defining source and add the tie with its quote, as audits/PROMPT_IDEOLOGIES.md says):` : `\nNo page saved for this audit names ${sid} near the subject.`);
   for (const p of own.slice(0, MAX_PER_PLACE)) lines.push(`  ${p.where} (${p.url}): ...${p.quote}...`);
   lines.push(corp.length ? `\nLocal corpora passages that name ${sid} near the subject (read the passage: a tie only if it is about this text):` : `\nNo local corpus passage names ${sid} near the subject.`);
   for (const p of corp.slice(0, MAX_PER_PLACE)) lines.push(`  ${p.where}: ...${p.quote}...`);

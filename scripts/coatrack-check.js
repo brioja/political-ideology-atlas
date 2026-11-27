@@ -536,7 +536,7 @@ function check(id, full, { strict = false, pass = false } = {}) {
   const citedBy = (sid) => use[sid] ? `; it is cited by ${[...use[sid]].slice(0, 4).join(", ")}${use[sid].size > 4 ? ` and ${use[sid].size - 4} more` : ""}: if none of these should rest on it, stop citing it there` : "";
   const sources = Array.isArray(audit.sources) ? audit.sources : [];
   // A source may discuss the ideology under another name: an alias the audit doesn't list yet (Brandon, 2026-11-21).
-  const ALIAS_HINT = `; if it names the ideology another way, list that name in "aliases" with its reason (${ALIAS_REASONS.join(", ")}) and quote, as audits/PROMPT.md says`;
+  const ALIAS_HINT = `; if it names the ideology another way, list that name in "aliases" with its reason (${ALIAS_REASONS.join(", ")}) and quote, as audits/PROMPT_IDEOLOGIES.md says`;
   const defining = [];
   const offTopic = []; // [source id, text] of defining-kind sources that never name the ideology, so don't count
   for (const s of sources.filter((s) => DEFINING.includes(s.kind) && !isWikipedia(s))) {
@@ -663,9 +663,9 @@ function check(id, full, { strict = false, pass = false } = {}) {
     // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
     // makes an unchecked source an error for them.
     if (t == null) { unchecked.push(s.id); continue; }
-    // The message names all three ways to tie a primary text, each with its evidence (audits/PROMPT.md);
+    // The message names all three ways to tie a primary text, each with its evidence (audits/PROMPT_IDEOLOGIES.md);
     // Brandon, 2026-11-21.
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${plainName(audit.name)}" and isn't a key work with its quote or a key figure's text: it isn't tied to the ideology. Tie it one of two ways, with evidence, as audits/PROMPT.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}" and a quote that names it), or another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}). Its author's texts are tied only if the defining sources already make them a key figure; key figures come from those sources, never from a text that needs a tie. \`node scripts/tie-source.js ${id} ${s.id}\` searches the saved pages and local corpora for a tie. If none fits, look for scholarship defining the ideology that names the text by title (a new defining source can tie it as a key work); only when none does, \`node scripts/drop-source.js ${id} ${s.id}\` takes it out of the answers and lists the rationales to rewrite${citedBy(s.id)}`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${plainName(audit.name)}" and isn't a key work with its quote or a key figure's text: it isn't tied to the ideology. Tie it one of two ways, with evidence, as audits/PROMPT_IDEOLOGIES.md says: the title those sources use for it (in "keyWorks", with "work": "${s.id}" and a quote that names it), or another name for the ideology that the text uses (in "aliases", with its reason: ${ALIAS_REASONS.join(", ")}). Its author's texts are tied only if the defining sources already make them a key figure; key figures come from those sources, never from a text that needs a tie. \`node scripts/tie-source.js ${id} ${s.id}\` searches the saved pages and local corpora for a tie. If none fits, look for scholarship defining the ideology that names the text by title (a new defining source can tie it as a key work); only when none does, \`node scripts/drop-source.js ${id} ${s.id}\` takes it out of the answers and lists the rationales to rewrite${citedBy(s.id)}`);
   }
   return { problems, unchecked, warnings };
 }

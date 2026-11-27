@@ -274,7 +274,7 @@ try {
   // An audit under an older rules version says so, with the date its later pass may carry.
   warns("old rules version", E(base(), (a) => { a.rules = 3; a.auditedAt = "2026-10-30"; }), /^old audit: written under rules 3 \(current \d+\), so later rules aren.t checked here$/);
   // The current version is the one the prompts tell audits to write.
-  for (const f of ["audits/AUDIT_RULES.md", "audits/PROMPT.md", "audits/PROMPT_PEOPLE.md"]) {
+  for (const f of ["audits/AUDIT_RULES.md", "audits/PROMPT_IDEOLOGIES.md", "audits/PROMPT_PEOPLE.md"]) {
     const v = [...fs.readFileSync(path.join(lib.ROOT, f), "utf8").matchAll(/"rules": (\d+)/g)].map((m) => +m[1]);
     assert(v.length && v.every((x) => x === CURRENT_RULES), `${f} writes "rules" ${v.join(", ")}; validate.js CURRENT_RULES is ${CURRENT_RULES}`); n++;
   }

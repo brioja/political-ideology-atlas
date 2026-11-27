@@ -50,7 +50,7 @@ audit order.
 
 ## 2. An ideology: passes the audit's first check
 
-The audit (`audits/PROMPT.md`) records `notIdeasOfWhatSocietyShouldBe` instead of answers if the entry is:
+The audit (`audits/PROMPT_IDEOLOGIES.md`) records `notIdeasOfWhatSocietyShouldBe` instead of answers if the entry is:
 
 - **something that has ideas but isn't a set of ideas:** a person, party, organization, state or group of states,
   government body (not a form of government) or event (`notIdeasOfWhatSocietyShouldBe.reason` PERSON, PARTY,
@@ -59,7 +59,7 @@ The audit (`audits/PROMPT.md`) records `notIdeasOfWhatSocietyShouldBe` instead o
   in code (`scripts/lib.js` personViews) without an audit: the people side audits that person. An ideology named
   after them (Trumpism) is tied to the person but isn't them, and is audited; or
 - **not political ideas of what society should be** (DOES_NOT_INCLUDE_IDEAS): its content holds none, shown by trying: the
-  agent looked for answers to the statements in its defining sources and its critics (audits/PROMPT.md, first
+  agent looked for answers to the statements in its defining sources and its critics (audits/PROMPT_IDEOLOGIES.md, first
   check) and found fewer than two,
   and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".
   `scripts/validate.js` rejects the reason otherwise, and the entry is audited in full.

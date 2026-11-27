@@ -44,7 +44,7 @@ is accepted; stable links are a release concern.
 
 `audits/IDEOLOGY_STANDARD.md` says what counts as an ideology. Each one in `audits/catalog.json` gets a sourced audit at `audits/profiles/<id>.json`:
 its answer to every statement with a rationale and citations, plus a Wikipedia link
-and further reading. `audits/PROMPT.md` holds the exact research instructions, so any audit can
+and further reading. `audits/PROMPT_IDEOLOGIES.md` holds the exact research instructions, so any audit can
 be re-run.
 
 - `node scripts/pending.js` lists ideologies whose audit is missing or invalid.

@@ -9,7 +9,7 @@ ideology's local source library and (2) propose the defining statements the bank
 - `audits/statements/STANDARD.md`: the whole file. Every statement you propose must pass test 3
   (all seven checks) and the Explanations rules for `agree`/`disagree`.
 - `audits/AUDIT_RULES.md`: sections 1-3 (sources, the local source library, no inferences).
-- `audits/PROMPT.md` section 6 (missing statements) and `audits/IDEOLOGY_STANDARD.md` for scope.
+- `audits/PROMPT_IDEOLOGIES.md` section 6 (missing statements) and `audits/IDEOLOGY_STANDARD.md` for scope.
 - `statements.json`: the bank (490 active plus candidates). You must compare against it.
 
 ## 1. Build the source library

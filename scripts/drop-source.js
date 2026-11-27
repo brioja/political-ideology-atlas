@@ -35,7 +35,7 @@ if (!NONE_FIT) {
   const r = tie.findTies(id, sid, { people: PEOPLE, dir: DIR });
   if (tie.candidates(r)) {
     console.log(tie.report(r, sid));
-    console.log(`\nNothing dropped. Read these first: if one ties ${sid}, add the tie as audits/PROMPT.md says. If none does, run again with --none-fit.`);
+    console.log(`\nNothing dropped. Read these first: if one ties ${sid}, add the tie as audits/PROMPT_IDEOLOGIES.md says. If none does, run again with --none-fit.`);
     process.exit(2);
   }
 }

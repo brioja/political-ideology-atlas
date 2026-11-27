@@ -92,7 +92,7 @@ function classify(judge = null) {
       image: require("./lib").shippedImage("ideologies", entry),
       wikipedia: "wikipedia" in a ? a.wikipedia : entry.wikipediaMatch === "exact" ? entry.wikipedia : null,
       furtherReading: a.furtherReading || [],
-      // Its key figures and key works (audits/PROMPT.md). A work links to the copy the audit opened, else its own
+      // Its key figures and key works (audits/PROMPT_IDEOLOGIES.md). A work links to the copy the audit opened, else its own
       // Wikipedia article, else its author's (Brandon, 2026-11-24: a bare title didn't say what the work was).
       keyFigures: (a.keyFigures || []).map((f) => ({ name: [f.first, f.last].filter(Boolean).join(" "), role: f.role, wikipedia: f.wikipedia })),
       keyWorks: (a.keyWorks || []).map((w) => {

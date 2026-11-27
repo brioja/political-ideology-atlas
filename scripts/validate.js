@@ -23,10 +23,10 @@ const profilePath = DIR ? (id) => require("path").resolve(DIR, `${id}.json`) : C
 // secondhand reports by tier instead (PROMPT_PEOPLE.md, "Source priority"; Brandon, 2026-11-23).
 const KINDS = PEOPLE ? ["primary", "scholarly", "reference", "program"] : ["primary", "scholarly", "reference", "program", "secondary"];
 const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the subject (AUDIT_RULES.md, "Record over words")
-// Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
+// Why an entry isn't audited (the first check, audits/PROMPT_IDEOLOGIES.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_IDEAS_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATES", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
-// The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT.md, PROMPT_PEOPLE.md).
+// The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT_IDEOLOGIES.md, PROMPT_PEOPLE.md).
 const CURRENT_RULES = 8;
 // Minimum gap between audit passes: half the project's age (days since PROJECT_START, the first commit) on the date
 // of the later pass, so it grows by a day every two days. REAUDIT_FROM: the date the rule applies from.
@@ -161,10 +161,10 @@ function colorErrors(id) {
   return [];
 }
 
-// Key figures and key works (audits/PROMPT.md section 2), checked in a full validation.
+// Key figures and key works (audits/PROMPT_IDEOLOGIES.md section 2), checked in a full validation.
 function keyFigureChecks(a, id, sources, errors, warnings) {
   // People most associated with the ideology, shown as "Key figures".
-  // Key figures and key works (audits/PROMPT.md): their names and evidence are checked by coatrack-check.js; here,
+  // Key figures and key works (audits/PROMPT_IDEOLOGIES.md): their names and evidence are checked by coatrack-check.js; here,
   // what the ideology page shows. A pass gives each figure a role and Wikipedia article; figures moved over from the
   // old "authors" list (2026-11-21) get theirs at their next pass.
   const WIKI = /^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/;
@@ -205,7 +205,7 @@ function keyFigureChecks(a, id, sources, errors, warnings) {
     if (w.work !== undefined && !src) errors.push(`keyWorks[${i}]: unknown source '${w.work}' in "work"`);
     else if (src && src.kind !== "primary" && src.kind !== "program") errors.push(`keyWorks[${i}]: "work" must be the work itself, a primary or program source (${w.work} is ${src.kind})`);
     for (const k of ["wikipedia", "authorWikipedia"]) if (w[k] != null && !WIKI.test(w[k])) errors.push(`keyWorks[${i}]: ${k} must be an en.wikipedia.org article URL`);
-    // A cited copy gives the page its link and author; without one, a pass gives the work both (audits/PROMPT.md).
+    // A cited copy gives the page its link and author; without one, a pass gives the work both (audits/PROMPT_IDEOLOGIES.md).
     if ((AS_CURRENT || DIR) && !src) { if (!w.author) errors.push(`keyWorks[${i}]: needs its "author"`); if (w.wikipedia === undefined) errors.push(`keyWorks[${i}]: needs "wikipedia", the work's own article, or null if it has none`); }
   }
 }
@@ -229,7 +229,7 @@ function validate(id) {
   const entry = catalog().find((c) => c.id === id);
   if (!entry) errors.push(`id '${id}' is not in audits/catalog.json`);
 
-  // The first check (audits/PROMPT.md): an entry that isn't an ideology the test can place gets a
+  // The first check (audits/PROMPT_IDEOLOGIES.md): an entry that isn't an ideology the test can place gets a
   // short record instead of an audit. It's finished, and excluded like an uncertainty failure.
   if (!PEOPLE && a.notIdeasOfWhatSocietyShouldBe !== undefined) {
     // { "reason": one of NOT_IDEAS_REASONS, "explanation": "..." }.
@@ -325,7 +325,7 @@ function validate(id) {
   }
   // A Wikipedia article about a document is a reference, never the document itself: scripts/cleanup.js makes one listed
   // as "primary" or "program" a "reference" (Brandon, 2026-11-26), so it is no error here.
-  // An ideology's scope rests on a defining source (PROMPT.md sections 1 and 2). People have no scope: each answer
+  // An ideology's scope rests on a defining source (PROMPT_IDEOLOGIES.md sections 1 and 2). People have no scope: each answer
   // rests on its own sources (Brandon, 2026-11-26).
   if (!PEOPLE && !sources.some((s) => ["scholarly", "reference", "secondary"].includes(s.kind))) errors.push("needs at least one scholarly, reference or secondary source");
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
@@ -534,7 +534,7 @@ function validate(id) {
     if (typeof m.rationale !== "string" || m.rationale.trim().length < 20) errors.push(`missingStatements[${i}]: rationale missing or too short`);
     if (!Array.isArray(m.sources) || !m.sources.length) errors.push(`missingStatements[${i}]: needs at least one source`);
     else for (const sid of m.sources) if (!sourceIds.has(sid)) errors.push(`missingStatements[${i}]: unknown source '${sid}'`);
-    // Rule of two (audits/PROMPT.md section 6): at least two verbatim passages from separate places.
+    // Rule of two (audits/PROMPT_IDEOLOGIES.md section 6): at least two verbatim passages from separate places.
     // Entries written before the rule have no "quotes" field: a warning, so old audits still validate.
     const quotes = Array.isArray(m.quotes) ? m.quotes.filter((q) => q && typeof q.text === "string" && q.text.trim()).length : null;
     if (!m.addedAs && !m.declined) {

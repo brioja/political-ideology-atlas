@@ -76,7 +76,7 @@ Anarcho-primitivism is a live match, and it doesn't make the test longer for any
 ## Adding statements
 
 1. An ideology audit lists its defining positions that no statement captures in
-   `missingStatements` (see `audits/PROMPT.md`). New ideologies are the main source.
+   `missingStatements` (see `audits/PROMPT_IDEOLOGIES.md`). New ideologies are the main source.
 2. Merge candidates that say the same thing, check the wording rule, and add the statement to
    `statements.json` with `"status": "candidate"`.
 3. New audits answer it; an older audit answers it at its next completing pass, and until then a
