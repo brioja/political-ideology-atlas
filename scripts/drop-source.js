@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 // For auditors: take a source that can't be tied to the subject out of an audit's current answers (validate.js's
 // "isn't tied to the ideology" error, once none of the three ties it names works). Brandon, 2026-11-23.
-//   node scripts/drop-source.js <id> <source id> [--people] [--dir <folder>] [--none-fit]
+//   node scripts/drop-source.js <id> <source id> [--people] [--dir <folder>] [--none-fit] [--null-all]
 // It first runs scripts/tie-source.js and, if that finds anything, shows it and stops; --none-fit goes on once the
 // auditor has read what it found and none of it ties the source.
 // For each current answer that cites it:
 //   - other sources left: the source leaves "sources"; value and rationale stay as they are.
 //   - it was the only source: the answer is nulled (a null cites nothing and carries no reason).
 // Missing statements and key figures that rest on it alone go too.
+// --null-all (scripts/cleanup.js dropFailing, before a lane session): every answer citing it is nulled and every
+// missing statement citing it goes, other sources or not, for the session to research afresh (Brandon, 2026-11-27:
+// kept on its other sources, an answer kept a value and rationale nothing checked those sources carry).
 // The source goes from "sources" once nothing cites it; git keeps the earlier versions. Its claims are what the
 // script can't remove: it lists every rationale that still names it, to rewrite from the sources the answer cites
 // (validate.js errors on one left word for word).
@@ -21,9 +24,9 @@ const args = process.argv.slice(2);
 const opt = (k) => { const i = args.indexOf(k); return i > -1 ? args.splice(i, 2)[1] : null; };
 const DIR = opt("--dir");
 const PEOPLE = args.includes("--people");
-const NONE_FIT = args.includes("--none-fit");
-const [id, sid] = args.filter((a) => a !== "--people" && a !== "--none-fit");
-if (!id || !sid) { console.error("usage: node scripts/drop-source.js <id> <source id> [--people] [--dir <folder>] [--none-fit]"); process.exit(1); }
+const NONE_FIT = args.includes("--none-fit"), NULL_ALL = args.includes("--null-all");
+const [id, sid] = args.filter((a) => !["--people", "--none-fit", "--null-all"].includes(a));
+if (!id || !sid) { console.error("usage: node scripts/drop-source.js <id> <source id> [--people] [--dir <folder>] [--none-fit] [--null-all]"); process.exit(1); }
 const file = DIR ? path.resolve(DIR, `${id}.json`) : (PEOPLE ? lib.personPath : lib.profilePath)(id);
 const text = fs.readFileSync(file, "utf8"), a = JSON.parse(text);
 const src = (a.sources || []).find((s) => s.id === sid);
@@ -43,7 +46,7 @@ let kept = 0, nulled = 0;
 const toRewrite = [];
 for (const [k, x] of Object.entries(a.answers || {})) {
   if (!x || x.value === null || !(x.sources || []).includes(sid)) continue;
-  const rest = x.sources.filter((s) => s !== sid);
+  const rest = NULL_ALL ? [] : x.sources.filter((s) => s !== sid);
   if (rest.length) x.sources = rest;
   else Object.assign(x, { value: null, sources: [], rationale: "" });
   if (rest.length) {
@@ -61,7 +64,7 @@ for (const [k, x] of Object.entries(a.answers || {})) {
 let requests = 0, figures = 0;
 if (Array.isArray(a.missingStatements)) a.missingStatements = a.missingStatements.filter((m) => {
   if (!m || !Array.isArray(m.sources) || !m.sources.includes(sid)) return true;
-  m.sources = m.sources.filter((x) => x !== sid);
+  m.sources = NULL_ALL ? [] : m.sources.filter((x) => x !== sid);
   if (m.sources.length) return true;
   requests++; return false;
 });

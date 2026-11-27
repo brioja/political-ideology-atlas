@@ -142,7 +142,8 @@ function dropWikipedia(audit) {
 
 // Takes out of the answers the sources validate.js fails and only a new source could fix (Brandon, 2026-11-26):
 // Wikipedia citations (a tertiary source; dropWikipedia above) and sources not tied to the subject
-// (scripts/drop-source.js --none-fit). An answer resting on them alone is nulled; then unused sources go (clean).
+// (scripts/drop-source.js --none-fit --null-all). An answer citing them is nulled, other sources or not; then unused
+// sources go (clean).
 // scripts/lane.js runs it on a draft before its session.
 // Returns { untied, wikipedia: { nulled, requests }, dropped, kept }.
 // Coatracks too (coatrack-check.js: a defining source that "never names" the subject; Brandon, 2026-11-26). With
@@ -151,7 +152,7 @@ function dropFailing(dir, id, people = false, keepUnused = false) {
   const errs = [...errors(dir, id, people, true)].join("\n"); // under today's rules, whatever the draft's "rules" says
   const untied = [...new Set([...errs.matchAll(/source (s\d+) \([^)]*\) (?:doesn't name|never names)/g)].map((m) => m[1]))];
   for (const sid of untied) {
-    execFileSync("node", [path.join(__dirname, "drop-source.js"), id, sid, "--dir", dir, "--none-fit", ...(people ? ["--people"] : [])], { stdio: "ignore" });
+    execFileSync("node", [path.join(__dirname, "drop-source.js"), id, sid, "--dir", dir, "--none-fit", "--null-all", ...(people ? ["--people"] : [])], { stdio: "ignore" });
   }
   let wikipedia = { nulled: 0, requests: 0 };
   if (/, a Wikipedia article: Wikipedia is a tertiary source/.test(errs)) {
