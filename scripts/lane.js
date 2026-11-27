@@ -405,6 +405,11 @@ function failure(out, n = 3) {
 // hasn't heard from you in a while" reminder is off: no one waits on a lane. Sessions at medium effort, nudged after
 // about five tool calls, answered the statements a main text states outright and stopped (Brandon, 2026-11-26).
 const ISOLATED = { CLAUDE_CODE_DISABLE_AUTO_MEMORY: "1", CLAUDE_CODE_DISABLE_CLAUDE_MDS: "1", CLAUDE_CODE_SILENT_TURN_REMINDER: "0" };
+// Claude sessions get scripts/lane-system-prompt.md in place of Claude Code's default system prompt, which is written for
+// an interactive coding assistant: "When you have enough information to act, act", confirm before acting, searches as
+// "quick and cheap" or "several times the cost". At high effort without the reminder, web sessions still stopped after a
+// few searches (Brandon, 2026-11-26).
+const SYSTEM_PROMPT = path.join(__dirname, "lane-system-prompt.md");
 async function session(prompt, thread, env = {}) {
   let r, id = thread;
   env = { ...ISOLATED, ...env };
@@ -413,7 +418,7 @@ async function session(prompt, thread, env = {}) {
     r = await runAsync("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt], env);
     for (const line of (r.stdout || "").split("\n")) { try { const e = JSON.parse(line); if (e.type === "thread.started") id = e.thread_id; } catch {} }
   } else {
-    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--effort", "high", "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
+    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--effort", "high", "--system-prompt-file", SYSTEM_PROMPT, "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
     try {
       const out = JSON.parse(r.stdout);
       id = out.session_id || id;
