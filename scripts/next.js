@@ -72,6 +72,12 @@ function olderRules() {
       const f = kind === "person" ? lib.personPath(entry.id) : lib.profilePath(entry.id);
       if (!fs.existsSync(f)) continue;
       const a = readJson(f);
+      // An entry excluded as something other than a set of ideas (an organization, party, person, state, government
+      // body or event) stays one under any rules version: no later pass. Without this its record, which carries no
+      // "rules", sorted first as rules 0 (Brandon, 2026-11-27: Muslim Brotherhood was re-audited and its ORGANIZATION
+      // record dropped).
+      const excluded = a.notIdeasOfWhatSocietyShouldBe;
+      if (excluded && excluded.reason !== "DOES_NOT_INCLUDE_IDEAS") continue;
       if ((a.rules || 0) >= CURRENT_RULES || nextPassFrom(a) > today) continue;
       due.push({ kind, entry, rules: a.rules || 0 });
     }
