@@ -23,11 +23,19 @@ Audit the id the driver gives you, person or ideology.
 
 ## Tools
 
-- `node scripts/passages.js <id> <regex> [--in <dir-or-file>]` prints the paragraphs that match in the subject's
-  saved sources and downloaded books (and in each `--in` path, such as a corpus folder), with file and line, a page
-  at a time (`--page 2`); `--files` counts matches per file. Use it to find passages instead of reading whole texts.
+- `node scripts/passages.js <id> <regex> [--in <dir | file | s2,s5>]` prints the paragraphs that match in the
+  subject's saved sources and downloaded books (and in each `--in` path, such as a corpus folder), with source id or
+  file, line and, in a book, the page; a page of output at a time (`--page 2`). `--in s2,s5` or `--in <file>` searches
+  only those. `--brief` gives one line per match, five per file (`--brief 20` for more); `--files` counts matches
+  per file. `--lines 120-180 <s4 | file>` reads a stretch of a text. Use these instead of reading whole texts.
   In `.jsonl` records (speech dumps) `--from`/`--to YYYY` keep a date range. `--counts <file>` takes one
   `label: regex` per line (one per statement, say) and prints how often each matches, to choose what to search first.
+- `node scripts/check-quotes.js <draft> <file | ->` checks quotes, one per line `s4<TAB>quote`, against the saved
+  copies the way validate.js does, and says where a quote that fails stops matching.
+- `node scripts/set-fields.js <draft> <file | ->` sets the draft's other fields from a JSON object: `scope`,
+  `aliases`, `keyFigures`, `keyWorks` and the like replace the draft's; `sources` entries are added or replaced by id
+  (`{"id": "s4", "remove": true}` removes one). It runs validate.js on the result and writes nothing if that shows an
+  error the draft didn't have.
 - `node scripts/wiki.js --redirects "<article>"` lists the redirects to an article with their categories
   (alternative name, subtopic and so on).
 - `node scripts/set-answers.js <draft> <file | ->` writes answers into the draft, one per line:

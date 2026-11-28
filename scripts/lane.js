@@ -2,6 +2,7 @@
 // audit itself, so tokens go to research only (Brandon, 2026-11-18: the Codex driver got through a lot with few tokens;
 // the same for Sonnet). Several lanes can run at once in this checkout, e.g. one per engine or per kind.
 //   node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane <name>] [--until HH:MM] [--resumes 6] [--dry]
+//                        [--model haiku|opus|<codex model>]
 //                        [--subjects id,id --gap-exception "<why> (<maintainer>, <date>)"]
 // --subjects audits only these, in this order, then stops (a test of a change); --gap-exception marks each pass it
 // integrates as exempt from the re-audit gap (validate.js), for a maintainer-approved early pass.
@@ -49,9 +50,11 @@ const tmuxWindow = () => {
 };
 // The model a pass ran on, recorded as its auditor by the driver (Brandon, 2026-11-26). Claude runs the latest Sonnet
 // (the "sonnet" alias), and each session's output names the model it resolved to, kept here; Codex runs the model its
-// config sets, read here and passed explicitly.
+// config sets, read here and passed explicitly. --model picks another (Brandon, 2026-11-27: a Haiku lane, to compare
+// cost per answer): a Claude alias (haiku, opus) or a Codex model name.
+const CLAUDE_MODEL = arg("--model", "sonnet");
 let MODEL = arg("--engine") === "codex"
-  ? ((() => { try { return /^model\s*=\s*"([^"]+)"/m.exec(fs.readFileSync(path.join(require("os").homedir(), ".codex", "config.toml"), "utf8"))[1]; } catch { return null; } })())
+  ? arg("--model") || ((() => { try { return /^model\s*=\s*"([^"]+)"/m.exec(fs.readFileSync(path.join(require("os").homedir(), ".codex", "config.toml"), "utf8"))[1]; } catch { return null; } })())
   : null;
 const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane") || tmuxWindow() || `${ENGINE}-${KIND}`, RESUMES = +arg("--resumes", 6);
 const UNTIL = arg("--until"), DRY = process.argv.includes("--dry");
@@ -60,7 +63,7 @@ const SUBJECTS = arg("--subjects") ? arg("--subjects").split(",").filter(Boolean
 // back to the default kind and started a people lane).
 const HELP = () => { const l = fs.readFileSync(__filename, "utf8").split("\n"); return l.slice(0, l.findIndex((x) => x.startsWith("// Per subject:"))).map((x) => x.replace(/^\/\/ ?/, "")).join("\n"); };
 {
-  const VALUED = ["--engine", "--kind", "--lane", "--until", "--resumes", "--subjects", "--gap-exception"], a = process.argv.slice(2), bad = [];
+  const VALUED = ["--engine", "--kind", "--lane", "--until", "--resumes", "--subjects", "--gap-exception", "--model"], a = process.argv.slice(2), bad = [];
   for (let i = 0; i < a.length; i++) {
     if (VALUED.includes(a[i])) { if (a[i + 1] === undefined || a[i + 1].startsWith("--")) bad.push(`${a[i]} needs a value`); else i++; }
     else if (!["--dry", "--help", "-h"].includes(a[i])) bad.push(`unknown argument "${a[i]}"`);
@@ -422,11 +425,14 @@ async function session(prompt, thread, env = {}) {
     r = await runAsync("codex", thread ? ["exec", "resume", ...common, thread, prompt] : ["exec", ...common, "-C", ROOT, prompt], env);
     for (const line of (r.stdout || "").split("\n")) { try { const e = JSON.parse(line); if (e.type === "thread.started") id = e.thread_id; } catch {} }
   } else {
-    r = await runAsync("claude", ["-p", prompt, "--model", "sonnet", "--effort", "high", "--system-prompt-file", SYSTEM_PROMPT, "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
+    r = await runAsync("claude", ["-p", prompt, "--model", CLAUDE_MODEL, "--effort", "high", "--system-prompt-file", SYSTEM_PROMPT, "--output-format", "json", "--dangerously-skip-permissions", ...(thread ? ["--resume", thread] : [])], env);
     try {
       const out = JSON.parse(r.stdout);
       id = out.session_id || id;
-      MODEL = Object.keys(out.modelUsage || {}).find((m) => /sonnet/.test(m)) || MODEL;
+      MODEL = Object.keys(out.modelUsage || {}).find((m) => m.includes(CLAUDE_MODEL)) || MODEL;
+      // What the session cost, to compare models by cost per answer (Brandon, 2026-11-27).
+      const u = out.usage || {}, k = (n) => `${Math.round((n || 0) / 1000)}k`;
+      if (out.total_cost_usd != null) log(`session cost $${out.total_cost_usd.toFixed(2)} (${MODEL || CLAUDE_MODEL}, ${out.num_turns || "?"} turns, ${Math.round((out.duration_ms || 0) / 60000)} min; tokens in ${k(u.input_tokens)}, cache read ${k(u.cache_read_input_tokens)}, cache write ${k(u.cache_creation_input_tokens)}, out ${k(u.output_tokens)})`);
     } catch {}
   }
   if (r.status) log(`${ENGINE} exited ${r.status}: ${failure(r.stderr, 1) || stdoutError(r.stdout)}`);
