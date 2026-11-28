@@ -16,7 +16,8 @@
 //     ambiguous), "so"/"because" (a reason: the bank asks positions), "as well as"/"not only" (a
 //     comparison slips in a second claim), "and" (two claims joined, or a list a general word would replace),
 //     "or" (options: an audit can't answer it; Brandon, 2026-11-11), hedges ("sometimes", "at times", "occasionally",
-//     "in some cases", "tend to": almost anyone agrees; Brandon, 2026-11-19).
+//     "in some cases", "tend to": almost anyone agrees; Brandon, 2026-11-19), absolutes ("never", "always", "whatever")
+//     and strong claims ("main", "mainly", "essentially", "exclusively", "cannot … without"; Brandon, 2026-11-27).
 //     Warnings are often fine: "like", "by"/"through" (a means attached to a goal is hard to
 //     negate; a passive "chosen by voters" is fine), "in" (a vague scope: "in economic life"), "not" (state
 //     the positive position instead, where one exists).

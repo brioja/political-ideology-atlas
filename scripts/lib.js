@@ -216,12 +216,17 @@ const awaitingReaudit = () => {
 // the check of all of Sonnet's reasons: "exceptions exist" answered 0 or agree on initiating-force-wrong, non-intervention
 // and disparate-impact-discrimination). "some" is a warning (2026-11-19): often the
 // claim itself ("some moral truths hold across all cultures"), but it can be a hedge that makes agreeing trivial.
+// Strong claims are errors too: "main"/"mainly"/"essentially"/"exclusively" and "cannot … without" (marked in
+// wordingMarks) (2026-11-27, Brandon: two Haiku quiz runs answered 0 to class-struggle-history, state-class-instrument,
+// individual-rights-only and women-equality-needs-economic-change while their reasons rejected the strong claim, so a
+// source that holds the weaker claim lands at 0 instead of disagree).
 // Comparatives that, with no later "than", mean "than now" ("Taxes on the wealthy should be significantly higher").
 const COMPARATIVES = ["more", "less", "fewer", "higher", "larger", "greater", "bigger", "smaller", "stronger", "weaker",
   "tighter", "looser", "stricter", "tougher", "harsher", "wider", "narrower", "broader"];
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or",
-    "sometimes", "at times", "occasionally", "in some cases", "tend to", "tends to", "never", "always", "whatever"],
+    "sometimes", "at times", "occasionally", "in some cases", "tend to", "tends to", "never", "always", "whatever",
+    "main", "mainly", "essentially", "exclusively"],
   warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country", "some",
     "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
@@ -261,6 +266,8 @@ const WORDING_REASONS = {
   whatever: "an absolute (\"whatever the reason\"): someone who holds the claim with exceptions answers 0 or agree (Sonnet on non-intervention and disparate-impact-discrimination, 2026-11-19); state the general claim",
   ...Object.fromEntries(["tend to", "tends to"]
     .map((w) => [w, "a hedge: nearly anyone grants a tendency, so agreeing says little; state the claim itself"])),
+  ...Object.fromEntries(["main", "mainly", "essentially", "exclusively", "cannot … without"]
+    .map((w) => [w, "a strong claim: someone who holds the weaker one (\"a major cause\", \"helps\") answers 0 rather than disagree (Haiku on class-struggle-history and state-class-instrument, 2026-11-27); state the claim without ranking or requiring"])),
   some: "may be a hedge that makes agreeing trivial (\"some X are bad\"); fine where \"some\" is the claim (\"some moral truths hold across all cultures\": disagreeing says none do)",
   "second sentence": "a second sentence usually adds a second claim",
 };
@@ -277,8 +284,10 @@ function wordingMarks(text) {
   const relative = [...t.matchAll(new RegExp(`\\b(${COMPARATIVES.join("|")})\\b`, "gi"))].filter((m) => !/\bthan\b/i.test(t.slice(m.index))).map((m) => m[1].toLowerCase());
   // A semicolon joins a second claim, as "and" does: an error (Brandon, 2026-11-11). A second sentence usually does too: a warning.
   const semicolon = /;/.test(text) ? [";"] : [];
+  // "cannot … without" makes the claim a necessary condition, a strong claim like "main" (Brandon, 2026-11-27).
+  const cannotWithout = /\b(cannot|can't|can not)\b.*\bwithout\b/i.test(text) ? ["cannot … without"] : [];
   const sentences = /[.!?]\s+\S/.test(text.trim()) ? ["second sentence"] : [];
-  return { errors: [...find(WORDING.errors), ...semicolon], warnings: [...new Set([...find(WORDING.warnings, t), ...relative, ...sentences])] };
+  return { errors: [...find(WORDING.errors), ...semicolon, ...cannotWithout], warnings: [...new Set([...find(WORDING.warnings, t), ...relative, ...sentences])] };
 }
 
 // How much of a statement an agree or disagree sentence only repeats: the share of content words the two have in

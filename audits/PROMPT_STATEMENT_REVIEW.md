@@ -44,7 +44,8 @@ These came out of the reviews on 2026-11-10 and are what the maintainer accepted
   kept its wording because its two halves are one idea in every source.
 - **Errors are absolute** (Brandon, 2026-11-10): the statement text never keeps an error word ("and",
   "can", "may", "rather", "so", "because", "as well as", "not only", "or", a semicolon, hedges such as
-  "sometimes" or "tend to"), whatever the explanation;
+  "sometimes" or "tend to", absolutes such as "never", strong claims such as "main" or "cannot … without"), whatever
+  the explanation;
   `statements-check.js` no longer accepts one. Fold a list into a general word, use a colon or a single phrase
   ("kindred peoples"), put the list in the agree text, or say a permission or ability another way ("able
   to"). Fix the warnings in the same review: reword each away, or say why test 3 confirms it. The queue
