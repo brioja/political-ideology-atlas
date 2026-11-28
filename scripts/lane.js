@@ -2,10 +2,15 @@
 // audit itself, so tokens go to research only (Brandon, 2026-11-18: the Codex driver got through a lot with few tokens;
 // the same for Sonnet). Several lanes can run at once in this checkout, e.g. one per engine or per kind.
 //   node scripts/lane.js --engine codex|claude [--kind people|ideologies] [--lane <name>] [--until HH:MM] [--resumes 6] [--dry]
-//                        [--model haiku|opus|<codex model>]
+//                        [--model haiku|opus|<codex model>] [--subjects id --compare <git rev>]
 //                        [--subjects id,id --gap-exception "<why> (<maintainer>, <date>)"]
 // --subjects audits only these, in this order, then stops (a test of a change); --gap-exception marks each pass it
 // integrates as exempt from the re-audit gap (validate.js), for a maintainer-approved early pass.
+// --compare <rev> reruns a pass side by side (Brandon, 2026-11-27: Haiku against a Sonnet pass, for cost per answer):
+// each subject is seeded from its audit as committed at <rev> (the commit before the pass compared against), so the
+// re-audit gap counts from that audit's passes, and the finished draft is never integrated: it stays as
+// <id>.compare.json in the lane folder. Move the subject's saved sources aside first, so the session starts with what
+// the compared pass had.
 // --lane defaults to the tmux window number when the driver runs in tmux (one tmux, one lane per window), else to
 // <engine>-<kind> (Brandon, 2026-11-19 and 11-25); --until stops new subjects and resumes after that local time (default: run until
 // the queue is empty or the driver is stopped; a stop mid-subject keeps the draft, which the next start carries on).
@@ -59,11 +64,12 @@ let MODEL = arg("--engine") === "codex"
 const ENGINE = arg("--engine"), KIND = arg("--kind", "people"), LANE = arg("--lane") || tmuxWindow() || `${ENGINE}-${KIND}`, RESUMES = +arg("--resumes", 6);
 const UNTIL = arg("--until"), DRY = process.argv.includes("--dry");
 const SUBJECTS = arg("--subjects") ? arg("--subjects").split(",").filter(Boolean) : null, GAP_EXCEPTION = arg("--gap-exception");
+const COMPARE = arg("--compare");
 // Every argument is checked, and --help prints this file's header (Brandon, 2026-11-27: a mistyped "--ideology" fell
 // back to the default kind and started a people lane).
 const HELP = () => { const l = fs.readFileSync(__filename, "utf8").split("\n"); return l.slice(0, l.findIndex((x) => x.startsWith("// Per subject:"))).map((x) => x.replace(/^\/\/ ?/, "")).join("\n"); };
 {
-  const VALUED = ["--engine", "--kind", "--lane", "--until", "--resumes", "--subjects", "--gap-exception", "--model"], a = process.argv.slice(2), bad = [];
+  const VALUED = ["--engine", "--kind", "--lane", "--until", "--resumes", "--subjects", "--gap-exception", "--model", "--compare"], a = process.argv.slice(2), bad = [];
   for (let i = 0; i < a.length; i++) {
     if (VALUED.includes(a[i])) { if (a[i + 1] === undefined || a[i + 1].startsWith("--")) bad.push(`${a[i]} needs a value`); else i++; }
     else if (!["--dry", "--help", "-h"].includes(a[i])) bad.push(`unknown argument "${a[i]}"`);
@@ -142,7 +148,7 @@ function nextSubject() {
       // The queue (pending.js) waits out the re-audit gap; --subjects did not, and three passes ran that weren't due
       // (Brandon, 2026-11-26). A subject not yet due needs --gap-exception; a draft already started is carried on.
       const committed = PEOPLE ? lib.personPath(id) : lib.profilePath(id), today = new Date().toISOString().slice(0, 10);
-      if (!GAP_EXCEPTION && !fs.existsSync(draft(id)) && fs.existsSync(committed)) {
+      if (!GAP_EXCEPTION && !COMPARE && !fs.existsSync(draft(id)) && fs.existsSync(committed)) {
         const due = require("./validate").nextPassFrom(JSON.parse(fs.readFileSync(committed, "utf8")));
         if (due > today) { log(`${id}: not due for a later pass until ${due} (the re-audit gap); skipped. --gap-exception "<why> (<maintainer>, <date>)" runs it early`); tried.add(id); continue; }
       }
@@ -187,10 +193,18 @@ const COLOR = (id) => PEOPLE ? "" : ` If audits/ideology-colors.json has no entr
 // A later pass starts from a draft the driver seeds from the committed audit, without its Wikipedia citations
 // (scripts/cleanup.js dropWikipedia; Brandon, 2026-11-26), notes, scope or reasons for its nulls; prepare() below then
 // takes out what fails today's rules and keeps the remaining answers from the session.
+// The subject's committed audit: the working copy, or with --compare the one at that revision (null if none).
+function committedAudit(id) {
+  const file = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
+  if (!COMPARE) return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null;
+  const r = require("child_process").spawnSync("git", ["show", `${COMPARE}:${path.relative(ROOT, file)}`], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 28 });
+  return r.status === 0 ? JSON.parse(r.stdout) : null;
+}
 function seedLaterPass(id) {
-  const committed = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
-  if (fs.existsSync(draft(id)) || !fs.existsSync(committed)) return;
-  const a = JSON.parse(fs.readFileSync(committed, "utf8")), w = require("./cleanup").dropWikipedia(a);
+  if (fs.existsSync(draft(id))) return;
+  const a = committedAudit(id);
+  if (!a) return;
+  const w = require("./cleanup").dropWikipedia(a);
   // The pass's own fields are the driver's, not the session's (Brandon, 2026-11-26: the first seeded pass, of
   // Anarcha-feminism, was carried on as earlier work and kept its old date, no "rules" and no "passes"): today's
   // rules, so every check judges the draft by them; today's date; the earlier passes listed (an audit with one pass
@@ -463,9 +477,8 @@ function exceptGap(id) {
   try {
     const a = JSON.parse(fs.readFileSync(draft(id), "utf8")), today = new Date().toISOString().slice(0, 10);
     let changed = false;
-    const committedFile = PEOPLE ? require("./lib").personPath(id) : require("./lib").profilePath(id);
-    if (fs.existsSync(committedFile)) {
-      const c = JSON.parse(fs.readFileSync(committedFile, "utf8"));
+    const c = committedAudit(id);
+    if (c) {
       const earlier = Array.isArray(c.passes) && c.passes.length ? c.passes : [{ auditor: [].concat(c.auditor || [])[0], auditedAt: c.auditedAt }];
       if (!Array.isArray(a.passes)) a.passes = [];
       const missing = earlier.filter((p) => p && p.auditedAt && !a.passes.some((q) => q && q.auditedAt === p.auditedAt));
@@ -694,6 +707,12 @@ while (timeLeft()) {
   if (errors) { log(`${id}: still invalid after ${FIX_ROUNDS} rounds; draft left for review`); fs.renameSync(draft(id), path.join(OUT, `${id}.invalid.json`)); continue; }
   // The DONE line is only the session's "finished" mark: the driver counts the answers and the placement itself.
   const lines = fs.readFileSync(DONE, "utf8").split("\n"), line = lines.find((l) => lineId(l) === id);
+  if (COMPARE) {
+    fs.renameSync(draft(id), path.join(OUT, `${id}.compare.json`));
+    fs.writeFileSync(DONE, lines.filter((l) => l !== line).join("\n"));
+    log(`${id}: compare run, not integrated: ${id}.compare.json${rounds ? ` [${rounds} fix round${rounds > 1 ? "s" : ""}]` : ""}`);
+    tried.add(id); continue;
+  }
   const name = integrate(id);
   if (!name) { tried.add(id); continue; }
   fs.writeFileSync(DONE, lines.filter((l) => l !== line).join("\n"));
